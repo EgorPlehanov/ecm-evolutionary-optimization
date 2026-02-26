@@ -22,10 +22,15 @@ def cmd_optimize(args: argparse.Namespace) -> int:
 
     numbers = load_numbers(args.dataset)
     config = OptimizationConfig(
+        b1_min=args.b1_min,
+        b1_max=args.b1_max,
+        ratio_max=args.ratio_max,
         curves_per_n=args.curves_per_n,
         popsize=args.popsize,
         maxiter=args.maxiter,
         seed=args.seed,
+        curve_timeout_sec=args.curve_timeout_sec,
+        verbose=args.verbose,
     )
     result = optimize_parameters(ecm_bin=args.ecm_bin, numbers=numbers, config=config)
     print(f"best_b1={result.b1}")
@@ -44,6 +49,7 @@ def cmd_validate(args: argparse.Namespace) -> int:
         optimized=(args.opt_b1, args.opt_b2),
         baseline=(args.base_b1, args.base_b2),
         curves_per_n=args.curves_per_n,
+        curve_timeout_sec=args.curve_timeout_sec,
     )
     print(f"optimized_mean={summary.optimized_mean:.6f}")
     print(f"baseline_mean={summary.baseline_mean:.6f}")
@@ -113,6 +119,11 @@ def build_parser() -> argparse.ArgumentParser:
     p_opt.add_argument("--popsize", type=int, default=16)
     p_opt.add_argument("--maxiter", type=int, default=25)
     p_opt.add_argument("--seed", type=int, default=42)
+    p_opt.add_argument("--b1-min", type=float, default=1e3)
+    p_opt.add_argument("--b1-max", type=float, default=1e9)
+    p_opt.add_argument("--ratio-max", type=float, default=100.0)
+    p_opt.add_argument("--curve-timeout-sec", type=float, default=None)
+    p_opt.add_argument("--verbose", action="store_true")
     p_opt.set_defaults(func=cmd_optimize)
 
     p_val = sub.add_parser("validate", help="compare optimized parameters against baseline")
@@ -123,6 +134,7 @@ def build_parser() -> argparse.ArgumentParser:
     p_val.add_argument("--base-b1", required=True, type=int)
     p_val.add_argument("--base-b2", required=True, type=int)
     p_val.add_argument("--curves-per-n", type=int, default=100)
+    p_val.add_argument("--curve-timeout-sec", type=float, default=None)
     p_val.set_defaults(func=cmd_validate)
 
     return parser

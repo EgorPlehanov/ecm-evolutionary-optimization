@@ -49,6 +49,22 @@ PYTHONPATH=src python -m ecm_opt.cli optimize \
   --maxiter 25
 ```
 
+
+Для быстрого smoke-теста и видимого прогресса используйте:
+
+```bash
+PYTHONPATH=src python -m ecm_opt.cli optimize \
+  --dataset data/d35_train.txt \
+  --ecm-bin ecm \
+  --curves-per-n 1 \
+  --popsize 4 \
+  --maxiter 1 \
+  --b1-max 100000 \
+  --ratio-max 20 \
+  --curve-timeout-sec 5 \
+  --verbose
+```
+
 ### 3) Валидация против baseline
 
 ```bash

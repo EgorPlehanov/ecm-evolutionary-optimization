@@ -22,16 +22,30 @@ def optimize_parameters(ecm_bin: str, numbers: Iterable[int], config: Optimizati
     low2, high2 = low1, math.log10(config.b1_max * config.ratio_max)
 
     numbers = list(numbers)
+    objective_calls = 0
+
+    if config.verbose:
+        print(
+            f"[optimize] numbers={len(numbers)} curves_per_n={config.curves_per_n} "
+            f"popsize={config.popsize} maxiter={config.maxiter}",
+            flush=True,
+        )
 
     def objective(x: tuple[float, float]) -> float:
+        nonlocal objective_calls
+        objective_calls += 1
         b1, b2 = _decode_candidate((x[0], x[1]), ratio_max=config.ratio_max)
-        return fitness_expected_time(
+        value = fitness_expected_time(
             ecm_bin=ecm_bin,
             numbers=numbers,
             b1=b1,
             b2=b2,
             curves_per_n=config.curves_per_n,
+            curve_timeout_sec=config.curve_timeout_sec,
         )
+        if config.verbose and objective_calls % 5 == 0:
+            print(f"[optimize] eval={objective_calls} b1={b1} b2={b2} fitness={value}", flush=True)
+        return value
 
     result = differential_evolution(
         objective,
@@ -43,6 +57,7 @@ def optimize_parameters(ecm_bin: str, numbers: Iterable[int], config: Optimizati
         recombination=0.8,
         seed=config.seed,
         polish=False,
+        disp=config.verbose,
     )
 
     b1, b2 = _decode_candidate((result.x[0], result.x[1]), ratio_max=config.ratio_max)

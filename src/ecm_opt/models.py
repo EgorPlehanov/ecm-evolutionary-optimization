@@ -24,6 +24,8 @@ class OptimizationConfig:
     popsize: int = 16
     maxiter: int = 25
     seed: int = 42
+    curve_timeout_sec: float | None = None
+    verbose: bool = False
 
 
 @dataclass(frozen=True)

@@ -16,17 +16,22 @@ class CurveRun:
     stderr: str
 
 
-def run_single_curve(ecm_bin: str, n: int, b1: int, b2: int) -> CurveRun:
+def run_single_curve(ecm_bin: str, n: int, b1: int, b2: int, timeout_sec: float | None = None) -> CurveRun:
     """Run one ECM curve for integer n and return success flag + timing."""
     cmd = [ecm_bin, str(b1), str(b2)]
     started = time.perf_counter()
-    proc = subprocess.run(
-        cmd,
-        input=f"{n}\n",
-        text=True,
-        capture_output=True,
-        check=False,
-    )
+    try:
+        proc = subprocess.run(
+            cmd,
+            input=f"{n}\n",
+            text=True,
+            capture_output=True,
+            check=False,
+            timeout=timeout_sec,
+        )
+    except subprocess.TimeoutExpired as exc:
+        elapsed = time.perf_counter() - started
+        return CurveRun(success=False, seconds=elapsed, stdout=exc.stdout or "", stderr=(exc.stderr or "") + "\nTIMEOUT")
     elapsed = time.perf_counter() - started
     output = (proc.stdout or "") + "\n" + (proc.stderr or "")
     success = bool(SUCCESS_RE.search(output))
