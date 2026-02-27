@@ -3,7 +3,9 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
-from .dataset import generate_semiprime_samples, write_dataset, write_manifest
+from .baseline import choose_baseline
+from .dataset import generate_semiprime_samples, read_dataset_metadata, write_dataset, write_manifest
+from .io_utils import ensure_dir, read_json, utc_timestamp, write_json
 from .models import OptimizationConfig
 
 
@@ -15,6 +17,17 @@ def load_numbers(path: str) -> list[int]:
             continue
         values.append(int(line))
     return values
+
+
+def _parse_target_digits(dataset_path: str, fallback: int | None = None) -> int | None:
+    meta = read_dataset_metadata(dataset_path)
+    raw = meta.get("target_digits")
+    if raw is None:
+        return fallback
+    try:
+        return int(raw)
+    except ValueError:
+        return fallback
 
 
 def cmd_optimize(args: argparse.Namespace) -> int:
@@ -33,9 +46,43 @@ def cmd_optimize(args: argparse.Namespace) -> int:
         verbose=args.verbose,
     )
     result = optimize_parameters(ecm_bin=args.ecm_bin, numbers=numbers, config=config)
+
     print(f"best_b1={result.b1}")
     print(f"best_b2={result.b2}")
     print(f"objective={result.objective:.6f}")
+
+    target_digits = _parse_target_digits(args.dataset)
+    baseline = choose_baseline(target_digits)
+
+    stamp = utc_timestamp()
+    out_dir = ensure_dir(args.results_dir)
+    out_file = out_dir / f"optimize_{stamp}.json"
+    payload = {
+        "timestamp_utc": stamp,
+        "command": "optimize",
+        "dataset": args.dataset,
+        "dataset_target_digits": target_digits,
+        "ecm_bin": args.ecm_bin,
+        "config": {
+            "b1_min": args.b1_min,
+            "b1_max": args.b1_max,
+            "ratio_max": args.ratio_max,
+            "curves_per_n": args.curves_per_n,
+            "popsize": args.popsize,
+            "maxiter": args.maxiter,
+            "seed": args.seed,
+            "curve_timeout_sec": args.curve_timeout_sec,
+        },
+        "optimized": {"b1": result.b1, "b2": result.b2, "objective": result.objective},
+        "suggested_baseline": {
+            "b1": baseline.b1,
+            "b2": baseline.b2,
+            "table_target_digits": baseline.target_digits,
+            "source": baseline.source,
+        },
+    }
+    write_json(out_file, payload)
+    print(f"result_file={out_file}")
     return 0
 
 
@@ -43,17 +90,69 @@ def cmd_validate(args: argparse.Namespace) -> int:
     from .validation import validate_on_control
 
     numbers = load_numbers(args.dataset)
+
+    if args.opt_result_file:
+        opt_data = read_json(args.opt_result_file)
+        opt_pair = (int(opt_data["optimized"]["b1"]), int(opt_data["optimized"]["b2"]))
+        detected_digits = opt_data.get("dataset_target_digits")
+    else:
+        if args.opt_b1 is None or args.opt_b2 is None:
+            raise SystemExit("Provide --opt-result-file or both --opt-b1 and --opt-b2")
+        opt_pair = (args.opt_b1, args.opt_b2)
+        detected_digits = None
+
+    if args.base_b1 is not None and args.base_b2 is not None:
+        base_pair = (args.base_b1, args.base_b2)
+        base_source = "manual"
+        base_target_digits = _parse_target_digits(args.dataset, detected_digits)
+    else:
+        td = _parse_target_digits(args.dataset, detected_digits)
+        baseline = choose_baseline(td)
+        base_pair = (baseline.b1, baseline.b2)
+        base_source = baseline.source
+        base_target_digits = baseline.target_digits
+
     summary = validate_on_control(
         ecm_bin=args.ecm_bin,
         numbers=numbers,
-        optimized=(args.opt_b1, args.opt_b2),
-        baseline=(args.base_b1, args.base_b2),
+        optimized=opt_pair,
+        baseline=base_pair,
         curves_per_n=args.curves_per_n,
         curve_timeout_sec=args.curve_timeout_sec,
     )
     print(f"optimized_mean={summary.optimized_mean:.6f}")
     print(f"baseline_mean={summary.baseline_mean:.6f}")
     print(f"relative_improvement_pct={summary.relative_improvement_pct:.2f}")
+    print(f"used_opt_b1={opt_pair[0]}")
+    print(f"used_opt_b2={opt_pair[1]}")
+    print(f"used_base_b1={base_pair[0]}")
+    print(f"used_base_b2={base_pair[1]}")
+
+    stamp = utc_timestamp()
+    out_dir = ensure_dir(args.results_dir)
+    out_file = out_dir / f"validate_{stamp}.json"
+    payload = {
+        "timestamp_utc": stamp,
+        "command": "validate",
+        "dataset": args.dataset,
+        "ecm_bin": args.ecm_bin,
+        "curves_per_n": args.curves_per_n,
+        "curve_timeout_sec": args.curve_timeout_sec,
+        "optimized": {"b1": opt_pair[0], "b2": opt_pair[1], "source_file": args.opt_result_file},
+        "baseline": {
+            "b1": base_pair[0],
+            "b2": base_pair[1],
+            "source": base_source,
+            "table_target_digits": base_target_digits,
+        },
+        "metrics": {
+            "optimized_mean": summary.optimized_mean,
+            "baseline_mean": summary.baseline_mean,
+            "relative_improvement_pct": summary.relative_improvement_pct,
+        },
+    }
+    write_json(out_file, payload)
+    print(f"result_file={out_file}")
     return 0
 
 
@@ -124,17 +223,20 @@ def build_parser() -> argparse.ArgumentParser:
     p_opt.add_argument("--ratio-max", type=float, default=100.0)
     p_opt.add_argument("--curve-timeout-sec", type=float, default=None)
     p_opt.add_argument("--verbose", action="store_true")
+    p_opt.add_argument("--results-dir", default="results")
     p_opt.set_defaults(func=cmd_optimize)
 
     p_val = sub.add_parser("validate", help="compare optimized parameters against baseline")
     p_val.add_argument("--dataset", required=True)
     p_val.add_argument("--ecm-bin", default="ecm")
-    p_val.add_argument("--opt-b1", required=True, type=int)
-    p_val.add_argument("--opt-b2", required=True, type=int)
-    p_val.add_argument("--base-b1", required=True, type=int)
-    p_val.add_argument("--base-b2", required=True, type=int)
+    p_val.add_argument("--opt-result-file")
+    p_val.add_argument("--opt-b1", type=int)
+    p_val.add_argument("--opt-b2", type=int)
+    p_val.add_argument("--base-b1", type=int)
+    p_val.add_argument("--base-b2", type=int)
     p_val.add_argument("--curves-per-n", type=int, default=100)
     p_val.add_argument("--curve-timeout-sec", type=float, default=None)
+    p_val.add_argument("--results-dir", default="results")
     p_val.set_defaults(func=cmd_validate)
 
     return parser

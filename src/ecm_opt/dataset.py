@@ -104,3 +104,18 @@ def write_manifest(path: str, samples: list[GeneratedSample]) -> None:
     rows = ["n,p,q"]
     rows.extend(f"{s.n},{s.p},{s.q}" for s in samples)
     Path(path).write_text("\n".join(rows) + "\n", encoding="utf-8")
+
+
+def read_dataset_metadata(path: str) -> dict[str, str]:
+    metadata: dict[str, str] = {}
+    for line in Path(path).read_text(encoding="utf-8").splitlines()[:10]:
+        line = line.strip()
+        if not line.startswith("#"):
+            continue
+        body = line.lstrip("#").strip()
+        for part in body.split(","):
+            part = part.strip()
+            if "=" in part:
+                k, v = part.split("=", 1)
+                metadata[k.strip()] = v.strip()
+    return metadata
