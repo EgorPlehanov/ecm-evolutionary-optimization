@@ -1,4 +1,17 @@
 from dataclasses import dataclass
+import os
+
+
+NO_SUCCESS_PENALTY_MULTIPLIER = 10.0
+
+
+def resolve_workers(workers: int | None) -> int:
+    """Normalize requested worker count."""
+    if workers is None or workers == 0:
+        return 1
+    if workers < 0:
+        return os.cpu_count() or 1
+    return workers
 
 
 @dataclass(frozen=True)
@@ -11,7 +24,7 @@ class EvaluationResult:
     @property
     def expected_time(self) -> float:
         if self.successes == 0:
-            return float("inf")
+            return self.total_seconds * NO_SUCCESS_PENALTY_MULTIPLIER
         return self.total_seconds / self.successes
 
 
@@ -25,6 +38,7 @@ class OptimizationConfig:
     maxiter: int = 25
     seed: int = 42
     curve_timeout_sec: float | None = None
+    workers: int = 1
     verbose: bool = False
 
 

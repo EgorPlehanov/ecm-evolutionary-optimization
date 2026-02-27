@@ -27,7 +27,7 @@ def optimize_parameters(ecm_bin: str, numbers: Iterable[int], config: Optimizati
     if config.verbose:
         print(
             f"[optimize] numbers={len(numbers)} curves_per_n={config.curves_per_n} "
-            f"popsize={config.popsize} maxiter={config.maxiter}",
+            f"popsize={config.popsize} maxiter={config.maxiter} workers={config.workers}",
             flush=True,
         )
 
@@ -42,6 +42,7 @@ def optimize_parameters(ecm_bin: str, numbers: Iterable[int], config: Optimizati
             b2=b2,
             curves_per_n=config.curves_per_n,
             curve_timeout_sec=config.curve_timeout_sec,
+            workers=config.workers,
         )
         if config.verbose and objective_calls % 5 == 0:
             print(f"[optimize] eval={objective_calls} b1={b1} b2={b2} fitness={value}", flush=True)
