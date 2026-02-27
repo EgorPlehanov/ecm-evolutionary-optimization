@@ -1,0 +1,25 @@
+{
+  "baseline": {
+    "b1": 250000,
+    "b2": 5000000,
+    "source": "default_fallback",
+    "table_target_digits": 35
+  },
+  "command": "validate",
+  "curve_timeout_sec": 0.8,
+  "curves_per_n": 12,
+  "dataset": "data/smoke30_control.txt",
+  "ecm_bin": "ecm",
+  "metrics": {
+    "baseline_mean": Infinity,
+    "optimized_mean": Infinity,
+    "relative_improvement_pct": NaN
+  },
+  "optimized": {
+    "b1": 6664642,
+    "b2": 59704671,
+    "source_file": "results/optimize_20260227T182946Z.json"
+  },
+  "timestamp_utc": "20260227T183502Z",
+  "workers": 12
+}

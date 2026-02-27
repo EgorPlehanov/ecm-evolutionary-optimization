@@ -72,7 +72,6 @@ Thumbs.db
 *.log
 
 # --- Local experiment artifacts ---
-results/
 artifacts/
 output/
 *.tmp

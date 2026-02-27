@@ -1,0 +1,29 @@
+{
+  "command": "optimize",
+  "config": {
+    "b1_max": 1000000000.0,
+    "b1_min": 1000.0,
+    "curve_timeout_sec": 0.8,
+    "curves_per_n": 8,
+    "maxiter": 4,
+    "popsize": 8,
+    "ratio_max": 100.0,
+    "seed": 42,
+    "workers": 12
+  },
+  "dataset": "data/smoke30_train.txt",
+  "dataset_target_digits": null,
+  "ecm_bin": "ecm",
+  "optimized": {
+    "b1": 6664642,
+    "b2": 59704671,
+    "objective": Infinity
+  },
+  "suggested_baseline": {
+    "b1": 250000,
+    "b2": 5000000,
+    "source": "default_fallback",
+    "table_target_digits": 35
+  },
+  "timestamp_utc": "20260227T182946Z"
+}
