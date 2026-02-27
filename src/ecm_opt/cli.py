@@ -6,7 +6,7 @@ from pathlib import Path
 from .baseline import choose_baseline
 from .dataset import generate_semiprime_samples, read_dataset_metadata, write_dataset, write_manifest
 from .io_utils import ensure_dir, read_json, utc_timestamp, write_json
-from .models import OptimizationConfig
+from .models import OptimizationConfig, resolve_workers
 
 
 def load_numbers(path: str) -> list[int]:
@@ -34,6 +34,7 @@ def cmd_optimize(args: argparse.Namespace) -> int:
     from .optimizer import optimize_parameters
 
     numbers = load_numbers(args.dataset)
+    workers = resolve_workers(args.workers)
     config = OptimizationConfig(
         b1_min=args.b1_min,
         b1_max=args.b1_max,
@@ -43,6 +44,7 @@ def cmd_optimize(args: argparse.Namespace) -> int:
         maxiter=args.maxiter,
         seed=args.seed,
         curve_timeout_sec=args.curve_timeout_sec,
+        workers=workers,
         verbose=args.verbose,
     )
     result = optimize_parameters(ecm_bin=args.ecm_bin, numbers=numbers, config=config)
@@ -72,6 +74,7 @@ def cmd_optimize(args: argparse.Namespace) -> int:
             "maxiter": args.maxiter,
             "seed": args.seed,
             "curve_timeout_sec": args.curve_timeout_sec,
+            "workers": workers,
         },
         "optimized": {"b1": result.b1, "b2": result.b2, "objective": result.objective},
         "suggested_baseline": {
@@ -112,6 +115,8 @@ def cmd_validate(args: argparse.Namespace) -> int:
         base_source = baseline.source
         base_target_digits = baseline.target_digits
 
+    workers = resolve_workers(args.workers)
+
     summary = validate_on_control(
         ecm_bin=args.ecm_bin,
         numbers=numbers,
@@ -119,6 +124,7 @@ def cmd_validate(args: argparse.Namespace) -> int:
         baseline=base_pair,
         curves_per_n=args.curves_per_n,
         curve_timeout_sec=args.curve_timeout_sec,
+        workers=workers,
     )
     print(f"optimized_mean={summary.optimized_mean:.6f}")
     print(f"baseline_mean={summary.baseline_mean:.6f}")
@@ -138,6 +144,7 @@ def cmd_validate(args: argparse.Namespace) -> int:
         "ecm_bin": args.ecm_bin,
         "curves_per_n": args.curves_per_n,
         "curve_timeout_sec": args.curve_timeout_sec,
+        "workers": workers,
         "optimized": {"b1": opt_pair[0], "b2": opt_pair[1], "source_file": args.opt_result_file},
         "baseline": {
             "b1": base_pair[0],
@@ -222,6 +229,7 @@ def build_parser() -> argparse.ArgumentParser:
     p_opt.add_argument("--b1-max", type=float, default=1e9)
     p_opt.add_argument("--ratio-max", type=float, default=100.0)
     p_opt.add_argument("--curve-timeout-sec", type=float, default=None)
+    p_opt.add_argument("--workers", type=int, default=1, help="number of worker processes (-1 = all CPUs)")
     p_opt.add_argument("--verbose", action="store_true")
     p_opt.add_argument("--results-dir", default="results")
     p_opt.set_defaults(func=cmd_optimize)
@@ -236,6 +244,7 @@ def build_parser() -> argparse.ArgumentParser:
     p_val.add_argument("--base-b2", type=int)
     p_val.add_argument("--curves-per-n", type=int, default=100)
     p_val.add_argument("--curve-timeout-sec", type=float, default=None)
+    p_val.add_argument("--workers", type=int, default=1, help="number of worker processes (-1 = all CPUs)")
     p_val.add_argument("--results-dir", default="results")
     p_val.set_defaults(func=cmd_validate)
 
