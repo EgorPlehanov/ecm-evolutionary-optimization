@@ -9,6 +9,7 @@
   - оценки фитнеса как эмпирического `E[T_success]`;
   - оптимизации `log10(B1), log10(B2)` через `scipy.optimize.differential_evolution`;
   - автоматической валидации найденных параметров против baseline;
+  - статистической проверки превосходства (Mann–Whitney U, односторонний тест);
   - генерации train/control наборов семипростых чисел (`N = p*q`) с настраиваемыми размерами множителей;
   - сохранения timestamped JSON-метаданных по каждому запуску optimize/validate.
 - Документированный план НИР в `docs/research_plan_ru.md`.
@@ -75,6 +76,8 @@ PYTHONPATH=src python -m ecm_opt.cli validate \
 - `--workers N` включает multiprocessing по числам датасета (`1` — последовательно, `-1` — все ядра CPU).
 - Если по числу не найдено ни одного фактора за `curves-per-n`, вместо `Infinity` применяется большой штраф по времени (чтобы оптимизатор продолжал сравнивать кандидаты, а не залипал на `inf`).
 - Валидация также пишет timestamped JSON: `results/validate_*.json`.
+- В метриках валидации сохраняются mean/median, per-number scores и результат Mann–Whitney U (`p_value` для альтернативы optimized < baseline).
+
 
 ## Структура
 

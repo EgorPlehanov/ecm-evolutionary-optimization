@@ -128,7 +128,11 @@ def cmd_validate(args: argparse.Namespace) -> int:
     )
     print(f"optimized_mean={summary.optimized_mean:.6f}")
     print(f"baseline_mean={summary.baseline_mean:.6f}")
+    print(f"optimized_median={summary.optimized_median:.6f}")
+    print(f"baseline_median={summary.baseline_median:.6f}")
     print(f"relative_improvement_pct={summary.relative_improvement_pct:.2f}")
+    print(f"mann_whitney_u={summary.mann_whitney.u_statistic:.6f}")
+    print(f"mann_whitney_p_less={summary.mann_whitney.p_value:.6f}")
     print(f"used_opt_b1={opt_pair[0]}")
     print(f"used_opt_b2={opt_pair[1]}")
     print(f"used_base_b1={base_pair[0]}")
@@ -155,12 +159,26 @@ def cmd_validate(args: argparse.Namespace) -> int:
         "metrics": {
             "optimized_mean": summary.optimized_mean,
             "baseline_mean": summary.baseline_mean,
+            "optimized_median": summary.optimized_median,
+            "baseline_median": summary.baseline_median,
             "relative_improvement_pct": summary.relative_improvement_pct,
+            "mann_whitney": {
+                "u_statistic": summary.mann_whitney.u_statistic,
+                "p_value": summary.mann_whitney.p_value,
+                "alternative": summary.mann_whitney.alternative,
+            },
+        },
+        "per_number_scores": {
+            "optimized": summary.optimized_scores,
+            "baseline": summary.baseline_scores,
         },
     }
     write_json(out_file, payload)
     print(f"result_file={out_file}")
     return 0
+
+
+
 
 
 def cmd_generate_dataset(args: argparse.Namespace) -> int:
@@ -247,6 +265,7 @@ def build_parser() -> argparse.ArgumentParser:
     p_val.add_argument("--workers", type=int, default=1, help="number of worker processes (-1 = all CPUs)")
     p_val.add_argument("--results-dir", default="results")
     p_val.set_defaults(func=cmd_validate)
+
 
     return parser
 
