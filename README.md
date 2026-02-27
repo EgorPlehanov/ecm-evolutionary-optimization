@@ -49,6 +49,7 @@ PYTHONPATH=src python -m ecm_opt.cli optimize \
   --popsize 16 \
   --maxiter 25 \
   --results-dir results \
+  --workers -1 \
   --verbose
 ```
 
@@ -64,12 +65,14 @@ PYTHONPATH=src python -m ecm_opt.cli validate \
   --opt-result-file results/optimize_20260101T120000Z.json \
   --curves-per-n 100 \
   --curve-timeout-sec 10 \
+  --workers -1 \
   --results-dir results
 ```
 
 - `opt` берётся автоматически из `--opt-result-file`.
 - `base` подбирается автоматически из внутренней baseline-таблицы по `target_digits` из метаданных dataset/result.
 - Если нужно, `base` можно явно переопределить `--base-b1/--base-b2`.
+- `--workers N` включает multiprocessing по числам датасета (`1` — последовательно, `-1` — все ядра CPU).
 - Валидация также пишет timestamped JSON: `results/validate_*.json`.
 
 ## Структура

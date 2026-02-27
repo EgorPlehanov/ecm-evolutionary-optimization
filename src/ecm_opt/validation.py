@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from concurrent.futures import ProcessPoolExecutor
 from dataclasses import dataclass
 from typing import Iterable
 
@@ -13,6 +14,25 @@ class ValidationSummary:
     relative_improvement_pct: float
 
 
+def _evaluate_expected_time_task(args: tuple[str, int, int, int, int, float | None]) -> float:
+    ecm_bin, n, b1, b2, curves_per_n, curve_timeout_sec = args
+    return evaluate_pair_for_n(
+        ecm_bin=ecm_bin,
+        n=n,
+        b1=b1,
+        b2=b2,
+        curves_per_n=curves_per_n,
+        curve_timeout_sec=curve_timeout_sec,
+    ).expected_time
+
+
+def _evaluate_many(tasks: list[tuple[str, int, int, int, int, float | None]], workers: int) -> list[float]:
+    if workers == 1:
+        return [_evaluate_expected_time_task(task) for task in tasks]
+    with ProcessPoolExecutor(max_workers=workers) as executor:
+        return list(executor.map(_evaluate_expected_time_task, tasks))
+
+
 def validate_on_control(
     ecm_bin: str,
     numbers: Iterable[int],
@@ -20,17 +40,21 @@ def validate_on_control(
     baseline: tuple[int, int],
     curves_per_n: int,
     curve_timeout_sec: float | None = None,
+    workers: int = 1,
 ) -> ValidationSummary:
     numbers = list(numbers)
 
-    opt_scores = [
-        evaluate_pair_for_n(ecm_bin=ecm_bin, n=n, b1=optimized[0], b2=optimized[1], curves_per_n=curves_per_n, curve_timeout_sec=curve_timeout_sec).expected_time
+    opt_tasks = [
+        (ecm_bin, n, optimized[0], optimized[1], curves_per_n, curve_timeout_sec)
         for n in numbers
     ]
-    base_scores = [
-        evaluate_pair_for_n(ecm_bin=ecm_bin, n=n, b1=baseline[0], b2=baseline[1], curves_per_n=curves_per_n, curve_timeout_sec=curve_timeout_sec).expected_time
+    base_tasks = [
+        (ecm_bin, n, baseline[0], baseline[1], curves_per_n, curve_timeout_sec)
         for n in numbers
     ]
+
+    opt_scores = _evaluate_many(opt_tasks, workers)
+    base_scores = _evaluate_many(base_tasks, workers)
 
     optimized_mean = sum(opt_scores) / len(opt_scores)
     baseline_mean = sum(base_scores) / len(base_scores)

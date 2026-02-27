@@ -1,10 +1,23 @@
 from __future__ import annotations
 
+from concurrent.futures import ProcessPoolExecutor
 from statistics import mean
 from typing import Iterable
 
 from .ecm_runner import run_single_curve
 from .models import EvaluationResult
+
+
+def _evaluate_expected_time_task(args: tuple[str, int, int, int, int, float | None]) -> float:
+    ecm_bin, n, b1, b2, curves_per_n, curve_timeout_sec = args
+    return evaluate_pair_for_n(
+        ecm_bin=ecm_bin,
+        n=n,
+        b1=b1,
+        b2=b2,
+        curves_per_n=curves_per_n,
+        curve_timeout_sec=curve_timeout_sec,
+    ).expected_time
 
 
 def evaluate_pair_for_n(
@@ -32,18 +45,17 @@ def fitness_expected_time(
     b2: int,
     curves_per_n: int,
     curve_timeout_sec: float | None = None,
+    workers: int = 1,
 ) -> float:
-    scores = [
-        evaluate_pair_for_n(
-            ecm_bin=ecm_bin,
-            n=n,
-            b1=b1,
-            b2=b2,
-            curves_per_n=curves_per_n,
-            curve_timeout_sec=curve_timeout_sec,
-        ).expected_time
-        for n in numbers
-    ]
+    numbers = list(numbers)
+    tasks = [(ecm_bin, n, b1, b2, curves_per_n, curve_timeout_sec) for n in numbers]
+
+    if workers == 1:
+        scores = [_evaluate_expected_time_task(task) for task in tasks]
+    else:
+        with ProcessPoolExecutor(max_workers=workers) as executor:
+            scores = list(executor.map(_evaluate_expected_time_task, tasks))
+
     if any(v == float("inf") for v in scores):
         return float("inf")
     return mean(scores)

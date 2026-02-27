@@ -1,4 +1,14 @@
 from dataclasses import dataclass
+import os
+
+
+def resolve_workers(workers: int | None) -> int:
+    """Normalize requested worker count."""
+    if workers is None or workers == 0:
+        return 1
+    if workers < 0:
+        return os.cpu_count() or 1
+    return workers
 
 
 @dataclass(frozen=True)
@@ -25,6 +35,7 @@ class OptimizationConfig:
     maxiter: int = 25
     seed: int = 42
     curve_timeout_sec: float | None = None
+    workers: int = 1
     verbose: bool = False
 
 
