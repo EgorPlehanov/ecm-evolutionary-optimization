@@ -9,12 +9,14 @@ description = "Toolkit for evolutionary optimization of ECM parameters"
 readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
+  "click>=8.1",
   "numpy>=1.24",
   "scipy>=1.10",
 ]
 
-[tool.setuptools]
-package-dir = {"" = "src"}
+[project.scripts]
+ecm-optimizer = "ecm_optimizer.cli.main:main"
 
 [tool.setuptools.packages.find]
-where = ["src"]
+where = ["."]
+include = ["ecm_optimizer*"]
