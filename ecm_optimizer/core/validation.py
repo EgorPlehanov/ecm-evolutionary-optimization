@@ -5,7 +5,7 @@ from dataclasses import dataclass
 import math
 from typing import Iterable
 
-from .fitness import evaluate_pair_for_n
+from ecm_optimizer.core.fitness import evaluate_pair_for_n
 
 
 @dataclass(frozen=True)
@@ -18,14 +18,7 @@ class ValidationSummary:
 
 
 def _evaluate_expected_time_task(args: tuple[str, int, int, int, int, float | None]) -> float:
-    """Вычислить ожидаемое время факторизации для одной задачи валидации.
-
-    Args:
-        args: Кортеж с бинарником ECM, числом `n`, парой `(B1, B2)` и настройками запуска.
-
-    Returns:
-        Ожидаемое время факторизации для одного числа.
-    """
+    """Вычислить ожидаемое время факторизации для одной задачи валидации."""
     ecm_bin, n, b1, b2, curves_per_n, curve_timeout_sec = args
     return evaluate_pair_for_n(
         ecm_bin=ecm_bin,
@@ -38,15 +31,7 @@ def _evaluate_expected_time_task(args: tuple[str, int, int, int, int, float | No
 
 
 def _evaluate_many(tasks: list[tuple[str, int, int, int, int, float | None]], workers: int) -> list[float]:
-    """Запустить пакет задач последовательно или параллельно и вернуть их оценки.
-
-    Args:
-        tasks: Список задач оценки ожидаемого времени.
-        workers: Число worker-процессов.
-
-    Returns:
-        Список оценок, по одной на каждую задачу.
-    """
+    """Запустить пакет задач последовательно или параллельно и вернуть их оценки."""
     if workers == 1:
         return [_evaluate_expected_time_task(task) for task in tasks]
 
@@ -63,22 +48,8 @@ def validate_on_control(
     curve_timeout_sec: float | None = None,
     workers: int = 1,
 ) -> ValidationSummary:
-    """Сравнить оптимизированные и базовые параметры на контрольной выборке.
-
-    Args:
-        ecm_bin: Путь к бинарнику `ecm`.
-        numbers: Контрольный набор составных чисел.
-        optimized: Оптимизированная пара `(B1, B2)`.
-        baseline: Базовая пара `(B1, B2)` для сравнения.
-        curves_per_n: Количество кривых на одно число.
-        curve_timeout_sec: Таймаут для одного запуска кривой.
-        workers: Число worker-процессов.
-
-    Returns:
-        Сводка со средними значениями и относительным улучшением.
-    """
+    """Сравнить оптимизированные и базовые параметры на контрольной выборке."""
     numbers = list(numbers)
-
     opt_tasks = [
         (ecm_bin, n, optimized[0], optimized[1], curves_per_n, curve_timeout_sec)
         for n in numbers

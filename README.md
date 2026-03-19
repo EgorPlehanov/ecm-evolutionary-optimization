@@ -10,7 +10,7 @@
   - оптимизации `log10(B1), log10(B2)` через `scipy.optimize.differential_evolution`;
   - автоматической валидации найденных параметров против baseline;
   - генерации train/control наборов семипростых чисел (`N = p*q`) с настраиваемыми размерами множителей;
-  - сохранения timestamped JSON-метаданных по каждому запуску optimize/validate.
+  - сохранения JSON-метаданных по каждому запуску optimize/validate.
 - Документированный план НИР в `docs/research_plan_ru.md`.
 
 ## Быстрый старт
@@ -19,78 +19,75 @@
 python -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
+pip install -e .
 ```
 
 ### 1) Генерация train/control датасетов
 
 ```bash
-PYTHONPATH=src python -m ecm_opt.cli generate-dataset \
+ecm-optimizer generate \
   --target-digits 35 \
   --cofactor-digits 90 \
   --train-count 20 \
   --control-count 20 \
   --seed 42 \
-  --output-dir data \
+  --output-dir data/numbers \
   --prefix d35
 ```
 
 Команда создаёт:
-- `data/d35_train.txt` — числа для оптимизации;
-- `data/d35_control.txt` — отдельный контрольный набор;
-- `data/d35_manifest.csv` — `n,p,q` для воспроизводимости.
+- `data/numbers/d35_train.txt` — числа для оптимизации;
+- `data/numbers/d35_control.txt` — отдельный контрольный набор;
+- `data/numbers/d35_manifest.csv` — `n,p,q` для воспроизводимости.
 
-### 2) Оптимизация параметров ECM (с автосохранением результата)
+### 2) Оптимизация параметров ECM
 
 ```bash
-PYTHONPATH=src python -m ecm_opt.cli optimize \
-  --dataset data/d35_train.txt \
+ecm-optimizer optimize \
+  --dataset data/numbers/d35_train.txt \
   --ecm-bin ecm \
   --curves-per-n 50 \
   --popsize 16 \
   --maxiter 25 \
-  --results-dir results \
+  --b1-min 1e3 \
+  --b1-max 1e9 \
+  --b2-min 1e3 \
+  --b2-max 1e11 \
+  --ratio-max 100 \
+  --results-dir data/experiments \
   --workers -1 \
   --verbose
 ```
 
-После завершения в консоль печатается `result_file=...` (например `results/optimize_20260101T120000Z.json`).
-В файле сохраняются оптимизированные значения, конфиг запуска, detected target digits и автоматически подобранный baseline.
+После завершения в консоль печатается `result_file=...`, а JSON-файл сохраняется в `data/experiments/`.
 
-### 3) Валидация без ручного копирования opt/base
+### 3) Валидация
 
 ```bash
-PYTHONPATH=src python -m ecm_opt.cli validate \
-  --dataset data/d35_control.txt \
+ecm-optimizer validate \
+  --dataset data/numbers/d35_control.txt \
   --ecm-bin ecm \
-  --opt-result-file results/optimize_20260101T120000Z.json \
+  --opt-result-file data/experiments/optimize_d35_train_42.json \
   --curves-per-n 100 \
   --curve-timeout-sec 10 \
   --workers -1 \
-  --results-dir results
+  --results-dir data/experiments
 ```
 
-- `opt` берётся автоматически из `--opt-result-file`.
-- `base` подбирается автоматически из внутренней baseline-таблицы по `target_digits` из метаданных dataset/result.
-- Если нужно, `base` можно явно переопределить `--base-b1/--base-b2`.
-- `--workers N` включает multiprocessing по числам датасета (`1` — последовательно, `-1` — все ядра CPU).
-- Если по числу не найдено ни одного фактора за `curves-per-n`, вместо `Infinity` применяется большой штраф по времени (чтобы оптимизатор продолжал сравнивать кандидаты, а не залипал на `inf`).
-- Валидация также пишет timestamped JSON: `results/validate_*.json`.
+## Структура пакета
 
-## Структура
-
-- `docs/research_plan_ru.md` — формализованный план экспериментов.
-- `src/ecm_opt/dataset.py` — генерация и чтение метаданных train/control наборов.
-- `src/ecm_opt/baseline.py` — автоматический выбор baseline.
-- `src/ecm_opt/io_utils.py` — timestamped JSON I/O.
-- `src/ecm_opt/ecm_runner.py` — запуск GMP-ECM.
-- `src/ecm_opt/fitness.py` — оценка ожидаемого времени до успеха.
-- `src/ecm_opt/optimizer.py` — настройка и запуск DE.
-- `src/ecm_opt/validation.py` — сравнение optimized vs baseline.
-- `src/ecm_opt/cli.py` — CLI (`generate-dataset`, `optimize`, `validate`).
+- `ecm_optimizer/cli/` — команды `generate`, `optimize`, `validate`.
+- `ecm_optimizer/core/` — генерация задачи, запуск ECM, fitness, baseline и validation.
+- `ecm_optimizer/optimizers/` — базовый интерфейс, differential evolution и random search.
+- `ecm_optimizer/utils/` — JSON I/O, logging и seed utilities.
+- `ecm_optimizer/config.py` — централизованные константы и пути.
+- `ecm_optimizer/models.py` — dataclass-модели конфигурации и результатов.
+- `data/numbers/` — датасеты.
+- `data/experiments/` — результаты optimize/validate.
 
 ## Примечания по воспроизводимости
 
 - Фиксируйте версию GMP-ECM, Python и SciPy.
-- Для DE и генерации датасетов используйте фиксированный `--seed`.
+- Для генерации датасетов и оптимизатора используйте фиксированный `--seed`.
+- Для независимых этапов применяются детерминированные производные seed'ы через `seed_utils`.
 - Для финальной валидации увеличивайте `--curves-per-n`.
-- Храните и версионируйте файлы `results/optimize_*.json` и `results/validate_*.json`.
