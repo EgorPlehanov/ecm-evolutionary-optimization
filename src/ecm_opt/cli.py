@@ -10,6 +10,14 @@ from .models import OptimizationConfig, resolve_workers
 
 
 def load_numbers(path: str) -> list[int]:
+    """Прочитать текстовый датасет и извлечь из него числа `N`.
+
+    Args:
+        path: Путь к текстовому файлу с числами и необязательными строками-комментариями.
+
+    Returns:
+        Список составных чисел, прочитанных из файла.
+    """
     values: list[int] = []
     for line in Path(path).read_text(encoding="utf-8").splitlines():
         line = line.strip()
@@ -20,6 +28,16 @@ def load_numbers(path: str) -> list[int]:
 
 
 def _parse_target_digits(dataset_path: str, fallback: int | None = None) -> int | None:
+    """Извлечь из заголовка датасета число цифр целевого множителя.
+
+    Args:
+        dataset_path: Путь к файлу датасета.
+        fallback: Значение, которое нужно вернуть, если метаданные отсутствуют
+            или не могут быть интерпретированы как целое число.
+
+    Returns:
+        Количество цифр целевого множителя либо `fallback`.
+    """
     meta = read_dataset_metadata(dataset_path)
     raw = meta.get("target_digits")
     if raw is None:
@@ -31,6 +49,14 @@ def _parse_target_digits(dataset_path: str, fallback: int | None = None) -> int 
 
 
 def cmd_optimize(args: argparse.Namespace) -> int:
+    """Обработчик команды CLI `optimize`.
+
+    Args:
+        args: Разобранные аргументы командной строки для запуска оптимизации.
+
+    Returns:
+        Код завершения процесса.
+    """
     from .optimizer import optimize_parameters
 
     numbers = load_numbers(args.dataset)
@@ -90,6 +116,14 @@ def cmd_optimize(args: argparse.Namespace) -> int:
 
 
 def cmd_validate(args: argparse.Namespace) -> int:
+    """Обработчик команды CLI `validate`.
+
+    Args:
+        args: Разобранные аргументы командной строки для запуска валидации.
+
+    Returns:
+        Код завершения процесса.
+    """
     from .validation import validate_on_control
 
     numbers = load_numbers(args.dataset)
@@ -164,6 +198,14 @@ def cmd_validate(args: argparse.Namespace) -> int:
 
 
 def cmd_generate_dataset(args: argparse.Namespace) -> int:
+    """Обработчик команды `generate-dataset`, создающий train/control-выборки.
+
+    Args:
+        args: Разобранные аргументы командной строки для генерации датасета.
+
+    Returns:
+        Код завершения процесса.
+    """
     total = args.train_count + args.control_count
     samples = generate_semiprime_samples(
         target_factor_digits=args.target_digits,
@@ -205,6 +247,11 @@ def cmd_generate_dataset(args: argparse.Namespace) -> int:
 
 
 def build_parser() -> argparse.ArgumentParser:
+    """Собрать дерево аргументов командной строки для всего приложения.
+
+    Returns:
+        Настроенный объект `ArgumentParser` со всеми подкомандами.
+    """
     parser = argparse.ArgumentParser(description="ECM evolutionary optimization toolkit")
     sub = parser.add_subparsers(dest="command", required=True)
 
@@ -252,6 +299,11 @@ def build_parser() -> argparse.ArgumentParser:
 
 
 def main() -> int:
+    """Точка входа CLI-приложения.
+
+    Returns:
+        Код завершения, возвращаемый выбранной подкомандой.
+    """
     parser = build_parser()
     args = parser.parse_args()
     return args.func(args)
