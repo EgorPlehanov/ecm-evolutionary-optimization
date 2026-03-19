@@ -7,12 +7,24 @@ from pathlib import Path
 
 @dataclass(frozen=True)
 class GeneratedSample:
+    """Один сгенерированный полупростой пример и его множители."""
+
     n: int
     p: int
     q: int
 
 
 def _is_probable_prime(n: int, rounds: int = 16, rng: random.Random | None = None) -> bool:
+    """Проверить число на вероятную простоту тестом Миллера — Рабина.
+
+    Args:
+        n: Проверяемое число.
+        rounds: Количество случайных раундов теста.
+        rng: Генератор случайных чисел для выбора оснований теста.
+
+    Returns:
+        `True`, если число считается вероятно простым, иначе `False`.
+    """
     if n < 2:
         return False
     small_primes = (2, 3, 5, 7, 11, 13, 17, 19, 23, 29)
@@ -34,6 +46,7 @@ def _is_probable_prime(n: int, rounds: int = 16, rng: random.Random | None = Non
         x = pow(a, d, n)
         if x == 1 or x == n - 1:
             continue
+
         for _ in range(s - 1):
             x = pow(x, 2, n)
             if x == n - 1:
@@ -44,11 +57,21 @@ def _is_probable_prime(n: int, rounds: int = 16, rng: random.Random | None = Non
 
 
 def _random_odd_with_digits(digits: int, rng: random.Random) -> int:
+    """Сгенерировать случайное нечетное число с заданным количеством цифр.
+
+    Args:
+        digits: Требуемая длина числа в десятичной записи.
+        rng: Генератор случайных чисел.
+
+    Returns:
+        Случайное нечетное число заданной длины.
+    """
     if digits <= 0:
         raise ValueError("digits must be positive")
     low = 10 ** (digits - 1)
     high = 10**digits - 1
     x = rng.randrange(low, high + 1)
+
     if x % 2 == 0:
         x += 1
         if x > high:
@@ -57,6 +80,15 @@ def _random_odd_with_digits(digits: int, rng: random.Random) -> int:
 
 
 def _generate_prime(digits: int, rng: random.Random) -> int:
+    """Итеративно искать простое число заданной длины.
+
+    Args:
+        digits: Требуемое количество цифр у простого числа.
+        rng: Генератор случайных чисел.
+
+    Returns:
+        Вероятно простое число заданной длины.
+    """
     while True:
         candidate = _random_odd_with_digits(digits=digits, rng=rng)
         if _is_probable_prime(candidate, rng=rng):
@@ -69,6 +101,17 @@ def generate_semiprime_samples(
     count: int,
     seed: int,
 ) -> list[GeneratedSample]:
+    """Сгенерировать набор уникальных полупростых чисел `n = p * q`.
+
+    Args:
+        target_factor_digits: Длина целевого простого множителя `p`.
+        cofactor_digits: Длина второго простого множителя `q`.
+        count: Количество примеров, которое нужно сгенерировать.
+        seed: Значение seed для воспроизводимости генерации.
+
+    Returns:
+        Список уникальных образцов с полями `n`, `p` и `q`.
+    """
     if count <= 0:
         raise ValueError("count must be positive")
     if cofactor_digits <= 0 or target_factor_digits <= 0:
@@ -84,6 +127,7 @@ def generate_semiprime_samples(
         if p == q:
             continue
         n = p * q
+
         if n in seen_n:
             continue
         seen_n.add(n)
@@ -93,6 +137,13 @@ def generate_semiprime_samples(
 
 
 def write_dataset(path: str, numbers: list[int], header: str) -> None:
+    """Сохранить список чисел в текстовый файл датасета.
+
+    Args:
+        path: Путь к выходному файлу.
+        numbers: Список составных чисел для записи.
+        header: Текст заголовка, который будет записан в комментарии первой строки.
+    """
     lines = [f"# {header}", "# one decimal composite N per line"]
     lines.extend(str(n) for n in numbers)
     Path(path).parent.mkdir(parents=True, exist_ok=True)
@@ -100,6 +151,12 @@ def write_dataset(path: str, numbers: list[int], header: str) -> None:
 
 
 def write_manifest(path: str, samples: list[GeneratedSample]) -> None:
+    """Сохранить полный manifest с `n`, `p` и `q` для всех образцов.
+
+    Args:
+        path: Путь к CSV-файлу manifest.
+        samples: Список сгенерированных образцов.
+    """
     Path(path).parent.mkdir(parents=True, exist_ok=True)
     rows = ["n,p,q"]
     rows.extend(f"{s.n},{s.p},{s.q}" for s in samples)
@@ -107,12 +164,21 @@ def write_manifest(path: str, samples: list[GeneratedSample]) -> None:
 
 
 def read_dataset_metadata(path: str) -> dict[str, str]:
+    """Прочитать метаданные из первых строк датасета с комментариями.
+
+    Args:
+        path: Путь к файлу датасета.
+
+    Returns:
+        Словарь метаданных, извлеченных из строк формата `key=value`.
+    """
     metadata: dict[str, str] = {}
     for line in Path(path).read_text(encoding="utf-8").splitlines()[:10]:
         line = line.strip()
         if not line.startswith("#"):
             continue
         body = line.lstrip("#").strip()
+
         for part in body.split(","):
             part = part.strip()
             if "=" in part:

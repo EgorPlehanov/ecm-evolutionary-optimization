@@ -6,7 +6,15 @@ NO_SUCCESS_PENALTY_MULTIPLIER = 10.0
 
 
 def resolve_workers(workers: int | None) -> int:
-    """Normalize requested worker count."""
+    """Нормализовать число процессов, запрошенное пользователем.
+
+    Args:
+        workers: Желаемое число worker-процессов. Значения `None` и `0`
+            означают последовательный режим, отрицательные — все доступные CPU.
+
+    Returns:
+        Эффективное число worker-процессов для выполнения задачи.
+    """
     if workers is None or workers == 0:
         return 1
     if workers < 0:
@@ -16,6 +24,8 @@ def resolve_workers(workers: int | None) -> int:
 
 @dataclass(frozen=True)
 class EvaluationResult:
+    """Статистика многократного запуска ECM для одного числа `n`."""
+
     n: int
     successes: int
     curves: int
@@ -23,6 +33,12 @@ class EvaluationResult:
 
     @property
     def expected_time(self) -> float:
+        """Оценить ожидаемое время успеха для данного `n`.
+
+        Returns:
+            Среднее время на успешное нахождение множителя либо штрафная оценка,
+            если успехов не было.
+        """
         if self.successes == 0:
             return self.total_seconds * NO_SUCCESS_PENALTY_MULTIPLIER
         return self.total_seconds / self.successes
@@ -30,6 +46,8 @@ class EvaluationResult:
 
 @dataclass(frozen=True)
 class OptimizationConfig:
+    """Параметры запуска дифференциальной эволюции и измерений ECM."""
+
     b1_min: float = 1e3
     b1_max: float = 1e9
     ratio_max: float = 100.0
@@ -44,6 +62,8 @@ class OptimizationConfig:
 
 @dataclass(frozen=True)
 class OptimizationResult:
+    """Лучшее решение, найденное оптимизатором."""
+
     b1: int
     b2: int
     objective: float
