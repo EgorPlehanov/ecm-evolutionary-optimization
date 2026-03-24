@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import json
 import random
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Any
 
 from ecm_optimizer.utils.seed_utils import get_seed
 
@@ -101,26 +103,49 @@ def generate_semiprime_samples(
     return samples
 
 
-def write_dataset(path: str | Path, numbers: list[int], header: str) -> None:
-    """Сохранить список чисел в текстовый файл датасета."""
-    lines = [f"# {header}", "# one decimal composite N per line"]
-    lines.extend(str(n) for n in numbers)
-    Path(path).parent.mkdir(parents=True, exist_ok=True)
-    Path(path).write_text("\n".join(lines) + "\n", encoding="utf-8")
+def _write_json(path: str | Path, payload: dict[str, Any]) -> None:
+    p = Path(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def write_dataset(
+    path: str | Path,
+    numbers: list[int],
+    role: str,
+    generation: dict[str, Any] | None = None,
+) -> None:
+    """Сохранить список чисел в JSON-файл датасета."""
+    payload: dict[str, Any] = {"format": "ecm_dataset_v1", "role": role, "numbers": numbers}
+    if generation is not None:
+        payload["generation"] = generation
+    _write_json(path, payload)
 
 
 def write_manifest(path: str | Path, samples: list[GeneratedSample]) -> None:
-    """Сохранить полный manifest с `n`, `p` и `q` для всех образцов."""
-    Path(path).parent.mkdir(parents=True, exist_ok=True)
-    rows = ["n,p,q"]
-    rows.extend(f"{s.n},{s.p},{s.q}" for s in samples)
-    Path(path).write_text("\n".join(rows) + "\n", encoding="utf-8")
+    """Сохранить полный manifest с `n`, `p` и `q` для всех образцов в JSON."""
+    _write_json(path, {"format": "ecm_manifest_v1", "samples": [s.__dict__ for s in samples]})
+
+
+def write_generation_metadata(path: str | Path, payload: dict[str, Any]) -> None:
+    """Сохранить JSON с параметрами генерации и путями к артефактам."""
+    _write_json(path, payload)
 
 
 def read_dataset_metadata(path: str | Path) -> dict[str, str]:
-    """Прочитать метаданные из первых строк датасета с комментариями."""
+    """Прочитать метаданные датасета (JSON или старый text/csv формат)."""
+    p = Path(path)
+    if p.suffix.lower() == ".json":
+        data = json.loads(p.read_text(encoding="utf-8"))
+        metadata: dict[str, str] = {}
+        generation = data.get("generation") if isinstance(data, dict) else None
+        if isinstance(generation, dict):
+            for key, value in generation.items():
+                metadata[str(key)] = str(value)
+        return metadata
+
     metadata: dict[str, str] = {}
-    for line in Path(path).read_text(encoding="utf-8").splitlines()[:10]:
+    for line in p.read_text(encoding="utf-8").splitlines()[:10]:
         line = line.strip()
         if not line.startswith("#"):
             continue
@@ -134,9 +159,18 @@ def read_dataset_metadata(path: str | Path) -> dict[str, str]:
 
 
 def load_numbers(path: str | Path) -> list[int]:
-    """Прочитать текстовый датасет и извлечь из него числа `N`."""
+    """Прочитать датасет и извлечь из него числа `N` (JSON или старый text/csv)."""
+    p = Path(path)
+    if p.suffix.lower() == ".json":
+        data = json.loads(p.read_text(encoding="utf-8"))
+        if isinstance(data, dict) and isinstance(data.get("numbers"), list):
+            return [int(v) for v in data["numbers"]]
+        if isinstance(data, list):
+            return [int(v) for v in data]
+        raise ValueError(f"Unsupported dataset JSON format: {p}")
+
     values: list[int] = []
-    for line in Path(path).read_text(encoding="utf-8").splitlines():
+    for line in p.read_text(encoding="utf-8").splitlines():
         line = line.strip()
         if not line or line.startswith("#"):
             continue
