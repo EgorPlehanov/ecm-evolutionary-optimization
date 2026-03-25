@@ -36,15 +36,16 @@ ecm-optimizer generate \
 ```
 
 Команда создаёт:
-- `data/numbers/d35_train.txt` — числа для оптимизации;
-- `data/numbers/d35_control.txt` — отдельный контрольный набор;
-- `data/numbers/d35_manifest.csv` — `n,p,q` для воспроизводимости.
+- `data/numbers/d35_<UTC_TIMESTAMP>/train.json` — числа для оптимизации;
+- `data/numbers/d35_<UTC_TIMESTAMP>/control.json` — отдельный контрольный набор;
+- `data/numbers/d35_<UTC_TIMESTAMP>/manifest.json` — `n,p,q` для воспроизводимости;
+- `data/numbers/d35_<UTC_TIMESTAMP>/generation.json` — метаданные и параметры генерации.
 
 ### 2) Оптимизация параметров ECM
 
 ```bash
 ecm-optimizer optimize \
-  --dataset data/numbers/d35_train.txt \
+  --dataset d35_<UTC_TIMESTAMP> \
   --ecm-bin ecm \
   --curves-per-n 50 \
   --popsize 16 \
@@ -61,13 +62,17 @@ ecm-optimizer optimize \
 
 После завершения в консоль печатается `result_file=...`, а JSON-файл сохраняется в `data/experiments/`.
 
+`--dataset` можно передать как полный путь к JSON-файлу/папке или как имя папки внутри `data/numbers` (например `d35_<UTC_TIMESTAMP>`).
+
+Важно: поддерживается только новый JSON-формат датасетов (`ecm_dataset_v1`), обратная совместимость со старыми `txt/csv` датасетами удалена.
+
 ### 3) Валидация
 
 ```bash
 ecm-optimizer validate \
-  --dataset data/numbers/d35_control.txt \
+  --dataset d35_<UTC_TIMESTAMP> \
   --ecm-bin ecm \
-  --opt-result-file data/experiments/optimize_d35_train_42.json \
+  --opt-result-file data/experiments/optimize_train_42.json \
   --curves-per-n 100 \
   --curve-timeout-sec 10 \
   --workers -1 \

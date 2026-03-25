@@ -1,8 +1,10 @@
 from __future__ import annotations
 
+import json
 import random
 from dataclasses import dataclass
 from pathlib import Path
+from typing import Any
 
 from ecm_optimizer.utils.seed_utils import get_seed
 
@@ -101,44 +103,66 @@ def generate_semiprime_samples(
     return samples
 
 
-def write_dataset(path: str | Path, numbers: list[int], header: str) -> None:
-    """Сохранить список чисел в текстовый файл датасета."""
-    lines = [f"# {header}", "# one decimal composite N per line"]
-    lines.extend(str(n) for n in numbers)
-    Path(path).parent.mkdir(parents=True, exist_ok=True)
-    Path(path).write_text("\n".join(lines) + "\n", encoding="utf-8")
+def _write_json(path: str | Path, payload: dict[str, Any]) -> None:
+    p = Path(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    p.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+
+
+def _read_dataset_json(path: str | Path) -> dict[str, Any]:
+    p = Path(path)
+    if p.suffix.lower() != ".json":
+        raise ValueError(f"Only JSON datasets are supported: {p}")
+
+    data = json.loads(p.read_text(encoding="utf-8"))
+    if not isinstance(data, dict):
+        raise ValueError(f"Dataset JSON must be an object: {p}")
+
+    if data.get("format") != "ecm_dataset_v1":
+        raise ValueError(f"Unsupported dataset format in {p}: {data.get('format')}")
+
+    numbers = data.get("numbers")
+    if not isinstance(numbers, list):
+        raise ValueError(f"Dataset JSON must contain list field 'numbers': {p}")
+
+    return data
+
+
+def write_dataset(
+    path: str | Path,
+    numbers: list[int],
+    role: str,
+    generation: dict[str, Any] | None = None,
+) -> None:
+    """Сохранить список чисел в JSON-файл датасета."""
+    payload: dict[str, Any] = {"format": "ecm_dataset_v1", "role": role, "numbers": numbers}
+    if generation is not None:
+        payload["generation"] = generation
+    _write_json(path, payload)
 
 
 def write_manifest(path: str | Path, samples: list[GeneratedSample]) -> None:
-    """Сохранить полный manifest с `n`, `p` и `q` для всех образцов."""
-    Path(path).parent.mkdir(parents=True, exist_ok=True)
-    rows = ["n,p,q"]
-    rows.extend(f"{s.n},{s.p},{s.q}" for s in samples)
-    Path(path).write_text("\n".join(rows) + "\n", encoding="utf-8")
+    """Сохранить полный manifest с `n`, `p` и `q` для всех образцов в JSON."""
+    _write_json(path, {"format": "ecm_manifest_v1", "samples": [s.__dict__ for s in samples]})
+
+
+def write_generation_metadata(path: str | Path, payload: dict[str, Any]) -> None:
+    """Сохранить JSON с параметрами генерации и путями к артефактам."""
+    _write_json(path, payload)
 
 
 def read_dataset_metadata(path: str | Path) -> dict[str, str]:
-    """Прочитать метаданные из первых строк датасета с комментариями."""
+    """Прочитать метаданные из JSON-датасета нового формата."""
+    data = _read_dataset_json(path)
     metadata: dict[str, str] = {}
-    for line in Path(path).read_text(encoding="utf-8").splitlines()[:10]:
-        line = line.strip()
-        if not line.startswith("#"):
-            continue
-        body = line.lstrip("#").strip()
-        for part in body.split(","):
-            part = part.strip()
-            if "=" in part:
-                k, v = part.split("=", 1)
-                metadata[k.strip()] = v.strip()
+    generation = data.get("generation")
+    if isinstance(generation, dict):
+        for key, value in generation.items():
+            metadata[str(key)] = str(value)
     return metadata
 
 
 def load_numbers(path: str | Path) -> list[int]:
-    """Прочитать текстовый датасет и извлечь из него числа `N`."""
-    values: list[int] = []
-    for line in Path(path).read_text(encoding="utf-8").splitlines():
-        line = line.strip()
-        if not line or line.startswith("#"):
-            continue
-        values.append(int(line))
-    return values
+    """Прочитать JSON-датасет нового формата и извлечь из него числа `N`."""
+    data = _read_dataset_json(path)
+    return [int(v) for v in data["numbers"]]
