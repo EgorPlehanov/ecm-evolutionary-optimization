@@ -1,7 +1,8 @@
 from __future__ import annotations
 
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 import os
+from typing import Any
 
 from ecm_optimizer.config import DEFAULT_B1_RANGE, DEFAULT_B2_RANGE, DEFAULT_CURVES_PER_N, DEFAULT_MAXITER, DEFAULT_POPSIZE, DEFAULT_RATIO_MAX, DEFAULT_SEED, DEFAULT_WORKERS
 
@@ -51,6 +52,8 @@ class OptimizationConfig:
     curve_timeout_sec: float | None = None
     workers: int = DEFAULT_WORKERS
     verbose: bool = False
+    method: str = "de"
+    method_params: dict[str, dict[str, Any]] = field(default_factory=dict)
 
 
 @dataclass(frozen=True)

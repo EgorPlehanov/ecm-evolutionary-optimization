@@ -18,7 +18,8 @@ class RandomSearchOptimizer(Optimizer):
         numbers = list(numbers)
         best: OptimizationResult | None = None
 
-        budget = max(4, config.popsize * max(1, config.maxiter))
+        rs_params = config.method_params.get("rs", {})
+        budget = int(rs_params.get("budget", max(4, config.popsize * max(1, config.maxiter))))
         for _ in range(budget):
             b1 = int(10 ** rng.uniform(math.log10(config.b1_min), math.log10(config.b1_max)))
             b2 = int(10 ** rng.uniform(math.log10(max(config.b2_min, b1)), math.log10(config.b2_max)))
