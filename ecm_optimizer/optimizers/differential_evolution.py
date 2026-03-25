@@ -25,6 +25,9 @@ class DifferentialEvolutionOptimizer(Optimizer):
     """Оптимизатор на основе `scipy.optimize.differential_evolution`."""
 
     def optimize(self, *, ecm_bin: str, numbers: Iterable[int], config: OptimizationConfig) -> OptimizationResult:
+        de_params = config.method_params.get("de", {})
+        popsize = int(de_params.get("popsize", config.popsize))
+        maxiter = int(de_params.get("maxiter", config.maxiter))
         low1, high1 = math.log10(config.b1_min), math.log10(config.b1_max)
         low2, high2 = math.log10(max(config.b2_min, config.b1_min)), math.log10(config.b2_max)
 
@@ -34,7 +37,7 @@ class DifferentialEvolutionOptimizer(Optimizer):
         if config.verbose:
             print(
                 f"[optimize] numbers={len(numbers)} curves_per_n={config.curves_per_n} "
-                f"popsize={config.popsize} maxiter={config.maxiter} workers={config.workers}",
+                f"popsize={popsize} maxiter={maxiter} workers={config.workers}",
                 flush=True,
             )
 
@@ -59,8 +62,8 @@ class DifferentialEvolutionOptimizer(Optimizer):
             objective,
             bounds=[(low1, high1), (low2, high2)],
             strategy="best1bin",
-            popsize=config.popsize,
-            maxiter=config.maxiter,
+            popsize=popsize,
+            maxiter=maxiter,
             mutation=(0.5, 0.9),
             recombination=0.8,
             seed=get_seed(config.seed, "differential-evolution"),

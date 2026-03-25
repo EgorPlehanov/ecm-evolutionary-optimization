@@ -9,7 +9,7 @@ from ecm_optimizer.cli.dataset_utils import dataset_generation_seed, resolve_dat
 from ecm_optimizer.core.baseline import choose_baseline
 from ecm_optimizer.core.problem import load_numbers, read_dataset_metadata
 from ecm_optimizer.models import OptimizationConfig, resolve_workers
-from ecm_optimizer.optimizers.differential_evolution import optimize_parameters
+from ecm_optimizer.optimizers import create_optimizer, normalize_optimizer_method
 from ecm_optimizer.utils.io_utils import ensure_dir, utc_timestamp, write_json_with_meta
 
 
@@ -28,9 +28,31 @@ def _parse_target_digits(dataset_path: Path, fallback: int | None = None) -> int
 @click.command("optimize")
 @click.option("--dataset", type=str, help="Dataset file path OR generated dataset folder name under data/numbers. Defaults to the latest generated dataset.")
 @click.option("--ecm-bin", default=ECM_PATH, show_default=True, type=str, help="Path to the GMP-ECM executable.")
+@click.option(
+    "--method",
+    default="de",
+    show_default=True,
+    type=click.Choice(
+        [
+            "de",
+            "differential-evolution",
+            "rs",
+            "random-search",
+            "pso",
+            "particle-swarm-optimization",
+            "bo",
+            "bayesian-optimization",
+            "ga",
+            "genetic-algorithm",
+        ],
+        case_sensitive=False,
+    ),
+    help="Optimization method (supports short and full aliases).",
+)
 @click.option("--curves-per-n", default=DEFAULT_CURVES_PER_N, show_default=True, type=int, help="Number of ECM curves to run per number when evaluating fitness.")
-@click.option("--popsize", default=DEFAULT_POPSIZE, show_default=True, type=int, help="Population size multiplier for differential evolution.")
-@click.option("--maxiter", default=DEFAULT_MAXITER, show_default=True, type=int, help="Maximum number of differential evolution iterations.")
+@click.option("--de-popsize", default=DEFAULT_POPSIZE, show_default=True, type=int, help="Population size multiplier for differential evolution.")
+@click.option("--de-maxiter", default=DEFAULT_MAXITER, show_default=True, type=int, help="Maximum number of differential evolution iterations.")
+@click.option("--rs-budget", type=int, help="Evaluation budget for random search (defaults to de-popsize * de-maxiter).")
 @click.option("--seed", type=int, help="Base random seed for the optimizer. Defaults to dataset generation seed.")
 @click.option("--b1-min", default=DEFAULT_B1_RANGE[0], show_default=True, type=float, help="Lower bound for the B1 search range.")
 @click.option("--b1-max", default=DEFAULT_B1_RANGE[1], show_default=True, type=float, help="Upper bound for the B1 search range.")
@@ -44,9 +66,11 @@ def _parse_target_digits(dataset_path: Path, fallback: int | None = None) -> int
 def optimize_command(
     dataset: str | None,
     ecm_bin: str,
+    method: str,
     curves_per_n: int,
-    popsize: int,
-    maxiter: int,
+    de_popsize: int,
+    de_maxiter: int,
+    rs_budget: int | None,
     seed: int | None,
     b1_min: float,
     b1_max: float,
@@ -59,6 +83,7 @@ def optimize_command(
     verbose: bool,
 ) -> None:
     """Запустить оптимизацию параметров `(B1, B2)` на train-датасете."""
+    method = normalize_optimizer_method(method)
     dataset_path = resolve_dataset_path(dataset, expected_file="train.json")
     numbers = load_numbers(dataset_path)
     if seed is None:
@@ -71,14 +96,28 @@ def optimize_command(
         b2_max=b2_max,
         ratio_max=ratio_max,
         curves_per_n=curves_per_n,
-        popsize=popsize,
-        maxiter=maxiter,
+        popsize=de_popsize,
+        maxiter=de_maxiter,
         seed=seed,
         curve_timeout_sec=curve_timeout_sec,
         workers=workers,
         verbose=verbose,
+        method=method,
+        method_params={
+            "de": {
+                "popsize": de_popsize,
+                "maxiter": de_maxiter,
+            },
+            "rs": {
+                "budget": rs_budget if rs_budget is not None else max(4, de_popsize * max(1, de_maxiter)),
+            },
+        },
     )
-    result = optimize_parameters(ecm_bin=ecm_bin, numbers=numbers, config=config)
+    try:
+        optimizer = create_optimizer(method)
+    except NotImplementedError as exc:
+        raise click.UsageError(str(exc)) from exc
+    result = optimizer.optimize(ecm_bin=ecm_bin, numbers=numbers, config=config)
 
     click.echo(f"best_b1={result.b1}")
     click.echo(f"best_b2={result.b2}")
@@ -89,7 +128,7 @@ def optimize_command(
 
     dataset_name = dataset_path.parent.name
     out_dir = ensure_dir(results_dir / dataset_name)
-    out_file = out_dir / f"optimize_{utc_timestamp()}.json"
+    out_file = out_dir / f"optimize_{method}_{utc_timestamp()}.json"
     payload = {
         "dataset": str(dataset_path),
         "dataset_target_digits": target_digits,
@@ -101,13 +140,16 @@ def optimize_command(
             "b2_max": b2_max,
             "ratio_max": ratio_max,
             "curves_per_n": curves_per_n,
-            "popsize": popsize,
-            "maxiter": maxiter,
+            "de_popsize": de_popsize,
+            "de_maxiter": de_maxiter,
+            "rs_budget": rs_budget,
             "seed": seed,
             "curve_timeout_sec": curve_timeout_sec,
             "workers": workers,
+            "method": method,
+            "method_params": config.method_params.get(method, {}),
         },
-        "optimized": {"b1": result.b1, "b2": result.b2, "objective": result.objective},
+        "optimized": {"method": method, "b1": result.b1, "b2": result.b2, "objective": result.objective},
         "suggested_baseline": {
             "b1": baseline.b1,
             "b2": baseline.b2,

@@ -47,9 +47,10 @@ ecm-optimizer generate \
 ecm-optimizer optimize \
   --dataset d35_<UTC_TIMESTAMP> \
   --ecm-bin ecm \
+  --method de \
   --curves-per-n 50 \
-  --popsize 16 \
-  --maxiter 25 \
+  --de-popsize 16 \
+  --de-maxiter 25 \
   --b1-min 1e3 \
   --b1-max 1e9 \
   --b2-min 1e3 \
@@ -60,7 +61,18 @@ ecm-optimizer optimize \
   --verbose
 ```
 
-После завершения в консоль печатается `result_file=...`, а JSON-файл сохраняется в `data/experiments/<DATASET_FOLDER>/optimize_<UTC_TIMESTAMP>.json`.
+После завершения в консоль печатается `result_file=...`, а JSON-файл сохраняется в `data/experiments/<DATASET_FOLDER>/optimize_<METHOD>_<UTC_TIMESTAMP>.json`, где `<METHOD>` — всегда короткий код (`de`, `rs`, `pso`, `bo`, `ga`).
+
+Поддерживаемые значения `--method`:
+- `de` / `differential-evolution` — реализовано;
+- `rs` / `random-search` — реализовано;
+- `pso` / `particle-swarm-optimization` — зарезервировано под будущую реализацию (пока команда вернёт ошибку);
+- `bo` / `bayesian-optimization` — зарезервировано под будущую реализацию (пока команда вернёт ошибку);
+- `ga` / `genetic-algorithm` — зарезервировано под будущую реализацию (пока команда вернёт ошибку).
+
+Параметры алгоритмов разделены по префиксам:
+- `--de-popsize`, `--de-maxiter` для DE;
+- `--rs-budget` для Random Search.
 
 `--dataset` можно передать как полный путь к JSON-файлу/папке или как имя папки внутри `data/numbers` (например `d35_<UTC_TIMESTAMP>`).
 
