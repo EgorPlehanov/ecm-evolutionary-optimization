@@ -36,15 +36,16 @@ ecm-optimizer generate \
 ```
 
 Команда создаёт:
-- `data/numbers/d35_train.txt` — числа для оптимизации;
-- `data/numbers/d35_control.txt` — отдельный контрольный набор;
-- `data/numbers/d35_manifest.csv` — `n,p,q` для воспроизводимости.
+- `data/numbers/d35_<UTC_TIMESTAMP>/train.json` — числа для оптимизации;
+- `data/numbers/d35_<UTC_TIMESTAMP>/control.json` — отдельный контрольный набор;
+- `data/numbers/d35_<UTC_TIMESTAMP>/manifest.json` — `n,p,q` для воспроизводимости;
+- `data/numbers/d35_<UTC_TIMESTAMP>/generation.json` — метаданные и параметры генерации.
 
 ### 2) Оптимизация параметров ECM
 
 ```bash
 ecm-optimizer optimize \
-  --dataset data/numbers/d35_train.txt \
+  --dataset d35_<UTC_TIMESTAMP> \
   --ecm-bin ecm \
   --curves-per-n 50 \
   --popsize 16 \
@@ -59,20 +60,28 @@ ecm-optimizer optimize \
   --verbose
 ```
 
-После завершения в консоль печатается `result_file=...`, а JSON-файл сохраняется в `data/experiments/`.
+После завершения в консоль печатается `result_file=...`, а JSON-файл сохраняется в `data/experiments/<DATASET_FOLDER>/optimize_<UTC_TIMESTAMP>.json`.
+
+`--dataset` можно передать как полный путь к JSON-файлу/папке или как имя папки внутри `data/numbers` (например `d35_<UTC_TIMESTAMP>`).
+
+Поддерживаемый формат датасетов: JSON `ecm_dataset_v1`.
 
 ### 3) Валидация
 
 ```bash
 ecm-optimizer validate \
-  --dataset data/numbers/d35_control.txt \
+  --dataset d35_<UTC_TIMESTAMP> \
   --ecm-bin ecm \
-  --opt-result-file data/experiments/optimize_d35_train_42.json \
+  --opt-result-file optimize_<UTC_TIMESTAMP>.json \
   --curves-per-n 100 \
   --curve-timeout-sec 10 \
   --workers -1 \
   --results-dir data/experiments
 ```
+
+`--opt-result-file` можно передать как полный путь к JSON-файлу или только имя файла (поиск в `data/experiments/<DATASET_FOLDER>/`). Если не передавать, будет взят последний `optimize_*.json` (для выбранного датасета, либо глобально если `--dataset` не задан).
+
+Если `--dataset` не указан, он берётся из поля `dataset` в выбранном optimize-результате. Если не заданы `--curves-per-n` и `--curve-timeout-sec`, они также подтягиваются из `config` optimize-результата.
 
 ## Структура пакета
 
