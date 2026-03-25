@@ -82,6 +82,7 @@ def validate_command(
         if opt_b1 is None or opt_b2 is None:
             raise click.UsageError("When using manual optimized params, provide both --opt-b1 and --opt-b2")
         opt_pair = (opt_b1, opt_b2)
+        opt_method = "manual"
         detected_digits = None
         resolved_opt_result_file: Path | None = None
         if dataset_path is None:
@@ -106,6 +107,12 @@ def validate_command(
                     f"Cannot resolve control dataset from optimization result: {dataset_path}"
                 )
         opt_pair = (int(opt_data["optimized"]["b1"]), int(opt_data["optimized"]["b2"]))
+        opt_method = str(
+            opt_data.get("optimized", {}).get(
+                "method",
+                opt_data.get("config", {}).get("method", "unknown"),
+            )
+        )
         detected_digits = opt_data.get("dataset_target_digits")
         opt_config = opt_data.get("config", {})
         if not isinstance(opt_config, dict):
@@ -148,12 +155,13 @@ def validate_command(
     click.echo(f"relative_improvement_pct={summary.relative_improvement_pct:.2f}")
     click.echo(f"used_opt_b1={opt_pair[0]}")
     click.echo(f"used_opt_b2={opt_pair[1]}")
+    click.echo(f"used_opt_method={opt_method}")
     click.echo(f"used_base_b1={base_pair[0]}")
     click.echo(f"used_base_b2={base_pair[1]}")
 
     dataset_name = dataset_path.parent.name
     out_dir = ensure_dir(results_dir / dataset_name)
-    out_file = out_dir / f"validate_{utc_timestamp()}.json"
+    out_file = out_dir / f"validate_{opt_method}_{utc_timestamp()}.json"
     payload = {
         "dataset": str(dataset_path),
         "ecm_bin": ecm_bin,
@@ -162,6 +170,7 @@ def validate_command(
         "workers": workers,
         "seed": seed,
         "optimized": {
+            "method": opt_method,
             "b1": opt_pair[0],
             "b2": opt_pair[1],
             "source_file": str(resolved_opt_result_file) if resolved_opt_result_file else None,
