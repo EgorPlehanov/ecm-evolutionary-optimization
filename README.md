@@ -29,25 +29,19 @@ ecm-optimizer generate \
   --target-digits 35 \
   --cofactor-digits 90 \
   --train-count 20 \
-  --control-count 20 \
-  --seed 42 \
-  --output-dir data/numbers \
-  --prefix d35
+  --control-count 20
 ```
 
 Команда создаёт:
-- `data/numbers/d35_<UTC_TIMESTAMP>/train.json` — числа для оптимизации;
-- `data/numbers/d35_<UTC_TIMESTAMP>/control.json` — отдельный контрольный набор;
-- `data/numbers/d35_<UTC_TIMESTAMP>/manifest.json` — `n,p,q` для воспроизводимости;
-- `data/numbers/d35_<UTC_TIMESTAMP>/generation.json` — метаданные и параметры генерации.
+- `data/numbers/dset_<UTC_TIMESTAMP>/train.json` — числа для оптимизации;
+- `data/numbers/dset_<UTC_TIMESTAMP>/control.json` — отдельный контрольный набор;
+- `data/numbers/dset_<UTC_TIMESTAMP>/manifest.json` — `n,p,q` для воспроизводимости;
+- `data/numbers/dset_<UTC_TIMESTAMP>/generation.json` — метаданные и параметры генерации.
 
 ### 2) Оптимизация параметров ECM
 
 ```bash
 ecm-optimizer optimize \
-  --dataset d35_<UTC_TIMESTAMP> \
-  --ecm-bin ecm \
-  --method de \
   --curves-per-n 50 \
   --de-popsize 16 \
   --de-maxiter 25 \
@@ -56,9 +50,6 @@ ecm-optimizer optimize \
   --b2-min 1e3 \
   --b2-max 1e11 \
   --ratio-max 100 \
-  --results-dir data/experiments \
-  --workers -1 \
-  --verbose
 ```
 
 После завершения в консоль печатается `result_file=...`, а JSON-файл сохраняется в `data/experiments/<DATASET_FOLDER>/optimize_<METHOD>_<UTC_TIMESTAMP>.json`, где `<METHOD>` — всегда короткий код (`de`, `rs`, `pso`, `bo`, `ga`).
@@ -74,21 +65,14 @@ ecm-optimizer optimize \
 - `--de-popsize`, `--de-maxiter` для DE;
 - `--rs-budget` для Random Search.
 
-`--dataset` можно передать как полный путь к JSON-файлу/папке или как имя папки внутри `data/numbers` (например `d35_<UTC_TIMESTAMP>`).
+`--dataset` можно передать как полный путь к JSON-файлу/папке или как имя папки внутри `data/numbers` (например `dset_<UTC_TIMESTAMP>`).
 
 Поддерживаемый формат датасетов: JSON `ecm_dataset_v1`.
 
 ### 3) Валидация
 
 ```bash
-ecm-optimizer validate \
-  --dataset d35_<UTC_TIMESTAMP> \
-  --ecm-bin ecm \
-  --opt-result-file optimize_<UTC_TIMESTAMP>.json \
-  --curves-per-n 100 \
-  --curve-timeout-sec 10 \
-  --workers -1 \
-  --results-dir data/experiments
+ecm-optimizer validate
 ```
 
 `--opt-result-file` можно передать как полный путь к JSON-файлу или только имя файла (поиск в `data/experiments/<DATASET_FOLDER>/`). Если не передавать, будет взят последний `optimize_*.json` (для выбранного датасета, либо глобально если `--dataset` не задан).
