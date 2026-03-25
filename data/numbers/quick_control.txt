@@ -1,3 +1,0 @@
-# control dataset: target_digits=20, cofactor_digits=25, seed=42
-# one decimal composite N per line
-254373616286203770824762410388756845223207759
