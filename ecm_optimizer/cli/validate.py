@@ -4,7 +4,7 @@ from pathlib import Path
 
 import click
 
-from ecm_optimizer.config import DEFAULT_CURVE_TIMEOUT_SEC, DEFAULT_SEED, DEFAULT_VALIDATION_CURVES_PER_N, DEFAULT_WORKERS, ECM_PATH, EXPERIMENTS_DIR
+from ecm_optimizer.config import DEFAULT_CURVE_TIMEOUT_SEC, DEFAULT_SEED, DEFAULT_VALIDATION_CURVES_PER_N, DEFAULT_WORKERS, ECM_PATH, EXPERIMENTS_DIR, NUMBERS_DIR
 from ecm_optimizer.core.baseline import choose_baseline
 from ecm_optimizer.core.problem import load_numbers, read_dataset_metadata
 from ecm_optimizer.core.validation import validate_on_control
@@ -23,8 +23,33 @@ def _parse_target_digits(dataset_path: Path, fallback: int | None = None) -> int
         return fallback
 
 
+def _resolve_dataset_path(dataset_ref: str, *, expected_file: str) -> Path:
+    """Resolve dataset reference from file path or generated folder name."""
+    ref = Path(dataset_ref)
+
+    if ref.exists() and ref.is_file():
+        return ref
+
+    if ref.exists() and ref.is_dir():
+        candidate = ref / expected_file
+        if candidate.exists() and candidate.is_file():
+            return candidate
+        raise click.UsageError(f"Expected dataset file '{expected_file}' inside directory: {ref}")
+
+    if ref.suffix:
+        raise click.UsageError(f"Dataset file not found: {ref}")
+
+    candidate = NUMBERS_DIR / ref / expected_file
+    if candidate.exists() and candidate.is_file():
+        return candidate
+
+    raise click.UsageError(
+        f"Cannot resolve dataset '{dataset_ref}'. Pass full file path or generated folder name under {NUMBERS_DIR}."
+    )
+
+
 @click.command("validate")
-@click.option("--dataset", required=True, type=click.Path(exists=True, path_type=Path), help="Path to the control dataset file with composite numbers.")
+@click.option("--dataset", required=True, type=str, help="Dataset file path OR generated dataset folder name under data/numbers.")
 @click.option("--ecm-bin", default=ECM_PATH, show_default=True, type=str, help="Path to the GMP-ECM executable.")
 @click.option("--opt-result-file", type=click.Path(exists=True, path_type=Path), help="Path to a saved optimization result JSON file.")
 @click.option("--opt-b1", type=int, help="Optimized B1 value to use when no result file is provided.")
@@ -37,7 +62,7 @@ def _parse_target_digits(dataset_path: Path, fallback: int | None = None) -> int
 @click.option("--results-dir", default=str(EXPERIMENTS_DIR), show_default=True, type=click.Path(path_type=Path), help="Directory where validation result JSON files will be saved.")
 @click.option("--seed", default=DEFAULT_SEED, show_default=True, type=int, help="Seed recorded in validation metadata for reproducibility bookkeeping.")
 def validate_command(
-    dataset: Path,
+    dataset: str,
     ecm_bin: str,
     opt_result_file: Path | None,
     opt_b1: int | None,
@@ -51,7 +76,8 @@ def validate_command(
     seed: int,
 ) -> None:
     """Сравнить оптимизированные параметры с baseline на control-датасете."""
-    numbers = load_numbers(dataset)
+    dataset_path = _resolve_dataset_path(dataset, expected_file="control.json")
+    numbers = load_numbers(dataset_path)
 
     if opt_result_file:
         opt_data = read_json(opt_result_file)
@@ -66,9 +92,9 @@ def validate_command(
     if base_b1 is not None and base_b2 is not None:
         base_pair = (base_b1, base_b2)
         base_source = "manual"
-        base_target_digits = _parse_target_digits(dataset, detected_digits)
+        base_target_digits = _parse_target_digits(dataset_path, detected_digits)
     else:
-        td = _parse_target_digits(dataset, detected_digits)
+        td = _parse_target_digits(dataset_path, detected_digits)
         baseline = choose_baseline(td)
         base_pair = (baseline.b1, baseline.b2)
         base_source = baseline.source
@@ -94,9 +120,9 @@ def validate_command(
     click.echo(f"used_base_b2={base_pair[1]}")
 
     out_dir = ensure_dir(results_dir)
-    out_file = out_dir / f"validate_{dataset.stem}_{seed}.json"
+    out_file = out_dir / f"validate_{dataset_path.stem}_{seed}.json"
     payload = {
-        "dataset": str(dataset),
+        "dataset": str(dataset_path),
         "ecm_bin": ecm_bin,
         "curves_per_n": curves_per_n,
         "curve_timeout_sec": curve_timeout_sec,
@@ -116,4 +142,4 @@ def validate_command(
         },
     }
     write_json_with_meta(out_file, payload, command="validate")
-    click.echo(f"result_file={out_file}")
+    click.echo(f"result_file: {out_file}")
