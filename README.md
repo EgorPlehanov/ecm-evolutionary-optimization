@@ -60,11 +60,11 @@ ecm-optimizer optimize \
   --verbose
 ```
 
-После завершения в консоль печатается `result_file=...`, а JSON-файл сохраняется в `data/experiments/`.
+После завершения в консоль печатается `result_file=...`, а JSON-файл сохраняется в `data/experiments/<DATASET_FOLDER>/optimize_<UTC_TIMESTAMP>.json`.
 
 `--dataset` можно передать как полный путь к JSON-файлу/папке или как имя папки внутри `data/numbers` (например `d35_<UTC_TIMESTAMP>`).
 
-Важно: поддерживается только новый JSON-формат датасетов (`ecm_dataset_v1`), обратная совместимость со старыми `txt/csv` датасетами удалена.
+Поддерживаемый формат датасетов: JSON `ecm_dataset_v1`.
 
 ### 3) Валидация
 
@@ -72,12 +72,16 @@ ecm-optimizer optimize \
 ecm-optimizer validate \
   --dataset d35_<UTC_TIMESTAMP> \
   --ecm-bin ecm \
-  --opt-result-file data/experiments/optimize_train_42.json \
+  --opt-result-file optimize_<UTC_TIMESTAMP>.json \
   --curves-per-n 100 \
   --curve-timeout-sec 10 \
   --workers -1 \
   --results-dir data/experiments
 ```
+
+`--opt-result-file` можно передать как полный путь к JSON-файлу или только имя файла (поиск в `data/experiments/<DATASET_FOLDER>/`). Если не передавать, будет взят последний `optimize_*.json` (для выбранного датасета, либо глобально если `--dataset` не задан).
+
+Если `--dataset` не указан, он берётся из поля `dataset` в выбранном optimize-результате. Если не заданы `--curves-per-n` и `--curve-timeout-sec`, они также подтягиваются из `config` optimize-результата.
 
 ## Структура пакета
 
