@@ -1,0 +1,18 @@
+{
+  "format": "ecm_dataset_v1",
+  "generation": {
+    "cofactor_digits": 30,
+    "control_count": 2,
+    "prefix": "dset",
+    "seed": 77,
+    "target_digits": 20,
+    "timestamp_utc": "20260325T184038Z",
+    "total_count": 6,
+    "train_count": 4
+  },
+  "numbers": [
+    21626525214647270605211605453479931120655783031913,
+    7307913167679366427790119764933264148757560544497
+  ],
+  "role": "control"
+}
