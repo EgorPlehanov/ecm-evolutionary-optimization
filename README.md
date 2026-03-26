@@ -57,13 +57,16 @@ ecm-optimizer optimize \
 Поддерживаемые значения `--method`:
 - `de` / `differential-evolution` — реализовано;
 - `rs` / `random-search` — реализовано;
-- `pso` / `particle-swarm-optimization` — зарезервировано под будущую реализацию (пока команда вернёт ошибку);
-- `bo` / `bayesian-optimization` — зарезервировано под будущую реализацию (пока команда вернёт ошибку);
-- `ga` / `genetic-algorithm` — зарезервировано под будущую реализацию (пока команда вернёт ошибку).
+- `pso` / `particle-swarm-optimization` — реализовано (роевой поиск в лог-пространстве);
+- `bo` / `bayesian-optimization` — реализовано (surrogate-based поиск с LCB-критерием);
+- `ga` / `genetic-algorithm` — реализовано (генетический алгоритм с элитизмом и мутациями).
 
 Параметры алгоритмов разделены по префиксам:
 - `--de-popsize`, `--de-maxiter` для DE;
-- `--rs-budget` для Random Search.
+- `--rs-budget` для Random Search;
+- `--pso-swarm-size`, `--pso-iterations` для PSO;
+- `--bo-initial-samples`, `--bo-iterations`, `--bo-candidate-pool` для BO;
+- `--ga-population-size`, `--ga-generations`, `--ga-mutation-prob` для GA.
 
 `--dataset` можно передать как полный путь к JSON-файлу/папке или как имя папки внутри `data/numbers` (например `dset_<UTC_TIMESTAMP>`).
 
@@ -83,7 +86,7 @@ ecm-optimizer validate
 
 - `ecm_optimizer/cli/` — команды `generate`, `optimize`, `validate`.
 - `ecm_optimizer/core/` — генерация задачи, запуск ECM, fitness, baseline и validation.
-- `ecm_optimizer/optimizers/` — базовый интерфейс, differential evolution и random search.
+- `ecm_optimizer/optimizers/` — базовый интерфейс и реализации DE/RS/PSO/BO/GA.
 - `ecm_optimizer/utils/` — JSON I/O, logging и seed utilities.
 - `ecm_optimizer/config.py` — централизованные константы и пути.
 - `ecm_optimizer/models.py` — dataclass-модели конфигурации и результатов.

@@ -53,6 +53,14 @@ def _parse_target_digits(dataset_path: Path, fallback: int | None = None) -> int
 @click.option("--de-popsize", default=DEFAULT_POPSIZE, show_default=True, type=int, help="Population size multiplier for differential evolution.")
 @click.option("--de-maxiter", default=DEFAULT_MAXITER, show_default=True, type=int, help="Maximum number of differential evolution iterations.")
 @click.option("--rs-budget", type=int, help="Evaluation budget for random search (defaults to de-popsize * de-maxiter).")
+@click.option("--pso-swarm-size", type=int, help="Swarm size for PSO (defaults to 2 * de-popsize).")
+@click.option("--pso-iterations", type=int, help="Number of PSO iterations (defaults to de-maxiter).")
+@click.option("--bo-initial-samples", type=int, help="Initial random evaluations for Bayesian optimization (defaults to de-popsize).")
+@click.option("--bo-iterations", type=int, help="Bayesian optimization iterations (defaults to de-maxiter).")
+@click.option("--bo-candidate-pool", type=int, help="Candidate pool size per BO step.")
+@click.option("--ga-population-size", type=int, help="Population size for genetic algorithm (defaults to 2 * de-popsize).")
+@click.option("--ga-generations", type=int, help="Number of generations for genetic algorithm (defaults to de-maxiter).")
+@click.option("--ga-mutation-prob", type=float, help="Mutation probability for GA.")
 @click.option("--seed", type=int, help="Base random seed for the optimizer. Defaults to dataset generation seed.")
 @click.option("--b1-min", default=DEFAULT_B1_RANGE[0], show_default=True, type=float, help="Lower bound for the B1 search range.")
 @click.option("--b1-max", default=DEFAULT_B1_RANGE[1], show_default=True, type=float, help="Upper bound for the B1 search range.")
@@ -71,6 +79,14 @@ def optimize_command(
     de_popsize: int,
     de_maxiter: int,
     rs_budget: int | None,
+    pso_swarm_size: int | None,
+    pso_iterations: int | None,
+    bo_initial_samples: int | None,
+    bo_iterations: int | None,
+    bo_candidate_pool: int | None,
+    ga_population_size: int | None,
+    ga_generations: int | None,
+    ga_mutation_prob: float | None,
     seed: int | None,
     b1_min: float,
     b1_max: float,
@@ -110,6 +126,20 @@ def optimize_command(
             },
             "rs": {
                 "budget": rs_budget if rs_budget is not None else max(4, de_popsize * max(1, de_maxiter)),
+            },
+            "pso": {
+                "swarm_size": pso_swarm_size if pso_swarm_size is not None else max(8, de_popsize * 2),
+                "iterations": pso_iterations if pso_iterations is not None else max(1, de_maxiter),
+            },
+            "bo": {
+                "initial_samples": bo_initial_samples if bo_initial_samples is not None else max(6, de_popsize),
+                "iterations": bo_iterations if bo_iterations is not None else max(1, de_maxiter),
+                "candidate_pool": bo_candidate_pool if bo_candidate_pool is not None else 64,
+            },
+            "ga": {
+                "population_size": ga_population_size if ga_population_size is not None else max(8, de_popsize * 2),
+                "generations": ga_generations if ga_generations is not None else max(1, de_maxiter),
+                "mutation_prob": ga_mutation_prob if ga_mutation_prob is not None else 0.2,
             },
         },
     )

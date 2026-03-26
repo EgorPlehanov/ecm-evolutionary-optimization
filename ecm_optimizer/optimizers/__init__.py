@@ -2,6 +2,7 @@
 
 from .base import Optimizer
 from .differential_evolution import DifferentialEvolutionOptimizer, optimize_parameters
+from .heuristic_optimizers import BayesianOptimizationOptimizer, GeneticAlgorithmOptimizer, ParticleSwarmOptimizer
 from .random_search import RandomSearchOptimizer
 
 OPTIMIZER_ALIASES: dict[str, str] = {
@@ -30,15 +31,24 @@ def create_optimizer(method: str) -> Optimizer:
         return DifferentialEvolutionOptimizer()
     if normalized == "rs":
         return RandomSearchOptimizer()
+    if normalized == "pso":
+        return ParticleSwarmOptimizer()
+    if normalized == "bo":
+        return BayesianOptimizationOptimizer()
+    if normalized == "ga":
+        return GeneticAlgorithmOptimizer()
     raise NotImplementedError(
         f"Optimization method '{method}' is planned but not implemented yet. "
-        "Available methods now: de, rs."
+        "Available methods now: de, rs, pso, bo, ga."
     )
 
 
 __all__ = [
+    "BayesianOptimizationOptimizer",
     "DifferentialEvolutionOptimizer",
+    "GeneticAlgorithmOptimizer",
     "Optimizer",
+    "ParticleSwarmOptimizer",
     "RandomSearchOptimizer",
     "create_optimizer",
     "normalize_optimizer_method",
