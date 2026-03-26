@@ -8,17 +8,8 @@ from scipy.optimize import differential_evolution
 from ecm_optimizer.core.fitness import fitness_expected_time
 from ecm_optimizer.models import OptimizationConfig, OptimizationResult
 from ecm_optimizer.optimizers.base import Optimizer
+from ecm_optimizer.optimizers.heuristic_common import decode_candidate
 from ecm_optimizer.utils.seed_utils import get_seed
-
-
-def _decode_candidate(x_log: tuple[float, float], config: OptimizationConfig) -> tuple[int, int]:
-    """Преобразовать точку в логарифмическом пространстве в целые `(B1, B2)`."""
-    b1 = int(10 ** x_log[0])
-    b2 = int(10 ** x_log[1])
-    b1 = min(max(b1, int(config.b1_min)), int(config.b1_max))
-    b2 = max(b2, b1, int(config.b2_min))
-    b2 = min(b2, int(config.b2_max), int(b1 * config.ratio_max))
-    return b1, b2
 
 
 class DifferentialEvolutionOptimizer(Optimizer):
@@ -44,7 +35,7 @@ class DifferentialEvolutionOptimizer(Optimizer):
         def objective(x: tuple[float, float]) -> float:
             nonlocal objective_calls
             objective_calls += 1
-            b1, b2 = _decode_candidate((x[0], x[1]), config=config)
+            b1, b2 = decode_candidate((x[0], x[1]), config=config)
             value = fitness_expected_time(
                 ecm_bin=ecm_bin,
                 numbers=numbers,
@@ -71,7 +62,7 @@ class DifferentialEvolutionOptimizer(Optimizer):
             disp=config.verbose,
         )
 
-        b1, b2 = _decode_candidate((result.x[0], result.x[1]), config=config)
+        b1, b2 = decode_candidate((result.x[0], result.x[1]), config=config)
         return OptimizationResult(b1=b1, b2=b2, objective=float(result.fun))
 
 
