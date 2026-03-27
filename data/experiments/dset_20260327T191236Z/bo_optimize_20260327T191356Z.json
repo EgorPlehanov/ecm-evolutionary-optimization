@@ -7,26 +7,27 @@
     "b2_min": 10000.0,
     "curve_timeout_sec": 4.0,
     "curves_per_n": 3,
-    "de_maxiter": 2,
-    "de_popsize": 6,
-    "method": "de",
+    "de_maxiter": null,
+    "de_popsize": null,
+    "method": "bo",
     "method_params": {
-      "maxiter": 2,
-      "popsize": 6
+      "candidate_pool": 24,
+      "initial_samples": 6,
+      "iterations": 2
     },
     "ratio_max": 25.0,
     "rs_budget": null,
-    "seed": 77,
+    "seed": 11,
     "workers": 12
   },
-  "dataset": "data/numbers/dset_20260325T184038Z/train.json",
+  "dataset": "data/numbers/dset_20260327T191236Z/train.json",
   "dataset_target_digits": 20,
   "ecm_bin": "ecm",
   "optimized": {
-    "b1": 1467,
-    "b2": 11816,
-    "method": "de",
-    "objective": 0.1291242850038543
+    "b1": 5025,
+    "b2": 50142,
+    "method": "bo",
+    "objective": 0.20899881750665372
   },
   "package_version": "0.1.0",
   "suggested_baseline": {
@@ -35,5 +36,5 @@
     "source": "exact_table",
     "table_target_digits": 20
   },
-  "timestamp_utc": "20260325T184215Z"
+  "timestamp_utc": "20260327T191356Z"
 }
