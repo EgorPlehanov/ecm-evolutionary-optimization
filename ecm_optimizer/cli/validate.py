@@ -161,7 +161,7 @@ def validate_command(
 
     dataset_name = dataset_path.parent.name
     out_dir = ensure_dir(results_dir / dataset_name)
-    out_file = out_dir / f"validate_{opt_method}_{utc_timestamp()}.json"
+    out_file = out_dir / f"{opt_method}_validate_{utc_timestamp()}.json"
     payload = {
         "dataset": str(dataset_path),
         "ecm_bin": ecm_bin,

@@ -118,8 +118,11 @@ def _latest_opt_result_file(dataset_results_dir: Path) -> Path | None:
         return None
 
     candidates = [
-        p for p in dataset_results_dir.iterdir()
-        if p.is_file() and p.suffix.lower() == ".json" and p.name.startswith("optimize_")
+        p
+        for p in dataset_results_dir.iterdir()
+        if p.is_file()
+        and p.suffix.lower() == ".json"
+        and (p.name.startswith("optimize_") or "_optimize_" in p.name)
     ]
     if not candidates:
         return None
@@ -136,7 +139,11 @@ def _latest_opt_result_file_global(results_dir: Path) -> Path | None:
     if not results_dir.exists() or not results_dir.is_dir():
         return None
 
-    candidates = [p for p in results_dir.rglob("optimize_*.json") if p.is_file()]
+    candidates = [
+        p
+        for p in results_dir.rglob("*.json")
+        if p.is_file() and (p.name.startswith("optimize_") or "_optimize_" in p.name)
+    ]
     if not candidates:
         return None
 

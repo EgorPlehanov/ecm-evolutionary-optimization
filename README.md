@@ -52,18 +52,26 @@ ecm-optimizer optimize \
   --ratio-max 100 \
 ```
 
-После завершения в консоль печатается `result_file=...`, а JSON-файл сохраняется в `data/experiments/<DATASET_FOLDER>/optimize_<METHOD>_<UTC_TIMESTAMP>.json`, где `<METHOD>` — всегда короткий код (`de`, `rs`, `pso`, `bo`, `ga`).
+После завершения в консоль печатается `result_file=...`, а JSON-файл сохраняется в `data/experiments/<DATASET_FOLDER>/<METHOD>_optimize_<UTC_TIMESTAMP>.json`, где `<METHOD>` — всегда короткий код (`de`, `rs`, `pso`, `bo`, `ga`).
 
 Поддерживаемые значения `--method`:
-- `de` / `differential-evolution` — реализовано;
-- `rs` / `random-search` — реализовано;
-- `pso` / `particle-swarm-optimization` — зарезервировано под будущую реализацию (пока команда вернёт ошибку);
-- `bo` / `bayesian-optimization` — зарезервировано под будущую реализацию (пока команда вернёт ошибку);
-- `ga` / `genetic-algorithm` — зарезервировано под будущую реализацию (пока команда вернёт ошибку).
+- `de` / `differential-evolution` — дифференциальная эволюция;
+- `rs` / `random-search` — случайный поиск;
+- `pso` / `particle-swarm-optimization` — роевой поиск в лог-пространстве;
+- `bo` / `bayesian-optimization` — surrogate-based поиск с LCB-критерием;
+- `ga` / `genetic-algorithm` — генетический алгоритм с элитизмом и мутациями.
 
 Параметры алгоритмов разделены по префиксам:
 - `--de-popsize`, `--de-maxiter` для DE;
-- `--rs-budget` для Random Search.
+- `--rs-budget` для Random Search;
+- `--pso-swarm-size`, `--pso-iterations` для PSO;
+- `--bo-initial-samples`, `--bo-iterations`, `--bo-candidate-pool` для BO;
+- `--ga-population-size`, `--ga-generations`, `--ga-mutation-prob` для GA.
+
+Важно:
+- `--method` нужно передавать явно (значения по умолчанию нет);
+- при `--method de` нужно передавать `--de-popsize` и `--de-maxiter`;
+- при выборе `--method rs|pso|bo|ga` соответствующие method-specific параметры тоже нужно передавать явно.
 
 `--dataset` можно передать как полный путь к JSON-файлу/папке или как имя папки внутри `data/numbers` (например `dset_<UTC_TIMESTAMP>`).
 
@@ -75,7 +83,7 @@ ecm-optimizer optimize \
 ecm-optimizer validate
 ```
 
-`--opt-result-file` можно передать как полный путь к JSON-файлу или только имя файла (поиск в `data/experiments/<DATASET_FOLDER>/`). Если не передавать, будет взят последний `optimize_*.json` (для выбранного датасета, либо глобально если `--dataset` не задан).
+`--opt-result-file` можно передать как полный путь к JSON-файлу или только имя файла (поиск в `data/experiments/<DATASET_FOLDER>/`). Если не передавать, будет взят последний `*_optimize_*.json` (для выбранного датасета, либо глобально если `--dataset` не задан).
 
 Если `--dataset` не указан, он берётся из поля `dataset` в выбранном optimize-результате. Если не заданы `--curves-per-n` и `--curve-timeout-sec`, они также подтягиваются из `config` optimize-результата.
 
@@ -83,7 +91,7 @@ ecm-optimizer validate
 
 - `ecm_optimizer/cli/` — команды `generate`, `optimize`, `validate`.
 - `ecm_optimizer/core/` — генерация задачи, запуск ECM, fitness, baseline и validation.
-- `ecm_optimizer/optimizers/` — базовый интерфейс, differential evolution и random search.
+- `ecm_optimizer/optimizers/` — базовый интерфейс и реализации DE/RS/PSO/BO/GA.
 - `ecm_optimizer/utils/` — JSON I/O, logging и seed utilities.
 - `ecm_optimizer/config.py` — централизованные константы и пути.
 - `ecm_optimizer/models.py` — dataclass-модели конфигурации и результатов.
