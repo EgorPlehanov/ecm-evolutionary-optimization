@@ -1,0 +1,39 @@
+{
+  "command": "optimize",
+  "config": {
+    "b1_max": 500000.0,
+    "b1_min": 1000.0,
+    "b2_max": 5000000.0,
+    "b2_min": 10000.0,
+    "curve_timeout_sec": 4.0,
+    "curves_per_n": 3,
+    "de_maxiter": 2,
+    "de_popsize": 6,
+    "method": "de",
+    "method_params": {
+      "maxiter": 2,
+      "popsize": 6
+    },
+    "ratio_max": 25.0,
+    "rs_budget": null,
+    "seed": 11,
+    "workers": 12
+  },
+  "dataset": "data/numbers/dset_20260327T191236Z/train.json",
+  "dataset_target_digits": 20,
+  "ecm_bin": "ecm",
+  "optimized": {
+    "b1": 1220,
+    "b2": 12152,
+    "method": "de",
+    "objective": 0.13221180000073218
+  },
+  "package_version": "0.1.0",
+  "suggested_baseline": {
+    "b1": 2000,
+    "b2": 40000,
+    "source": "exact_table",
+    "table_target_digits": 20
+  },
+  "timestamp_utc": "20260327T191303Z"
+}
