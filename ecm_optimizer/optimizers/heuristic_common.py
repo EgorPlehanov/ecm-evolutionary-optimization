@@ -30,12 +30,38 @@ class EvaluatedPoint:
     score: float
 
 
+@dataclass
+class ProgressTracker:
+    """Счётчик и форматированный вывод промежуточных этапов оптимизации."""
+
+    method: str
+    every: int = 5
+    eval_count: int = 0
+
+    def on_evaluation(self, *, config: OptimizationConfig, x_log: tuple[float, float], score: float) -> None:
+        self.eval_count += 1
+        if not config.verbose:
+            return
+        if self.eval_count % self.every != 0:
+            return
+        b1, b2 = decode_candidate(x_log, config)
+        print(
+            f"[optimize:{self.method}] eval={self.eval_count} b1={b1} b2={b2} fitness={score}",
+            flush=True,
+        )
+
+    def log_step(self, *, config: OptimizationConfig, message: str) -> None:
+        if config.verbose:
+            print(f"[optimize:{self.method}] {message}", flush=True)
+
+
 def evaluate_candidate(
     *,
     x_log: tuple[float, float],
     ecm_bin: str,
     numbers: list[int],
     config: OptimizationConfig,
+    progress: ProgressTracker | None = None,
 ) -> EvaluatedPoint:
     """Вычислить fitness для кандидата в лог-пространстве."""
     b1, b2 = decode_candidate(x_log, config)
@@ -48,6 +74,8 @@ def evaluate_candidate(
         curve_timeout_sec=config.curve_timeout_sec,
         workers=config.workers,
     )
+    if progress is not None:
+        progress.on_evaluation(config=config, x_log=x_log, score=score)
     return EvaluatedPoint(x=x_log, score=score)
 
 

@@ -6,7 +6,7 @@ from typing import Iterable
 
 from ecm_optimizer.models import OptimizationConfig, OptimizationResult
 from ecm_optimizer.optimizers.base import Optimizer
-from ecm_optimizer.optimizers.heuristic_common import EvaluatedPoint, candidate_from_rng, evaluate_candidate, evaluated_point_to_result
+from ecm_optimizer.optimizers.heuristic_common import EvaluatedPoint, ProgressTracker, candidate_from_rng, evaluate_candidate, evaluated_point_to_result
 from ecm_optimizer.utils.seed_utils import get_seed
 
 
@@ -26,6 +26,14 @@ class GeneticAlgorithmOptimizer(Optimizer):
         numbers = list(numbers)
         low1, high1 = math.log10(config.b1_min), math.log10(config.b1_max)
         low2, high2 = math.log10(max(config.b2_min, config.b1_min)), math.log10(config.b2_max)
+        progress = ProgressTracker(method="ga")
+        progress.log_step(
+            config=config,
+            message=(
+                f"numbers={len(numbers)} curves_per_n={config.curves_per_n} population_size={population_size} "
+                f"generations={generations} mutation_prob={mutation_prob} workers={config.workers}"
+            ),
+        )
 
         def clip_gene(x: tuple[float, float]) -> tuple[float, float]:
             return min(max(x[0], low1), high1), min(max(x[1], low2), high2)
@@ -34,10 +42,14 @@ class GeneticAlgorithmOptimizer(Optimizer):
             participants = rng.sample(pop, k=min(tournament_size, len(pop)))
             return min(participants, key=lambda p: p.score)
 
-        population = [evaluate_candidate(x_log=candidate_from_rng(rng, config), ecm_bin=ecm_bin, numbers=numbers, config=config) for _ in range(population_size)]
+        population = [
+            evaluate_candidate(x_log=candidate_from_rng(rng, config), ecm_bin=ecm_bin, numbers=numbers, config=config, progress=progress)
+            for _ in range(population_size)
+        ]
         best = min(population, key=lambda p: p.score)
+        progress.log_step(config=config, message=f"init_best fitness={best.score}")
 
-        for _ in range(generations):
+        for generation in range(1, generations + 1):
             ordered = sorted(population, key=lambda p: p.score)
             next_population: list[EvaluatedPoint] = ordered[: max(1, min(elite_count, len(ordered)))]
 
@@ -49,11 +61,12 @@ class GeneticAlgorithmOptimizer(Optimizer):
                 if rng.random() < mutation_prob:
                     child = (child[0] + rng.gauss(0, mutation_sigma), child[1] + rng.gauss(0, mutation_sigma))
                 child = clip_gene(child)
-                next_population.append(evaluate_candidate(x_log=child, ecm_bin=ecm_bin, numbers=numbers, config=config))
+                next_population.append(evaluate_candidate(x_log=child, ecm_bin=ecm_bin, numbers=numbers, config=config, progress=progress))
 
             population = next_population
             gen_best = min(population, key=lambda p: p.score)
             if gen_best.score < best.score:
                 best = gen_best
+            progress.log_step(config=config, message=f"generation={generation}/{generations} best_fitness={best.score}")
 
         return evaluated_point_to_result(best, config)
