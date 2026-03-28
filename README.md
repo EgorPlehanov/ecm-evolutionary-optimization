@@ -33,10 +33,10 @@ ecm-optimizer generate \
 ```
 
 Команда создаёт:
-- `data/numbers/dset_<UTC_TIMESTAMP>/train.json` — числа для оптимизации;
-- `data/numbers/dset_<UTC_TIMESTAMP>/control.json` — отдельный контрольный набор;
-- `data/numbers/dset_<UTC_TIMESTAMP>/manifest.json` — `n,p,q` для воспроизводимости;
-- `data/numbers/dset_<UTC_TIMESTAMP>/generation.json` — метаданные и параметры генерации.
+- `data/numbers/<TARGET_DIGITS>_dset_<UTC_TIMESTAMP>/train.json` — числа для оптимизации;
+- `data/numbers/<TARGET_DIGITS>_dset_<UTC_TIMESTAMP>/control.json` — отдельный контрольный набор;
+- `data/numbers/<TARGET_DIGITS>_dset_<UTC_TIMESTAMP>/manifest.json` — `n,p,q` для воспроизводимости;
+- `data/numbers/<TARGET_DIGITS>_dset_<UTC_TIMESTAMP>/generation.json` — метаданные и параметры генерации.
 
 ### 2) Оптимизация параметров ECM
 
@@ -73,7 +73,7 @@ ecm-optimizer optimize \
 - при `--method de` нужно передавать `--de-popsize` и `--de-maxiter`;
 - при выборе `--method rs|pso|bo|ga` соответствующие method-specific параметры тоже нужно передавать явно.
 
-`--dataset` можно передать как полный путь к JSON-файлу/папке или как имя папки внутри `data/numbers` (например `dset_<UTC_TIMESTAMP>`).
+`--dataset` можно передать как полный путь к JSON-файлу/папке или как имя папки внутри `data/numbers` (например `35_dset_<UTC_TIMESTAMP>`).
 
 Поддерживаемый формат датасетов: JSON `ecm_dataset_v1`.
 
