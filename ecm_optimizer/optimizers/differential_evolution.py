@@ -8,7 +8,7 @@ from scipy.optimize import differential_evolution
 from ecm_optimizer.core.fitness import fitness_expected_time
 from ecm_optimizer.models import OptimizationConfig, OptimizationResult
 from ecm_optimizer.optimizers.base import Optimizer
-from ecm_optimizer.optimizers.heuristic_common import decode_candidate
+from ecm_optimizer.optimizers.heuristic_common import ProgressTracker, decode_candidate
 from ecm_optimizer.utils.seed_utils import get_seed
 
 
@@ -24,10 +24,11 @@ class DifferentialEvolutionOptimizer(Optimizer):
 
         numbers = list(numbers)
         objective_calls = 0
+        progress = ProgressTracker(method="de")
 
         if config.verbose:
             print(
-                f"[optimize] numbers={len(numbers)} curves_per_n={config.curves_per_n} "
+                f"[optimize:de] numbers={len(numbers)} curves_per_n={config.curves_per_n} "
                 f"popsize={popsize} maxiter={maxiter} workers={config.workers}",
                 flush=True,
             )
@@ -45,8 +46,9 @@ class DifferentialEvolutionOptimizer(Optimizer):
                 curve_timeout_sec=config.curve_timeout_sec,
                 workers=config.workers,
             )
-            if config.verbose and objective_calls % 5 == 0:
-                print(f"[optimize] eval={objective_calls} b1={b1} b2={b2} fitness={value}", flush=True)
+            progress.eval_count = objective_calls - 1
+            progress.on_evaluation(config=config, x_log=(x[0], x[1]), score=value)
+            progress.on_new_best(config=config, x_log=(x[0], x[1]), score=value, eval_id=progress.eval_count)
             return value
 
         result = differential_evolution(
@@ -63,7 +65,7 @@ class DifferentialEvolutionOptimizer(Optimizer):
         )
 
         b1, b2 = decode_candidate((result.x[0], result.x[1]), config=config)
-        return OptimizationResult(b1=b1, b2=b2, objective=float(result.fun))
+        return OptimizationResult(b1=b1, b2=b2, objective=float(result.fun), history=progress.events)
 
 
 def optimize_parameters(ecm_bin: str, numbers: Iterable[int], config: OptimizationConfig) -> OptimizationResult:
