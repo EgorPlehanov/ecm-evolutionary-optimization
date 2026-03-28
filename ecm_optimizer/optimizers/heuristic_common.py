@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import math
 import random
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 
 from ecm_optimizer.core.fitness import fitness_expected_time
 from ecm_optimizer.models import OptimizationConfig, OptimizationResult
@@ -30,12 +30,71 @@ class EvaluatedPoint:
     score: float
 
 
+@dataclass
+class ProgressTracker:
+    """Счётчик и форматированный вывод промежуточных этапов оптимизации."""
+
+    method: str
+    every: int = 5
+    eval_count: int = 0
+    best_score: float | None = None
+    events: list[dict[str, float | int | str]] = field(default_factory=list)
+
+    def on_evaluation(self, *, config: OptimizationConfig, x_log: tuple[float, float], score: float) -> None:
+        self.eval_count += 1
+        b1, b2 = decode_candidate(x_log, config)
+        self.events.append(
+            {
+                "kind": "evaluation",
+                "eval": self.eval_count,
+                "b1": b1,
+                "b2": b2,
+                "fitness": score,
+            }
+        )
+        if not config.verbose:
+            return
+        if self.eval_count % self.every != 0:
+            return
+        print(
+            f"[optimize:{self.method}] eval={self.eval_count} b1={b1} b2={b2} fitness={score}",
+            flush=True,
+        )
+
+    def log_step(self, *, config: OptimizationConfig, message: str) -> None:
+        self.events.append({"kind": "step", "eval": self.eval_count, "message": message})
+        if config.verbose:
+            print(f"[optimize:{self.method}] {message}", flush=True)
+
+    def on_new_best(self, *, config: OptimizationConfig, x_log: tuple[float, float], score: float) -> None:
+        if self.best_score is not None and score >= self.best_score:
+            return
+        self.best_score = score
+        b1, b2 = decode_candidate(x_log, config)
+        self.events.append(
+            {
+                "kind": "new_best",
+                "eval": self.eval_count,
+                "b1": b1,
+                "b2": b2,
+                "fitness": score,
+            }
+        )
+        if not config.verbose:
+            return
+        print(
+            f"[optimize:{self.method}] new_best eval={self.eval_count} b1={b1} b2={b2} fitness={score}",
+            flush=True,
+        )
+
+
 def evaluate_candidate(
     *,
     x_log: tuple[float, float],
     ecm_bin: str,
     numbers: list[int],
     config: OptimizationConfig,
+    progress: ProgressTracker | None = None,
 ) -> EvaluatedPoint:
     """Вычислить fitness для кандидата в лог-пространстве."""
     b1, b2 = decode_candidate(x_log, config)
@@ -48,10 +107,16 @@ def evaluate_candidate(
         curve_timeout_sec=config.curve_timeout_sec,
         workers=config.workers,
     )
+    if progress is not None:
+        progress.on_evaluation(config=config, x_log=x_log, score=score)
     return EvaluatedPoint(x=x_log, score=score)
 
 
-def evaluated_point_to_result(point: EvaluatedPoint, config: OptimizationConfig) -> OptimizationResult:
+def evaluated_point_to_result(
+    point: EvaluatedPoint,
+    config: OptimizationConfig,
+    history: list[dict[str, float | int | str]] | None = None,
+) -> OptimizationResult:
     """Преобразовать оцененную точку в стандартный OptimizationResult."""
     b1, b2 = decode_candidate(point.x, config)
-    return OptimizationResult(b1=b1, b2=b2, objective=point.score)
+    return OptimizationResult(b1=b1, b2=b2, objective=point.score, history=history or [])

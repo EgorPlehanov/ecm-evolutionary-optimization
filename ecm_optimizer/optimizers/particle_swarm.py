@@ -6,7 +6,7 @@ from typing import Iterable
 
 from ecm_optimizer.models import OptimizationConfig, OptimizationResult
 from ecm_optimizer.optimizers.base import Optimizer
-from ecm_optimizer.optimizers.heuristic_common import candidate_from_rng, evaluate_candidate, evaluated_point_to_result
+from ecm_optimizer.optimizers.heuristic_common import ProgressTracker, candidate_from_rng, evaluate_candidate, evaluated_point_to_result
 from ecm_optimizer.utils.seed_utils import get_seed
 
 
@@ -27,16 +27,27 @@ class ParticleSwarmOptimizer(Optimizer):
         low1, high1 = math.log10(config.b1_min), math.log10(config.b1_max)
         low2, high2 = math.log10(max(config.b2_min, config.b1_min)), math.log10(config.b2_max)
         span1, span2 = high1 - low1, high2 - low2
+        progress = ProgressTracker(method="pso")
+
+        progress.log_step(
+            config=config,
+            message=(
+                f"numbers={len(numbers)} curves_per_n={config.curves_per_n} "
+                f"swarm_size={swarm_size} iterations={iterations} workers={config.workers}"
+            ),
+        )
 
         positions = [candidate_from_rng(rng, config) for _ in range(swarm_size)]
         velocities = [
             (rng.uniform(-span1 * velocity_scale, span1 * velocity_scale), rng.uniform(-span2 * velocity_scale, span2 * velocity_scale))
             for _ in range(swarm_size)
         ]
-        personal_best = [evaluate_candidate(x_log=pos, ecm_bin=ecm_bin, numbers=numbers, config=config) for pos in positions]
+        personal_best = [evaluate_candidate(x_log=pos, ecm_bin=ecm_bin, numbers=numbers, config=config, progress=progress) for pos in positions]
         global_best = min(personal_best, key=lambda p: p.score)
+        progress.on_new_best(config=config, x_log=global_best.x, score=global_best.score)
+        progress.log_step(config=config, message=f"init_best fitness={global_best.score}")
 
-        for _ in range(iterations):
+        for iteration in range(1, iterations + 1):
             for i in range(swarm_size):
                 x1, x2 = positions[i]
                 v1, v2 = velocities[i]
@@ -52,10 +63,12 @@ class ParticleSwarmOptimizer(Optimizer):
 
                 velocities[i] = (nv1, nv2)
                 positions[i] = (nx1, nx2)
-                current = evaluate_candidate(x_log=positions[i], ecm_bin=ecm_bin, numbers=numbers, config=config)
+                current = evaluate_candidate(x_log=positions[i], ecm_bin=ecm_bin, numbers=numbers, config=config, progress=progress)
                 if current.score < personal_best[i].score:
                     personal_best[i] = current
                     if current.score < global_best.score:
                         global_best = current
+                        progress.on_new_best(config=config, x_log=global_best.x, score=global_best.score)
+            progress.log_step(config=config, message=f"iteration={iteration}/{iterations} best_fitness={global_best.score}")
 
-        return evaluated_point_to_result(global_best, config)
+        return evaluated_point_to_result(global_best, config, history=progress.events)

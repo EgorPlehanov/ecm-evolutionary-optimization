@@ -6,7 +6,7 @@ from typing import Iterable
 
 from ecm_optimizer.models import OptimizationConfig, OptimizationResult
 from ecm_optimizer.optimizers.base import Optimizer
-from ecm_optimizer.optimizers.heuristic_common import candidate_from_rng, evaluate_candidate, evaluated_point_to_result
+from ecm_optimizer.optimizers.heuristic_common import ProgressTracker, candidate_from_rng, evaluate_candidate, evaluated_point_to_result
 from ecm_optimizer.utils.seed_utils import get_seed
 
 
@@ -29,6 +29,14 @@ class BayesianOptimizationOptimizer(Optimizer):
         rng = random.Random(get_seed(config.seed, "bayesian-optimization"))
         numbers = list(numbers)
         evaluated = []
+        progress = ProgressTracker(method="bo")
+        progress.log_step(
+            config=config,
+            message=(
+                f"numbers={len(numbers)} curves_per_n={config.curves_per_n} initial_samples={initial_samples} "
+                f"iterations={iterations} candidate_pool={candidate_pool} workers={config.workers}"
+            ),
+        )
 
         def surrogate_lcb(x: tuple[float, float]) -> float:
             if not evaluated:
@@ -47,12 +55,19 @@ class BayesianOptimizationOptimizer(Optimizer):
 
         for _ in range(initial_samples):
             x = candidate_from_rng(rng, config)
-            evaluated.append(evaluate_candidate(x_log=x, ecm_bin=ecm_bin, numbers=numbers, config=config))
+            point = evaluate_candidate(x_log=x, ecm_bin=ecm_bin, numbers=numbers, config=config, progress=progress)
+            evaluated.append(point)
+            progress.on_new_best(config=config, x_log=point.x, score=point.score)
 
-        for _ in range(iterations):
+        progress.log_step(config=config, message=f"initial_design_completed points={len(evaluated)}")
+        for iteration in range(1, iterations + 1):
             pool = [candidate_from_rng(rng, config) for _ in range(candidate_pool)]
             candidate = min(pool, key=surrogate_lcb)
-            evaluated.append(evaluate_candidate(x_log=candidate, ecm_bin=ecm_bin, numbers=numbers, config=config))
+            point = evaluate_candidate(x_log=candidate, ecm_bin=ecm_bin, numbers=numbers, config=config, progress=progress)
+            evaluated.append(point)
+            progress.on_new_best(config=config, x_log=point.x, score=point.score)
+            best_score = min(evaluated, key=lambda p: p.score).score
+            progress.log_step(config=config, message=f"iteration={iteration}/{iterations} best_fitness={best_score}")
 
         best = min(evaluated, key=lambda p: p.score)
-        return evaluated_point_to_result(best, config)
+        return evaluated_point_to_result(best, config, history=progress.events)

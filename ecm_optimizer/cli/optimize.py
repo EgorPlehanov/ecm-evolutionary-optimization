@@ -222,6 +222,7 @@ def optimize_command(
             "method_params": config.method_params.get(method, {}),
         },
         "optimized": {"method": method, "b1": result.b1, "b2": result.b2, "objective": result.objective},
+        "optimization_trace": result.history,
         "suggested_baseline": {
             "b1": baseline.b1,
             "b2": baseline.b2,
