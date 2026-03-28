@@ -9,24 +9,25 @@
     "curves_per_n": 3,
     "de_maxiter": null,
     "de_popsize": null,
-    "method": "pso",
+    "method": "bo",
     "method_params": {
-      "iterations": 2,
-      "swarm_size": 12
+      "candidate_pool": 24,
+      "initial_samples": 6,
+      "iterations": 2
     },
     "ratio_max": 25.0,
     "rs_budget": null,
     "seed": 11,
     "workers": 12
   },
-  "dataset": "data/numbers/dset_20260327T191236Z/train.json",
+  "dataset": "data/numbers/20_dset_20260328T151954Z/train.json",
   "dataset_target_digits": 20,
   "ecm_bin": "ecm",
   "optimized": {
-    "b1": 1000,
-    "b2": 10000,
-    "method": "pso",
-    "objective": 0.1169002575079503
+    "b1": 5025,
+    "b2": 50142,
+    "method": "bo",
+    "objective": 0.31602826002199436
   },
   "package_version": "0.1.0",
   "suggested_baseline": {
@@ -35,5 +36,5 @@
     "source": "exact_table",
     "table_target_digits": 20
   },
-  "timestamp_utc": "20260327T191340Z"
+  "timestamp_utc": "20260328T152429Z"
 }
