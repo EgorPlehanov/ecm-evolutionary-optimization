@@ -39,7 +39,7 @@ def generate_command(
     control = samples[train_count:]
 
     timestamp = utc_timestamp()
-    folder_name = f"{prefix}_{timestamp}" if prefix else timestamp
+    folder_name = f"{target_digits}_{prefix}_{timestamp}" if prefix else f"{target_digits}_{timestamp}"
     artifact_dir = ensure_dir(output_dir / folder_name)
 
     generation_meta = {
