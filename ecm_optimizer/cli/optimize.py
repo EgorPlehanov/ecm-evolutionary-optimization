@@ -242,4 +242,4 @@ def optimize_command(
     click.echo(f"result_file: {out_file}")
     click.echo("plot_files:")
     for plot_name, plot_path in artifacts.plots.items():
-        click.echo(f"  plot_{plot_name}: {plot_path}")
+        click.echo(f"  {plot_name}: {plot_path}")
