@@ -11,9 +11,9 @@
   "dataset": "data/numbers/20_dset_20260329T133751Z/control.json",
   "ecm_bin": "ecm",
   "metrics": {
-    "baseline_mean": 0.14962391007429687,
-    "optimized_mean": 0.15369042499514762,
-    "relative_improvement_pct": -2.717824256050715
+    "baseline_mean": 0.1536243499504053,
+    "optimized_mean": 0.21463051500177244,
+    "relative_improvement_pct": -39.711260012531746
   },
   "optimized": {
     "b1": 1250,
@@ -23,6 +23,6 @@
   },
   "package_version": "0.1.0",
   "seed": 11,
-  "timestamp_utc": "20260329T134526Z",
+  "timestamp_utc": "20260329T141103Z",
   "workers": 12
 }
