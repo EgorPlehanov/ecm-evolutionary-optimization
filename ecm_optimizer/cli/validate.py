@@ -159,8 +159,11 @@ def validate_command(
     click.echo(f"used_base_b1={base_pair[0]}")
     click.echo(f"used_base_b2={base_pair[1]}")
 
-    dataset_name = dataset_path.parent.name
-    out_dir = ensure_dir(results_dir / dataset_name)
+    if resolved_opt_result_file is not None:
+        out_dir = ensure_dir(resolved_opt_result_file.parent)
+    else:
+        dataset_name = dataset_path.parent.name
+        out_dir = ensure_dir(results_dir / dataset_name)
     out_file = out_dir / f"{opt_method}_validate_{utc_timestamp()}.json"
     payload = {
         "dataset": str(dataset_path),
