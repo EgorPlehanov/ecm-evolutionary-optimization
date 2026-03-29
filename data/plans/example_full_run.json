@@ -1,0 +1,38 @@
+{
+  "format": "ecm_run_plan_v1",
+  "description": "Пример: generate -> optimize -> validate с использованием label/$ref",
+  "operations": [
+    {
+      "type": "generate",
+      "label": "gen1",
+      "args": {
+        "target-digits": 20,
+        "cofactor-digits": 60,
+        "train-count": 10,
+        "control-count": 10,
+        "seed": 42
+      }
+    },
+    {
+      "type": "optimize",
+      "label": "opt_rs",
+      "args": {
+        "dataset": {"$ref": "gen1.dataset_dir"},
+        "method": "rs",
+        "rs-budget": 15,
+        "curves-per-n": 10,
+        "workers": 1
+      }
+    },
+    {
+      "type": "validate",
+      "label": "val_rs",
+      "args": {
+        "dataset": {"$ref": "gen1.dataset_dir"},
+        "opt-result-file": {"$ref": "opt_rs.result_file"},
+        "curves-per-n": 20,
+        "workers": 1
+      }
+    }
+  ]
+}

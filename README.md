@@ -98,6 +98,49 @@ ecm-optimizer validate
 
 Если `--dataset` не указан, он берётся из поля `dataset` в выбранном optimize-результате. Если не заданы `--curves-per-n` и `--curve-timeout-sec`, они также подтягиваются из `config` optimize-результата.
 
+
+### 4) Автоматизированный прогон по плану
+
+```bash
+ecm-optimizer run-plan --plan example_full_run
+```
+
+Планы хранятся в `data/plans/` (можно передавать и полный путь к JSON).
+
+Формат плана:
+- `operations` — список шагов (неограниченное количество);
+- `type` — один из `generate`, `optimize`, `validate`;
+- `label` — опциональная метка результата шага;
+- `args` — аргументы CLI-команды в формате `--kebab-case`;
+- ссылки между шагами: `{"$ref": "<label>.<field>"}` или строка `$ref:<label>.<field>`.
+
+Пример (фрагмент):
+
+```json
+{
+  "operations": [
+    {"type": "generate", "label": "gen1", "args": {"target-digits": 20}},
+    {"type": "optimize", "args": {"dataset": {"$ref": "gen1.dataset_dir"}, "method": "rs", "rs-budget": 20}}
+  ]
+}
+```
+
+Полный рабочий пример: `data/plans/example_full_run.json`. Для проверки без запуска используйте:
+
+```bash
+ecm-optimizer run-plan --plan example_full_run --dry-run
+```
+
+Опорный план для сравнения всех методов (generate + optimize/validate для `de`, `rs`, `pso`, `bo`, `ga`):
+
+```bash
+ecm-optimizer run-plan --plan baseline_all_methods
+```
+
+Файл плана: `data/plans/baseline_all_methods.json`.
+
+В опорном плане используется единый `seed` на шаге `generate`; для `optimize`/`validate` seed не задаётся отдельно, поэтому команды автоматически берут seed датасета.
+
 ## Структура пакета
 
 - `ecm_optimizer/cli/` — команды `generate`, `optimize`, `validate`.
