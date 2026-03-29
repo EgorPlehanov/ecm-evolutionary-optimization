@@ -52,7 +52,18 @@ ecm-optimizer optimize \
   --ratio-max 100 \
 ```
 
-После завершения в консоль печатается `result_file=...`, а JSON-файл сохраняется в `data/experiments/<DATASET_FOLDER>/<METHOD>_optimize_<UTC_TIMESTAMP>.json`, где `<METHOD>` — всегда короткий код (`de`, `rs`, `pso`, `bo`, `ga`).
+После завершения в консоль печатаются `result_file=...`, `stats_file=...` и пути до PNG-графиков. JSON-файл сохраняется в `data/experiments/<DATASET_FOLDER>/<METHOD>_optimize_<UTC_TIMESTAMP>.json`, где `<METHOD>` — всегда короткий код (`de`, `rs`, `pso`, `bo`, `ga`).
+
+В конце каждого run автоматически строятся:
+- `convergence` — best fitness so far по eval;
+- `raw_fitness` — fitness по всем evaluation;
+- `jump_plot` — только события `new_best`;
+- `b1_b2_trajectory` — динамика `B1/B2` и scatter `B1 vs B2`;
+- `progress_by_phase` — convergence + маркеры `step`-этапов.
+
+Также сохраняется `<METHOD>_optimize_<UTC_TIMESTAMP>_stats.json` с ключевыми метриками (`time_to_first_improvement_sec`, `time_to_best_sec`, `new_best_count`, `eval_per_sec`, `improvement_percent`, `max_plateau_evals`).
+
+Для генерации PNG-графиков нужен `matplotlib` (`pip install matplotlib`). Если библиотека не установлена, будут сохранены только JSON-статистики.
 
 Поддерживаемые значения `--method`:
 - `de` / `differential-evolution` — дифференциальная эволюция;
@@ -92,7 +103,7 @@ ecm-optimizer validate
 - `ecm_optimizer/cli/` — команды `generate`, `optimize`, `validate`.
 - `ecm_optimizer/core/` — генерация задачи, запуск ECM, fitness, baseline и validation.
 - `ecm_optimizer/optimizers/` — базовый интерфейс и реализации DE/RS/PSO/BO/GA.
-- `ecm_optimizer/utils/` — JSON I/O, logging и seed utilities.
+- `ecm_optimizer/utils/` — JSON I/O, logging, seed utilities и отчёты по оптимизации (графики/статистика).
 - `ecm_optimizer/config.py` — централизованные константы и пути.
 - `ecm_optimizer/models.py` — dataclass-модели конфигурации и результатов.
 - `data/numbers/` — датасеты.

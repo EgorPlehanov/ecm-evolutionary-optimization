@@ -10,7 +10,8 @@ from ecm_optimizer.core.baseline import choose_baseline
 from ecm_optimizer.core.problem import load_numbers, read_dataset_metadata
 from ecm_optimizer.models import OptimizationConfig, resolve_workers
 from ecm_optimizer.optimizers import create_optimizer, normalize_optimizer_method
-from ecm_optimizer.utils.io_utils import ensure_dir, utc_timestamp, write_json_with_meta
+from ecm_optimizer.utils.io_utils import ensure_dir, utc_timestamp, write_json, write_json_with_meta
+from ecm_optimizer.utils.optimization_reporting import generate_run_artifacts
 
 
 def _parse_target_digits(dataset_path: Path, fallback: int | None = None) -> int | None:
@@ -200,7 +201,14 @@ def optimize_command(
 
     dataset_name = dataset_path.parent.name
     out_dir = ensure_dir(results_dir / dataset_name)
-    out_file = out_dir / f"{method}_optimize_{utc_timestamp()}.json"
+    run_stem = f"{method}_optimize_{utc_timestamp()}"
+    out_file = out_dir / f"{run_stem}.json"
+    artifacts = generate_run_artifacts(
+        history=result.history,
+        output_dir=out_dir,
+        run_stem=run_stem,
+        write_json=write_json,
+    )
     payload = {
         "dataset": str(dataset_path),
         "dataset_target_digits": target_digits,
@@ -223,6 +231,9 @@ def optimize_command(
         },
         "optimized": {"method": method, "b1": result.b1, "b2": result.b2, "objective": result.objective},
         "optimization_trace": result.history,
+        "run_stats": artifacts.stats,
+        "run_stats_file": str(artifacts.stats_file),
+        "plots": {name: str(path) for name, path in artifacts.plots.items()},
         "suggested_baseline": {
             "b1": baseline.b1,
             "b2": baseline.b2,
@@ -232,3 +243,6 @@ def optimize_command(
     }
     write_json_with_meta(out_file, payload, command="optimize")
     click.echo(f"result_file: {out_file}")
+    click.echo(f"stats_file: {artifacts.stats_file}")
+    for plot_name, plot_path in artifacts.plots.items():
+        click.echo(f"plot_{plot_name}: {plot_path}")
