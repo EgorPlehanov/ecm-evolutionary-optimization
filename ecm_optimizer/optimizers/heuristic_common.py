@@ -48,6 +48,8 @@ def evaluate_candidate(
         curve_timeout_sec=config.curve_timeout_sec,
         workers=config.workers,
     )
+    if config.run_recorder is not None:
+        config.run_recorder.record_evaluation(b1=b1, b2=b2, fitness=score)
     return EvaluatedPoint(x=x_log, score=score)
 
 

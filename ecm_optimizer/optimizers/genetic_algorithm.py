@@ -34,10 +34,15 @@ class GeneticAlgorithmOptimizer(Optimizer):
             participants = rng.sample(pop, k=min(tournament_size, len(pop)))
             return min(participants, key=lambda p: p.score)
 
+        if config.run_recorder is not None:
+            config.run_recorder.record_step("init_best")
+
         population = [evaluate_candidate(x_log=candidate_from_rng(rng, config), ecm_bin=ecm_bin, numbers=numbers, config=config) for _ in range(population_size)]
         best = min(population, key=lambda p: p.score)
 
-        for _ in range(generations):
+        for generation in range(generations):
+            if config.run_recorder is not None:
+                config.run_recorder.record_step(f"generation={generation + 1}")
             ordered = sorted(population, key=lambda p: p.score)
             next_population: list[EvaluatedPoint] = ordered[: max(1, min(elite_count, len(ordered)))]
 

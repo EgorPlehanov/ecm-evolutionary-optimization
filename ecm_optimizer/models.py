@@ -54,6 +54,7 @@ class OptimizationConfig:
     verbose: bool = False
     method: str = "de"
     method_params: dict[str, dict[str, Any]] = field(default_factory=dict)
+    run_recorder: Any | None = None
 
 
 @dataclass(frozen=True)

@@ -20,7 +20,12 @@ class RandomSearchOptimizer(Optimizer):
 
         rs_params = config.method_params.get("rs", {})
         budget = int(rs_params.get("budget", max(4, config.popsize * max(1, config.maxiter))))
-        for _ in range(budget):
+        if config.run_recorder is not None:
+            config.run_recorder.record_step("init_best")
+
+        for idx in range(budget):
+            if config.run_recorder is not None:
+                config.run_recorder.record_step(f"iteration={idx + 1}")
             b1 = int(10 ** rng.uniform(math.log10(config.b1_min), math.log10(config.b1_max)))
             b2 = int(10 ** rng.uniform(math.log10(max(config.b2_min, b1)), math.log10(config.b2_max)))
             b2 = min(max(b2, b1), int(b1 * config.ratio_max), int(config.b2_max))
@@ -33,6 +38,8 @@ class RandomSearchOptimizer(Optimizer):
                 curve_timeout_sec=config.curve_timeout_sec,
                 workers=config.workers,
             )
+            if config.run_recorder is not None:
+                config.run_recorder.record_evaluation(b1=b1, b2=b2, fitness=score)
             candidate = OptimizationResult(b1=b1, b2=b2, objective=score)
             if best is None or candidate.objective < best.objective:
                 best = candidate

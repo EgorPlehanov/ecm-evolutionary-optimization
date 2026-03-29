@@ -30,6 +30,9 @@ class BayesianOptimizationOptimizer(Optimizer):
         numbers = list(numbers)
         evaluated = []
 
+        if config.run_recorder is not None:
+            config.run_recorder.record_step("init_best")
+
         def surrogate_lcb(x: tuple[float, float]) -> float:
             if not evaluated:
                 return 0.0
@@ -45,11 +48,15 @@ class BayesianOptimizationOptimizer(Optimizer):
             variance = sum(w * (s - mean) ** 2 for w, (_, s) in zip(weights, nearest)) / weight_sum
             return mean - exploration * math.sqrt(max(variance, 0.0))
 
-        for _ in range(initial_samples):
+        for idx in range(initial_samples):
+            if config.run_recorder is not None:
+                config.run_recorder.record_step(f"initial_sample={idx + 1}")
             x = candidate_from_rng(rng, config)
             evaluated.append(evaluate_candidate(x_log=x, ecm_bin=ecm_bin, numbers=numbers, config=config))
 
-        for _ in range(iterations):
+        for iteration in range(iterations):
+            if config.run_recorder is not None:
+                config.run_recorder.record_step(f"iteration={iteration + 1}")
             pool = [candidate_from_rng(rng, config) for _ in range(candidate_pool)]
             candidate = min(pool, key=surrogate_lcb)
             evaluated.append(evaluate_candidate(x_log=candidate, ecm_bin=ecm_bin, numbers=numbers, config=config))

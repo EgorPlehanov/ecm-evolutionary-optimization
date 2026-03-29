@@ -10,6 +10,7 @@ from ecm_optimizer.core.baseline import choose_baseline
 from ecm_optimizer.core.problem import load_numbers, read_dataset_metadata
 from ecm_optimizer.models import OptimizationConfig, resolve_workers
 from ecm_optimizer.optimizers import create_optimizer, normalize_optimizer_method
+from ecm_optimizer.reporting import RunTraceRecorder, build_run_report
 from ecm_optimizer.utils.io_utils import ensure_dir, utc_timestamp, write_json_with_meta
 
 
@@ -170,7 +171,9 @@ def optimize_command(
             "mutation_prob": float(ga_mutation_prob),
         }
 
-    config_kwargs: dict[str, int | float | bool | str | dict[str, dict[str, int | float]] | None] = {
+    run_recorder = RunTraceRecorder()
+
+    config_kwargs: dict[str, int | float | bool | str | dict[str, dict[str, int | float]] | None | RunTraceRecorder] = {
         "b1_min": b1_min,
         "b1_max": b1_max,
         "b2_min": b2_min,
@@ -183,6 +186,7 @@ def optimize_command(
         "verbose": verbose,
         "method": method,
         "method_params": method_params,
+        "run_recorder": run_recorder,
     }
     config = OptimizationConfig(**config_kwargs)
     try:
@@ -200,7 +204,10 @@ def optimize_command(
 
     dataset_name = dataset_path.parent.name
     out_dir = ensure_dir(results_dir / dataset_name)
-    out_file = out_dir / f"{method}_optimize_{utc_timestamp()}.json"
+    run_stamp = utc_timestamp()
+    out_file = out_dir / f"{method}_optimize_{run_stamp}.json"
+    report = build_run_report(recorder=run_recorder, out_dir=out_dir, name_prefix=f"{method}_optimize_{run_stamp}")
+
     payload = {
         "dataset": str(dataset_path),
         "dataset_target_digits": target_digits,
@@ -222,6 +229,7 @@ def optimize_command(
             "method_params": config.method_params.get(method, {}),
         },
         "optimized": {"method": method, "b1": result.b1, "b2": result.b2, "objective": result.objective},
+        "run_report": {"stats": report.stats, "artifacts": report.artifacts},
         "suggested_baseline": {
             "b1": baseline.b1,
             "b2": baseline.b2,
@@ -231,3 +239,10 @@ def optimize_command(
     }
     write_json_with_meta(out_file, payload, command="optimize")
     click.echo(f"result_file: {out_file}")
+    click.echo(f"trace_file: {report.artifacts.get('trace_json', '')}")
+    if report.artifacts:
+        click.echo("plot_files:")
+        for name, path in sorted(report.artifacts.items()):
+            if name == "trace_json":
+                continue
+            click.echo(f"  {name}: {path}")

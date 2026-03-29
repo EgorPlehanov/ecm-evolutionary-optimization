@@ -24,6 +24,10 @@ class DifferentialEvolutionOptimizer(Optimizer):
 
         numbers = list(numbers)
         objective_calls = 0
+        generation = 0
+
+        if config.run_recorder is not None:
+            config.run_recorder.record_step("init_best")
 
         if config.verbose:
             print(
@@ -45,9 +49,18 @@ class DifferentialEvolutionOptimizer(Optimizer):
                 curve_timeout_sec=config.curve_timeout_sec,
                 workers=config.workers,
             )
+            if config.run_recorder is not None:
+                config.run_recorder.record_evaluation(b1=b1, b2=b2, fitness=value)
             if config.verbose and objective_calls % 5 == 0:
                 print(f"[optimize] eval={objective_calls} b1={b1} b2={b2} fitness={value}", flush=True)
             return value
+
+        def on_generation(_: tuple[float, float], __: float) -> bool:
+            nonlocal generation
+            generation += 1
+            if config.run_recorder is not None:
+                config.run_recorder.record_step(f"generation={generation}")
+            return False
 
         result = differential_evolution(
             objective,
@@ -60,6 +73,7 @@ class DifferentialEvolutionOptimizer(Optimizer):
             seed=get_seed(config.seed, "differential-evolution"),
             polish=False,
             disp=config.verbose,
+            callback=on_generation,
         )
 
         b1, b2 = decode_candidate((result.x[0], result.x[1]), config=config)

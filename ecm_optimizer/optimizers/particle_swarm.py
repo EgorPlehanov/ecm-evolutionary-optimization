@@ -28,6 +28,9 @@ class ParticleSwarmOptimizer(Optimizer):
         low2, high2 = math.log10(max(config.b2_min, config.b1_min)), math.log10(config.b2_max)
         span1, span2 = high1 - low1, high2 - low2
 
+        if config.run_recorder is not None:
+            config.run_recorder.record_step("init_best")
+
         positions = [candidate_from_rng(rng, config) for _ in range(swarm_size)]
         velocities = [
             (rng.uniform(-span1 * velocity_scale, span1 * velocity_scale), rng.uniform(-span2 * velocity_scale, span2 * velocity_scale))
@@ -36,7 +39,9 @@ class ParticleSwarmOptimizer(Optimizer):
         personal_best = [evaluate_candidate(x_log=pos, ecm_bin=ecm_bin, numbers=numbers, config=config) for pos in positions]
         global_best = min(personal_best, key=lambda p: p.score)
 
-        for _ in range(iterations):
+        for iteration in range(iterations):
+            if config.run_recorder is not None:
+                config.run_recorder.record_step(f"iteration={iteration + 1}")
             for i in range(swarm_size):
                 x1, x2 = positions[i]
                 v1, v2 = velocities[i]
