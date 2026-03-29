@@ -8,21 +8,21 @@
   "command": "validate",
   "curve_timeout_sec": 4.0,
   "curves_per_n": 3,
-  "dataset": "data/numbers/dset_20260327T191236Z/control.json",
+  "dataset": "data/numbers/20_dset_20260328T202538Z/control.json",
   "ecm_bin": "ecm",
   "metrics": {
-    "baseline_mean": 0.19160723000823054,
-    "optimized_mean": 0.13587469502454042,
-    "relative_improvement_pct": 29.086864301151955
+    "baseline_mean": 0.24597319497843273,
+    "optimized_mean": 0.3569863599841483,
+    "relative_improvement_pct": -45.13222061267666
   },
   "optimized": {
     "b1": 1000,
     "b2": 10000,
     "method": "pso",
-    "source_file": "data/experiments/dset_20260327T191236Z/pso_optimize_20260327T191340Z.json"
+    "source_file": "data/experiments/20_dset_20260328T202538Z/pso_optimize_20260328T202600Z.json"
   },
   "package_version": "0.1.0",
   "seed": 11,
-  "timestamp_utc": "20260327T191344Z",
+  "timestamp_utc": "20260328T202815Z",
   "workers": 12
 }

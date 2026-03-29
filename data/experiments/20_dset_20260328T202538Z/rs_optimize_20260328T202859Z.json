@@ -1,0 +1,196 @@
+{
+  "command": "optimize",
+  "config": {
+    "b1_max": 500000.0,
+    "b1_min": 1000.0,
+    "b2_max": 5000000.0,
+    "b2_min": 10000.0,
+    "curve_timeout_sec": 4.0,
+    "curves_per_n": 3,
+    "de_maxiter": null,
+    "de_popsize": null,
+    "method": "rs",
+    "method_params": {
+      "budget": 12
+    },
+    "ratio_max": 25.0,
+    "rs_budget": 12,
+    "seed": 11,
+    "workers": 12
+  },
+  "dataset": "data/numbers/20_dset_20260328T202538Z/train.json",
+  "dataset_target_digits": 20,
+  "ecm_bin": "ecm",
+  "optimization_trace": [
+    {
+      "b1": 83818,
+      "b2": 2010180,
+      "elapsed_sec": 0.3974053130004904,
+      "eval": 1,
+      "fitness": 2.7018125150243577,
+      "kind": "evaluation",
+      "timestamp_utc": "2026-03-28T20:28:55.998137+00:00"
+    },
+    {
+      "b1": 83818,
+      "b2": 2010180,
+      "elapsed_sec": 0.39751347299898043,
+      "eval": 1,
+      "fitness": 2.7018125150243577,
+      "kind": "new_best",
+      "timestamp_utc": "2026-03-28T20:28:55.998233+00:00"
+    },
+    {
+      "elapsed_sec": 0.3977246060021571,
+      "eval": 1,
+      "kind": "step",
+      "message": "step=1/12 new_best b1=83819 b2=2010180 fitness=2.7018125150243577",
+      "timestamp_utc": "2026-03-28T20:28:55.998445+00:00"
+    },
+    {
+      "b1": 490720,
+      "b2": 3145153,
+      "elapsed_sec": 1.7083471220030333,
+      "eval": 2,
+      "fitness": 9.369405754774562,
+      "kind": "evaluation",
+      "timestamp_utc": "2026-03-28T20:28:57.309073+00:00"
+    },
+    {
+      "b1": 8680,
+      "b2": 216999,
+      "elapsed_sec": 1.8424490109973704,
+      "eval": 3,
+      "fitness": 0.36044217474773177,
+      "kind": "evaluation",
+      "timestamp_utc": "2026-03-28T20:28:57.443179+00:00"
+    },
+    {
+      "b1": 8680,
+      "b2": 216999,
+      "elapsed_sec": 1.8427089169999817,
+      "eval": 3,
+      "fitness": 0.36044217474773177,
+      "kind": "new_best",
+      "timestamp_utc": "2026-03-28T20:28:57.443428+00:00"
+    },
+    {
+      "elapsed_sec": 1.8429004520003218,
+      "eval": 3,
+      "kind": "step",
+      "message": "step=3/12 new_best b1=8680 b2=217000 fitness=0.36044217474773177",
+      "timestamp_utc": "2026-03-28T20:28:57.443619+00:00"
+    },
+    {
+      "b1": 15248,
+      "b2": 94933,
+      "elapsed_sec": 1.9834449140034849,
+      "eval": 4,
+      "fitness": 0.5532947575011349,
+      "kind": "evaluation",
+      "timestamp_utc": "2026-03-28T20:28:57.584171+00:00"
+    },
+    {
+      "b1": 152618,
+      "b2": 1609408,
+      "elapsed_sec": 2.4744734869964304,
+      "eval": 5,
+      "fitness": 3.9511788999698183,
+      "kind": "evaluation",
+      "timestamp_utc": "2026-03-28T20:28:58.075199+00:00"
+    },
+    {
+      "b1": 1249,
+      "b2": 31225,
+      "elapsed_sec": 2.593703282000206,
+      "eval": 6,
+      "fitness": 0.25134026749583427,
+      "kind": "evaluation",
+      "timestamp_utc": "2026-03-28T20:28:58.194429+00:00"
+    },
+    {
+      "b1": 1249,
+      "b2": 31225,
+      "elapsed_sec": 2.593813842999225,
+      "eval": 6,
+      "fitness": 0.25134026749583427,
+      "kind": "new_best",
+      "timestamp_utc": "2026-03-28T20:28:58.194532+00:00"
+    },
+    {
+      "elapsed_sec": 2.593974638999498,
+      "eval": 6,
+      "kind": "step",
+      "message": "step=6/12 new_best b1=1250 b2=31250 fitness=0.25134026749583427",
+      "timestamp_utc": "2026-03-28T20:28:58.194694+00:00"
+    },
+    {
+      "b1": 6168,
+      "b2": 154199,
+      "elapsed_sec": 2.724234082001203,
+      "eval": 7,
+      "fitness": 0.41043948245715,
+      "kind": "evaluation",
+      "timestamp_utc": "2026-03-28T20:28:58.324960+00:00"
+    },
+    {
+      "b1": 7265,
+      "b2": 181625,
+      "elapsed_sec": 2.849282581002626,
+      "eval": 8,
+      "fitness": 0.39771503250449314,
+      "kind": "evaluation",
+      "timestamp_utc": "2026-03-28T20:28:58.450008+00:00"
+    },
+    {
+      "b1": 32999,
+      "b2": 75089,
+      "elapsed_sec": 3.023325397996814,
+      "eval": 9,
+      "fitness": 0.867183250029484,
+      "kind": "evaluation",
+      "timestamp_utc": "2026-03-28T20:28:58.624052+00:00"
+    },
+    {
+      "b1": 7449,
+      "b2": 186225,
+      "elapsed_sec": 3.1513144979981007,
+      "eval": 10,
+      "fitness": 0.4041910050182196,
+      "kind": "evaluation",
+      "timestamp_utc": "2026-03-28T20:28:58.752040+00:00"
+    },
+    {
+      "b1": 5601,
+      "b2": 140025,
+      "elapsed_sec": 3.2743645959999412,
+      "eval": 11,
+      "fitness": 0.37889791003181017,
+      "kind": "evaluation",
+      "timestamp_utc": "2026-03-28T20:28:58.875091+00:00"
+    },
+    {
+      "b1": 129451,
+      "b2": 709863,
+      "elapsed_sec": 3.6656650500008254,
+      "eval": 12,
+      "fitness": 3.0590898724767612,
+      "kind": "evaluation",
+      "timestamp_utc": "2026-03-28T20:28:59.266391+00:00"
+    }
+  ],
+  "optimized": {
+    "b1": 1250,
+    "b2": 31250,
+    "method": "rs",
+    "objective": 0.25134026749583427
+  },
+  "package_version": "0.1.0",
+  "suggested_baseline": {
+    "b1": 2000,
+    "b2": 40000,
+    "source": "exact_table",
+    "table_target_digits": 20
+  },
+  "timestamp_utc": "20260328T202859Z"
+}

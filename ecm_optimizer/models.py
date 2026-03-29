@@ -63,3 +63,4 @@ class OptimizationResult:
     b1: int
     b2: int
     objective: float
+    history: list[dict[str, Any]] = field(default_factory=list)
