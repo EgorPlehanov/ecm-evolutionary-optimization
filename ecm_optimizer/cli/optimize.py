@@ -200,12 +200,14 @@ def optimize_command(
     baseline = choose_baseline(target_digits)
 
     dataset_name = dataset_path.parent.name
-    out_dir = ensure_dir(results_dir / dataset_name)
-    run_stem = f"{method}_optimize_{utc_timestamp()}"
-    out_file = out_dir / f"{run_stem}.json"
+    run_id = f"optimize_{utc_timestamp()}"
+    run_dir = ensure_dir(results_dir / dataset_name / method / run_id)
+    run_stem = f"{method}_{run_id}"
+    out_file = run_dir / f"{run_stem}.json"
+    plots_dir = ensure_dir(run_dir / "plots")
     artifacts = generate_run_artifacts(
         history=result.history,
-        output_dir=out_dir,
+        output_dir=plots_dir,
         run_stem=run_stem,
     )
     payload = {
@@ -219,9 +221,6 @@ def optimize_command(
             "b2_max": b2_max,
             "ratio_max": ratio_max,
             "curves_per_n": curves_per_n,
-            "de_popsize": de_popsize,
-            "de_maxiter": de_maxiter,
-            "rs_budget": rs_budget,
             "seed": seed,
             "curve_timeout_sec": curve_timeout_sec,
             "workers": workers,
@@ -241,5 +240,6 @@ def optimize_command(
     }
     write_json_with_meta(out_file, payload, command="optimize")
     click.echo(f"result_file: {out_file}")
+    click.echo("plot_files:")
     for plot_name, plot_path in artifacts.plots.items():
-        click.echo(f"plot_{plot_name}: {plot_path}")
+        click.echo(f"  plot_{plot_name}: {plot_path}")

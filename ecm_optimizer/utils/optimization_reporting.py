@@ -41,11 +41,14 @@ def _max_plateau(evaluation_events: list[dict[str, float | int | str]], new_best
 def build_run_statistics(history: list[dict[str, float | int | str]]) -> dict[str, float | int | None]:
     evaluation_events = [event for event in history if event.get("kind") == "evaluation"]
     new_best_events = [event for event in history if event.get("kind") == "new_best"]
+    elapsed_values = [float(event.get("elapsed_sec", 0.0)) for event in history if "elapsed_sec" in event]
+    total_runtime_sec = max(elapsed_values) if elapsed_values else 0.0
 
     if not evaluation_events:
         return {
             "evaluation_count": 0,
             "new_best_count": 0,
+            "total_runtime_sec": total_runtime_sec,
             "time_to_first_improvement_sec": None,
             "time_to_best_sec": None,
             "eval_per_sec": None,
@@ -73,6 +76,7 @@ def build_run_statistics(history: list[dict[str, float | int | str]]) -> dict[st
     return {
         "evaluation_count": total_evals,
         "new_best_count": len(new_best_events),
+        "total_runtime_sec": total_runtime_sec,
         "time_to_first_improvement_sec": time_to_first_improvement_sec,
         "time_to_best_sec": time_to_best_sec,
         "eval_per_sec": (total_evals / total_elapsed) if total_elapsed > 0 else None,
