@@ -1,0 +1,148 @@
+{
+  "format": "ecm_run_plan_v1",
+  "description": "Опорный прогон: generate -> optimize + validate для всех методов (de, rs, pso, bo, ga)",
+  "operations": [
+    {
+      "type": "generate",
+      "label": "dataset_main",
+      "args": {
+        "target-digits": 20,
+        "cofactor-digits": 60,
+        "train-count": 20,
+        "control-count": 20,
+        "seed": 42
+      }
+    },
+    {
+      "type": "optimize",
+      "label": "opt_de",
+      "args": {
+        "dataset": {
+          "$ref": "dataset_main.dataset_dir"
+        },
+        "method": "de",
+        "de-popsize": 10,
+        "de-maxiter": 8,
+        "curves-per-n": 20
+      }
+    },
+    {
+      "type": "validate",
+      "label": "val_de",
+      "args": {
+        "dataset": {
+          "$ref": "dataset_main.dataset_dir"
+        },
+        "opt-result-file": {
+          "$ref": "opt_de.result_file"
+        },
+        "curves-per-n": 30
+      }
+    },
+    {
+      "type": "optimize",
+      "label": "opt_rs",
+      "args": {
+        "dataset": {
+          "$ref": "dataset_main.dataset_dir"
+        },
+        "method": "rs",
+        "rs-budget": 80,
+        "curves-per-n": 20
+      }
+    },
+    {
+      "type": "validate",
+      "label": "val_rs",
+      "args": {
+        "dataset": {
+          "$ref": "dataset_main.dataset_dir"
+        },
+        "opt-result-file": {
+          "$ref": "opt_rs.result_file"
+        },
+        "curves-per-n": 30
+      }
+    },
+    {
+      "type": "optimize",
+      "label": "opt_pso",
+      "args": {
+        "dataset": {
+          "$ref": "dataset_main.dataset_dir"
+        },
+        "method": "pso",
+        "pso-swarm-size": 24,
+        "pso-iterations": 12,
+        "curves-per-n": 20
+      }
+    },
+    {
+      "type": "validate",
+      "label": "val_pso",
+      "args": {
+        "dataset": {
+          "$ref": "dataset_main.dataset_dir"
+        },
+        "opt-result-file": {
+          "$ref": "opt_pso.result_file"
+        },
+        "curves-per-n": 30
+      }
+    },
+    {
+      "type": "optimize",
+      "label": "opt_bo",
+      "args": {
+        "dataset": {
+          "$ref": "dataset_main.dataset_dir"
+        },
+        "method": "bo",
+        "bo-initial-samples": 12,
+        "bo-iterations": 12,
+        "bo-candidate-pool": 1500,
+        "curves-per-n": 20
+      }
+    },
+    {
+      "type": "validate",
+      "label": "val_bo",
+      "args": {
+        "dataset": {
+          "$ref": "dataset_main.dataset_dir"
+        },
+        "opt-result-file": {
+          "$ref": "opt_bo.result_file"
+        },
+        "curves-per-n": 30
+      }
+    },
+    {
+      "type": "optimize",
+      "label": "opt_ga",
+      "args": {
+        "dataset": {
+          "$ref": "dataset_main.dataset_dir"
+        },
+        "method": "ga",
+        "ga-population-size": 24,
+        "ga-generations": 12,
+        "ga-mutation-prob": 0.15,
+        "curves-per-n": 20
+      }
+    },
+    {
+      "type": "validate",
+      "label": "val_ga",
+      "args": {
+        "dataset": {
+          "$ref": "dataset_main.dataset_dir"
+        },
+        "opt-result-file": {
+          "$ref": "opt_ga.result_file"
+        },
+        "curves-per-n": 30
+      }
+    }
+  ]
+}
