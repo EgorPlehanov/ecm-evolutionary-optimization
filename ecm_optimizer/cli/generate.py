@@ -85,8 +85,8 @@ def generate_command(
     )
 
     click.echo(f"dataset_dir: {artifact_dir}")
-    click.echo(f"train_file: {train_path}")
-    click.echo(f"control_file: {control_path}")
-    click.echo(f"manifest_file: {manifest_path}")
-    click.echo(f"generation_file: {generation_path}")
+    click.echo(f"   train_file: {train_path}")
+    click.echo(f"   control_file: {control_path}")
+    click.echo(f"   manifest_file: {manifest_path}")
+    click.echo(f"   generation_file: {generation_path}")
     click.echo(f"generated={total}")

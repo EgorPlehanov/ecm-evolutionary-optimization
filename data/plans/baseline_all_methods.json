@@ -6,8 +6,8 @@
       "type": "generate",
       "label": "dataset_main",
       "args": {
-        "target-digits": 18,
-        "cofactor-digits": 50,
+        "target-digits": 20,
+        "cofactor-digits": 30,
         "train-count": 8,
         "control-count": 8,
         "seed": 42
@@ -23,7 +23,8 @@
         "method": "de",
         "de-popsize": 6,
         "de-maxiter": 4,
-        "curves-per-n": 8
+        "curves-per-n": 8,
+        "curve-timeout-sec": 5
       }
     },
     {
@@ -36,7 +37,8 @@
         "opt-result-file": {
           "$ref": "opt_de.result_file"
         },
-        "curves-per-n": 12
+        "curves-per-n": 12,
+        "curve-timeout-sec": 5
       }
     },
     {
@@ -48,7 +50,8 @@
         },
         "method": "rs",
         "rs-budget": 30,
-        "curves-per-n": 8
+        "curves-per-n": 8,
+        "curve-timeout-sec": 5
       }
     },
     {
@@ -61,7 +64,8 @@
         "opt-result-file": {
           "$ref": "opt_rs.result_file"
         },
-        "curves-per-n": 12
+        "curves-per-n": 12,
+        "curve-timeout-sec": 5
       }
     },
     {
@@ -74,7 +78,8 @@
         "method": "pso",
         "pso-swarm-size": 12,
         "pso-iterations": 6,
-        "curves-per-n": 8
+        "curves-per-n": 8,
+        "curve-timeout-sec": 5
       }
     },
     {
@@ -87,7 +92,8 @@
         "opt-result-file": {
           "$ref": "opt_pso.result_file"
         },
-        "curves-per-n": 12
+        "curves-per-n": 12,
+        "curve-timeout-sec": 5
       }
     },
     {
@@ -101,7 +107,8 @@
         "bo-initial-samples": 6,
         "bo-iterations": 6,
         "bo-candidate-pool": 400,
-        "curves-per-n": 8
+        "curves-per-n": 8,
+        "curve-timeout-sec": 5
       }
     },
     {
@@ -114,7 +121,8 @@
         "opt-result-file": {
           "$ref": "opt_bo.result_file"
         },
-        "curves-per-n": 12
+        "curves-per-n": 12,
+        "curve-timeout-sec": 5
       }
     },
     {
@@ -128,7 +136,8 @@
         "ga-population-size": 12,
         "ga-generations": 6,
         "ga-mutation-prob": 0.12,
-        "curves-per-n": 8
+        "curves-per-n": 8,
+        "curve-timeout-sec": 5
       }
     },
     {
@@ -141,7 +150,8 @@
         "opt-result-file": {
           "$ref": "opt_ga.result_file"
         },
-        "curves-per-n": 12
+        "curves-per-n": 12,
+        "curve-timeout-sec": 5
       }
     }
   ]
