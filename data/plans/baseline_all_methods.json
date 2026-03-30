@@ -1,6 +1,6 @@
 {
   "format": "ecm_run_plan_v1",
-  "description": "Тюнинг после первого полного прогона: суженное окно B1/B2 + увеличенные бюджеты optimize/validate для de/rs/pso/bo/ga",
+  "description": "Тюнинг после двух полных прогонов: компактное окно B1/B2, повышенные бюджеты и приоритет PSO/GA/DE для нового запуска",
   "operations": [
     {
       "type": "generate",
@@ -8,8 +8,8 @@
       "args": {
         "target-digits": 20,
         "cofactor-digits": 30,
-        "train-count": 8,
-        "control-count": 8,
+        "train-count": 20,
+        "control-count": 20,
         "seed": 42
       }
     },
@@ -21,15 +21,15 @@
           "$ref": "dataset_main.dataset_dir"
         },
         "method": "de",
-        "de-popsize": 8,
-        "de-maxiter": 6,
-        "curves-per-n": 10,
+        "de-popsize": 10,
+        "de-maxiter": 10,
+        "curves-per-n": 12,
         "curve-timeout-sec": 5,
         "b1-min": 1000,
-        "b1-max": 200000,
+        "b1-max": 30000,
         "b2-min": 1000,
-        "b2-max": 5000000,
-        "ratio-max": 60
+        "b2-max": 600000,
+        "ratio-max": 20
       }
     },
     {
@@ -42,7 +42,7 @@
         "opt-result-file": {
           "$ref": "opt_de.result_file"
         },
-        "curves-per-n": 20,
+        "curves-per-n": 24,
         "curve-timeout-sec": 5
       }
     },
@@ -54,14 +54,14 @@
           "$ref": "dataset_main.dataset_dir"
         },
         "method": "rs",
-        "rs-budget": 45,
-        "curves-per-n": 10,
+        "rs-budget": 60,
+        "curves-per-n": 12,
         "curve-timeout-sec": 5,
         "b1-min": 1000,
-        "b1-max": 200000,
+        "b1-max": 30000,
         "b2-min": 1000,
-        "b2-max": 5000000,
-        "ratio-max": 60
+        "b2-max": 600000,
+        "ratio-max": 20
       }
     },
     {
@@ -74,7 +74,7 @@
         "opt-result-file": {
           "$ref": "opt_rs.result_file"
         },
-        "curves-per-n": 20,
+        "curves-per-n": 24,
         "curve-timeout-sec": 5
       }
     },
@@ -86,15 +86,15 @@
           "$ref": "dataset_main.dataset_dir"
         },
         "method": "pso",
-        "pso-swarm-size": 14,
-        "pso-iterations": 8,
-        "curves-per-n": 10,
+        "pso-swarm-size": 18,
+        "pso-iterations": 12,
+        "curves-per-n": 12,
         "curve-timeout-sec": 5,
         "b1-min": 1000,
-        "b1-max": 200000,
+        "b1-max": 30000,
         "b2-min": 1000,
-        "b2-max": 5000000,
-        "ratio-max": 60
+        "b2-max": 600000,
+        "ratio-max": 20
       }
     },
     {
@@ -107,7 +107,7 @@
         "opt-result-file": {
           "$ref": "opt_pso.result_file"
         },
-        "curves-per-n": 20,
+        "curves-per-n": 24,
         "curve-timeout-sec": 5
       }
     },
@@ -119,16 +119,16 @@
           "$ref": "dataset_main.dataset_dir"
         },
         "method": "bo",
-        "bo-initial-samples": 10,
-        "bo-iterations": 14,
-        "bo-candidate-pool": 1200,
-        "curves-per-n": 10,
+        "bo-initial-samples": 16,
+        "bo-iterations": 22,
+        "bo-candidate-pool": 2500,
+        "curves-per-n": 12,
         "curve-timeout-sec": 5,
         "b1-min": 1000,
-        "b1-max": 200000,
+        "b1-max": 30000,
         "b2-min": 1000,
-        "b2-max": 5000000,
-        "ratio-max": 60
+        "b2-max": 600000,
+        "ratio-max": 20
       }
     },
     {
@@ -141,7 +141,7 @@
         "opt-result-file": {
           "$ref": "opt_bo.result_file"
         },
-        "curves-per-n": 20,
+        "curves-per-n": 24,
         "curve-timeout-sec": 5
       }
     },
@@ -153,16 +153,16 @@
           "$ref": "dataset_main.dataset_dir"
         },
         "method": "ga",
-        "ga-population-size": 16,
-        "ga-generations": 10,
-        "ga-mutation-prob": 0.18,
-        "curves-per-n": 10,
+        "ga-population-size": 22,
+        "ga-generations": 14,
+        "ga-mutation-prob": 0.14,
+        "curves-per-n": 12,
         "curve-timeout-sec": 5,
         "b1-min": 1000,
-        "b1-max": 200000,
+        "b1-max": 30000,
         "b2-min": 1000,
-        "b2-max": 5000000,
-        "ratio-max": 60
+        "b2-max": 600000,
+        "ratio-max": 20
       }
     },
     {
@@ -175,7 +175,7 @@
         "opt-result-file": {
           "$ref": "opt_ga.result_file"
         },
-        "curves-per-n": 20,
+        "curves-per-n": 24,
         "curve-timeout-sec": 5
       }
     }
