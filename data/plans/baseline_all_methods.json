@@ -1,6 +1,6 @@
 {
   "format": "ecm_run_plan_v1",
-  "description": "Опорный прогон: generate -> optimize + validate для всех методов (de, rs, pso, bo, ga)",
+  "description": "Тюнинг после первого полного прогона: суженное окно B1/B2 + увеличенные бюджеты optimize/validate для de/rs/pso/bo/ga",
   "operations": [
     {
       "type": "generate",
@@ -21,10 +21,15 @@
           "$ref": "dataset_main.dataset_dir"
         },
         "method": "de",
-        "de-popsize": 6,
-        "de-maxiter": 4,
-        "curves-per-n": 8,
-        "curve-timeout-sec": 5
+        "de-popsize": 8,
+        "de-maxiter": 6,
+        "curves-per-n": 10,
+        "curve-timeout-sec": 5,
+        "b1-min": 1000,
+        "b1-max": 200000,
+        "b2-min": 1000,
+        "b2-max": 5000000,
+        "ratio-max": 60
       }
     },
     {
@@ -37,7 +42,7 @@
         "opt-result-file": {
           "$ref": "opt_de.result_file"
         },
-        "curves-per-n": 12,
+        "curves-per-n": 20,
         "curve-timeout-sec": 5
       }
     },
@@ -49,9 +54,14 @@
           "$ref": "dataset_main.dataset_dir"
         },
         "method": "rs",
-        "rs-budget": 30,
-        "curves-per-n": 8,
-        "curve-timeout-sec": 5
+        "rs-budget": 45,
+        "curves-per-n": 10,
+        "curve-timeout-sec": 5,
+        "b1-min": 1000,
+        "b1-max": 200000,
+        "b2-min": 1000,
+        "b2-max": 5000000,
+        "ratio-max": 60
       }
     },
     {
@@ -64,7 +74,7 @@
         "opt-result-file": {
           "$ref": "opt_rs.result_file"
         },
-        "curves-per-n": 12,
+        "curves-per-n": 20,
         "curve-timeout-sec": 5
       }
     },
@@ -76,10 +86,15 @@
           "$ref": "dataset_main.dataset_dir"
         },
         "method": "pso",
-        "pso-swarm-size": 12,
-        "pso-iterations": 6,
-        "curves-per-n": 8,
-        "curve-timeout-sec": 5
+        "pso-swarm-size": 14,
+        "pso-iterations": 8,
+        "curves-per-n": 10,
+        "curve-timeout-sec": 5,
+        "b1-min": 1000,
+        "b1-max": 200000,
+        "b2-min": 1000,
+        "b2-max": 5000000,
+        "ratio-max": 60
       }
     },
     {
@@ -92,7 +107,7 @@
         "opt-result-file": {
           "$ref": "opt_pso.result_file"
         },
-        "curves-per-n": 12,
+        "curves-per-n": 20,
         "curve-timeout-sec": 5
       }
     },
@@ -104,11 +119,16 @@
           "$ref": "dataset_main.dataset_dir"
         },
         "method": "bo",
-        "bo-initial-samples": 6,
-        "bo-iterations": 6,
-        "bo-candidate-pool": 400,
-        "curves-per-n": 8,
-        "curve-timeout-sec": 5
+        "bo-initial-samples": 10,
+        "bo-iterations": 14,
+        "bo-candidate-pool": 1200,
+        "curves-per-n": 10,
+        "curve-timeout-sec": 5,
+        "b1-min": 1000,
+        "b1-max": 200000,
+        "b2-min": 1000,
+        "b2-max": 5000000,
+        "ratio-max": 60
       }
     },
     {
@@ -121,7 +141,7 @@
         "opt-result-file": {
           "$ref": "opt_bo.result_file"
         },
-        "curves-per-n": 12,
+        "curves-per-n": 20,
         "curve-timeout-sec": 5
       }
     },
@@ -133,11 +153,16 @@
           "$ref": "dataset_main.dataset_dir"
         },
         "method": "ga",
-        "ga-population-size": 12,
-        "ga-generations": 6,
-        "ga-mutation-prob": 0.12,
-        "curves-per-n": 8,
-        "curve-timeout-sec": 5
+        "ga-population-size": 16,
+        "ga-generations": 10,
+        "ga-mutation-prob": 0.18,
+        "curves-per-n": 10,
+        "curve-timeout-sec": 5,
+        "b1-min": 1000,
+        "b1-max": 200000,
+        "b2-min": 1000,
+        "b2-max": 5000000,
+        "ratio-max": 60
       }
     },
     {
@@ -150,7 +175,7 @@
         "opt-result-file": {
           "$ref": "opt_ga.result_file"
         },
-        "curves-per-n": 12,
+        "curves-per-n": 20,
         "curve-timeout-sec": 5
       }
     }
