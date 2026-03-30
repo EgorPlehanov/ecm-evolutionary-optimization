@@ -1,6 +1,6 @@
 {
   "format": "ecm_run_plan_v1",
-  "description": "Тюнинг после двух полных прогонов: компактное окно B1/B2, повышенные бюджеты и приоритет PSO/GA/DE для нового запуска",
+  "description": "Тюнинг после трёх полных прогонов для target-digits=20: фокус на RS/GA/PSO, суженное окно B1/B2 и BO в режиме sanity-check",
   "operations": [
     {
       "type": "generate",
@@ -22,14 +22,14 @@
         },
         "method": "de",
         "de-popsize": 10,
-        "de-maxiter": 10,
+        "de-maxiter": 8,
         "curves-per-n": 12,
         "curve-timeout-sec": 5,
         "b1-min": 1000,
-        "b1-max": 30000,
+        "b1-max": 12000,
         "b2-min": 1000,
-        "b2-max": 600000,
-        "ratio-max": 20
+        "b2-max": 144000,
+        "ratio-max": 12
       }
     },
     {
@@ -54,14 +54,14 @@
           "$ref": "dataset_main.dataset_dir"
         },
         "method": "rs",
-        "rs-budget": 60,
+        "rs-budget": 80,
         "curves-per-n": 12,
         "curve-timeout-sec": 5,
         "b1-min": 1000,
-        "b1-max": 30000,
+        "b1-max": 12000,
         "b2-min": 1000,
-        "b2-max": 600000,
-        "ratio-max": 20
+        "b2-max": 144000,
+        "ratio-max": 12
       }
     },
     {
@@ -86,15 +86,15 @@
           "$ref": "dataset_main.dataset_dir"
         },
         "method": "pso",
-        "pso-swarm-size": 18,
-        "pso-iterations": 12,
+        "pso-swarm-size": 20,
+        "pso-iterations": 14,
         "curves-per-n": 12,
         "curve-timeout-sec": 5,
         "b1-min": 1000,
-        "b1-max": 30000,
+        "b1-max": 12000,
         "b2-min": 1000,
-        "b2-max": 600000,
-        "ratio-max": 20
+        "b2-max": 144000,
+        "ratio-max": 12
       }
     },
     {
@@ -119,16 +119,16 @@
           "$ref": "dataset_main.dataset_dir"
         },
         "method": "bo",
-        "bo-initial-samples": 16,
-        "bo-iterations": 22,
-        "bo-candidate-pool": 2500,
+        "bo-initial-samples": 10,
+        "bo-iterations": 10,
+        "bo-candidate-pool": 1000,
         "curves-per-n": 12,
         "curve-timeout-sec": 5,
         "b1-min": 1000,
-        "b1-max": 30000,
+        "b1-max": 12000,
         "b2-min": 1000,
-        "b2-max": 600000,
-        "ratio-max": 20
+        "b2-max": 144000,
+        "ratio-max": 12
       }
     },
     {
@@ -153,16 +153,16 @@
           "$ref": "dataset_main.dataset_dir"
         },
         "method": "ga",
-        "ga-population-size": 22,
-        "ga-generations": 14,
-        "ga-mutation-prob": 0.14,
+        "ga-population-size": 24,
+        "ga-generations": 16,
+        "ga-mutation-prob": 0.12,
         "curves-per-n": 12,
         "curve-timeout-sec": 5,
         "b1-min": 1000,
-        "b1-max": 30000,
+        "b1-max": 12000,
         "b2-min": 1000,
-        "b2-max": 600000,
-        "ratio-max": 20
+        "b2-max": 144000,
+        "ratio-max": 12
       }
     },
     {
