@@ -1,0 +1,28 @@
+{
+  "baseline": {
+    "b1": 2000,
+    "b2": 40000,
+    "source": "exact_table",
+    "table_target_digits": 20
+  },
+  "command": "validate",
+  "curve_timeout_sec": 5.0,
+  "curves_per_n": 20,
+  "dataset": "data/numbers/20_dset_20260330T123905Z/control.json",
+  "ecm_bin": "ecm",
+  "metrics": {
+    "baseline_mean": 1.448140632483046,
+    "optimized_mean": 0.9935058749488235,
+    "relative_improvement_pct": 31.394378925386935
+  },
+  "optimized": {
+    "b1": 1000,
+    "b2": 1000,
+    "method": "pso",
+    "source_file": "data/experiments/20_dset_20260330T123905Z/pso/optimize_20260330T124027Z/pso_optimize_20260330T124027Z.json"
+  },
+  "package_version": "0.1.0",
+  "seed": 42,
+  "timestamp_utc": "20260330T124029Z",
+  "workers": 12
+}
