@@ -148,7 +148,7 @@ def run_plan_command(plan: str, dry_run: bool) -> None:
         resolved_args = _resolve_refs(args, context, allow_unresolved=dry_run)
         command_tail = _operation_to_args(op_type, resolved_args)
         cmd = [sys.executable, "-m", "ecm_optimizer.cli.main", *command_tail]
-        click.echo(f"step_{idx}: {' '.join(shlex.quote(token) for token in cmd)}")
+        click.echo(f"\nSTEP_{idx}: {' '.join(shlex.quote(token) for token in cmd)}")
 
         if dry_run:
             continue
