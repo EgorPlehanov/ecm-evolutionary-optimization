@@ -108,19 +108,36 @@ ecm-optimizer run-plan --plan example_full_run
 Планы хранятся в `data/plans/` (можно передавать и полный путь к JSON).
 
 Формат плана:
+- `params` — (опционально) общий словарь параметров в начале плана;
 - `operations` — список шагов (неограниченное количество);
 - `type` — один из `generate`, `optimize`, `validate`, `analyze`;
 - `label` — опциональная метка результата шага;
 - `args` — аргументы CLI-команды в формате `--kebab-case`;
-- ссылки между шагами: `{"$ref": "<label>.<field>"}` или строка `$ref:<label>.<field>`.
+- ссылки между шагами/параметрами: `{"$ref": "<label>.<field>"}` или строка `$ref:<label>.<field>`.
+  Для общих параметров используйте label `params`, например: `{"$ref": "params.shared.curves_per_n"}`.
 
 Пример (фрагмент):
 
 ```json
 {
+  "params": {
+    "shared": {
+      "curves_per_n": 12,
+      "curve_timeout_sec": 5
+    }
+  },
   "operations": [
     {"type": "generate", "label": "gen1", "args": {"target-digits": 20}},
-    {"type": "optimize", "args": {"dataset": {"$ref": "gen1.dataset_dir"}, "method": "rs", "rs-budget": 20}}
+    {
+      "type": "optimize",
+      "args": {
+        "dataset": {"$ref": "gen1.dataset_dir"},
+        "method": "rs",
+        "rs-budget": 20,
+        "curves-per-n": {"$ref": "params.shared.curves_per_n"},
+        "curve-timeout-sec": {"$ref": "params.shared.curve_timeout_sec"}
+      }
+    }
   ]
 }
 ```

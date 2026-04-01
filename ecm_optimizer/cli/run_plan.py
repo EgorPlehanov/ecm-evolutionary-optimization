@@ -127,7 +127,11 @@ def run_plan_command(plan: str, dry_run: bool) -> None:
     if not isinstance(operations, list) or not operations:
         raise click.UsageError("Plan must contain a non-empty 'operations' list.")
 
-    context: dict[str, dict[str, Any]] = {}
+    params = plan_payload.get("params", {})
+    if not isinstance(params, dict):
+        raise click.UsageError("Plan field 'params' must be an object when provided.")
+
+    context: dict[str, dict[str, Any]] = {"params": _resolve_refs(params, {})}
 
     click.echo(f"plan_file: {plan_path}")
     for idx, op in enumerate(operations, start=1):
@@ -142,6 +146,8 @@ def run_plan_command(plan: str, dry_run: bool) -> None:
             raise click.UsageError(f"Unsupported operation type '{op_type}' in #{idx}")
         if label is not None and not isinstance(label, str):
             raise click.UsageError(f"Operation #{idx} label must be a string.")
+        if label == "params":
+            raise click.UsageError("Operation label 'params' is reserved for top-level plan parameters.")
         if not isinstance(args, dict):
             raise click.UsageError(f"Operation #{idx} args must be an object.")
 
