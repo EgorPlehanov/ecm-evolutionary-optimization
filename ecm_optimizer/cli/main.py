@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import click
 
+from ecm_optimizer.cli.analyze import analyze_command
 from ecm_optimizer.cli.generate import generate_command
 from ecm_optimizer.cli.optimize import optimize_command
 from ecm_optimizer.cli.run_plan import run_plan_command
@@ -22,6 +23,7 @@ main.add_command(generate_command)
 main.add_command(optimize_command)
 main.add_command(validate_command)
 main.add_command(run_plan_command)
+main.add_command(analyze_command)
 
 
 if __name__ == "__main__":

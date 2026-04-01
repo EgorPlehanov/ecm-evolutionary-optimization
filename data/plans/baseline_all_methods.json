@@ -178,6 +178,33 @@
         "curves-per-n": 24,
         "curve-timeout-sec": 5
       }
+    },
+    {
+      "type": "analyze",
+      "label": "analysis_all_methods",
+      "args": {
+        "input": [
+          {
+            "$ref": "opt_de.result_file"
+          },
+          {
+            "$ref": "opt_rs.result_file"
+          },
+          {
+            "$ref": "opt_pso.result_file"
+          },
+          {
+            "$ref": "opt_bo.result_file"
+          },
+          {
+            "$ref": "opt_ga.result_file"
+          }
+        ],
+        "group-by": [
+          "divisor_size",
+          "method"
+        ]
+      }
     }
   ]
 }

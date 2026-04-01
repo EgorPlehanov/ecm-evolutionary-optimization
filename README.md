@@ -109,7 +109,7 @@ ecm-optimizer run-plan --plan example_full_run
 
 Формат плана:
 - `operations` — список шагов (неограниченное количество);
-- `type` — один из `generate`, `optimize`, `validate`;
+- `type` — один из `generate`, `optimize`, `validate`, `analyze`;
 - `label` — опциональная метка результата шага;
 - `args` — аргументы CLI-команды в формате `--kebab-case`;
 - ссылки между шагами: `{"$ref": "<label>.<field>"}` или строка `$ref:<label>.<field>`.
@@ -131,6 +131,15 @@ ecm-optimizer run-plan --plan example_full_run
 ecm-optimizer run-plan --plan baseline_all_methods
 ```
 
+
+Дополнительный план полного мульти-прогона по нескольким размерам делителей (`target-digits=20,25,30`) с финальным общим анализом:
+
+```bash
+ecm-optimizer run-plan --plan full_all_methods_multi_divisors
+```
+
+Файл плана: `data/plans/full_all_methods_multi_divisors.json`.
+
 Проверка плана без фактического запуска:
 
 ```bash
@@ -142,6 +151,38 @@ ecm-optimizer run-plan --plan baseline_all_methods --dry-run
 В опорном плане используется единый `seed` на шаге `generate`; для `optimize`/`validate` seed не задаётся отдельно, поэтому команды автоматически берут seed датасета.
 Параметр `workers` в плане не указан, значит используется поведение CLI по умолчанию (`-1`, все доступные CPU).
 Параметры плана облегчены для быстрого старта: уменьшены размеры датасета, `curves-per-n` и бюджеты/итерации оптимизаторов.
+
+
+### 5) Сравнительный multi-run анализ (все методы сразу)
+
+```bash
+ecm-optimizer analyze \
+  --input data/experiments/20_dset_20260330T134425Z
+```
+
+Команда строит сравнительные графики и агрегированную статистику по нескольким run:
+- overlay convergence: один комбинированный PNG (два subplot: `eval` и `time`);
+- boxplot финального `objective`;
+- violin `time_to_best`;
+- pareto `objective vs elapsed`;
+- success profile: один комбинированный PNG (два subplot: `eval` и `time`) для заданного `--success-threshold` (или auto-порогу).
+
+По умолчанию (без `--input`) анализатор автоматически берет **все** optimize-результаты из `data/experiments`.
+
+Поведение `--input` упрощено:
+- если передан конкретный run (`.../optimize_<TS>/` или `..._optimize_<TS>.json`), анализируется только этот запуск;
+- если передана верхняя папка, рекурсивно ищутся все `*_optimize_*.json` внутри неё;
+- если `--input` начинается с `!`, это правило исключения (по пути/маске/подстроке), например `--input "!*/rs/*"`;
+- если переданы только исключения (`!`), базовый набор берется из `data/experiments`, а затем исключается по правилам.
+
+По умолчанию результат сохраняется в `data/analysis/analyze_<UTC_TIMESTAMP>/` (или в `--output-dir`) и обязательно включает:
+- `multi_run_summary.json` — агрегированные метрики;
+- `multi_run_summary.json` также содержит секцию `analysis_run` с параметрами запуска анализатора и списками найденных run-файлов;
+- PNG-графики сравнения.
+
+Группировка графиков/статистики задаётся `--group-by` (можно передавать несколько раз), основные уровни:
+- `divisor_size` (размер делителя / target digits),
+- `method` (метод оптимизации).
 
 ## Структура пакета
 
