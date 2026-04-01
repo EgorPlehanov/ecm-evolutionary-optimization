@@ -1,0 +1,18 @@
+{
+  "files": {
+    "control": "data/numbers/30_dset_20260401T151710Z/control.json",
+    "manifest": "data/numbers/30_dset_20260401T151710Z/manifest.json",
+    "train": "data/numbers/30_dset_20260401T151710Z/train.json"
+  },
+  "format": "ecm_generation_v1",
+  "generation": {
+    "cofactor_digits": 30,
+    "control_count": 20,
+    "prefix": "dset",
+    "seed": 42,
+    "target_digits": 30,
+    "timestamp_utc": "20260401T151710Z",
+    "total_count": 40,
+    "train_count": 20
+  }
+}
