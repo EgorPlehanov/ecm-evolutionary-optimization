@@ -138,7 +138,7 @@ def run_plan_command(plan: str, dry_run: bool) -> None:
         label = op.get("label")
         args = op.get("args", {})
 
-        if op_type not in {"generate", "optimize", "validate"}:
+        if op_type not in {"generate", "optimize", "validate", "analyze"}:
             raise click.UsageError(f"Unsupported operation type '{op_type}' in #{idx}")
         if label is not None and not isinstance(label, str):
             raise click.UsageError(f"Operation #{idx} label must be a string.")

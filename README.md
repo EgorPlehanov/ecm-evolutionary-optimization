@@ -109,7 +109,7 @@ ecm-optimizer run-plan --plan example_full_run
 
 Формат плана:
 - `operations` — список шагов (неограниченное количество);
-- `type` — один из `generate`, `optimize`, `validate`;
+- `type` — один из `generate`, `optimize`, `validate`, `analyze`;
 - `label` — опциональная метка результата шага;
 - `args` — аргументы CLI-команды в формате `--kebab-case`;
 - ссылки между шагами: `{"$ref": "<label>.<field>"}` или строка `$ref:<label>.<field>`.
@@ -142,6 +142,34 @@ ecm-optimizer run-plan --plan baseline_all_methods --dry-run
 В опорном плане используется единый `seed` на шаге `generate`; для `optimize`/`validate` seed не задаётся отдельно, поэтому команды автоматически берут seed датасета.
 Параметр `workers` в плане не указан, значит используется поведение CLI по умолчанию (`-1`, все доступные CPU).
 Параметры плана облегчены для быстрого старта: уменьшены размеры датасета, `curves-per-n` и бюджеты/итерации оптимизаторов.
+
+
+### 5) Сравнительный multi-run анализ (все методы сразу)
+
+```bash
+ecm-optimizer analyze \
+  --input data/experiments/20_dset_20260330T134425Z
+```
+
+Команда строит сравнительные графики и агрегированную статистику по нескольким run:
+- overlay convergence (медианная `best_so_far`) по `eval` и `time`;
+- boxplot финального `objective`;
+- violin `time_to_best`;
+- pareto `objective vs elapsed`;
+- success profile по `eval` и `time` для заданного `--success-threshold` (или auto-порогу).
+
+Поведение `--input` упрощено:
+- если передан конкретный run (`.../optimize_<TS>/` или `..._optimize_<TS>.json`), анализируется только этот запуск;
+- если передана верхняя папка, рекурсивно ищутся все `*_optimize_*.json` внутри неё.
+
+По умолчанию результат сохраняется в `data/analysis/analyze_<UTC_TIMESTAMP>/` (или в `--output-dir`) и обязательно включает:
+- `multi_run_summary.json` — агрегированные метрики;
+- `analyzer_run_params.json` — параметры запуска анализатора + список найденных run-файлов;
+- PNG-графики сравнения.
+
+Группировка графиков/статистики задаётся `--group-by` (можно передавать несколько раз), основные уровни:
+- `divisor_size` (размер делителя / target digits),
+- `method` (метод оптимизации).
 
 ## Структура пакета
 
