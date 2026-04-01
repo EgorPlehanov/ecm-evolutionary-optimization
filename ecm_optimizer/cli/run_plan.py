@@ -9,7 +9,7 @@ from typing import Any
 
 import click
 
-from ecm_optimizer.config import DATA_DIR
+from ecm_optimizer.config import DATA_DIR, EXPERIMENTS_DIR
 from ecm_optimizer.utils.io_utils import read_json
 
 PLANS_DIR = DATA_DIR / "plans"
@@ -110,6 +110,48 @@ def _operation_to_args(operation_type: str, args: dict[str, Any]) -> list[str]:
     return cli_args
 
 
+def _dataset_to_experiments_input(dataset_value: Any) -> str:
+    if not isinstance(dataset_value, str):
+        raise click.UsageError("Analyze arg 'dataset' must resolve to a string path or dataset name.")
+    if dataset_value.startswith("<unresolved:"):
+        return dataset_value
+
+    dataset_path = Path(dataset_value)
+    if dataset_path.suffix:
+        dataset_name = dataset_path.parent.name
+    else:
+        dataset_name = dataset_path.name
+
+    if not dataset_name:
+        raise click.UsageError(f"Cannot resolve dataset name from analyze dataset arg: '{dataset_value}'.")
+
+    return str(EXPERIMENTS_DIR / dataset_name)
+
+
+def _apply_analyze_shortcuts(args: dict[str, Any]) -> dict[str, Any]:
+    resolved = dict(args)
+    if "dataset" not in resolved:
+        return resolved
+
+    dataset_entry = resolved.pop("dataset")
+    dataset_inputs: list[str]
+    if isinstance(dataset_entry, list):
+        dataset_inputs = [_dataset_to_experiments_input(item) for item in dataset_entry]
+    else:
+        dataset_inputs = [_dataset_to_experiments_input(dataset_entry)]
+
+    if "input" not in resolved:
+        resolved["input"] = dataset_inputs if len(dataset_inputs) > 1 else dataset_inputs[0]
+        return resolved
+
+    existing_input = resolved["input"]
+    if isinstance(existing_input, list):
+        resolved["input"] = [*existing_input, *dataset_inputs]
+    else:
+        resolved["input"] = [existing_input, *dataset_inputs]
+    return resolved
+
+
 @click.command("run-plan")
 @click.option(
     "--plan",
@@ -127,7 +169,11 @@ def run_plan_command(plan: str, dry_run: bool) -> None:
     if not isinstance(operations, list) or not operations:
         raise click.UsageError("Plan must contain a non-empty 'operations' list.")
 
-    context: dict[str, dict[str, Any]] = {}
+    params = plan_payload.get("params", {})
+    if not isinstance(params, dict):
+        raise click.UsageError("Plan field 'params' must be an object when provided.")
+
+    context: dict[str, dict[str, Any]] = {"params": _resolve_refs(params, {})}
 
     click.echo(f"plan_file: {plan_path}")
     for idx, op in enumerate(operations, start=1):
@@ -142,10 +188,14 @@ def run_plan_command(plan: str, dry_run: bool) -> None:
             raise click.UsageError(f"Unsupported operation type '{op_type}' in #{idx}")
         if label is not None and not isinstance(label, str):
             raise click.UsageError(f"Operation #{idx} label must be a string.")
+        if label == "params":
+            raise click.UsageError("Operation label 'params' is reserved for top-level plan parameters.")
         if not isinstance(args, dict):
             raise click.UsageError(f"Operation #{idx} args must be an object.")
 
         resolved_args = _resolve_refs(args, context, allow_unresolved=dry_run)
+        if op_type == "analyze":
+            resolved_args = _apply_analyze_shortcuts(resolved_args)
         command_tail = _operation_to_args(op_type, resolved_args)
         cmd = [sys.executable, "-m", "ecm_optimizer.cli.main", *command_tail]
         click.echo(f"\nSTEP_{idx}: {' '.join(shlex.quote(token) for token in cmd)}")
