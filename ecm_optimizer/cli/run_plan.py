@@ -338,7 +338,7 @@ def _execute_operations(
             resolved_args = _apply_analyze_shortcuts(resolved_args)
         command_tail = _operation_to_args(op_type, resolved_args)
         cmd = [sys.executable, "-m", "ecm_optimizer.cli.main", *command_tail]
-        click.echo(f"\nSTEP_{idx}/{total_steps}: {' '.join(shlex.quote(token) for token in cmd)}")
+        click.echo(f"\nSTEP {idx}/{total_steps}: {' '.join(shlex.quote(token) for token in cmd)}")
 
         if dry_run:
             continue
