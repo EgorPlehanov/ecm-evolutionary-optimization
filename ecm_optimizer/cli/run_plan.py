@@ -15,6 +15,7 @@ from ecm_optimizer.utils.io_utils import read_json
 PLANS_DIR = DATA_DIR / "plans"
 
 _REF_PATTERN = re.compile(r"\{\{\s*([a-zA-Z0-9_.-]+)\s*\}\}")
+_SUPPORTED_OPERATION_TYPES = {"generate", "optimize", "validate", "analyze"}
 
 
 def _resolve_plan_path(plan: str) -> Path:
@@ -74,7 +75,11 @@ def _resolve_refs(value: Any, context: dict[str, dict[str, Any]], *, allow_unres
             ref = value["$ref"]
             if not isinstance(ref, str):
                 raise click.UsageError("$ref value must be a string")
-            return _get_ref_value(ref, context, allow_unresolved=allow_unresolved)
+            resolved_ref = _REF_PATTERN.sub(
+                lambda match: str(_get_ref_value(match.group(1), context, allow_unresolved=allow_unresolved)),
+                ref,
+            )
+            return _get_ref_value(resolved_ref, context, allow_unresolved=allow_unresolved)
         return {k: _resolve_refs(v, context, allow_unresolved=allow_unresolved) for k, v in value.items()}
 
     if isinstance(value, list):
@@ -82,7 +87,12 @@ def _resolve_refs(value: Any, context: dict[str, dict[str, Any]], *, allow_unres
 
     if isinstance(value, str):
         if value.startswith("$ref:"):
-            return _get_ref_value(value[len("$ref:") :], context, allow_unresolved=allow_unresolved)
+            ref_expr = value[len("$ref:") :]
+            resolved_ref = _REF_PATTERN.sub(
+                lambda match: str(_get_ref_value(match.group(1), context, allow_unresolved=allow_unresolved)),
+                ref_expr,
+            )
+            return _get_ref_value(resolved_ref, context, allow_unresolved=allow_unresolved)
 
         def replacer(match: re.Match[str]) -> str:
             return str(_get_ref_value(match.group(1), context, allow_unresolved=allow_unresolved))
@@ -152,39 +162,111 @@ def _apply_analyze_shortcuts(args: dict[str, Any]) -> dict[str, Any]:
     return resolved
 
 
-@click.command("run-plan")
-@click.option(
-    "--plan",
-    required=True,
-    type=str,
-    help="Path to JSON plan file OR file name inside data/plans.",
-)
-@click.option("--dry-run", is_flag=True, help="Print resolved operations without executing them.")
-def run_plan_command(plan: str, dry_run: bool) -> None:
-    """Выполнить JSON-план автоматизированного запуска generate/optimize/validate."""
-    plan_path = _resolve_plan_path(plan)
-    plan_payload = read_json(plan_path)
+def _to_positive_int(value: Any, *, field: str) -> int:
+    if not isinstance(value, int) or value <= 0:
+        raise click.UsageError(f"Repeat field '{field}' must be a positive integer.")
+    return value
 
-    operations = plan_payload.get("operations")
-    if not isinstance(operations, list) or not operations:
-        raise click.UsageError("Plan must contain a non-empty 'operations' list.")
 
-    params = plan_payload.get("params", {})
-    if not isinstance(params, dict):
-        raise click.UsageError("Plan field 'params' must be an object when provided.")
+def _build_repeat_iterations(
+    repeat_spec: Any,
+    context: dict[str, dict[str, Any]],
+    *,
+    dry_run: bool,
+) -> tuple[str, list[dict[str, Any]]]:
+    if isinstance(repeat_spec, int):
+        count = _to_positive_int(repeat_spec, field="repeat")
+        return "iter", [{"index": idx} for idx in range(count)]
 
-    context: dict[str, dict[str, Any]] = {"params": _resolve_refs(params, {})}
+    if not isinstance(repeat_spec, dict):
+        raise click.UsageError("Repeat block must have integer or object field 'repeat'.")
 
-    click.echo(f"plan_file: {plan_path}")
-    for idx, op in enumerate(operations, start=1):
-        if not isinstance(op, dict):
-            raise click.UsageError(f"Operation #{idx} must be an object.")
+    alias = repeat_spec.get("as", "iter")
+    if not isinstance(alias, str) or not alias:
+        raise click.UsageError("Repeat field 'as' must be a non-empty string.")
+    if alias == "params":
+        raise click.UsageError("Repeat alias 'params' is reserved.")
 
-        op_type = op.get("type")
-        label = op.get("label")
-        args = op.get("args", {})
+    count_raw = repeat_spec.get("count")
+    values_raw = repeat_spec.get("values")
 
-        if op_type not in {"generate", "optimize", "validate", "analyze"}:
+    if values_raw is not None and not isinstance(values_raw, dict):
+        raise click.UsageError("Repeat field 'values' must be an object when provided.")
+    resolved_values = _resolve_refs(values_raw or {}, context, allow_unresolved=dry_run)
+    normalized_values: dict[str, list[Any]] = {}
+    for key, value in resolved_values.items():
+        if not isinstance(key, str) or not key:
+            raise click.UsageError("Repeat 'values' keys must be non-empty strings.")
+        if not isinstance(value, list):
+            raise click.UsageError(f"Repeat values '{key}' must be a list.")
+        normalized_values[key] = value
+
+    inferred_count: int | None = None
+    if normalized_values:
+        lengths = {len(items) for items in normalized_values.values()}
+        if len(lengths) != 1:
+            raise click.UsageError("All repeat 'values' lists must have the same length.")
+        inferred_count = lengths.pop()
+
+    if count_raw is None:
+        if inferred_count is None:
+            raise click.UsageError("Repeat object must provide 'count' or non-empty 'values'.")
+        count = inferred_count
+    else:
+        count = _to_positive_int(count_raw, field="count")
+        if inferred_count is not None and inferred_count != count:
+            raise click.UsageError(
+                f"Repeat 'count' ({count}) does not match values length ({inferred_count})."
+            )
+
+    iterations: list[dict[str, Any]] = []
+    for idx in range(count):
+        payload: dict[str, Any] = {"index": idx}
+        for key, items in normalized_values.items():
+            payload[key] = items[idx]
+        iterations.append(payload)
+    return alias, iterations
+
+
+def _execute_operations(
+    operations: list[Any],
+    *,
+    context: dict[str, dict[str, Any]],
+    dry_run: bool,
+    step_counter: list[int],
+) -> None:
+    for raw_op in operations:
+        if not isinstance(raw_op, dict):
+            raise click.UsageError(f"Operation #{step_counter[0] + 1} must be an object.")
+
+        if "repeat" in raw_op:
+            nested_operations = raw_op.get("operations")
+            if not isinstance(nested_operations, list) or not nested_operations:
+                raise click.UsageError("Repeat block must contain non-empty 'operations' list.")
+
+            alias, iterations = _build_repeat_iterations(raw_op["repeat"], context, dry_run=dry_run)
+            previous_alias = context.get(alias)
+            for iteration in iterations:
+                context[alias] = iteration
+                _execute_operations(
+                    nested_operations,
+                    context=context,
+                    dry_run=dry_run,
+                    step_counter=step_counter,
+                )
+            if previous_alias is None:
+                context.pop(alias, None)
+            else:
+                context[alias] = previous_alias
+            continue
+
+        step_counter[0] += 1
+        idx = step_counter[0]
+        op_type = raw_op.get("type")
+        label = raw_op.get("label")
+        args = raw_op.get("args", {})
+
+        if op_type not in _SUPPORTED_OPERATION_TYPES:
             raise click.UsageError(f"Unsupported operation type '{op_type}' in #{idx}")
         if label is not None and not isinstance(label, str):
             raise click.UsageError(f"Operation #{idx} label must be a string.")
@@ -192,6 +274,10 @@ def run_plan_command(plan: str, dry_run: bool) -> None:
             raise click.UsageError("Operation label 'params' is reserved for top-level plan parameters.")
         if not isinstance(args, dict):
             raise click.UsageError(f"Operation #{idx} args must be an object.")
+
+        resolved_label = _resolve_refs(label, context, allow_unresolved=dry_run) if label else None
+        if resolved_label is not None and not isinstance(resolved_label, str):
+            raise click.UsageError(f"Operation #{idx} resolved label must be a string.")
 
         resolved_args = _resolve_refs(args, context, allow_unresolved=dry_run)
         if op_type == "analyze":
@@ -221,12 +307,44 @@ def run_plan_command(plan: str, dry_run: bool) -> None:
             raise click.ClickException(f"Operation #{idx} failed with exit code {return_code}.")
 
         parsed = _parse_stdout("".join(stdout_lines))
-        if label:
-            context[label] = {
+        if resolved_label:
+            if resolved_label in context:
+                raise click.UsageError(
+                    f"Operation #{idx} produced duplicate label '{resolved_label}'. "
+                    "Use unique labels, e.g. with '{{iter.index}}'."
+                )
+            context[resolved_label] = {
                 "type": op_type,
                 "args": resolved_args,
                 "output": parsed,
                 **parsed,
             }
+
+
+@click.command("run-plan")
+@click.option(
+    "--plan",
+    required=True,
+    type=str,
+    help="Path to JSON plan file OR file name inside data/plans.",
+)
+@click.option("--dry-run", is_flag=True, help="Print resolved operations without executing them.")
+def run_plan_command(plan: str, dry_run: bool) -> None:
+    """Выполнить JSON-план автоматизированного запуска generate/optimize/validate."""
+    plan_path = _resolve_plan_path(plan)
+    plan_payload = read_json(plan_path)
+
+    operations = plan_payload.get("operations")
+    if not isinstance(operations, list) or not operations:
+        raise click.UsageError("Plan must contain a non-empty 'operations' list.")
+
+    params = plan_payload.get("params", {})
+    if not isinstance(params, dict):
+        raise click.UsageError("Plan field 'params' must be an object when provided.")
+
+    context: dict[str, dict[str, Any]] = {"params": _resolve_refs(params, {})}
+
+    click.echo(f"plan_file: {plan_path}")
+    _execute_operations(operations, context=context, dry_run=dry_run, step_counter=[0])
 
     click.echo("plan_status: completed" if not dry_run else "plan_status: dry_run")

@@ -1,6 +1,6 @@
 {
   "format": "ecm_run_plan_v1",
-  "description": "Тюнинг после трёх полных прогонов для target-digits=20: фокус на RS/GA/PSO, суженное окно B1/B2 и BO в режиме sanity-check",
+  "description": "Тюнинг после трёх полных прогонов для target-digits=20: фокус на RS/GA/PSO, суженное окно B1/B2 и BO в режиме sanity-check. Прогон выполняется по seed=17/2718/31415 через repeat-блок.",
   "params": {
     "shared": {
       "curve_timeout_sec": 5,
@@ -13,283 +13,339 @@
       "b2_min": 1000,
       "b2_max": 144000,
       "ratio_max": 12
-    }
+    },
+    "seeds": [
+      17,
+      2718,
+      31415
+    ]
   },
   "operations": [
     {
-      "type": "generate",
-      "label": "dataset_main",
-      "args": {
-        "target-digits": 20,
-        "cofactor-digits": 30,
-        "train-count": 20,
-        "control-count": 20,
-        "seed": 42
-      }
-    },
-    {
-      "type": "optimize",
-      "label": "opt_de",
-      "args": {
-        "dataset": {
-          "$ref": "dataset_main.dataset_dir"
-        },
-        "method": "de",
-        "de-popsize": 10,
-        "de-maxiter": 8,
-        "curves-per-n": {
-          "$ref": "params.shared.opt_curves_per_n"
-        },
-        "curve-timeout-sec": {
-          "$ref": "params.shared.curve_timeout_sec"
-        },
-        "b1-min": {
-          "$ref": "params.search.b1_min"
-        },
-        "b1-max": {
-          "$ref": "params.search.b1_max"
-        },
-        "b2-min": {
-          "$ref": "params.search.b2_min"
-        },
-        "b2-max": {
-          "$ref": "params.search.b2_max"
-        },
-        "ratio-max": {
-          "$ref": "params.search.ratio_max"
+      "repeat": {
+        "values": {
+          "seed": {
+            "$ref": "params.seeds"
+          }
         }
-      }
-    },
-    {
-      "type": "validate",
-      "label": "val_de",
-      "args": {
-        "dataset": {
-          "$ref": "dataset_main.dataset_dir"
+      },
+      "operations": [
+        {
+          "type": "generate",
+          "label": "dataset_main_{{iter.seed}}",
+          "args": {
+            "target-digits": 20,
+            "cofactor-digits": 30,
+            "train-count": 20,
+            "control-count": 20,
+            "seed": {
+              "$ref": "iter.seed"
+            }
+          }
         },
-        "opt-result-file": {
-          "$ref": "opt_de.result_file"
+        {
+          "type": "optimize",
+          "label": "opt_de_{{iter.seed}}",
+          "args": {
+            "dataset": {
+              "$ref": "dataset_main_{{iter.seed}}.dataset_dir"
+            },
+            "method": "de",
+            "de-popsize": 10,
+            "de-maxiter": 8,
+            "curves-per-n": {
+              "$ref": "params.shared.opt_curves_per_n"
+            },
+            "curve-timeout-sec": {
+              "$ref": "params.shared.curve_timeout_sec"
+            },
+            "b1-min": {
+              "$ref": "params.search.b1_min"
+            },
+            "b1-max": {
+              "$ref": "params.search.b1_max"
+            },
+            "b2-min": {
+              "$ref": "params.search.b2_min"
+            },
+            "b2-max": {
+              "$ref": "params.search.b2_max"
+            },
+            "ratio-max": {
+              "$ref": "params.search.ratio_max"
+            },
+            "seed": {
+              "$ref": "iter.seed"
+            }
+          }
         },
-        "curves-per-n": {
-          "$ref": "params.shared.val_curves_per_n"
+        {
+          "type": "validate",
+          "label": "val_de_{{iter.seed}}",
+          "args": {
+            "dataset": {
+              "$ref": "dataset_main_{{iter.seed}}.dataset_dir"
+            },
+            "opt-result-file": {
+              "$ref": "opt_de_{{iter.seed}}.result_file"
+            },
+            "curves-per-n": {
+              "$ref": "params.shared.val_curves_per_n"
+            },
+            "curve-timeout-sec": {
+              "$ref": "params.shared.curve_timeout_sec"
+            },
+            "seed": {
+              "$ref": "iter.seed"
+            }
+          }
         },
-        "curve-timeout-sec": {
-          "$ref": "params.shared.curve_timeout_sec"
+        {
+          "type": "optimize",
+          "label": "opt_rs_{{iter.seed}}",
+          "args": {
+            "dataset": {
+              "$ref": "dataset_main_{{iter.seed}}.dataset_dir"
+            },
+            "method": "rs",
+            "rs-budget": 80,
+            "curves-per-n": {
+              "$ref": "params.shared.opt_curves_per_n"
+            },
+            "curve-timeout-sec": {
+              "$ref": "params.shared.curve_timeout_sec"
+            },
+            "b1-min": {
+              "$ref": "params.search.b1_min"
+            },
+            "b1-max": {
+              "$ref": "params.search.b1_max"
+            },
+            "b2-min": {
+              "$ref": "params.search.b2_min"
+            },
+            "b2-max": {
+              "$ref": "params.search.b2_max"
+            },
+            "ratio-max": {
+              "$ref": "params.search.ratio_max"
+            },
+            "seed": {
+              "$ref": "iter.seed"
+            }
+          }
+        },
+        {
+          "type": "validate",
+          "label": "val_rs_{{iter.seed}}",
+          "args": {
+            "dataset": {
+              "$ref": "dataset_main_{{iter.seed}}.dataset_dir"
+            },
+            "opt-result-file": {
+              "$ref": "opt_rs_{{iter.seed}}.result_file"
+            },
+            "curves-per-n": {
+              "$ref": "params.shared.val_curves_per_n"
+            },
+            "curve-timeout-sec": {
+              "$ref": "params.shared.curve_timeout_sec"
+            },
+            "seed": {
+              "$ref": "iter.seed"
+            }
+          }
+        },
+        {
+          "type": "optimize",
+          "label": "opt_pso_{{iter.seed}}",
+          "args": {
+            "dataset": {
+              "$ref": "dataset_main_{{iter.seed}}.dataset_dir"
+            },
+            "method": "pso",
+            "pso-swarm-size": 20,
+            "pso-iterations": 14,
+            "curves-per-n": {
+              "$ref": "params.shared.opt_curves_per_n"
+            },
+            "curve-timeout-sec": {
+              "$ref": "params.shared.curve_timeout_sec"
+            },
+            "b1-min": {
+              "$ref": "params.search.b1_min"
+            },
+            "b1-max": {
+              "$ref": "params.search.b1_max"
+            },
+            "b2-min": {
+              "$ref": "params.search.b2_min"
+            },
+            "b2-max": {
+              "$ref": "params.search.b2_max"
+            },
+            "ratio-max": {
+              "$ref": "params.search.ratio_max"
+            },
+            "seed": {
+              "$ref": "iter.seed"
+            }
+          }
+        },
+        {
+          "type": "validate",
+          "label": "val_pso_{{iter.seed}}",
+          "args": {
+            "dataset": {
+              "$ref": "dataset_main_{{iter.seed}}.dataset_dir"
+            },
+            "opt-result-file": {
+              "$ref": "opt_pso_{{iter.seed}}.result_file"
+            },
+            "curves-per-n": {
+              "$ref": "params.shared.val_curves_per_n"
+            },
+            "curve-timeout-sec": {
+              "$ref": "params.shared.curve_timeout_sec"
+            },
+            "seed": {
+              "$ref": "iter.seed"
+            }
+          }
+        },
+        {
+          "type": "optimize",
+          "label": "opt_bo_{{iter.seed}}",
+          "args": {
+            "dataset": {
+              "$ref": "dataset_main_{{iter.seed}}.dataset_dir"
+            },
+            "method": "bo",
+            "bo-initial-samples": 10,
+            "bo-iterations": 10,
+            "bo-candidate-pool": 1000,
+            "curves-per-n": {
+              "$ref": "params.shared.opt_curves_per_n"
+            },
+            "curve-timeout-sec": {
+              "$ref": "params.shared.curve_timeout_sec"
+            },
+            "b1-min": {
+              "$ref": "params.search.b1_min"
+            },
+            "b1-max": {
+              "$ref": "params.search.b1_max"
+            },
+            "b2-min": {
+              "$ref": "params.search.b2_min"
+            },
+            "b2-max": {
+              "$ref": "params.search.b2_max"
+            },
+            "ratio-max": {
+              "$ref": "params.search.ratio_max"
+            },
+            "seed": {
+              "$ref": "iter.seed"
+            }
+          }
+        },
+        {
+          "type": "validate",
+          "label": "val_bo_{{iter.seed}}",
+          "args": {
+            "dataset": {
+              "$ref": "dataset_main_{{iter.seed}}.dataset_dir"
+            },
+            "opt-result-file": {
+              "$ref": "opt_bo_{{iter.seed}}.result_file"
+            },
+            "curves-per-n": {
+              "$ref": "params.shared.val_curves_per_n"
+            },
+            "curve-timeout-sec": {
+              "$ref": "params.shared.curve_timeout_sec"
+            },
+            "seed": {
+              "$ref": "iter.seed"
+            }
+          }
+        },
+        {
+          "type": "optimize",
+          "label": "opt_ga_{{iter.seed}}",
+          "args": {
+            "dataset": {
+              "$ref": "dataset_main_{{iter.seed}}.dataset_dir"
+            },
+            "method": "ga",
+            "ga-population-size": 24,
+            "ga-generations": 16,
+            "ga-mutation-prob": 0.12,
+            "curves-per-n": {
+              "$ref": "params.shared.opt_curves_per_n"
+            },
+            "curve-timeout-sec": {
+              "$ref": "params.shared.curve_timeout_sec"
+            },
+            "b1-min": {
+              "$ref": "params.search.b1_min"
+            },
+            "b1-max": {
+              "$ref": "params.search.b1_max"
+            },
+            "b2-min": {
+              "$ref": "params.search.b2_min"
+            },
+            "b2-max": {
+              "$ref": "params.search.b2_max"
+            },
+            "ratio-max": {
+              "$ref": "params.search.ratio_max"
+            },
+            "seed": {
+              "$ref": "iter.seed"
+            }
+          }
+        },
+        {
+          "type": "validate",
+          "label": "val_ga_{{iter.seed}}",
+          "args": {
+            "dataset": {
+              "$ref": "dataset_main_{{iter.seed}}.dataset_dir"
+            },
+            "opt-result-file": {
+              "$ref": "opt_ga_{{iter.seed}}.result_file"
+            },
+            "curves-per-n": {
+              "$ref": "params.shared.val_curves_per_n"
+            },
+            "curve-timeout-sec": {
+              "$ref": "params.shared.curve_timeout_sec"
+            },
+            "seed": {
+              "$ref": "iter.seed"
+            }
+          }
         }
-      }
-    },
-    {
-      "type": "optimize",
-      "label": "opt_rs",
-      "args": {
-        "dataset": {
-          "$ref": "dataset_main.dataset_dir"
-        },
-        "method": "rs",
-        "rs-budget": 80,
-        "curves-per-n": {
-          "$ref": "params.shared.opt_curves_per_n"
-        },
-        "curve-timeout-sec": {
-          "$ref": "params.shared.curve_timeout_sec"
-        },
-        "b1-min": {
-          "$ref": "params.search.b1_min"
-        },
-        "b1-max": {
-          "$ref": "params.search.b1_max"
-        },
-        "b2-min": {
-          "$ref": "params.search.b2_min"
-        },
-        "b2-max": {
-          "$ref": "params.search.b2_max"
-        },
-        "ratio-max": {
-          "$ref": "params.search.ratio_max"
-        }
-      }
-    },
-    {
-      "type": "validate",
-      "label": "val_rs",
-      "args": {
-        "dataset": {
-          "$ref": "dataset_main.dataset_dir"
-        },
-        "opt-result-file": {
-          "$ref": "opt_rs.result_file"
-        },
-        "curves-per-n": {
-          "$ref": "params.shared.val_curves_per_n"
-        },
-        "curve-timeout-sec": {
-          "$ref": "params.shared.curve_timeout_sec"
-        }
-      }
-    },
-    {
-      "type": "optimize",
-      "label": "opt_pso",
-      "args": {
-        "dataset": {
-          "$ref": "dataset_main.dataset_dir"
-        },
-        "method": "pso",
-        "pso-swarm-size": 20,
-        "pso-iterations": 14,
-        "curves-per-n": {
-          "$ref": "params.shared.opt_curves_per_n"
-        },
-        "curve-timeout-sec": {
-          "$ref": "params.shared.curve_timeout_sec"
-        },
-        "b1-min": {
-          "$ref": "params.search.b1_min"
-        },
-        "b1-max": {
-          "$ref": "params.search.b1_max"
-        },
-        "b2-min": {
-          "$ref": "params.search.b2_min"
-        },
-        "b2-max": {
-          "$ref": "params.search.b2_max"
-        },
-        "ratio-max": {
-          "$ref": "params.search.ratio_max"
-        }
-      }
-    },
-    {
-      "type": "validate",
-      "label": "val_pso",
-      "args": {
-        "dataset": {
-          "$ref": "dataset_main.dataset_dir"
-        },
-        "opt-result-file": {
-          "$ref": "opt_pso.result_file"
-        },
-        "curves-per-n": {
-          "$ref": "params.shared.val_curves_per_n"
-        },
-        "curve-timeout-sec": {
-          "$ref": "params.shared.curve_timeout_sec"
-        }
-      }
-    },
-    {
-      "type": "optimize",
-      "label": "opt_bo",
-      "args": {
-        "dataset": {
-          "$ref": "dataset_main.dataset_dir"
-        },
-        "method": "bo",
-        "bo-initial-samples": 10,
-        "bo-iterations": 10,
-        "bo-candidate-pool": 1000,
-        "curves-per-n": {
-          "$ref": "params.shared.opt_curves_per_n"
-        },
-        "curve-timeout-sec": {
-          "$ref": "params.shared.curve_timeout_sec"
-        },
-        "b1-min": {
-          "$ref": "params.search.b1_min"
-        },
-        "b1-max": {
-          "$ref": "params.search.b1_max"
-        },
-        "b2-min": {
-          "$ref": "params.search.b2_min"
-        },
-        "b2-max": {
-          "$ref": "params.search.b2_max"
-        },
-        "ratio-max": {
-          "$ref": "params.search.ratio_max"
-        }
-      }
-    },
-    {
-      "type": "validate",
-      "label": "val_bo",
-      "args": {
-        "dataset": {
-          "$ref": "dataset_main.dataset_dir"
-        },
-        "opt-result-file": {
-          "$ref": "opt_bo.result_file"
-        },
-        "curves-per-n": {
-          "$ref": "params.shared.val_curves_per_n"
-        },
-        "curve-timeout-sec": {
-          "$ref": "params.shared.curve_timeout_sec"
-        }
-      }
-    },
-    {
-      "type": "optimize",
-      "label": "opt_ga",
-      "args": {
-        "dataset": {
-          "$ref": "dataset_main.dataset_dir"
-        },
-        "method": "ga",
-        "ga-population-size": 24,
-        "ga-generations": 16,
-        "ga-mutation-prob": 0.12,
-        "curves-per-n": {
-          "$ref": "params.shared.opt_curves_per_n"
-        },
-        "curve-timeout-sec": {
-          "$ref": "params.shared.curve_timeout_sec"
-        },
-        "b1-min": {
-          "$ref": "params.search.b1_min"
-        },
-        "b1-max": {
-          "$ref": "params.search.b1_max"
-        },
-        "b2-min": {
-          "$ref": "params.search.b2_min"
-        },
-        "b2-max": {
-          "$ref": "params.search.b2_max"
-        },
-        "ratio-max": {
-          "$ref": "params.search.ratio_max"
-        }
-      }
-    },
-    {
-      "type": "validate",
-      "label": "val_ga",
-      "args": {
-        "dataset": {
-          "$ref": "dataset_main.dataset_dir"
-        },
-        "opt-result-file": {
-          "$ref": "opt_ga.result_file"
-        },
-        "curves-per-n": {
-          "$ref": "params.shared.val_curves_per_n"
-        },
-        "curve-timeout-sec": {
-          "$ref": "params.shared.curve_timeout_sec"
-        }
-      }
+      ]
     },
     {
       "type": "analyze",
-      "label": "analysis_all_methods",
+      "label": "analysis_all_methods_multi_seed",
       "args": {
-        "dataset": {
-          "$ref": "dataset_main.dataset_dir"
-        },
+        "dataset": [
+          {
+            "$ref": "dataset_main_17.dataset_dir"
+          },
+          {
+            "$ref": "dataset_main_2718.dataset_dir"
+          },
+          {
+            "$ref": "dataset_main_31415.dataset_dir"
+          }
+        ],
         "group-by": [
           "divisor_size",
           "method"

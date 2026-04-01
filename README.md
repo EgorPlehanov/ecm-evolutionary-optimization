@@ -113,6 +113,12 @@ ecm-optimizer run-plan --plan example_full_run
 - `type` — один из `generate`, `optimize`, `validate`, `analyze`;
 - `label` — опциональная метка результата шага;
 - `args` — аргументы CLI-команды в формате `--kebab-case`;
+- повторяемые блоки: вместо `type` можно задать `repeat` + вложенный `operations`:
+  - `repeat: 3` — выполнить вложенные операции 3 раза (`iter.index = 0..2`);
+  - `repeat: {"count": 3, "as": "run"}` — то же, но переменная цикла будет `run`;
+  - `repeat: {"values": {"seed": [11, 22, 33]}}` — количество итераций берётся по длине списка;
+  - `repeat: {"count": 3, "values": {"seed": [...]}}` — `count` должен совпадать с длинами всех списков;
+  - внутри блока доступны `{{iter.index}}` и поля из `values` (например `$ref:iter.seed` или `{{iter.seed}}`).
 - ссылки между шагами/параметрами: `{"$ref": "<label>.<field>"}` или строка `$ref:<label>.<field>`.
   Для общих параметров используйте label `params`, например: `{"$ref": "params.shared.curves_per_n"}`.
 - shortcut для `analyze`: можно передать `dataset` (строку или список), и `run-plan` автоматически
@@ -139,6 +145,24 @@ ecm-optimizer run-plan --plan example_full_run
         "curves-per-n": {"$ref": "params.shared.curves_per_n"},
         "curve-timeout-sec": {"$ref": "params.shared.curve_timeout_sec"}
       }
+    }
+    ,
+    {
+      "repeat": {
+        "values": {
+          "seed": [101, 202, 303]
+        }
+      },
+      "operations": [
+        {
+          "type": "generate",
+          "label": "gen_seed_{{iter.seed}}",
+          "args": {
+            "target-digits": 20,
+            "seed": {"$ref": "iter.seed"}
+          }
+        }
+      ]
     }
   ]
 }
