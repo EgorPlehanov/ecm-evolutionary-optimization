@@ -261,6 +261,7 @@ def _execute_operations(
     context: dict[str, dict[str, Any]],
     dry_run: bool,
     step_counter: list[int],
+    total_steps: int,
 ) -> None:
     for raw_op in operations:
         if not isinstance(raw_op, dict):
@@ -285,6 +286,7 @@ def _execute_operations(
                     context=context,
                     dry_run=dry_run,
                     step_counter=step_counter,
+                    total_steps=total_steps,
                 )
             if previous_alias is None:
                 context.pop(alias, None)
@@ -336,7 +338,7 @@ def _execute_operations(
             resolved_args = _apply_analyze_shortcuts(resolved_args)
         command_tail = _operation_to_args(op_type, resolved_args)
         cmd = [sys.executable, "-m", "ecm_optimizer.cli.main", *command_tail]
-        click.echo(f"\nSTEP_{idx}: {' '.join(shlex.quote(token) for token in cmd)}")
+        click.echo(f"\nSTEP {idx}/{total_steps}: {' '.join(shlex.quote(token) for token in cmd)}")
 
         if dry_run:
             continue
@@ -373,6 +375,37 @@ def _execute_operations(
             }
 
 
+def _count_operations(
+    operations: list[Any],
+    *,
+    context: dict[str, dict[str, Any]],
+    dry_run: bool,
+) -> int:
+    total = 0
+    for raw_op in operations:
+        if not isinstance(raw_op, dict):
+            raise click.UsageError("Operation must be an object.")
+
+        if "repeat" in raw_op:
+            nested_operations = raw_op.get("operations")
+            if not isinstance(nested_operations, list) or not nested_operations:
+                raise click.UsageError("Repeat block must contain non-empty 'operations' list.")
+
+            alias, iterations = _build_repeat_iterations(raw_op["repeat"], context, dry_run=dry_run)
+            previous_alias = context.get(alias)
+            for iteration in iterations:
+                context[alias] = iteration
+                total += _count_operations(nested_operations, context=context, dry_run=dry_run)
+            if previous_alias is None:
+                context.pop(alias, None)
+            else:
+                context[alias] = previous_alias
+            continue
+
+        total += 1
+    return total
+
+
 @click.command("run-plan")
 @click.option(
     "--plan",
@@ -396,7 +429,15 @@ def run_plan_command(plan: str, dry_run: bool) -> None:
 
     context: dict[str, dict[str, Any]] = {"params": _resolve_refs(params, {})}
 
+    total_steps = _count_operations(operations, context=dict(context), dry_run=dry_run)
+
     click.echo(f"plan_file: {plan_path}")
-    _execute_operations(operations, context=context, dry_run=dry_run, step_counter=[0])
+    _execute_operations(
+        operations,
+        context=context,
+        dry_run=dry_run,
+        step_counter=[0],
+        total_steps=total_steps,
+    )
 
     click.echo("plan_status: completed" if not dry_run else "plan_status: dry_run")
