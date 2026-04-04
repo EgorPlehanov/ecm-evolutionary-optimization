@@ -1,9 +1,10 @@
 from __future__ import annotations
 
+import csv
 from dataclasses import dataclass
 from pathlib import Path
-
-
+from statistics import median
+from typing import Any
 
 
 
@@ -25,6 +26,12 @@ class RunArtifacts:
     plots: dict[str, Path]
 
 
+@dataclass(frozen=True)
+class AnalysisArtifacts:
+    files: dict[str, Path]
+    flags: dict[str, dict[str, str | float | bool | None]]
+
+
 def _max_plateau(evaluation_events: list[dict[str, float | int | str]], new_best_evals: set[int]) -> int:
     max_gap = 0
     current_gap = 0
@@ -36,6 +43,33 @@ def _max_plateau(evaluation_events: list[dict[str, float | int | str]], new_best
         else:
             current_gap += 1
     return max(max_gap, current_gap)
+
+
+def _plateau_lengths(evaluation_events: list[dict[str, float | int | str]], new_best_evals: set[int]) -> list[int]:
+    lengths: list[int] = []
+    current_gap = 0
+    for event in evaluation_events:
+        eval_id = int(event["eval"])
+        if eval_id in new_best_evals:
+            lengths.append(current_gap)
+            current_gap = 0
+        else:
+            current_gap += 1
+    lengths.append(current_gap)
+    return lengths
+
+
+def _percentile(values: list[int], q: float) -> float | None:
+    if not values:
+        return None
+    sorted_values = sorted(values)
+    if len(sorted_values) == 1:
+        return float(sorted_values[0])
+    rank = (len(sorted_values) - 1) * q
+    lo = int(rank)
+    hi = min(lo + 1, len(sorted_values) - 1)
+    frac = rank - lo
+    return float(sorted_values[lo] + frac * (sorted_values[hi] - sorted_values[lo]))
 
 
 def build_run_statistics(history: list[dict[str, float | int | str]]) -> dict[str, float | int | None]:
@@ -54,6 +88,11 @@ def build_run_statistics(history: list[dict[str, float | int | str]]) -> dict[st
             "eval_per_sec": None,
             "improvement_percent": None,
             "max_plateau_evals": None,
+            "median_plateau_evals": None,
+            "p90_plateau_evals": None,
+            "new_best_rate": None,
+            "best_eval": None,
+            "best_eval_fraction": None,
         }
 
     total_evals = len(evaluation_events)
@@ -68,20 +107,28 @@ def build_run_statistics(history: list[dict[str, float | int | str]]) -> dict[st
 
     best_event = min(evaluation_events, key=lambda event: float(event["fitness"]))
     time_to_best_sec = float(best_event.get("elapsed_sec", 0.0))
+    best_eval = int(best_event.get("eval", 0))
 
     improvement_percent: float | None = None
     if first_fitness != 0:
         improvement_percent = ((first_fitness - best_fitness) / abs(first_fitness)) * 100.0
 
+    plateau_lengths = _plateau_lengths(evaluation_events, new_best_evals)
+
     return {
         "evaluation_count": total_evals,
         "new_best_count": len(new_best_events),
+        "new_best_rate": (len(new_best_events) / total_evals) if total_evals else None,
         "total_runtime_sec": total_runtime_sec,
         "time_to_first_improvement_sec": time_to_first_improvement_sec,
         "time_to_best_sec": time_to_best_sec,
+        "best_eval": best_eval,
+        "best_eval_fraction": (best_eval / total_evals) if total_evals else None,
         "eval_per_sec": (total_evals / total_elapsed) if total_elapsed > 0 else None,
         "improvement_percent": improvement_percent,
         "max_plateau_evals": _max_plateau(evaluation_events, new_best_evals),
+        "median_plateau_evals": float(median(plateau_lengths)) if plateau_lengths else None,
+        "p90_plateau_evals": _percentile(plateau_lengths, 0.9),
     }
 
 
@@ -213,3 +260,213 @@ def generate_run_artifacts(
     plots["progress_by_phase"] = phase_path
 
     return RunArtifacts(stats=stats, plots=plots)
+
+
+def _attention_flags(stats: dict[str, float | int | None]) -> dict[str, dict[str, str | float | bool | None]]:
+    evaluation_count = int(stats.get("evaluation_count") or 0)
+    max_plateau = float(stats.get("max_plateau_evals") or 0.0)
+    new_best_rate = float(stats.get("new_best_rate") or 0.0)
+    total_runtime_sec = float(stats.get("total_runtime_sec") or 0.0)
+    time_to_best_sec = float(stats.get("time_to_best_sec") or 0.0)
+    improvement_percent = float(stats.get("improvement_percent") or 0.0)
+
+    plateau_ratio = (max_plateau / evaluation_count) if evaluation_count > 0 else None
+    late_best_ratio = (time_to_best_sec / total_runtime_sec) if total_runtime_sec > 0 else None
+
+    plateau_alert = bool(plateau_ratio is not None and plateau_ratio > 0.5)
+    late_best_alert = bool(late_best_ratio is not None and late_best_ratio > 0.85)
+    low_signal_alert = bool(new_best_rate < 0.03) if evaluation_count > 0 else False
+    low_improvement_alert = bool(improvement_percent < 10.0) if evaluation_count > 0 else False
+
+    return {
+        "plateau_too_long": {
+            "triggered": plateau_alert,
+            "value": plateau_ratio,
+            "threshold": "> 0.50",
+            "severity": "high" if plateau_alert else "ok",
+            "action": "increase exploration or add restart policy",
+        },
+        "late_best": {
+            "triggered": late_best_alert,
+            "value": late_best_ratio,
+            "threshold": "> 0.85",
+            "severity": "medium" if late_best_alert else "ok",
+            "action": "improve early-stage search or reconsider budget",
+        },
+        "low_signal": {
+            "triggered": low_signal_alert,
+            "value": new_best_rate,
+            "threshold": "< 0.03",
+            "severity": "high" if low_signal_alert else "ok",
+            "action": "re-tune exploration and run top-k reevaluation",
+        },
+        "low_improvement": {
+            "triggered": low_improvement_alert,
+            "value": improvement_percent,
+            "threshold": "< 10%",
+            "severity": "medium" if low_improvement_alert else "ok",
+            "action": "consider narrowing bounds or changing method params",
+        },
+    }
+
+
+def generate_analysis_artifacts(
+    *,
+    history: list[dict[str, float | int | str]],
+    stats: dict[str, float | int | None],
+    plots: dict[str, Path],
+    output_dir: Path,
+    run_stem: str,
+    context: dict[str, Any],
+) -> AnalysisArtifacts:
+    output_dir.mkdir(parents=True, exist_ok=True)
+    files: dict[str, Path] = {}
+
+    events = [event for event in history if event.get("kind") in {"evaluation", "new_best", "step"}]
+    new_best_events = [event for event in history if event.get("kind") == "new_best"]
+    events_path = output_dir / f"{run_stem}_events.csv"
+    with events_path.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=[
+                "event_idx",
+                "kind",
+                "eval",
+                "elapsed_sec",
+                "b1",
+                "b2",
+                "ratio",
+                "fitness",
+                "is_new_best",
+                "message",
+                "timestamp_utc",
+            ],
+        )
+        writer.writeheader()
+        for idx, event in enumerate(events, start=1):
+            b1 = event.get("b1")
+            b2 = event.get("b2")
+            ratio = (float(b2) / float(b1)) if b1 not in (None, 0, 0.0) and b2 is not None else None
+            writer.writerow(
+                {
+                    "event_idx": idx,
+                    "kind": event.get("kind"),
+                    "eval": event.get("eval"),
+                    "elapsed_sec": event.get("elapsed_sec"),
+                    "b1": b1,
+                    "b2": b2,
+                    "ratio": ratio,
+                    "fitness": event.get("fitness"),
+                    "is_new_best": event.get("kind") == "new_best",
+                    "message": event.get("message", ""),
+                    "timestamp_utc": event.get("timestamp_utc", ""),
+                }
+            )
+    files["events_csv"] = events_path
+
+    new_best_path = output_dir / f"{run_stem}_new_best.csv"
+    with new_best_path.open("w", encoding="utf-8", newline="") as f:
+        writer = csv.DictWriter(
+            f,
+            fieldnames=[
+                "new_best_idx",
+                "eval",
+                "elapsed_sec",
+                "b1",
+                "b2",
+                "ratio",
+                "fitness",
+                "delta_abs_vs_prev_best",
+                "delta_pct_vs_prev_best",
+                "plateau_since_prev_new_best",
+            ],
+        )
+        writer.writeheader()
+        prev_best_fitness: float | None = None
+        prev_best_eval: int | None = None
+        for idx, event in enumerate(new_best_events, start=1):
+            fitness = float(event["fitness"])
+            eval_id = int(event.get("eval", 0))
+            b1 = event.get("b1")
+            b2 = event.get("b2")
+            ratio = (float(b2) / float(b1)) if b1 not in (None, 0, 0.0) and b2 is not None else None
+            delta_abs: float | None = None
+            delta_pct: float | None = None
+            plateau = None
+            if prev_best_fitness is not None:
+                delta_abs = prev_best_fitness - fitness
+                if prev_best_fitness != 0:
+                    delta_pct = (delta_abs / abs(prev_best_fitness)) * 100.0
+            if prev_best_eval is not None:
+                plateau = max(0, eval_id - prev_best_eval - 1)
+            writer.writerow(
+                {
+                    "new_best_idx": idx,
+                    "eval": eval_id,
+                    "elapsed_sec": event.get("elapsed_sec"),
+                    "b1": b1,
+                    "b2": b2,
+                    "ratio": ratio,
+                    "fitness": fitness,
+                    "delta_abs_vs_prev_best": delta_abs,
+                    "delta_pct_vs_prev_best": delta_pct,
+                    "plateau_since_prev_new_best": plateau,
+                }
+            )
+            prev_best_fitness = fitness
+            prev_best_eval = eval_id
+    files["new_best_csv"] = new_best_path
+
+    flags = _attention_flags(stats)
+    summary_path = output_dir / f"{run_stem}_run_summary.csv"
+    with summary_path.open("w", encoding="utf-8", newline="") as f:
+        summary_keys = sorted(stats.keys())
+        flag_keys = sorted(flags.keys())
+        fieldnames = summary_keys + [f"flag_{name}" for name in flag_keys]
+        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer.writeheader()
+        row: dict[str, Any] = {key: stats.get(key) for key in summary_keys}
+        for name in flag_keys:
+            row[f"flag_{name}"] = bool(flags[name]["triggered"])
+        writer.writerow(row)
+    files["run_summary_csv"] = summary_path
+
+    report_path = output_dir / f"{run_stem}_report.md"
+    method = context.get("method", "unknown")
+    dataset = context.get("dataset", "")
+    optimized = context.get("optimized", {})
+    config = context.get("config", {})
+    best_obj = optimized.get("objective")
+    lines: list[str] = [
+        f"# Optimization report: {run_stem}",
+        "",
+        "## Metadata",
+        f"- method: `{method}`",
+        f"- dataset: `{dataset}`",
+        f"- optimized `(B1, B2)`: `({optimized.get('b1')}, {optimized.get('b2')})`",
+        f"- objective: `{best_obj}`",
+        f"- curves_per_n: `{config.get('curves_per_n')}`",
+        f"- bounds: `B1[{config.get('b1_min')}, {config.get('b1_max')}]`, `B2[{config.get('b2_min')}, {config.get('b2_max')}]`, `ratio_max={config.get('ratio_max')}`",
+        "",
+        "## Key statistics",
+    ]
+    for key in sorted(stats):
+        lines.append(f"- `{key}`: `{stats[key]}`")
+    lines.extend(["", "## Attention flags"])
+    for name in sorted(flags):
+        item = flags[name]
+        marker = "⚠️" if item["triggered"] else "✅"
+        lines.append(
+            f"- {marker} `{name}`: triggered=`{item['triggered']}`; value=`{item['value']}`; threshold=`{item['threshold']}`; action=`{item['action']}`"
+        )
+    lines.extend(["", "## Data tables"])
+    for key, path in files.items():
+        lines.append(f"- `{key}`: `{path}`")
+    lines.extend(["", "## Plots"])
+    for name, path in sorted(plots.items()):
+        lines.append(f"- `{name}`: `{path}`")
+        lines.append(f"![{name}]({path})")
+    report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+    files["report_md"] = report_path
+
+    return AnalysisArtifacts(files=files, flags=flags)
