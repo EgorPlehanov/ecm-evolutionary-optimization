@@ -11,7 +11,7 @@ from ecm_optimizer.core.problem import load_numbers, read_dataset_metadata
 from ecm_optimizer.models import OptimizationConfig, resolve_workers
 from ecm_optimizer.optimizers import create_optimizer, normalize_optimizer_method
 from ecm_optimizer.utils.io_utils import ensure_dir, utc_timestamp, write_json_with_meta
-from ecm_optimizer.utils.optimization_reporting import generate_run_artifacts
+from ecm_optimizer.utils.optimization_reporting import generate_analysis_artifacts, generate_run_artifacts
 
 
 def _parse_target_digits(dataset_path: Path, fallback: int | None = None) -> int | None:
@@ -210,6 +210,26 @@ def optimize_command(
         output_dir=plots_dir,
         run_stem=run_stem,
     )
+    analysis = generate_analysis_artifacts(
+        history=result.history,
+        stats=artifacts.stats,
+        plots=artifacts.plots,
+        output_dir=run_dir,
+        run_stem=run_stem,
+        context={
+            "method": method,
+            "dataset": str(dataset_path),
+            "optimized": {"method": method, "b1": result.b1, "b2": result.b2, "objective": result.objective},
+            "config": {
+                "b1_min": b1_min,
+                "b1_max": b1_max,
+                "b2_min": b2_min,
+                "b2_max": b2_max,
+                "ratio_max": ratio_max,
+                "curves_per_n": curves_per_n,
+            },
+        },
+    )
     payload = {
         "dataset": str(dataset_path),
         "dataset_target_digits": target_digits,
@@ -231,6 +251,8 @@ def optimize_command(
         "optimization_trace": result.history,
         "run_stats": artifacts.stats,
         "plots": {name: str(path) for name, path in artifacts.plots.items()},
+        "analysis_files": {name: str(path) for name, path in analysis.files.items()},
+        "attention_flags": analysis.flags,
         "suggested_baseline": {
             "b1": baseline.b1,
             "b2": baseline.b2,
@@ -243,3 +265,6 @@ def optimize_command(
     click.echo("plot_files:")
     for plot_name, plot_path in artifacts.plots.items():
         click.echo(f"  {plot_name}: {plot_path}")
+    click.echo("analysis_files:")
+    for analysis_name, analysis_path in analysis.files.items():
+        click.echo(f"  {analysis_name}: {analysis_path}")
