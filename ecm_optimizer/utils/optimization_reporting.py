@@ -190,103 +190,70 @@ def generate_run_artifacts(
 
     conv_x, conv_y = _convergence_series(evaluation_events)
 
-    plt.figure(figsize=(10, 5))
-    plt.plot(conv_x, conv_y, color="tab:blue", linewidth=1.8)
-    plt.title("Convergence curve")
-    plt.xlabel("Evaluation")
-    plt.ylabel("Best fitness so far")
-    plt.grid(alpha=0.3)
-    convergence_path = output_dir / f"{run_stem}_convergence.png"
-    plt.tight_layout()
-    plt.savefig(convergence_path, dpi=150)
-    plt.close()
-    plots["convergence"] = convergence_path
-
-    plt.figure(figsize=(10, 5))
-    plt.plot(eval_ids, fitness_values, color="tab:orange", linewidth=1.2)
-    plt.title("Raw fitness trajectory")
-    plt.xlabel("Evaluation")
-    plt.ylabel("Fitness")
-    plt.grid(alpha=0.3)
-    raw_path = output_dir / f"{run_stem}_raw_fitness.png"
-    plt.tight_layout()
-    plt.savefig(raw_path, dpi=150)
-    plt.close()
-    plots["raw_fitness"] = raw_path
-
     if new_best_events:
-        plt.figure(figsize=(10, 5))
         jump_eval = [int(event["eval"]) for event in new_best_events]
         jump_fit = [float(event["fitness"]) for event in new_best_events]
-        plt.scatter(jump_eval, jump_fit, color="tab:green", s=28)
-        plt.plot(jump_eval, jump_fit, color="tab:green", alpha=0.6, linewidth=1.0)
-        plt.title("Jump plot (new best events)")
-        plt.xlabel("Evaluation")
-        plt.ylabel("Fitness")
-        plt.grid(alpha=0.3)
-        jump_path = output_dir / f"{run_stem}_jump_plot.png"
-        plt.tight_layout()
-        plt.savefig(jump_path, dpi=150)
-        plt.close()
-        plots["jump_plot"] = jump_path
+        fig, ax_fitness = plt.subplots(figsize=(10, 5))
+        ax_fitness.scatter(jump_eval, jump_fit, color="tab:green", s=28)
+        ax_fitness.plot(jump_eval, jump_fit, color="tab:green", alpha=0.6, linewidth=1.0)
+        ax_fitness.set_title("Jump plot + improvement deltas (new best events)")
+        ax_fitness.set_xlabel("Evaluation (new_best)")
+        ax_fitness.set_ylabel("Fitness", color="tab:green")
+        ax_fitness.tick_params(axis="y", labelcolor="tab:green")
+        ax_fitness.grid(alpha=0.3)
 
         if len(jump_fit) >= 2:
             delta_x = jump_eval[1:]
             deltas = [jump_fit[i - 1] - jump_fit[i] for i in range(1, len(jump_fit))]
-            plt.figure(figsize=(10, 5))
-            plt.bar(delta_x, deltas, color="tab:purple", width=0.8)
-            plt.title("Прирост на каждом new_best (delta fitness)")
-            plt.xlabel("Evaluation (new_best)")
-            plt.ylabel("Delta fitness")
-            plt.grid(alpha=0.3)
-            delta_path = output_dir / f"{run_stem}_improvement_deltas.png"
-            plt.tight_layout()
-            plt.savefig(delta_path, dpi=150)
-            plt.close()
-            plots["improvement_deltas"] = delta_path
+            ax_delta = ax_fitness.twinx()
+            ax_delta.bar(delta_x, deltas, color="tab:purple", width=0.8, alpha=0.35)
+            ax_delta.set_ylabel("Delta fitness", color="tab:purple")
+            ax_delta.tick_params(axis="y", labelcolor="tab:purple")
 
-    fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 5))
-    axes[0].plot(eval_ids, b1_values, label="B1", linewidth=1.2)
-    axes[0].plot(eval_ids, b2_values, label="B2", linewidth=1.2)
-    axes[0].set_title("B1/B2 trajectory")
-    axes[0].set_xlabel("Evaluation")
-    axes[0].set_ylabel("Parameter value")
-    axes[0].legend()
-    axes[0].grid(alpha=0.3)
+        jump_path = output_dir / f"{run_stem}_jump_plot.png"
+        fig.tight_layout()
+        fig.savefig(jump_path, dpi=150)
+        plt.close(fig)
+        plots["jump_plot"] = jump_path
 
-    scatter = axes[1].scatter(b1_values, b2_values, c=fitness_values, cmap="viridis", s=16)
-    axes[1].set_title("B1 vs B2 (colored by fitness)")
-    axes[1].set_xlabel("B1")
-    axes[1].set_ylabel("B2")
-    axes[1].grid(alpha=0.3)
-    fig.colorbar(scatter, ax=axes[1], label="Fitness")
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.plot(eval_ids, b1_values, label="B1", linewidth=1.2)
+    ax.plot(eval_ids, b2_values, label="B2", linewidth=1.2)
+    ax.set_title("B1/B2 trajectory")
+    ax.set_xlabel("Evaluation")
+    ax.set_ylabel("Parameter value")
+    ax.legend()
+    ax.grid(alpha=0.3)
     b1b2_path = output_dir / f"{run_stem}_b1_b2_trajectory.png"
     fig.tight_layout()
     fig.savefig(b1b2_path, dpi=150)
     plt.close(fig)
     plots["b1_b2_trajectory"] = b1b2_path
 
-    plt.figure(figsize=(10, 5))
-    plt.plot(conv_x, conv_y, color="tab:blue", linewidth=1.6)
-    ymin = min(conv_y)
-    ymax = max(conv_y)
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.plot(conv_x, conv_y, color="tab:blue", linewidth=1.8, label="Best fitness so far")
+    ax.plot(eval_ids, fitness_values, color="tab:orange", linewidth=1.1, alpha=0.8, label="Raw fitness")
+    all_fitness_values = conv_y + fitness_values
+    ymin = min(all_fitness_values)
+    ymax = max(all_fitness_values)
     if ymin == ymax:
         ymax = ymin + 1.0
     for idx, step_event in enumerate(step_events):
         event_eval = int(step_event.get("eval", 0))
         label = str(step_event.get("message", "step"))
-        plt.axvline(event_eval, color="tab:red", alpha=0.2, linewidth=1.0)
+        ax.axvline(event_eval, color="tab:red", alpha=0.2, linewidth=1.0)
         if idx < 12:
-            plt.text(event_eval, ymax, label[:28], rotation=90, va="top", ha="right", fontsize=7)
-    plt.ylim(ymin, ymax)
-    plt.title("Progress by phase")
-    plt.xlabel("Evaluation")
-    plt.ylabel("Best fitness so far")
-    plt.grid(alpha=0.3)
+            ax.text(event_eval, ymax, label[:28], rotation=90, va="top", ha="right", fontsize=7)
+    ax.set_ylim(ymin, ymax)
+    ax.set_title("Progress by phase: best-so-far and raw fitness")
+    ax.set_xlabel("Evaluation")
+    ax.set_ylabel("Fitness")
+    ax.legend()
+    ax.grid(alpha=0.3)
     phase_path = output_dir / f"{run_stem}_progress_by_phase.png"
-    plt.tight_layout()
-    plt.savefig(phase_path, dpi=150)
-    plt.close()
+    fig.tight_layout()
+    fig.savefig(phase_path, dpi=150)
+    plt.close(fig)
     plots["progress_by_phase"] = phase_path
 
     elapsed = [float(event.get("elapsed_sec", 0.0)) for event in evaluation_events]
@@ -317,17 +284,31 @@ def generate_run_artifacts(
     plots["time_efficiency"] = time_efficiency_path
 
     ratio_values = [(b2 / b1) if b1 != 0 else 0.0 for b1, b2 in zip(b1_values, b2_values)]
-    plt.figure(figsize=(10, 5))
-    hb = plt.hexbin(b1_values, ratio_values, C=fitness_values, reduce_C_function=min, gridsize=25, cmap="viridis")
-    plt.title("Heatmap по (B1, B2/B1), цвет = min fitness в бинe")
-    plt.xlabel("B1")
-    plt.ylabel("B2 / B1")
-    plt.grid(alpha=0.2)
-    plt.colorbar(hb, label="Best fitness in bin")
+    fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 5))
+    scatter = axes[0].scatter(b1_values, b2_values, c=fitness_values, cmap="viridis", s=16)
+    axes[0].set_title("B1 vs B2 (colored by fitness)")
+    axes[0].set_xlabel("B1")
+    axes[0].set_ylabel("B2")
+    axes[0].grid(alpha=0.3)
+    fig.colorbar(scatter, ax=axes[0], label="Fitness")
+
+    hb = axes[1].hexbin(
+        b1_values,
+        ratio_values,
+        C=fitness_values,
+        reduce_C_function=min,
+        gridsize=25,
+        cmap="viridis",
+    )
+    axes[1].set_title("Heatmap: B1 vs B2/B1 (min fitness in bin)")
+    axes[1].set_xlabel("B1")
+    axes[1].set_ylabel("B2 / B1")
+    axes[1].grid(alpha=0.2)
+    fig.colorbar(hb, ax=axes[1], label="Best fitness in bin")
     heatmap_path = output_dir / f"{run_stem}_b1_ratio_heatmap.png"
-    plt.tight_layout()
-    plt.savefig(heatmap_path, dpi=150)
-    plt.close()
+    fig.tight_layout()
+    fig.savefig(heatmap_path, dpi=150)
+    plt.close(fig)
     plots["b1_ratio_heatmap"] = heatmap_path
 
     return RunArtifacts(stats=stats, plots=plots)
