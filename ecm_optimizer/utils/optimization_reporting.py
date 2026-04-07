@@ -215,35 +215,30 @@ def generate_run_artifacts(
     plots["raw_fitness"] = raw_path
 
     if new_best_events:
-        plt.figure(figsize=(10, 5))
         jump_eval = [int(event["eval"]) for event in new_best_events]
         jump_fit = [float(event["fitness"]) for event in new_best_events]
-        plt.scatter(jump_eval, jump_fit, color="tab:green", s=28)
-        plt.plot(jump_eval, jump_fit, color="tab:green", alpha=0.6, linewidth=1.0)
-        plt.title("Jump plot (new best events)")
-        plt.xlabel("Evaluation")
-        plt.ylabel("Fitness")
-        plt.grid(alpha=0.3)
-        jump_path = output_dir / f"{run_stem}_jump_plot.png"
-        plt.tight_layout()
-        plt.savefig(jump_path, dpi=150)
-        plt.close()
-        plots["jump_plot"] = jump_path
+        fig, ax_fitness = plt.subplots(figsize=(10, 5))
+        ax_fitness.scatter(jump_eval, jump_fit, color="tab:green", s=28)
+        ax_fitness.plot(jump_eval, jump_fit, color="tab:green", alpha=0.6, linewidth=1.0)
+        ax_fitness.set_title("Jump plot + improvement deltas (new best events)")
+        ax_fitness.set_xlabel("Evaluation (new_best)")
+        ax_fitness.set_ylabel("Fitness", color="tab:green")
+        ax_fitness.tick_params(axis="y", labelcolor="tab:green")
+        ax_fitness.grid(alpha=0.3)
 
         if len(jump_fit) >= 2:
             delta_x = jump_eval[1:]
             deltas = [jump_fit[i - 1] - jump_fit[i] for i in range(1, len(jump_fit))]
-            plt.figure(figsize=(10, 5))
-            plt.bar(delta_x, deltas, color="tab:purple", width=0.8)
-            plt.title("Прирост на каждом new_best (delta fitness)")
-            plt.xlabel("Evaluation (new_best)")
-            plt.ylabel("Delta fitness")
-            plt.grid(alpha=0.3)
-            delta_path = output_dir / f"{run_stem}_improvement_deltas.png"
-            plt.tight_layout()
-            plt.savefig(delta_path, dpi=150)
-            plt.close()
-            plots["improvement_deltas"] = delta_path
+            ax_delta = ax_fitness.twinx()
+            ax_delta.bar(delta_x, deltas, color="tab:purple", width=0.8, alpha=0.35)
+            ax_delta.set_ylabel("Delta fitness", color="tab:purple")
+            ax_delta.tick_params(axis="y", labelcolor="tab:purple")
+
+        jump_path = output_dir / f"{run_stem}_jump_plot.png"
+        fig.tight_layout()
+        fig.savefig(jump_path, dpi=150)
+        plt.close(fig)
+        plots["jump_plot"] = jump_path
 
     fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 5))
     axes[0].plot(eval_ids, b1_values, label="B1", linewidth=1.2)
