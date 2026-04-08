@@ -1,0 +1,170 @@
+{
+  "format": "ecm_run_plan_v1",
+  "description": "Полный бенчмарк: цикл по размерам, цикл по seed, генерация на пару (size,seed), цикл по методам и 3 повтора optimize/validate, затем общий analyze.",
+  "params": {
+    "target_digits_list": [
+      20,
+      25,
+      30
+    ],
+    "seed_list": [
+      10007,
+      20011,
+      30013
+    ],
+    "generate_common_args": {
+      "cofactor-digits": 30,
+      "train-count": 20,
+      "control-count": 20
+    },
+    "method_list": [
+      "de",
+      "rs",
+      "pso",
+      "bo",
+      "ga"
+    ],
+    "method_opt": {
+      "de": {
+        "de-popsize": 10,
+        "de-maxiter": 10
+      },
+      "rs": {
+        "rs-budget": 60
+      },
+      "pso": {
+        "pso-swarm-size": 18,
+        "pso-iterations": 12
+      },
+      "bo": {
+        "bo-initial-samples": 16,
+        "bo-iterations": 22,
+        "bo-candidate-pool": 2500
+      },
+      "ga": {
+        "ga-population-size": 22,
+        "ga-generations": 14,
+        "ga-mutation-prob": 0.14
+      }
+    },
+    "shared_opt_args": {
+      "curves-per-n": 12,
+      "curve-timeout-sec": 5
+    },
+    "shared_val_args": {
+      "curves-per-n": 24,
+      "curve-timeout-sec": 5
+    },
+    "analyze_group_by": [
+      "divisor_size",
+      "method",
+      "seed"
+    ],
+    "search_by_target_digits": {
+      "20": {
+        "b1-min": 1000,
+        "b1-max": 30000,
+        "b2-min": 1000,
+        "b2-max": 600000,
+        "ratio-max": 20
+      },
+      "25": {
+        "b1-min": 2000,
+        "b1-max": 45000,
+        "b2-min": 2000,
+        "b2-max": 900000,
+        "ratio-max": 24
+      },
+      "30": {
+        "b1-min": 3000,
+        "b1-max": 60000,
+        "b2-min": 3000,
+        "b2-max": 1200000,
+        "ratio-max": 28
+      }
+    }
+  },
+  "operations": [
+    {
+      "repeat": {
+        "as": "size_seed_iter",
+        "values": {
+          "target_digits": "$ref:params.target_digits_list",
+          "seed": "$ref:params.seed_list"
+        }
+      ,
+        "iterate": "product"
+      },
+      "operations": [
+        {
+          "type": "generate",
+          "label": "dataset_{{size_seed_iter.target_digits}}_{{size_seed_iter.seed}}",
+          "args": {
+            "$spread_ref": "params.generate_common_args",
+            "target-digits": "$ref:size_seed_iter.target_digits",
+            "seed": "$ref:size_seed_iter.seed"
+          }
+        },
+        {
+          "repeat": {
+            "as": "method_iter",
+            "values": {
+              "method": "$ref:params.method_list"
+            }
+          },
+          "operations": [
+            {
+              "repeat": {
+                "as": "rep_iter",
+                "count": 3
+              },
+              "operations": [
+                {
+                  "type": "optimize",
+                  "label": "opt_{{method_iter.method}}_{{size_seed_iter.target_digits}}_{{size_seed_iter.seed}}_r{{rep_iter.index}}",
+                  "args": {
+                    "dataset": "$ref:dataset_{{size_seed_iter.target_digits}}_{{size_seed_iter.seed}}.dataset_dir",
+                    "method": "$ref:method_iter.method",
+                    "seed": "$ref:size_seed_iter.seed",
+                    "$spread_ref": [
+                      "params.shared_opt_args",
+                      "params.method_opt.{{method_iter.method}}",
+                      "params.search_by_target_digits.{{size_seed_iter.target_digits}}"
+                    ]
+                  }
+                },
+                {
+                  "type": "validate",
+                  "label": "val_{{method_iter.method}}_{{size_seed_iter.target_digits}}_{{size_seed_iter.seed}}_r{{rep_iter.index}}",
+                  "args": {
+                    "dataset": "$ref:dataset_{{size_seed_iter.target_digits}}_{{size_seed_iter.seed}}.dataset_dir",
+                    "opt-result-file": "$ref:opt_{{method_iter.method}}_{{size_seed_iter.target_digits}}_{{size_seed_iter.seed}}_r{{rep_iter.index}}.result_file",
+                    "seed": "$ref:size_seed_iter.seed",
+                    "$spread_ref": "params.shared_val_args"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "analyze",
+      "label": "analysis_all_sizes_all_methods_all_seeds_repeats",
+      "args": {
+        "dataset": {
+          "$map_ref": {
+            "items": {
+              "target_digits": "$ref:params.target_digits_list",
+              "seed": "$ref:params.seed_list"
+            },
+            "iterate": "product",
+            "template": "dataset_{{item.target_digits}}_{{item.seed}}.dataset_dir"
+          }
+        },
+        "group-by": "$ref:params.analyze_group_by"
+      }
+    }
+  ]
+}

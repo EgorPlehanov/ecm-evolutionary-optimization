@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 import subprocess
 import sys
+from itertools import product
 from pathlib import Path
 from typing import Any
 
@@ -76,17 +77,48 @@ def _resolve_refs(value: Any, context: dict[str, dict[str, Any]], *, allow_unres
                 raise click.UsageError("$map_ref value must be an object")
             template = map_ref.get("template")
             items_spec = map_ref.get("items")
+            iterate = map_ref.get("iterate", "zip")
             if not isinstance(template, str):
                 raise click.UsageError("$map_ref.template must be a string")
             if items_spec is None:
                 raise click.UsageError("$map_ref.items is required")
+            if not isinstance(iterate, str) or not iterate:
+                raise click.UsageError("$map_ref.iterate must be a non-empty string when provided.")
 
             items = _resolve_refs(items_spec, context, allow_unresolved=allow_unresolved)
-            if not isinstance(items, list):
-                raise click.UsageError("$map_ref.items must resolve to a list")
+            if isinstance(items, list):
+                iter_items: list[Any] = items
+            elif isinstance(items, dict):
+                named_lists: dict[str, list[Any]] = {}
+                for key, raw_items in items.items():
+                    if not isinstance(key, str) or not key:
+                        raise click.UsageError("$map_ref.items object keys must be non-empty strings.")
+                    if not isinstance(raw_items, list):
+                        raise click.UsageError(f"$map_ref.items.{key} must resolve to a list.")
+                    named_lists[key] = raw_items
+
+                if iterate == "zip":
+                    lengths = {len(raw_items) for raw_items in named_lists.values()}
+                    if len(lengths) > 1:
+                        raise click.UsageError("$map_ref.iterate='zip' requires all named lists to have the same length.")
+                    count = lengths.pop() if lengths else 0
+                    iter_items = [{key: raw_items[idx] for key, raw_items in named_lists.items()} for idx in range(count)]
+                elif iterate == "product":
+                    keys = list(named_lists.keys())
+                    iter_items = [dict(zip(keys, combo, strict=False)) for combo in product(*(named_lists[key] for key in keys))]
+                elif iterate == "concat":
+                    iter_items = []
+                    for key, raw_items in named_lists.items():
+                        iter_items.extend({key: item} for item in raw_items)
+                else:
+                    raise click.UsageError(
+                        "$map_ref.iterate must be one of: 'zip', 'product', 'concat' for named-list items."
+                    )
+            else:
+                raise click.UsageError("$map_ref.items must resolve to either a list or an object of named lists.")
 
             mapped: list[Any] = []
-            for idx, item in enumerate(items):
+            for idx, item in enumerate(iter_items):
                 local_context: dict[str, Any] = {**context, "item": item, "index": idx}
                 ref_expr = _REF_PATTERN.sub(
                     lambda match: str(
@@ -303,9 +335,12 @@ def _build_repeat_iterations(
 
     count_raw = repeat_spec.get("count")
     values_raw = repeat_spec.get("values")
+    iterate = repeat_spec.get("iterate", "zip")
 
     if values_raw is not None and not isinstance(values_raw, dict):
         raise click.UsageError("Repeat field 'values' must be an object when provided.")
+    if not isinstance(iterate, str) or not iterate:
+        raise click.UsageError("Repeat field 'iterate' must be a non-empty string when provided.")
     resolved_values = _resolve_refs(values_raw or {}, context, allow_unresolved=dry_run)
     normalized_values: dict[str, list[Any]] = {}
     for key, value in resolved_values.items():
@@ -316,11 +351,30 @@ def _build_repeat_iterations(
         normalized_values[key] = value
 
     inferred_count: int | None = None
+    value_payloads: list[dict[str, Any]] = []
     if normalized_values:
-        lengths = {len(items) for items in normalized_values.values()}
-        if len(lengths) != 1:
-            raise click.UsageError("All repeat 'values' lists must have the same length.")
-        inferred_count = lengths.pop()
+        if iterate == "zip":
+            lengths = {len(items) for items in normalized_values.values()}
+            if len(lengths) != 1:
+                raise click.UsageError("All repeat 'values' lists must have the same length for iterate='zip'.")
+            inferred_count = lengths.pop()
+            value_payloads = [
+                {key: items[idx] for key, items in normalized_values.items()}
+                for idx in range(inferred_count)
+            ]
+        elif iterate == "product":
+            keys = list(normalized_values.keys())
+            value_payloads = [
+                dict(zip(keys, combo, strict=False))
+                for combo in product(*(normalized_values[key] for key in keys))
+            ]
+            inferred_count = len(value_payloads)
+        elif iterate == "concat":
+            for key, items in normalized_values.items():
+                value_payloads.extend({key: item} for item in items)
+            inferred_count = len(value_payloads)
+        else:
+            raise click.UsageError("Repeat field 'iterate' must be one of: 'zip', 'product', 'concat'.")
 
     if count_raw is None:
         if inferred_count is None:
@@ -334,11 +388,12 @@ def _build_repeat_iterations(
             )
 
     iterations: list[dict[str, Any]] = []
-    for idx in range(count):
-        payload: dict[str, Any] = {"index": idx}
-        for key, items in normalized_values.items():
-            payload[key] = items[idx]
-        iterations.append(payload)
+    if value_payloads:
+        for idx in range(count):
+            iterations.append({"index": idx, **value_payloads[idx]})
+    else:
+        for idx in range(count):
+            iterations.append({"index": idx})
     return alias, iterations
 
 
