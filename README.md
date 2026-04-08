@@ -130,10 +130,48 @@ ecm-optimizer run-plan example_full_run
     - `<label>.iterations` — список объектов итераций (`index` + все поля).
 - для построения списка ссылок по значениям итерации используйте `$map_ref`:
   `{"$map_ref": {"items": {"$ref": "seed_runs.values.seed"}, "template": "dataset_main_{{item}}.dataset_dir"}}`.
+- для разворачивания словаря параметров в `args` используйте `$spread_ref`:
+  - базово: `{"$spread_ref": {"ref": "params.search"}}` (ключи с `_` автоматически станут `-`);
+  - короткая форма без дополнительных опций: `{"$spread_ref": "params.search"}`;
+  - выборочно: `{"$spread_ref": {"ref": "params.search", "include": ["b1_min", "b1_max"]}}`;
+  - исключения: `{"$spread_ref": {"ref": "params.search", "exclude": ["ratio_max"]}}`;
+  - переименование: `{"$spread_ref": {"ref": "params.search", "rename": {"b1_min": "b1-min"}}}`;
+  - можно передать список спредов: `"$spread_ref": ["params.shared_opt_args", "params.method_opt.{{iter.method}}", "params.search"]`
+    или объектами `"$spread_ref": [{...}, {...}]`.
 - ссылки между шагами/параметрами: `{"$ref": "<label>.<field>"}` или строка `$ref:<label>.<field>`.
   Для общих параметров используйте label `params`, например: `{"$ref": "params.shared.curves_per_n"}`.
 - shortcut для `analyze`: можно передать `dataset` (строку или список), и `run-plan` автоматически
   преобразует его в `input=data/experiments/<dataset_name>`. Это удобно вместо длинного списка `opt_*.result_file`.
+
+Пример выбора вложенного набора параметров по значению цикла:
+
+```json
+{
+  "params": {
+    "search": {
+      "d20": {"b1_min": 1000, "b1_max": 12000, "b2_min": 1000, "b2_max": 144000, "ratio_max": 12},
+      "d30": {"b1_min": 2000, "b1_max": 22000, "b2_min": 2000, "b2_max": 244000, "ratio_max": 22}
+    }
+  },
+  "operations": [
+    {
+      "repeat": {"values": {"digit_key": ["d20", "d30"]}},
+      "operations": [
+        {
+          "type": "optimize",
+          "args": {
+            "method": "de",
+            "$spread_ref": {
+              "ref": "params.search.{{iter.digit_key}}",
+              "include": ["b1_min", "b1_max", "ratio_max"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
+```
 
 Пример (фрагмент):
 
