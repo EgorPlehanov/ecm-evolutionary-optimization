@@ -1,2 +1,0 @@
-best_eval,best_eval_fraction,eval_per_sec,evaluation_count,improvement_percent,max_plateau_evals,median_plateau_evals,new_best_count,new_best_rate,p90_plateau_evals,time_to_best_sec,time_to_first_improvement_sec,total_runtime_sec,flag_late_best,flag_low_improvement,flag_low_signal,flag_plateau_too_long
-49,0.8166666666666667,2.057140493496775,60,44.23734895506845,25,5.5,5,0.08333333333333333,22.0,22.473066748003475,0.35260494402609766,29.166700179048348,False,False,False,False

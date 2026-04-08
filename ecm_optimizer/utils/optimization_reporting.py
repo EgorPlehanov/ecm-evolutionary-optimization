@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import csv
+import math
 from dataclasses import dataclass
 from pathlib import Path
 from statistics import median
@@ -190,106 +191,86 @@ def generate_run_artifacts(
 
     conv_x, conv_y = _convergence_series(evaluation_events)
 
-    plt.figure(figsize=(10, 5))
-    plt.plot(conv_x, conv_y, color="tab:blue", linewidth=1.8)
-    plt.title("Convergence curve")
-    plt.xlabel("Evaluation")
-    plt.ylabel("Best fitness so far")
-    plt.grid(alpha=0.3)
-    convergence_path = output_dir / f"{run_stem}_convergence.png"
-    plt.tight_layout()
-    plt.savefig(convergence_path, dpi=150)
-    plt.close()
-    plots["convergence"] = convergence_path
-
-    plt.figure(figsize=(10, 5))
-    plt.plot(eval_ids, fitness_values, color="tab:orange", linewidth=1.2)
-    plt.title("Raw fitness trajectory")
-    plt.xlabel("Evaluation")
-    plt.ylabel("Fitness")
-    plt.grid(alpha=0.3)
-    raw_path = output_dir / f"{run_stem}_raw_fitness.png"
-    plt.tight_layout()
-    plt.savefig(raw_path, dpi=150)
-    plt.close()
-    plots["raw_fitness"] = raw_path
-
     if new_best_events:
-        plt.figure(figsize=(10, 5))
         jump_eval = [int(event["eval"]) for event in new_best_events]
         jump_fit = [float(event["fitness"]) for event in new_best_events]
-        plt.scatter(jump_eval, jump_fit, color="tab:green", s=28)
-        plt.plot(jump_eval, jump_fit, color="tab:green", alpha=0.6, linewidth=1.0)
-        plt.title("Jump plot (new best events)")
-        plt.xlabel("Evaluation")
-        plt.ylabel("Fitness")
-        plt.grid(alpha=0.3)
-        jump_path = output_dir / f"{run_stem}_jump_plot.png"
-        plt.tight_layout()
-        plt.savefig(jump_path, dpi=150)
-        plt.close()
-        plots["jump_plot"] = jump_path
+        fig, ax_fitness = plt.subplots(figsize=(10, 5))
+        ax_fitness.scatter(jump_eval, jump_fit, color="tab:green", s=28)
+        ax_fitness.plot(jump_eval, jump_fit, color="tab:green", alpha=0.6, linewidth=1.0)
+        ax_fitness.set_title("Jump plot + improvement deltas (new best events)")
+        ax_fitness.set_xlabel("Evaluation (new_best)")
+        from matplotlib.ticker import MaxNLocator
+        ax_fitness.xaxis.set_major_locator(MaxNLocator(integer=True))
+        ax_fitness.set_ylabel("Fitness", color="tab:green")
+        ax_fitness.tick_params(axis="y", labelcolor="tab:green")
+        ax_fitness.grid(alpha=0.3)
 
         if len(jump_fit) >= 2:
             delta_x = jump_eval[1:]
             deltas = [jump_fit[i - 1] - jump_fit[i] for i in range(1, len(jump_fit))]
-            plt.figure(figsize=(10, 5))
-            plt.bar(delta_x, deltas, color="tab:purple", width=0.8)
-            plt.title("Прирост на каждом new_best (delta fitness)")
-            plt.xlabel("Evaluation (new_best)")
-            plt.ylabel("Delta fitness")
-            plt.grid(alpha=0.3)
-            delta_path = output_dir / f"{run_stem}_improvement_deltas.png"
-            plt.tight_layout()
-            plt.savefig(delta_path, dpi=150)
-            plt.close()
-            plots["improvement_deltas"] = delta_path
+            ax_delta = ax_fitness.twinx()
+            ax_delta.bar(delta_x, deltas, color="tab:purple", width=0.8, alpha=0.35)
+            ax_delta.set_ylabel("Delta fitness", color="tab:purple")
+            ax_delta.tick_params(axis="y", labelcolor="tab:purple")
 
-    fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 5))
-    axes[0].plot(eval_ids, b1_values, label="B1", linewidth=1.2)
-    axes[0].plot(eval_ids, b2_values, label="B2", linewidth=1.2)
-    axes[0].set_title("B1/B2 trajectory")
-    axes[0].set_xlabel("Evaluation")
-    axes[0].set_ylabel("Parameter value")
-    axes[0].legend()
-    axes[0].grid(alpha=0.3)
+        jump_path = output_dir / f"{run_stem}_jump_plot.png"
+        fig.tight_layout()
+        fig.savefig(jump_path, dpi=150)
+        plt.close(fig)
+        plots["jump_plot"] = jump_path
 
-    scatter = axes[1].scatter(b1_values, b2_values, c=fitness_values, cmap="viridis", s=16)
-    axes[1].set_title("B1 vs B2 (colored by fitness)")
-    axes[1].set_xlabel("B1")
-    axes[1].set_ylabel("B2")
-    axes[1].grid(alpha=0.3)
-    fig.colorbar(scatter, ax=axes[1], label="Fitness")
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.plot(eval_ids, b1_values, label="B1", linewidth=1.2)
+    ax.plot(eval_ids, b2_values, label="B2", linewidth=1.2)
+    ax.set_title("B1/B2 trajectory")
+    ax.set_xlabel("Evaluation")
+    ax.set_ylabel("Parameter value")
+    ax.legend()
+    ax.grid(alpha=0.3)
     b1b2_path = output_dir / f"{run_stem}_b1_b2_trajectory.png"
     fig.tight_layout()
     fig.savefig(b1b2_path, dpi=150)
     plt.close(fig)
     plots["b1_b2_trajectory"] = b1b2_path
 
-    plt.figure(figsize=(10, 5))
-    plt.plot(conv_x, conv_y, color="tab:blue", linewidth=1.6)
-    ymin = min(conv_y)
-    ymax = max(conv_y)
+    elapsed = [float(event.get("elapsed_sec", 0.0)) for event in evaluation_events]
+    fig, ax = plt.subplots(figsize=(10, 5))
+    ax.plot(elapsed, conv_y, color="tab:blue", linewidth=1.8, label="Best fitness so far")
+    ax.plot(elapsed, fitness_values, color="tab:orange", linewidth=1.1, alpha=0.8, label="Raw fitness")
+    all_fitness_values = conv_y + fitness_values
+    ymin = min(all_fitness_values)
+    ymax = max(all_fitness_values)
     if ymin == ymax:
         ymax = ymin + 1.0
     for idx, step_event in enumerate(step_events):
-        event_eval = int(step_event.get("eval", 0))
+        event_time = float(step_event.get("elapsed_sec", 0.0))
         label = str(step_event.get("message", "step"))
-        plt.axvline(event_eval, color="tab:red", alpha=0.2, linewidth=1.0)
+        ax.axvline(event_time, color="tab:red", alpha=0.2, linewidth=1.0)
         if idx < 12:
-            plt.text(event_eval, ymax, label[:28], rotation=90, va="top", ha="right", fontsize=7)
-    plt.ylim(ymin, ymax)
-    plt.title("Progress by phase")
-    plt.xlabel("Evaluation")
-    plt.ylabel("Best fitness so far")
-    plt.grid(alpha=0.3)
+            ax.text(event_time, ymax, label[:28], rotation=90, va="top", ha="right", fontsize=7)
+    if len(elapsed) >= 2 and len(eval_ids) == len(elapsed):
+        eval_tick_count = min(8, len(eval_ids))
+        if eval_tick_count >= 2:
+            tick_indices = [round(i * (len(eval_ids) - 1) / (eval_tick_count - 1)) for i in range(eval_tick_count)]
+            tick_indices = sorted(set(tick_indices))
+            top_axis = ax.twiny()
+            top_axis.set_xlim(ax.get_xlim())
+            top_axis.set_xticks([elapsed[idx] for idx in tick_indices])
+            top_axis.set_xticklabels([str(eval_ids[idx]) for idx in tick_indices])
+            top_axis.set_xlabel("Evaluation")
+            top_axis.tick_params(axis="x", labelsize=8)
+    ax.set_ylim(ymin, ymax)
+    ax.set_title("Progress by phase: best-so-far and raw fitness")
+    ax.set_xlabel("Elapsed seconds")
+    ax.set_ylabel("Fitness")
+    ax.legend()
+    ax.grid(alpha=0.3)
     phase_path = output_dir / f"{run_stem}_progress_by_phase.png"
-    plt.tight_layout()
-    plt.savefig(phase_path, dpi=150)
-    plt.close()
+    fig.tight_layout()
+    fig.savefig(phase_path, dpi=150)
+    plt.close(fig)
     plots["progress_by_phase"] = phase_path
 
-    elapsed = [float(event.get("elapsed_sec", 0.0)) for event in evaluation_events]
     inst_eval_per_sec: list[float] = []
     for idx, t_cur in enumerate(elapsed):
         if idx == 0:
@@ -309,6 +290,17 @@ def generate_run_artifacts(
     ax2.plot(elapsed, smooth_eval_per_sec, color="tab:red", linewidth=1.2, alpha=0.8, label="Rolling eval/sec")
     ax2.set_ylabel("Eval/sec (rolling)", color="tab:red")
     ax2.tick_params(axis="y", labelcolor="tab:red")
+    if len(elapsed) >= 2 and len(eval_ids) == len(elapsed):
+        eval_tick_count = min(8, len(eval_ids))
+        if eval_tick_count >= 2:
+            tick_indices = [round(i * (len(eval_ids) - 1) / (eval_tick_count - 1)) for i in range(eval_tick_count)]
+            tick_indices = sorted(set(tick_indices))
+            top_axis = ax1.twiny()
+            top_axis.set_xlim(ax1.get_xlim())
+            top_axis.set_xticks([elapsed[idx] for idx in tick_indices])
+            top_axis.set_xticklabels([str(eval_ids[idx]) for idx in tick_indices])
+            top_axis.set_xlabel("Evaluation")
+            top_axis.tick_params(axis="x", labelsize=8)
     plt.title("Эффективность по времени: качество и скорость оценок")
     time_efficiency_path = output_dir / f"{run_stem}_time_efficiency.png"
     fig.tight_layout()
@@ -317,23 +309,43 @@ def generate_run_artifacts(
     plots["time_efficiency"] = time_efficiency_path
 
     ratio_values = [(b2 / b1) if b1 != 0 else 0.0 for b1, b2 in zip(b1_values, b2_values)]
-    plt.figure(figsize=(10, 5))
-    hb = plt.hexbin(b1_values, ratio_values, C=fitness_values, reduce_C_function=min, gridsize=25, cmap="viridis")
-    plt.title("Heatmap по (B1, B2/B1), цвет = min fitness в бинe")
-    plt.xlabel("B1")
-    plt.ylabel("B2 / B1")
-    plt.grid(alpha=0.2)
-    plt.colorbar(hb, label="Best fitness in bin")
+    fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 5))
+    scatter = axes[0].scatter(b1_values, b2_values, c=fitness_values, cmap="viridis", s=16)
+    axes[0].set_title("B1 vs B2 (colored by fitness)")
+    axes[0].set_xlabel("B1")
+    axes[0].set_ylabel("B2")
+    axes[0].grid(alpha=0.3)
+    fig.colorbar(scatter, ax=axes[0], label="Fitness")
+
+    hb = axes[1].hexbin(
+        b1_values,
+        ratio_values,
+        C=fitness_values,
+        reduce_C_function=min,
+        gridsize=25,
+        cmap="viridis",
+    )
+    axes[1].set_title("Heatmap: B1 vs B2/B1 (min fitness in bin)")
+    axes[1].set_xlabel("B1")
+    axes[1].set_ylabel("B2 / B1")
+    axes[1].grid(alpha=0.2)
+    fig.colorbar(hb, ax=axes[1], label="Best fitness in bin")
     heatmap_path = output_dir / f"{run_stem}_b1_ratio_heatmap.png"
-    plt.tight_layout()
-    plt.savefig(heatmap_path, dpi=150)
-    plt.close()
+    fig.tight_layout()
+    fig.savefig(heatmap_path, dpi=150)
+    plt.close(fig)
     plots["b1_ratio_heatmap"] = heatmap_path
 
     return RunArtifacts(stats=stats, plots=plots)
 
 
-def _attention_flags(stats: dict[str, float | int | None]) -> dict[str, dict[str, str | float | bool | None]]:
+def _attention_flags(
+    stats: dict[str, float | int | None],
+    *,
+    history: list[dict[str, float | int | str]] | None = None,
+    config: dict[str, Any] | None = None,
+    optimized: dict[str, Any] | None = None,
+) -> dict[str, dict[str, str | float | bool | None]]:
     evaluation_count = int(stats.get("evaluation_count") or 0)
     max_plateau = float(stats.get("max_plateau_evals") or 0.0)
     new_best_rate = float(stats.get("new_best_rate") or 0.0)
@@ -349,7 +361,7 @@ def _attention_flags(stats: dict[str, float | int | None]) -> dict[str, dict[str
     low_signal_alert = bool(new_best_rate < 0.03) if evaluation_count > 0 else False
     low_improvement_alert = bool(improvement_percent < 10.0) if evaluation_count > 0 else False
 
-    return {
+    flags: dict[str, dict[str, str | float | bool | None]] = {
         "plateau_too_long": {
             "triggered": plateau_alert,
             "value": plateau_ratio,
@@ -383,6 +395,164 @@ def _attention_flags(stats: dict[str, float | int | None]) -> dict[str, dict[str
             "description": "Итоговый прирост качества слишком мал.",
         },
     }
+
+    if history and config:
+        eval_events = [event for event in history if event.get("kind") == "evaluation"]
+        b1_min = config.get("b1_min")
+        b1_max = config.get("b1_max")
+        b2_min = config.get("b2_min")
+        b2_max = config.get("b2_max")
+        ratio_max = config.get("ratio_max")
+        total = len(eval_events)
+
+        def _boundary_share(values: list[float], low: float | None, high: float | None, tol_frac: float = 0.02) -> float | None:
+            if not values or low is None or high is None:
+                return None
+            span = abs(high - low)
+            tol = span * tol_frac
+            touches = sum(1 for value in values if value <= (low + tol) or value >= (high - tol))
+            return touches / len(values)
+
+        def _boundary_share_log(values: list[float], low: float | None, high: float | None, tol_frac: float = 0.02) -> float | None:
+            if not values or low is None or high is None:
+                return None
+            if low <= 0 or high <= 0:
+                return _boundary_share(values, low, high, tol_frac=tol_frac)
+            log_low = math.log10(low)
+            log_high = math.log10(high)
+            log_span = abs(log_high - log_low)
+            log_tol = log_span * tol_frac
+            touches = 0
+            valid = 0
+            for value in values:
+                if value <= 0:
+                    continue
+                valid += 1
+                log_value = math.log10(value)
+                if log_value <= (log_low + log_tol) or log_value >= (log_high - log_tol):
+                    touches += 1
+            if valid == 0:
+                return None
+            return touches / valid
+
+        b1_values = [float(event["b1"]) for event in eval_events if event.get("b1") is not None]
+        b2_values = [float(event["b2"]) for event in eval_events if event.get("b2") is not None]
+        ratio_values = [
+            float(event["b2"]) / float(event["b1"])
+            for event in eval_events
+            if event.get("b1") not in (None, 0, 0.0) and event.get("b2") is not None
+        ]
+
+        b1_boundary_share = _boundary_share_log(
+            b1_values,
+            float(b1_min) if b1_min is not None else None,
+            float(b1_max) if b1_max is not None else None,
+        )
+        b2_boundary_share = _boundary_share_log(
+            b2_values,
+            float(b2_min) if b2_min is not None else None,
+            float(b2_max) if b2_max is not None else None,
+        )
+        ratio_low = min(ratio_values) if ratio_values else None
+        ratio_boundary_share = _boundary_share_log(
+            ratio_values,
+            ratio_low if ratio_low is not None else 1e-12,
+            float(ratio_max) if ratio_max is not None else None,
+        )
+
+        boundary_share_threshold = 0.10
+        flags["b1_hits_boundary"] = {
+            "triggered": bool(b1_boundary_share is not None and b1_boundary_share > boundary_share_threshold),
+            "value": b1_boundary_share,
+            "threshold": "> 0.10",
+            "severity": "medium" if b1_boundary_share is not None and b1_boundary_share > boundary_share_threshold else "ok",
+            "action": "Расширить диапазон B1, если упор в границу повторяется.",
+            "description": "Большая доля оценок проходит близко к границам B1.",
+        }
+        flags["b2_hits_boundary"] = {
+            "triggered": bool(b2_boundary_share is not None and b2_boundary_share > boundary_share_threshold),
+            "value": b2_boundary_share,
+            "threshold": "> 0.10",
+            "severity": "medium" if b2_boundary_share is not None and b2_boundary_share > boundary_share_threshold else "ok",
+            "action": "Расширить диапазон B2, если упор в границу повторяется.",
+            "description": "Большая доля оценок проходит близко к границам B2.",
+        }
+        flags["ratio_hits_boundary"] = {
+            "triggered": bool(ratio_boundary_share is not None and ratio_boundary_share > boundary_share_threshold),
+            "value": ratio_boundary_share,
+            "threshold": "> 0.10",
+            "severity": "medium" if ratio_boundary_share is not None and ratio_boundary_share > boundary_share_threshold else "ok",
+            "action": "Увеличить ratio_max, если хорошие точки упираются в ограничение отношения B2/B1.",
+            "description": "Большая доля оценок проходит близко к границе отношения B2/B1.",
+        }
+
+        if optimized:
+            best_b1 = optimized.get("b1")
+            best_b2 = optimized.get("b2")
+            if best_b1 is not None and b1_min is not None and b1_max is not None:
+                if float(b1_min) > 0 and float(b1_max) > 0 and float(best_b1) > 0:
+                    log_best_b1 = math.log10(float(best_b1))
+                    log_b1_min = math.log10(float(b1_min))
+                    log_b1_max = math.log10(float(b1_max))
+                    log_b1_tol = abs(log_b1_max - log_b1_min) * 0.02
+                    best_on_b1_boundary = log_best_b1 <= log_b1_min + log_b1_tol or log_best_b1 >= log_b1_max - log_b1_tol
+                else:
+                    b1_span = abs(float(b1_max) - float(b1_min))
+                    b1_tol = b1_span * 0.02
+                    best_on_b1_boundary = float(best_b1) <= float(b1_min) + b1_tol or float(best_b1) >= float(b1_max) - b1_tol
+                flags["best_b1_on_boundary"] = {
+                    "triggered": best_on_b1_boundary,
+                    "value": float(best_b1),
+                    "threshold": f"within 2% of log-range [{b1_min}, {b1_max}]",
+                    "severity": "high" if best_on_b1_boundary else "ok",
+                    "action": "Проверить расширенный диапазон B1 вокруг текущей границы.",
+                    "description": "Лучший найденный B1 лежит на границе диапазона.",
+                }
+            if best_b2 is not None and b2_min is not None and b2_max is not None:
+                if float(b2_min) > 0 and float(b2_max) > 0 and float(best_b2) > 0:
+                    log_best_b2 = math.log10(float(best_b2))
+                    log_b2_min = math.log10(float(b2_min))
+                    log_b2_max = math.log10(float(b2_max))
+                    log_b2_tol = abs(log_b2_max - log_b2_min) * 0.02
+                    best_on_b2_boundary = log_best_b2 <= log_b2_min + log_b2_tol or log_best_b2 >= log_b2_max - log_b2_tol
+                else:
+                    b2_span = abs(float(b2_max) - float(b2_min))
+                    b2_tol = b2_span * 0.02
+                    best_on_b2_boundary = float(best_b2) <= float(b2_min) + b2_tol or float(best_b2) >= float(b2_max) - b2_tol
+                flags["best_b2_on_boundary"] = {
+                    "triggered": best_on_b2_boundary,
+                    "value": float(best_b2),
+                    "threshold": f"within 2% of log-range [{b2_min}, {b2_max}]",
+                    "severity": "high" if best_on_b2_boundary else "ok",
+                    "action": "Проверить расширенный диапазон B2 вокруг текущей границы.",
+                    "description": "Лучший найденный B2 лежит на границе диапазона.",
+                }
+            if best_b1 not in (None, 0, 0.0) and best_b2 is not None and ratio_max is not None:
+                best_ratio = float(best_b2) / float(best_b1)
+                if float(ratio_max) > 0 and best_ratio > 0:
+                    log_ratio_max = math.log10(float(ratio_max))
+                    log_best_ratio = math.log10(best_ratio)
+                    ratio_low_for_tol = ratio_low if ratio_low is not None and ratio_low > 0 else 1e-12
+                    log_ratio_tol = abs(log_ratio_max - math.log10(ratio_low_for_tol)) * 0.02
+                    best_on_ratio_boundary = log_best_ratio >= log_ratio_max - log_ratio_tol
+                else:
+                    ratio_tol = abs(float(ratio_max)) * 0.02
+                    best_on_ratio_boundary = best_ratio >= float(ratio_max) - ratio_tol
+                flags["best_ratio_on_boundary"] = {
+                    "triggered": best_on_ratio_boundary,
+                    "value": best_ratio,
+                    "threshold": f"within 2% of log-range up to ratio_max={ratio_max}",
+                    "severity": "high" if best_on_ratio_boundary else "ok",
+                    "action": "Увеличить ratio_max и перепроверить локальный поиск в новой области.",
+                    "description": "Лучшее отношение B2/B1 находится у верхней границы ratio_max.",
+                }
+
+        if total == 0:
+            for key in ("b1_hits_boundary", "b2_hits_boundary", "ratio_hits_boundary"):
+                if key in flags:
+                    flags[key]["value"] = None
+
+    return flags
 
 
 def generate_analysis_artifacts(
@@ -553,7 +723,9 @@ def generate_analysis_artifacts(
                 prev_phase_best = phase_best
     files["phase_summary_csv"] = phase_summary_path
 
-    flags = _attention_flags(stats)
+    config = context.get("config", {})
+    optimized = context.get("optimized", {})
+    flags = _attention_flags(stats, history=history, config=config, optimized=optimized)
     summary_path = tables_dir / f"{run_stem}_run_summary.csv"
     with summary_path.open("w", encoding="utf-8", newline="") as f:
         summary_keys = sorted(stats.keys())
@@ -570,8 +742,6 @@ def generate_analysis_artifacts(
     report_path = output_dir / f"{run_stem}_report.md"
     method = context.get("method", "unknown")
     dataset = context.get("dataset", "")
-    optimized = context.get("optimized", {})
-    config = context.get("config", {})
     best_obj = optimized.get("objective")
     lines: list[str] = [
         f"# Отчёт по оптимизации: {run_stem}",
