@@ -1,6 +1,6 @@
 {
   "format": "ecm_run_plan_v1",
-  "description": "Тюнинг после трёх полных прогонов для target-digits=20: фокус на RS/GA/PSO, суженное окно B1/B2 и BO в режиме sanity-check. Прогон выполняется по seed=17/2718/31415 через repeat-блок.",
+  "description": "Тюнинг-план для target-digits=20: мульти-seed прогон (17/2718/31415) по всем методам de/rs/pso/bo/ga с последующим общим анализом.",
   "params": {
     "shared": {
       "curve_timeout_sec": 5,

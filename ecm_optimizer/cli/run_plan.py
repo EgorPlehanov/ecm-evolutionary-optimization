@@ -407,15 +407,23 @@ def _count_operations(
 
 
 @click.command("run-plan")
+@click.argument("plan_arg", required=False)
 @click.option(
     "--plan",
-    required=True,
+    "plan_opt",
+    required=False,
     type=str,
     help="Path to JSON plan file OR file name inside data/plans.",
 )
 @click.option("--dry-run", is_flag=True, help="Print resolved operations without executing them.")
-def run_plan_command(plan: str, dry_run: bool) -> None:
+def run_plan_command(plan_arg: str | None, plan_opt: str | None, dry_run: bool) -> None:
     """Выполнить JSON-план автоматизированного запуска generate/optimize/validate."""
+    if plan_opt and plan_arg and plan_opt != plan_arg:
+        raise click.UsageError("Specify plan only once (either positional PLAN or --plan), not both with different values.")
+    plan = plan_opt or plan_arg
+    if not plan:
+        raise click.UsageError("Missing plan name. Use `ecm-optimizer run-plan <PLAN>` or `ecm-optimizer run-plan --plan <PLAN>`.")
+
     plan_path = _resolve_plan_path(plan)
     plan_payload = read_json(plan_path)
 
