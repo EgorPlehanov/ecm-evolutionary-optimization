@@ -55,11 +55,11 @@ ecm-optimizer optimize \
 После завершения в консоль печатаются `result_file=...` и пути до PNG-графиков. JSON-файл сохраняется в `data/experiments/<DATASET_FOLDER>/<METHOD>_optimize_<UTC_TIMESTAMP>.json`, где `<METHOD>` — всегда короткий код (`de`, `rs`, `pso`, `bo`, `ga`).
 
 В конце каждого run автоматически строятся:
-- `convergence` — best fitness so far по eval;
-- `raw_fitness` — fitness по всем evaluation;
-- `jump_plot` — только события `new_best`;
-- `b1_b2_trajectory` — динамика `B1/B2` и scatter `B1 vs B2`;
-- `progress_by_phase` — convergence + маркеры `step`-этапов.
+- `jump_plot` — только события `new_best` + приросты `delta fitness`;
+- `b1_b2_trajectory` — динамика `B1/B2` по evaluation;
+- `progress_by_phase` — best-so-far + raw fitness + маркеры `step`-этапов;
+- `time_efficiency` — качество во времени и rolling `eval/sec`;
+- `b1_ratio_heatmap` — `B1 vs B2` (colored by fitness) и heatmap `B1 vs B2/B1`.
 
 Ключевые метрики (`time_to_first_improvement_sec`, `time_to_best_sec`, `new_best_count`, `eval_per_sec`, `improvement_percent`, `max_plateau_evals`) сохраняются внутри optimize-JSON в поле `run_stats`.
 
