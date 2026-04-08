@@ -11,8 +11,7 @@
     "generate_common_args": {
       "cofactor-digits": 30,
       "train-count": 20,
-      "control-count": 20,
-      "seed": 515151
+      "control-count": 20
     },
     "method_list": [
       "de",
@@ -46,13 +45,11 @@
     },
     "shared_opt_args": {
       "curves-per-n": 12,
-      "curve-timeout-sec": 5,
-      "seed": 515151
+      "curve-timeout-sec": 5
     },
     "shared_val_args": {
       "curves-per-n": 24,
-      "curve-timeout-sec": 5,
-      "seed": 515151
+      "curve-timeout-sec": 5
     },
     "analyze_group_by": [
       "divisor_size",
@@ -97,7 +94,8 @@
           "label": "dataset_{{size_iter.target_digits}}",
           "args": {
             "$spread_ref": "params.generate_common_args",
-            "target-digits": "$ref:size_iter.target_digits"
+            "target-digits": "$ref:size_iter.target_digits",
+            "seed": "$ref:params.seed"
           }
         },
         {
@@ -114,6 +112,7 @@
               "args": {
                 "dataset": "$ref:dataset_{{size_iter.target_digits}}.dataset_dir",
                 "method": "$ref:method_iter.method",
+                "seed": "$ref:params.seed",
                 "$spread_ref": [
                   "params.shared_opt_args",
                   "params.method_opt.{{method_iter.method}}",
@@ -127,6 +126,7 @@
               "args": {
                 "dataset": "$ref:dataset_{{size_iter.target_digits}}.dataset_dir",
                 "opt-result-file": "$ref:opt_{{method_iter.method}}_{{size_iter.target_digits}}.result_file",
+                "seed": "$ref:params.seed",
                 "$spread_ref": "params.shared_val_args"
               }
             }
