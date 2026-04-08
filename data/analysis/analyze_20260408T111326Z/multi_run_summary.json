@@ -1,0 +1,256 @@
+{
+  "analysis_run": {
+    "discovered_run_files": [
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260408T110941Z/bo/optimize_20260408T111204Z/bo_optimize_20260408T111204Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260408T110941Z/de/optimize_20260408T111032Z/de_optimize_20260408T111032Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260408T110941Z/ga/optimize_20260408T111323Z/ga_optimize_20260408T111323Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260408T110941Z/pso/optimize_20260408T111149Z/pso_optimize_20260408T111149Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260408T110941Z/rs/optimize_20260408T111059Z/rs_optimize_20260408T111059Z.json"
+    ],
+    "discovered_run_files_before_exclusions": [
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260408T110941Z/bo/optimize_20260408T111204Z/bo_optimize_20260408T111204Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260408T110941Z/de/optimize_20260408T111032Z/de_optimize_20260408T111032Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260408T110941Z/ga/optimize_20260408T111323Z/ga_optimize_20260408T111323Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260408T110941Z/pso/optimize_20260408T111149Z/pso_optimize_20260408T111149Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260408T110941Z/rs/optimize_20260408T111059Z/rs_optimize_20260408T111059Z.json"
+    ],
+    "exclude_rules": [],
+    "experiments_root": "data/experiments",
+    "group_by": [
+      "divisor_size",
+      "method"
+    ],
+    "include_paths": [
+      "data/experiments/20_dset_20260408T110941Z"
+    ],
+    "input_entries": [
+      "data/experiments/20_dset_20260408T110941Z"
+    ],
+    "max_eval_points": 300,
+    "max_time_points": 200,
+    "output_dir": "data/analysis/analyze_20260408T111326Z",
+    "success_threshold": null
+  },
+  "command": "analyze",
+  "group_by": [
+    "divisor_size",
+    "method"
+  ],
+  "group_metrics": {
+    "divisor_size=20 | method=bo": {
+      "budget": {
+        "average_max_plateau_evals": 16.0,
+        "median_evaluation_count": 38
+      },
+      "datasets": [
+        "20_dset_20260408T110941Z"
+      ],
+      "divisor_sizes": [
+        20
+      ],
+      "efficiency": {
+        "median_improvement_per_eval": 0.002704003782817286,
+        "median_improvement_per_sec": 0.00864116682109436
+      },
+      "methods": [
+        "bo"
+      ],
+      "objective": {
+        "iqr": 0.0,
+        "max": 0.6913212098326766,
+        "median": 0.6913212098326766,
+        "min": 0.6913212098326766,
+        "q25": 0.6913212098326766,
+        "q75": 0.6913212098326766,
+        "std": 0.0
+      },
+      "run_count": 1,
+      "run_files": [
+        "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260408T110941Z/bo/optimize_20260408T111204Z/bo_optimize_20260408T111204Z.json"
+      ],
+      "success": {
+        "share": 0.0,
+        "threshold": 0.6106508250522893
+      },
+      "time": {
+        "median_runtime_sec": 11.891003364988137,
+        "median_time_to_best_sec": 11.160480468010064
+      }
+    },
+    "divisor_size=20 | method=de": {
+      "budget": {
+        "average_max_plateau_evals": 150.0,
+        "median_evaluation_count": 220
+      },
+      "datasets": [
+        "20_dset_20260408T110941Z"
+      ],
+      "divisor_sizes": [
+        20
+      ],
+      "efficiency": {
+        "median_improvement_per_eval": 0.008758923501220785,
+        "median_improvement_per_sec": 0.037879797629219204
+      },
+      "methods": [
+        "de"
+      ],
+      "objective": {
+        "iqr": 0.0,
+        "max": 0.6106508250522893,
+        "median": 0.6106508250522893,
+        "min": 0.6106508250522893,
+        "q25": 0.6106508250522893,
+        "q75": 0.6106508250522893,
+        "std": 0.0
+      },
+      "run_count": 1,
+      "run_files": [
+        "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260408T110941Z/de/optimize_20260408T111032Z/de_optimize_20260408T111032Z.json"
+      ],
+      "success": {
+        "share": 1.0,
+        "threshold": 0.6106508250522893
+      },
+      "time": {
+        "median_runtime_sec": 50.8704716200009,
+        "median_time_to_best_sec": 19.80793906300096
+      }
+    },
+    "divisor_size=20 | method=ga": {
+      "budget": {
+        "average_max_plateau_evals": 262.0,
+        "median_evaluation_count": 316
+      },
+      "datasets": [
+        "20_dset_20260408T110941Z"
+      ],
+      "divisor_sizes": [
+        20
+      ],
+      "efficiency": {
+        "median_improvement_per_eval": 0.0009439786859453491,
+        "median_improvement_per_sec": 0.003971393408383506
+      },
+      "methods": [
+        "ga"
+      ],
+      "objective": {
+        "iqr": 0.0,
+        "max": 0.6126634365064092,
+        "median": 0.6126634365064092,
+        "min": 0.6126634365064092,
+        "q25": 0.6126634365064092,
+        "q75": 0.6126634365064092,
+        "std": 0.0
+      },
+      "run_count": 1,
+      "run_files": [
+        "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260408T110941Z/ga/optimize_20260408T111323Z/ga_optimize_20260408T111323Z.json"
+      ],
+      "success": {
+        "share": 0.0,
+        "threshold": 0.6106508250522893
+      },
+      "time": {
+        "median_runtime_sec": 75.11148709896952,
+        "median_time_to_best_sec": 71.69976520095952
+      }
+    },
+    "divisor_size=20 | method=pso": {
+      "budget": {
+        "average_max_plateau_evals": 87.0,
+        "median_evaluation_count": 234
+      },
+      "datasets": [
+        "20_dset_20260408T110941Z"
+      ],
+      "divisor_sizes": [
+        20
+      ],
+      "efficiency": {
+        "median_improvement_per_eval": 0.0014726566272672329,
+        "median_improvement_per_sec": 0.00742209459289445
+      },
+      "methods": [
+        "pso"
+      ],
+      "objective": {
+        "iqr": 0.0,
+        "max": 0.5756325463589747,
+        "median": 0.5756325463589747,
+        "min": 0.5756325463589747,
+        "q25": 0.5756325463589747,
+        "q75": 0.5756325463589747,
+        "std": 0.0
+      },
+      "run_count": 1,
+      "run_files": [
+        "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260408T110941Z/pso/optimize_20260408T111149Z/pso_optimize_20260408T111149Z.json"
+      ],
+      "success": {
+        "share": 1.0,
+        "threshold": 0.6106508250522893
+      },
+      "time": {
+        "median_runtime_sec": 46.42916449898621,
+        "median_time_to_best_sec": 45.333000240963884
+      }
+    },
+    "divisor_size=20 | method=rs": {
+      "budget": {
+        "average_max_plateau_evals": 45.0,
+        "median_evaluation_count": 60
+      },
+      "datasets": [
+        "20_dset_20260408T110941Z"
+      ],
+      "divisor_sizes": [
+        20
+      ],
+      "efficiency": {
+        "median_improvement_per_eval": 0.0060896782286969636,
+        "median_improvement_per_sec": 0.016075620721360054
+      },
+      "methods": [
+        "rs"
+      ],
+      "objective": {
+        "iqr": 0.0,
+        "max": 0.6699237623251975,
+        "median": 0.6699237623251975,
+        "min": 0.6699237623251975,
+        "q25": 0.6699237623251975,
+        "q75": 0.6699237623251975,
+        "std": 0.0
+      },
+      "run_count": 1,
+      "run_files": [
+        "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260408T110941Z/rs/optimize_20260408T111059Z/rs_optimize_20260408T111059Z.json"
+      ],
+      "success": {
+        "share": 0.0,
+        "threshold": 0.6106508250522893
+      },
+      "time": {
+        "median_runtime_sec": 22.728870010992978,
+        "median_time_to_best_sec": 17.594462372013368
+      }
+    }
+  },
+  "input_paths": [
+    "data/experiments/20_dset_20260408T110941Z"
+  ],
+  "package_version": "0.1.0",
+  "plots": {
+    "boxplot_final_objective": "data/analysis/analyze_20260408T111326Z/boxplot_final_objective.png",
+    "overlay_convergence_combined": "data/analysis/analyze_20260408T111326Z/overlay_convergence_combined.png",
+    "pareto_quality_vs_time": "data/analysis/analyze_20260408T111326Z/pareto_quality_vs_time.png",
+    "success_profile_combined": "data/analysis/analyze_20260408T111326Z/success_profile_combined.png",
+    "violin_time_to_best": "data/analysis/analyze_20260408T111326Z/violin_time_to_best.png"
+  },
+  "threshold": 0.6106508250522893,
+  "timestamp_utc": "20260408T111328Z",
+  "total_groups": 5,
+  "total_runs": 5
+}
