@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 import re
-import shlex
 import subprocess
 import sys
 from pathlib import Path
@@ -129,6 +128,76 @@ def _resolve_refs(value: Any, context: dict[str, dict[str, Any]], *, allow_unres
     return value
 
 
+def _normalize_cli_key(name: str) -> str:
+    return name.replace("_", "-")
+
+
+def _expand_arg_ref_spreads(
+    args: dict[str, Any],
+    context: dict[str, dict[str, Any]],
+    *,
+    allow_unresolved: bool,
+) -> dict[str, Any]:
+    expanded: dict[str, Any] = {}
+    spread_specs: list[Any] = []
+
+    for key, value in args.items():
+        if key == "$spread_ref":
+            if isinstance(value, list):
+                spread_specs.extend(value)
+            else:
+                spread_specs.append(value)
+            continue
+        expanded[key] = _resolve_refs(value, context, allow_unresolved=allow_unresolved)
+
+    for raw_spec in spread_specs:
+        if isinstance(raw_spec, str):
+            resolved_ref = _resolve_refs(raw_spec, context, allow_unresolved=allow_unresolved)
+            if not isinstance(resolved_ref, str):
+                raise click.UsageError("$spread_ref string spec must resolve to a string ref path.")
+            spec: dict[str, Any] = {"ref": resolved_ref}
+        else:
+            spec = _resolve_refs(raw_spec, context, allow_unresolved=allow_unresolved)
+            if not isinstance(spec, dict):
+                raise click.UsageError("$spread_ref spec must resolve to an object or a string ref path.")
+
+        ref = spec.get("ref")
+        if not isinstance(ref, str) or not ref:
+            raise click.UsageError("$spread_ref.ref must be a non-empty string.")
+        source = _get_ref_value(ref, context, allow_unresolved=allow_unresolved)
+        if not isinstance(source, dict):
+            raise click.UsageError(f"$spread_ref source '{ref}' must resolve to an object.")
+
+        include = spec.get("include")
+        exclude = spec.get("exclude")
+        rename = spec.get("rename", {})
+
+        if include is not None and (
+            not isinstance(include, list) or any(not isinstance(item, str) or not item for item in include)
+        ):
+            raise click.UsageError("$spread_ref.include must be a list of non-empty strings.")
+        if exclude is not None and (
+            not isinstance(exclude, list) or any(not isinstance(item, str) or not item for item in exclude)
+        ):
+            raise click.UsageError("$spread_ref.exclude must be a list of non-empty strings.")
+        if not isinstance(rename, dict) or any(
+            not isinstance(src, str) or not src or not isinstance(dst, str) or not dst for src, dst in rename.items()
+        ):
+            raise click.UsageError("$spread_ref.rename must be an object of non-empty string pairs.")
+
+        keys = list(source.keys()) if include is None else include
+        excluded = set(exclude or [])
+        for src_key in keys:
+            if src_key in excluded:
+                continue
+            if src_key not in source:
+                raise click.UsageError(f"$spread_ref.include key '{src_key}' not found in '{ref}'.")
+            target_key = rename.get(src_key, _normalize_cli_key(src_key))
+            expanded[target_key] = source[src_key]
+
+    return expanded
+
+
 def _operation_to_args(operation_type: str, args: dict[str, Any]) -> list[str]:
     cli_args = [operation_type]
     for key, value in args.items():
@@ -145,6 +214,24 @@ def _operation_to_args(operation_type: str, args: dict[str, Any]) -> list[str]:
             continue
         cli_args.extend([option, str(value)])
     return cli_args
+
+
+def _format_step_command(operation_type: str, args: dict[str, Any]) -> str:
+    lines = [f"ecm_optimizer {operation_type}"]
+    for key, value in args.items():
+        option = f"--{key}"
+        if isinstance(value, bool):
+            if value:
+                lines.append(f"  {option}")
+            continue
+        if value is None:
+            continue
+        if isinstance(value, list):
+            for item in value:
+                lines.append(f"  {option} {item}")
+            continue
+        lines.append(f"  {option} {value}")
+    return "\n".join(lines)
 
 
 def _dataset_to_experiments_input(dataset_value: Any) -> str:
@@ -333,12 +420,13 @@ def _execute_operations(
         if resolved_label is not None and not isinstance(resolved_label, str):
             raise click.UsageError(f"Operation #{idx} resolved label must be a string.")
 
-        resolved_args = _resolve_refs(args, context, allow_unresolved=dry_run)
+        resolved_args = _expand_arg_ref_spreads(args, context, allow_unresolved=dry_run)
         if op_type == "analyze":
             resolved_args = _apply_analyze_shortcuts(resolved_args)
         command_tail = _operation_to_args(op_type, resolved_args)
         cmd = [sys.executable, "-m", "ecm_optimizer.cli.main", *command_tail]
-        click.echo(f"\nSTEP {idx}/{total_steps}: {' '.join(shlex.quote(token) for token in cmd)}")
+        pretty_cmd = _format_step_command(op_type, resolved_args)
+        click.echo(f"\nSTEP {idx}/{total_steps}:\n{pretty_cmd}")
 
         if dry_run:
             continue
