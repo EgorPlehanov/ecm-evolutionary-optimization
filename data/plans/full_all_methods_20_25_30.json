@@ -1,6 +1,6 @@
 {
   "format": "ecm_run_plan_v1",
-  "description": "Полный прогон: generate+optimize+validate для de/rs/pso/bo/ga на target-digits 20/25/30 с финальным общим анализом.",
+  "description": "Полный бенчмарк-план: один полный цикл generate+optimize+validate для всех методов (de/rs/pso/bo/ga) на target-digits=20,25,30 и общий analyze.",
   "params": {
     "shared": {
       "curve_timeout_sec": 5,

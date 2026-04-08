@@ -55,11 +55,11 @@ ecm-optimizer optimize \
 После завершения в консоль печатаются `result_file=...` и пути до PNG-графиков. JSON-файл сохраняется в `data/experiments/<DATASET_FOLDER>/<METHOD>_optimize_<UTC_TIMESTAMP>.json`, где `<METHOD>` — всегда короткий код (`de`, `rs`, `pso`, `bo`, `ga`).
 
 В конце каждого run автоматически строятся:
-- `convergence` — best fitness so far по eval;
-- `raw_fitness` — fitness по всем evaluation;
-- `jump_plot` — только события `new_best`;
-- `b1_b2_trajectory` — динамика `B1/B2` и scatter `B1 vs B2`;
-- `progress_by_phase` — convergence + маркеры `step`-этапов.
+- `jump_plot` — только события `new_best` + приросты `delta fitness`;
+- `b1_b2_trajectory` — динамика `B1/B2` по evaluation;
+- `progress_by_phase` — best-so-far + raw fitness + маркеры `step`-этапов;
+- `time_efficiency` — качество во времени и rolling `eval/sec`;
+- `b1_ratio_heatmap` — `B1 vs B2` (colored by fitness) и heatmap `B1 vs B2/B1`.
 
 Ключевые метрики (`time_to_first_improvement_sec`, `time_to_best_sec`, `new_best_count`, `eval_per_sec`, `improvement_percent`, `max_plateau_evals`) сохраняются внутри optimize-JSON в поле `run_stats`.
 
@@ -173,28 +173,37 @@ ecm-optimizer run-plan --plan example_full_run
 }
 ```
 
-Опорный план для сравнения всех методов (generate + optimize/validate для `de`, `rs`, `pso`, `bo`, `ga`):
+План **одного полного прогона по всем методам** (один датасет `target-digits=20`, шаги `generate + optimize + validate + analyze`):
 
 ```bash
-ecm-optimizer run-plan --plan baseline_all_methods
+ecm-optimizer run-plan --plan full_all_methods_single_run_20d
 ```
 
+Файл плана: `data/plans/full_all_methods_single_run_20d.json`.
 
-Дополнительный план полного мульти-прогона по нескольким размерам делителей (`target-digits=20,25,30`) с финальным общим анализом:
+План **мульти-seed тюнинга** (`target-digits=20`, seeds `17/2718/31415`, все методы + общий analyze):
 
 ```bash
-ecm-optimizer run-plan --plan full_all_methods_multi_divisors
+ecm-optimizer run-plan --plan tuned_all_methods_multiseed_20d
 ```
 
-Файл плана: `data/plans/full_all_methods_multi_divisors.json`.
+Файл плана: `data/plans/tuned_all_methods_multiseed_20d.json`.
+
+План **полного мульти-прогона по нескольким размерам делителей** (`target-digits=20,25,30`) с финальным общим анализом:
+
+```bash
+ecm-optimizer run-plan --plan full_all_methods_20_25_30
+```
+
+Файл плана: `data/plans/full_all_methods_20_25_30.json`.
 
 Проверка плана без фактического запуска:
 
 ```bash
-ecm-optimizer run-plan --plan baseline_all_methods --dry-run
+ecm-optimizer run-plan --plan tuned_all_methods_multiseed_20d --dry-run
 ```
 
-Файл плана: `data/plans/baseline_all_methods.json`.
+Файл плана: `data/plans/tuned_all_methods_multiseed_20d.json`.
 
 В опорном плане используется единый `seed` на шаге `generate`; для `optimize`/`validate` seed не задаётся отдельно, поэтому команды автоматически берут seed датасета.
 Параметр `workers` в плане не указан, значит используется поведение CLI по умолчанию (`-1`, все доступные CPU).
