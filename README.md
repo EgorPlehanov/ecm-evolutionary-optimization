@@ -124,12 +124,21 @@ ecm-optimizer run-plan example_full_run
   - `repeat: {"count": 3, "as": "run"}` — то же, но переменная цикла будет `run`;
   - `repeat: {"values": {"seed": [11, 22, 33]}}` — количество итераций берётся по длине списка;
   - `repeat: {"count": 3, "values": {"seed": [...]}}` — `count` должен совпадать с длинами всех списков;
+  - `repeat.iterate` управляет комбинированием нескольких списков в `values` (по умолчанию `zip`):
+    - `zip` — объединение по индексу (длины списков должны совпадать);
+    - `product` — декартово произведение списков;
+    - `concat` — склейка в один поток (на итерации присутствует одно поле из `values`).
   - внутри блока доступны `{{iter.index}}` и поля из `values` (например `$ref:iter.seed` или `{{iter.seed}}`).
   - repeat-блок можно пометить `label`, чтобы после выполнения получить метаданные итераций:
     - `<label>.values.<field>` — список значений поля (например `seed_runs.values.seed`);
     - `<label>.iterations` — список объектов итераций (`index` + все поля).
 - для построения списка ссылок по значениям итерации используйте `$map_ref`:
   `{"$map_ref": {"items": {"$ref": "seed_runs.values.seed"}, "template": "dataset_main_{{item}}.dataset_dir"}}`.
+- `$map_ref` также может принимать объект именованных списков:
+  - по умолчанию используется `iterate: "zip"` (элементы объединяются по индексу, длины списков должны совпадать):
+    `{"$map_ref": {"items": {"size": {"$ref": "params.target_digits_list"}, "seed": {"$ref": "params.seed_list"}}, "template": "dataset_{{item.size}}_{{item.seed}}.dataset_dir"}}`
+  - `iterate: "product"` строит декартово произведение списков;
+  - `iterate: "concat"` склеивает элементы списков в один поток (каждый элемент будет вида `{"<name>": value}`).
 - для разворачивания словаря параметров в `args` используйте `$spread_ref`:
   - базово: `{"$spread_ref": {"ref": "params.search"}}` (ключи с `_` автоматически станут `-`);
   - короткая форма без дополнительных опций: `{"$spread_ref": "params.search"}`;

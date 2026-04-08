@@ -2,6 +2,7 @@
   "format": "ecm_run_plan_v1",
   "description": "Один полный прогон по всем методам (de/rs/pso/bo/ga) на одном датасете target-digits=20: generate + repeat(method)->optimize+validate + общий analyze.",
   "params": {
+    "seed": 42,
     "search": {
       "b1-min": 1000,
       "b1-max": 30000,
@@ -51,8 +52,7 @@
       "target-digits": 20,
       "cofactor-digits": 30,
       "train-count": 20,
-      "control-count": 20,
-      "seed": 42
+      "control-count": 20
     },
     "analyze_group_by": [
       "divisor_size",
@@ -64,7 +64,8 @@
       "type": "generate",
       "label": "dataset_20_single",
       "args": {
-        "$spread_ref": "params.generate_args"
+        "$spread_ref": "params.generate_args",
+        "seed": "$ref:params.seed"
       }
     },
     {
@@ -81,6 +82,7 @@
           "args": {
             "dataset": "$ref:dataset_20_single.dataset_dir",
             "method": "$ref:method_iter.method",
+            "seed": "$ref:params.seed",
             "$spread_ref": [
               "params.shared_opt_args",
               "params.method_opt.{{method_iter.method}}",
@@ -94,6 +96,7 @@
           "args": {
             "dataset": "$ref:dataset_20_single.dataset_dir",
             "opt-result-file": "$ref:opt_{{method_iter.method}}_single.result_file",
+            "seed": "$ref:params.seed",
             "$spread_ref": "params.shared_val_args"
           }
         }
