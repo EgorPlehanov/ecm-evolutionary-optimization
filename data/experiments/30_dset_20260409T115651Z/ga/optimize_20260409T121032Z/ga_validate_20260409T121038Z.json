@@ -1,0 +1,28 @@
+{
+  "baseline": {
+    "b1": 50000,
+    "b2": 1000000,
+    "source": "exact_table",
+    "table_target_digits": 30
+  },
+  "command": "validate",
+  "curve_timeout_sec": 5.0,
+  "curves_per_n": 24,
+  "dataset": "data/numbers/30_dset_20260409T115651Z/control.json",
+  "ecm_bin": "ecm",
+  "metrics": {
+    "baseline_mean": 15.530580978025682,
+    "optimized_mean": 1.9434263557486702,
+    "relative_improvement_pct": 87.48645425114208
+  },
+  "optimized": {
+    "b1": 3000,
+    "b2": 3025,
+    "method": "ga",
+    "source_file": "data/experiments/30_dset_20260409T115651Z/ga/optimize_20260409T121032Z/ga_optimize_20260409T121032Z.json"
+  },
+  "package_version": "0.1.0",
+  "seed": 20011,
+  "timestamp_utc": "20260409T121038Z",
+  "workers": 12
+}
