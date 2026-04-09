@@ -249,7 +249,7 @@ def _operation_to_args(operation_type: str, args: dict[str, Any]) -> list[str]:
 
 
 def _format_step_command(operation_type: str, args: dict[str, Any]) -> str:
-    lines = [f"ecm_optimizer {operation_type}"]
+    lines = [f"ecm-optimizer {operation_type}"]
     for key, value in args.items():
         option = f"--{key}"
         if isinstance(value, bool):
