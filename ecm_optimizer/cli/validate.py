@@ -148,6 +148,7 @@ def validate_command(
         curve_timeout_sec=curve_timeout_sec,
         workers=workers,
         verbose=verbose,
+        method=opt_method if opt_method and opt_method != "unknown" else None,
     )
 
     click.echo(f"optimized_mean={summary.optimized_mean:.6f}")

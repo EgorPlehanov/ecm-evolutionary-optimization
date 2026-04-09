@@ -30,14 +30,21 @@ def _evaluate_expected_time_task(args: tuple[str, int, int, int, int, float | No
     ).expected_time
 
 
-def _evaluate_many(tasks: list[tuple[str, int, int, int, int, float | None]], workers: int, *, verbose: bool = False, label: str = "") -> list[float]:
+def _evaluate_many(
+    tasks: list[tuple[str, int, int, int, int, float | None]],
+    workers: int,
+    *,
+    verbose: bool = False,
+    label: str = "",
+    log_prefix: str = "[validate]",
+) -> list[float]:
     """Запустить пакет задач последовательно или параллельно и вернуть их оценки."""
     if workers == 1:
         values: list[float] = []
         for idx, task in enumerate(tasks, start=1):
             values.append(_evaluate_expected_time_task(task))
             if verbose:
-                print(f"[validate] {label} {idx}/{len(tasks)}", flush=True)
+                print(f"{log_prefix} {label} {idx}/{len(tasks)}", flush=True)
         return values
 
     with ProcessPoolExecutor(max_workers=workers) as executor:
@@ -45,7 +52,7 @@ def _evaluate_many(tasks: list[tuple[str, int, int, int, int, float | None]], wo
         for idx, value in enumerate(executor.map(_evaluate_expected_time_task, tasks), start=1):
             values.append(value)
             if verbose:
-                print(f"[validate] {label} {idx}/{len(tasks)}", flush=True)
+                print(f"{log_prefix} {label} {idx}/{len(tasks)}", flush=True)
         return values
 
 
@@ -58,6 +65,7 @@ def validate_on_control(
     curve_timeout_sec: float | None = None,
     workers: int = 1,
     verbose: bool = False,
+    method: str | None = None,
 ) -> ValidationSummary:
     """Сравнить оптимизированные и базовые параметры на контрольной выборке."""
     numbers = list(numbers)
@@ -70,11 +78,14 @@ def validate_on_control(
         for n in numbers
     ]
 
-    if verbose:
-        print(f"[validate] numbers={len(numbers)} curves_per_n={curves_per_n} workers={workers}", flush=True)
+    method_suffix = f":{method}" if method else ""
+    log_prefix = f"[validate{method_suffix}]"
 
-    opt_scores = _evaluate_many(opt_tasks, workers, verbose=verbose, label="optimized")
-    base_scores = _evaluate_many(base_tasks, workers, verbose=verbose, label="baseline")
+    if verbose:
+        print(f"{log_prefix} numbers={len(numbers)} curves_per_n={curves_per_n} workers={workers}", flush=True)
+
+    opt_scores = _evaluate_many(opt_tasks, workers, verbose=verbose, label="optimized", log_prefix=log_prefix)
+    base_scores = _evaluate_many(base_tasks, workers, verbose=verbose, label="baseline", log_prefix=log_prefix)
 
     optimized_mean = sum(opt_scores) / len(opt_scores)
     baseline_mean = sum(base_scores) / len(base_scores)
