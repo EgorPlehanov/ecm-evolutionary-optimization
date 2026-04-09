@@ -263,19 +263,19 @@ ecm-optimizer run-plan --plan tuned_all_methods_multiseed_20d --dry-run
 Параметры плана облегчены для быстрого старта: уменьшены размеры датасета, `curves-per-n` и бюджеты/итерации оптимизаторов.
 
 
-### 5) Сравнительный multi-run анализ (все методы сразу)
+### 5) Иерархический multi-run анализ (optimize + validate)
 
 ```bash
 ecm-optimizer analyze \
   --input data/experiments/20_dset_20260330T134425Z
 ```
 
-Команда строит сравнительные графики и агрегированную статистику по нескольким run:
-- overlay convergence: один комбинированный PNG (два subplot: `eval` и `time`);
-- boxplot финального `objective`;
-- violin `time_to_best`;
-- pareto `objective vs elapsed`;
-- success profile: один комбинированный PNG (два subplot: `eval` и `time`) для заданного `--success-threshold` (или auto-порогу).
+Команда строит иерархический анализ с авто-детектом группировок и использует данные валидации:
+- root `overview/report.md` со сводными выводами;
+- дерево `groups/` по автоматически выбранным уровням (`divisor_size`, `dataset`, `method`, `seed`) или по `--group-by`;
+- на каждом уровне: `report.md`, `tables/runs.csv`, `tables/summary.csv`, сравнительная таблица `compare_by_<dimension>.csv`;
+- сравнительные графики в `plots/` по активному уровню группировки;
+- метрики реального эффекта из `*_validate_*.json` (relative improvement + absolute gain).
 
 По умолчанию (без `--input`) анализатор автоматически берет **все** optimize-результаты из `data/experiments`.
 
@@ -285,21 +285,23 @@ ecm-optimizer analyze \
 - если `--input` начинается с `!`, это правило исключения (по пути/маске/подстроке), например `--input "!*/rs/*"`;
 - если переданы только исключения (`!`), базовый набор берется из `data/experiments`, а затем исключается по правилам.
 
-По умолчанию результат сохраняется в `data/analysis/analyze_<UTC_TIMESTAMP>/` (или в `--output-dir`) и обязательно включает:
-- `multi_run_summary.json` — агрегированные метрики;
-- `multi_run_summary.json` также содержит секцию `analysis_run` с параметрами запуска анализатора и списками найденных run-файлов;
-- PNG-графики сравнения.
+По умолчанию результат сохраняется в `data/analysis/analyze_<UTC_TIMESTAMP>/` (или в `--output-dir`) и включает:
+- `analysis_summary.json` — манифест анализа, параметры запуска, список найденных run-файлов и ссылки на узлы дерева;
+- `overview/report.md` — верхнеуровневый отчёт по всем входным данным;
+- вложенные папки `overview/groups/...` для детального анализа по скоупам.
 
-Группировка графиков/статистики задаётся `--group-by` (можно передавать несколько раз), основные уровни:
-- `divisor_size` (размер делителя / target digits),
-- `method` (метод оптимизации).
+Группировка:
+- `--auto-grouping` включен по умолчанию;
+- для ручного порядка уровней используйте `--no-auto-grouping --group-by ...`;
+- поддерживаемые ключи: `divisor_size`, `dataset`, `method`, `seed`.
 
 ## Структура пакета
 
 - `ecm_optimizer/cli/` — команды `generate`, `optimize`, `validate`.
 - `ecm_optimizer/core/` — генерация задачи, запуск ECM, fitness, baseline и validation.
 - `ecm_optimizer/optimizers/` — базовый интерфейс и реализации DE/RS/PSO/BO/GA.
-- `ecm_optimizer/utils/` — JSON I/O, logging, seed utilities и отчёты по оптимизации (графики/статистика).
+- `ecm_optimizer/analysis/` — иерархический multi-run анализ и генерация markdown-отчетов/таблиц/графиков.
+- `ecm_optimizer/utils/` — JSON I/O, logging и seed utilities.
 - `ecm_optimizer/config.py` — централизованные константы и пути.
 - `ecm_optimizer/models.py` — dataclass-модели конфигурации и результатов.
 - `data/numbers/` — датасеты.
