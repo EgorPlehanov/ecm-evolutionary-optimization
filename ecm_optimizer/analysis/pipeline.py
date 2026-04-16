@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import math
+import os
 import re
 from dataclasses import dataclass
 from fnmatch import fnmatch
@@ -406,6 +407,7 @@ def _build_node_artifacts(
     node_dir: Path,
     threshold: float,
     next_dimension: str | None,
+    breadcrumb_items: list[tuple[str, Path]],
     plt: Any,
 ) -> NodeArtifacts:
     tables_dir = ensure_dir(node_dir / "tables")
@@ -560,10 +562,14 @@ def _build_node_artifacts(
         "## Навигация",
     ]
 
-    if node.level > 0:
-        report_lines.append("- [⬆️ На уровень выше](../../report.md)")
-    else:
-        report_lines.append("- Текущий отчёт: корневой уровень.")
+    breadcrumb_parts: list[str] = []
+    for index, (label, target_dir) in enumerate(breadcrumb_items):
+        if index == len(breadcrumb_items) - 1:
+            breadcrumb_parts.append(label)
+            continue
+        rel_report = Path(os.path.relpath(target_dir / "report.md", start=node_dir))
+        breadcrumb_parts.append(f"[{label}]({rel_report.as_posix()})")
+    report_lines.append(f"- Путь: /{'/'.join(breadcrumb_parts)}")
 
     if node.children:
         report_lines.append("- Переход на нижний уровень:")
@@ -674,6 +680,20 @@ def _build_node_artifacts(
             "  return filename.replace(/_\\d{8}T\\d{6}Z/, '').replace(/_/g, ' ');",
             "}",
             "",
+            "function parseMarkdownLink(value) {",
+            "  if (typeof value !== 'string') return null;",
+            "  const match = value.trim().match(/^\\[([^\\]]+)\\]\\(([^)]+)\\)$/);",
+            "  if (!match) return null;",
+            "  return { text: match[1], href: match[2] };",
+            "}",
+            "",
+            "function renderCellContent(value, isHeader) {",
+            "  const rendered = isHeader ? value : roundNumber(formatDateTime(value));",
+            "  const link = parseMarkdownLink(rendered);",
+            "  if (!link) return rendered;",
+            "  return `<a href=\"${link.href}\">${link.text}</a>`;",
+            "}",
+            "",
             "async function createTable(config) {",
             "  const resp = await fetch(config.file);",
             "  if (!resp.ok) throw new Error(`HTTP ${resp.status}`);",
@@ -684,11 +704,7 @@ def _build_node_artifacts(
             "  rows.forEach((row, i) => {",
             "    html += '<tr>';",
             "    row.forEach(cell => {",
-            "      let content = cell;",
-            "      if (i !== 0) {",
-            "        content = formatDateTime(cell);",
-            "        content = roundNumber(content);",
-            "      }",
+            "      const content = renderCellContent(cell, i === 0);",
             "      html += i === 0 ? `<th>${content}</th>` : `<td>${content}</td>`;",
             "    });",
             "    html += '</tr>';",
@@ -735,6 +751,7 @@ def _render_node_tree(
     *,
     node: GroupNode,
     node_dir: Path,
+    breadcrumb_items: list[tuple[str, Path]],
     group_by: tuple[str, ...],
     threshold: float,
     plt: Any,
@@ -748,6 +765,7 @@ def _render_node_tree(
         node_dir=node_dir,
         threshold=threshold,
         next_dimension=next_dimension,
+        breadcrumb_items=breadcrumb_items,
         plt=plt,
     )
 
@@ -772,6 +790,7 @@ def _render_node_tree(
         _render_node_tree(
             node=child,
             node_dir=child_dir,
+            breadcrumb_items=[*breadcrumb_items, (_node_heading(child), child_dir)],
             group_by=group_by,
             threshold=threshold,
             plt=plt,
@@ -817,6 +836,7 @@ def run_analysis(
     _render_node_tree(
         node=tree,
         node_dir=overview_dir,
+        breadcrumb_items=[("overview", overview_dir)],
         group_by=group_by,
         threshold=threshold,
         plt=plt,
