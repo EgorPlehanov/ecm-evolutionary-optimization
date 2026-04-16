@@ -2,7 +2,9 @@ from __future__ import annotations
 
 import csv
 import math
+import os
 import re
+from urllib.parse import quote
 from dataclasses import dataclass
 from fnmatch import fnmatch
 from pathlib import Path
@@ -400,10 +402,29 @@ def _node_heading(node: GroupNode) -> str:
     return f"{node.key}={node.value}"
 
 
+def _breadcrumb_path(node_dir: Path, breadcrumb: list[tuple[str, Path]]) -> str:
+    items: list[str] = []
+    for index, (label, level_dir) in enumerate(breadcrumb):
+        if index == len(breadcrumb) - 1:
+            items.append(label)
+            continue
+        relative_report = os.path.relpath(level_dir / "report.md", node_dir)
+        items.append(f"[{label}]({relative_report})")
+    return "/" + "/".join(items)
+
+
+def _with_display_name(path_value: str, display_name: str | None = None) -> str:
+    if not display_name:
+        return path_value
+    separator = "&" if "?" in path_value else "?"
+    return f"{path_value}{separator}display_name={quote(display_name)}"
+
+
 def _build_node_artifacts(
     *,
     node: GroupNode,
     node_dir: Path,
+    breadcrumb: list[tuple[str, Path]],
     threshold: float,
     next_dimension: str | None,
     plt: Any,
@@ -414,16 +435,19 @@ def _build_node_artifacts(
     node_stats = _stats_for_runs(node.runs, threshold)
     run_rows: list[dict[str, Any]] = []
     for run in sorted(node.runs, key=lambda item: (item.dataset, item.method, str(item.seed))):
+        run_report_file = run.run_file.with_name(f"{run.run_file.stem}_report.md")
+        run_report_rel = _project_relative(run_report_file) if run_report_file.exists() else None
         dataset_rel = _project_relative(run.dataset_file) if run.dataset_file else None
-        dataset_link = f"[{run.dataset}]({dataset_rel})" if dataset_rel else run.dataset
+        dataset_link = _with_display_name(str(dataset_rel), run.dataset) if dataset_rel else run.dataset
         run_rel = _project_relative(run.run_file)
-        run_link = f"[{run.run_file.name}]({run_rel})"
+        run_link = _with_display_name(str(run_rel), run.run_file.name)
         validation_link = ""
         if run.validation_file:
             validation_rel = _project_relative(run.validation_file)
-            validation_link = f"[{run.validation_file.name}]({validation_rel})"
+            validation_link = _with_display_name(str(validation_rel), run.validation_file.name)
         run_rows.append(
             {
+                "run_report": _with_display_name(str(run_report_rel), "📄") if run_report_rel else "",
                 "dataset": dataset_link,
                 "divisor_size": run.divisor_size,
                 "method": run.method,
@@ -443,6 +467,7 @@ def _build_node_artifacts(
         runs_table,
         run_rows,
         [
+            "run_report",
             "dataset",
             "divisor_size",
             "method",
@@ -559,11 +584,7 @@ def _build_node_artifacts(
         "",
         "## Навигация",
     ]
-
-    if node.level > 0:
-        report_lines.append("- [⬆️ На уровень выше](../../report.md)")
-    else:
-        report_lines.append("- Текущий отчёт: корневой уровень.")
+    report_lines.append(f"- Путь: {_breadcrumb_path(node_dir, breadcrumb)}")
 
     if node.children:
         report_lines.append("- Переход на нижний уровень:")
@@ -674,6 +695,63 @@ def _build_node_artifacts(
             "  return filename.replace(/_\\d{8}T\\d{6}Z/, '').replace(/_/g, ' ');",
             "}",
             "",
+            "function escapeHtml(value) {",
+            "  return String(value)",
+            "    .replace(/&/g, '&amp;')",
+            "    .replace(/</g, '&lt;')",
+            "    .replace(/>/g, '&gt;')",
+            "    .replace(/\"/g, '&quot;')",
+            "    .replace(/'/g, '&#39;');",
+            "}",
+            "",
+            "function isPathLike(value) {",
+            "  if (typeof value !== 'string') return false;",
+            "  const v = normalizeDateInput(value);",
+            "  if (!v) return false;",
+            "  const pathOnly = v.split('?')[0].split('#')[0];",
+            "  if (!pathOnly || /^\\d+(\\.\\d+)?$/.test(pathOnly)) return false;",
+            "  return /^(?:\\.{1,2}\\/|\\/|[A-Za-z0-9_.\\-/]+\\.[A-Za-z0-9]+)$/.test(pathOnly);",
+            "}",
+            "",
+            "function parseLinkValue(value) {",
+            "  const v = normalizeDateInput(value);",
+            "  const [withoutHash, hashPart] = String(v).split('#', 2);",
+            "  const [pathPart, queryPart] = withoutHash.split('?', 2);",
+            "  const params = new URLSearchParams(queryPart || '');",
+            "  const displayName = params.get('display_name');",
+            "  params.delete('display_name');",
+            "  return {",
+            "    path: pathPart || '',",
+            "    displayName,",
+            "    query: params.toString(),",
+            "    hash: hashPart || '',",
+            "  };",
+            "}",
+            "",
+            "function toProjectRootHref(pathValue) {",
+            "  const v = normalizeDateInput(pathValue);",
+            "  if (!v) return v;",
+            "  if (/^[A-Za-z][A-Za-z\\d+.-]*:/.test(v) || v.startsWith('//')) return v;",
+            "  const normalized = v.replace(/^\\.{1,2}\\//, '').replace(/^\\/+/, '');",
+            "  return `/${normalized}`;",
+            "}",
+            "",
+            "function renderBodyCell(cell, columnName) {",
+            "  const raw = normalizeDateInput(cell);",
+            "  if (isPathLike(raw)) {",
+            "    const parsed = parseLinkValue(raw);",
+            "    const hrefBase = toProjectRootHref(parsed.path);",
+            "    const query = parsed.query ? `?${parsed.query}` : '';",
+            "    const hash = parsed.hash ? `#${parsed.hash}` : '';",
+            "    const href = `${hrefBase}${query}${hash}`;",
+            "    const label = parsed.displayName || raw;",
+            "    return `<td><a href=\"${encodeURI(href)}\">${escapeHtml(label)}</a></td>`;",
+            "  }",
+            "  let content = formatDateTime(cell);",
+            "  content = roundNumber(content);",
+            "  return `<td>${escapeHtml(content)}</td>`;",
+            "}",
+            "",
             "async function createTable(config) {",
             "  const resp = await fetch(config.file);",
             "  if (!resp.ok) throw new Error(`HTTP ${resp.status}`);",
@@ -683,13 +761,9 @@ def _build_node_artifacts(
             "  let html = '<table border=\"1\" cellpadding=\"5\">';",
             "  rows.forEach((row, i) => {",
             "    html += '<tr>';",
-            "    row.forEach(cell => {",
-            "      let content = cell;",
-            "      if (i !== 0) {",
-            "        content = formatDateTime(cell);",
-            "        content = roundNumber(content);",
-            "      }",
-            "      html += i === 0 ? `<th>${content}</th>` : `<td>${content}</td>`;",
+            "    row.forEach((cell, columnIndex) => {",
+            "      const columnName = rows[0][columnIndex] || '';",
+            "      html += i === 0 ? `<th>${escapeHtml(cell)}</th>` : renderBodyCell(cell, columnName);",
             "    });",
             "    html += '</tr>';",
             "  });",
@@ -735,6 +809,7 @@ def _render_node_tree(
     *,
     node: GroupNode,
     node_dir: Path,
+    breadcrumb: list[tuple[str, Path]],
     group_by: tuple[str, ...],
     threshold: float,
     plt: Any,
@@ -746,6 +821,7 @@ def _render_node_tree(
     artifacts = _build_node_artifacts(
         node=node,
         node_dir=node_dir,
+        breadcrumb=breadcrumb,
         threshold=threshold,
         next_dimension=next_dimension,
         plt=plt,
@@ -772,6 +848,7 @@ def _render_node_tree(
         _render_node_tree(
             node=child,
             node_dir=child_dir,
+            breadcrumb=[*breadcrumb, (f"{child.key}={child.value}", child_dir)],
             group_by=group_by,
             threshold=threshold,
             plt=plt,
@@ -817,6 +894,7 @@ def run_analysis(
     _render_node_tree(
         node=tree,
         node_dir=overview_dir,
+        breadcrumb=[("overview", overview_dir)],
         group_by=group_by,
         threshold=threshold,
         plt=plt,

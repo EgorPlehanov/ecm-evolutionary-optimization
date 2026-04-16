@@ -1,0 +1,1872 @@
+{
+  "analysis_run": {
+    "auto_grouping": true,
+    "discovered_run_files": [
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/bo/optimize_20260409T100750Z/bo_optimize_20260409T100750Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/bo/optimize_20260409T100806Z/bo_optimize_20260409T100806Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/bo/optimize_20260409T100819Z/bo_optimize_20260409T100819Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/de/optimize_20260409T100122Z/de_optimize_20260409T100122Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/de/optimize_20260409T100225Z/de_optimize_20260409T100225Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/de/optimize_20260409T100324Z/de_optimize_20260409T100324Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/ga/optimize_20260409T100930Z/ga_optimize_20260409T100930Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/ga/optimize_20260409T101042Z/ga_optimize_20260409T101042Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/ga/optimize_20260409T101153Z/ga_optimize_20260409T101153Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/pso/optimize_20260409T100542Z/pso_optimize_20260409T100542Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/pso/optimize_20260409T100641Z/pso_optimize_20260409T100641Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/pso/optimize_20260409T100736Z/pso_optimize_20260409T100736Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/rs/optimize_20260409T100351Z/rs_optimize_20260409T100351Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/rs/optimize_20260409T100416Z/rs_optimize_20260409T100416Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/rs/optimize_20260409T100442Z/rs_optimize_20260409T100442Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/bo/optimize_20260409T101900Z/bo_optimize_20260409T101900Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/bo/optimize_20260409T101913Z/bo_optimize_20260409T101913Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/bo/optimize_20260409T101929Z/bo_optimize_20260409T101929Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/de/optimize_20260409T101246Z/de_optimize_20260409T101246Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/de/optimize_20260409T101348Z/de_optimize_20260409T101348Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/de/optimize_20260409T101446Z/de_optimize_20260409T101446Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/ga/optimize_20260409T102035Z/ga_optimize_20260409T102035Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/ga/optimize_20260409T102144Z/ga_optimize_20260409T102144Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/ga/optimize_20260409T102252Z/ga_optimize_20260409T102252Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/pso/optimize_20260409T101707Z/pso_optimize_20260409T101707Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/pso/optimize_20260409T101756Z/pso_optimize_20260409T101756Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/pso/optimize_20260409T101844Z/pso_optimize_20260409T101844Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/rs/optimize_20260409T101510Z/rs_optimize_20260409T101510Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/rs/optimize_20260409T101537Z/rs_optimize_20260409T101537Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/rs/optimize_20260409T101614Z/rs_optimize_20260409T101614Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/bo/optimize_20260409T103115Z/bo_optimize_20260409T103115Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/bo/optimize_20260409T103128Z/bo_optimize_20260409T103128Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/bo/optimize_20260409T103143Z/bo_optimize_20260409T103143Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/de/optimize_20260409T102346Z/de_optimize_20260409T102346Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/de/optimize_20260409T102442Z/de_optimize_20260409T102442Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/de/optimize_20260409T102544Z/de_optimize_20260409T102544Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/ga/optimize_20260409T103253Z/ga_optimize_20260409T103253Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/ga/optimize_20260409T103402Z/ga_optimize_20260409T103402Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/ga/optimize_20260409T103511Z/ga_optimize_20260409T103511Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/pso/optimize_20260409T102752Z/pso_optimize_20260409T102752Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/pso/optimize_20260409T103009Z/pso_optimize_20260409T103009Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/pso/optimize_20260409T103100Z/pso_optimize_20260409T103100Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/rs/optimize_20260409T102610Z/rs_optimize_20260409T102610Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/rs/optimize_20260409T102634Z/rs_optimize_20260409T102634Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/rs/optimize_20260409T102700Z/rs_optimize_20260409T102700Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/bo/optimize_20260409T104555Z/bo_optimize_20260409T104555Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/bo/optimize_20260409T104615Z/bo_optimize_20260409T104615Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/bo/optimize_20260409T104632Z/bo_optimize_20260409T104632Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/de/optimize_20260409T103619Z/de_optimize_20260409T103619Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/de/optimize_20260409T103910Z/de_optimize_20260409T103910Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/de/optimize_20260409T104021Z/de_optimize_20260409T104021Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/ga/optimize_20260409T104752Z/ga_optimize_20260409T104752Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/ga/optimize_20260409T104909Z/ga_optimize_20260409T104909Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/ga/optimize_20260409T105027Z/ga_optimize_20260409T105027Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/pso/optimize_20260409T104249Z/pso_optimize_20260409T104249Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/pso/optimize_20260409T104346Z/pso_optimize_20260409T104346Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/pso/optimize_20260409T104532Z/pso_optimize_20260409T104532Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/rs/optimize_20260409T104051Z/rs_optimize_20260409T104051Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/rs/optimize_20260409T104121Z/rs_optimize_20260409T104121Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/rs/optimize_20260409T104152Z/rs_optimize_20260409T104152Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/bo/optimize_20260409T110324Z/bo_optimize_20260409T110324Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/bo/optimize_20260409T110342Z/bo_optimize_20260409T110342Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/bo/optimize_20260409T110359Z/bo_optimize_20260409T110359Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/de/optimize_20260409T105447Z/de_optimize_20260409T105447Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/de/optimize_20260409T105554Z/de_optimize_20260409T105554Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/de/optimize_20260409T105702Z/de_optimize_20260409T105702Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/ga/optimize_20260409T110518Z/ga_optimize_20260409T110518Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/ga/optimize_20260409T110635Z/ga_optimize_20260409T110635Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/ga/optimize_20260409T110753Z/ga_optimize_20260409T110753Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/pso/optimize_20260409T110114Z/pso_optimize_20260409T110114Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/pso/optimize_20260409T110213Z/pso_optimize_20260409T110213Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/pso/optimize_20260409T110308Z/pso_optimize_20260409T110308Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/rs/optimize_20260409T105732Z/rs_optimize_20260409T105732Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/rs/optimize_20260409T105805Z/rs_optimize_20260409T105805Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/rs/optimize_20260409T105836Z/rs_optimize_20260409T105836Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/bo/optimize_20260409T112131Z/bo_optimize_20260409T112131Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/bo/optimize_20260409T112146Z/bo_optimize_20260409T112146Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/bo/optimize_20260409T112204Z/bo_optimize_20260409T112204Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/de/optimize_20260409T110917Z/de_optimize_20260409T110917Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/de/optimize_20260409T111022Z/de_optimize_20260409T111022Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/de/optimize_20260409T111137Z/de_optimize_20260409T111137Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/ga/optimize_20260409T112321Z/ga_optimize_20260409T112321Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/ga/optimize_20260409T112439Z/ga_optimize_20260409T112439Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/ga/optimize_20260409T112554Z/ga_optimize_20260409T112554Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/pso/optimize_20260409T111406Z/pso_optimize_20260409T111406Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/pso/optimize_20260409T111503Z/pso_optimize_20260409T111503Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/pso/optimize_20260409T112116Z/pso_optimize_20260409T112116Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/rs/optimize_20260409T111204Z/rs_optimize_20260409T111204Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/rs/optimize_20260409T111236Z/rs_optimize_20260409T111236Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/rs/optimize_20260409T111307Z/rs_optimize_20260409T111307Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/bo/optimize_20260409T114440Z/bo_optimize_20260409T114440Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/bo/optimize_20260409T114507Z/bo_optimize_20260409T114507Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/bo/optimize_20260409T114532Z/bo_optimize_20260409T114532Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/de/optimize_20260409T112736Z/de_optimize_20260409T112736Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/de/optimize_20260409T113311Z/de_optimize_20260409T113311Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/de/optimize_20260409T113456Z/de_optimize_20260409T113456Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/ga/optimize_20260409T115312Z/ga_optimize_20260409T115312Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/ga/optimize_20260409T115450Z/ga_optimize_20260409T115450Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/ga/optimize_20260409T115644Z/ga_optimize_20260409T115644Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/pso/optimize_20260409T114154Z/pso_optimize_20260409T114154Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/pso/optimize_20260409T114306Z/pso_optimize_20260409T114306Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/pso/optimize_20260409T114415Z/pso_optimize_20260409T114415Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/rs/optimize_20260409T113555Z/rs_optimize_20260409T113555Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/rs/optimize_20260409T113640Z/rs_optimize_20260409T113640Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/rs/optimize_20260409T114040Z/rs_optimize_20260409T114040Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/bo/optimize_20260409T120806Z/bo_optimize_20260409T120806Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/bo/optimize_20260409T120831Z/bo_optimize_20260409T120831Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/bo/optimize_20260409T120855Z/bo_optimize_20260409T120855Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/de/optimize_20260409T115831Z/de_optimize_20260409T115831Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/de/optimize_20260409T120004Z/de_optimize_20260409T120004Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/de/optimize_20260409T120133Z/de_optimize_20260409T120133Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/ga/optimize_20260409T121032Z/ga_optimize_20260409T121032Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/ga/optimize_20260409T121230Z/ga_optimize_20260409T121230Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/ga/optimize_20260409T121407Z/ga_optimize_20260409T121407Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/pso/optimize_20260409T120503Z/pso_optimize_20260409T120503Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/pso/optimize_20260409T120618Z/pso_optimize_20260409T120618Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/pso/optimize_20260409T120741Z/pso_optimize_20260409T120741Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/rs/optimize_20260409T120221Z/rs_optimize_20260409T120221Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/rs/optimize_20260409T120307Z/rs_optimize_20260409T120307Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/rs/optimize_20260409T120357Z/rs_optimize_20260409T120357Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/bo/optimize_20260409T123213Z/bo_optimize_20260409T123213Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/bo/optimize_20260409T123235Z/bo_optimize_20260409T123235Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/bo/optimize_20260409T123259Z/bo_optimize_20260409T123259Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/de/optimize_20260409T121550Z/de_optimize_20260409T121550Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/de/optimize_20260409T122255Z/de_optimize_20260409T122255Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/de/optimize_20260409T122431Z/de_optimize_20260409T122431Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/ga/optimize_20260409T123436Z/ga_optimize_20260409T123436Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/ga/optimize_20260409T124047Z/ga_optimize_20260409T124047Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/ga/optimize_20260409T124234Z/ga_optimize_20260409T124234Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/pso/optimize_20260409T122925Z/pso_optimize_20260409T122925Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/pso/optimize_20260409T123035Z/pso_optimize_20260409T123035Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/pso/optimize_20260409T123150Z/pso_optimize_20260409T123150Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/rs/optimize_20260409T122517Z/rs_optimize_20260409T122517Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/rs/optimize_20260409T122602Z/rs_optimize_20260409T122602Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/rs/optimize_20260409T122701Z/rs_optimize_20260409T122701Z.json"
+    ],
+    "discovered_run_files_before_exclusions": [
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/bo/optimize_20260409T100750Z/bo_optimize_20260409T100750Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/bo/optimize_20260409T100806Z/bo_optimize_20260409T100806Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/bo/optimize_20260409T100819Z/bo_optimize_20260409T100819Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/de/optimize_20260409T100122Z/de_optimize_20260409T100122Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/de/optimize_20260409T100225Z/de_optimize_20260409T100225Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/de/optimize_20260409T100324Z/de_optimize_20260409T100324Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/ga/optimize_20260409T100930Z/ga_optimize_20260409T100930Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/ga/optimize_20260409T101042Z/ga_optimize_20260409T101042Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/ga/optimize_20260409T101153Z/ga_optimize_20260409T101153Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/pso/optimize_20260409T100542Z/pso_optimize_20260409T100542Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/pso/optimize_20260409T100641Z/pso_optimize_20260409T100641Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/pso/optimize_20260409T100736Z/pso_optimize_20260409T100736Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/rs/optimize_20260409T100351Z/rs_optimize_20260409T100351Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/rs/optimize_20260409T100416Z/rs_optimize_20260409T100416Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T100023Z/rs/optimize_20260409T100442Z/rs_optimize_20260409T100442Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/bo/optimize_20260409T101900Z/bo_optimize_20260409T101900Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/bo/optimize_20260409T101913Z/bo_optimize_20260409T101913Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/bo/optimize_20260409T101929Z/bo_optimize_20260409T101929Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/de/optimize_20260409T101246Z/de_optimize_20260409T101246Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/de/optimize_20260409T101348Z/de_optimize_20260409T101348Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/de/optimize_20260409T101446Z/de_optimize_20260409T101446Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/ga/optimize_20260409T102035Z/ga_optimize_20260409T102035Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/ga/optimize_20260409T102144Z/ga_optimize_20260409T102144Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/ga/optimize_20260409T102252Z/ga_optimize_20260409T102252Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/pso/optimize_20260409T101707Z/pso_optimize_20260409T101707Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/pso/optimize_20260409T101756Z/pso_optimize_20260409T101756Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/pso/optimize_20260409T101844Z/pso_optimize_20260409T101844Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/rs/optimize_20260409T101510Z/rs_optimize_20260409T101510Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/rs/optimize_20260409T101537Z/rs_optimize_20260409T101537Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T101157Z/rs/optimize_20260409T101614Z/rs_optimize_20260409T101614Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/bo/optimize_20260409T103115Z/bo_optimize_20260409T103115Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/bo/optimize_20260409T103128Z/bo_optimize_20260409T103128Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/bo/optimize_20260409T103143Z/bo_optimize_20260409T103143Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/de/optimize_20260409T102346Z/de_optimize_20260409T102346Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/de/optimize_20260409T102442Z/de_optimize_20260409T102442Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/de/optimize_20260409T102544Z/de_optimize_20260409T102544Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/ga/optimize_20260409T103253Z/ga_optimize_20260409T103253Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/ga/optimize_20260409T103402Z/ga_optimize_20260409T103402Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/ga/optimize_20260409T103511Z/ga_optimize_20260409T103511Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/pso/optimize_20260409T102752Z/pso_optimize_20260409T102752Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/pso/optimize_20260409T103009Z/pso_optimize_20260409T103009Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/pso/optimize_20260409T103100Z/pso_optimize_20260409T103100Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/rs/optimize_20260409T102610Z/rs_optimize_20260409T102610Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/rs/optimize_20260409T102634Z/rs_optimize_20260409T102634Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/20_dset_20260409T102256Z/rs/optimize_20260409T102700Z/rs_optimize_20260409T102700Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/bo/optimize_20260409T104555Z/bo_optimize_20260409T104555Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/bo/optimize_20260409T104615Z/bo_optimize_20260409T104615Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/bo/optimize_20260409T104632Z/bo_optimize_20260409T104632Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/de/optimize_20260409T103619Z/de_optimize_20260409T103619Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/de/optimize_20260409T103910Z/de_optimize_20260409T103910Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/de/optimize_20260409T104021Z/de_optimize_20260409T104021Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/ga/optimize_20260409T104752Z/ga_optimize_20260409T104752Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/ga/optimize_20260409T104909Z/ga_optimize_20260409T104909Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/ga/optimize_20260409T105027Z/ga_optimize_20260409T105027Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/pso/optimize_20260409T104249Z/pso_optimize_20260409T104249Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/pso/optimize_20260409T104346Z/pso_optimize_20260409T104346Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/pso/optimize_20260409T104532Z/pso_optimize_20260409T104532Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/rs/optimize_20260409T104051Z/rs_optimize_20260409T104051Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/rs/optimize_20260409T104121Z/rs_optimize_20260409T104121Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T103515Z/rs/optimize_20260409T104152Z/rs_optimize_20260409T104152Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/bo/optimize_20260409T110324Z/bo_optimize_20260409T110324Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/bo/optimize_20260409T110342Z/bo_optimize_20260409T110342Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/bo/optimize_20260409T110359Z/bo_optimize_20260409T110359Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/de/optimize_20260409T105447Z/de_optimize_20260409T105447Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/de/optimize_20260409T105554Z/de_optimize_20260409T105554Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/de/optimize_20260409T105702Z/de_optimize_20260409T105702Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/ga/optimize_20260409T110518Z/ga_optimize_20260409T110518Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/ga/optimize_20260409T110635Z/ga_optimize_20260409T110635Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/ga/optimize_20260409T110753Z/ga_optimize_20260409T110753Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/pso/optimize_20260409T110114Z/pso_optimize_20260409T110114Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/pso/optimize_20260409T110213Z/pso_optimize_20260409T110213Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/pso/optimize_20260409T110308Z/pso_optimize_20260409T110308Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/rs/optimize_20260409T105732Z/rs_optimize_20260409T105732Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/rs/optimize_20260409T105805Z/rs_optimize_20260409T105805Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T105031Z/rs/optimize_20260409T105836Z/rs_optimize_20260409T105836Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/bo/optimize_20260409T112131Z/bo_optimize_20260409T112131Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/bo/optimize_20260409T112146Z/bo_optimize_20260409T112146Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/bo/optimize_20260409T112204Z/bo_optimize_20260409T112204Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/de/optimize_20260409T110917Z/de_optimize_20260409T110917Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/de/optimize_20260409T111022Z/de_optimize_20260409T111022Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/de/optimize_20260409T111137Z/de_optimize_20260409T111137Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/ga/optimize_20260409T112321Z/ga_optimize_20260409T112321Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/ga/optimize_20260409T112439Z/ga_optimize_20260409T112439Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/ga/optimize_20260409T112554Z/ga_optimize_20260409T112554Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/pso/optimize_20260409T111406Z/pso_optimize_20260409T111406Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/pso/optimize_20260409T111503Z/pso_optimize_20260409T111503Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/pso/optimize_20260409T112116Z/pso_optimize_20260409T112116Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/rs/optimize_20260409T111204Z/rs_optimize_20260409T111204Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/rs/optimize_20260409T111236Z/rs_optimize_20260409T111236Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/25_dset_20260409T110755Z/rs/optimize_20260409T111307Z/rs_optimize_20260409T111307Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/bo/optimize_20260409T114440Z/bo_optimize_20260409T114440Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/bo/optimize_20260409T114507Z/bo_optimize_20260409T114507Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/bo/optimize_20260409T114532Z/bo_optimize_20260409T114532Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/de/optimize_20260409T112736Z/de_optimize_20260409T112736Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/de/optimize_20260409T113311Z/de_optimize_20260409T113311Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/de/optimize_20260409T113456Z/de_optimize_20260409T113456Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/ga/optimize_20260409T115312Z/ga_optimize_20260409T115312Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/ga/optimize_20260409T115450Z/ga_optimize_20260409T115450Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/ga/optimize_20260409T115644Z/ga_optimize_20260409T115644Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/pso/optimize_20260409T114154Z/pso_optimize_20260409T114154Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/pso/optimize_20260409T114306Z/pso_optimize_20260409T114306Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/pso/optimize_20260409T114415Z/pso_optimize_20260409T114415Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/rs/optimize_20260409T113555Z/rs_optimize_20260409T113555Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/rs/optimize_20260409T113640Z/rs_optimize_20260409T113640Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T112558Z/rs/optimize_20260409T114040Z/rs_optimize_20260409T114040Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/bo/optimize_20260409T120806Z/bo_optimize_20260409T120806Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/bo/optimize_20260409T120831Z/bo_optimize_20260409T120831Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/bo/optimize_20260409T120855Z/bo_optimize_20260409T120855Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/de/optimize_20260409T115831Z/de_optimize_20260409T115831Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/de/optimize_20260409T120004Z/de_optimize_20260409T120004Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/de/optimize_20260409T120133Z/de_optimize_20260409T120133Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/ga/optimize_20260409T121032Z/ga_optimize_20260409T121032Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/ga/optimize_20260409T121230Z/ga_optimize_20260409T121230Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/ga/optimize_20260409T121407Z/ga_optimize_20260409T121407Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/pso/optimize_20260409T120503Z/pso_optimize_20260409T120503Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/pso/optimize_20260409T120618Z/pso_optimize_20260409T120618Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/pso/optimize_20260409T120741Z/pso_optimize_20260409T120741Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/rs/optimize_20260409T120221Z/rs_optimize_20260409T120221Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/rs/optimize_20260409T120307Z/rs_optimize_20260409T120307Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T115651Z/rs/optimize_20260409T120357Z/rs_optimize_20260409T120357Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/bo/optimize_20260409T123213Z/bo_optimize_20260409T123213Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/bo/optimize_20260409T123235Z/bo_optimize_20260409T123235Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/bo/optimize_20260409T123259Z/bo_optimize_20260409T123259Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/de/optimize_20260409T121550Z/de_optimize_20260409T121550Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/de/optimize_20260409T122255Z/de_optimize_20260409T122255Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/de/optimize_20260409T122431Z/de_optimize_20260409T122431Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/ga/optimize_20260409T123436Z/ga_optimize_20260409T123436Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/ga/optimize_20260409T124047Z/ga_optimize_20260409T124047Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/ga/optimize_20260409T124234Z/ga_optimize_20260409T124234Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/pso/optimize_20260409T122925Z/pso_optimize_20260409T122925Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/pso/optimize_20260409T123035Z/pso_optimize_20260409T123035Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/pso/optimize_20260409T123150Z/pso_optimize_20260409T123150Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/rs/optimize_20260409T122517Z/rs_optimize_20260409T122517Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/rs/optimize_20260409T122602Z/rs_optimize_20260409T122602Z.json",
+      "/home/egorp/projects/ecm-evolutionary-optimization/data/experiments/30_dset_20260409T121414Z/rs/optimize_20260409T122701Z/rs_optimize_20260409T122701Z.json"
+    ],
+    "exclude_rules": [],
+    "experiments_root": "data/experiments",
+    "include_paths": [
+      "data/experiments/20_dset_20260409T100023Z",
+      "data/experiments/20_dset_20260409T101157Z",
+      "data/experiments/20_dset_20260409T102256Z",
+      "data/experiments/25_dset_20260409T103515Z",
+      "data/experiments/25_dset_20260409T105031Z",
+      "data/experiments/25_dset_20260409T110755Z",
+      "data/experiments/30_dset_20260409T112558Z",
+      "data/experiments/30_dset_20260409T115651Z",
+      "data/experiments/30_dset_20260409T121414Z"
+    ],
+    "input_entries": [
+      "data/experiments/20_dset_20260409T100023Z",
+      "data/experiments/20_dset_20260409T101157Z",
+      "data/experiments/20_dset_20260409T102256Z",
+      "data/experiments/25_dset_20260409T103515Z",
+      "data/experiments/25_dset_20260409T105031Z",
+      "data/experiments/25_dset_20260409T110755Z",
+      "data/experiments/30_dset_20260409T112558Z",
+      "data/experiments/30_dset_20260409T115651Z",
+      "data/experiments/30_dset_20260409T121414Z"
+    ],
+    "max_eval_points": 300,
+    "max_time_points": 200,
+    "output_dir": "data/analysis/analyze_20260416T144434Z",
+    "resolved_group_by": [
+      "divisor_size",
+      "dataset",
+      "method",
+      "seed"
+    ],
+    "success_threshold": null
+  },
+  "command": "analyze",
+  "group_by": [
+    "divisor_size",
+    "dataset",
+    "method",
+    "seed"
+  ],
+  "nodes": [
+    {
+      "analysis_level": "overview",
+      "level": 0,
+      "plots": {
+        "final_objective_by_divisor_size": "data/analysis/analyze_20260416T144434Z/overview/plots/final_objective_by_divisor_size.png",
+        "validation_gain_by_divisor_size": "data/analysis/analyze_20260416T144434Z/overview/plots/validation_gain_by_divisor_size.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/report.md",
+      "runs": 135,
+      "tables": {
+        "compare_by_divisor_size": "data/analysis/analyze_20260416T144434Z/overview/tables/compare_by_divisor_size.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "divisor_size=20",
+      "level": 1,
+      "plots": {
+        "final_objective_by_divisor_size": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/plots/final_objective_by_divisor_size.png",
+        "validation_gain_by_divisor_size": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/plots/validation_gain_by_divisor_size.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/report.md",
+      "runs": 45,
+      "tables": {
+        "compare_by_divisor_size": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/tables/compare_by_divisor_size.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "dataset=20_dset_20260409T100023Z",
+      "level": 2,
+      "plots": {
+        "final_objective_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/plots/final_objective_by_dataset.png",
+        "validation_gain_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/plots/validation_gain_by_dataset.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/report.md",
+      "runs": 15,
+      "tables": {
+        "compare_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/tables/compare_by_dataset.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=bo",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=bo/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=bo/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=bo/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=bo/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=bo/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=bo/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=10007",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=bo/groups/seed=10007/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=bo/groups/seed=10007/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=bo/groups/seed=10007/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=bo/groups/seed=10007/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=bo/groups/seed=10007/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=bo/groups/seed=10007/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=de",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=de/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=de/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=de/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=de/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=de/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=de/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=10007",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=de/groups/seed=10007/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=de/groups/seed=10007/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=de/groups/seed=10007/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=de/groups/seed=10007/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=de/groups/seed=10007/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=de/groups/seed=10007/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=ga",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=ga/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=ga/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=ga/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=ga/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=ga/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=ga/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=10007",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=ga/groups/seed=10007/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=ga/groups/seed=10007/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=ga/groups/seed=10007/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=ga/groups/seed=10007/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=ga/groups/seed=10007/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=ga/groups/seed=10007/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=pso",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=pso/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=pso/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=pso/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=pso/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=pso/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=pso/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=10007",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=pso/groups/seed=10007/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=pso/groups/seed=10007/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=pso/groups/seed=10007/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=pso/groups/seed=10007/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=pso/groups/seed=10007/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=pso/groups/seed=10007/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=rs",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=rs/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=rs/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=rs/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=rs/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=rs/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=rs/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=10007",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=rs/groups/seed=10007/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=rs/groups/seed=10007/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=rs/groups/seed=10007/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=rs/groups/seed=10007/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=rs/groups/seed=10007/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T100023Z/groups/method=rs/groups/seed=10007/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "dataset=20_dset_20260409T101157Z",
+      "level": 2,
+      "plots": {
+        "final_objective_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/plots/final_objective_by_dataset.png",
+        "validation_gain_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/plots/validation_gain_by_dataset.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/report.md",
+      "runs": 15,
+      "tables": {
+        "compare_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/tables/compare_by_dataset.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=bo",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=bo/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=bo/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=bo/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=bo/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=bo/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=bo/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=20011",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=bo/groups/seed=20011/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=bo/groups/seed=20011/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=bo/groups/seed=20011/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=bo/groups/seed=20011/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=bo/groups/seed=20011/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=bo/groups/seed=20011/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=de",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=de/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=de/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=de/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=de/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=de/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=de/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=20011",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=de/groups/seed=20011/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=de/groups/seed=20011/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=de/groups/seed=20011/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=de/groups/seed=20011/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=de/groups/seed=20011/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=de/groups/seed=20011/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=ga",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=ga/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=ga/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=ga/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=ga/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=ga/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=ga/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=20011",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=ga/groups/seed=20011/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=ga/groups/seed=20011/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=ga/groups/seed=20011/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=ga/groups/seed=20011/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=ga/groups/seed=20011/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=ga/groups/seed=20011/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=pso",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=pso/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=pso/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=pso/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=pso/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=pso/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=pso/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=20011",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=pso/groups/seed=20011/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=pso/groups/seed=20011/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=pso/groups/seed=20011/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=pso/groups/seed=20011/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=pso/groups/seed=20011/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=pso/groups/seed=20011/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=rs",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=rs/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=rs/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=rs/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=rs/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=rs/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=rs/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=20011",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=rs/groups/seed=20011/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=rs/groups/seed=20011/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=rs/groups/seed=20011/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=rs/groups/seed=20011/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=rs/groups/seed=20011/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T101157Z/groups/method=rs/groups/seed=20011/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "dataset=20_dset_20260409T102256Z",
+      "level": 2,
+      "plots": {
+        "final_objective_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/plots/final_objective_by_dataset.png",
+        "validation_gain_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/plots/validation_gain_by_dataset.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/report.md",
+      "runs": 15,
+      "tables": {
+        "compare_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/tables/compare_by_dataset.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=bo",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=bo/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=bo/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=bo/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=bo/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=bo/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=bo/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=30013",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=bo/groups/seed=30013/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=bo/groups/seed=30013/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=bo/groups/seed=30013/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=bo/groups/seed=30013/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=bo/groups/seed=30013/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=bo/groups/seed=30013/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=de",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=de/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=de/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=de/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=de/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=de/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=de/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=30013",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=de/groups/seed=30013/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=de/groups/seed=30013/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=de/groups/seed=30013/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=de/groups/seed=30013/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=de/groups/seed=30013/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=de/groups/seed=30013/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=ga",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=ga/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=ga/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=ga/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=ga/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=ga/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=ga/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=30013",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=ga/groups/seed=30013/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=ga/groups/seed=30013/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=ga/groups/seed=30013/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=ga/groups/seed=30013/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=ga/groups/seed=30013/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=ga/groups/seed=30013/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=pso",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=pso/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=pso/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=pso/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=pso/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=pso/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=pso/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=30013",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=pso/groups/seed=30013/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=pso/groups/seed=30013/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=pso/groups/seed=30013/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=pso/groups/seed=30013/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=pso/groups/seed=30013/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=pso/groups/seed=30013/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=rs",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=rs/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=rs/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=rs/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=rs/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=rs/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=rs/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=30013",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=rs/groups/seed=30013/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=rs/groups/seed=30013/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=rs/groups/seed=30013/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=rs/groups/seed=30013/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=rs/groups/seed=30013/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=20/groups/dataset=20_dset_20260409T102256Z/groups/method=rs/groups/seed=30013/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "divisor_size=25",
+      "level": 1,
+      "plots": {
+        "final_objective_by_divisor_size": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/plots/final_objective_by_divisor_size.png",
+        "validation_gain_by_divisor_size": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/plots/validation_gain_by_divisor_size.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/report.md",
+      "runs": 45,
+      "tables": {
+        "compare_by_divisor_size": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/tables/compare_by_divisor_size.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "dataset=25_dset_20260409T103515Z",
+      "level": 2,
+      "plots": {
+        "final_objective_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/plots/final_objective_by_dataset.png",
+        "validation_gain_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/plots/validation_gain_by_dataset.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/report.md",
+      "runs": 15,
+      "tables": {
+        "compare_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/tables/compare_by_dataset.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=bo",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=bo/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=bo/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=bo/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=bo/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=bo/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=bo/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=10007",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=bo/groups/seed=10007/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=bo/groups/seed=10007/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=bo/groups/seed=10007/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=bo/groups/seed=10007/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=bo/groups/seed=10007/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=bo/groups/seed=10007/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=de",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=de/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=de/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=de/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=de/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=de/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=de/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=10007",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=de/groups/seed=10007/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=de/groups/seed=10007/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=de/groups/seed=10007/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=de/groups/seed=10007/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=de/groups/seed=10007/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=de/groups/seed=10007/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=ga",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=ga/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=ga/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=ga/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=ga/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=ga/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=ga/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=10007",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=ga/groups/seed=10007/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=ga/groups/seed=10007/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=ga/groups/seed=10007/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=ga/groups/seed=10007/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=ga/groups/seed=10007/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=ga/groups/seed=10007/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=pso",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=pso/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=pso/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=pso/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=pso/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=pso/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=pso/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=10007",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=pso/groups/seed=10007/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=pso/groups/seed=10007/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=pso/groups/seed=10007/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=pso/groups/seed=10007/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=pso/groups/seed=10007/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=pso/groups/seed=10007/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=rs",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=rs/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=rs/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=rs/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=rs/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=rs/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=rs/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=10007",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=rs/groups/seed=10007/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=rs/groups/seed=10007/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=rs/groups/seed=10007/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=rs/groups/seed=10007/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=rs/groups/seed=10007/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T103515Z/groups/method=rs/groups/seed=10007/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "dataset=25_dset_20260409T105031Z",
+      "level": 2,
+      "plots": {
+        "final_objective_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/plots/final_objective_by_dataset.png",
+        "validation_gain_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/plots/validation_gain_by_dataset.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/report.md",
+      "runs": 15,
+      "tables": {
+        "compare_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/tables/compare_by_dataset.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=bo",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=bo/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=bo/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=bo/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=bo/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=bo/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=bo/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=20011",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=bo/groups/seed=20011/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=bo/groups/seed=20011/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=bo/groups/seed=20011/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=bo/groups/seed=20011/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=bo/groups/seed=20011/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=bo/groups/seed=20011/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=de",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=de/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=de/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=de/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=de/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=de/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=de/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=20011",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=de/groups/seed=20011/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=de/groups/seed=20011/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=de/groups/seed=20011/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=de/groups/seed=20011/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=de/groups/seed=20011/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=de/groups/seed=20011/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=ga",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=ga/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=ga/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=ga/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=ga/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=ga/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=ga/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=20011",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=ga/groups/seed=20011/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=ga/groups/seed=20011/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=ga/groups/seed=20011/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=ga/groups/seed=20011/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=ga/groups/seed=20011/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=ga/groups/seed=20011/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=pso",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=pso/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=pso/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=pso/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=pso/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=pso/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=pso/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=20011",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=pso/groups/seed=20011/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=pso/groups/seed=20011/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=pso/groups/seed=20011/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=pso/groups/seed=20011/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=pso/groups/seed=20011/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=pso/groups/seed=20011/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=rs",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=rs/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=rs/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=rs/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=rs/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=rs/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=rs/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=20011",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=rs/groups/seed=20011/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=rs/groups/seed=20011/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=rs/groups/seed=20011/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=rs/groups/seed=20011/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=rs/groups/seed=20011/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T105031Z/groups/method=rs/groups/seed=20011/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "dataset=25_dset_20260409T110755Z",
+      "level": 2,
+      "plots": {
+        "final_objective_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/plots/final_objective_by_dataset.png",
+        "validation_gain_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/plots/validation_gain_by_dataset.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/report.md",
+      "runs": 15,
+      "tables": {
+        "compare_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/tables/compare_by_dataset.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=bo",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=bo/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=bo/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=bo/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=bo/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=bo/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=bo/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=30013",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=bo/groups/seed=30013/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=bo/groups/seed=30013/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=bo/groups/seed=30013/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=bo/groups/seed=30013/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=bo/groups/seed=30013/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=bo/groups/seed=30013/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=de",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=de/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=de/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=de/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=de/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=de/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=de/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=30013",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=de/groups/seed=30013/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=de/groups/seed=30013/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=de/groups/seed=30013/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=de/groups/seed=30013/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=de/groups/seed=30013/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=de/groups/seed=30013/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=ga",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=ga/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=ga/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=ga/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=ga/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=ga/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=ga/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=30013",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=ga/groups/seed=30013/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=ga/groups/seed=30013/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=ga/groups/seed=30013/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=ga/groups/seed=30013/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=ga/groups/seed=30013/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=ga/groups/seed=30013/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=pso",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=pso/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=pso/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=pso/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=pso/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=pso/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=pso/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=30013",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=pso/groups/seed=30013/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=pso/groups/seed=30013/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=pso/groups/seed=30013/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=pso/groups/seed=30013/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=pso/groups/seed=30013/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=pso/groups/seed=30013/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=rs",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=rs/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=rs/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=rs/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=rs/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=rs/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=rs/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=30013",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=rs/groups/seed=30013/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=rs/groups/seed=30013/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=rs/groups/seed=30013/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=rs/groups/seed=30013/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=rs/groups/seed=30013/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=25/groups/dataset=25_dset_20260409T110755Z/groups/method=rs/groups/seed=30013/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "divisor_size=30",
+      "level": 1,
+      "plots": {
+        "final_objective_by_divisor_size": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/plots/final_objective_by_divisor_size.png",
+        "validation_gain_by_divisor_size": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/plots/validation_gain_by_divisor_size.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/report.md",
+      "runs": 45,
+      "tables": {
+        "compare_by_divisor_size": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/tables/compare_by_divisor_size.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "dataset=30_dset_20260409T112558Z",
+      "level": 2,
+      "plots": {
+        "final_objective_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/plots/final_objective_by_dataset.png",
+        "validation_gain_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/plots/validation_gain_by_dataset.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/report.md",
+      "runs": 15,
+      "tables": {
+        "compare_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/tables/compare_by_dataset.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=bo",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=bo/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=bo/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=bo/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=bo/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=bo/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=bo/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=10007",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=bo/groups/seed=10007/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=bo/groups/seed=10007/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=bo/groups/seed=10007/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=bo/groups/seed=10007/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=bo/groups/seed=10007/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=bo/groups/seed=10007/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=de",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=de/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=de/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=de/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=de/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=de/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=de/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=10007",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=de/groups/seed=10007/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=de/groups/seed=10007/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=de/groups/seed=10007/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=de/groups/seed=10007/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=de/groups/seed=10007/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=de/groups/seed=10007/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=ga",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=ga/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=ga/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=ga/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=ga/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=ga/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=ga/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=10007",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=ga/groups/seed=10007/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=ga/groups/seed=10007/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=ga/groups/seed=10007/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=ga/groups/seed=10007/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=ga/groups/seed=10007/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=ga/groups/seed=10007/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=pso",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=pso/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=pso/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=pso/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=pso/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=pso/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=pso/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=10007",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=pso/groups/seed=10007/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=pso/groups/seed=10007/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=pso/groups/seed=10007/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=pso/groups/seed=10007/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=pso/groups/seed=10007/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=pso/groups/seed=10007/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=rs",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=rs/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=rs/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=rs/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=rs/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=rs/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=rs/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=10007",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=rs/groups/seed=10007/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=rs/groups/seed=10007/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=rs/groups/seed=10007/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=rs/groups/seed=10007/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=rs/groups/seed=10007/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T112558Z/groups/method=rs/groups/seed=10007/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "dataset=30_dset_20260409T115651Z",
+      "level": 2,
+      "plots": {
+        "final_objective_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/plots/final_objective_by_dataset.png",
+        "validation_gain_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/plots/validation_gain_by_dataset.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/report.md",
+      "runs": 15,
+      "tables": {
+        "compare_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/tables/compare_by_dataset.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=bo",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=bo/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=bo/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=bo/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=bo/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=bo/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=bo/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=20011",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=bo/groups/seed=20011/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=bo/groups/seed=20011/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=bo/groups/seed=20011/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=bo/groups/seed=20011/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=bo/groups/seed=20011/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=bo/groups/seed=20011/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=de",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=de/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=de/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=de/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=de/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=de/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=de/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=20011",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=de/groups/seed=20011/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=de/groups/seed=20011/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=de/groups/seed=20011/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=de/groups/seed=20011/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=de/groups/seed=20011/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=de/groups/seed=20011/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=ga",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=ga/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=ga/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=ga/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=ga/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=ga/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=ga/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=20011",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=ga/groups/seed=20011/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=ga/groups/seed=20011/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=ga/groups/seed=20011/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=ga/groups/seed=20011/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=ga/groups/seed=20011/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=ga/groups/seed=20011/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=pso",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=pso/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=pso/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=pso/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=pso/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=pso/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=pso/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=20011",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=pso/groups/seed=20011/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=pso/groups/seed=20011/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=pso/groups/seed=20011/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=pso/groups/seed=20011/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=pso/groups/seed=20011/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=pso/groups/seed=20011/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=rs",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=rs/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=rs/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=rs/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=rs/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=rs/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=rs/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=20011",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=rs/groups/seed=20011/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=rs/groups/seed=20011/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=rs/groups/seed=20011/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=rs/groups/seed=20011/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=rs/groups/seed=20011/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T115651Z/groups/method=rs/groups/seed=20011/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "dataset=30_dset_20260409T121414Z",
+      "level": 2,
+      "plots": {
+        "final_objective_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/plots/final_objective_by_dataset.png",
+        "validation_gain_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/plots/validation_gain_by_dataset.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/report.md",
+      "runs": 15,
+      "tables": {
+        "compare_by_dataset": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/tables/compare_by_dataset.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=bo",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=bo/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=bo/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=bo/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=bo/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=bo/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=bo/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=30013",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=bo/groups/seed=30013/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=bo/groups/seed=30013/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=bo/groups/seed=30013/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=bo/groups/seed=30013/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=bo/groups/seed=30013/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=bo/groups/seed=30013/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=de",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=de/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=de/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=de/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=de/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=de/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=de/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=30013",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=de/groups/seed=30013/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=de/groups/seed=30013/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=de/groups/seed=30013/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=de/groups/seed=30013/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=de/groups/seed=30013/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=de/groups/seed=30013/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=ga",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=ga/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=ga/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=ga/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=ga/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=ga/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=ga/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=30013",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=ga/groups/seed=30013/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=ga/groups/seed=30013/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=ga/groups/seed=30013/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=ga/groups/seed=30013/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=ga/groups/seed=30013/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=ga/groups/seed=30013/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=pso",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=pso/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=pso/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=pso/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=pso/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=pso/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=pso/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=30013",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=pso/groups/seed=30013/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=pso/groups/seed=30013/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=pso/groups/seed=30013/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=pso/groups/seed=30013/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=pso/groups/seed=30013/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=pso/groups/seed=30013/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=rs",
+      "level": 3,
+      "plots": {
+        "final_objective_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=rs/plots/final_objective_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=rs/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=rs/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_method": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=rs/tables/compare_by_method.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=rs/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=rs/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "seed=30013",
+      "level": 4,
+      "plots": {
+        "final_objective_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=rs/groups/seed=30013/plots/final_objective_by_seed.png",
+        "validation_gain_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=rs/groups/seed=30013/plots/validation_gain_by_seed.png"
+      },
+      "report": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=rs/groups/seed=30013/report.md",
+      "runs": 3,
+      "tables": {
+        "compare_by_seed": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=rs/groups/seed=30013/tables/compare_by_seed.csv",
+        "runs": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=rs/groups/seed=30013/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260416T144434Z/overview/groups/divisor_size=30/groups/dataset=30_dset_20260409T121414Z/groups/method=rs/groups/seed=30013/tables/summary.csv"
+      }
+    }
+  ],
+  "package_version": "0.1.0",
+  "threshold": 0.6782294818840455,
+  "timestamp_utc": "20260416T144501Z",
+  "total_groups": 103,
+  "total_runs": 135
+}

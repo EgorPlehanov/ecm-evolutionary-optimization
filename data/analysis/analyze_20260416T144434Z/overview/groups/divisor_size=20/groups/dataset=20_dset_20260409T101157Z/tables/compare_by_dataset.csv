@@ -1,0 +1,2 @@
+group,run_count,median_objective,iqr_objective,success_share,median_runtime_sec,median_validation_gain_pct
+20_dset_20260409T101157Z,15,0.6387650787364691,0.03318869551003445,0.8,49.96879740100121,33.170544258008164

@@ -1,0 +1,2 @@
+group,run_count,median_objective,iqr_objective,success_share,median_runtime_sec,median_validation_gain_pct
+de,3,0.9160098214342725,0.007170777826104313,0.0,94.05665998498444,88.42499745905891
