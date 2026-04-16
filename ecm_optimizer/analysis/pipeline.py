@@ -11,6 +11,7 @@ from fnmatch import fnmatch
 from pathlib import Path
 from typing import Any
 
+from ecm_optimizer.analysis.stats import cliffs_delta, pairwise_mannwhitney
 from ecm_optimizer.utils.io_utils import ensure_dir, read_json, write_json_with_meta
 
 _DATASET_RE = re.compile(r"^(\d+)_dset_")
@@ -84,6 +85,7 @@ class NodeArtifacts:
     report_file: Path
     tables: dict[str, Path]
     plots: dict[str, Path]
+    stats: dict[str, Path]
     warnings: list[str]
 
 
@@ -377,12 +379,19 @@ def _write_csv(path: Path, rows: list[dict[str, Any]], fieldnames: list[str]) ->
         writer = csv.DictWriter(handle, fieldnames=fieldnames)
         writer.writeheader()
         for row in rows:
-            writer.writerow(row)
+            writer.writerow({name: row.get(name) for name in fieldnames})
+
+
+def _write_json(path: Path, payload: dict[str, Any] | list[dict[str, Any]]) -> None:
+    path.write_text(json.dumps(payload, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 
 
 def _plot_boxplot(plt: Any, labels: list[str], values: list[list[float]], title: str, out_file: Path) -> None:
     plt.figure(figsize=(max(8, len(labels) * 1.2), 6))
-    plt.boxplot(values, labels=labels, patch_artist=True)
+    try:
+        plt.boxplot(values, tick_labels=labels, patch_artist=True)
+    except TypeError:
+        plt.boxplot(values, labels=labels, patch_artist=True)
     plt.xticks(rotation=25, ha="right")
     plt.title(title)
     plt.ylabel("Final objective")
@@ -473,6 +482,7 @@ def _build_node_artifacts(
 ) -> NodeArtifacts:
     tables_dir = ensure_dir(node_dir / "tables")
     plots_dir = ensure_dir(node_dir / "plots")
+    stats_dir = ensure_dir(node_dir / "stats")
 
     node_stats = _stats_for_runs(node.runs, threshold)
     run_rows: list[dict[str, Any]] = []
@@ -596,6 +606,129 @@ def _build_node_artifacts(
             ],
         )
 
+    method_table: Path | None = None
+    validation_gain_ranking_table: Path | None = None
+    adoption_candidates_table: Path | None = None
+    pairwise_stats_file: Path | None = None
+    cliffs_delta_file: Path | None = None
+    adoption_rows: list[dict[str, Any]] = []
+
+    method_groups: dict[str, list[RunRecord]] = {}
+    for run in node.runs:
+        method_groups.setdefault(run.method, []).append(run)
+
+    method_rows: list[dict[str, Any]] = []
+    for method_name, method_runs in sorted(method_groups.items()):
+        method_stats = _stats_for_runs(method_runs, threshold)
+        method_rows.append(
+            {
+                "method": method_name,
+                "run_count": method_stats.run_count,
+                "median_objective": method_stats.median_objective,
+                "iqr_objective": method_stats.iqr_objective,
+                "success_share": method_stats.success_share,
+                "median_runtime_sec": method_stats.median_time_sec,
+                "median_validation_gain_pct": method_stats.median_validation_gain_pct,
+            }
+        )
+
+    if method_rows:
+        method_rows.sort(key=lambda row: (row["median_objective"], -row["success_share"]))
+        for idx, row in enumerate(method_rows, start=1):
+            row["rank"] = idx
+        method_table = tables_dir / "method_ranking.csv"
+        _write_csv(
+            method_table,
+            method_rows,
+            [
+                "rank",
+                "method",
+                "run_count",
+                "median_objective",
+                "iqr_objective",
+                "success_share",
+                "median_runtime_sec",
+                "median_validation_gain_pct",
+            ],
+        )
+
+        gain_rows = [row for row in method_rows if row["median_validation_gain_pct"] is not None]
+        if gain_rows:
+            gain_rows.sort(key=lambda row: row["median_validation_gain_pct"], reverse=True)
+            for idx, row in enumerate(gain_rows, start=1):
+                row["gain_rank"] = idx
+            validation_gain_ranking_table = tables_dir / "validation_gain_ranking.csv"
+            _write_csv(
+                validation_gain_ranking_table,
+                gain_rows,
+                [
+                    "gain_rank",
+                    "method",
+                    "run_count",
+                    "median_validation_gain_pct",
+                    "median_objective",
+                    "success_share",
+                    "median_runtime_sec",
+                ],
+            )
+
+        for row in method_rows:
+            gain_pct = row["median_validation_gain_pct"]
+            success = float(row["success_share"])
+            median_obj = float(row["median_objective"])
+            decision = "investigate"
+            reason = "требуется дополнительный анализ"
+            if gain_pct is not None and gain_pct >= 5.0 and success >= 0.50 and median_obj <= node_stats.median_objective:
+                decision = "adopt"
+                reason = "стабильный выигрыш и приемлемый риск"
+            elif gain_pct is not None and gain_pct < 0:
+                decision = "reject"
+                reason = "отрицательный медианный прирост на validation"
+
+            adoption_rows.append(
+                {
+                    "method": row["method"],
+                    "decision": decision,
+                    "reason": reason,
+                    "median_validation_gain_pct": gain_pct,
+                    "success_share": success,
+                    "median_objective": median_obj,
+                }
+            )
+        adoption_candidates_table = tables_dir / "adoption_candidates.csv"
+        _write_csv(
+            adoption_candidates_table,
+            adoption_rows,
+            [
+                "method",
+                "decision",
+                "reason",
+                "median_validation_gain_pct",
+                "success_share",
+                "median_objective",
+            ],
+        )
+
+    if len(method_groups) >= 2:
+        objective_groups = {
+            method_name: [run.final_objective for run in runs]
+            for method_name, runs in method_groups.items()
+        }
+        pairwise_rows = pairwise_mannwhitney(objective_groups, correction="holm")
+        pairwise_stats_file = stats_dir / "pairwise_mannwhitney_holm.json"
+        _write_json(pairwise_stats_file, pairwise_rows)
+
+        effect_rows: list[dict[str, Any]] = []
+        labels = sorted(objective_groups.keys())
+        for i in range(len(labels)):
+            for j in range(i + 1, len(labels)):
+                a_label = labels[i]
+                b_label = labels[j]
+                effect = cliffs_delta(objective_groups[a_label], objective_groups[b_label])
+                effect_rows.append({"comparison": f"{a_label}__vs__{b_label}", "group_a": a_label, "group_b": b_label, **effect})
+        cliffs_delta_file = stats_dir / "cliffs_delta_by_method.json"
+        _write_json(cliffs_delta_file, effect_rows)
+
     plots: dict[str, Path] = {}
     warnings: list[str] = []
     if plt is not None and comparison_rows:
@@ -650,6 +783,28 @@ def _build_node_artifacts(
     report_lines.extend(
         [
             "",
+            "## Executive summary",
+        ]
+    )
+    if method_rows:
+        best_method = method_rows[0]
+        report_lines.extend(
+            [
+                f"- Лидер по objective: **{best_method['method']}** (медиана: {best_method['median_objective']:.6f}).",
+                f"- Доля успеха лидера: **{best_method['success_share']:.2%}**.",
+            ]
+        )
+        adopted_count = sum(1 for row in adoption_rows if row["decision"] == "adopt")
+        rejected_count = sum(1 for row in adoption_rows if row["decision"] == "reject")
+        report_lines.append("- Решения по внедрению смотрите в таблице `adoption_candidates.csv`.")
+        if adopted_count or rejected_count:
+            report_lines.append(f"- Кандидаты: adopt={adopted_count}, reject={rejected_count}.")
+    else:
+        report_lines.append("- Недостаточно данных для формирования краткого решения.")
+
+    report_lines.extend(
+        [
+            "",
             "## Краткая сводка",
             f"- запусков в области: **{node_stats.run_count}**",
             f"- медиана final objective: **{node_stats.median_objective:.6f}**",
@@ -699,6 +854,12 @@ def _build_node_artifacts(
     ]
     if comparisons_table:
         table_configs.append({"file": f"tables/{comparisons_table.name}"})
+    if method_table:
+        table_configs.append({"file": f"tables/{method_table.name}"})
+    if validation_gain_ranking_table:
+        table_configs.append({"file": f"tables/{validation_gain_ranking_table.name}"})
+    if adoption_candidates_table:
+        table_configs.append({"file": f"tables/{adoption_candidates_table.name}"})
     data_tables = json.dumps(table_configs, ensure_ascii=False)
     loader_src = _tables_loader_src(node_dir)
 
@@ -709,13 +870,35 @@ def _build_node_artifacts(
             f"<script src=\"{loader_src}\"></script>",
         ]
     )
+    stats_links: list[Path] = []
+    if pairwise_stats_file:
+        stats_links.append(pairwise_stats_file)
+    if cliffs_delta_file:
+        stats_links.append(cliffs_delta_file)
+    if stats_links:
+        report_lines.extend(["", "## Статистика"])
+        for stats_file in stats_links:
+            rel_stats = stats_file.relative_to(node_dir)
+            report_lines.append(f"- [{stats_file.name}]({rel_stats})")
 
     report_file.write_text("\n".join(report_lines) + "\n", encoding="utf-8")
 
     tables = {"runs": runs_table, "summary": summary_table}
     if comparisons_table:
         tables[f"compare_by_{next_dimension}"] = comparisons_table
-    return NodeArtifacts(report_file=report_file, tables=tables, plots=plots, warnings=warnings)
+    if method_table:
+        tables["method_ranking"] = method_table
+    if validation_gain_ranking_table:
+        tables["validation_gain_ranking"] = validation_gain_ranking_table
+    if adoption_candidates_table:
+        tables["adoption_candidates"] = adoption_candidates_table
+
+    stats: dict[str, Path] = {}
+    if pairwise_stats_file:
+        stats["pairwise_mannwhitney_holm"] = pairwise_stats_file
+    if cliffs_delta_file:
+        stats["cliffs_delta_by_method"] = cliffs_delta_file
+    return NodeArtifacts(report_file=report_file, tables=tables, plots=plots, stats=stats, warnings=warnings)
 
 
 def _render_node_tree(
@@ -751,6 +934,7 @@ def _render_node_tree(
             "report": str(artifacts.report_file),
             "tables": {name: str(path) for name, path in artifacts.tables.items()},
             "plots": {name: str(path) for name, path in artifacts.plots.items()},
+            "stats": {name: str(path) for name, path in artifacts.stats.items()},
             "warnings": artifacts.warnings,
         }
     )
@@ -836,6 +1020,10 @@ def run_analysis(
                 "plots": {
                     name: str(Path(path).resolve().relative_to(output_dir.resolve()))
                     for name, path in node["plots"].items()
+                },
+                "stats": {
+                    name: str(Path(path).resolve().relative_to(output_dir.resolve()))
+                    for name, path in node.get("stats", {}).items()
                 },
                 "warnings": node.get("warnings", []),
             }
