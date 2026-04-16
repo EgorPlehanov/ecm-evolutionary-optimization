@@ -46,6 +46,9 @@ from ecm_optimizer.utils.io_utils import ensure_dir, utc_timestamp
 )
 @click.option("--max-eval-points", default=300, show_default=True, type=int, help="Параметр совместимости: пока сохраняется в metadata.")
 @click.option("--max-time-points", default=200, show_default=True, type=int, help="Параметр совместимости: пока сохраняется в metadata.")
+@click.option("--max-series-per-plot", default=10, show_default=True, type=int, help="Максимум серий на графике до агрегации.")
+@click.option("--bootstrap-iterations", default=2000, show_default=True, type=int, help="Количество bootstrap-итераций для доверительных интервалов.")
+@click.option("--alpha", default=0.05, show_default=True, type=float, help="Уровень значимости для статистических тестов.")
 def analyze_command(
     input_entries: tuple[str, ...],
     group_by: tuple[str, ...],
@@ -54,6 +57,9 @@ def analyze_command(
     success_threshold: float | None,
     max_eval_points: int,
     max_time_points: int,
+    max_series_per_plot: int,
+    bootstrap_iterations: int,
+    alpha: float,
 ) -> None:
     """Иерархический multi-run анализ optimize+validate результатов."""
     normalized_group_by = tuple(item.lower() for item in group_by)
@@ -72,6 +78,9 @@ def analyze_command(
             max_time_points=max_time_points,
             group_by=normalized_group_by,
             auto_grouping=auto_grouping,
+            max_series_per_plot=max_series_per_plot,
+            bootstrap_iterations=bootstrap_iterations,
+            alpha=alpha,
         ),
     )
 
