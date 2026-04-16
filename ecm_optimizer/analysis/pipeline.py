@@ -56,6 +56,7 @@ class AnalysisOptions:
     success_threshold: float | None
     max_eval_points: int
     max_time_points: int
+    max_series_per_plot: int
     group_by: tuple[str, ...]
     auto_grouping: bool
 
@@ -83,6 +84,7 @@ class NodeArtifacts:
     report_file: Path
     tables: dict[str, Path]
     plots: dict[str, Path]
+    warnings: list[str]
 
 
 @dataclass(frozen=True)
@@ -403,6 +405,38 @@ def _plot_validation_gain(plt: Any, labels: list[str], gains: list[list[float]],
     plt.close()
 
 
+def _split_plot_groups(
+    *,
+    labels: list[str],
+    objective_groups: list[list[float]],
+    gain_groups: list[list[float]],
+    max_series_per_plot: int,
+) -> tuple[list[str], list[list[float]], list[list[float]], str | None]:
+    if max_series_per_plot <= 0 or len(labels) <= max_series_per_plot:
+        return labels, objective_groups, gain_groups, None
+
+    keep_count = max(max_series_per_plot - 1, 1)
+    kept_labels = labels[:keep_count]
+    kept_objectives = objective_groups[:keep_count]
+    kept_gains = gain_groups[:keep_count]
+
+    others_objectives: list[float] = []
+    others_gains: list[float] = []
+    for idx in range(keep_count, len(labels)):
+        others_objectives.extend(objective_groups[idx])
+        others_gains.extend(gain_groups[idx])
+
+    limited_labels = [*kept_labels, "others"]
+    limited_objectives = [*kept_objectives, others_objectives]
+    limited_gains = [*kept_gains, others_gains]
+
+    warning = (
+        f"Серии для графика ограничены до {max_series_per_plot}: "
+        f"показано {keep_count} + агрегат others ({len(labels) - keep_count} скрытых групп)."
+    )
+    return limited_labels, limited_objectives, limited_gains, warning
+
+
 def _node_heading(node: GroupNode) -> str:
     if node.key == "root":
         return "overview"
@@ -435,6 +469,7 @@ def _build_node_artifacts(
     threshold: float,
     next_dimension: str | None,
     plt: Any,
+    max_series_per_plot: int,
 ) -> NodeArtifacts:
     tables_dir = ensure_dir(node_dir / "tables")
     plots_dir = ensure_dir(node_dir / "plots")
@@ -562,17 +597,14 @@ def _build_node_artifacts(
         )
 
     plots: dict[str, Path] = {}
+    warnings: list[str] = []
     if plt is not None and comparison_rows:
         labels = [row["group"] for row in comparison_rows]
-        grouped_values = [
+        grouped_values_all = [
             [run.final_objective for run in node.runs if _dimension_value(run, next_dimension or "") == label]
             for label in labels
         ]
-        objective_plot = plots_dir / f"final_objective_by_{next_dimension}.png"
-        _plot_boxplot(plt, labels, grouped_values, f"Final objective by {next_dimension}", objective_plot)
-        plots[f"final_objective_by_{next_dimension}"] = objective_plot
-
-        grouped_gains = [
+        grouped_gains_all = [
             [
                 run.validation_relative_improvement_pct
                 for run in node.runs
@@ -580,6 +612,20 @@ def _build_node_artifacts(
             ]
             for label in labels
         ]
+
+        labels, grouped_values, grouped_gains, plot_warning = _split_plot_groups(
+            labels=labels,
+            objective_groups=grouped_values_all,
+            gain_groups=grouped_gains_all,
+            max_series_per_plot=max_series_per_plot,
+        )
+        if plot_warning is not None:
+            warnings.append(plot_warning)
+
+        objective_plot = plots_dir / f"final_objective_by_{next_dimension}.png"
+        _plot_boxplot(plt, labels, grouped_values, f"Final objective by {next_dimension}", objective_plot)
+        plots[f"final_objective_by_{next_dimension}"] = objective_plot
+
         if any(values for values in grouped_gains):
             gain_plot = plots_dir / f"validation_gain_by_{next_dimension}.png"
             _plot_validation_gain(plt, labels, grouped_gains, f"Validation gain by {next_dimension}", gain_plot)
@@ -634,6 +680,10 @@ def _build_node_artifacts(
             report_lines.append(f"![{alt_name}]({rel_path})")
     else:
         report_lines.append("- Нет доступных графиков для текущей области.")
+    if warnings:
+        report_lines.extend(["", "## Предупреждения"])
+        for warning in warnings:
+            report_lines.append(f"- {warning}")
 
     report_lines.extend(
         [
@@ -665,7 +715,7 @@ def _build_node_artifacts(
     tables = {"runs": runs_table, "summary": summary_table}
     if comparisons_table:
         tables[f"compare_by_{next_dimension}"] = comparisons_table
-    return NodeArtifacts(report_file=report_file, tables=tables, plots=plots)
+    return NodeArtifacts(report_file=report_file, tables=tables, plots=plots, warnings=warnings)
 
 
 def _render_node_tree(
@@ -676,6 +726,7 @@ def _render_node_tree(
     group_by: tuple[str, ...],
     threshold: float,
     plt: Any,
+    max_series_per_plot: int,
     manifest_entries: list[dict[str, Any]],
 ) -> None:
     level_index = max(0, node.level - 1)
@@ -688,16 +739,19 @@ def _render_node_tree(
         threshold=threshold,
         next_dimension=next_dimension,
         plt=plt,
+        max_series_per_plot=max_series_per_plot,
     )
 
     manifest_entries.append(
         {
             "analysis_level": _node_heading(node),
             "level": node.level,
+            "status": "complete",
             "runs": len(node.runs),
             "report": str(artifacts.report_file),
             "tables": {name: str(path) for name, path in artifacts.tables.items()},
             "plots": {name: str(path) for name, path in artifacts.plots.items()},
+            "warnings": artifacts.warnings,
         }
     )
 
@@ -715,6 +769,7 @@ def _render_node_tree(
             group_by=group_by,
             threshold=threshold,
             plt=plt,
+            max_series_per_plot=max_series_per_plot,
             manifest_entries=manifest_entries,
         )
 
@@ -761,8 +816,51 @@ def run_analysis(
         group_by=group_by,
         threshold=threshold,
         plt=plt,
+        max_series_per_plot=options.max_series_per_plot,
         manifest_entries=manifest_entries,
     )
+
+    manifest_nodes: list[dict[str, Any]] = []
+    for node in manifest_entries:
+        manifest_nodes.append(
+            {
+                "analysis_level": node["analysis_level"],
+                "level": node["level"],
+                "status": node.get("status", "complete"),
+                "runs": node["runs"],
+                "report": str(Path(node["report"]).resolve().relative_to(output_dir.resolve())),
+                "tables": {
+                    name: str(Path(path).resolve().relative_to(output_dir.resolve()))
+                    for name, path in node["tables"].items()
+                },
+                "plots": {
+                    name: str(Path(path).resolve().relative_to(output_dir.resolve()))
+                    for name, path in node["plots"].items()
+                },
+                "warnings": node.get("warnings", []),
+            }
+        )
+
+    manifest = {
+        "schema_version": "1.0.0",
+        "analysis_timestamp": str(output_dir.name).replace("analyze_", ""),
+        "git_commit": os.getenv("GIT_COMMIT", "unknown"),
+        "analysis_config": {
+            "group_by": list(group_by),
+            "auto_grouping": options.auto_grouping,
+            "success_threshold": threshold,
+            "max_eval_points": options.max_eval_points,
+            "max_time_points": options.max_time_points,
+            "max_series_per_plot": options.max_series_per_plot,
+        },
+        "coverage_summary": {
+            "total_runs": len(runs),
+            "group_nodes": len(manifest_nodes),
+        },
+        "groups_tree": manifest_nodes,
+    }
+    manifest_file = output_dir / "manifest.json"
+    write_json_with_meta(manifest_file, manifest, command="analyze")
 
     summary = {
         "group_by": list(group_by),
@@ -779,11 +877,13 @@ def run_analysis(
             "success_threshold": options.success_threshold,
             "max_eval_points": options.max_eval_points,
             "max_time_points": options.max_time_points,
+            "max_series_per_plot": options.max_series_per_plot,
             "discovered_run_files_before_exclusions": [str(path) for path in discovered_files],
             "discovered_run_files": [str(path) for path in run_files],
             "output_dir": str(output_dir),
         },
         "nodes": manifest_entries,
+        "manifest_file": str(manifest_file),
     }
 
     summary_file = output_dir / "analysis_summary.json"

@@ -46,6 +46,13 @@ from ecm_optimizer.utils.io_utils import ensure_dir, utc_timestamp
 )
 @click.option("--max-eval-points", default=300, show_default=True, type=int, help="Параметр совместимости: пока сохраняется в metadata.")
 @click.option("--max-time-points", default=200, show_default=True, type=int, help="Параметр совместимости: пока сохраняется в metadata.")
+@click.option(
+    "--max-series-per-plot",
+    default=10,
+    show_default=True,
+    type=int,
+    help="Максимум серий на одном графике. Лишние серии агрегируются в 'others'.",
+)
 def analyze_command(
     input_entries: tuple[str, ...],
     group_by: tuple[str, ...],
@@ -54,6 +61,7 @@ def analyze_command(
     success_threshold: float | None,
     max_eval_points: int,
     max_time_points: int,
+    max_series_per_plot: int,
 ) -> None:
     """Иерархический multi-run анализ optimize+validate результатов."""
     normalized_group_by = tuple(item.lower() for item in group_by)
@@ -70,6 +78,7 @@ def analyze_command(
             success_threshold=success_threshold,
             max_eval_points=max_eval_points,
             max_time_points=max_time_points,
+            max_series_per_plot=max_series_per_plot,
             group_by=normalized_group_by,
             auto_grouping=auto_grouping,
         ),
