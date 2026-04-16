@@ -16,7 +16,11 @@ from ecm_optimizer.analysis.stats import (
     cliffs_delta,
     coefficient_of_variation,
     effect_size_label,
+    kruskal_wallis,
+    levene_test,
     pairwise_mannwhitney,
+    pairwise_win_rate,
+    success_rate,
 )
 from ecm_optimizer.utils.io_utils import ensure_dir, read_json, utc_timestamp, write_json_with_meta
 
@@ -328,7 +332,7 @@ def _stats_for_runs(runs: list[RunRecord], threshold: float) -> _SummaryStats:
     validation_gain_abs: list[float] = []
     validation_gain_pct: list[float] = []
 
-    success_count = 0
+    success_values: list[float] = []
     for run in runs:
         if run.first_fitness is not None:
             improvement = run.first_fitness - run.final_objective
@@ -337,8 +341,8 @@ def _stats_for_runs(runs: list[RunRecord], threshold: float) -> _SummaryStats:
             if run.total_runtime_sec > 0:
                 imp_sec.append(improvement / run.total_runtime_sec)
 
-        if any(best <= threshold for _, best in run.best_so_far_by_eval):
-            success_count += 1
+        run_best = min((best for _, best in run.best_so_far_by_eval), default=math.inf)
+        success_values.append(run_best)
 
         if run.validation_baseline_mean is not None and run.validation_optimized_mean is not None:
             validation_gain_abs.append(run.validation_baseline_mean - run.validation_optimized_mean)
@@ -352,7 +356,7 @@ def _stats_for_runs(runs: list[RunRecord], threshold: float) -> _SummaryStats:
         median_time_sec=_quantile(runtimes, 0.5),
         median_time_to_best_sec=_quantile(time_to_best, 0.5) if time_to_best else None,
         median_eval_count=_quantile(eval_counts, 0.5),
-        success_share=(success_count / len(runs)) if runs else 0.0,
+        success_share=success_rate(success_values, threshold),
         median_improvement_per_eval=_quantile(imp_eval, 0.5) if imp_eval else None,
         median_improvement_per_sec=_quantile(imp_sec, 0.5) if imp_sec else None,
         median_validation_gain_abs=_quantile(validation_gain_abs, 0.5) if validation_gain_abs else None,
@@ -409,6 +413,78 @@ def _plot_validation_gain(plt: Any, labels: list[str], gains: list[list[float]],
     plt.title(title)
     plt.ylabel("Validation relative improvement, %")
     plt.grid(axis="y", alpha=0.3)
+    plt.tight_layout()
+    plt.savefig(out_file, dpi=160)
+    plt.close()
+
+
+def _plot_pareto_runtime_gain(plt: Any, labels: list[str], runtimes: list[float], gains: list[float], title: str, out_file: Path) -> None:
+    plt.figure(figsize=(8, 6))
+    plt.scatter(runtimes, gains, alpha=0.8)
+    for idx, label in enumerate(labels):
+        plt.annotate(label, (runtimes[idx], gains[idx]), fontsize=8, xytext=(4, 3), textcoords="offset points")
+    plt.title(title)
+    plt.xlabel("Median runtime, sec (lower is better)")
+    plt.ylabel("Median validation gain, % (higher is better)")
+    plt.grid(alpha=0.3)
+    plt.tight_layout()
+    plt.savefig(out_file, dpi=160)
+    plt.close()
+
+
+def _plot_risk_vs_gain(plt: Any, labels: list[str], risks: list[float], gains: list[float], title: str, out_file: Path) -> None:
+    plt.figure(figsize=(8, 6))
+    plt.scatter(risks, gains, alpha=0.8)
+    for idx, label in enumerate(labels):
+        plt.annotate(label, (risks[idx], gains[idx]), fontsize=8, xytext=(4, 3), textcoords="offset points")
+    plt.title(title)
+    plt.xlabel("Risk (CV objective, lower is better)")
+    plt.ylabel("Median validation gain, %")
+    plt.grid(alpha=0.3)
+    plt.tight_layout()
+    plt.savefig(out_file, dpi=160)
+    plt.close()
+
+
+def _plot_time_to_best(plt: Any, labels: list[str], values: list[list[float]], title: str, out_file: Path) -> None:
+    plt.figure(figsize=(max(8, len(labels) * 1.2), 6))
+    plt.boxplot(values, labels=labels, patch_artist=True)
+    plt.xticks(rotation=25, ha="right")
+    plt.title(title)
+    plt.ylabel("Time to best, sec")
+    plt.grid(axis="y", alpha=0.3)
+    plt.tight_layout()
+    plt.savefig(out_file, dpi=160)
+    plt.close()
+
+
+def _plot_convergence_ribbons(plt: Any, traces: dict[str, list[list[tuple[int, float]]]], title: str, out_file: Path) -> None:
+    plt.figure(figsize=(9, 6))
+    for label, runs in traces.items():
+        if not runs:
+            continue
+        max_len = max(len(run) for run in runs)
+        medians: list[float] = []
+        p25: list[float] = []
+        p75: list[float] = []
+        xs = list(range(1, max_len + 1))
+        for idx in range(max_len):
+            vals = [run[idx][1] for run in runs if idx < len(run)]
+            if not vals:
+                continue
+            medians.append(_quantile(vals, 0.5))
+            p25.append(_quantile(vals, 0.25))
+            p75.append(_quantile(vals, 0.75))
+        xs = xs[: len(medians)]
+        if not xs:
+            continue
+        plt.plot(xs, medians, label=label)
+        plt.fill_between(xs, p25, p75, alpha=0.2)
+    plt.title(title)
+    plt.xlabel("Evaluation step")
+    plt.ylabel("Best-so-far objective")
+    plt.grid(alpha=0.3)
+    plt.legend()
     plt.tight_layout()
     plt.savefig(out_file, dpi=160)
     plt.close()
@@ -633,6 +709,36 @@ def _profile_tables(
             "is_significant",
             "cliffs_delta",
             "effect_size",
+        ]
+        win_rate_name = f"pairwise_win_rate_by_{next_dimension}"
+        objective_groups = {label: [run.final_objective for run in subset] for label, subset in partitions.items()}
+        win_rate_rows = pairwise_win_rate(objective_groups)
+        if win_rate_rows:
+            tables[win_rate_name] = win_rate_rows
+            fields[win_rate_name] = ["group_a", "group_b", "win_rate_a", "win_rate_b"]
+
+        kw = kruskal_wallis(objective_groups)
+        lv = levene_test(objective_groups)
+        omnibus_rows = [
+            {
+                "kruskal_h_stat": kw.get("h_stat"),
+                "kruskal_p_value": kw.get("p_value"),
+                "kruskal_df": kw.get("df"),
+                "levene_w_stat": lv.get("w_stat"),
+                "levene_p_value": lv.get("p_value"),
+                "levene_df_between": lv.get("df_between"),
+                "levene_df_within": lv.get("df_within"),
+            }
+        ]
+        tables[f"omnibus_tests_by_{next_dimension}"] = omnibus_rows
+        fields[f"omnibus_tests_by_{next_dimension}"] = [
+            "kruskal_h_stat",
+            "kruskal_p_value",
+            "kruskal_df",
+            "levene_w_stat",
+            "levene_p_value",
+            "levene_df_between",
+            "levene_df_within",
         ]
 
     if node.key == "root":
@@ -866,6 +972,36 @@ def _build_node_artifacts(
             _plot_validation_gain(plt, labels, grouped_gains, f"Validation gain by {next_dimension}", gain_plot)
             plots[f"validation_gain_by_{next_dimension}"] = gain_plot
 
+        runtimes = [float(row["median_runtime_sec"]) for row in limited_rows]
+        gains = [float(row["median_validation_gain_pct"]) if not math.isnan(float(row["median_validation_gain_pct"])) else 0.0 for row in limited_rows]
+        risks = [float(row["cv_objective"]) if not math.isnan(float(row["cv_objective"])) else 0.0 for row in limited_rows]
+        if labels:
+            pareto_plot = plots_dir / f"pareto_runtime_gain_by_{next_dimension}.png"
+            _plot_pareto_runtime_gain(plt, labels, runtimes, gains, f"Pareto runtime-vs-gain by {next_dimension}", pareto_plot)
+            plots[f"pareto_runtime_gain_by_{next_dimension}"] = pareto_plot
+
+            risk_plot = plots_dir / f"risk_vs_gain_by_{next_dimension}.png"
+            _plot_risk_vs_gain(plt, labels, risks, gains, f"Risk-vs-gain by {next_dimension}", risk_plot)
+            plots[f"risk_vs_gain_by_{next_dimension}"] = risk_plot
+
+        grouped_time_to_best = [
+            [run.time_to_best_sec for run in partitions[label] if run.time_to_best_sec is not None]
+            for label in labels
+            if label in partitions
+        ]
+        if any(values for values in grouped_time_to_best):
+            ttb_plot = plots_dir / f"time_to_best_by_{next_dimension}.png"
+            _plot_time_to_best(plt, labels, grouped_time_to_best, f"Time-to-best by {next_dimension}", ttb_plot)
+            plots[f"time_to_best_by_{next_dimension}"] = ttb_plot
+
+        if node.key == "divisor_size":
+            top_three = labels[:3]
+            convergence_traces = {label: [run.best_so_far_by_eval for run in partitions[label]] for label in top_three if label in partitions}
+            if convergence_traces:
+                ribbons_plot = plots_dir / "convergence_ribbons_top3_methods.png"
+                _plot_convergence_ribbons(plt, convergence_traces, "Convergence ribbons (top-3)", ribbons_plot)
+                plots["convergence_ribbons_top3_methods"] = ribbons_plot
+
     decision = _decision_summary(comparison_rows, pairwise_rows)
 
     report_file = node_dir / "report.md"
@@ -918,6 +1054,32 @@ def _build_node_artifacts(
         report_lines.append(
             f"- графики ограничены top-{options.max_series_per_plot} группами по run_count для снижения визуального шума"
         )
+
+    report_lines.extend(
+        [
+            "",
+            "## Key child reports",
+        ]
+    )
+    if node.children:
+        child_candidates = sorted(node.children.values(), key=lambda child: len(child.runs), reverse=True)[:5]
+        for child in child_candidates:
+            child_slug = _safe_slug(f"{child.key}={child.value}")
+            report_lines.append(f"- [{child.key}={child.value}](groups/{child_slug}/report.md) — runs: {len(child.runs)}")
+    else:
+        report_lines.append("- Нет дочерних отчётов.")
+
+    report_lines.extend(
+        [
+            "",
+            "## Raw data appendix",
+            "- [runs.csv](tables/runs.csv)",
+            "- [summary.csv](tables/summary.csv)",
+        ]
+    )
+    if next_dimension:
+        report_lines.append(f"- [compare_by_{next_dimension}.csv](tables/compare_by_{next_dimension}.csv)")
+        report_lines.append(f"- [pairwise_significance_by_{next_dimension}.csv](tables/pairwise_significance_by_{next_dimension}.csv)")
 
     report_lines.extend([
         "",
@@ -983,16 +1145,16 @@ def _render_node_tree(
             "analysis_level": _node_heading(node),
             "group_key": node.key,
             "group_value": node.value,
-            "parent_path": str(node_dir.parent) if node.level > 0 else None,
+            "parent_path": _project_relative(node_dir.parent) if node.level > 0 else None,
             "level": node.level,
             "runs": len(node.runs),
-            "report": str(artifacts.report_file),
-            "tables": {name: str(path) for name, path in artifacts.tables.items()},
-            "plots": {name: str(path) for name, path in artifacts.plots.items()},
+            "report": _project_relative(artifacts.report_file),
+            "tables": {name: _project_relative(path) for name, path in artifacts.tables.items()},
+            "plots": {name: _project_relative(path) for name, path in artifacts.plots.items()},
             "artifacts_by_type": {
-                "reports": [str(artifacts.report_file)],
-                "tables": [str(path) for path in artifacts.tables.values()],
-                "plots": [str(path) for path in artifacts.plots.values()],
+                "reports": [_project_relative(artifacts.report_file)],
+                "tables": [_project_relative(path) for path in artifacts.tables.values()],
+                "plots": [_project_relative(path) for path in artifacts.plots.values()],
             },
             "decision_summary": artifacts.decision_summary,
         }
@@ -1081,9 +1243,9 @@ def run_analysis(
         },
         "analysis_run": {
             "input_entries": input_entries,
-            "include_paths": [str(path) for path in effective_input_paths],
+            "include_paths": [_project_relative(path) for path in effective_input_paths],
             "exclude_rules": exclude_entries,
-            "experiments_root": str(experiments_root),
+            "experiments_root": _project_relative(experiments_root),
             "auto_grouping": options.auto_grouping,
             "resolved_group_by": list(group_by),
             "success_threshold": options.success_threshold,
@@ -1092,9 +1254,9 @@ def run_analysis(
             "max_series_per_plot": options.max_series_per_plot,
             "bootstrap_iterations": options.bootstrap_iterations,
             "alpha": options.alpha,
-            "discovered_run_files_before_exclusions": [str(path) for path in discovered_files],
-            "discovered_run_files": [str(path) for path in run_files],
-            "output_dir": str(output_dir),
+            "discovered_run_files_before_exclusions": [_project_relative(path) for path in discovered_files],
+            "discovered_run_files": [_project_relative(path) for path in run_files],
+            "output_dir": _project_relative(output_dir),
         },
         "nodes": manifest_entries,
     }

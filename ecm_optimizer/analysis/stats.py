@@ -6,6 +6,16 @@ from itertools import combinations
 from typing import Callable
 
 
+def _chi2_sf_wilson_hilferty(x: float, df: int) -> float:
+    """Approximate survival function for chi-square via Wilson–Hilferty transform."""
+    if df <= 0 or x < 0:
+        return math.nan
+    if x == 0:
+        return 1.0
+    z = ((x / df) ** (1.0 / 3.0) - (1.0 - 2.0 / (9.0 * df))) / math.sqrt(2.0 / (9.0 * df))
+    return max(0.0, min(1.0, 1.0 - _normal_cdf(z)))
+
+
 def _normal_cdf(x: float) -> float:
     return 0.5 * (1.0 + math.erf(x / math.sqrt(2.0)))
 
@@ -194,3 +204,111 @@ def effect_size_label(delta: float) -> str:
     if absolute < 0.474:
         return "medium"
     return "large"
+
+
+def kruskal_wallis(groups: dict[str, list[float]]) -> dict[str, float]:
+    non_empty = {k: v for k, v in groups.items() if v}
+    if len(non_empty) < 2:
+        return {"h_stat": math.nan, "p_value": math.nan, "df": math.nan}
+
+    merged: list[tuple[float, str]] = []
+    for label, values in non_empty.items():
+        merged.extend((value, label) for value in values)
+    merged.sort(key=lambda item: item[0])
+
+    ranks = [0.0] * len(merged)
+    tie_counts: list[int] = []
+    i = 0
+    while i < len(merged):
+        j = i + 1
+        while j < len(merged) and merged[j][0] == merged[i][0]:
+            j += 1
+        avg_rank = (i + 1 + j) / 2.0
+        for k in range(i, j):
+            ranks[k] = avg_rank
+        tie_counts.append(j - i)
+        i = j
+
+    rank_sums: dict[str, float] = {label: 0.0 for label in non_empty}
+    ns: dict[str, int] = {label: len(values) for label, values in non_empty.items()}
+    for rank, (_, label) in zip(ranks, merged):
+        rank_sums[label] += rank
+
+    n_total = len(merged)
+    h = 0.0
+    for label in non_empty:
+        h += (rank_sums[label] ** 2) / ns[label]
+    h = (12.0 / (n_total * (n_total + 1.0))) * h - 3.0 * (n_total + 1.0)
+
+    tie_term = sum(t * t * t - t for t in tie_counts)
+    denom = n_total * n_total * n_total - n_total
+    correction = 1.0 - tie_term / denom if denom > 0 else 1.0
+    if correction > 0:
+        h = h / correction
+
+    df = len(non_empty) - 1
+    p_value = _chi2_sf_wilson_hilferty(h, df)
+    return {"h_stat": h, "p_value": p_value, "df": float(df)}
+
+
+def levene_test(groups: dict[str, list[float]]) -> dict[str, float]:
+    non_empty = {k: v for k, v in groups.items() if v}
+    if len(non_empty) < 2:
+        return {"w_stat": math.nan, "p_value": math.nan, "df_between": math.nan, "df_within": math.nan}
+
+    transformed: dict[str, list[float]] = {}
+    for label, values in non_empty.items():
+        center = _median(values)
+        transformed[label] = [abs(v - center) for v in values]
+
+    all_values = [v for values in transformed.values() for v in values]
+    k = len(transformed)
+    n_total = len(all_values)
+    if n_total <= k:
+        return {"w_stat": math.nan, "p_value": math.nan, "df_between": math.nan, "df_within": math.nan}
+
+    group_means = {label: _mean(values) for label, values in transformed.items()}
+    overall_mean = _mean(all_values)
+
+    ss_between = sum(len(transformed[label]) * (group_means[label] - overall_mean) ** 2 for label in transformed)
+    ss_within = sum(sum((v - group_means[label]) ** 2 for v in values) for label, values in transformed.items())
+
+    df_between = k - 1
+    df_within = n_total - k
+    if df_between <= 0 or df_within <= 0 or ss_within <= 0:
+        return {"w_stat": math.nan, "p_value": math.nan, "df_between": math.nan, "df_within": math.nan}
+
+    ms_between = ss_between / df_between
+    ms_within = ss_within / df_within
+    w_stat = ms_between / ms_within if ms_within > 0 else math.nan
+
+    # F tail approximation by mapping F*df_between ~ chi2(df_between) for moderate/large df_within.
+    p_value = _chi2_sf_wilson_hilferty(w_stat * df_between, df_between)
+    return {
+        "w_stat": w_stat,
+        "p_value": p_value,
+        "df_between": float(df_between),
+        "df_within": float(df_within),
+    }
+
+
+def pairwise_win_rate(groups: dict[str, list[float]]) -> list[dict[str, float | str]]:
+    names = sorted(groups)
+    rows: list[dict[str, float | str]] = []
+    for a, b in combinations(names, 2):
+        x = groups[a]
+        y = groups[b]
+        if not x or not y:
+            continue
+        wins = 0.0
+        total = 0
+        for xv in x:
+            for yv in y:
+                if xv < yv:
+                    wins += 1.0
+                elif xv == yv:
+                    wins += 0.5
+                total += 1
+        rate = wins / total if total else math.nan
+        rows.append({"group_a": a, "group_b": b, "win_rate_a": rate, "win_rate_b": 1.0 - rate if not math.isnan(rate) else math.nan})
+    return rows
