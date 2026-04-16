@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import csv
 import math
+import os
 import re
 from dataclasses import dataclass
 from fnmatch import fnmatch
@@ -400,10 +401,22 @@ def _node_heading(node: GroupNode) -> str:
     return f"{node.key}={node.value}"
 
 
+def _breadcrumb_path(node_dir: Path, breadcrumb: list[tuple[str, Path]]) -> str:
+    items: list[str] = []
+    for index, (label, level_dir) in enumerate(breadcrumb):
+        if index == len(breadcrumb) - 1:
+            items.append(label)
+            continue
+        relative_report = os.path.relpath(level_dir / "report.md", node_dir)
+        items.append(f"[{label}]({relative_report})")
+    return "/" + "/".join(items)
+
+
 def _build_node_artifacts(
     *,
     node: GroupNode,
     node_dir: Path,
+    breadcrumb: list[tuple[str, Path]],
     threshold: float,
     next_dimension: str | None,
     plt: Any,
@@ -415,13 +428,13 @@ def _build_node_artifacts(
     run_rows: list[dict[str, Any]] = []
     for run in sorted(node.runs, key=lambda item: (item.dataset, item.method, str(item.seed))):
         dataset_rel = _project_relative(run.dataset_file) if run.dataset_file else None
-        dataset_link = f"[{run.dataset}]({dataset_rel})" if dataset_rel else run.dataset
+        dataset_link = str(dataset_rel) if dataset_rel else run.dataset
         run_rel = _project_relative(run.run_file)
-        run_link = f"[{run.run_file.name}]({run_rel})"
+        run_link = str(run_rel)
         validation_link = ""
         if run.validation_file:
             validation_rel = _project_relative(run.validation_file)
-            validation_link = f"[{run.validation_file.name}]({validation_rel})"
+            validation_link = str(validation_rel)
         run_rows.append(
             {
                 "dataset": dataset_link,
@@ -559,11 +572,7 @@ def _build_node_artifacts(
         "",
         "## Навигация",
     ]
-
-    if node.level > 0:
-        report_lines.append("- [⬆️ На уровень выше](../../report.md)")
-    else:
-        report_lines.append("- Текущий отчёт: корневой уровень.")
+    report_lines.append(f"- Путь: {_breadcrumb_path(node_dir, breadcrumb)}")
 
     if node.children:
         report_lines.append("- Переход на нижний уровень:")
@@ -674,6 +683,42 @@ def _build_node_artifacts(
             "  return filename.replace(/_\\d{8}T\\d{6}Z/, '').replace(/_/g, ' ');",
             "}",
             "",
+            "function escapeHtml(value) {",
+            "  return String(value)",
+            "    .replace(/&/g, '&amp;')",
+            "    .replace(/</g, '&lt;')",
+            "    .replace(/>/g, '&gt;')",
+            "    .replace(/\"/g, '&quot;')",
+            "    .replace(/'/g, '&#39;');",
+            "}",
+            "",
+            "function isPathLike(value) {",
+            "  if (typeof value !== 'string') return false;",
+            "  const v = normalizeDateInput(value);",
+            "  if (!v || /^\\d+(\\.\\d+)?$/.test(v)) return false;",
+            "  return /^(?:\\.{1,2}\\/|\\/|[A-Za-z0-9_.\\-/]+\\.[A-Za-z0-9]+)$/.test(v);",
+            "}",
+            "",
+            "function toProjectRootHref(value) {",
+            "  const v = normalizeDateInput(value);",
+            "  if (!v) return v;",
+            "  if (/^[A-Za-z][A-Za-z\\d+.-]*:/.test(v) || v.startsWith('//')) return v;",
+            "  const normalized = v.replace(/^\\.{1,2}\\//, '').replace(/^\\/+/, '');",
+            "  return `/${normalized}`;",
+            "}",
+            "",
+            "function renderBodyCell(cell) {",
+            "  const raw = normalizeDateInput(cell);",
+            "  if (isPathLike(raw)) {",
+            "    const label = raw.split('/').pop() || raw;",
+            "    const href = toProjectRootHref(raw);",
+            "    return `<td><a href=\"${encodeURI(href)}\">${escapeHtml(label)}</a></td>`;",
+            "  }",
+            "  let content = formatDateTime(cell);",
+            "  content = roundNumber(content);",
+            "  return `<td>${escapeHtml(content)}</td>`;",
+            "}",
+            "",
             "async function createTable(config) {",
             "  const resp = await fetch(config.file);",
             "  if (!resp.ok) throw new Error(`HTTP ${resp.status}`);",
@@ -684,12 +729,7 @@ def _build_node_artifacts(
             "  rows.forEach((row, i) => {",
             "    html += '<tr>';",
             "    row.forEach(cell => {",
-            "      let content = cell;",
-            "      if (i !== 0) {",
-            "        content = formatDateTime(cell);",
-            "        content = roundNumber(content);",
-            "      }",
-            "      html += i === 0 ? `<th>${content}</th>` : `<td>${content}</td>`;",
+            "      html += i === 0 ? `<th>${escapeHtml(cell)}</th>` : renderBodyCell(cell);",
             "    });",
             "    html += '</tr>';",
             "  });",
@@ -735,6 +775,7 @@ def _render_node_tree(
     *,
     node: GroupNode,
     node_dir: Path,
+    breadcrumb: list[tuple[str, Path]],
     group_by: tuple[str, ...],
     threshold: float,
     plt: Any,
@@ -746,6 +787,7 @@ def _render_node_tree(
     artifacts = _build_node_artifacts(
         node=node,
         node_dir=node_dir,
+        breadcrumb=breadcrumb,
         threshold=threshold,
         next_dimension=next_dimension,
         plt=plt,
@@ -772,6 +814,7 @@ def _render_node_tree(
         _render_node_tree(
             node=child,
             node_dir=child_dir,
+            breadcrumb=[*breadcrumb, (f"{child.key}={child.value}", child_dir)],
             group_by=group_by,
             threshold=threshold,
             plt=plt,
@@ -817,6 +860,7 @@ def run_analysis(
     _render_node_tree(
         node=tree,
         node_dir=overview_dir,
+        breadcrumb=[("overview", overview_dir)],
         group_by=group_by,
         threshold=threshold,
         plt=plt,
