@@ -1,7 +1,9 @@
 from __future__ import annotations
 
 import csv
+import json
 import math
+import os
 from dataclasses import dataclass
 from pathlib import Path
 from statistics import median
@@ -31,6 +33,12 @@ class RunArtifacts:
 class AnalysisArtifacts:
     files: dict[str, Path]
     flags: dict[str, dict[str, str | float | bool | None]]
+
+
+def _tables_loader_src(report_dir: Path) -> str:
+    repo_root = Path(__file__).resolve().parents[2]
+    loader_path = repo_root / "ecm_optimizer" / "analysis" / "tables-loader.js"
+    return os.path.relpath(loader_path, start=report_dir).replace(os.sep, "/")
 
 
 def _max_plateau(evaluation_events: list[dict[str, float | int | str]], new_best_evals: set[int]) -> int:
@@ -788,114 +796,17 @@ def generate_analysis_artifacts(
         if not str(rel).endswith(".csv"):
             continue
         table_specs.append(str(rel))
-    lines.extend(["", '<div id="tables-container"></div>'])
-    if table_specs:
-        lines.extend(["", "<script>"])
-        lines.append("const tables = [")
-        for rel in table_specs:
-            lines.append(f"  {{ file: '{rel}' }},")
-        lines.extend(
-            [
-                "];",
-                "",
-                "function normalizeDateInput(value) {",
-                "  if (typeof value !== 'string') return value;",
-                "  return value.trim().replace(/^\"|\"$/g, '');",
-                "}",
-                "",
-                "function isDateString(value) {",
-                "  if (typeof value !== 'string') return false;",
-                "  const v = normalizeDateInput(value);",
-                "  return /^\\d{4}-\\d{2}-\\d{2}[T ]\\d{2}:\\d{2}:\\d{2}/.test(v);",
-                "}",
-                "",
-                "function formatDateTime(value) {",
-                "  if (!isDateString(value)) return value;",
-                "  const v = normalizeDateInput(value);",
-                "  try {",
-                "    const date = new Date(v);",
-                "    if (!isNaN(date.getTime())) {",
-                "      const day = String(date.getUTCDate()).padStart(2, '0');",
-                "      const month = String(date.getUTCMonth() + 1).padStart(2, '0');",
-                "      const year = date.getUTCFullYear();",
-                "      const hours = String(date.getUTCHours()).padStart(2, '0');",
-                "      const minutes = String(date.getUTCMinutes()).padStart(2, '0');",
-                "      const seconds = String(date.getUTCSeconds()).padStart(2, '0');",
-                "      return `${day}.${month}.${year} ${hours}:${minutes}:${seconds}`;",
-                "    }",
-                "  } catch (e) {",
-                "    return value;",
-                "  }",
-                "  return value;",
-                "}",
-                "",
-                "function roundNumber(v) {",
-                "  if (isDateString(v)) return formatDateTime(v);",
-                "  if (typeof v === 'string' && /^\\d{2}\\.\\d{2}\\.\\d{4} \\d{2}:\\d{2}:\\d{2}$/.test(v)) return v;",
-                "  const raw = normalizeDateInput(v);",
-                "  const n = parseFloat(raw);",
-                "  if (isNaN(n)) return raw;",
-                "  const rounded = Math.round(n * 1e9) / 1e9;",
-                "  return rounded.toLocaleString('en-US', { useGrouping: false, maximumFractionDigits: 9 });",
-                "}",
-                "",
-                "function getTitleFromFile(filepath) {",
-                "  const filename = filepath.split('/').pop().replace('.csv', '');",
-                "  return filename.replace(/_\\d{8}T\\d{6}Z/, '').replace(/_/g, ' ');",
-                "}",
-                "",
-                "async function createTable(config) {",
-                "  const resp = await fetch(config.file);",
-                "  if (!resp.ok) throw new Error(`HTTP ${resp.status}`);",
-                "  const text = await resp.text();",
-                "  const rows = text.trim().split(/\\r?\\n/).map(row => row.split(','));",
-                "",
-                "  let html = '<table border=\"1\" cellpadding=\"5\">';",
-                "  rows.forEach((row, i) => {",
-                "    html += '<tr>';",
-                "    row.forEach(cell => {",
-                "      let content = cell;",
-                "      if (i !== 0) {",
-                "        content = formatDateTime(cell);",
-                "        content = roundNumber(content);",
-                "      }",
-                "      html += i === 0 ? `<th>${content}</th>` : `<td>${content}</td>`;",
-                "    });",
-                "    html += '</tr>';",
-                "  });",
-                "  html += '</table>';",
-                "",
-                "  const title = getTitleFromFile(config.file);",
-                "  const rowCount = Math.max(0, rows.length - 1);",
-                "",
-                "  return `",
-                "    <details>",
-                "      <summary><strong>${title}</strong> <a href=\"${config.file}\">(CSV)</a> (${rowCount} записей)</summary>",
-                "      <div style=\"margin-top:10px; overflow-x:auto;\">${html}</div>",
-                "    </details>",
-                "  `;",
-                "}",
-                "",
-                "async function renderAllTables() {",
-                "  const container = document.getElementById('tables-container');",
-                "  if (!container) return;",
-                "  container.innerHTML = '<div>Загрузка таблиц...</div>';",
-                "  try {",
-                "    const tablesHtml = await Promise.all(tables.map(t => createTable(t)));",
-                "    container.innerHTML = tablesHtml.join('');",
-                "  } catch (err) {",
-                "    container.innerHTML = `<div>Ошибка загрузки таблиц: ${err}</div>`;",
-                "  }",
-                "}",
-                "",
-                "renderAllTables();",
-            ]
-        )
-        lines.extend(
-            [
-                "</script>",
-            ]
-        )
+    table_configs = [{"file": rel} for rel in table_specs]
+    data_tables = json.dumps(table_configs, ensure_ascii=False)
+    loader_src = _tables_loader_src(report_dir)
+    lines.extend(
+        [
+            "",
+            f"<div id=\"tables-container\" data-tables='{data_tables}'></div>",
+            "",
+            f"<script src=\"{loader_src}\"></script>",
+        ]
+    )
     report_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     files["report_md"] = report_path
 

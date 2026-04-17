@@ -1,0 +1,2 @@
+analysis_level,run_count,median_objective,iqr_objective,median_runtime_sec,median_time_to_best_sec,median_evaluation_count,success_share,median_improvement_per_eval,median_improvement_per_sec,median_validation_gain_abs,median_validation_gain_pct
+seed=20011,3,0.760391845862614,0.02882497024256736,14.336291906016413,14.24924606399145,38,0.0,0.03798869243703513,0.1013070051634998,2.3791169452888425,59.50108262001671

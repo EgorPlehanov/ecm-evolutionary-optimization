@@ -1,0 +1,2 @@
+analysis_level,run_count,median_objective,iqr_objective,median_runtime_sec,median_time_to_best_sec,median_evaluation_count,success_share,median_improvement_per_eval,median_improvement_per_sec,median_validation_gain_abs,median_validation_gain_pct
+dataset=25_dset_20260409T103515Z,15,0.7393588161212392,0.11715632493724115,58.00286263599992,28.41604630299844,220,0.0,0.0042655085007109765,0.016337441216504347,2.4682458565803245,60.268460349621776
