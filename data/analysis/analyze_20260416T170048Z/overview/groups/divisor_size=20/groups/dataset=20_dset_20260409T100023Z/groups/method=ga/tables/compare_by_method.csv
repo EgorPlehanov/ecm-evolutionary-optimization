@@ -1,2 +1,0 @@
-group,run_count,median_objective,iqr_objective,success_share,median_runtime_sec,median_validation_gain_pct
-ga,3,0.6613662160234526,0.009510178050550211,1.0,72.16531355900224,28.24103555723811

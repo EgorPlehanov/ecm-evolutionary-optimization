@@ -11,7 +11,18 @@ from fnmatch import fnmatch
 from pathlib import Path
 from typing import Any
 
-from ecm_optimizer.utils.io_utils import ensure_dir, read_json, write_json_with_meta
+from ecm_optimizer.analysis.stats import (
+    bootstrap_ci,
+    cliffs_delta,
+    coefficient_of_variation,
+    effect_size_label,
+    kruskal_wallis,
+    levene_test,
+    pairwise_mannwhitney,
+    pairwise_win_rate,
+    success_rate,
+)
+from ecm_optimizer.utils.io_utils import ensure_dir, read_json, utc_timestamp, write_json_with_meta
 
 _DATASET_RE = re.compile(r"^(\d+)_dset_")
 _METHODS = {"de", "rs", "pso", "bo", "ga"}
@@ -58,6 +69,9 @@ class AnalysisOptions:
     max_time_points: int
     group_by: tuple[str, ...]
     auto_grouping: bool
+    max_series_per_plot: int
+    bootstrap_iterations: int
+    alpha: float
 
 
 @dataclass(frozen=True)
@@ -83,6 +97,7 @@ class NodeArtifacts:
     report_file: Path
     tables: dict[str, Path]
     plots: dict[str, Path]
+    decision_summary: dict[str, Any]
 
 
 @dataclass(frozen=True)
@@ -317,7 +332,7 @@ def _stats_for_runs(runs: list[RunRecord], threshold: float) -> _SummaryStats:
     validation_gain_abs: list[float] = []
     validation_gain_pct: list[float] = []
 
-    success_count = 0
+    success_values: list[float] = []
     for run in runs:
         if run.first_fitness is not None:
             improvement = run.first_fitness - run.final_objective
@@ -326,8 +341,8 @@ def _stats_for_runs(runs: list[RunRecord], threshold: float) -> _SummaryStats:
             if run.total_runtime_sec > 0:
                 imp_sec.append(improvement / run.total_runtime_sec)
 
-        if any(best <= threshold for _, best in run.best_so_far_by_eval):
-            success_count += 1
+        run_best = min((best for _, best in run.best_so_far_by_eval), default=math.inf)
+        success_values.append(run_best)
 
         if run.validation_baseline_mean is not None and run.validation_optimized_mean is not None:
             validation_gain_abs.append(run.validation_baseline_mean - run.validation_optimized_mean)
@@ -341,7 +356,7 @@ def _stats_for_runs(runs: list[RunRecord], threshold: float) -> _SummaryStats:
         median_time_sec=_quantile(runtimes, 0.5),
         median_time_to_best_sec=_quantile(time_to_best, 0.5) if time_to_best else None,
         median_eval_count=_quantile(eval_counts, 0.5),
-        success_share=(success_count / len(runs)) if runs else 0.0,
+        success_share=success_rate(success_values, threshold),
         median_improvement_per_eval=_quantile(imp_eval, 0.5) if imp_eval else None,
         median_improvement_per_sec=_quantile(imp_sec, 0.5) if imp_sec else None,
         median_validation_gain_abs=_quantile(validation_gain_abs, 0.5) if validation_gain_abs else None,
@@ -403,6 +418,100 @@ def _plot_validation_gain(plt: Any, labels: list[str], gains: list[list[float]],
     plt.close()
 
 
+def _plot_pareto_runtime_gain(plt: Any, labels: list[str], runtimes: list[float], gains: list[float], title: str, out_file: Path) -> None:
+    plt.figure(figsize=(8, 6))
+    plt.scatter(runtimes, gains, alpha=0.8)
+    for idx, label in enumerate(labels):
+        plt.annotate(label, (runtimes[idx], gains[idx]), fontsize=8, xytext=(4, 3), textcoords="offset points")
+    plt.title(title)
+    plt.xlabel("Median runtime, sec (lower is better)")
+    plt.ylabel("Median validation gain, % (higher is better)")
+    plt.grid(alpha=0.3)
+    plt.tight_layout()
+    plt.savefig(out_file, dpi=160)
+    plt.close()
+
+
+def _plot_risk_vs_gain(plt: Any, labels: list[str], risks: list[float], gains: list[float], title: str, out_file: Path) -> None:
+    plt.figure(figsize=(8, 6))
+    plt.scatter(risks, gains, alpha=0.8)
+    for idx, label in enumerate(labels):
+        plt.annotate(label, (risks[idx], gains[idx]), fontsize=8, xytext=(4, 3), textcoords="offset points")
+    plt.title(title)
+    plt.xlabel("Risk (CV objective, lower is better)")
+    plt.ylabel("Median validation gain, %")
+    plt.grid(alpha=0.3)
+    plt.tight_layout()
+    plt.savefig(out_file, dpi=160)
+    plt.close()
+
+
+def _plot_time_to_best(plt: Any, labels: list[str], values: list[list[float]], title: str, out_file: Path) -> None:
+    plt.figure(figsize=(max(8, len(labels) * 1.2), 6))
+    plt.boxplot(values, labels=labels, patch_artist=True)
+    plt.xticks(rotation=25, ha="right")
+    plt.title(title)
+    plt.ylabel("Time to best, sec")
+    plt.grid(axis="y", alpha=0.3)
+    plt.tight_layout()
+    plt.savefig(out_file, dpi=160)
+    plt.close()
+
+
+def _plot_convergence_ribbons(plt: Any, traces: dict[str, list[list[tuple[int, float]]]], title: str, out_file: Path) -> None:
+    plt.figure(figsize=(9, 6))
+    for label, runs in traces.items():
+        if not runs:
+            continue
+        max_len = max(len(run) for run in runs)
+        medians: list[float] = []
+        p25: list[float] = []
+        p75: list[float] = []
+        xs = list(range(1, max_len + 1))
+        for idx in range(max_len):
+            vals = [run[idx][1] for run in runs if idx < len(run)]
+            if not vals:
+                continue
+            medians.append(_quantile(vals, 0.5))
+            p25.append(_quantile(vals, 0.25))
+            p75.append(_quantile(vals, 0.75))
+        xs = xs[: len(medians)]
+        if not xs:
+            continue
+        plt.plot(xs, medians, label=label)
+        plt.fill_between(xs, p25, p75, alpha=0.2)
+    plt.title(title)
+    plt.xlabel("Evaluation step")
+    plt.ylabel("Best-so-far objective")
+    plt.grid(alpha=0.3)
+    plt.legend()
+    plt.tight_layout()
+    plt.savefig(out_file, dpi=160)
+    plt.close()
+
+
+def _plot_run_objectives(plt: Any, values: list[float], title: str, out_file: Path) -> None:
+    plt.figure(figsize=(8, 5))
+    xs = list(range(1, len(values) + 1))
+    plt.plot(xs, values, marker="o", linewidth=1.0)
+    plt.title(title)
+    plt.xlabel("Run index")
+    plt.ylabel("Final objective")
+    plt.grid(alpha=0.3)
+    plt.tight_layout()
+    plt.savefig(out_file, dpi=160)
+    plt.close()
+
+
+def _method_objectives_by_subgroup(runs: list[RunRecord], subgroup_key: str) -> dict[str, dict[str, list[float]]]:
+    result: dict[str, dict[str, list[float]]] = {}
+    for run in runs:
+        subgroup = _dimension_value(run, subgroup_key)
+        methods = result.setdefault(subgroup, {})
+        methods.setdefault(run.method, []).append(run.final_objective)
+    return result
+
+
 def _node_heading(node: GroupNode) -> str:
     if node.key == "root":
         return "overview"
@@ -427,6 +536,330 @@ def _with_display_name(path_value: str, display_name: str | None = None) -> str:
     return f"{path_value}{separator}display_name={quote(display_name)}"
 
 
+def _partition_runs(node_runs: list[RunRecord], dimension: str) -> dict[str, list[RunRecord]]:
+    partitions: dict[str, list[RunRecord]] = {}
+    for run in node_runs:
+        label = _dimension_value(run, dimension)
+        partitions.setdefault(label, []).append(run)
+    return partitions
+
+
+def _comparison_rows_with_stats(
+    partitions: dict[str, list[RunRecord]],
+    *,
+    threshold: float,
+    bootstrap_iterations: int,
+) -> list[dict[str, Any]]:
+    rows: list[dict[str, Any]] = []
+    for label, subset in sorted(partitions.items()):
+        subset_stats = _stats_for_runs(subset, threshold)
+        objectives = [run.final_objective for run in subset]
+        gains = [run.validation_relative_improvement_pct for run in subset if run.validation_relative_improvement_pct is not None]
+        obj_ci_low, obj_ci_high = bootstrap_ci(objectives, n_boot=bootstrap_iterations)
+        gain_ci_low, gain_ci_high = bootstrap_ci(gains, n_boot=bootstrap_iterations) if gains else (math.nan, math.nan)
+        rows.append(
+            {
+                "group": label,
+                "run_count": subset_stats.run_count,
+                "median_objective": subset_stats.median_objective,
+                "objective_ci_low": obj_ci_low,
+                "objective_ci_high": obj_ci_high,
+                "iqr_objective": subset_stats.iqr_objective,
+                "cv_objective": coefficient_of_variation(objectives),
+                "success_share": subset_stats.success_share,
+                "median_runtime_sec": subset_stats.median_time_sec,
+                "median_validation_gain_pct": subset_stats.median_validation_gain_pct,
+                "validation_gain_ci_low": gain_ci_low,
+                "validation_gain_ci_high": gain_ci_high,
+            }
+        )
+    return rows
+
+
+def _build_pairwise_table(partitions: dict[str, list[RunRecord]], *, alpha: float) -> list[dict[str, Any]]:
+    groups = {label: [run.final_objective for run in subset] for label, subset in partitions.items() if len(subset) > 0}
+    pairwise_rows = pairwise_mannwhitney(groups, correction="holm")
+    enriched: list[dict[str, Any]] = []
+    for row in pairwise_rows:
+        group_a = str(row["group_a"])
+        group_b = str(row["group_b"])
+        delta = cliffs_delta(groups.get(group_a, []), groups.get(group_b, []))
+        enriched.append(
+            {
+                "group_a": group_a,
+                "group_b": group_b,
+                "u_stat": row.get("u_stat"),
+                "p_raw": row.get("p_raw"),
+                "p_holm": row.get("p_adj"),
+                "is_significant": bool(float(row.get("p_adj", 1.0)) < alpha),
+                "cliffs_delta": delta,
+                "effect_size": effect_size_label(delta),
+            }
+        )
+    return enriched
+
+
+def _coverage_matrix_rows(node_runs: list[RunRecord]) -> list[dict[str, Any]]:
+    matrix: dict[tuple[str, str], dict[str, Any]] = {}
+    for run in node_runs:
+        key = (str(run.divisor_size), run.dataset)
+        bucket = matrix.setdefault(
+            key,
+            {
+                "divisor_size": run.divisor_size,
+                "dataset": run.dataset,
+                "methods": set(),
+                "runs": 0,
+                "with_validation": 0,
+                "seeds": set(),
+            },
+        )
+        bucket["methods"].add(run.method)
+        bucket["seeds"].add(str(run.seed))
+        bucket["runs"] += 1
+        if run.validation_file:
+            bucket["with_validation"] += 1
+
+    rows: list[dict[str, Any]] = []
+    for _, bucket in sorted(matrix.items()):
+        rows.append(
+            {
+                "divisor_size": bucket["divisor_size"],
+                "dataset": bucket["dataset"],
+                "methods_count": len(bucket["methods"]),
+                "runs": bucket["runs"],
+                "validation_coverage_share": bucket["with_validation"] / bucket["runs"] if bucket["runs"] else 0.0,
+                "seed_count": len(bucket["seeds"]),
+            }
+        )
+    return rows
+
+
+def _decision_summary(comparison_rows: list[dict[str, Any]], pairwise_rows: list[dict[str, Any]]) -> dict[str, Any]:
+    if not comparison_rows:
+        return {
+            "top_by_objective": None,
+            "top_by_gain": None,
+            "adopt": [],
+            "watch": [],
+            "deprioritize": [],
+            "significant_pairs": 0,
+        }
+
+    by_objective = sorted(comparison_rows, key=lambda row: (row["median_objective"], -row["run_count"]))
+    gain_candidates = [row for row in comparison_rows if not math.isnan(row["median_validation_gain_pct"])]
+    by_gain = sorted(gain_candidates, key=lambda row: (row["median_validation_gain_pct"], row["run_count"]), reverse=True) if gain_candidates else []
+
+    significant_groups: set[str] = set()
+    for row in pairwise_rows:
+        if row.get("is_significant"):
+            significant_groups.add(str(row["group_a"]))
+            significant_groups.add(str(row["group_b"]))
+
+    adopt: list[str] = []
+    watch: list[str] = []
+    deprioritize: list[str] = []
+
+    for row in comparison_rows:
+        label = str(row["group"])
+        gain = row.get("median_validation_gain_pct")
+        cv_value = row.get("cv_objective")
+        run_count = int(row.get("run_count", 0))
+        has_signal = label in significant_groups
+
+        if gain is not None and not math.isnan(gain) and gain >= 20 and run_count >= 3 and (has_signal or cv_value < 0.25):
+            adopt.append(label)
+        elif gain is not None and not math.isnan(gain) and gain < 0:
+            deprioritize.append(label)
+        else:
+            watch.append(label)
+
+    return {
+        "top_by_objective": by_objective[0]["group"],
+        "top_by_gain": by_gain[0]["group"] if by_gain else None,
+        "adopt": adopt,
+        "watch": watch,
+        "deprioritize": deprioritize,
+        "significant_pairs": sum(1 for row in pairwise_rows if row.get("is_significant")),
+    }
+
+
+def _profile_tables(
+    *,
+    node: GroupNode,
+    next_dimension: str | None,
+    threshold: float,
+    bootstrap_iterations: int,
+    alpha: float,
+) -> tuple[dict[str, list[dict[str, Any]]], dict[str, list[str]], list[dict[str, Any]], list[dict[str, Any]], dict[str, list[RunRecord]]]:
+    tables: dict[str, list[dict[str, Any]]] = {}
+    fields: dict[str, list[str]] = {}
+
+    partitions = _partition_runs(node.runs, next_dimension) if next_dimension else {}
+    comparison_rows = _comparison_rows_with_stats(partitions, threshold=threshold, bootstrap_iterations=bootstrap_iterations) if partitions else []
+    pairwise_rows = _build_pairwise_table(partitions, alpha=alpha) if partitions else []
+
+    common_compare_fields = [
+        "group",
+        "run_count",
+        "median_objective",
+        "objective_ci_low",
+        "objective_ci_high",
+        "iqr_objective",
+        "cv_objective",
+        "success_share",
+        "median_runtime_sec",
+        "median_validation_gain_pct",
+        "validation_gain_ci_low",
+        "validation_gain_ci_high",
+    ]
+
+    if comparison_rows:
+        table_name = f"compare_by_{next_dimension}"
+        tables[table_name] = comparison_rows
+        fields[table_name] = common_compare_fields
+
+    if pairwise_rows:
+        table_name = f"pairwise_significance_by_{next_dimension}"
+        tables[table_name] = pairwise_rows
+        fields[table_name] = [
+            "group_a",
+            "group_b",
+            "u_stat",
+            "p_raw",
+            "p_holm",
+            "is_significant",
+            "cliffs_delta",
+            "effect_size",
+        ]
+        win_rate_name = f"pairwise_win_rate_by_{next_dimension}"
+        objective_groups = {label: [run.final_objective for run in subset] for label, subset in partitions.items()}
+        win_rate_rows = pairwise_win_rate(objective_groups)
+        if win_rate_rows:
+            tables[win_rate_name] = win_rate_rows
+            fields[win_rate_name] = ["group_a", "group_b", "win_rate_a", "win_rate_b"]
+
+        kw = kruskal_wallis(objective_groups)
+        lv = levene_test(objective_groups)
+        omnibus_rows = [
+            {
+                "kruskal_h_stat": kw.get("h_stat"),
+                "kruskal_p_value": kw.get("p_value"),
+                "kruskal_df": kw.get("df"),
+                "levene_w_stat": lv.get("w_stat"),
+                "levene_p_value": lv.get("p_value"),
+                "levene_df_between": lv.get("df_between"),
+                "levene_df_within": lv.get("df_within"),
+            }
+        ]
+        tables[f"omnibus_tests_by_{next_dimension}"] = omnibus_rows
+        fields[f"omnibus_tests_by_{next_dimension}"] = [
+            "kruskal_h_stat",
+            "kruskal_p_value",
+            "kruskal_df",
+            "levene_w_stat",
+            "levene_p_value",
+            "levene_df_between",
+            "levene_df_within",
+        ]
+
+    if node.key == "root":
+        method_partitions = _partition_runs(node.runs, "method")
+        method_rows = _comparison_rows_with_stats(method_partitions, threshold=threshold, bootstrap_iterations=bootstrap_iterations)
+        tables["method_ranking"] = sorted(method_rows, key=lambda row: (row["median_objective"], -row["run_count"]))
+        fields["method_ranking"] = common_compare_fields
+        gain_rows = [row for row in method_rows if not math.isnan(row["median_validation_gain_pct"])]
+        tables["validation_gain_ranking"] = sorted(gain_rows, key=lambda row: (row["median_validation_gain_pct"], row["run_count"]), reverse=True)
+        fields["validation_gain_ranking"] = fields["method_ranking"]
+        tables["coverage_matrix"] = _coverage_matrix_rows(node.runs)
+        fields["coverage_matrix"] = [
+            "divisor_size",
+            "dataset",
+            "methods_count",
+            "runs",
+            "validation_coverage_share",
+            "seed_count",
+        ]
+
+    if node.key == "divisor_size":
+        method_partitions = _partition_runs(node.runs, "method")
+        method_rows = _comparison_rows_with_stats(method_partitions, threshold=threshold, bootstrap_iterations=bootstrap_iterations)
+        tables["method_comparison"] = sorted(method_rows, key=lambda row: (row["median_objective"], -row["run_count"]))
+        fields["method_comparison"] = common_compare_fields
+        tables["stability_table"] = [
+            {"method": row["group"], "run_count": row["run_count"], "cv_objective": row["cv_objective"], "iqr_objective": row["iqr_objective"]}
+            for row in method_rows
+        ]
+        fields["stability_table"] = ["method", "run_count", "cv_objective", "iqr_objective"]
+        tables["validation_gain_by_method"] = [
+            {"method": row["group"], "median_validation_gain_pct": row["median_validation_gain_pct"], "validation_gain_ci_low": row["validation_gain_ci_low"], "validation_gain_ci_high": row["validation_gain_ci_high"]}
+            for row in method_rows
+        ]
+        fields["validation_gain_by_method"] = ["method", "median_validation_gain_pct", "validation_gain_ci_low", "validation_gain_ci_high"]
+
+    if node.key == "dataset":
+        method_partitions = _partition_runs(node.runs, "method")
+        method_rows = _comparison_rows_with_stats(method_partitions, threshold=threshold, bootstrap_iterations=bootstrap_iterations)
+        tables["leaderboard"] = sorted(method_rows, key=lambda row: (row["median_objective"], -row["run_count"]))
+        fields["leaderboard"] = common_compare_fields
+
+        baseline_rows: list[dict[str, Any]] = []
+        for method, subset in sorted(method_partitions.items()):
+            baseline = [run.validation_baseline_mean for run in subset if run.validation_baseline_mean is not None]
+            optimized = [run.validation_optimized_mean for run in subset if run.validation_optimized_mean is not None]
+            baseline_rows.append(
+                {
+                    "method": method,
+                    "baseline_mean_median": _quantile(baseline, 0.5) if baseline else math.nan,
+                    "optimized_mean_median": _quantile(optimized, 0.5) if optimized else math.nan,
+                    "delta_abs": (_quantile(baseline, 0.5) - _quantile(optimized, 0.5)) if baseline and optimized else math.nan,
+                }
+            )
+        tables["baseline_vs_optimized"] = baseline_rows
+        fields["baseline_vs_optimized"] = ["method", "baseline_mean_median", "optimized_mean_median", "delta_abs"]
+
+        gain_ci_rows: list[dict[str, Any]] = []
+        for method, subset in sorted(method_partitions.items()):
+            gains = [run.validation_relative_improvement_pct for run in subset if run.validation_relative_improvement_pct is not None]
+            low, high = bootstrap_ci(gains, n_boot=bootstrap_iterations) if gains else (math.nan, math.nan)
+            gain_ci_rows.append({"method": method, "gain_ci_low": low, "gain_ci_high": high})
+        tables["gain_ci"] = gain_ci_rows
+        fields["gain_ci"] = ["method", "gain_ci_low", "gain_ci_high"]
+
+    if node.key == "method":
+        by_dataset = _partition_runs(node.runs, "dataset")
+        dataset_rows = _comparison_rows_with_stats(by_dataset, threshold=threshold, bootstrap_iterations=bootstrap_iterations)
+        tables["method_profile"] = sorted(dataset_rows, key=lambda row: row["median_objective"])
+        fields["method_profile"] = common_compare_fields
+
+        sensitivity_rows: list[dict[str, Any]] = []
+        by_size = _partition_runs(node.runs, "divisor_size")
+        for size, subset in sorted(by_size.items()):
+            objectives = [run.final_objective for run in subset]
+            gains = [run.validation_relative_improvement_pct for run in subset if run.validation_relative_improvement_pct is not None]
+            sensitivity_rows.append(
+                {
+                    "divisor_size": size,
+                    "run_count": len(subset),
+                    "median_objective": _quantile(objectives, 0.5),
+                    "cv_objective": coefficient_of_variation(objectives),
+                    "median_gain_pct": _quantile(gains, 0.5) if gains else math.nan,
+                }
+            )
+        tables["method_sensitivity"] = sensitivity_rows
+        fields["method_sensitivity"] = ["divisor_size", "run_count", "median_objective", "cv_objective", "median_gain_pct"]
+
+    decision = _decision_summary(comparison_rows, pairwise_rows)
+    tables["adoption_candidates"] = [
+        {"label": label, "decision": "adopt"} for label in decision["adopt"]
+    ] + [{"label": label, "decision": "watch"} for label in decision["watch"]] + [
+        {"label": label, "decision": "deprioritize"} for label in decision["deprioritize"]
+    ]
+    fields["adoption_candidates"] = ["label", "decision"]
+
+    return tables, fields, comparison_rows, pairwise_rows, partitions
+
+
 def _build_node_artifacts(
     *,
     node: GroupNode,
@@ -435,6 +868,7 @@ def _build_node_artifacts(
     threshold: float,
     next_dimension: str | None,
     plt: Any,
+    options: AnalysisOptions,
 ) -> NodeArtifacts:
     tables_dir = ensure_dir(node_dir / "tables")
     plots_dir = ensure_dir(node_dir / "plots")
@@ -524,66 +958,108 @@ def _build_node_artifacts(
         ],
     )
 
-    comparisons_table: Path | None = None
-    comparison_rows: list[dict[str, Any]] = []
-    if next_dimension:
-        partitions: dict[str, list[RunRecord]] = {}
-        for run in node.runs:
-            label = _dimension_value(run, next_dimension)
-            partitions.setdefault(label, []).append(run)
+    profile_tables, profile_fields, comparison_rows, pairwise_rows, partitions = _profile_tables(
+        node=node,
+        next_dimension=next_dimension,
+        threshold=threshold,
+        bootstrap_iterations=options.bootstrap_iterations,
+        alpha=options.alpha,
+    )
 
-        for label, subset in sorted(partitions.items()):
-            subset_stats = _stats_for_runs(subset, threshold)
-            comparison_rows.append(
-                {
-                    "group": label,
-                    "run_count": subset_stats.run_count,
-                    "median_objective": subset_stats.median_objective,
-                    "iqr_objective": subset_stats.iqr_objective,
-                    "success_share": subset_stats.success_share,
-                    "median_runtime_sec": subset_stats.median_time_sec,
-                    "median_validation_gain_pct": subset_stats.median_validation_gain_pct,
-                }
-            )
-
-        comparisons_table = tables_dir / f"compare_by_{next_dimension}.csv"
-        _write_csv(
-            comparisons_table,
-            comparison_rows,
-            [
-                "group",
-                "run_count",
-                "median_objective",
-                "iqr_objective",
-                "success_share",
-                "median_runtime_sec",
-                "median_validation_gain_pct",
-            ],
-        )
+    tables: dict[str, Path] = {"runs": runs_table, "summary": summary_table}
+    for table_name, rows in profile_tables.items():
+        if not rows:
+            continue
+        table_file = tables_dir / f"{table_name}.csv"
+        _write_csv(table_file, rows, profile_fields[table_name])
+        tables[table_name] = table_file
 
     plots: dict[str, Path] = {}
-    if plt is not None and comparison_rows:
-        labels = [row["group"] for row in comparison_rows]
-        grouped_values = [
-            [run.final_objective for run in node.runs if _dimension_value(run, next_dimension or "") == label]
-            for label in labels
-        ]
-        objective_plot = plots_dir / f"final_objective_by_{next_dimension}.png"
-        _plot_boxplot(plt, labels, grouped_values, f"Final objective by {next_dimension}", objective_plot)
-        plots[f"final_objective_by_{next_dimension}"] = objective_plot
+    if plt is not None and comparison_rows and next_dimension:
+        limited_rows = sorted(comparison_rows, key=lambda row: (-int(row["run_count"]), row["median_objective"]))[: options.max_series_per_plot]
+        labels = [str(row["group"]) for row in limited_rows]
+        grouped_values = [[run.final_objective for run in partitions[label]] for label in labels if label in partitions]
+        if labels and grouped_values:
+            objective_plot = plots_dir / f"final_objective_by_{next_dimension}.png"
+            _plot_boxplot(plt, labels, grouped_values, f"Final objective by {next_dimension}", objective_plot)
+            plots[f"final_objective_by_{next_dimension}"] = objective_plot
 
         grouped_gains = [
-            [
-                run.validation_relative_improvement_pct
-                for run in node.runs
-                if _dimension_value(run, next_dimension or "") == label and run.validation_relative_improvement_pct is not None
-            ]
+            [run.validation_relative_improvement_pct for run in partitions[label] if run.validation_relative_improvement_pct is not None]
             for label in labels
+            if label in partitions
         ]
         if any(values for values in grouped_gains):
             gain_plot = plots_dir / f"validation_gain_by_{next_dimension}.png"
             _plot_validation_gain(plt, labels, grouped_gains, f"Validation gain by {next_dimension}", gain_plot)
             plots[f"validation_gain_by_{next_dimension}"] = gain_plot
+
+        runtimes = [float(row["median_runtime_sec"]) for row in limited_rows]
+        gains = [float(row["median_validation_gain_pct"]) if not math.isnan(float(row["median_validation_gain_pct"])) else 0.0 for row in limited_rows]
+        risks = [float(row["cv_objective"]) if not math.isnan(float(row["cv_objective"])) else 0.0 for row in limited_rows]
+        if labels:
+            pareto_plot = plots_dir / f"pareto_runtime_gain_by_{next_dimension}.png"
+            _plot_pareto_runtime_gain(plt, labels, runtimes, gains, f"Pareto runtime-vs-gain by {next_dimension}", pareto_plot)
+            plots[f"pareto_runtime_gain_by_{next_dimension}"] = pareto_plot
+
+            risk_plot = plots_dir / f"risk_vs_gain_by_{next_dimension}.png"
+            _plot_risk_vs_gain(plt, labels, risks, gains, f"Risk-vs-gain by {next_dimension}", risk_plot)
+            plots[f"risk_vs_gain_by_{next_dimension}"] = risk_plot
+
+        grouped_time_to_best = [
+            [run.time_to_best_sec for run in partitions[label] if run.time_to_best_sec is not None]
+            for label in labels
+            if label in partitions
+        ]
+        if any(values for values in grouped_time_to_best):
+            ttb_plot = plots_dir / f"time_to_best_by_{next_dimension}.png"
+            _plot_time_to_best(plt, labels, grouped_time_to_best, f"Time-to-best by {next_dimension}", ttb_plot)
+            plots[f"time_to_best_by_{next_dimension}"] = ttb_plot
+
+        if node.key == "divisor_size":
+            top_three = labels[:3]
+            convergence_traces = {label: [run.best_so_far_by_eval for run in partitions[label]] for label in top_three if label in partitions}
+            if convergence_traces:
+                ribbons_plot = plots_dir / "convergence_ribbons_top3_methods.png"
+                _plot_convergence_ribbons(plt, convergence_traces, "Convergence ribbons (top-3)", ribbons_plot)
+                plots["convergence_ribbons_top3_methods"] = ribbons_plot
+
+    if plt is not None:
+        # Method-level comparisons on every hierarchy level for better readability.
+        method_partitions = _partition_runs(node.runs, "method")
+        if len(method_partitions) > 1:
+            method_labels = sorted(method_partitions)
+            method_values = [[run.final_objective for run in method_partitions[label]] for label in method_labels]
+            method_plot = plots_dir / "final_objective_by_method_overall.png"
+            _plot_boxplot(plt, method_labels, method_values, "Final objective by method (overall)", method_plot)
+            plots["final_objective_by_method_overall"] = method_plot
+
+        if node.key == "root":
+            subgroup_dim = "divisor_size"
+        elif node.key == "divisor_size":
+            subgroup_dim = "dataset"
+        else:
+            subgroup_dim = None
+
+        if subgroup_dim:
+            subgroup_map = _method_objectives_by_subgroup(node.runs, subgroup_dim)
+            for subgroup, method_map in sorted(subgroup_map.items()):
+                if len(method_map) <= 1:
+                    continue
+                labels = sorted(method_map)
+                values = [method_map[label] for label in labels]
+                split_plot = plots_dir / f"final_objective_by_method_{subgroup_dim}={_safe_slug(subgroup)}.png"
+                _plot_boxplot(plt, labels, values, f"Method comparison ({subgroup_dim}={subgroup})", split_plot)
+                plots[f"final_objective_by_method_{subgroup_dim}={subgroup}"] = split_plot
+
+        if node.key in {"method", "seed"} and len(node.runs) > 1:
+            sorted_runs = sorted(node.runs, key=lambda run: (run.dataset, str(run.seed), run.run_file.name))
+            run_values = [run.final_objective for run in sorted_runs]
+            runs_plot = plots_dir / "final_objective_by_run_index.png"
+            _plot_run_objectives(plt, run_values, "Final objective by run index", runs_plot)
+            plots["final_objective_by_run_index"] = runs_plot
+
+    decision = _decision_summary(comparison_rows, pairwise_rows)
 
     report_file = node_dir / "report.md"
     report_lines = [
@@ -597,7 +1073,7 @@ def _build_node_artifacts(
         report_lines.append("- Переход на нижний уровень:")
         for child in node.children.values():
             child_slug = _safe_slug(f"{child.key}={child.value}")
-            report_lines.append(f"  - [{child.key}={child.value}](groups/{child_slug}/report.md)")
+            report_lines.append(f"  - [{child.key}={child.value}](groups/{child_slug}/report.md) ({len(child.runs)} runs)")
     else:
         report_lines.append("- Нижних уровней группировки нет.")
 
@@ -621,9 +1097,25 @@ def _build_node_artifacts(
     report_lines.extend(
         [
             "",
-            "## Графики",
+            "## Executive summary",
+            f"- лучший сегмент по objective: **{decision['top_by_objective'] or 'N/A'}**",
+            f"- лучший сегмент по validation gain: **{decision['top_by_gain'] or 'N/A'}**",
+            f"- statistically significant пар: **{decision['significant_pairs']}**",
+            f"- кандидаты на adoption: **{', '.join(decision['adopt']) if decision['adopt'] else 'нет'}**",
+            f"- кандидаты под наблюдение: **{', '.join(decision['watch']) if decision['watch'] else 'нет'}**",
+            f"- кандидаты на понижение приоритета: **{', '.join(decision['deprioritize']) if decision['deprioritize'] else 'нет'}**",
         ]
     )
+
+    if comparison_rows and len(comparison_rows) > options.max_series_per_plot:
+        report_lines.append(
+            f"- графики ограничены top-{options.max_series_per_plot} группами по run_count для снижения визуального шума"
+        )
+
+    report_lines.extend([
+        "",
+        "## Графики",
+    ])
 
     if plots:
         for _, path in plots.items():
@@ -635,37 +1127,24 @@ def _build_node_artifacts(
     else:
         report_lines.append("- Нет доступных графиков для текущей области.")
 
-    report_lines.extend(
-        [
-            "",
-            "## Таблицы",
-            "",
-        ]
-    )
+    report_lines.extend([
+        "",
+        "## Таблицы",
+        "",
+    ])
 
-    table_configs = [
-        {"file": f"tables/{runs_table.name}"},
-        {"file": f"tables/{summary_table.name}"},
-    ]
-    if comparisons_table:
-        table_configs.append({"file": f"tables/{comparisons_table.name}"})
+    table_configs = [{"file": f"tables/{path.name}"} for _, path in tables.items()]
     data_tables = json.dumps(table_configs, ensure_ascii=False)
     loader_src = _tables_loader_src(node_dir)
 
-    report_lines.extend(
-        [
-            f"<div id=\"tables-container\" data-tables='{data_tables}'></div>",
-            "",
-            f"<script src=\"{loader_src}\"></script>",
-        ]
-    )
+    report_lines.extend([
+        f"<div id=\"tables-container\" data-tables='{data_tables}'></div>",
+        "",
+        f"<script src=\"{loader_src}\"></script>",
+    ])
 
     report_file.write_text("\n".join(report_lines) + "\n", encoding="utf-8")
-
-    tables = {"runs": runs_table, "summary": summary_table}
-    if comparisons_table:
-        tables[f"compare_by_{next_dimension}"] = comparisons_table
-    return NodeArtifacts(report_file=report_file, tables=tables, plots=plots)
+    return NodeArtifacts(report_file=report_file, tables=tables, plots=plots, decision_summary=decision)
 
 
 def _render_node_tree(
@@ -677,8 +1156,9 @@ def _render_node_tree(
     threshold: float,
     plt: Any,
     manifest_entries: list[dict[str, Any]],
+    options: AnalysisOptions,
 ) -> None:
-    level_index = max(0, node.level - 1)
+    level_index = node.level
     next_dimension = group_by[level_index] if level_index < len(group_by) else None
 
     artifacts = _build_node_artifacts(
@@ -688,16 +1168,26 @@ def _render_node_tree(
         threshold=threshold,
         next_dimension=next_dimension,
         plt=plt,
+        options=options,
     )
 
     manifest_entries.append(
         {
             "analysis_level": _node_heading(node),
+            "group_key": node.key,
+            "group_value": node.value,
+            "parent_path": _project_relative(node_dir.parent) if node.level > 0 else None,
             "level": node.level,
             "runs": len(node.runs),
-            "report": str(artifacts.report_file),
-            "tables": {name: str(path) for name, path in artifacts.tables.items()},
-            "plots": {name: str(path) for name, path in artifacts.plots.items()},
+            "report": _project_relative(artifacts.report_file),
+            "tables": {name: _project_relative(path) for name, path in artifacts.tables.items()},
+            "plots": {name: _project_relative(path) for name, path in artifacts.plots.items()},
+            "artifacts_by_type": {
+                "reports": [_project_relative(artifacts.report_file)],
+                "tables": [_project_relative(path) for path in artifacts.tables.values()],
+                "plots": [_project_relative(path) for path in artifacts.plots.values()],
+            },
+            "decision_summary": artifacts.decision_summary,
         }
     )
 
@@ -716,6 +1206,7 @@ def _render_node_tree(
             threshold=threshold,
             plt=plt,
             manifest_entries=manifest_entries,
+            options=options,
         )
 
 
@@ -762,26 +1253,41 @@ def run_analysis(
         threshold=threshold,
         plt=plt,
         manifest_entries=manifest_entries,
+        options=options,
     )
 
+    validation_runs = sum(1 for run in runs if run.validation_file is not None)
+
     summary = {
+        "schema_version": "2.0",
         "group_by": list(group_by),
         "total_runs": len(runs),
         "total_groups": len(manifest_entries),
         "threshold": threshold,
+        "generated_at_utc": utc_timestamp(),
+        "coverage": {
+            "datasets": len({run.dataset for run in runs}),
+            "methods": len({run.method for run in runs}),
+            "seeds": len({str(run.seed) for run in runs}),
+            "validation_coverage_share": validation_runs / len(runs) if runs else 0.0,
+            "nodes_with_plots_share": (sum(1 for node in manifest_entries if node.get("plots")) / len(manifest_entries)) if manifest_entries else 0.0,
+        },
         "analysis_run": {
             "input_entries": input_entries,
-            "include_paths": [str(path) for path in effective_input_paths],
+            "include_paths": [_project_relative(path) for path in effective_input_paths],
             "exclude_rules": exclude_entries,
-            "experiments_root": str(experiments_root),
+            "experiments_root": _project_relative(experiments_root),
             "auto_grouping": options.auto_grouping,
             "resolved_group_by": list(group_by),
             "success_threshold": options.success_threshold,
             "max_eval_points": options.max_eval_points,
             "max_time_points": options.max_time_points,
-            "discovered_run_files_before_exclusions": [str(path) for path in discovered_files],
-            "discovered_run_files": [str(path) for path in run_files],
-            "output_dir": str(output_dir),
+            "max_series_per_plot": options.max_series_per_plot,
+            "bootstrap_iterations": options.bootstrap_iterations,
+            "alpha": options.alpha,
+            "discovered_run_files_before_exclusions": [_project_relative(path) for path in discovered_files],
+            "discovered_run_files": [_project_relative(path) for path in run_files],
+            "output_dir": _project_relative(output_dir),
         },
         "nodes": manifest_entries,
     }
