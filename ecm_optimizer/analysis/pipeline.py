@@ -490,6 +490,28 @@ def _plot_convergence_ribbons(plt: Any, traces: dict[str, list[list[tuple[int, f
     plt.close()
 
 
+def _plot_run_objectives(plt: Any, values: list[float], title: str, out_file: Path) -> None:
+    plt.figure(figsize=(8, 5))
+    xs = list(range(1, len(values) + 1))
+    plt.plot(xs, values, marker="o", linewidth=1.0)
+    plt.title(title)
+    plt.xlabel("Run index")
+    plt.ylabel("Final objective")
+    plt.grid(alpha=0.3)
+    plt.tight_layout()
+    plt.savefig(out_file, dpi=160)
+    plt.close()
+
+
+def _method_objectives_by_subgroup(runs: list[RunRecord], subgroup_key: str) -> dict[str, dict[str, list[float]]]:
+    result: dict[str, dict[str, list[float]]] = {}
+    for run in runs:
+        subgroup = _dimension_value(run, subgroup_key)
+        methods = result.setdefault(subgroup, {})
+        methods.setdefault(run.method, []).append(run.final_objective)
+    return result
+
+
 def _node_heading(node: GroupNode) -> str:
     if node.key == "root":
         return "overview"
@@ -1002,6 +1024,41 @@ def _build_node_artifacts(
                 _plot_convergence_ribbons(plt, convergence_traces, "Convergence ribbons (top-3)", ribbons_plot)
                 plots["convergence_ribbons_top3_methods"] = ribbons_plot
 
+    if plt is not None:
+        # Method-level comparisons on every hierarchy level for better readability.
+        method_partitions = _partition_runs(node.runs, "method")
+        if len(method_partitions) > 1:
+            method_labels = sorted(method_partitions)
+            method_values = [[run.final_objective for run in method_partitions[label]] for label in method_labels]
+            method_plot = plots_dir / "final_objective_by_method_overall.png"
+            _plot_boxplot(plt, method_labels, method_values, "Final objective by method (overall)", method_plot)
+            plots["final_objective_by_method_overall"] = method_plot
+
+        if node.key == "root":
+            subgroup_dim = "divisor_size"
+        elif node.key == "divisor_size":
+            subgroup_dim = "dataset"
+        else:
+            subgroup_dim = None
+
+        if subgroup_dim:
+            subgroup_map = _method_objectives_by_subgroup(node.runs, subgroup_dim)
+            for subgroup, method_map in sorted(subgroup_map.items()):
+                if len(method_map) <= 1:
+                    continue
+                labels = sorted(method_map)
+                values = [method_map[label] for label in labels]
+                split_plot = plots_dir / f"final_objective_by_method_{subgroup_dim}={_safe_slug(subgroup)}.png"
+                _plot_boxplot(plt, labels, values, f"Method comparison ({subgroup_dim}={subgroup})", split_plot)
+                plots[f"final_objective_by_method_{subgroup_dim}={subgroup}"] = split_plot
+
+        if node.key in {"method", "seed"} and len(node.runs) > 1:
+            sorted_runs = sorted(node.runs, key=lambda run: (run.dataset, str(run.seed), run.run_file.name))
+            run_values = [run.final_objective for run in sorted_runs]
+            runs_plot = plots_dir / "final_objective_by_run_index.png"
+            _plot_run_objectives(plt, run_values, "Final objective by run index", runs_plot)
+            plots["final_objective_by_run_index"] = runs_plot
+
     decision = _decision_summary(comparison_rows, pairwise_rows)
 
     report_file = node_dir / "report.md"
@@ -1016,7 +1073,7 @@ def _build_node_artifacts(
         report_lines.append("- Переход на нижний уровень:")
         for child in node.children.values():
             child_slug = _safe_slug(f"{child.key}={child.value}")
-            report_lines.append(f"  - [{child.key}={child.value}](groups/{child_slug}/report.md)")
+            report_lines.append(f"  - [{child.key}={child.value}](groups/{child_slug}/report.md) ({len(child.runs)} runs)")
     else:
         report_lines.append("- Нижних уровней группировки нет.")
 
@@ -1054,32 +1111,6 @@ def _build_node_artifacts(
         report_lines.append(
             f"- графики ограничены top-{options.max_series_per_plot} группами по run_count для снижения визуального шума"
         )
-
-    report_lines.extend(
-        [
-            "",
-            "## Key child reports",
-        ]
-    )
-    if node.children:
-        child_candidates = sorted(node.children.values(), key=lambda child: len(child.runs), reverse=True)[:5]
-        for child in child_candidates:
-            child_slug = _safe_slug(f"{child.key}={child.value}")
-            report_lines.append(f"- [{child.key}={child.value}](groups/{child_slug}/report.md) — runs: {len(child.runs)}")
-    else:
-        report_lines.append("- Нет дочерних отчётов.")
-
-    report_lines.extend(
-        [
-            "",
-            "## Raw data appendix",
-            "- [runs.csv](tables/runs.csv)",
-            "- [summary.csv](tables/summary.csv)",
-        ]
-    )
-    if next_dimension:
-        report_lines.append(f"- [compare_by_{next_dimension}.csv](tables/compare_by_{next_dimension}.csv)")
-        report_lines.append(f"- [pairwise_significance_by_{next_dimension}.csv](tables/pairwise_significance_by_{next_dimension}.csv)")
 
     report_lines.extend([
         "",
@@ -1127,7 +1158,7 @@ def _render_node_tree(
     manifest_entries: list[dict[str, Any]],
     options: AnalysisOptions,
 ) -> None:
-    level_index = max(0, node.level - 1)
+    level_index = node.level
     next_dimension = group_by[level_index] if level_index < len(group_by) else None
 
     artifacts = _build_node_artifacts(

@@ -65,6 +65,7 @@ def analyze_command(
     normalized_group_by = tuple(item.lower() for item in group_by)
     if not auto_grouping and not normalized_group_by:
         raise click.ClickException("Укажите --group-by ... или включите --auto-grouping.")
+    resolved_auto_grouping = auto_grouping and not normalized_group_by
 
     resolved_output_dir = output_dir or ensure_dir(DATA_DIR / "analysis" / f"analyze_{utc_timestamp()}")
 
@@ -77,7 +78,7 @@ def analyze_command(
             max_eval_points=max_eval_points,
             max_time_points=max_time_points,
             group_by=normalized_group_by,
-            auto_grouping=auto_grouping,
+            auto_grouping=resolved_auto_grouping,
             max_series_per_plot=max_series_per_plot,
             bootstrap_iterations=bootstrap_iterations,
             alpha=alpha,
