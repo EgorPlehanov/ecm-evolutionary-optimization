@@ -5,7 +5,7 @@ from typing import Iterable
 
 from scipy.optimize import differential_evolution
 
-from ecm_optimizer.core.fitness import fitness_expected_time
+from ecm_optimizer.core.fitness import fitness_expected_time_with_stats
 from ecm_optimizer.models import OptimizationConfig, OptimizationResult
 from ecm_optimizer.optimizers.base import Optimizer
 from ecm_optimizer.optimizers.heuristic_common import ProgressTracker, decode_candidate
@@ -37,7 +37,7 @@ class DifferentialEvolutionOptimizer(Optimizer):
             nonlocal objective_calls
             objective_calls += 1
             b1, b2 = decode_candidate((x[0], x[1]), config=config)
-            value = fitness_expected_time(
+            value, successes = fitness_expected_time_with_stats(
                 ecm_bin=ecm_bin,
                 numbers=numbers,
                 b1=b1,
@@ -47,7 +47,7 @@ class DifferentialEvolutionOptimizer(Optimizer):
                 workers=config.workers,
             )
             progress.eval_count = objective_calls - 1
-            progress.on_evaluation(config=config, x_log=(x[0], x[1]), score=value)
+            progress.on_evaluation(config=config, x_log=(x[0], x[1]), score=value, successes=successes)
             progress.on_new_best(config=config, x_log=(x[0], x[1]), score=value, eval_id=progress.eval_count)
             return value
 
