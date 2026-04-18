@@ -25,6 +25,13 @@ class DifferentialEvolutionOptimizer(Optimizer):
         numbers = list(numbers)
         objective_calls = 0
         progress = ProgressTracker(method="de")
+        progress.log_step(
+            config=config,
+            message=(
+                f"numbers={len(numbers)} curves_per_n={config.curves_per_n} "
+                f"popsize={popsize} maxiter={maxiter} workers={config.workers}"
+            ),
+        )
 
         if config.verbose:
             print(
@@ -51,6 +58,18 @@ class DifferentialEvolutionOptimizer(Optimizer):
             progress.on_new_best(config=config, x_log=(x[0], x[1]), score=value, eval_id=progress.eval_count)
             return value
 
+        generation = 0
+
+        def on_iteration(*args: object, **kwargs: object) -> bool:
+            nonlocal generation
+            generation += 1
+            best_fitness = progress.best_score if progress.best_score is not None else float("nan")
+            progress.log_step(
+                config=config,
+                message=f"generation={generation}/{maxiter} best_fitness={best_fitness}",
+            )
+            return False
+
         result = differential_evolution(
             objective,
             bounds=[(low1, high1), (low2, high2)],
@@ -60,6 +79,7 @@ class DifferentialEvolutionOptimizer(Optimizer):
             mutation=(0.5, 0.9),
             recombination=0.8,
             seed=get_seed(config.seed, "differential-evolution"),
+            callback=on_iteration,
             polish=False,
             disp=config.verbose,
         )
