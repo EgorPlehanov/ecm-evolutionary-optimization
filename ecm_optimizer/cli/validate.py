@@ -1,6 +1,8 @@
 from __future__ import annotations
 
+import re
 from pathlib import Path
+from typing import Any
 
 import click
 
@@ -22,6 +24,115 @@ def _parse_target_digits(dataset_path: Path, fallback: int | None = None) -> int
         return int(raw)
     except ValueError:
         return fallback
+
+
+def _load_matplotlib_pyplot() -> Any | None:
+    try:
+        import matplotlib
+
+        matplotlib.use("Agg")
+        import matplotlib.pyplot as plt
+
+        return plt
+    except ModuleNotFoundError:
+        return None
+
+
+def _extract_run_timestamp(file_stem: str) -> str:
+    match = re.search(r"(\d{8}T\d{6}Z)$", file_stem)
+    if match:
+        return match.group(1)
+    return utc_timestamp()
+
+
+def _build_validation_trace_plot(out_file: Path, trace_points: list[dict[str, Any]]) -> Path | None:
+    plt = _load_matplotlib_pyplot()
+    if plt is None or not trace_points:
+        return None
+
+    plots_dir = ensure_dir(out_file.parent / "plots")
+    plot_file = plots_dir / f"{out_file.stem}_trace.png"
+
+    x_idx = list(range(1, len(trace_points) + 1))
+    optimized = [float(point.get("optimized_expected_time", 0.0)) for point in trace_points]
+    baseline = [float(point.get("baseline_expected_time", 0.0)) for point in trace_points]
+    delta_pct = [float(point.get("delta_pct", 0.0)) for point in trace_points]
+
+    fig, ax_left = plt.subplots(figsize=(11, 5))
+    ax_left.plot(x_idx, baseline, color="tab:blue", linewidth=1.6, label="baseline_expected_time")
+    ax_left.plot(x_idx, optimized, color="tab:green", linewidth=1.6, label="optimized_expected_time")
+    ax_left.set_xlabel("Validation point index")
+    ax_left.set_ylabel("Expected time")
+    ax_left.set_title("Validation trace: baseline vs optimized")
+    ax_left.grid(alpha=0.3)
+
+    ax_right = ax_left.twinx()
+    ax_right.plot(x_idx, delta_pct, color="tab:orange", linewidth=1.2, alpha=0.75, label="delta_pct")
+    ax_right.set_ylabel("Delta, %")
+
+    handles_left, labels_left = ax_left.get_legend_handles_labels()
+    handles_right, labels_right = ax_right.get_legend_handles_labels()
+    ax_left.legend(handles_left + handles_right, labels_left + labels_right, loc="best")
+
+    fig.tight_layout()
+    fig.savefig(plot_file, dpi=140)
+    plt.close(fig)
+    return plot_file
+
+
+def _append_validation_section(
+    report_file: Path,
+    *,
+    out_file: Path,
+    payload: dict[str, Any],
+    trace_plot_file: Path | None,
+) -> None:
+    report_file.parent.mkdir(parents=True, exist_ok=True)
+    has_validation_section = False
+    if report_file.exists():
+        current = report_file.read_text(encoding="utf-8")
+        has_validation_section = "\n## Validation runs\n" in current or current.startswith("## Validation runs\n")
+        lines: list[str] = [current.rstrip(), ""]
+    else:
+        lines = [f"# Validation report: {report_file.stem}", ""]
+
+    report_dir = report_file.parent
+    rel_validate = out_file.relative_to(report_dir)
+    validate_link = f"[`{rel_validate.name}`]({rel_validate.as_posix()})"
+
+    metrics = payload.get("metrics", {})
+    optimized_meta = payload.get("optimized", {})
+    baseline_meta = payload.get("baseline", {})
+    run_ts = _extract_run_timestamp(out_file.stem)
+
+    section_prefix = ["## Validation runs", ""] if not has_validation_section else []
+
+    lines.extend(
+        section_prefix
+        + [
+            f"### Validation run `{run_ts}`",
+            f"- validation file: {validate_link}",
+            f"- dataset: `{payload.get('dataset')}`",
+            f"- method: `{optimized_meta.get('method')}`",
+            f"- optimized params: `(B1, B2)=({optimized_meta.get('b1')}, {optimized_meta.get('b2')})`",
+            f"- baseline params: `(B1, B2)=({baseline_meta.get('b1')}, {baseline_meta.get('b2')})`",
+            f"- curves_per_n: `{payload.get('curves_per_n')}`",
+            f"- curve_timeout_sec: `{payload.get('curve_timeout_sec')}`",
+            f"- workers: `{payload.get('workers')}`",
+            f"- seed: `{payload.get('seed')}`",
+            f"- optimized_mean: `{metrics.get('optimized_mean')}`",
+            f"- baseline_mean: `{metrics.get('baseline_mean')}`",
+            f"- relative_improvement_pct: `{metrics.get('relative_improvement_pct')}`",
+        ]
+    )
+
+    if trace_plot_file is not None:
+        rel_plot = trace_plot_file.relative_to(report_dir)
+        lines.append(f"- trace plot: [`{rel_plot.name}`]({rel_plot.as_posix()})")
+        lines.append(f"![validation-trace]({rel_plot.as_posix()})")
+
+    lines.extend(["", "---", ""])
+    report_file.write_text("\n".join(lines), encoding="utf-8")
 
 
 
@@ -190,6 +301,23 @@ def validate_command(
             "baseline_mean": summary.baseline_mean,
             "relative_improvement_pct": summary.relative_improvement_pct,
         },
+        "trace": {
+            "by_number": list(summary.trace_by_number),
+        },
     }
     write_json_with_meta(out_file, payload, command="validate")
+
+    trace_plot_file = _build_validation_trace_plot(out_file, payload["trace"]["by_number"])
+    if resolved_opt_result_file is not None:
+        report_file = resolved_opt_result_file.with_name(f"{resolved_opt_result_file.stem}_report.md")
+    else:
+        report_file = out_file.with_name(f"validate_{_extract_run_timestamp(out_file.stem)}_report.md")
+    _append_validation_section(
+        report_file,
+        out_file=out_file,
+        payload=payload,
+        trace_plot_file=trace_plot_file,
+    )
+
     click.echo(f"result_file: {out_file}")
+    click.echo(f"report_file: {report_file}")
