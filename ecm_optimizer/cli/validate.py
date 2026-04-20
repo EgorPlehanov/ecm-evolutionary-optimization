@@ -190,6 +190,9 @@ def validate_command(
             "baseline_mean": summary.baseline_mean,
             "relative_improvement_pct": summary.relative_improvement_pct,
         },
+        "trace": {
+            "by_number": list(summary.trace_by_number),
+        },
     }
     write_json_with_meta(out_file, payload, command="validate")
     click.echo(f"result_file: {out_file}")
