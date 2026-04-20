@@ -1,0 +1,743 @@
+{
+  "analysis_files": {
+    "events_csv": "data/experiments/20_dset_20260420T151523Z/bo/optimize_20260420T151738Z/tables/bo_optimize_20260420T151738Z_events.csv",
+    "new_best_csv": "data/experiments/20_dset_20260420T151523Z/bo/optimize_20260420T151738Z/tables/bo_optimize_20260420T151738Z_new_best.csv",
+    "phase_summary_csv": "data/experiments/20_dset_20260420T151523Z/bo/optimize_20260420T151738Z/tables/bo_optimize_20260420T151738Z_phase_summary.csv",
+    "report_md": "data/experiments/20_dset_20260420T151523Z/bo/optimize_20260420T151738Z/bo_optimize_20260420T151738Z_report.md",
+    "run_summary_csv": "data/experiments/20_dset_20260420T151523Z/bo/optimize_20260420T151738Z/tables/bo_optimize_20260420T151738Z_run_summary.csv"
+  },
+  "attention_flags": {
+    "b1_hits_boundary": {
+      "action": "Расширить диапазон B1, если упор в границу повторяется.",
+      "description": "Большая доля оценок проходит близко к границам B1.",
+      "severity": "ok",
+      "threshold": "> 0.10",
+      "triggered": false,
+      "value": 0.07894736842105263
+    },
+    "b2_hits_boundary": {
+      "action": "Расширить диапазон B2, если упор в границу повторяется.",
+      "description": "Большая доля оценок проходит близко к границам B2.",
+      "severity": "ok",
+      "threshold": "> 0.10",
+      "triggered": false,
+      "value": 0.0
+    },
+    "best_b1_on_boundary": {
+      "action": "Проверить расширенный диапазон B1 вокруг текущей границы.",
+      "description": "Лучший найденный B1 лежит на границе диапазона.",
+      "severity": "ok",
+      "threshold": "within 2% of log-range [100.0, 30000.0]",
+      "triggered": false,
+      "value": 191.0
+    },
+    "best_b2_on_boundary": {
+      "action": "Проверить расширенный диапазон B2 вокруг текущей границы.",
+      "description": "Лучший найденный B2 лежит на границе диапазона.",
+      "severity": "ok",
+      "threshold": "within 2% of log-range [100.0, 600000.0]",
+      "triggered": false,
+      "value": 1005.0
+    },
+    "best_ratio_on_boundary": {
+      "action": "Увеличить ratio_max и перепроверить локальный поиск в новой области.",
+      "description": "Лучшее отношение B2/B1 находится у верхней границы ratio_max.",
+      "severity": "ok",
+      "threshold": "within 2% of log-range up to ratio_max=100.0",
+      "triggered": false,
+      "value": 5.261780104712042
+    },
+    "late_best": {
+      "action": "Усилить ранний поиск или пересмотреть бюджет/инициализацию.",
+      "description": "Лучшее решение найдено слишком поздно относительно общего времени.",
+      "severity": "medium",
+      "threshold": "> 0.85",
+      "triggered": true,
+      "value": 0.9613328043268512
+    },
+    "low_improvement": {
+      "action": "Сузить границы поиска или изменить параметры метода.",
+      "description": "Итоговый прирост качества слишком мал.",
+      "severity": "ok",
+      "threshold": "< 10%",
+      "triggered": false,
+      "value": 25.374263523105267
+    },
+    "low_signal": {
+      "action": "Перенастроить exploration и сделать переоценку top-k кандидатов.",
+      "description": "Слишком низкая плотность новых best-событий (слабый сигнал оптимизации).",
+      "severity": "ok",
+      "threshold": "< 0.03",
+      "triggered": false,
+      "value": 0.13157894736842105
+    },
+    "plateau_too_long": {
+      "action": "Увеличить exploration или добавить политику рестартов.",
+      "description": "Слишком длинное плато: улучшений почти нет на большом участке запуска.",
+      "severity": "high",
+      "threshold": "> 0.50",
+      "triggered": true,
+      "value": 0.6842105263157895
+    },
+    "ratio_hits_boundary": {
+      "action": "Увеличить ratio_max, если хорошие точки упираются в ограничение отношения B2/B1.",
+      "description": "Большая доля оценок проходит близко к границе отношения B2/B1.",
+      "severity": "medium",
+      "threshold": "> 0.10",
+      "triggered": true,
+      "value": 0.5263157894736842
+    }
+  },
+  "command": "optimize",
+  "config": {
+    "b1_max": 30000.0,
+    "b1_min": 100.0,
+    "b2_max": 600000.0,
+    "b2_min": 100.0,
+    "curve_timeout_sec": null,
+    "curves_per_n": 12,
+    "method": "bo",
+    "method_params": {
+      "candidate_pool": 2500,
+      "initial_samples": 16,
+      "iterations": 22
+    },
+    "ratio_max": 100.0,
+    "seed": 42,
+    "workers": 12
+  },
+  "dataset": "data/numbers/20_dset_20260420T151523Z/train.json",
+  "dataset_target_digits": 20,
+  "ecm_bin": "ecm",
+  "optimization_trace": [
+    {
+      "elapsed_sec": 4.49800018031965e-06,
+      "eval": 0,
+      "kind": "step",
+      "message": "numbers=20 curves_per_n=12 initial_samples=16 iterations=22 candidate_pool=2500 workers=12",
+      "timestamp_utc": "2026-04-20T15:17:26.304106+00:00"
+    },
+    {
+      "b1": 334,
+      "b2": 8651,
+      "elapsed_sec": 0.21006142000032924,
+      "eval": 1,
+      "fitness": 0.6977367454994692,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:26.514170+00:00"
+    },
+    {
+      "b1": 334,
+      "b2": 8651,
+      "elapsed_sec": 0.2101147360003779,
+      "eval": 1,
+      "fitness": 0.6977367454994692,
+      "kind": "new_best",
+      "timestamp_utc": "2026-04-20T15:17:26.514215+00:00"
+    },
+    {
+      "b1": 13682,
+      "b2": 304619,
+      "elapsed_sec": 0.8354352250003103,
+      "eval": 2,
+      "fitness": 2.8651365309997345,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:27.139543+00:00"
+    },
+    {
+      "b1": 4194,
+      "b2": 19376,
+      "elapsed_sec": 1.1215526740002133,
+      "eval": 3,
+      "fitness": 1.076781319948077,
+      "kind": "evaluation",
+      "successes": 1,
+      "timestamp_utc": "2026-04-20T15:17:27.425660+00:00"
+    },
+    {
+      "b1": 845,
+      "b2": 845,
+      "elapsed_sec": 1.3146385830000327,
+      "eval": 4,
+      "fitness": 0.6358976265005367,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:27.618746+00:00"
+    },
+    {
+      "b1": 845,
+      "b2": 845,
+      "elapsed_sec": 1.3146915190000072,
+      "eval": 4,
+      "fitness": 0.6358976265005367,
+      "kind": "new_best",
+      "timestamp_utc": "2026-04-20T15:17:27.618792+00:00"
+    },
+    {
+      "b1": 206,
+      "b2": 20600,
+      "elapsed_sec": 1.5328630330000124,
+      "eval": 5,
+      "fitness": 0.7799019159988347,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:27.836971+00:00"
+    },
+    {
+      "b1": 24757,
+      "b2": 24757,
+      "elapsed_sec": 2.2128528070002176,
+      "eval": 6,
+      "fitness": 3.107713756999374,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:28.516960+00:00"
+    },
+    {
+      "b1": 2927,
+      "b2": 2927,
+      "elapsed_sec": 2.426356887000111,
+      "eval": 7,
+      "fitness": 0.7816936604974671,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:30.412782+00:00"
+    },
+    {
+      "b1": 864,
+      "b2": 864,
+      "elapsed_sec": 2.59955981100029,
+      "eval": 8,
+      "fitness": 0.5691639834992657,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:30.585985+00:00"
+    },
+    {
+      "b1": 864,
+      "b2": 864,
+      "elapsed_sec": 2.5996148460003496,
+      "eval": 8,
+      "fitness": 0.5691639834992657,
+      "kind": "new_best",
+      "timestamp_utc": "2026-04-20T15:17:30.586035+00:00"
+    },
+    {
+      "b1": 501,
+      "b2": 50100,
+      "elapsed_sec": 2.8722309230001883,
+      "eval": 9,
+      "fitness": 1.0533492770016437,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:30.858656+00:00"
+    },
+    {
+      "b1": 386,
+      "b2": 9479,
+      "elapsed_sec": 3.069335902000148,
+      "eval": 10,
+      "fitness": 0.6978617400000076,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:31.055762+00:00"
+    },
+    {
+      "b1": 2229,
+      "b2": 2229,
+      "elapsed_sec": 3.3540358519999245,
+      "eval": 11,
+      "fitness": 1.072605747500802,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:31.340463+00:00"
+    },
+    {
+      "b1": 12864,
+      "b2": 12864,
+      "elapsed_sec": 3.786653729000136,
+      "eval": 12,
+      "fitness": 1.8521000825003284,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:31.773079+00:00"
+    },
+    {
+      "b1": 198,
+      "b2": 3516,
+      "elapsed_sec": 3.9663255210002717,
+      "eval": 13,
+      "fitness": 0.5904758560020582,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:31.952751+00:00"
+    },
+    {
+      "b1": 157,
+      "b2": 14965,
+      "elapsed_sec": 4.250201638000362,
+      "eval": 14,
+      "fitness": 1.0220765584999754,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:32.236628+00:00"
+    },
+    {
+      "b1": 4095,
+      "b2": 4095,
+      "elapsed_sec": 4.573370358000375,
+      "eval": 15,
+      "fitness": 1.2306551219994617,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:32.559797+00:00"
+    },
+    {
+      "b1": 3549,
+      "b2": 3549,
+      "elapsed_sec": 4.8504302559999815,
+      "eval": 16,
+      "fitness": 1.0446656714996152,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:32.836856+00:00"
+    },
+    {
+      "elapsed_sec": 4.8504907950000415,
+      "eval": 16,
+      "kind": "step",
+      "message": "initial_design_completed points=16",
+      "timestamp_utc": "2026-04-20T15:17:32.836910+00:00"
+    },
+    {
+      "b1": 337,
+      "b2": 33700,
+      "elapsed_sec": 5.0948499529999935,
+      "eval": 17,
+      "fitness": 0.7853671959996973,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:33.081275+00:00"
+    },
+    {
+      "elapsed_sec": 5.09495170900027,
+      "eval": 17,
+      "kind": "step",
+      "message": "iteration=1/22 best_fitness=0.5691639834992657",
+      "timestamp_utc": "2026-04-20T15:17:33.081372+00:00"
+    },
+    {
+      "b1": 856,
+      "b2": 85600,
+      "elapsed_sec": 5.393761411000014,
+      "eval": 18,
+      "fitness": 0.96821918500018,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:33.380187+00:00"
+    },
+    {
+      "elapsed_sec": 5.393848977000289,
+      "eval": 18,
+      "kind": "step",
+      "message": "iteration=2/22 best_fitness=0.5691639834992657",
+      "timestamp_utc": "2026-04-20T15:17:33.380268+00:00"
+    },
+    {
+      "b1": 1510,
+      "b2": 151000,
+      "elapsed_sec": 5.690880138000011,
+      "eval": 19,
+      "fitness": 1.0499241729987716,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:33.677305+00:00"
+    },
+    {
+      "elapsed_sec": 5.6909641150000425,
+      "eval": 19,
+      "kind": "step",
+      "message": "iteration=3/22 best_fitness=0.5691639834992657",
+      "timestamp_utc": "2026-04-20T15:17:33.677384+00:00"
+    },
+    {
+      "b1": 776,
+      "b2": 937,
+      "elapsed_sec": 5.974079141999937,
+      "eval": 20,
+      "fitness": 0.9414165344994672,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:33.960505+00:00"
+    },
+    {
+      "elapsed_sec": 5.97428674899993,
+      "eval": 20,
+      "kind": "step",
+      "message": "iteration=4/22 best_fitness=0.5691639834992657",
+      "timestamp_utc": "2026-04-20T15:17:33.960707+00:00"
+    },
+    {
+      "b1": 2545,
+      "b2": 254500,
+      "elapsed_sec": 6.4087927610003135,
+      "eval": 21,
+      "fitness": 1.5603417145489176,
+      "kind": "evaluation",
+      "successes": 1,
+      "timestamp_utc": "2026-04-20T15:17:34.395220+00:00"
+    },
+    {
+      "elapsed_sec": 6.408921134000138,
+      "eval": 21,
+      "kind": "step",
+      "message": "iteration=5/22 best_fitness=0.5691639834992657",
+      "timestamp_utc": "2026-04-20T15:17:34.395341+00:00"
+    },
+    {
+      "b1": 5294,
+      "b2": 13325,
+      "elapsed_sec": 6.77383524600009,
+      "eval": 22,
+      "fitness": 1.3825859904995923,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:34.760261+00:00"
+    },
+    {
+      "elapsed_sec": 6.773944713000219,
+      "eval": 22,
+      "kind": "step",
+      "message": "iteration=6/22 best_fitness=0.5691639834992657",
+      "timestamp_utc": "2026-04-20T15:17:34.760364+00:00"
+    },
+    {
+      "b1": 850,
+      "b2": 850,
+      "elapsed_sec": 7.0196477360000245,
+      "eval": 23,
+      "fitness": 0.709657668500995,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:35.006073+00:00"
+    },
+    {
+      "elapsed_sec": 7.019739385000321,
+      "eval": 23,
+      "kind": "step",
+      "message": "iteration=7/22 best_fitness=0.5691639834992657",
+      "timestamp_utc": "2026-04-20T15:17:35.006159+00:00"
+    },
+    {
+      "b1": 858,
+      "b2": 858,
+      "elapsed_sec": 7.229134294000232,
+      "eval": 24,
+      "fitness": 0.6355772950000755,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:35.215559+00:00"
+    },
+    {
+      "elapsed_sec": 7.229227754000021,
+      "eval": 24,
+      "kind": "step",
+      "message": "iteration=8/22 best_fitness=0.5691639834992657",
+      "timestamp_utc": "2026-04-20T15:17:35.215647+00:00"
+    },
+    {
+      "b1": 7459,
+      "b2": 7459,
+      "elapsed_sec": 7.578357573000176,
+      "eval": 25,
+      "fitness": 1.2499442838984123,
+      "kind": "evaluation",
+      "successes": 1,
+      "timestamp_utc": "2026-04-20T15:17:35.564783+00:00"
+    },
+    {
+      "elapsed_sec": 7.5785304380001435,
+      "eval": 25,
+      "kind": "step",
+      "message": "iteration=9/22 best_fitness=0.5691639834992657",
+      "timestamp_utc": "2026-04-20T15:17:35.564950+00:00"
+    },
+    {
+      "b1": 999,
+      "b2": 999,
+      "elapsed_sec": 7.826106288000119,
+      "eval": 26,
+      "fitness": 0.807998684500717,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:35.812532+00:00"
+    },
+    {
+      "elapsed_sec": 7.8262086380000255,
+      "eval": 26,
+      "kind": "step",
+      "message": "iteration=10/22 best_fitness=0.5691639834992657",
+      "timestamp_utc": "2026-04-20T15:17:35.812628+00:00"
+    },
+    {
+      "b1": 184,
+      "b2": 3853,
+      "elapsed_sec": 8.028324929000064,
+      "eval": 27,
+      "fitness": 0.590950599498683,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:36.014750+00:00"
+    },
+    {
+      "elapsed_sec": 8.02847775400005,
+      "eval": 27,
+      "kind": "step",
+      "message": "iteration=11/22 best_fitness=0.5691639834992657",
+      "timestamp_utc": "2026-04-20T15:17:36.014898+00:00"
+    },
+    {
+      "b1": 990,
+      "b2": 6078,
+      "elapsed_sec": 8.254508286000146,
+      "eval": 28,
+      "fitness": 0.6795570130002488,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:36.240934+00:00"
+    },
+    {
+      "elapsed_sec": 8.254618654000296,
+      "eval": 28,
+      "kind": "step",
+      "message": "iteration=12/22 best_fitness=0.5691639834992657",
+      "timestamp_utc": "2026-04-20T15:17:36.241038+00:00"
+    },
+    {
+      "b1": 137,
+      "b2": 4142,
+      "elapsed_sec": 8.460108797999965,
+      "eval": 29,
+      "fitness": 0.5803168849997746,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:36.446533+00:00"
+    },
+    {
+      "elapsed_sec": 8.460208334000072,
+      "eval": 29,
+      "kind": "step",
+      "message": "iteration=13/22 best_fitness=0.5691639834992657",
+      "timestamp_utc": "2026-04-20T15:17:36.446628+00:00"
+    },
+    {
+      "b1": 100,
+      "b2": 5728,
+      "elapsed_sec": 8.663003654000022,
+      "eval": 30,
+      "fitness": 0.6101142290001462,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:36.649429+00:00"
+    },
+    {
+      "elapsed_sec": 8.663193332999981,
+      "eval": 30,
+      "kind": "step",
+      "message": "iteration=14/22 best_fitness=0.5691639834992657",
+      "timestamp_utc": "2026-04-20T15:17:36.649613+00:00"
+    },
+    {
+      "b1": 153,
+      "b2": 6902,
+      "elapsed_sec": 8.876833402000102,
+      "eval": 31,
+      "fitness": 0.6146511614999781,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:36.863259+00:00"
+    },
+    {
+      "elapsed_sec": 8.876946437000242,
+      "eval": 31,
+      "kind": "step",
+      "message": "iteration=15/22 best_fitness=0.5691639834992657",
+      "timestamp_utc": "2026-04-20T15:17:36.863366+00:00"
+    },
+    {
+      "b1": 108,
+      "b2": 9184,
+      "elapsed_sec": 9.07374653900024,
+      "eval": 32,
+      "fitness": 0.5816608660013571,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:37.060172+00:00"
+    },
+    {
+      "elapsed_sec": 9.073857400000179,
+      "eval": 32,
+      "kind": "step",
+      "message": "iteration=16/22 best_fitness=0.5691639834992657",
+      "timestamp_utc": "2026-04-20T15:17:37.060277+00:00"
+    },
+    {
+      "b1": 109,
+      "b2": 10900,
+      "elapsed_sec": 9.283869806999974,
+      "eval": 33,
+      "fitness": 0.6143563520022326,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:37.270296+00:00"
+    },
+    {
+      "elapsed_sec": 9.283977202000187,
+      "eval": 33,
+      "kind": "step",
+      "message": "iteration=17/22 best_fitness=0.5691639834992657",
+      "timestamp_utc": "2026-04-20T15:17:37.270397+00:00"
+    },
+    {
+      "b1": 159,
+      "b2": 10261,
+      "elapsed_sec": 9.510814535000009,
+      "eval": 34,
+      "fitness": 0.6835716594996484,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:37.497240+00:00"
+    },
+    {
+      "elapsed_sec": 9.510924058,
+      "eval": 34,
+      "kind": "step",
+      "message": "iteration=18/22 best_fitness=0.5691639834992657",
+      "timestamp_utc": "2026-04-20T15:17:37.497343+00:00"
+    },
+    {
+      "b1": 167,
+      "b2": 1233,
+      "elapsed_sec": 9.70529770100029,
+      "eval": 35,
+      "fitness": 0.5436698559999513,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:37.691723+00:00"
+    },
+    {
+      "b1": 167,
+      "b2": 1233,
+      "elapsed_sec": 9.705414562999977,
+      "eval": 35,
+      "fitness": 0.5436698559999513,
+      "kind": "new_best",
+      "timestamp_utc": "2026-04-20T15:17:37.691834+00:00"
+    },
+    {
+      "elapsed_sec": 9.70549840800004,
+      "eval": 35,
+      "kind": "step",
+      "message": "iteration=19/22 best_fitness=0.5436698559999513",
+      "timestamp_utc": "2026-04-20T15:17:37.691918+00:00"
+    },
+    {
+      "b1": 191,
+      "b2": 1005,
+      "elapsed_sec": 9.894262572000116,
+      "eval": 36,
+      "fitness": 0.5206911849988956,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:37.880688+00:00"
+    },
+    {
+      "b1": 191,
+      "b2": 1005,
+      "elapsed_sec": 9.89431041600028,
+      "eval": 36,
+      "fitness": 0.5206911849988956,
+      "kind": "new_best",
+      "timestamp_utc": "2026-04-20T15:17:37.880730+00:00"
+    },
+    {
+      "elapsed_sec": 9.894468647999929,
+      "eval": 36,
+      "kind": "step",
+      "message": "iteration=20/22 best_fitness=0.5206911849988956",
+      "timestamp_utc": "2026-04-20T15:17:37.880889+00:00"
+    },
+    {
+      "b1": 241,
+      "b2": 930,
+      "elapsed_sec": 10.091768829000102,
+      "eval": 37,
+      "fitness": 0.5326538870015156,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:38.078196+00:00"
+    },
+    {
+      "elapsed_sec": 10.091883861000042,
+      "eval": 37,
+      "kind": "step",
+      "message": "iteration=21/22 best_fitness=0.5206911849988956",
+      "timestamp_utc": "2026-04-20T15:17:38.078303+00:00"
+    },
+    {
+      "b1": 355,
+      "b2": 1567,
+      "elapsed_sec": 10.292097559000013,
+      "eval": 38,
+      "fitness": 0.5632142539991492,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:38.278522+00:00"
+    },
+    {
+      "elapsed_sec": 10.292234414000177,
+      "eval": 38,
+      "kind": "step",
+      "message": "iteration=22/22 best_fitness=0.5206911849988956",
+      "timestamp_utc": "2026-04-20T15:17:38.278654+00:00"
+    }
+  ],
+  "optimized": {
+    "b1": 191,
+    "b2": 1005,
+    "method": "bo",
+    "objective": 0.5206911849988956
+  },
+  "package_version": "0.1.0",
+  "plots": {
+    "b1_b2_trajectory": "data/experiments/20_dset_20260420T151523Z/bo/optimize_20260420T151738Z/plots/bo_optimize_20260420T151738Z_b1_b2_trajectory.png",
+    "b1_ratio_heatmap": "data/experiments/20_dset_20260420T151523Z/bo/optimize_20260420T151738Z/plots/bo_optimize_20260420T151738Z_b1_ratio_heatmap.png",
+    "jump_plot": "data/experiments/20_dset_20260420T151523Z/bo/optimize_20260420T151738Z/plots/bo_optimize_20260420T151738Z_jump_plot.png",
+    "progress_by_phase": "data/experiments/20_dset_20260420T151523Z/bo/optimize_20260420T151738Z/plots/bo_optimize_20260420T151738Z_progress_by_phase.png",
+    "time_efficiency": "data/experiments/20_dset_20260420T151523Z/bo/optimize_20260420T151738Z/plots/bo_optimize_20260420T151738Z_time_efficiency.png"
+  },
+  "run_stats": {
+    "best_eval": 36,
+    "best_eval_fraction": 0.9473684210526315,
+    "eval_per_sec": 3.692153108942363,
+    "evaluation_count": 38,
+    "improvement_percent": 25.374263523105267,
+    "max_plateau_evals": 26,
+    "median_plateau_evals": 2.0,
+    "new_best_count": 5,
+    "new_best_rate": 0.13157894736842105,
+    "p90_plateau_evals": 14.5,
+    "time_to_best_sec": 9.894262572000116,
+    "time_to_first_improvement_sec": 0.2101147360003779,
+    "total_runtime_sec": 10.292234414000177
+  },
+  "suggested_baseline": {
+    "b1": 11000,
+    "b2": 220000,
+    "source": "exact_table",
+    "table_target_digits": 20
+  },
+  "timestamp_utc": "20260420T151739Z"
+}
