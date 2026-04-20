@@ -15,6 +15,7 @@ class ValidationSummary:
     optimized_mean: float
     baseline_mean: float
     relative_improvement_pct: float
+    trace_by_number: tuple[dict[str, float | int], ...]
 
 
 def _evaluate_expected_time_task(args: tuple[str, int, int, int, int, float | None]) -> float:
@@ -87,6 +88,24 @@ def validate_on_control(
     opt_scores = _evaluate_many(opt_tasks, workers, verbose=verbose, label="optimized", log_prefix=log_prefix)
     base_scores = _evaluate_many(base_tasks, workers, verbose=verbose, label="baseline", log_prefix=log_prefix)
 
+    trace_by_number: list[dict[str, float | int]] = []
+    for n, optimized_expected_time, baseline_expected_time in zip(numbers, opt_scores, base_scores):
+        delta_abs = baseline_expected_time - optimized_expected_time
+        delta_pct = (
+            (delta_abs / baseline_expected_time * 100)
+            if baseline_expected_time != 0 and math.isfinite(baseline_expected_time) and math.isfinite(optimized_expected_time)
+            else 0.0
+        )
+        trace_by_number.append(
+            {
+                "n": n,
+                "optimized_expected_time": optimized_expected_time,
+                "baseline_expected_time": baseline_expected_time,
+                "delta_abs": delta_abs,
+                "delta_pct": delta_pct,
+            }
+        )
+
     optimized_mean = sum(opt_scores) / len(opt_scores)
     baseline_mean = sum(base_scores) / len(base_scores)
 
@@ -99,4 +118,5 @@ def validate_on_control(
         optimized_mean=optimized_mean,
         baseline_mean=baseline_mean,
         relative_improvement_pct=relative,
+        trace_by_number=tuple(trace_by_number),
     )

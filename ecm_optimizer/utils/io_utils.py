@@ -35,7 +35,7 @@ def write_json(path: str | Path, payload: dict[str, Any]) -> None:
     """Сериализовать словарь в JSON-файл с красивым форматированием."""
     p = Path(path)
     p.parent.mkdir(parents=True, exist_ok=True)
-    p.write_text(json.dumps(payload, indent=2, sort_keys=True) + "\n", encoding="utf-8")
+    p.write_text(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
 def write_json_with_meta(path: str | Path, payload: dict[str, Any], *, command: str | None = None) -> None:
