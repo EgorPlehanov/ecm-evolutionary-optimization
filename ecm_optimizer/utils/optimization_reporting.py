@@ -578,6 +578,13 @@ def generate_analysis_artifacts(
     files: dict[str, Path] = {}
 
     events = [event for event in history if event.get("kind") in {"evaluation", "new_best", "step"}]
+    eval_events = [event for event in history if event.get("kind") == "evaluation"]
+    successes_by_eval: dict[int, int] = {}
+    for event in eval_events:
+        eval_id = event.get("eval")
+        successes = event.get("successes")
+        if isinstance(eval_id, int) and isinstance(successes, int):
+            successes_by_eval[eval_id] = successes
     new_best_events = [event for event in history if event.get("kind") == "new_best"]
     events_path = tables_dir / f"{run_stem}_events.csv"
     with events_path.open("w", encoding="utf-8", newline="") as f:
@@ -592,6 +599,7 @@ def generate_analysis_artifacts(
                 "b2",
                 "ratio",
                 "fitness",
+                "successes",
                 "is_new_best",
                 "message",
                 "timestamp_utc",
@@ -612,6 +620,7 @@ def generate_analysis_artifacts(
                     "b2": b2,
                     "ratio": ratio,
                     "fitness": event.get("fitness"),
+                    "successes": event.get("successes"),
                     "is_new_best": event.get("kind") == "new_best",
                     "message": event.get("message", ""),
                     "timestamp_utc": event.get("timestamp_utc", ""),
@@ -631,6 +640,7 @@ def generate_analysis_artifacts(
                 "b2",
                 "ratio",
                 "fitness",
+                "successes",
                 "delta_abs_vs_prev_best",
                 "delta_pct_vs_prev_best",
                 "plateau_since_prev_new_best",
@@ -663,6 +673,7 @@ def generate_analysis_artifacts(
                     "b2": b2,
                     "ratio": ratio,
                     "fitness": fitness,
+                    "successes": successes_by_eval.get(eval_id, event.get("successes")),
                     "delta_abs_vs_prev_best": delta_abs,
                     "delta_pct_vs_prev_best": delta_pct,
                     "plateau_since_prev_new_best": plateau,
@@ -684,13 +695,14 @@ def generate_analysis_artifacts(
                 "eval_to",
                 "eval_count",
                 "new_best_count",
+                "successes_sum",
+                "success_rate",
                 "best_fitness_in_phase",
                 "improvement_in_phase",
                 "phase_duration_sec",
             ],
         )
         writer.writeheader()
-        eval_events = [event for event in history if event.get("kind") == "evaluation"]
         prev_eval = 0
         prev_time = 0.0
         prev_phase_best: float | None = None
@@ -708,6 +720,7 @@ def generate_analysis_artifacts(
                 if int(ev.get("eval", 0)) >= eval_from and int(ev.get("eval", 0)) <= eval_to
             ]
             phase_best = min((float(ev["fitness"]) for ev in phase_eval_events), default=None)
+            phase_successes = sum(int(ev.get("successes", 0)) for ev in phase_eval_events)
             improvement = None
             if prev_phase_best is not None and phase_best is not None:
                 improvement = prev_phase_best - phase_best
@@ -720,6 +733,8 @@ def generate_analysis_artifacts(
                     "eval_to": eval_to,
                     "eval_count": len(phase_eval_events),
                     "new_best_count": len(phase_new_best),
+                    "successes_sum": phase_successes,
+                    "success_rate": (phase_successes / len(phase_eval_events)) if phase_eval_events else None,
                     "best_fitness_in_phase": phase_best,
                     "improvement_in_phase": improvement,
                     "phase_duration_sec": phase_time - prev_time,
@@ -736,15 +751,12 @@ def generate_analysis_artifacts(
     flags = _attention_flags(stats, history=history, config=config, optimized=optimized)
     summary_path = tables_dir / f"{run_stem}_run_summary.csv"
     with summary_path.open("w", encoding="utf-8", newline="") as f:
-        summary_keys = sorted(stats.keys())
-        flag_keys = sorted(flags.keys())
-        fieldnames = summary_keys + [f"flag_{name}" for name in flag_keys]
-        writer = csv.DictWriter(f, fieldnames=fieldnames)
+        writer = csv.DictWriter(f, fieldnames=["metric", "value"])
         writer.writeheader()
-        row: dict[str, Any] = {key: stats.get(key) for key in summary_keys}
-        for name in flag_keys:
-            row[f"flag_{name}"] = bool(flags[name]["triggered"])
-        writer.writerow(row)
+        for key in sorted(stats.keys()):
+            writer.writerow({"metric": key, "value": stats.get(key)})
+        for name in sorted(flags.keys()):
+            writer.writerow({"metric": f"flag_{name}", "value": bool(flags[name]["triggered"])})
     files["run_summary_csv"] = summary_path
 
     report_path = output_dir / f"{run_stem}_report.md"
