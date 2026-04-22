@@ -1,0 +1,3467 @@
+{
+  "analysis_files": {
+    "events_csv": "data/experiments/20_dset_20260420T151523Z/ga/optimize_20260420T151851Z/tables/ga_optimize_20260420T151851Z_events.csv",
+    "new_best_csv": "data/experiments/20_dset_20260420T151523Z/ga/optimize_20260420T151851Z/tables/ga_optimize_20260420T151851Z_new_best.csv",
+    "phase_summary_csv": "data/experiments/20_dset_20260420T151523Z/ga/optimize_20260420T151851Z/tables/ga_optimize_20260420T151851Z_phase_summary.csv",
+    "report_md": "data/experiments/20_dset_20260420T151523Z/ga/optimize_20260420T151851Z/ga_optimize_20260420T151851Z_report.md",
+    "run_summary_csv": "data/experiments/20_dset_20260420T151523Z/ga/optimize_20260420T151851Z/tables/ga_optimize_20260420T151851Z_run_summary.csv"
+  },
+  "attention_flags": {
+    "b1_hits_boundary": {
+      "action": "Расширить диапазон B1, если упор в границу повторяется.",
+      "description": "Большая доля оценок проходит близко к границам B1.",
+      "severity": "ok",
+      "threshold": "> 0.10",
+      "triggered": false,
+      "value": 0.0031645569620253164
+    },
+    "b2_hits_boundary": {
+      "action": "Расширить диапазон B2, если упор в границу повторяется.",
+      "description": "Большая доля оценок проходит близко к границам B2.",
+      "severity": "ok",
+      "threshold": "> 0.10",
+      "triggered": false,
+      "value": 0.0031645569620253164
+    },
+    "best_b1_on_boundary": {
+      "action": "Проверить расширенный диапазон B1 вокруг текущей границы.",
+      "description": "Лучший найденный B1 лежит на границе диапазона.",
+      "severity": "ok",
+      "threshold": "within 2% of log-range [100.0, 30000.0]",
+      "triggered": false,
+      "value": 356.0
+    },
+    "best_b2_on_boundary": {
+      "action": "Проверить расширенный диапазон B2 вокруг текущей границы.",
+      "description": "Лучший найденный B2 лежит на границе диапазона.",
+      "severity": "ok",
+      "threshold": "within 2% of log-range [100.0, 600000.0]",
+      "triggered": false,
+      "value": 356.0
+    },
+    "best_ratio_on_boundary": {
+      "action": "Увеличить ratio_max и перепроверить локальный поиск в новой области.",
+      "description": "Лучшее отношение B2/B1 находится у верхней границы ratio_max.",
+      "severity": "ok",
+      "threshold": "within 2% of log-range up to ratio_max=100.0",
+      "triggered": false,
+      "value": 1.0
+    },
+    "late_best": {
+      "action": "Усилить ранний поиск или пересмотреть бюджет/инициализацию.",
+      "description": "Лучшее решение найдено слишком поздно относительно общего времени.",
+      "severity": "medium",
+      "threshold": "> 0.85",
+      "triggered": true,
+      "value": 0.9509161028983777
+    },
+    "low_improvement": {
+      "action": "Сузить границы поиска или изменить параметры метода.",
+      "description": "Итоговый прирост качества слишком мал.",
+      "severity": "ok",
+      "threshold": "< 10%",
+      "triggered": false,
+      "value": 15.836962138663818
+    },
+    "low_signal": {
+      "action": "Перенастроить exploration и сделать переоценку top-k кандидатов.",
+      "description": "Слишком низкая плотность новых best-событий (слабый сигнал оптимизации).",
+      "severity": "high",
+      "threshold": "< 0.03",
+      "triggered": true,
+      "value": 0.015822784810126583
+    },
+    "plateau_too_long": {
+      "action": "Увеличить exploration или добавить политику рестартов.",
+      "description": "Слишком длинное плато: улучшений почти нет на большом участке запуска.",
+      "severity": "high",
+      "threshold": "> 0.50",
+      "triggered": true,
+      "value": 0.5632911392405063
+    },
+    "ratio_hits_boundary": {
+      "action": "Увеличить ratio_max, если хорошие точки упираются в ограничение отношения B2/B1.",
+      "description": "Большая доля оценок проходит близко к границе отношения B2/B1.",
+      "severity": "medium",
+      "threshold": "> 0.10",
+      "triggered": true,
+      "value": 0.7373417721518988
+    }
+  },
+  "command": "optimize",
+  "config": {
+    "b1_max": 30000.0,
+    "b1_min": 100.0,
+    "b2_max": 600000.0,
+    "b2_min": 100.0,
+    "curve_timeout_sec": null,
+    "curves_per_n": 12,
+    "method": "ga",
+    "method_params": {
+      "generations": 14,
+      "mutation_prob": 0.14,
+      "population_size": 22
+    },
+    "ratio_max": 100.0,
+    "seed": 42,
+    "workers": 12
+  },
+  "dataset": "data/numbers/20_dset_20260420T151523Z/train.json",
+  "dataset_target_digits": 20,
+  "ecm_bin": "ecm",
+  "optimization_trace": [
+    {
+      "elapsed_sec": 8.728000011615222e-06,
+      "eval": 0,
+      "kind": "step",
+      "message": "numbers=20 curves_per_n=12 population_size=22 generations=14 mutation_prob=0.14 workers=12",
+      "timestamp_utc": "2026-04-20T15:17:42.562910+00:00"
+    },
+    {
+      "b1": 457,
+      "b2": 10983,
+      "elapsed_sec": 0.18749600599994665,
+      "eval": 1,
+      "fitness": 0.620544793500585,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:42.750403+00:00"
+    },
+    {
+      "b1": 1333,
+      "b2": 8239,
+      "elapsed_sec": 0.3869383639998887,
+      "eval": 2,
+      "fitness": 0.7035341614996469,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:42.949844+00:00"
+    },
+    {
+      "b1": 3525,
+      "b2": 16426,
+      "elapsed_sec": 0.6236264739995931,
+      "eval": 3,
+      "fitness": 0.9027527910018307,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:43.186533+00:00"
+    },
+    {
+      "b1": 406,
+      "b2": 406,
+      "elapsed_sec": 0.7941472449997491,
+      "eval": 4,
+      "fitness": 0.5580989109998882,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:43.357054+00:00"
+    },
+    {
+      "b1": 3969,
+      "b2": 396900,
+      "elapsed_sec": 1.1534750189998704,
+      "eval": 5,
+      "fitness": 1.5192123804997664,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:43.716381+00:00"
+    },
+    {
+      "b1": 7988,
+      "b2": 233103,
+      "elapsed_sec": 1.5525296949999756,
+      "eval": 6,
+      "fitness": 1.6389981265504274,
+      "kind": "evaluation",
+      "successes": 1,
+      "timestamp_utc": "2026-04-20T15:17:44.115437+00:00"
+    },
+    {
+      "b1": 722,
+      "b2": 722,
+      "elapsed_sec": 1.7178462580000087,
+      "eval": 7,
+      "fitness": 0.5402968159989996,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:44.280753+00:00"
+    },
+    {
+      "b1": 1664,
+      "b2": 5739,
+      "elapsed_sec": 1.913457866999579,
+      "eval": 8,
+      "fitness": 0.6978290460012886,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:44.476365+00:00"
+    },
+    {
+      "b1": 412,
+      "b2": 41200,
+      "elapsed_sec": 2.1274614899998596,
+      "eval": 9,
+      "fitness": 0.7850796819977859,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:44.690371+00:00"
+    },
+    {
+      "b1": 19810,
+      "b2": 160232,
+      "elapsed_sec": 2.700624616999903,
+      "eval": 10,
+      "fitness": 2.593195686999934,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:45.263531+00:00"
+    },
+    {
+      "b1": 211,
+      "b2": 217,
+      "elapsed_sec": 2.8793220139996265,
+      "eval": 11,
+      "fitness": 0.6059512024999094,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:45.442228+00:00"
+    },
+    {
+      "b1": 9679,
+      "b2": 9679,
+      "elapsed_sec": 3.2172298489999775,
+      "eval": 12,
+      "fitness": 1.425674925997555,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:45.780137+00:00"
+    },
+    {
+      "b1": 6023,
+      "b2": 6023,
+      "elapsed_sec": 3.4913797829999567,
+      "eval": 13,
+      "fitness": 1.1036605309989227,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:46.054287+00:00"
+    },
+    {
+      "b1": 5897,
+      "b2": 558041,
+      "elapsed_sec": 3.9237551879996317,
+      "eval": 14,
+      "fitness": 1.7975464789990383,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:46.486664+00:00"
+    },
+    {
+      "b1": 5366,
+      "b2": 197984,
+      "elapsed_sec": 4.272705311999744,
+      "eval": 15,
+      "fitness": 1.3678544979970866,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:46.835612+00:00"
+    },
+    {
+      "b1": 6687,
+      "b2": 107256,
+      "elapsed_sec": 4.604750519999925,
+      "eval": 16,
+      "fitness": 1.3301726206993636,
+      "kind": "evaluation",
+      "successes": 1,
+      "timestamp_utc": "2026-04-20T15:17:47.167657+00:00"
+    },
+    {
+      "b1": 23703,
+      "b2": 189615,
+      "elapsed_sec": 5.338455681999676,
+      "eval": 17,
+      "fitness": 3.3707335242512726,
+      "kind": "evaluation",
+      "successes": 1,
+      "timestamp_utc": "2026-04-20T15:17:47.901363+00:00"
+    },
+    {
+      "b1": 13741,
+      "b2": 47115,
+      "elapsed_sec": 5.768823785999757,
+      "eval": 18,
+      "fitness": 1.7177198763485877,
+      "kind": "evaluation",
+      "successes": 2,
+      "timestamp_utc": "2026-04-20T15:17:48.331731+00:00"
+    },
+    {
+      "b1": 464,
+      "b2": 46400,
+      "elapsed_sec": 6.023970205999831,
+      "eval": 19,
+      "fitness": 0.9164952604974133,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:48.586878+00:00"
+    },
+    {
+      "b1": 9046,
+      "b2": 442677,
+      "elapsed_sec": 6.565919393999593,
+      "eval": 20,
+      "fitness": 2.3896704045014303,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:49.128826+00:00"
+    },
+    {
+      "b1": 331,
+      "b2": 3055,
+      "elapsed_sec": 6.801350529999581,
+      "eval": 21,
+      "fitness": 0.8198898280027151,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:49.364257+00:00"
+    },
+    {
+      "b1": 27306,
+      "b2": 27306,
+      "elapsed_sec": 7.69268185699957,
+      "eval": 22,
+      "fitness": 3.966652732399416,
+      "kind": "evaluation",
+      "successes": 1,
+      "timestamp_utc": "2026-04-20T15:17:50.255588+00:00"
+    },
+    {
+      "b1": 722,
+      "b2": 722,
+      "elapsed_sec": 7.69277947899991,
+      "eval": 7,
+      "fitness": 0.5402968159989996,
+      "kind": "new_best",
+      "timestamp_utc": "2026-04-20T15:17:50.255680+00:00"
+    },
+    {
+      "elapsed_sec": 7.692851894999876,
+      "eval": 22,
+      "kind": "step",
+      "message": "init_best fitness=0.5402968159989996",
+      "timestamp_utc": "2026-04-20T15:17:50.255753+00:00"
+    },
+    {
+      "b1": 3324,
+      "b2": 13679,
+      "elapsed_sec": 8.00335484399966,
+      "eval": 23,
+      "fitness": 1.2347016229982728,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:50.566261+00:00"
+    },
+    {
+      "b1": 1205,
+      "b2": 4088,
+      "elapsed_sec": 8.221015758999783,
+      "eval": 24,
+      "fitness": 0.7681835830007913,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:50.783922+00:00"
+    },
+    {
+      "b1": 461,
+      "b2": 1018,
+      "elapsed_sec": 8.407265644999825,
+      "eval": 25,
+      "fitness": 0.6037597329982418,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:50.970177+00:00"
+    },
+    {
+      "b1": 333,
+      "b2": 3315,
+      "elapsed_sec": 8.60285211199971,
+      "eval": 26,
+      "fitness": 0.6685042930002965,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:51.165759+00:00"
+    },
+    {
+      "b1": 435,
+      "b2": 981,
+      "elapsed_sec": 8.78374364399997,
+      "eval": 27,
+      "fitness": 0.5820590245016319,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:51.346650+00:00"
+    },
+    {
+      "b1": 1664,
+      "b2": 5739,
+      "elapsed_sec": 9.01859207399957,
+      "eval": 28,
+      "fitness": 0.8660341690001587,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:51.581499+00:00"
+    },
+    {
+      "b1": 2950,
+      "b2": 2950,
+      "elapsed_sec": 9.263396548999935,
+      "eval": 29,
+      "fitness": 0.9285097714998756,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:51.826304+00:00"
+    },
+    {
+      "b1": 537,
+      "b2": 537,
+      "elapsed_sec": 9.473818052999832,
+      "eval": 30,
+      "fitness": 0.7320830519979609,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:52.036725+00:00"
+    },
+    {
+      "b1": 582,
+      "b2": 582,
+      "elapsed_sec": 9.658791350999763,
+      "eval": 31,
+      "fitness": 0.6182294159987123,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:52.221698+00:00"
+    },
+    {
+      "b1": 251,
+      "b2": 530,
+      "elapsed_sec": 9.86892440199972,
+      "eval": 32,
+      "fitness": 0.7493889055006093,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:52.431833+00:00"
+    },
+    {
+      "b1": 2466,
+      "b2": 115190,
+      "elapsed_sec": 10.225014603999625,
+      "eval": 33,
+      "fitness": 1.5114412790017013,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:52.787922+00:00"
+    },
+    {
+      "b1": 1242,
+      "b2": 2641,
+      "elapsed_sec": 10.451199992999591,
+      "eval": 34,
+      "fitness": 0.815467142497937,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:53.014107+00:00"
+    },
+    {
+      "b1": 1029,
+      "b2": 4141,
+      "elapsed_sec": 10.654317461999653,
+      "eval": 35,
+      "fitness": 0.6983464039997216,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:53.217225+00:00"
+    },
+    {
+      "b1": 397,
+      "b2": 397,
+      "elapsed_sec": 10.834553120999772,
+      "eval": 36,
+      "fitness": 0.5827374364987463,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:53.397460+00:00"
+    },
+    {
+      "b1": 349,
+      "b2": 1385,
+      "elapsed_sec": 11.018837336999695,
+      "eval": 37,
+      "fitness": 0.6009404904971234,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:53.581744+00:00"
+    },
+    {
+      "b1": 668,
+      "b2": 4447,
+      "elapsed_sec": 11.234950017999836,
+      "eval": 38,
+      "fitness": 0.7644299029998365,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:53.797858+00:00"
+    },
+    {
+      "b1": 496,
+      "b2": 496,
+      "elapsed_sec": 11.436498588999712,
+      "eval": 39,
+      "fitness": 0.6869058000027053,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:53.999407+00:00"
+    },
+    {
+      "b1": 2001,
+      "b2": 2655,
+      "elapsed_sec": 11.663950862999627,
+      "eval": 40,
+      "fitness": 0.8128333694990033,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:54.226857+00:00"
+    },
+    {
+      "b1": 567,
+      "b2": 10368,
+      "elapsed_sec": 11.943212840999877,
+      "eval": 41,
+      "fitness": 0.9933851865005181,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:54.506120+00:00"
+    },
+    {
+      "b1": 577,
+      "b2": 1649,
+      "elapsed_sec": 12.243391286999667,
+      "eval": 42,
+      "fitness": 1.1062191300006816,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:54.806302+00:00"
+    },
+    {
+      "b1": 274,
+      "b2": 274,
+      "elapsed_sec": 12.44444034199978,
+      "eval": 43,
+      "fitness": 0.6841589855005168,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:55.007348+00:00"
+    },
+    {
+      "elapsed_sec": 12.444553379999888,
+      "eval": 43,
+      "kind": "step",
+      "message": "generation=1/14 best_fitness=0.5402968159989996",
+      "timestamp_utc": "2026-04-20T15:17:55.007454+00:00"
+    },
+    {
+      "b1": 498,
+      "b2": 505,
+      "elapsed_sec": 12.63164885499964,
+      "eval": 44,
+      "fitness": 0.6326527010014615,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:55.194556+00:00"
+    },
+    {
+      "b1": 348,
+      "b2": 2733,
+      "elapsed_sec": 12.821897791999618,
+      "eval": 45,
+      "fitness": 0.6489240745004281,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:55.384805+00:00"
+    },
+    {
+      "b1": 1019,
+      "b2": 2679,
+      "elapsed_sec": 13.02053636499977,
+      "eval": 46,
+      "fitness": 0.6989143214998421,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:55.583444+00:00"
+    },
+    {
+      "b1": 515,
+      "b2": 515,
+      "elapsed_sec": 13.193820063999738,
+      "eval": 47,
+      "fitness": 0.5641996870022012,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:55.756727+00:00"
+    },
+    {
+      "b1": 465,
+      "b2": 1080,
+      "elapsed_sec": 13.378116653999768,
+      "eval": 48,
+      "fitness": 0.6002935449982942,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:55.941023+00:00"
+    },
+    {
+      "b1": 401,
+      "b2": 401,
+      "elapsed_sec": 13.608284367999659,
+      "eval": 49,
+      "fitness": 0.8098193270018328,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:56.171192+00:00"
+    },
+    {
+      "b1": 1088,
+      "b2": 1231,
+      "elapsed_sec": 13.857326715,
+      "eval": 50,
+      "fitness": 0.887926697501598,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:56.420233+00:00"
+    },
+    {
+      "b1": 397,
+      "b2": 397,
+      "elapsed_sec": 14.051470710999638,
+      "eval": 51,
+      "fitness": 0.6374800105013492,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:56.614378+00:00"
+    },
+    {
+      "b1": 220,
+      "b2": 1521,
+      "elapsed_sec": 14.258455540999876,
+      "eval": 52,
+      "fitness": 0.7055993790004322,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:56.821362+00:00"
+    },
+    {
+      "b1": 255,
+      "b2": 539,
+      "elapsed_sec": 14.436636850000014,
+      "eval": 53,
+      "fitness": 0.5745020900010331,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:56.999544+00:00"
+    },
+    {
+      "b1": 445,
+      "b2": 451,
+      "elapsed_sec": 14.63209599999982,
+      "eval": 54,
+      "fitness": 0.6712281749987596,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:57.195003+00:00"
+    },
+    {
+      "b1": 494,
+      "b2": 494,
+      "elapsed_sec": 14.896846571999959,
+      "eval": 55,
+      "fitness": 0.9580853179991209,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:57.459754+00:00"
+    },
+    {
+      "b1": 560,
+      "b2": 560,
+      "elapsed_sec": 15.115141856999799,
+      "eval": 56,
+      "fitness": 0.7533669529987037,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:57.678049+00:00"
+    },
+    {
+      "b1": 491,
+      "b2": 1202,
+      "elapsed_sec": 15.309655174999989,
+      "eval": 57,
+      "fitness": 0.6785549160001665,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:57.872562+00:00"
+    },
+    {
+      "b1": 460,
+      "b2": 460,
+      "elapsed_sec": 15.48739360799982,
+      "eval": 58,
+      "fitness": 0.5844740365005237,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:58.050300+00:00"
+    },
+    {
+      "b1": 362,
+      "b2": 502,
+      "elapsed_sec": 15.699179770999763,
+      "eval": 59,
+      "fitness": 0.7215396659985345,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:58.262087+00:00"
+    },
+    {
+      "b1": 1593,
+      "b2": 5479,
+      "elapsed_sec": 16.03505887099982,
+      "eval": 60,
+      "fitness": 1.219837515001018,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:58.597970+00:00"
+    },
+    {
+      "b1": 436,
+      "b2": 477,
+      "elapsed_sec": 16.29467849699995,
+      "eval": 61,
+      "fitness": 0.8448069830012628,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:58.857587+00:00"
+    },
+    {
+      "b1": 334,
+      "b2": 3249,
+      "elapsed_sec": 16.556155059999583,
+      "eval": 62,
+      "fitness": 0.9536256659996525,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:59.119062+00:00"
+    },
+    {
+      "b1": 654,
+      "b2": 654,
+      "elapsed_sec": 16.798127610999927,
+      "eval": 63,
+      "fitness": 0.8761937579988626,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:59.361038+00:00"
+    },
+    {
+      "b1": 373,
+      "b2": 560,
+      "elapsed_sec": 17.013294379999934,
+      "eval": 64,
+      "fitness": 0.7174698489975526,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:59.576201+00:00"
+    },
+    {
+      "elapsed_sec": 17.013407555999947,
+      "eval": 64,
+      "kind": "step",
+      "message": "generation=2/14 best_fitness=0.5402968159989996",
+      "timestamp_utc": "2026-04-20T15:17:59.576308+00:00"
+    },
+    {
+      "b1": 466,
+      "b2": 466,
+      "elapsed_sec": 17.22824624099985,
+      "eval": 65,
+      "fitness": 0.7330069210020156,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:17:59.791159+00:00"
+    },
+    {
+      "b1": 368,
+      "b2": 529,
+      "elapsed_sec": 17.450619982999797,
+      "eval": 66,
+      "fitness": 0.7084899285011943,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:00.013529+00:00"
+    },
+    {
+      "b1": 346,
+      "b2": 646,
+      "elapsed_sec": 17.69070376699983,
+      "eval": 67,
+      "fitness": 0.8436377285029266,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:00.253611+00:00"
+    },
+    {
+      "b1": 492,
+      "b2": 997,
+      "elapsed_sec": 17.879714872000022,
+      "eval": 68,
+      "fitness": 0.6343207520008036,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:00.442622+00:00"
+    },
+    {
+      "b1": 241,
+      "b2": 1040,
+      "elapsed_sec": 18.075748948999717,
+      "eval": 69,
+      "fitness": 0.6523933260000376,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:00.638659+00:00"
+    },
+    {
+      "b1": 298,
+      "b2": 531,
+      "elapsed_sec": 18.274757951999618,
+      "eval": 70,
+      "fitness": 0.6513322715015875,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:00.837665+00:00"
+    },
+    {
+      "b1": 334,
+      "b2": 525,
+      "elapsed_sec": 18.501271621999877,
+      "eval": 71,
+      "fitness": 0.7569436599999335,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:01.064180+00:00"
+    },
+    {
+      "b1": 334,
+      "b2": 516,
+      "elapsed_sec": 18.722555437999745,
+      "eval": 72,
+      "fitness": 0.7558422334982424,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:01.285463+00:00"
+    },
+    {
+      "b1": 661,
+      "b2": 661,
+      "elapsed_sec": 18.957010574999913,
+      "eval": 73,
+      "fitness": 0.8191301684987593,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:01.519917+00:00"
+    },
+    {
+      "b1": 619,
+      "b2": 619,
+      "elapsed_sec": 19.17804047999971,
+      "eval": 74,
+      "fitness": 0.7559119660006672,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:01.740947+00:00"
+    },
+    {
+      "b1": 722,
+      "b2": 722,
+      "elapsed_sec": 19.41187619199991,
+      "eval": 75,
+      "fitness": 0.7824077610011955,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:01.974786+00:00"
+    },
+    {
+      "b1": 515,
+      "b2": 515,
+      "elapsed_sec": 19.68561697999985,
+      "eval": 76,
+      "fitness": 0.9485522315007984,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:02.248526+00:00"
+    },
+    {
+      "b1": 850,
+      "b2": 1815,
+      "elapsed_sec": 19.943133206999846,
+      "eval": 77,
+      "fitness": 0.955962516999989,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:02.506040+00:00"
+    },
+    {
+      "b1": 442,
+      "b2": 442,
+      "elapsed_sec": 20.156088046999685,
+      "eval": 78,
+      "fitness": 0.7394191359987872,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:04.430016+00:00"
+    },
+    {
+      "b1": 432,
+      "b2": 432,
+      "elapsed_sec": 20.321015604999957,
+      "eval": 79,
+      "fitness": 0.5322589714976402,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:04.594942+00:00"
+    },
+    {
+      "b1": 454,
+      "b2": 454,
+      "elapsed_sec": 20.48951038899986,
+      "eval": 80,
+      "fitness": 0.5537765834999391,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:04.763438+00:00"
+    },
+    {
+      "b1": 297,
+      "b2": 547,
+      "elapsed_sec": 20.66565364600001,
+      "eval": 81,
+      "fitness": 0.5804060265004409,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:04.939580+00:00"
+    },
+    {
+      "b1": 450,
+      "b2": 457,
+      "elapsed_sec": 20.836468981999587,
+      "eval": 82,
+      "fitness": 0.5674096950008334,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:05.110398+00:00"
+    },
+    {
+      "b1": 436,
+      "b2": 715,
+      "elapsed_sec": 21.015368900999874,
+      "eval": 83,
+      "fitness": 0.5912306194984467,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:05.289296+00:00"
+    },
+    {
+      "b1": 563,
+      "b2": 563,
+      "elapsed_sec": 21.22148766700002,
+      "eval": 84,
+      "fitness": 0.6979772255003809,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:05.495415+00:00"
+    },
+    {
+      "b1": 900,
+      "b2": 2003,
+      "elapsed_sec": 21.546720723999897,
+      "eval": 85,
+      "fitness": 1.2352606075005497,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:05.820648+00:00"
+    },
+    {
+      "b1": 432,
+      "b2": 432,
+      "elapsed_sec": 21.546884982999927,
+      "eval": 79,
+      "fitness": 0.5322589714976402,
+      "kind": "new_best",
+      "timestamp_utc": "2026-04-20T15:18:05.820806+00:00"
+    },
+    {
+      "elapsed_sec": 21.54693011299969,
+      "eval": 85,
+      "kind": "step",
+      "message": "generation=3/14 best_fitness=0.5322589714976402",
+      "timestamp_utc": "2026-04-20T15:18:05.820851+00:00"
+    },
+    {
+      "b1": 525,
+      "b2": 525,
+      "elapsed_sec": 21.923968868999964,
+      "eval": 86,
+      "fitness": 1.5943477039984373,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:06.197900+00:00"
+    },
+    {
+      "b1": 922,
+      "b2": 922,
+      "elapsed_sec": 22.176104801999827,
+      "eval": 87,
+      "fitness": 0.7137203089989725,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:06.450031+00:00"
+    },
+    {
+      "b1": 433,
+      "b2": 433,
+      "elapsed_sec": 22.359852617999877,
+      "eval": 88,
+      "fitness": 0.6063087949992223,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:06.633780+00:00"
+    },
+    {
+      "b1": 442,
+      "b2": 590,
+      "elapsed_sec": 22.56674336399965,
+      "eval": 89,
+      "fitness": 0.6722738045034475,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:06.840670+00:00"
+    },
+    {
+      "b1": 255,
+      "b2": 880,
+      "elapsed_sec": 22.785278303999803,
+      "eval": 90,
+      "fitness": 0.734868715998573,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:07.059205+00:00"
+    },
+    {
+      "b1": 426,
+      "b2": 704,
+      "elapsed_sec": 22.97939633199985,
+      "eval": 91,
+      "fitness": 0.6448270630007755,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:07.253323+00:00"
+    },
+    {
+      "b1": 380,
+      "b2": 380,
+      "elapsed_sec": 23.2966904609998,
+      "eval": 92,
+      "fitness": 1.2236267190000945,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:07.570618+00:00"
+    },
+    {
+      "b1": 462,
+      "b2": 462,
+      "elapsed_sec": 23.56986268799983,
+      "eval": 93,
+      "fitness": 0.9723698274999606,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:07.843790+00:00"
+    },
+    {
+      "b1": 722,
+      "b2": 722,
+      "elapsed_sec": 23.833445622,
+      "eval": 94,
+      "fitness": 0.9589670050002042,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:08.107376+00:00"
+    },
+    {
+      "b1": 345,
+      "b2": 462,
+      "elapsed_sec": 24.021381309999924,
+      "eval": 95,
+      "fitness": 0.5936547490002795,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:08.295308+00:00"
+    },
+    {
+      "b1": 493,
+      "b2": 493,
+      "elapsed_sec": 24.196041443000013,
+      "eval": 96,
+      "fitness": 0.5860040645011395,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:08.469968+00:00"
+    },
+    {
+      "b1": 433,
+      "b2": 433,
+      "elapsed_sec": 24.370923929999663,
+      "eval": 97,
+      "fitness": 0.5710788555029467,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:08.644852+00:00"
+    },
+    {
+      "b1": 432,
+      "b2": 432,
+      "elapsed_sec": 24.590467911999895,
+      "eval": 98,
+      "fitness": 0.7946912710006018,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:08.864394+00:00"
+    },
+    {
+      "b1": 531,
+      "b2": 531,
+      "elapsed_sec": 24.780097243,
+      "eval": 99,
+      "fitness": 0.6221429345002889,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:09.054027+00:00"
+    },
+    {
+      "b1": 338,
+      "b2": 1019,
+      "elapsed_sec": 24.98163201899979,
+      "eval": 100,
+      "fitness": 0.670746219999728,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:09.255558+00:00"
+    },
+    {
+      "b1": 436,
+      "b2": 715,
+      "elapsed_sec": 25.192518321999614,
+      "eval": 101,
+      "fitness": 0.7232890455011329,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:09.466447+00:00"
+    },
+    {
+      "b1": 679,
+      "b2": 679,
+      "elapsed_sec": 25.388510954999674,
+      "eval": 102,
+      "fitness": 0.6913552850014639,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:09.662438+00:00"
+    },
+    {
+      "b1": 432,
+      "b2": 432,
+      "elapsed_sec": 25.56303457399963,
+      "eval": 103,
+      "fitness": 0.5731878589995176,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:09.836961+00:00"
+    },
+    {
+      "b1": 327,
+      "b2": 857,
+      "elapsed_sec": 25.73037306299966,
+      "eval": 104,
+      "fitness": 0.540740095000956,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:10.004303+00:00"
+    },
+    {
+      "b1": 359,
+      "b2": 359,
+      "elapsed_sec": 25.891232579999723,
+      "eval": 105,
+      "fitness": 0.5272866679983963,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:10.165160+00:00"
+    },
+    {
+      "b1": 515,
+      "b2": 515,
+      "elapsed_sec": 26.071744688999843,
+      "eval": 106,
+      "fitness": 0.6159774695011038,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:10.345672+00:00"
+    },
+    {
+      "b1": 359,
+      "b2": 359,
+      "elapsed_sec": 26.071878014999584,
+      "eval": 105,
+      "fitness": 0.5272866679983963,
+      "kind": "new_best",
+      "timestamp_utc": "2026-04-20T15:18:10.345799+00:00"
+    },
+    {
+      "elapsed_sec": 26.071966485999837,
+      "eval": 106,
+      "kind": "step",
+      "message": "generation=4/14 best_fitness=0.5272866679983963",
+      "timestamp_utc": "2026-04-20T15:18:10.345888+00:00"
+    },
+    {
+      "b1": 375,
+      "b2": 477,
+      "elapsed_sec": 26.254878771999756,
+      "eval": 107,
+      "fitness": 0.606433404001109,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:10.528805+00:00"
+    },
+    {
+      "b1": 333,
+      "b2": 936,
+      "elapsed_sec": 26.52663096599963,
+      "eval": 108,
+      "fitness": 0.8574948604994006,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:10.800561+00:00"
+    },
+    {
+      "b1": 432,
+      "b2": 432,
+      "elapsed_sec": 26.746396573999846,
+      "eval": 109,
+      "fitness": 0.7548851255000955,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:11.020324+00:00"
+    },
+    {
+      "b1": 504,
+      "b2": 504,
+      "elapsed_sec": 26.92044949000001,
+      "eval": 110,
+      "fitness": 0.5399879090000468,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:11.194376+00:00"
+    },
+    {
+      "b1": 586,
+      "b2": 586,
+      "elapsed_sec": 27.135683598000014,
+      "eval": 111,
+      "fitness": 0.7683360480020838,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:11.409612+00:00"
+    },
+    {
+      "b1": 438,
+      "b2": 438,
+      "elapsed_sec": 27.33352079999986,
+      "eval": 112,
+      "fitness": 0.6440392630020142,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:11.607447+00:00"
+    },
+    {
+      "b1": 430,
+      "b2": 430,
+      "elapsed_sec": 27.521898536999743,
+      "eval": 113,
+      "fitness": 0.6381010045001858,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:11.795827+00:00"
+    },
+    {
+      "b1": 432,
+      "b2": 432,
+      "elapsed_sec": 27.69269433999989,
+      "eval": 114,
+      "fitness": 0.5482252739993783,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:11.966621+00:00"
+    },
+    {
+      "b1": 472,
+      "b2": 472,
+      "elapsed_sec": 27.871519331999934,
+      "eval": 115,
+      "fitness": 0.5901310020019537,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:12.145447+00:00"
+    },
+    {
+      "b1": 423,
+      "b2": 423,
+      "elapsed_sec": 28.057029429999602,
+      "eval": 116,
+      "fitness": 0.6079916489998141,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:12.330956+00:00"
+    },
+    {
+      "b1": 444,
+      "b2": 444,
+      "elapsed_sec": 28.227719990999958,
+      "eval": 117,
+      "fitness": 0.5623224650009888,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:12.501647+00:00"
+    },
+    {
+      "b1": 433,
+      "b2": 433,
+      "elapsed_sec": 28.397660105999876,
+      "eval": 118,
+      "fitness": 0.5481808880015251,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:12.671587+00:00"
+    },
+    {
+      "b1": 386,
+      "b2": 386,
+      "elapsed_sec": 28.560626345999935,
+      "eval": 119,
+      "fitness": 0.5271800474999964,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:12.834554+00:00"
+    },
+    {
+      "b1": 402,
+      "b2": 402,
+      "elapsed_sec": 28.7318283769996,
+      "eval": 120,
+      "fitness": 0.5615195604998462,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:13.005758+00:00"
+    },
+    {
+      "b1": 493,
+      "b2": 493,
+      "elapsed_sec": 28.920851558999857,
+      "eval": 121,
+      "fitness": 0.62657536500069,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:13.194781+00:00"
+    },
+    {
+      "b1": 383,
+      "b2": 383,
+      "elapsed_sec": 29.114867151999988,
+      "eval": 122,
+      "fitness": 0.6734823999991022,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:13.388794+00:00"
+    },
+    {
+      "b1": 465,
+      "b2": 465,
+      "elapsed_sec": 29.29733833199998,
+      "eval": 123,
+      "fitness": 0.6032354780002152,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:13.571265+00:00"
+    },
+    {
+      "b1": 432,
+      "b2": 432,
+      "elapsed_sec": 29.47383026899979,
+      "eval": 124,
+      "fitness": 0.5805446744996061,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:13.747757+00:00"
+    },
+    {
+      "b1": 282,
+      "b2": 629,
+      "elapsed_sec": 29.646899248999944,
+      "eval": 125,
+      "fitness": 0.5610554699990189,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:13.920826+00:00"
+    },
+    {
+      "b1": 395,
+      "b2": 395,
+      "elapsed_sec": 29.831205342999965,
+      "eval": 126,
+      "fitness": 0.6029548775006788,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:14.105133+00:00"
+    },
+    {
+      "b1": 424,
+      "b2": 681,
+      "elapsed_sec": 30.016100217999792,
+      "eval": 127,
+      "fitness": 0.6207038215020475,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:14.290028+00:00"
+    },
+    {
+      "b1": 386,
+      "b2": 386,
+      "elapsed_sec": 30.01624871399963,
+      "eval": 119,
+      "fitness": 0.5271800474999964,
+      "kind": "new_best",
+      "timestamp_utc": "2026-04-20T15:18:14.290170+00:00"
+    },
+    {
+      "elapsed_sec": 30.01634314699959,
+      "eval": 127,
+      "kind": "step",
+      "message": "generation=5/14 best_fitness=0.5271800474999964",
+      "timestamp_utc": "2026-04-20T15:18:14.290264+00:00"
+    },
+    {
+      "b1": 466,
+      "b2": 466,
+      "elapsed_sec": 30.205507147999924,
+      "eval": 128,
+      "fitness": 0.6189283520004665,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:14.479434+00:00"
+    },
+    {
+      "b1": 385,
+      "b2": 385,
+      "elapsed_sec": 30.381894326999827,
+      "eval": 129,
+      "fitness": 0.541490306500009,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:14.655822+00:00"
+    },
+    {
+      "b1": 606,
+      "b2": 606,
+      "elapsed_sec": 30.55896023999958,
+      "eval": 130,
+      "fitness": 0.5767365119993428,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:14.832887+00:00"
+    },
+    {
+      "b1": 386,
+      "b2": 386,
+      "elapsed_sec": 30.748667893999936,
+      "eval": 131,
+      "fitness": 0.6106604094977683,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:15.022595+00:00"
+    },
+    {
+      "b1": 393,
+      "b2": 393,
+      "elapsed_sec": 30.92854912299981,
+      "eval": 132,
+      "fitness": 0.5874053459995139,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:15.202476+00:00"
+    },
+    {
+      "b1": 441,
+      "b2": 441,
+      "elapsed_sec": 31.118836261999604,
+      "eval": 133,
+      "fitness": 0.6240138280013525,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:15.392763+00:00"
+    },
+    {
+      "b1": 401,
+      "b2": 401,
+      "elapsed_sec": 31.292679759999828,
+      "eval": 134,
+      "fitness": 0.5529821070017533,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:15.566607+00:00"
+    },
+    {
+      "b1": 441,
+      "b2": 441,
+      "elapsed_sec": 31.46634416699999,
+      "eval": 135,
+      "fitness": 0.5726065319986446,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:15.740271+00:00"
+    },
+    {
+      "b1": 445,
+      "b2": 445,
+      "elapsed_sec": 31.64549479599964,
+      "eval": 136,
+      "fitness": 0.5864928585010603,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:15.919422+00:00"
+    },
+    {
+      "b1": 399,
+      "b2": 399,
+      "elapsed_sec": 31.813375342999734,
+      "eval": 137,
+      "fitness": 0.542494483000155,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:16.087302+00:00"
+    },
+    {
+      "b1": 238,
+      "b2": 488,
+      "elapsed_sec": 31.987685831999897,
+      "eval": 138,
+      "fitness": 0.5753815295038294,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:16.261613+00:00"
+    },
+    {
+      "b1": 478,
+      "b2": 478,
+      "elapsed_sec": 32.1749102079998,
+      "eval": 139,
+      "fitness": 0.6102681805014072,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:16.448837+00:00"
+    },
+    {
+      "b1": 325,
+      "b2": 395,
+      "elapsed_sec": 32.356500391999816,
+      "eval": 140,
+      "fitness": 0.5976271830004407,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:16.630427+00:00"
+    },
+    {
+      "b1": 455,
+      "b2": 455,
+      "elapsed_sec": 32.53807430799998,
+      "eval": 141,
+      "fitness": 0.5829607509974721,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:16.812002+00:00"
+    },
+    {
+      "b1": 337,
+      "b2": 517,
+      "elapsed_sec": 32.713491793999765,
+      "eval": 142,
+      "fitness": 0.558024876001582,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:16.987420+00:00"
+    },
+    {
+      "b1": 292,
+      "b2": 581,
+      "elapsed_sec": 32.886986050999894,
+      "eval": 143,
+      "fitness": 0.5539610884998183,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:17.160913+00:00"
+    },
+    {
+      "b1": 401,
+      "b2": 401,
+      "elapsed_sec": 33.06301231899988,
+      "eval": 144,
+      "fitness": 0.5725005924980451,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:17.336939+00:00"
+    },
+    {
+      "b1": 432,
+      "b2": 432,
+      "elapsed_sec": 33.233953279999696,
+      "eval": 145,
+      "fitness": 0.5606570860004467,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:17.507880+00:00"
+    },
+    {
+      "b1": 433,
+      "b2": 433,
+      "elapsed_sec": 33.41404636399966,
+      "eval": 146,
+      "fitness": 0.592664432999527,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:17.687973+00:00"
+    },
+    {
+      "b1": 428,
+      "b2": 428,
+      "elapsed_sec": 33.58825593099982,
+      "eval": 147,
+      "fitness": 0.5705934914992667,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:17.862184+00:00"
+    },
+    {
+      "b1": 486,
+      "b2": 486,
+      "elapsed_sec": 33.763691626999844,
+      "eval": 148,
+      "fitness": 0.580376767498592,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:18.037622+00:00"
+    },
+    {
+      "elapsed_sec": 33.763836931999776,
+      "eval": 148,
+      "kind": "step",
+      "message": "generation=6/14 best_fitness=0.5271800474999964",
+      "timestamp_utc": "2026-04-20T15:18:18.037758+00:00"
+    },
+    {
+      "b1": 840,
+      "b2": 840,
+      "elapsed_sec": 33.95636993299968,
+      "eval": 149,
+      "fitness": 0.6347164044996134,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:18.230297+00:00"
+    },
+    {
+      "b1": 306,
+      "b2": 556,
+      "elapsed_sec": 34.13564774199995,
+      "eval": 150,
+      "fitness": 0.6004279489984583,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:18.409574+00:00"
+    },
+    {
+      "b1": 455,
+      "b2": 455,
+      "elapsed_sec": 34.31164652999996,
+      "eval": 151,
+      "fitness": 0.5775986645021476,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:18.585573+00:00"
+    },
+    {
+      "b1": 371,
+      "b2": 371,
+      "elapsed_sec": 34.487605411000004,
+      "eval": 152,
+      "fitness": 0.5748034564994668,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:18.761533+00:00"
+    },
+    {
+      "b1": 340,
+      "b2": 498,
+      "elapsed_sec": 34.68351019699958,
+      "eval": 153,
+      "fitness": 0.644058812001731,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:18.957437+00:00"
+    },
+    {
+      "b1": 486,
+      "b2": 486,
+      "elapsed_sec": 34.87954874299976,
+      "eval": 154,
+      "fitness": 0.6715163504991324,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:19.153476+00:00"
+    },
+    {
+      "b1": 443,
+      "b2": 443,
+      "elapsed_sec": 35.063058372999876,
+      "eval": 155,
+      "fitness": 0.6021383290008089,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:19.336986+00:00"
+    },
+    {
+      "b1": 436,
+      "b2": 436,
+      "elapsed_sec": 35.26203434099989,
+      "eval": 156,
+      "fitness": 0.6789895624999644,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:19.535962+00:00"
+    },
+    {
+      "b1": 400,
+      "b2": 400,
+      "elapsed_sec": 35.472755503999906,
+      "eval": 157,
+      "fitness": 0.7475792145010018,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:19.746685+00:00"
+    },
+    {
+      "b1": 463,
+      "b2": 463,
+      "elapsed_sec": 35.66283806399997,
+      "eval": 158,
+      "fitness": 0.6450662975005343,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:19.936765+00:00"
+    },
+    {
+      "b1": 393,
+      "b2": 393,
+      "elapsed_sec": 35.83419260399978,
+      "eval": 159,
+      "fitness": 0.5431529034992764,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:20.108119+00:00"
+    },
+    {
+      "b1": 246,
+      "b2": 491,
+      "elapsed_sec": 36.018267589999596,
+      "eval": 160,
+      "fitness": 0.6025373575002959,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:20.292195+00:00"
+    },
+    {
+      "b1": 532,
+      "b2": 846,
+      "elapsed_sec": 36.25471483599995,
+      "eval": 161,
+      "fitness": 0.8530063655009599,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:20.528642+00:00"
+    },
+    {
+      "b1": 386,
+      "b2": 386,
+      "elapsed_sec": 36.477581972999815,
+      "eval": 162,
+      "fitness": 0.7781086799977857,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:20.751509+00:00"
+    },
+    {
+      "b1": 448,
+      "b2": 448,
+      "elapsed_sec": 36.68009602899974,
+      "eval": 163,
+      "fitness": 0.6796518005007783,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:20.954023+00:00"
+    },
+    {
+      "b1": 426,
+      "b2": 426,
+      "elapsed_sec": 36.859749218999696,
+      "eval": 164,
+      "fitness": 0.5743803495006432,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:21.133676+00:00"
+    },
+    {
+      "b1": 353,
+      "b2": 375,
+      "elapsed_sec": 37.043684545999895,
+      "eval": 165,
+      "fitness": 0.5841535554991424,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:21.317611+00:00"
+    },
+    {
+      "b1": 247,
+      "b2": 471,
+      "elapsed_sec": 37.24801070199965,
+      "eval": 166,
+      "fitness": 0.6546233139993092,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:21.521943+00:00"
+    },
+    {
+      "b1": 414,
+      "b2": 414,
+      "elapsed_sec": 37.45774636899978,
+      "eval": 167,
+      "fitness": 0.7047181290001845,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:21.731673+00:00"
+    },
+    {
+      "b1": 425,
+      "b2": 425,
+      "elapsed_sec": 37.63380609499973,
+      "eval": 168,
+      "fitness": 0.5638162854991151,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:21.907733+00:00"
+    },
+    {
+      "b1": 318,
+      "b2": 480,
+      "elapsed_sec": 37.81410658300001,
+      "eval": 169,
+      "fitness": 0.6135284070021498,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:22.088034+00:00"
+    },
+    {
+      "elapsed_sec": 37.814206762999675,
+      "eval": 169,
+      "kind": "step",
+      "message": "generation=7/14 best_fitness=0.5271800474999964",
+      "timestamp_utc": "2026-04-20T15:18:22.088127+00:00"
+    },
+    {
+      "b1": 336,
+      "b2": 429,
+      "elapsed_sec": 37.99436363299992,
+      "eval": 170,
+      "fitness": 0.6068155330019636,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:22.268291+00:00"
+    },
+    {
+      "b1": 371,
+      "b2": 371,
+      "elapsed_sec": 38.17086206999966,
+      "eval": 171,
+      "fitness": 0.5766347860012502,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:22.444789+00:00"
+    },
+    {
+      "b1": 414,
+      "b2": 414,
+      "elapsed_sec": 38.34854007299964,
+      "eval": 172,
+      "fitness": 0.5715916255010143,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:22.622468+00:00"
+    },
+    {
+      "b1": 394,
+      "b2": 394,
+      "elapsed_sec": 38.52961407199973,
+      "eval": 173,
+      "fitness": 0.584295030498879,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:22.803541+00:00"
+    },
+    {
+      "b1": 374,
+      "b2": 374,
+      "elapsed_sec": 38.74286521299973,
+      "eval": 174,
+      "fitness": 0.7391081814971585,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:23.016792+00:00"
+    },
+    {
+      "b1": 426,
+      "b2": 426,
+      "elapsed_sec": 38.98245485299958,
+      "eval": 175,
+      "fitness": 0.8500312115015731,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:23.256382+00:00"
+    },
+    {
+      "b1": 362,
+      "b2": 362,
+      "elapsed_sec": 39.178034680999644,
+      "eval": 176,
+      "fitness": 0.6795883204997608,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:23.451962+00:00"
+    },
+    {
+      "b1": 270,
+      "b2": 532,
+      "elapsed_sec": 39.372623158999886,
+      "eval": 177,
+      "fitness": 0.6285405090002314,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:23.646555+00:00"
+    },
+    {
+      "b1": 444,
+      "b2": 444,
+      "elapsed_sec": 39.550852421999934,
+      "eval": 178,
+      "fitness": 0.5953295944991623,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:23.824779+00:00"
+    },
+    {
+      "b1": 426,
+      "b2": 426,
+      "elapsed_sec": 39.73431235899989,
+      "eval": 179,
+      "fitness": 0.5759667039994838,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:24.008239+00:00"
+    },
+    {
+      "b1": 384,
+      "b2": 384,
+      "elapsed_sec": 39.92783636899958,
+      "eval": 180,
+      "fitness": 0.67970665050143,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:24.201764+00:00"
+    },
+    {
+      "b1": 393,
+      "b2": 393,
+      "elapsed_sec": 40.1095652959998,
+      "eval": 181,
+      "fitness": 0.5958930224999222,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:24.383492+00:00"
+    },
+    {
+      "b1": 311,
+      "b2": 537,
+      "elapsed_sec": 40.30264735399987,
+      "eval": 182,
+      "fitness": 0.6472196934992098,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:24.576575+00:00"
+    },
+    {
+      "b1": 414,
+      "b2": 414,
+      "elapsed_sec": 40.482171882999864,
+      "eval": 183,
+      "fitness": 0.582265782001059,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:24.756099+00:00"
+    },
+    {
+      "b1": 318,
+      "b2": 480,
+      "elapsed_sec": 40.68156379099992,
+      "eval": 184,
+      "fitness": 0.693730870999616,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:24.955491+00:00"
+    },
+    {
+      "b1": 320,
+      "b2": 472,
+      "elapsed_sec": 40.86046977199976,
+      "eval": 185,
+      "fitness": 0.5847488949991657,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:25.134396+00:00"
+    },
+    {
+      "b1": 426,
+      "b2": 426,
+      "elapsed_sec": 41.05149718499979,
+      "eval": 186,
+      "fitness": 0.6241682764996312,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:25.325424+00:00"
+    },
+    {
+      "b1": 470,
+      "b2": 470,
+      "elapsed_sec": 41.2379959609998,
+      "eval": 187,
+      "fitness": 0.6301383814975452,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:25.511923+00:00"
+    },
+    {
+      "b1": 301,
+      "b2": 399,
+      "elapsed_sec": 41.41557871199984,
+      "eval": 188,
+      "fitness": 0.571369274998915,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:25.689506+00:00"
+    },
+    {
+      "b1": 409,
+      "b2": 409,
+      "elapsed_sec": 41.61075283599985,
+      "eval": 189,
+      "fitness": 0.6512133719998019,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:25.884679+00:00"
+    },
+    {
+      "b1": 386,
+      "b2": 386,
+      "elapsed_sec": 41.82225714499964,
+      "eval": 190,
+      "fitness": 0.73532124900089,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:26.096184+00:00"
+    },
+    {
+      "elapsed_sec": 41.82244434699987,
+      "eval": 190,
+      "kind": "step",
+      "message": "generation=8/14 best_fitness=0.5271800474999964",
+      "timestamp_utc": "2026-04-20T15:18:26.096365+00:00"
+    },
+    {
+      "b1": 270,
+      "b2": 529,
+      "elapsed_sec": 42.01502907699978,
+      "eval": 191,
+      "fitness": 0.6390207320023364,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:26.288957+00:00"
+    },
+    {
+      "b1": 414,
+      "b2": 414,
+      "elapsed_sec": 42.197139395999784,
+      "eval": 192,
+      "fitness": 0.5826387619979414,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:26.471066+00:00"
+    },
+    {
+      "b1": 388,
+      "b2": 388,
+      "elapsed_sec": 42.38937824300001,
+      "eval": 193,
+      "fitness": 0.6474973829999726,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:26.663305+00:00"
+    },
+    {
+      "b1": 403,
+      "b2": 403,
+      "elapsed_sec": 42.57378274199982,
+      "eval": 194,
+      "fitness": 0.6033657049986232,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:26.847711+00:00"
+    },
+    {
+      "b1": 317,
+      "b2": 378,
+      "elapsed_sec": 42.749859767999624,
+      "eval": 195,
+      "fitness": 0.5795979990029991,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:27.023787+00:00"
+    },
+    {
+      "b1": 415,
+      "b2": 415,
+      "elapsed_sec": 42.93065438599979,
+      "eval": 196,
+      "fitness": 0.601128565000181,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:27.204582+00:00"
+    },
+    {
+      "b1": 414,
+      "b2": 414,
+      "elapsed_sec": 43.11300576599979,
+      "eval": 197,
+      "fitness": 0.5840379300002496,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:27.386935+00:00"
+    },
+    {
+      "b1": 389,
+      "b2": 389,
+      "elapsed_sec": 43.286452043999816,
+      "eval": 198,
+      "fitness": 0.5567548740023085,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:27.560379+00:00"
+    },
+    {
+      "b1": 426,
+      "b2": 426,
+      "elapsed_sec": 43.463281944999835,
+      "eval": 199,
+      "fitness": 0.5862328510011139,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:27.737210+00:00"
+    },
+    {
+      "b1": 602,
+      "b2": 602,
+      "elapsed_sec": 43.64842348399998,
+      "eval": 200,
+      "fitness": 0.6120323239988466,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:27.922351+00:00"
+    },
+    {
+      "b1": 382,
+      "b2": 382,
+      "elapsed_sec": 43.82887716899995,
+      "eval": 201,
+      "fitness": 0.5860991345018647,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:28.102804+00:00"
+    },
+    {
+      "b1": 373,
+      "b2": 373,
+      "elapsed_sec": 44.00600507699983,
+      "eval": 202,
+      "fitness": 0.5702717810004287,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:28.279932+00:00"
+    },
+    {
+      "b1": 379,
+      "b2": 379,
+      "elapsed_sec": 44.17837570699976,
+      "eval": 203,
+      "fitness": 0.5529160234980282,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:28.452302+00:00"
+    },
+    {
+      "b1": 414,
+      "b2": 414,
+      "elapsed_sec": 44.35342876099958,
+      "eval": 204,
+      "fitness": 0.5658906540008957,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:28.627355+00:00"
+    },
+    {
+      "b1": 414,
+      "b2": 414,
+      "elapsed_sec": 44.52742122999962,
+      "eval": 205,
+      "fitness": 0.565638923999586,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:28.801348+00:00"
+    },
+    {
+      "b1": 548,
+      "b2": 548,
+      "elapsed_sec": 44.71186670299994,
+      "eval": 206,
+      "fitness": 0.5952994374995342,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:28.985794+00:00"
+    },
+    {
+      "b1": 377,
+      "b2": 377,
+      "elapsed_sec": 44.92551592899963,
+      "eval": 207,
+      "fitness": 0.7355197910007973,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:29.199444+00:00"
+    },
+    {
+      "b1": 404,
+      "b2": 404,
+      "elapsed_sec": 45.10766929099964,
+      "eval": 208,
+      "fitness": 0.5927255429983234,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:29.381596+00:00"
+    },
+    {
+      "b1": 450,
+      "b2": 450,
+      "elapsed_sec": 45.31953599399958,
+      "eval": 209,
+      "fitness": 0.7412929759998406,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:29.593463+00:00"
+    },
+    {
+      "b1": 422,
+      "b2": 422,
+      "elapsed_sec": 45.49904702200001,
+      "eval": 210,
+      "fitness": 0.5854689569969196,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:29.772974+00:00"
+    },
+    {
+      "b1": 443,
+      "b2": 443,
+      "elapsed_sec": 45.681390491,
+      "eval": 211,
+      "fitness": 0.5810063274989261,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:29.955318+00:00"
+    },
+    {
+      "elapsed_sec": 45.68150497099987,
+      "eval": 211,
+      "kind": "step",
+      "message": "generation=9/14 best_fitness=0.5271800474999964",
+      "timestamp_utc": "2026-04-20T15:18:29.955426+00:00"
+    },
+    {
+      "b1": 388,
+      "b2": 388,
+      "elapsed_sec": 45.86206027599974,
+      "eval": 212,
+      "fitness": 0.5709253710012945,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:30.135987+00:00"
+    },
+    {
+      "b1": 413,
+      "b2": 413,
+      "elapsed_sec": 46.04716492999978,
+      "eval": 213,
+      "fitness": 0.5974353960002645,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:30.321095+00:00"
+    },
+    {
+      "b1": 410,
+      "b2": 410,
+      "elapsed_sec": 46.22275788299976,
+      "eval": 214,
+      "fitness": 0.5915049574991826,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:30.496685+00:00"
+    },
+    {
+      "b1": 891,
+      "b2": 891,
+      "elapsed_sec": 46.40597644799982,
+      "eval": 215,
+      "fitness": 0.6041007454987266,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:30.679903+00:00"
+    },
+    {
+      "b1": 343,
+      "b2": 343,
+      "elapsed_sec": 46.57862796099971,
+      "eval": 216,
+      "fitness": 0.5597814630000357,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:30.852555+00:00"
+    },
+    {
+      "b1": 392,
+      "b2": 392,
+      "elapsed_sec": 46.75820055999975,
+      "eval": 217,
+      "fitness": 0.5818847245000143,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:31.032128+00:00"
+    },
+    {
+      "b1": 515,
+      "b2": 515,
+      "elapsed_sec": 47.007331714999964,
+      "eval": 218,
+      "fitness": 0.7959184859994366,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:31.281261+00:00"
+    },
+    {
+      "b1": 414,
+      "b2": 414,
+      "elapsed_sec": 47.22286923399997,
+      "eval": 219,
+      "fitness": 0.623052679000466,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:31.496796+00:00"
+    },
+    {
+      "b1": 392,
+      "b2": 392,
+      "elapsed_sec": 47.41740762299969,
+      "eval": 220,
+      "fitness": 0.6454593759979161,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:31.691336+00:00"
+    },
+    {
+      "b1": 386,
+      "b2": 386,
+      "elapsed_sec": 47.63253530799966,
+      "eval": 221,
+      "fitness": 0.729217893002442,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:31.906463+00:00"
+    },
+    {
+      "b1": 396,
+      "b2": 396,
+      "elapsed_sec": 47.87344171199993,
+      "eval": 222,
+      "fitness": 0.848441915499734,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:32.147370+00:00"
+    },
+    {
+      "b1": 436,
+      "b2": 436,
+      "elapsed_sec": 48.083679793999636,
+      "eval": 223,
+      "fitness": 0.6850998399993387,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:32.357607+00:00"
+    },
+    {
+      "b1": 384,
+      "b2": 384,
+      "elapsed_sec": 48.28720466899995,
+      "eval": 224,
+      "fitness": 0.6678658559997075,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:32.561133+00:00"
+    },
+    {
+      "b1": 330,
+      "b2": 363,
+      "elapsed_sec": 48.495534223999584,
+      "eval": 225,
+      "fitness": 0.6631744329974936,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:32.769461+00:00"
+    },
+    {
+      "b1": 384,
+      "b2": 384,
+      "elapsed_sec": 48.74664292699981,
+      "eval": 226,
+      "fitness": 0.8589622454999244,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:33.020571+00:00"
+    },
+    {
+      "b1": 744,
+      "b2": 744,
+      "elapsed_sec": 49.05544409999993,
+      "eval": 227,
+      "fitness": 1.0912343949980823,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:33.329371+00:00"
+    },
+    {
+      "b1": 400,
+      "b2": 400,
+      "elapsed_sec": 49.28551362899998,
+      "eval": 228,
+      "fitness": 0.8078458595007305,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:33.559442+00:00"
+    },
+    {
+      "b1": 378,
+      "b2": 378,
+      "elapsed_sec": 49.48312049399965,
+      "eval": 229,
+      "fitness": 0.6576731659984034,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:33.757048+00:00"
+    },
+    {
+      "b1": 218,
+      "b2": 433,
+      "elapsed_sec": 49.68796025799975,
+      "eval": 230,
+      "fitness": 0.6801182919982693,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:33.961888+00:00"
+    },
+    {
+      "b1": 362,
+      "b2": 362,
+      "elapsed_sec": 49.94498389199998,
+      "eval": 231,
+      "fitness": 0.929866301499942,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:34.218913+00:00"
+    },
+    {
+      "b1": 374,
+      "b2": 374,
+      "elapsed_sec": 50.153381055999944,
+      "eval": 232,
+      "fitness": 0.6847484100005659,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:34.427309+00:00"
+    },
+    {
+      "elapsed_sec": 50.15349908399958,
+      "eval": 232,
+      "kind": "step",
+      "message": "generation=10/14 best_fitness=0.5271800474999964",
+      "timestamp_utc": "2026-04-20T15:18:34.427420+00:00"
+    },
+    {
+      "b1": 255,
+      "b2": 406,
+      "elapsed_sec": 50.353809575000014,
+      "eval": 233,
+      "fitness": 0.654796338998267,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:34.627737+00:00"
+    },
+    {
+      "b1": 389,
+      "b2": 389,
+      "elapsed_sec": 50.54337132399996,
+      "eval": 234,
+      "fitness": 0.6167635385002086,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:34.817299+00:00"
+    },
+    {
+      "b1": 393,
+      "b2": 393,
+      "elapsed_sec": 50.725561728999764,
+      "eval": 235,
+      "fitness": 0.5967821724996156,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:34.999489+00:00"
+    },
+    {
+      "b1": 388,
+      "b2": 388,
+      "elapsed_sec": 50.917581784999584,
+      "eval": 236,
+      "fitness": 0.6256028169964338,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:35.191510+00:00"
+    },
+    {
+      "b1": 398,
+      "b2": 398,
+      "elapsed_sec": 51.11915340399992,
+      "eval": 237,
+      "fitness": 0.6603838825005823,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:35.393081+00:00"
+    },
+    {
+      "b1": 249,
+      "b2": 393,
+      "elapsed_sec": 51.31557823899993,
+      "eval": 238,
+      "fitness": 0.6545444995001617,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:35.589506+00:00"
+    },
+    {
+      "b1": 393,
+      "b2": 393,
+      "elapsed_sec": 51.50778688399987,
+      "eval": 239,
+      "fitness": 0.6207940664969556,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:35.781717+00:00"
+    },
+    {
+      "b1": 404,
+      "b2": 404,
+      "elapsed_sec": 51.6875342469998,
+      "eval": 240,
+      "fitness": 0.5767599000005248,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:35.961464+00:00"
+    },
+    {
+      "b1": 391,
+      "b2": 391,
+      "elapsed_sec": 51.863335215000006,
+      "eval": 241,
+      "fitness": 0.5662449005003509,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:36.137262+00:00"
+    },
+    {
+      "b1": 334,
+      "b2": 345,
+      "elapsed_sec": 52.03941827599965,
+      "eval": 242,
+      "fitness": 0.5606121205005365,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:36.313345+00:00"
+    },
+    {
+      "b1": 649,
+      "b2": 649,
+      "elapsed_sec": 52.253668142999686,
+      "eval": 243,
+      "fitness": 0.7291314949968637,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:36.527595+00:00"
+    },
+    {
+      "b1": 365,
+      "b2": 365,
+      "elapsed_sec": 52.47808915299993,
+      "eval": 244,
+      "fitness": 0.7876135145002081,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:38.410022+00:00"
+    },
+    {
+      "b1": 409,
+      "b2": 409,
+      "elapsed_sec": 52.67112148899969,
+      "eval": 245,
+      "fitness": 0.6371181449969754,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:38.603054+00:00"
+    },
+    {
+      "b1": 393,
+      "b2": 393,
+      "elapsed_sec": 52.852140979999604,
+      "eval": 246,
+      "fitness": 0.5906725104982797,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:38.784113+00:00"
+    },
+    {
+      "b1": 392,
+      "b2": 392,
+      "elapsed_sec": 53.03006418399991,
+      "eval": 247,
+      "fitness": 0.5905007000014848,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:38.961996+00:00"
+    },
+    {
+      "b1": 883,
+      "b2": 883,
+      "elapsed_sec": 53.21018982999976,
+      "eval": 248,
+      "fitness": 0.6025051234978491,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:39.142122+00:00"
+    },
+    {
+      "b1": 390,
+      "b2": 390,
+      "elapsed_sec": 53.38673172599965,
+      "eval": 249,
+      "fitness": 0.5830246895009168,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:39.318664+00:00"
+    },
+    {
+      "b1": 388,
+      "b2": 388,
+      "elapsed_sec": 53.566895070999635,
+      "eval": 250,
+      "fitness": 0.5976496134994704,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:39.498828+00:00"
+    },
+    {
+      "b1": 347,
+      "b2": 347,
+      "elapsed_sec": 53.74658866399977,
+      "eval": 251,
+      "fitness": 0.5901700839983732,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:39.678521+00:00"
+    },
+    {
+      "b1": 398,
+      "b2": 398,
+      "elapsed_sec": 53.92792726499965,
+      "eval": 252,
+      "fitness": 0.6002269099992645,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:39.859860+00:00"
+    },
+    {
+      "b1": 410,
+      "b2": 410,
+      "elapsed_sec": 54.108104684999944,
+      "eval": 253,
+      "fitness": 0.5966375105006136,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:40.040038+00:00"
+    },
+    {
+      "elapsed_sec": 54.10825169599957,
+      "eval": 253,
+      "kind": "step",
+      "message": "generation=11/14 best_fitness=0.5271800474999964",
+      "timestamp_utc": "2026-04-20T15:18:40.040179+00:00"
+    },
+    {
+      "b1": 382,
+      "b2": 382,
+      "elapsed_sec": 54.31241979699962,
+      "eval": 254,
+      "fitness": 0.705160429497937,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:40.244353+00:00"
+    },
+    {
+      "b1": 392,
+      "b2": 392,
+      "elapsed_sec": 54.535371122000015,
+      "eval": 255,
+      "fitness": 0.806364183498772,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:40.467304+00:00"
+    },
+    {
+      "b1": 393,
+      "b2": 393,
+      "elapsed_sec": 54.726353384999584,
+      "eval": 256,
+      "fitness": 0.6315042369997173,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:40.658286+00:00"
+    },
+    {
+      "b1": 365,
+      "b2": 365,
+      "elapsed_sec": 54.920405991999814,
+      "eval": 257,
+      "fitness": 0.6526052094968691,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:40.852338+00:00"
+    },
+    {
+      "b1": 378,
+      "b2": 378,
+      "elapsed_sec": 55.102346163999755,
+      "eval": 258,
+      "fitness": 0.5869188755007144,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:41.034280+00:00"
+    },
+    {
+      "b1": 346,
+      "b2": 346,
+      "elapsed_sec": 55.27737328399962,
+      "eval": 259,
+      "fitness": 0.5622134279992679,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:41.209306+00:00"
+    },
+    {
+      "b1": 369,
+      "b2": 369,
+      "elapsed_sec": 55.47061643999996,
+      "eval": 260,
+      "fitness": 0.6348070014985296,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:41.402549+00:00"
+    },
+    {
+      "b1": 387,
+      "b2": 387,
+      "elapsed_sec": 55.67152678799994,
+      "eval": 261,
+      "fitness": 0.6942928854996353,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:41.603459+00:00"
+    },
+    {
+      "b1": 389,
+      "b2": 389,
+      "elapsed_sec": 55.85466919099963,
+      "eval": 262,
+      "fitness": 0.6146996985012265,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:41.786601+00:00"
+    },
+    {
+      "b1": 342,
+      "b2": 342,
+      "elapsed_sec": 56.033361846999924,
+      "eval": 263,
+      "fitness": 0.5710287034994508,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:41.965294+00:00"
+    },
+    {
+      "b1": 345,
+      "b2": 345,
+      "elapsed_sec": 56.204514173999996,
+      "eval": 264,
+      "fitness": 0.5691287414999806,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:42.136448+00:00"
+    },
+    {
+      "b1": 391,
+      "b2": 391,
+      "elapsed_sec": 56.37343615199961,
+      "eval": 265,
+      "fitness": 0.5566810079999414,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:42.305368+00:00"
+    },
+    {
+      "b1": 380,
+      "b2": 380,
+      "elapsed_sec": 56.54711067399967,
+      "eval": 266,
+      "fitness": 0.5588683164999111,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:42.479043+00:00"
+    },
+    {
+      "b1": 485,
+      "b2": 485,
+      "elapsed_sec": 56.722626627999944,
+      "eval": 267,
+      "fitness": 0.5802872629997182,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:42.654558+00:00"
+    },
+    {
+      "b1": 390,
+      "b2": 390,
+      "elapsed_sec": 56.903293076999944,
+      "eval": 268,
+      "fitness": 0.6163340079990576,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:42.835225+00:00"
+    },
+    {
+      "b1": 351,
+      "b2": 351,
+      "elapsed_sec": 57.07025967299978,
+      "eval": 269,
+      "fitness": 0.5338737470024171,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:43.002192+00:00"
+    },
+    {
+      "b1": 397,
+      "b2": 397,
+      "elapsed_sec": 57.24052088099961,
+      "eval": 270,
+      "fitness": 0.5563721635007823,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:43.172453+00:00"
+    },
+    {
+      "b1": 392,
+      "b2": 392,
+      "elapsed_sec": 57.41590064999991,
+      "eval": 271,
+      "fitness": 0.5736839865021466,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:43.347836+00:00"
+    },
+    {
+      "b1": 388,
+      "b2": 388,
+      "elapsed_sec": 57.592445825999675,
+      "eval": 272,
+      "fitness": 0.6077137190006852,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:43.524378+00:00"
+    },
+    {
+      "b1": 363,
+      "b2": 363,
+      "elapsed_sec": 57.76457032099961,
+      "eval": 273,
+      "fitness": 0.56967097050142,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:43.696503+00:00"
+    },
+    {
+      "b1": 403,
+      "b2": 403,
+      "elapsed_sec": 57.95394882299979,
+      "eval": 274,
+      "fitness": 0.6318576830003622,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:43.885882+00:00"
+    },
+    {
+      "elapsed_sec": 57.954054358999656,
+      "eval": 274,
+      "kind": "step",
+      "message": "generation=12/14 best_fitness=0.5271800474999964",
+      "timestamp_utc": "2026-04-20T15:18:43.885981+00:00"
+    },
+    {
+      "b1": 709,
+      "b2": 709,
+      "elapsed_sec": 58.141596302999915,
+      "eval": 275,
+      "fitness": 0.6095062044989845,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:44.073528+00:00"
+    },
+    {
+      "b1": 363,
+      "b2": 363,
+      "elapsed_sec": 58.32294003199968,
+      "eval": 276,
+      "fitness": 0.6093103685007009,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:44.254872+00:00"
+    },
+    {
+      "b1": 362,
+      "b2": 362,
+      "elapsed_sec": 58.49671794599999,
+      "eval": 277,
+      "fitness": 0.5624584025019885,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:44.428650+00:00"
+    },
+    {
+      "b1": 391,
+      "b2": 391,
+      "elapsed_sec": 58.66948720499977,
+      "eval": 278,
+      "fitness": 0.5729559845010499,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:44.601419+00:00"
+    },
+    {
+      "b1": 387,
+      "b2": 387,
+      "elapsed_sec": 58.83520250799984,
+      "eval": 279,
+      "fitness": 0.5485758654995152,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:44.767134+00:00"
+    },
+    {
+      "b1": 554,
+      "b2": 554,
+      "elapsed_sec": 59.03000001700002,
+      "eval": 280,
+      "fitness": 0.6509366700008741,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:44.961933+00:00"
+    },
+    {
+      "b1": 373,
+      "b2": 373,
+      "elapsed_sec": 59.22187899699975,
+      "eval": 281,
+      "fitness": 0.6063640915001542,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:45.153811+00:00"
+    },
+    {
+      "b1": 368,
+      "b2": 368,
+      "elapsed_sec": 59.391197670999645,
+      "eval": 282,
+      "fitness": 0.5480865740021272,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:45.323130+00:00"
+    },
+    {
+      "b1": 384,
+      "b2": 384,
+      "elapsed_sec": 59.56185582799981,
+      "eval": 283,
+      "fitness": 0.5482240089984316,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:45.493788+00:00"
+    },
+    {
+      "b1": 397,
+      "b2": 397,
+      "elapsed_sec": 59.73321883799963,
+      "eval": 284,
+      "fitness": 0.5727858404984545,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:45.665151+00:00"
+    },
+    {
+      "b1": 414,
+      "b2": 414,
+      "elapsed_sec": 59.91351689899966,
+      "eval": 285,
+      "fitness": 0.578828192499941,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:45.845449+00:00"
+    },
+    {
+      "b1": 386,
+      "b2": 386,
+      "elapsed_sec": 60.094519959999616,
+      "eval": 286,
+      "fitness": 0.5887439899997844,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:46.026452+00:00"
+    },
+    {
+      "b1": 384,
+      "b2": 384,
+      "elapsed_sec": 60.266299009999784,
+      "eval": 287,
+      "fitness": 0.5512794719991234,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:46.198231+00:00"
+    },
+    {
+      "b1": 350,
+      "b2": 350,
+      "elapsed_sec": 60.43740084000001,
+      "eval": 288,
+      "fitness": 0.543252485001176,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:46.369333+00:00"
+    },
+    {
+      "b1": 428,
+      "b2": 428,
+      "elapsed_sec": 60.60875760099998,
+      "eval": 289,
+      "fitness": 0.5593004480001582,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:46.540690+00:00"
+    },
+    {
+      "b1": 388,
+      "b2": 388,
+      "elapsed_sec": 60.77532220799958,
+      "eval": 290,
+      "fitness": 0.5374841909986117,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:46.707254+00:00"
+    },
+    {
+      "b1": 365,
+      "b2": 365,
+      "elapsed_sec": 60.94731223499957,
+      "eval": 291,
+      "fitness": 0.5572070460018494,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:46.879244+00:00"
+    },
+    {
+      "b1": 485,
+      "b2": 485,
+      "elapsed_sec": 61.129055067999616,
+      "eval": 292,
+      "fitness": 0.5928034525009025,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:47.060987+00:00"
+    },
+    {
+      "b1": 347,
+      "b2": 347,
+      "elapsed_sec": 61.29807843499975,
+      "eval": 293,
+      "fitness": 0.551364701999546,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:47.230011+00:00"
+    },
+    {
+      "b1": 375,
+      "b2": 375,
+      "elapsed_sec": 61.46630534799988,
+      "eval": 294,
+      "fitness": 0.5402946759993483,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:47.398277+00:00"
+    },
+    {
+      "b1": 395,
+      "b2": 395,
+      "elapsed_sec": 61.62927990699973,
+      "eval": 295,
+      "fitness": 0.5272746275006739,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:47.561212+00:00"
+    },
+    {
+      "elapsed_sec": 61.629440537999926,
+      "eval": 295,
+      "kind": "step",
+      "message": "generation=13/14 best_fitness=0.5271800474999964",
+      "timestamp_utc": "2026-04-20T15:18:47.561367+00:00"
+    },
+    {
+      "b1": 385,
+      "b2": 385,
+      "elapsed_sec": 61.803096334999736,
+      "eval": 296,
+      "fitness": 0.561771462500019,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:47.735028+00:00"
+    },
+    {
+      "b1": 367,
+      "b2": 367,
+      "elapsed_sec": 61.96852905099968,
+      "eval": 297,
+      "fitness": 0.5301975669999592,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:47.900461+00:00"
+    },
+    {
+      "b1": 356,
+      "b2": 356,
+      "elapsed_sec": 62.13126111499969,
+      "eval": 298,
+      "fitness": 0.5222693495004478,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:48.063193+00:00"
+    },
+    {
+      "b1": 306,
+      "b2": 306,
+      "elapsed_sec": 62.29609271599975,
+      "eval": 299,
+      "fitness": 0.5242401325010633,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:48.228025+00:00"
+    },
+    {
+      "b1": 391,
+      "b2": 391,
+      "elapsed_sec": 62.48491305199968,
+      "eval": 300,
+      "fitness": 0.6179786905004221,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:48.416845+00:00"
+    },
+    {
+      "b1": 391,
+      "b2": 391,
+      "elapsed_sec": 62.66759171499962,
+      "eval": 301,
+      "fitness": 0.595000146498478,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:48.599525+00:00"
+    },
+    {
+      "b1": 386,
+      "b2": 386,
+      "elapsed_sec": 62.844220695999866,
+      "eval": 302,
+      "fitness": 0.5768030620006357,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:48.776155+00:00"
+    },
+    {
+      "b1": 375,
+      "b2": 375,
+      "elapsed_sec": 63.02090766699985,
+      "eval": 303,
+      "fitness": 0.574612317998799,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:48.952840+00:00"
+    },
+    {
+      "b1": 356,
+      "b2": 356,
+      "elapsed_sec": 63.19374592699978,
+      "eval": 304,
+      "fitness": 0.5576639859989427,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:49.125678+00:00"
+    },
+    {
+      "b1": 350,
+      "b2": 350,
+      "elapsed_sec": 63.362207551999745,
+      "eval": 305,
+      "fitness": 0.5532338379994144,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:49.294140+00:00"
+    },
+    {
+      "b1": 378,
+      "b2": 378,
+      "elapsed_sec": 63.536734559999786,
+      "eval": 306,
+      "fitness": 0.5542613014970357,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:49.468667+00:00"
+    },
+    {
+      "b1": 388,
+      "b2": 388,
+      "elapsed_sec": 63.70976820499982,
+      "eval": 307,
+      "fitness": 0.5577712380024877,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:49.641700+00:00"
+    },
+    {
+      "b1": 413,
+      "b2": 413,
+      "elapsed_sec": 63.89068408200001,
+      "eval": 308,
+      "fitness": 0.5855196874986177,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:49.822616+00:00"
+    },
+    {
+      "b1": 370,
+      "b2": 370,
+      "elapsed_sec": 64.05924072199969,
+      "eval": 309,
+      "fitness": 0.555455729499954,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:49.991173+00:00"
+    },
+    {
+      "b1": 387,
+      "b2": 387,
+      "elapsed_sec": 64.23469533099978,
+      "eval": 310,
+      "fitness": 0.5715803464966029,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:50.166628+00:00"
+    },
+    {
+      "b1": 364,
+      "b2": 364,
+      "elapsed_sec": 64.4112876309996,
+      "eval": 311,
+      "fitness": 0.565675023001404,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:50.343220+00:00"
+    },
+    {
+      "b1": 380,
+      "b2": 647,
+      "elapsed_sec": 64.590225981,
+      "eval": 312,
+      "fitness": 0.5958945815018524,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:50.522158+00:00"
+    },
+    {
+      "b1": 413,
+      "b2": 413,
+      "elapsed_sec": 64.76447651999979,
+      "eval": 313,
+      "fitness": 0.5654760010024802,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:50.696409+00:00"
+    },
+    {
+      "b1": 331,
+      "b2": 331,
+      "elapsed_sec": 64.94933426699981,
+      "eval": 314,
+      "fitness": 0.6093051399991509,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:50.881267+00:00"
+    },
+    {
+      "b1": 350,
+      "b2": 350,
+      "elapsed_sec": 65.13816901699965,
+      "eval": 315,
+      "fitness": 0.6431555715021204,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:51.070102+00:00"
+    },
+    {
+      "b1": 372,
+      "b2": 372,
+      "elapsed_sec": 65.3381222539997,
+      "eval": 316,
+      "fitness": 0.6631019885003298,
+      "kind": "evaluation",
+      "successes": 0,
+      "timestamp_utc": "2026-04-20T15:18:51.270055+00:00"
+    },
+    {
+      "b1": 356,
+      "b2": 356,
+      "elapsed_sec": 65.33824336599992,
+      "eval": 298,
+      "fitness": 0.5222693495004478,
+      "kind": "new_best",
+      "timestamp_utc": "2026-04-20T15:18:51.270170+00:00"
+    },
+    {
+      "elapsed_sec": 65.33832051599984,
+      "eval": 316,
+      "kind": "step",
+      "message": "generation=14/14 best_fitness=0.5222693495004478",
+      "timestamp_utc": "2026-04-20T15:18:51.270247+00:00"
+    }
+  ],
+  "optimized": {
+    "b1": 356,
+    "b2": 356,
+    "method": "ga",
+    "objective": 0.5222693495004478
+  },
+  "package_version": "0.1.0",
+  "plots": {
+    "b1_b2_trajectory": "data/experiments/20_dset_20260420T151523Z/ga/optimize_20260420T151851Z/plots/ga_optimize_20260420T151851Z_b1_b2_trajectory.png",
+    "b1_ratio_heatmap": "data/experiments/20_dset_20260420T151523Z/ga/optimize_20260420T151851Z/plots/ga_optimize_20260420T151851Z_b1_ratio_heatmap.png",
+    "jump_plot": "data/experiments/20_dset_20260420T151523Z/ga/optimize_20260420T151851Z/plots/ga_optimize_20260420T151851Z_jump_plot.png",
+    "progress_by_phase": "data/experiments/20_dset_20260420T151523Z/ga/optimize_20260420T151851Z/plots/ga_optimize_20260420T151851Z_progress_by_phase.png",
+    "time_efficiency": "data/experiments/20_dset_20260420T151523Z/ga/optimize_20260420T151851Z/plots/ga_optimize_20260420T151851Z_time_efficiency.png"
+  },
+  "run_stats": {
+    "best_eval": 298,
+    "best_eval_fraction": 0.9430379746835443,
+    "eval_per_sec": 4.836380188147448,
+    "evaluation_count": 316,
+    "improvement_percent": 15.836962138663818,
+    "max_plateau_evals": 178,
+    "median_plateau_evals": 21.5,
+    "new_best_count": 5,
+    "new_best_rate": 0.015822784810126583,
+    "p90_plateau_evals": 124.5,
+    "time_to_best_sec": 62.13126111499969,
+    "time_to_first_improvement_sec": 7.69277947899991,
+    "total_runtime_sec": 65.33832051599984
+  },
+  "suggested_baseline": {
+    "b1": 11000,
+    "b2": 220000,
+    "source": "exact_table",
+    "table_target_digits": 20
+  },
+  "timestamp_utc": "20260420T151852Z"
+}

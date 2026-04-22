@@ -1,0 +1,172 @@
+{
+  "baseline": {
+    "b1": 11000,
+    "b2": 220000,
+    "source": "exact_table",
+    "table_target_digits": 20
+  },
+  "command": "validate",
+  "curve_timeout_sec": null,
+  "curves_per_n": 24,
+  "dataset": "data/numbers/20_dset_20260420T151523Z/control.json",
+  "ecm_bin": "ecm",
+  "metrics": {
+    "baseline_mean": 3.957004737448892,
+    "optimized_mean": 0.9985179424998023,
+    "relative_improvement_pct": 74.7658138225138
+  },
+  "optimized": {
+    "b1": 100,
+    "b2": 100,
+    "method": "pso",
+    "source_file": "data/experiments/20_dset_20260420T151523Z/pso/optimize_20260420T151721Z/pso_optimize_20260420T151721Z.json"
+  },
+  "package_version": "0.1.0",
+  "seed": 42,
+  "timestamp_utc": "20260420T151724Z",
+  "trace": {
+    "by_number": [
+      {
+        "baseline_expected_time": 4.874420529990857,
+        "delta_abs": 3.908149539997794,
+        "delta_pct": 80.1767003062644,
+        "n": 32827500714826787822453175208983698055735687168971,
+        "optimized_expected_time": 0.9662709899930633
+      },
+      {
+        "baseline_expected_time": 4.265520690009907,
+        "delta_abs": 3.2580098900098164,
+        "delta_pct": 76.3801216025106,
+        "n": 25759050195515404156060852316342294000972864202683,
+        "optimized_expected_time": 1.007510800000091
+      },
+      {
+        "baseline_expected_time": 4.198230649985817,
+        "delta_abs": 3.214351449987589,
+        "delta_pct": 76.56443197084583,
+        "n": 44084748801150123919957663938331477679909834535457,
+        "optimized_expected_time": 0.9838791999982277
+      },
+      {
+        "baseline_expected_time": 4.290208070001427,
+        "delta_abs": 3.312240630002634,
+        "delta_pct": 77.20466177766369,
+        "n": 1622039092943241043150575711884061596004604084391,
+        "optimized_expected_time": 0.9779674399987925
+      },
+      {
+        "baseline_expected_time": 4.214408410011856,
+        "delta_abs": 3.2064378100130853,
+        "delta_pct": 76.08274989191341,
+        "n": 70146448342217085629473684108061458112495368686731,
+        "optimized_expected_time": 1.007970599998771
+      },
+      {
+        "baseline_expected_time": 4.307155340011377,
+        "delta_abs": 3.298967210007504,
+        "delta_pct": 76.59271490307545,
+        "n": 35526570405364442230789633187157090534465655012133,
+        "optimized_expected_time": 1.008188130003873
+      },
+      {
+        "baseline_expected_time": 4.20709774999068,
+        "delta_abs": 3.1994164699881367,
+        "delta_pct": 76.04806591420949,
+        "n": 18401363177129704478540985370481639117549694352813,
+        "optimized_expected_time": 1.0076812800025436
+      },
+      {
+        "baseline_expected_time": 4.733645409996825,
+        "delta_abs": 3.694665190005253,
+        "delta_pct": 78.05116078620115,
+        "n": 2796276307108227652723340896663005476515425807913,
+        "optimized_expected_time": 1.038980219991572
+      },
+      {
+        "baseline_expected_time": 4.5621062600002915,
+        "delta_abs": 3.540511440000955,
+        "delta_pct": 77.6069481555813,
+        "n": 35518696648965163026845085951533338120558716319897,
+        "optimized_expected_time": 1.0215948199993363
+      },
+      {
+        "baseline_expected_time": 4.521611690011014,
+        "delta_abs": 3.5310246100243603,
+        "delta_pct": 78.09216828205253,
+        "n": 62169900015080234681619700098946200561116012827411,
+        "optimized_expected_time": 0.9905870799866534
+      },
+      {
+        "baseline_expected_time": 4.270973399979994,
+        "delta_abs": 3.246160619987677,
+        "delta_pct": 76.00517062463753,
+        "n": 45161594773927013772093039965575567354936995827273,
+        "optimized_expected_time": 1.0248127799923168
+      },
+      {
+        "baseline_expected_time": 4.361165799987248,
+        "delta_abs": 3.3468987099877268,
+        "delta_pct": 76.7432118723281,
+        "n": 11488005205079248420290407703125645150898990100523,
+        "optimized_expected_time": 1.014267089999521
+      },
+      {
+        "baseline_expected_time": 3.7975065800037555,
+        "delta_abs": 2.7961078000134876,
+        "delta_pct": 73.63009756814489,
+        "n": 25636243231104243218680676915267362645087363232419,
+        "optimized_expected_time": 1.001398779990268
+      },
+      {
+        "baseline_expected_time": 0.3914683789985247,
+        "delta_abs": -0.5988309709978239,
+        "delta_pct": -152.97045767266957,
+        "n": 40895740063677941795045628757122708067416507323959,
+        "optimized_expected_time": 0.9902993499963486
+      },
+      {
+        "baseline_expected_time": 3.619192110008953,
+        "delta_abs": 2.642760960020496,
+        "delta_pct": 73.02074274288685,
+        "n": 19627218346999524823093846885831916953322047850419,
+        "optimized_expected_time": 0.976431149988457
+      },
+      {
+        "baseline_expected_time": 3.6829246400202464,
+        "delta_abs": 2.690822240010675,
+        "delta_pct": 73.06210425190461,
+        "n": 36006651713502575312409038173447258578404197651427,
+        "optimized_expected_time": 0.9921024000095713
+      },
+      {
+        "baseline_expected_time": 3.7960191999900417,
+        "delta_abs": 2.800398429976667,
+        "delta_pct": 73.77197749642609,
+        "n": 25612905850383866958162972078878622782892612525749,
+        "optimized_expected_time": 0.9956207700133746
+      },
+      {
+        "baseline_expected_time": 3.7633133099961924,
+        "delta_abs": 2.7803763899783007,
+        "delta_pct": 73.88107661918572,
+        "n": 57712625793505909628505519275118635114553462818449,
+        "optimized_expected_time": 0.9829369200178917
+      },
+      {
+        "baseline_expected_time": 3.7499102899937498,
+        "delta_abs": 2.7646710599765356,
+        "delta_pct": 73.72632532980259,
+        "n": 21090488126171920232047952934108096280079314000453,
+        "optimized_expected_time": 0.9852392300172141
+      },
+      {
+        "baseline_expected_time": 3.5332162399890876,
+        "delta_abs": 2.5365964199909286,
+        "delta_pct": 71.79284390470148,
+        "n": 84941982196499493443572061027834622262623053660077,
+        "optimized_expected_time": 0.9966198199981591
+      }
+    ]
+  },
+  "workers": 12
+}

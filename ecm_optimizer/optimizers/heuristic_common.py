@@ -6,7 +6,7 @@ import time
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 
-from ecm_optimizer.core.fitness import fitness_expected_time
+from ecm_optimizer.core.fitness import fitness_expected_time_with_stats
 from ecm_optimizer.models import OptimizationConfig, OptimizationResult
 
 
@@ -51,20 +51,28 @@ class ProgressTracker:
     def _timestamp_utc(self) -> str:
         return datetime.now(timezone.utc).isoformat()
 
-    def on_evaluation(self, *, config: OptimizationConfig, x_log: tuple[float, float], score: float) -> None:
+    def on_evaluation(
+        self,
+        *,
+        config: OptimizationConfig,
+        x_log: tuple[float, float],
+        score: float,
+        successes: int | None = None,
+    ) -> None:
         self.eval_count += 1
         b1, b2 = decode_candidate(x_log, config)
-        self.events.append(
-            {
-                "kind": "evaluation",
-                "eval": self.eval_count,
-                "b1": b1,
-                "b2": b2,
-                "fitness": score,
-                "elapsed_sec": self._elapsed_sec(),
-                "timestamp_utc": self._timestamp_utc(),
-            }
-        )
+        event: dict[str, float | int | str] = {
+            "kind": "evaluation",
+            "eval": self.eval_count,
+            "b1": b1,
+            "b2": b2,
+            "fitness": score,
+            "elapsed_sec": self._elapsed_sec(),
+            "timestamp_utc": self._timestamp_utc(),
+        }
+        if successes is not None:
+            event["successes"] = successes
+        self.events.append(event)
         if not config.verbose:
             return
         if self.eval_count % self.every != 0:
@@ -129,7 +137,7 @@ def evaluate_candidate(
 ) -> EvaluatedPoint:
     """Вычислить fitness для кандидата в лог-пространстве."""
     b1, b2 = decode_candidate(x_log, config)
-    score = fitness_expected_time(
+    score, successes = fitness_expected_time_with_stats(
         ecm_bin=ecm_bin,
         numbers=numbers,
         b1=b1,
@@ -139,7 +147,7 @@ def evaluate_candidate(
         workers=config.workers,
     )
     if progress is not None:
-        progress.on_evaluation(config=config, x_log=x_log, score=score)
+        progress.on_evaluation(config=config, x_log=x_log, score=score, successes=successes)
         return EvaluatedPoint(x=x_log, score=score, eval_id=progress.eval_count)
     return EvaluatedPoint(x=x_log, score=score)
 

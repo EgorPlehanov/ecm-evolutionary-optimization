@@ -4,7 +4,7 @@ import math
 import random
 from typing import Iterable
 
-from ecm_optimizer.core.fitness import fitness_expected_time
+from ecm_optimizer.core.fitness import fitness_expected_time_with_stats
 from ecm_optimizer.models import OptimizationConfig, OptimizationResult
 from ecm_optimizer.optimizers.base import Optimizer
 from ecm_optimizer.optimizers.heuristic_common import ProgressTracker
@@ -31,7 +31,7 @@ class RandomSearchOptimizer(Optimizer):
             b1 = int(10 ** rng.uniform(math.log10(config.b1_min), math.log10(config.b1_max)))
             b2 = int(10 ** rng.uniform(math.log10(max(config.b2_min, b1)), math.log10(config.b2_max)))
             b2 = min(max(b2, b1), int(b1 * config.ratio_max), int(config.b2_max))
-            score = fitness_expected_time(
+            score, successes = fitness_expected_time_with_stats(
                 ecm_bin=ecm_bin,
                 numbers=numbers,
                 b1=b1,
@@ -40,7 +40,12 @@ class RandomSearchOptimizer(Optimizer):
                 curve_timeout_sec=config.curve_timeout_sec,
                 workers=config.workers,
             )
-            progress.on_evaluation(config=config, x_log=(math.log10(b1), math.log10(max(b2, 1))), score=score)
+            progress.on_evaluation(
+                config=config,
+                x_log=(math.log10(b1), math.log10(max(b2, 1))),
+                score=score,
+                successes=successes,
+            )
             candidate = OptimizationResult(b1=b1, b2=b2, objective=score)
             if best is None or candidate.objective < best.objective:
                 best = candidate
