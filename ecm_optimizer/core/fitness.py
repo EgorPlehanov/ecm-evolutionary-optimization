@@ -4,6 +4,8 @@ from concurrent.futures import ProcessPoolExecutor
 from statistics import mean
 from typing import Iterable
 
+SUCCESS_PRIORITY_WEIGHT = 1_000_000.0
+
 from ecm_optimizer.core.ecm_runner import run_single_curve
 from ecm_optimizer.models import EvaluationResult
 
@@ -51,7 +53,15 @@ def fitness_expected_time_with_stats(
     curve_timeout_sec: float | None = None,
     workers: int = 1,
 ) -> tuple[float, int]:
-    """Вычислить fitness и агрегированное число успехов по набору чисел."""
+    """Вычислить fitness и агрегированное число успехов по набору чисел.
+
+    Fitness минимизируется и имеет лексикографический приоритет:
+    1) сначала максимизируем число успехов факторизации;
+    2) при равном числе успехов минимизируем ожидаемое время успеха.
+
+    Для этого используем скаляризацию `mean_expected_time - successes * SUCCESS_PRIORITY_WEIGHT`,
+    где вклад одного дополнительного успеха заведомо доминирует над временной частью.
+    """
     numbers = list(numbers)
     tasks = [(ecm_bin, n, b1, b2, curves_per_n, curve_timeout_sec) for n in numbers]
 
@@ -61,8 +71,9 @@ def fitness_expected_time_with_stats(
         with ProcessPoolExecutor(max_workers=workers) as executor:
             evaluations = list(executor.map(_evaluate_pair_task, tasks))
 
-    score = mean(item.expected_time for item in evaluations)
+    mean_expected_time = mean(item.expected_time for item in evaluations)
     successes = sum(item.successes for item in evaluations)
+    score = mean_expected_time - (successes * SUCCESS_PRIORITY_WEIGHT)
     return score, successes
 
 
@@ -75,7 +86,7 @@ def fitness_expected_time(
     curve_timeout_sec: float | None = None,
     workers: int = 1,
 ) -> float:
-    """Вычислить fitness как среднее ожидаемое время успеха по набору чисел."""
+    """Вычислить целевую fitness-метрику с приоритетом числа успехов."""
     score, _ = fitness_expected_time_with_stats(
         ecm_bin=ecm_bin,
         numbers=numbers,
