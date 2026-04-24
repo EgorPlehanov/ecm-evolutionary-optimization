@@ -235,6 +235,15 @@ ecm-optimizer run-plan --plan full_all_methods_single_run_20d
 
 Файл плана: `data/plans/full_all_methods_single_run_20d.json`.
 
+План **одного полного прогона по всем методам для `target-digits=20` под новую composite-логику**
+(`max-curves-per-n` + `repeats-per-n` на optimize/validate):
+
+```bash
+ecm-optimizer run-plan --plan full_all_methods_single_run_20d_composite
+```
+
+Файл плана: `data/plans/full_all_methods_single_run_20d_composite.json`.
+
 План **мульти-seed тюнинга** (`target-digits=20`, seeds `17/2718/31415`, все методы + общий analyze):
 
 ```bash
