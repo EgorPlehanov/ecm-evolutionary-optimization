@@ -4,10 +4,17 @@ from dataclasses import dataclass, field
 import os
 from typing import Any
 
-from ecm_optimizer.config import DEFAULT_B1_RANGE, DEFAULT_B2_RANGE, DEFAULT_CURVES_PER_N, DEFAULT_MAXITER, DEFAULT_POPSIZE, DEFAULT_RATIO_MAX, DEFAULT_SEED, DEFAULT_WORKERS
-
-
-NO_SUCCESS_PENALTY_MULTIPLIER = 10.0
+from ecm_optimizer.config import (
+    DEFAULT_B1_RANGE,
+    DEFAULT_B2_RANGE,
+    DEFAULT_MAXITER,
+    DEFAULT_MAX_CURVES_PER_N,
+    DEFAULT_POPSIZE,
+    DEFAULT_RATIO_MAX,
+    DEFAULT_REPEATS_PER_N,
+    DEFAULT_SEED,
+    DEFAULT_WORKERS,
+)
 
 
 def resolve_workers(workers: int | None) -> int:
@@ -21,19 +28,25 @@ def resolve_workers(workers: int | None) -> int:
 
 @dataclass(frozen=True)
 class EvaluationResult:
-    """Статистика многократного запуска ECM для одного числа `n`."""
+    """Статистика repeated-run оценки ECM для одного числа `n`."""
 
     n: int
-    successes: int
-    curves: int
+    success_runs: int
+    runs: int
+    total_curves: int
     total_seconds: float
 
     @property
-    def expected_time(self) -> float:
-        """Оценить ожидаемое время успеха для данного `n`."""
-        if self.successes == 0:
-            return self.total_seconds * NO_SUCCESS_PENALTY_MULTIPLIER
-        return self.total_seconds / self.successes
+    def success_rate(self) -> float:
+        return self.success_runs / self.runs if self.runs > 0 else 0.0
+
+    @property
+    def avg_curves(self) -> float:
+        return self.total_curves / self.runs if self.runs > 0 else 0.0
+
+    @property
+    def avg_time(self) -> float:
+        return self.total_seconds / self.runs if self.runs > 0 else 0.0
 
 
 @dataclass(frozen=True)
@@ -45,7 +58,8 @@ class OptimizationConfig:
     b2_min: float = DEFAULT_B2_RANGE[0]
     b2_max: float = DEFAULT_B2_RANGE[1]
     ratio_max: float = DEFAULT_RATIO_MAX
-    curves_per_n: int = DEFAULT_CURVES_PER_N
+    max_curves_per_n: int = DEFAULT_MAX_CURVES_PER_N
+    repeats_per_n: int = DEFAULT_REPEATS_PER_N
     popsize: int = DEFAULT_POPSIZE
     maxiter: int = DEFAULT_MAXITER
     seed: int = DEFAULT_SEED

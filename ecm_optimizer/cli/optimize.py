@@ -4,7 +4,18 @@ from pathlib import Path
 
 import click
 
-from ecm_optimizer.config import DEFAULT_B1_RANGE, DEFAULT_B2_RANGE, DEFAULT_CURVE_TIMEOUT_SEC, DEFAULT_CURVES_PER_N, DEFAULT_RATIO_MAX, DEFAULT_SEED, DEFAULT_WORKERS, ECM_PATH, EXPERIMENTS_DIR
+from ecm_optimizer.config import (
+    DEFAULT_B1_RANGE,
+    DEFAULT_B2_RANGE,
+    DEFAULT_CURVE_TIMEOUT_SEC,
+    DEFAULT_MAX_CURVES_PER_N,
+    DEFAULT_RATIO_MAX,
+    DEFAULT_REPEATS_PER_N,
+    DEFAULT_SEED,
+    DEFAULT_WORKERS,
+    ECM_PATH,
+    EXPERIMENTS_DIR,
+)
 from ecm_optimizer.cli.dataset_utils import dataset_generation_seed, resolve_dataset_path
 from ecm_optimizer.core.baseline import choose_baseline
 from ecm_optimizer.core.problem import load_numbers, read_dataset_metadata
@@ -81,7 +92,8 @@ def _validate_method_specific_params(
     ),
     help="Optimization method (supports short and full aliases).",
 )
-@click.option("--curves-per-n", default=DEFAULT_CURVES_PER_N, show_default=True, type=int, help="Number of ECM curves to run per number when evaluating fitness.")
+@click.option("--max-curves-per-n", default=DEFAULT_MAX_CURVES_PER_N, show_default=True, type=int, help="Maximum number of ECM curves per repeated run during fitness evaluation.")
+@click.option("--repeats-per-n", default=DEFAULT_REPEATS_PER_N, show_default=True, type=int, help="Repeated stop-on-success runs per number for robust fitness estimation.")
 @click.option("--de-popsize", type=int, help="Population size multiplier for differential evolution.")
 @click.option("--de-maxiter", type=int, help="Maximum number of differential evolution iterations.")
 @click.option("--rs-budget", type=int, help="Evaluation budget for random search (defaults to de-popsize * de-maxiter).")
@@ -107,7 +119,8 @@ def optimize_command(
     dataset: str | None,
     ecm_bin: str,
     method: str,
-    curves_per_n: int,
+    max_curves_per_n: int,
+    repeats_per_n: int,
     de_popsize: int | None,
     de_maxiter: int | None,
     rs_budget: int | None,
@@ -177,7 +190,8 @@ def optimize_command(
         "b2_min": b2_min,
         "b2_max": b2_max,
         "ratio_max": ratio_max,
-        "curves_per_n": curves_per_n,
+        "max_curves_per_n": max_curves_per_n,
+        "repeats_per_n": repeats_per_n,
         "seed": seed,
         "curve_timeout_sec": curve_timeout_sec,
         "workers": workers,
@@ -226,7 +240,8 @@ def optimize_command(
                 "b2_min": b2_min,
                 "b2_max": b2_max,
                 "ratio_max": ratio_max,
-                "curves_per_n": curves_per_n,
+                "max_curves_per_n": max_curves_per_n,
+                "repeats_per_n": repeats_per_n,
             },
         },
     )
@@ -240,7 +255,8 @@ def optimize_command(
             "b2_min": b2_min,
             "b2_max": b2_max,
             "ratio_max": ratio_max,
-            "curves_per_n": curves_per_n,
+            "max_curves_per_n": max_curves_per_n,
+            "repeats_per_n": repeats_per_n,
             "seed": seed,
             "curve_timeout_sec": curve_timeout_sec,
             "workers": workers,

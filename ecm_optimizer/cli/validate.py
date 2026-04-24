@@ -7,7 +7,15 @@ from typing import Any
 import click
 
 from ecm_optimizer.cli.dataset_utils import dataset_generation_seed, resolve_dataset_path, resolve_opt_result_file
-from ecm_optimizer.config import DEFAULT_CURVE_TIMEOUT_SEC, DEFAULT_SEED, DEFAULT_VALIDATION_CURVES_PER_N, DEFAULT_WORKERS, ECM_PATH, EXPERIMENTS_DIR
+from ecm_optimizer.config import (
+    DEFAULT_CURVE_TIMEOUT_SEC,
+    DEFAULT_SEED,
+    DEFAULT_VALIDATION_MAX_CURVES_PER_N,
+    DEFAULT_VALIDATION_REPEATS_PER_N,
+    DEFAULT_WORKERS,
+    ECM_PATH,
+    EXPERIMENTS_DIR,
+)
 from ecm_optimizer.core.baseline import choose_baseline
 from ecm_optimizer.core.problem import load_numbers, read_dataset_metadata
 from ecm_optimizer.core.validation import validate_on_control
@@ -54,15 +62,15 @@ def _build_validation_trace_plot(out_file: Path, trace_points: list[dict[str, An
     plot_file = plots_dir / f"{out_file.stem}_trace.png"
 
     x_idx = list(range(1, len(trace_points) + 1))
-    optimized = [float(point.get("optimized_expected_time", 0.0)) for point in trace_points]
-    baseline = [float(point.get("baseline_expected_time", 0.0)) for point in trace_points]
+    optimized = [float(point.get("optimized_score", 0.0)) for point in trace_points]
+    baseline = [float(point.get("baseline_score", 0.0)) for point in trace_points]
     delta_pct = [float(point.get("delta_pct", 0.0)) for point in trace_points]
 
     fig, ax_left = plt.subplots(figsize=(11, 5))
-    ax_left.plot(x_idx, baseline, color="tab:blue", linewidth=1.6, label="baseline_expected_time")
-    ax_left.plot(x_idx, optimized, color="tab:green", linewidth=1.6, label="optimized_expected_time")
+    ax_left.plot(x_idx, baseline, color="tab:blue", linewidth=1.6, label="baseline_score")
+    ax_left.plot(x_idx, optimized, color="tab:green", linewidth=1.6, label="optimized_score")
     ax_left.set_xlabel("Validation point index")
-    ax_left.set_ylabel("Expected time")
+    ax_left.set_ylabel("Composite score")
     ax_left.set_title("Validation trace: baseline vs optimized")
     ax_left.grid(alpha=0.3)
 
@@ -116,12 +124,13 @@ def _append_validation_section(
             f"- method: `{optimized_meta.get('method')}`",
             f"- optimized params: `(B1, B2)=({optimized_meta.get('b1')}, {optimized_meta.get('b2')})`",
             f"- baseline params: `(B1, B2)=({baseline_meta.get('b1')}, {baseline_meta.get('b2')})`",
-            f"- curves_per_n: `{payload.get('curves_per_n')}`",
+            f"- max_curves_per_n: `{payload.get('max_curves_per_n')}`",
+            f"- repeats_per_n: `{payload.get('repeats_per_n')}`",
             f"- curve_timeout_sec: `{payload.get('curve_timeout_sec')}`",
             f"- workers: `{payload.get('workers')}`",
             f"- seed: `{payload.get('seed')}`",
-            f"- optimized_mean: `{metrics.get('optimized_mean')}`",
-            f"- baseline_mean: `{metrics.get('baseline_mean')}`",
+            f"- optimized_mean_score: `{metrics.get('optimized_mean_score')}`",
+            f"- baseline_mean_score: `{metrics.get('baseline_mean_score')}`",
             f"- relative_improvement_pct: `{metrics.get('relative_improvement_pct')}`",
         ]
     )
@@ -153,10 +162,18 @@ def _append_validation_section(
 @click.option("--base-b1", type=int, help="Manual baseline B1 value; overrides automatic baseline selection.")
 @click.option("--base-b2", type=int, help="Manual baseline B2 value; overrides automatic baseline selection.")
 @click.option(
-    "--curves-per-n",
+    "--max-curves-per-n",
     type=int,
     help=(
-        "Number of ECM curves to run per number during validation. "
+        "Maximum number of ECM curves per repeated run during validation. "
+        "Defaults to value from optimization result when available."
+    ),
+)
+@click.option(
+    "--repeats-per-n",
+    type=int,
+    help=(
+        "Repeated stop-on-success runs per number during validation. "
         "Defaults to value from optimization result when available."
     ),
 )
@@ -180,7 +197,8 @@ def validate_command(
     opt_b2: int | None,
     base_b1: int | None,
     base_b2: int | None,
-    curves_per_n: int | None,
+    max_curves_per_n: int | None,
+    repeats_per_n: int | None,
     curve_timeout_sec: float | None,
     workers: int,
     results_dir: Path,
@@ -198,7 +216,8 @@ def validate_command(
         resolved_opt_result_file: Path | None = None
         if dataset_path is None:
             dataset_path = resolve_dataset_path(None, expected_file="control.json")
-        curves_per_n = curves_per_n if curves_per_n is not None else DEFAULT_VALIDATION_CURVES_PER_N
+        max_curves_per_n = max_curves_per_n if max_curves_per_n is not None else DEFAULT_VALIDATION_MAX_CURVES_PER_N
+        repeats_per_n = repeats_per_n if repeats_per_n is not None else DEFAULT_VALIDATION_REPEATS_PER_N
         curve_timeout_sec = curve_timeout_sec if curve_timeout_sec is not None else DEFAULT_CURVE_TIMEOUT_SEC
     else:
         resolved_opt_result_file = resolve_opt_result_file(
@@ -228,7 +247,8 @@ def validate_command(
         opt_config = opt_data.get("config", {})
         if not isinstance(opt_config, dict):
             opt_config = {}
-        curves_per_n = int(opt_config.get("curves_per_n", DEFAULT_VALIDATION_CURVES_PER_N)) if curves_per_n is None else curves_per_n
+        max_curves_per_n = int(opt_config.get("max_curves_per_n", DEFAULT_VALIDATION_MAX_CURVES_PER_N)) if max_curves_per_n is None else max_curves_per_n
+        repeats_per_n = int(opt_config.get("repeats_per_n", DEFAULT_VALIDATION_REPEATS_PER_N)) if repeats_per_n is None else repeats_per_n
         curve_timeout_sec = opt_config.get("curve_timeout_sec", DEFAULT_CURVE_TIMEOUT_SEC) if curve_timeout_sec is None else curve_timeout_sec
 
     if dataset_path is None:
@@ -255,15 +275,16 @@ def validate_command(
         numbers=numbers,
         optimized=opt_pair,
         baseline=base_pair,
-        curves_per_n=curves_per_n,
+        max_curves_per_n=max_curves_per_n,
+        repeats_per_n=repeats_per_n,
         curve_timeout_sec=curve_timeout_sec,
         workers=workers,
         verbose=verbose,
         method=opt_method if opt_method and opt_method != "unknown" else None,
     )
 
-    click.echo(f"optimized_mean={summary.optimized_mean:.6f}")
-    click.echo(f"baseline_mean={summary.baseline_mean:.6f}")
+    click.echo(f"optimized_mean_score={summary.optimized_mean_score:.6f}")
+    click.echo(f"baseline_mean_score={summary.baseline_mean_score:.6f}")
     click.echo(f"relative_improvement_pct={summary.relative_improvement_pct:.2f}")
     click.echo(f"used_opt_b1={opt_pair[0]}")
     click.echo(f"used_opt_b2={opt_pair[1]}")
@@ -280,7 +301,8 @@ def validate_command(
     payload = {
         "dataset": str(dataset_path),
         "ecm_bin": ecm_bin,
-        "curves_per_n": curves_per_n,
+        "max_curves_per_n": max_curves_per_n,
+        "repeats_per_n": repeats_per_n,
         "curve_timeout_sec": curve_timeout_sec,
         "workers": workers,
         "seed": seed,
@@ -297,8 +319,8 @@ def validate_command(
             "table_target_digits": base_target_digits,
         },
         "metrics": {
-            "optimized_mean": summary.optimized_mean,
-            "baseline_mean": summary.baseline_mean,
+            "optimized_mean_score": summary.optimized_mean_score,
+            "baseline_mean_score": summary.baseline_mean_score,
             "relative_improvement_pct": summary.relative_improvement_pct,
         },
         "trace": {

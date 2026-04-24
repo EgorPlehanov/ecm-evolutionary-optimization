@@ -6,7 +6,7 @@ import time
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
 
-from ecm_optimizer.core.fitness import fitness_expected_time_with_stats
+from ecm_optimizer.core.fitness import fitness_with_stats
 from ecm_optimizer.models import OptimizationConfig, OptimizationResult
 
 
@@ -57,7 +57,7 @@ class ProgressTracker:
         config: OptimizationConfig,
         x_log: tuple[float, float],
         score: float,
-        successes: int | None = None,
+        metrics: dict[str, float | int] | None = None,
     ) -> None:
         self.eval_count += 1
         b1, b2 = decode_candidate(x_log, config)
@@ -70,8 +70,11 @@ class ProgressTracker:
             "elapsed_sec": self._elapsed_sec(),
             "timestamp_utc": self._timestamp_utc(),
         }
-        if successes is not None:
-            event["successes"] = successes
+        if metrics is not None:
+            event.update(metrics)
+            success_runs = metrics.get("success_runs")
+            if isinstance(success_runs, int):
+                event["successes"] = success_runs
         self.events.append(event)
         if not config.verbose:
             return
@@ -137,17 +140,18 @@ def evaluate_candidate(
 ) -> EvaluatedPoint:
     """Вычислить fitness для кандидата в лог-пространстве."""
     b1, b2 = decode_candidate(x_log, config)
-    score, successes = fitness_expected_time_with_stats(
+    score, metrics = fitness_with_stats(
         ecm_bin=ecm_bin,
         numbers=numbers,
         b1=b1,
         b2=b2,
-        curves_per_n=config.curves_per_n,
+        max_curves_per_n=config.max_curves_per_n,
+        repeats_per_n=config.repeats_per_n,
         curve_timeout_sec=config.curve_timeout_sec,
         workers=config.workers,
     )
     if progress is not None:
-        progress.on_evaluation(config=config, x_log=x_log, score=score, successes=successes)
+        progress.on_evaluation(config=config, x_log=x_log, score=score, metrics=metrics)
         return EvaluatedPoint(x=x_log, score=score, eval_id=progress.eval_count)
     return EvaluatedPoint(x=x_log, score=score)
 

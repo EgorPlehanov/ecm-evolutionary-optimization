@@ -33,8 +33,8 @@ class BayesianOptimizationOptimizer(Optimizer):
         progress.log_step(
             config=config,
             message=(
-                f"numbers={len(numbers)} curves_per_n={config.curves_per_n} initial_samples={initial_samples} "
-                f"iterations={iterations} candidate_pool={candidate_pool} workers={config.workers}"
+                f"numbers={len(numbers)} max_curves_per_n={config.max_curves_per_n} repeats_per_n={config.repeats_per_n} "
+                f"initial_samples={initial_samples} iterations={iterations} candidate_pool={candidate_pool} workers={config.workers}"
             ),
         )
 

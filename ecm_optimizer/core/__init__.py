@@ -1,7 +1,7 @@
 """Ядро вычислительной логики ECM optimizer."""
 
 from .baseline import BASELINE_TABLE, BaselineChoice, choose_baseline
-from .fitness import evaluate_pair_for_n, fitness_expected_time
+from .fitness import evaluate_pair_for_n, fitness_composite
 from .problem import GeneratedSample, generate_semiprime_samples, load_numbers, read_dataset_metadata
 from .validation import ValidationSummary, validate_on_control
 
@@ -12,7 +12,7 @@ __all__ = [
     "ValidationSummary",
     "choose_baseline",
     "evaluate_pair_for_n",
-    "fitness_expected_time",
+    "fitness_composite",
     "generate_semiprime_samples",
     "load_numbers",
     "read_dataset_metadata",

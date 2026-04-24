@@ -241,8 +241,8 @@ def _parse_run_file(run_file: Path) -> RunRecord | None:
         validation_payload = read_json(validation_file)
         metrics = validation_payload.get("metrics", {})
         if isinstance(metrics, dict):
-            baseline_mean = metrics.get("baseline_mean")
-            optimized_mean = metrics.get("optimized_mean")
+            baseline_mean = metrics.get("baseline_mean_score", metrics.get("baseline_mean"))
+            optimized_mean = metrics.get("optimized_mean_score", metrics.get("optimized_mean"))
             relative = metrics.get("relative_improvement_pct")
             validation_baseline_mean = float(baseline_mean) if baseline_mean is not None else None
             validation_optimized_mean = float(optimized_mean) if optimized_mean is not None else None
