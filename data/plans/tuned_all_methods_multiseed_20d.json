@@ -45,11 +45,11 @@
       31415
     ],
     "shared_opt_args": {
-      "max-curves-per-n": 80,
+      "max-curves-per-n": 100,
       "repeats-per-n": 3
     },
     "shared_val_args": {
-      "max-curves-per-n": 120,
+      "max-curves-per-n": 150,
       "repeats-per-n": 5
     },
     "generate_args": {
