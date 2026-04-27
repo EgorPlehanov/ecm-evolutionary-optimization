@@ -20,7 +20,7 @@ from ecm_optimizer.core.baseline import choose_baseline
 from ecm_optimizer.core.problem import load_numbers, read_dataset_metadata
 from ecm_optimizer.core.validation import validate_on_control
 from ecm_optimizer.models import resolve_workers
-from ecm_optimizer.utils.io_utils import ensure_dir, read_json, utc_timestamp, write_json_with_meta
+from ecm_optimizer.utils.io_utils import ensure_dir, read_json, utc_timestamp, write_json_atomic, write_json_with_meta
 
 
 def _parse_target_digits(dataset_path: Path, fallback: int | None = None) -> int | None:
@@ -400,6 +400,38 @@ def validate_command(
         base_target_digits = baseline.target_digits
 
     workers = resolve_workers(workers)
+    if resolved_opt_result_file is not None:
+        out_dir = ensure_dir(resolved_opt_result_file.parent)
+    else:
+        dataset_name = dataset_path.parent.name
+        out_dir = ensure_dir(results_dir / dataset_name)
+    out_file = out_dir / f"{opt_method}_validate_{utc_timestamp()}.json"
+    progress_tmp_file = out_file.with_suffix(f"{out_file.suffix}.tmp")
+
+    progress_payload: dict[str, Any] = {
+        "status": "in_progress",
+        "dataset": str(dataset_path),
+        "method": opt_method,
+        "optimized": {"b1": opt_pair[0], "b2": opt_pair[1]},
+        "baseline": {"b1": base_pair[0], "b2": base_pair[1]},
+        "progress": {
+            "optimized_done": 0,
+            "optimized_total": len(numbers),
+            "baseline_done": 0,
+            "baseline_total": len(numbers),
+        },
+        "partial_trace": {"optimized": [], "baseline": []},
+    }
+    write_json_atomic(progress_tmp_file, progress_payload)
+
+    def on_validation_progress(label: str, idx: int, total: int, value: dict[str, float | int]) -> None:
+        done_key = "optimized_done" if label == "optimized" else "baseline_done"
+        total_key = "optimized_total" if label == "optimized" else "baseline_total"
+        progress_payload["progress"][done_key] = idx
+        progress_payload["progress"][total_key] = total
+        progress_payload["partial_trace"][label].append(value)
+        write_json_atomic(progress_tmp_file, progress_payload)
+
     summary = validate_on_control(
         ecm_bin=ecm_bin,
         numbers=numbers,
@@ -411,6 +443,7 @@ def validate_command(
         workers=workers,
         verbose=verbose,
         method=opt_method if opt_method and opt_method != "unknown" else None,
+        progress_callback=on_validation_progress,
     )
 
     click.echo(f"optimized_mean_score={summary.optimized_mean_score:.6f}")
@@ -431,12 +464,6 @@ def validate_command(
     click.echo(f"used_base_b1={base_pair[0]}")
     click.echo(f"used_base_b2={base_pair[1]}")
 
-    if resolved_opt_result_file is not None:
-        out_dir = ensure_dir(resolved_opt_result_file.parent)
-    else:
-        dataset_name = dataset_path.parent.name
-        out_dir = ensure_dir(results_dir / dataset_name)
-    out_file = out_dir / f"{opt_method}_validate_{utc_timestamp()}.json"
     payload = {
         "dataset": str(dataset_path),
         "ecm_bin": ecm_bin,
@@ -476,6 +503,7 @@ def validate_command(
         },
     }
     write_json_with_meta(out_file, payload, command="validate")
+    progress_tmp_file.unlink(missing_ok=True)
 
     trace_plot_files = _build_validation_trace_plots(out_file, payload["trace"]["by_number"])
     if trace_plot_files:
