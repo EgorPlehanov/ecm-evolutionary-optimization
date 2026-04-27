@@ -1216,6 +1216,7 @@ def run_analysis(
     experiments_root: Path,
     output_dir: Path,
     options: AnalysisOptions,
+    command_line: str | None = None,
 ) -> AnalysisArtifacts:
     include_entries, exclude_entries = _split_include_exclude_inputs(input_entries)
     include_paths = [Path(entry) for entry in include_entries]
@@ -1293,7 +1294,7 @@ def run_analysis(
     }
 
     summary_file = output_dir / "analysis_summary.json"
-    write_json_with_meta(summary_file, summary, command="analyze")
+    write_json_with_meta(summary_file, summary, command="analyze", command_line=command_line)
 
     return AnalysisArtifacts(
         output_dir=output_dir,

@@ -6,7 +6,7 @@ import click
 
 from ecm_optimizer.config import DEFAULT_COFACTOR_DIGITS, DEFAULT_CONTROL_COUNT, DEFAULT_PREFIX, DEFAULT_SEED, DEFAULT_TRAIN_COUNT, NUMBERS_DIR
 from ecm_optimizer.core.problem import generate_semiprime_samples, write_dataset, write_generation_metadata, write_manifest
-from ecm_optimizer.utils.io_utils import ensure_dir, utc_timestamp
+from ecm_optimizer.utils.io_utils import current_command_line, ensure_dir, utc_timestamp
 
 
 @click.command("generate")
@@ -75,6 +75,7 @@ def generate_command(
         generation_path,
         {
             "format": "ecm_generation_v1",
+            "command_line": current_command_line(),
             "generation": generation_meta,
             "files": {
                 "train": str(train_path),

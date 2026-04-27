@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import json
+import shlex
+import sys
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any
@@ -20,7 +22,17 @@ def ensure_dir(path: str | Path) -> Path:
     return p
 
 
-def enrich_with_metadata(payload: dict[str, Any], *, command: str | None = None) -> dict[str, Any]:
+def current_command_line() -> str:
+    """Вернуть команду запуска текущего процесса в shell-safe виде."""
+    return " ".join(shlex.quote(arg) for arg in sys.argv)
+
+
+def enrich_with_metadata(
+    payload: dict[str, Any],
+    *,
+    command: str | None = None,
+    command_line: str | None = None,
+) -> dict[str, Any]:
     """Добавить к payload стандартные метаданные проекта."""
     metadata = {
         "timestamp_utc": utc_timestamp(),
@@ -28,6 +40,8 @@ def enrich_with_metadata(payload: dict[str, Any], *, command: str | None = None)
     }
     if command is not None:
         metadata["command"] = command
+    if command_line is not None:
+        metadata["command_line"] = command_line
     return {**metadata, **payload}
 
 
@@ -51,9 +65,15 @@ def write_json_atomic(path: str | Path, payload: dict[str, Any], *, tmp_suffix: 
     tmp_path.replace(p)
 
 
-def write_json_with_meta(path: str | Path, payload: dict[str, Any], *, command: str | None = None) -> None:
+def write_json_with_meta(
+    path: str | Path,
+    payload: dict[str, Any],
+    *,
+    command: str | None = None,
+    command_line: str | None = None,
+) -> None:
     """Сохранить JSON-файл и автоматически дополнить его метаданными."""
-    write_json(path, enrich_with_metadata(payload, command=command))
+    write_json(path, enrich_with_metadata(payload, command=command, command_line=command_line))
 
 
 def read_json(path: str | Path) -> dict[str, Any]:
