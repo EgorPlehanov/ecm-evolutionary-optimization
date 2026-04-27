@@ -21,7 +21,7 @@ from ecm_optimizer.core.baseline import choose_baseline
 from ecm_optimizer.core.problem import load_numbers, read_dataset_metadata
 from ecm_optimizer.models import OptimizationConfig, resolve_workers
 from ecm_optimizer.optimizers import create_optimizer, normalize_optimizer_method
-from ecm_optimizer.utils.io_utils import ensure_dir, utc_timestamp, write_json_with_meta
+from ecm_optimizer.utils.io_utils import current_command_line, ensure_dir, utc_timestamp, write_json_with_meta
 from ecm_optimizer.utils.optimization_reporting import generate_analysis_artifacts, generate_run_artifacts
 
 
@@ -279,7 +279,12 @@ def optimize_command(
             "source": baseline.source,
         },
     }
-    write_json_with_meta(out_file, payload, command="optimize")
+    write_json_with_meta(
+        out_file,
+        payload,
+        command="optimize",
+        command_line=current_command_line(),
+    )
     progress_tmp_file.unlink(missing_ok=True)
     click.echo(f"result_file: {out_file}")
     click.echo("plot_files:")

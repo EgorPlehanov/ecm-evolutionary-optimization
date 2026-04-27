@@ -20,7 +20,14 @@ from ecm_optimizer.core.baseline import choose_baseline
 from ecm_optimizer.core.problem import load_numbers, read_dataset_metadata
 from ecm_optimizer.core.validation import validate_on_control
 from ecm_optimizer.models import resolve_workers
-from ecm_optimizer.utils.io_utils import ensure_dir, read_json, utc_timestamp, write_json_atomic, write_json_with_meta
+from ecm_optimizer.utils.io_utils import (
+    current_command_line,
+    ensure_dir,
+    read_json,
+    utc_timestamp,
+    write_json_atomic,
+    write_json_with_meta,
+)
 
 
 def _parse_target_digits(dataset_path: Path, fallback: int | None = None) -> int | None:
@@ -502,13 +509,14 @@ def validate_command(
             "by_number": list(summary.trace_by_number),
         },
     }
-    write_json_with_meta(out_file, payload, command="validate")
+    command_line = current_command_line()
+    write_json_with_meta(out_file, payload, command="validate", command_line=command_line)
     progress_tmp_file.unlink(missing_ok=True)
 
     trace_plot_files = _build_validation_trace_plots(out_file, payload["trace"]["by_number"])
     if trace_plot_files:
         payload["plots"] = {name: str(path) for name, path in trace_plot_files.items()}
-        write_json_with_meta(out_file, payload, command="validate")
+        write_json_with_meta(out_file, payload, command="validate", command_line=command_line)
     if resolved_opt_result_file is not None:
         report_file = resolved_opt_result_file.with_name(f"{resolved_opt_result_file.stem}_report.md")
     else:
