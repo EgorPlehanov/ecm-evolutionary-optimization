@@ -163,8 +163,16 @@ def optimize_command(
     numbers = load_numbers(dataset_path)
     if seed is None:
         seed = dataset_generation_seed(dataset_path, fallback=DEFAULT_SEED)
+    dataset_name = dataset_path.parent.name
+    run_id = f"optimize_{utc_timestamp()}"
+    run_dir = ensure_dir(results_dir / dataset_name / method / run_id)
+    run_stem = f"{method}_{run_id}"
+    out_file = run_dir / f"{run_stem}.json"
+    progress_tmp_file = out_file.with_suffix(f"{out_file.suffix}.tmp")
+
     workers = resolve_workers(workers)
-    method_params: dict[str, dict[str, int | float]] = {}
+    method_params: dict[str, dict[str, int | float | str]] = {}
+    method_params["_checkpoint"] = {"path": str(progress_tmp_file), "min_interval_sec": 10.0}
     if method == "de":
         method_params["de"] = {"popsize": int(de_popsize), "maxiter": int(de_maxiter)}
     elif method == "rs":
@@ -184,7 +192,7 @@ def optimize_command(
             "mutation_prob": float(ga_mutation_prob),
         }
 
-    config_kwargs: dict[str, int | float | bool | str | dict[str, dict[str, int | float]] | None] = {
+    config_kwargs: dict[str, int | float | bool | str | dict[str, dict[str, int | float | str]] | None] = {
         "b1_min": b1_min,
         "b1_max": b1_max,
         "b2_min": b2_min,
@@ -213,11 +221,6 @@ def optimize_command(
     target_digits = _parse_target_digits(dataset_path)
     baseline = choose_baseline(target_digits)
 
-    dataset_name = dataset_path.parent.name
-    run_id = f"optimize_{utc_timestamp()}"
-    run_dir = ensure_dir(results_dir / dataset_name / method / run_id)
-    run_stem = f"{method}_{run_id}"
-    out_file = run_dir / f"{run_stem}.json"
     plots_dir = ensure_dir(run_dir / "plots")
     artifacts = generate_run_artifacts(
         history=result.history,
@@ -277,6 +280,7 @@ def optimize_command(
         },
     }
     write_json_with_meta(out_file, payload, command="optimize")
+    progress_tmp_file.unlink(missing_ok=True)
     click.echo(f"result_file: {out_file}")
     click.echo("plot_files:")
     for plot_name, plot_path in artifacts.plots.items():

@@ -38,6 +38,19 @@ def write_json(path: str | Path, payload: dict[str, Any]) -> None:
     p.write_text(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def write_json_atomic(path: str | Path, payload: dict[str, Any], *, tmp_suffix: str = ".tmp") -> None:
+    """
+    Атомарно записать JSON через временный файл и replace.
+
+    Это снижает риск получить битый JSON при аварийной остановке процесса во время записи.
+    """
+    p = Path(path)
+    p.parent.mkdir(parents=True, exist_ok=True)
+    tmp_path = p.with_name(f"{p.name}{tmp_suffix}")
+    tmp_path.write_text(json.dumps(payload, indent=2, sort_keys=True, ensure_ascii=False) + "\n", encoding="utf-8")
+    tmp_path.replace(p)
+
+
 def write_json_with_meta(path: str | Path, payload: dict[str, Any], *, command: str | None = None) -> None:
     """Сохранить JSON-файл и автоматически дополнить его метаданными."""
     write_json(path, enrich_with_metadata(payload, command=command))

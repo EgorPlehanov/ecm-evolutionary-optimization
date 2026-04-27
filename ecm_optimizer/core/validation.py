@@ -3,7 +3,7 @@ from __future__ import annotations
 from concurrent.futures import ProcessPoolExecutor
 from dataclasses import dataclass
 import math
-from typing import Iterable
+from typing import Callable, Iterable
 
 from ecm_optimizer.core.fitness import fitness_with_stats
 
@@ -58,12 +58,16 @@ def _evaluate_many(
     verbose: bool = False,
     label: str = "",
     log_prefix: str = "[validate]",
+    progress_callback: Callable[[str, int, int, dict[str, float | int]], None] | None = None,
 ) -> list[dict[str, float | int]]:
     """Запустить пакет задач последовательно или параллельно и вернуть score+метрики."""
     if workers == 1:
         values: list[dict[str, float | int]] = []
         for idx, task in enumerate(tasks, start=1):
-            values.append(_evaluate_single_number_task(task))
+            value = _evaluate_single_number_task(task)
+            values.append(value)
+            if progress_callback is not None:
+                progress_callback(label, idx, len(tasks), value)
             if verbose:
                 print(f"{log_prefix} {label} {idx}/{len(tasks)}", flush=True)
         return values
@@ -72,6 +76,8 @@ def _evaluate_many(
         values: list[dict[str, float | int]] = []
         for idx, value in enumerate(executor.map(_evaluate_single_number_task, tasks), start=1):
             values.append(value)
+            if progress_callback is not None:
+                progress_callback(label, idx, len(tasks), value)
             if verbose:
                 print(f"{log_prefix} {label} {idx}/{len(tasks)}", flush=True)
         return values
@@ -88,6 +94,7 @@ def validate_on_control(
     workers: int = 1,
     verbose: bool = False,
     method: str | None = None,
+    progress_callback: Callable[[str, int, int, dict[str, float | int]], None] | None = None,
 ) -> ValidationSummary:
     """Сравнить оптимизированные и базовые параметры на контрольной выборке."""
     numbers = list(numbers)
@@ -109,8 +116,22 @@ def validate_on_control(
             flush=True,
         )
 
-    opt_scores = _evaluate_many(opt_tasks, workers, verbose=verbose, label="optimized", log_prefix=log_prefix)
-    base_scores = _evaluate_many(base_tasks, workers, verbose=verbose, label="baseline", log_prefix=log_prefix)
+    opt_scores = _evaluate_many(
+        opt_tasks,
+        workers,
+        verbose=verbose,
+        label="optimized",
+        log_prefix=log_prefix,
+        progress_callback=progress_callback,
+    )
+    base_scores = _evaluate_many(
+        base_tasks,
+        workers,
+        verbose=verbose,
+        label="baseline",
+        log_prefix=log_prefix,
+        progress_callback=progress_callback,
+    )
 
     trace_by_number: list[dict[str, float | int]] = []
     for n, opt_point, base_point in zip(numbers, opt_scores, base_scores):
