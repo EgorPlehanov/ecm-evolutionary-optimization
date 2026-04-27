@@ -227,7 +227,8 @@ ecm-optimizer run-plan example_full_run
 }
 ```
 
-План **одного полного прогона по всем методам** (один датасет `target-digits=20`, шаги `generate + optimize + validate + analyze`):
+План **одного полного прогона по всем методам для `target-digits=20` под новую composite-логику**
+(`max-curves-per-n` + `repeats-per-n` на optimize/validate):
 
 ```bash
 ecm-optimizer run-plan --plan full_all_methods_single_run_20d
@@ -235,14 +236,25 @@ ecm-optimizer run-plan --plan full_all_methods_single_run_20d
 
 Файл плана: `data/plans/full_all_methods_single_run_20d.json`.
 
-План **одного полного прогона по всем методам для `target-digits=20` под новую composite-логику**
-(`max-curves-per-n` + `repeats-per-n` на optimize/validate):
+### Референс по B1/B2 и ожидаемому числу кривых (ECM)
 
-```bash
-ecm-optimizer run-plan --plan full_all_methods_single_run_20d_composite
-```
+Для выбора `max-curves-per-n` в планах ориентируемся на таблицу из исходного проекта ECM:
+https://gitlab.inria.fr/zimmerma/ecm/
 
-Файл плана: `data/plans/full_all_methods_single_run_20d_composite.json`.
+Ниже оставлены только нужные нам поля: `digits`, оптимальный `B1`, `B2` (default), и ожидаемое число кривых `N(B1,B2,D)` (default poly).
+
+| digits D | optimal B1 | default B2 | expected curves N(B1,B2,D) |
+|---:|---:|---:|---:|
+| 20 | 11e3 | 1.9e6 | 74 |
+| 25 | 5e4 | 1.3e7 | 214 |
+| 30 | 25e4 | 1.3e8 | 430 |
+| 35 | 1e6 | 1.0e9 | 904 |
+| 40 | 3e6 | 5.7e9 | 2350 |
+| 45 | 11e6 | 3.5e10 | 4480 |
+| 50 | 43e6 | 2.4e11 | 7553 |
+| 55 | 11e7 | 7.8e11 | 17769 |
+| 60 | 26e7 | 3.2e12 | 42017 |
+| 65 | 85e7 | 1.6e13 | 69408 |
 
 План **мульти-seed тюнинга** (`target-digits=20`, seeds `17/2718/31415`, все методы + общий analyze):
 

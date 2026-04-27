@@ -48,12 +48,12 @@
       }
     },
     "shared_opt_args": {
-      "curves-per-n": 12,
-      "curve-timeout-sec": 5
+      "max-curves-per-n": 80,
+      "repeats-per-n": 3
     },
     "shared_val_args": {
-      "curves-per-n": 24,
-      "curve-timeout-sec": 5
+      "max-curves-per-n": 120,
+      "repeats-per-n": 5
     },
     "analyze_group_by": [
       "divisor_size",
