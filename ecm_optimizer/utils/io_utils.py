@@ -23,8 +23,9 @@ def ensure_dir(path: str | Path) -> Path:
 
 
 def current_command_line() -> str:
-    """Вернуть команду запуска текущего процесса в shell-safe виде."""
-    return " ".join(shlex.quote(arg) for arg in sys.argv)
+    """Вернуть команду запуска в shell-safe виде с нормализованным CLI-алиасом."""
+    normalized_args = ["ecm-optimizer", *sys.argv[1:]]
+    return " ".join(shlex.quote(arg) for arg in normalized_args)
 
 
 def enrich_with_metadata(
