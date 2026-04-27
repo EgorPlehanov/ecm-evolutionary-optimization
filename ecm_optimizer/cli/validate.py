@@ -58,6 +58,8 @@ def _build_validation_trace_plots(out_file: Path, trace_points: list[dict[str, A
     if plt is None or not trace_points:
         return {}
 
+    from matplotlib import ticker
+
     plots_dir = ensure_dir(out_file.parent / "plots")
     x_idx = list(range(1, len(trace_points) + 1))
     plots: dict[str, Path] = {}
@@ -94,27 +96,113 @@ def _build_validation_trace_plots(out_file: Path, trace_points: list[dict[str, A
         optimized = [float(point.get(spec["optimized_key"], 0.0)) for point in trace_points]
         delta_pct = [float(point.get(spec["delta_key"], 0.0)) for point in trace_points]
 
-        fig, ax_left = plt.subplots(figsize=(11, 5))
-        ax_left.plot(x_idx, baseline, color="tab:blue", linewidth=1.6, label=str(spec["baseline_key"]))
-        ax_left.plot(x_idx, optimized, color="tab:green", linewidth=1.6, label=str(spec["optimized_key"]))
-        ax_left.set_xlabel("Validation point index")
-        ax_left.set_ylabel(str(spec["left_label"]))
-        ax_left.set_title(str(spec["title"]))
-        ax_left.grid(alpha=0.3)
+        fig, ax_left = plt.subplots(figsize=(12, 6))
 
         ax_right = ax_left.twinx()
-        ax_right.plot(x_idx, delta_pct, color="tab:orange", linewidth=1.2, alpha=0.75, label=str(spec["delta_key"]))
+        bar_colors = ["tab:green" if value >= 0 else "tab:red" for value in delta_pct]
+        bars = ax_right.bar(
+            x_idx,
+            delta_pct,
+            width=0.72,
+            color=bar_colors,
+            alpha=0.25,
+            edgecolor="none",
+            label=str(spec["delta_key"]),
+            zorder=1,
+        )
+        ax_right.axhline(0.0, color="tab:orange", linewidth=1.0, alpha=0.85, zorder=2)
+
+        ax_left.vlines(x_idx, baseline, optimized, color="0.55", linewidth=1.2, alpha=0.85, zorder=3)
+        ax_left.scatter(
+            x_idx,
+            baseline,
+            color="tab:blue",
+            s=34,
+            marker="o",
+            label=str(spec["baseline_key"]),
+            zorder=4,
+        )
+        ax_left.scatter(
+            x_idx,
+            optimized,
+            color="tab:green",
+            s=34,
+            marker="o",
+            label=str(spec["optimized_key"]),
+            zorder=4,
+        )
+
+        ax_left.set_xlabel("Validation run index")
+        ax_left.set_ylabel(str(spec["left_label"]))
         ax_right.set_ylabel("Delta, %")
+        ax_left.set_title(f"{spec['title']} — lollipop + delta bars")
+
+        ax_left.set_xlim(0.35, len(x_idx) + 0.65)
+        ax_left.xaxis.set_major_locator(ticker.FixedLocator(x_idx))
+        ax_left.xaxis.set_major_formatter(ticker.FormatStrFormatter("%d"))
+
+        ax_left.grid(axis="y", alpha=0.28)
+        ax_left.grid(axis="x", alpha=0.10)
 
         handles_left, labels_left = ax_left.get_legend_handles_labels()
         handles_right, labels_right = ax_right.get_legend_handles_labels()
+        if bars:
+            handles_right = [bars]
+            labels_right = [str(spec["delta_key"])]
         ax_left.legend(handles_left + handles_right, labels_left + labels_right, loc="best")
 
-        plot_file = plots_dir / f"{out_file.stem}_{spec['name']}_trace.png"
+        trace_plot_file = plots_dir / f"{out_file.stem}_{spec['name']}_trace.png"
         fig.tight_layout()
-        fig.savefig(plot_file, dpi=140)
+        fig.savefig(trace_plot_file, dpi=140)
         plt.close(fig)
-        plots[f"{spec['name']}_trace_plot"] = plot_file
+        plots[f"{spec['name']}_trace_plot"] = trace_plot_file
+
+        # Distribution overview: violin + box + swarm-like jittered points.
+        fig_dist, ax_dist = plt.subplots(figsize=(8, 5))
+        groups = [baseline, optimized]
+        positions = [1, 2]
+
+        violin = ax_dist.violinplot(
+            groups,
+            positions=positions,
+            widths=0.7,
+            showmeans=False,
+            showmedians=False,
+            showextrema=False,
+        )
+        for body, color in zip(violin["bodies"], ["tab:blue", "tab:green"]):
+            body.set_facecolor(color)
+            body.set_edgecolor(color)
+            body.set_alpha(0.18)
+
+        ax_dist.boxplot(
+            groups,
+            positions=positions,
+            widths=0.22,
+            patch_artist=True,
+            boxprops={"facecolor": "white", "edgecolor": "0.35", "linewidth": 1.0},
+            medianprops={"color": "0.15", "linewidth": 1.1},
+            whiskerprops={"color": "0.35", "linewidth": 1.0},
+            capprops={"color": "0.35", "linewidth": 1.0},
+        )
+
+        jitter_width = 0.08
+        for pos, values, color in zip(positions, groups, ["tab:blue", "tab:green"]):
+            for i, value in enumerate(values):
+                jitter = (((i % 9) - 4) / 4.0) * jitter_width
+                ax_dist.scatter(pos + jitter, value, s=18, color=color, alpha=0.65, edgecolors="none", zorder=3)
+
+        ax_dist.set_xticks(positions)
+        ax_dist.set_xticklabels(["baseline", "optimized"])
+        ax_dist.set_ylabel(str(spec["left_label"]))
+        ax_dist.set_title(f"Validation distribution: {spec['name']} (violin + box + swarm)")
+        ax_dist.grid(axis="y", alpha=0.28)
+
+        dist_plot_file = plots_dir / f"{out_file.stem}_{spec['name']}_distribution.png"
+        fig_dist.tight_layout()
+        fig_dist.savefig(dist_plot_file, dpi=140)
+        plt.close(fig_dist)
+        plots[f"{spec['name']}_distribution_plot"] = dist_plot_file
 
     return plots
 
