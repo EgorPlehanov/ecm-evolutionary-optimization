@@ -30,8 +30,8 @@ class GeneticAlgorithmOptimizer(Optimizer):
         progress.log_step(
             config=config,
             message=(
-                f"numbers={len(numbers)} curves_per_n={config.curves_per_n} population_size={population_size} "
-                f"generations={generations} mutation_prob={mutation_prob} workers={config.workers}"
+                f"numbers={len(numbers)} max_curves_per_n={config.max_curves_per_n} repeats_per_n={config.repeats_per_n} "
+                f"population_size={population_size} generations={generations} mutation_prob={mutation_prob} workers={config.workers}"
             ),
         )
 
