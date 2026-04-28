@@ -1,2 +1,0 @@
-analysis_level,run_count,median_objective,iqr_objective,median_runtime_sec,median_time_to_best_sec,median_evaluation_count,success_share,median_improvement_per_eval,median_improvement_per_sec,median_validation_gain_abs,median_validation_gain_pct
-method=pso,3,0.8559884256392252,0.0421697719139047,70.93119788402691,26.21116056101164,234,0.0,0.003405774432596647,0.01123555277510803,14.391043790063122,88.4803283227962

@@ -1,3 +1,0 @@
-phase_idx,phase_label,eval_from,eval_to,eval_count,new_best_count,best_fitness_in_phase,improvement_in_phase,phase_duration_sec
-1,step=1/60 new_best b1=2539 b2=9180 fitness=0.8808771855547093,1,1,1,1,0.8808771855547093,,0.24860778398578987
-2,step=18/60 new_best b1=1390 b2=3098 fitness=0.7977958814590238,2,18,17,1,0.7977958814590238,0.08308130409568548,7.199588100018445
