@@ -1,0 +1,38 @@
+Loaded Python module: python/3.10_conda
+plan_file: data/plans/full_all_methods_single_run_20d.json
+
+STEP 1/12:
+ecm-optimizer generate
+  --seed 42
+  --target-digits 20
+  --cofactor-digits 30
+  --train-count 20
+  --control-count 20
+dataset_dir: data/numbers/20_dset_20260429T133817Z
+   train_file: data/numbers/20_dset_20260429T133817Z/train.json
+   control_file: data/numbers/20_dset_20260429T133817Z/control.json
+   manifest_file: data/numbers/20_dset_20260429T133817Z/manifest.json
+   generation_file: data/numbers/20_dset_20260429T133817Z/generation.json
+generated=40
+
+STEP 2/12:
+ecm-optimizer optimize
+  --dataset data/numbers/20_dset_20260429T133817Z
+  --method de
+  --seed 42
+  --max-curves-per-n 100
+  --repeats-per-n 3
+  --de-popsize 10
+  --de-maxiter 10
+  --b1-min 100
+  --b1-max 30000
+  --b2-min 100
+  --b2-max 600000
+  --ratio-max 100
+[optimize:de] numbers=20 max_curves_per_n=100 repeats_per_n=3 popsize=10 maxiter=10 workers=56
+[optimize:de] numbers=20 max_curves_per_n=100 repeats_per_n=3 popsize=10 maxiter=10 workers=56
+[optimize:de] new_best eval=1 b1=20240 b2=122988 fitness=5.688216254385532
+[optimize:de] eval=5 b1=3155 b2=3155 fitness=17.623068739792238
+[optimize:de] eval=10 b1=7307 b2=18597 fitness=12.855046530777972
+[optimize:de] eval=15 b1=5074 b2=84162 fitness=9.713188481420111
+[optimize:de] eval=20 b1=113 b2=374 fitness=18.169579688879253

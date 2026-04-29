@@ -1,12 +1,17 @@
 from __future__ import annotations
 
 from concurrent.futures import ProcessPoolExecutor
+import math
 from statistics import mean
 from typing import Iterable
 
-SUCCESS_RATE_WEIGHT = 1_000_000.0
-CURVE_WEIGHT = 1_000.0
+# Коэффициенты baseline-независимой fitness-модели.
+# Успех остаётся обязательным: при низком success включается сильный штраф.
+TARGET_SUCCESS_RATE = 0.80
+SUCCESS_DEFICIT_PENALTY_WEIGHT = 25.0
+SUCCESS_WEIGHT = 1.2
 TIME_WEIGHT = 1.0
+CURVE_WEIGHT = 0.15
 
 from ecm_optimizer.core.ecm_runner import run_single_curve
 from ecm_optimizer.models import EvaluationResult
@@ -73,30 +78,48 @@ def fitness_with_stats(
 ) -> tuple[float, dict[str, float | int]]:
     """Вычислить composite fitness по набору чисел.
 
-    Fitness минимизируется:
-    - максимизирует success_rate (через штраф 1-success_rate);
-    - минимизирует среднее число кривых до исхода (успех или лимит);
-    - минимизирует среднее время до исхода.
+    Актуальная логика:
+    - baseline не участвует в score;
+    - baseline не участвует в score;
+    - успех факторизации обязателен: действует сильный штраф за недобор `success_rate` до целевого порога;
+    - среди кандидатов с приемлемым success минимизируются время и число кривых.
     """
     numbers = list(numbers)
-    tasks = [(ecm_bin, n, b1, b2, max_curves_per_n, repeats_per_n, curve_timeout_sec) for n in numbers]
+    evaluations = _evaluate_many(
+        ecm_bin=ecm_bin,
+        numbers=numbers,
+        b1=b1,
+        b2=b2,
+        max_curves_per_n=max_curves_per_n,
+        repeats_per_n=repeats_per_n,
+        curve_timeout_sec=curve_timeout_sec,
+        workers=workers,
+    )
 
-    if workers == 1:
-        evaluations = [_evaluate_pair_task(task) for task in tasks]
-    else:
-        with ProcessPoolExecutor(max_workers=workers) as executor:
-            evaluations = list(executor.map(_evaluate_pair_task, tasks))
-
-    mean_success_rate = mean(item.success_rate for item in evaluations)
-    mean_curves = mean(item.avg_curves for item in evaluations)
-    mean_time = mean(item.avg_time for item in evaluations)
-    score = ((1.0 - mean_success_rate) * SUCCESS_RATE_WEIGHT) + (mean_curves * CURVE_WEIGHT) + (mean_time * TIME_WEIGHT)
+    mean_success_rate, mean_curves, mean_time = _mean_metrics(evaluations)
+    success_penalty = 1.0 - mean_success_rate
+    success_deficit = max(0.0, TARGET_SUCCESS_RATE - mean_success_rate)
+    success_deficit_penalty = SUCCESS_DEFICIT_PENALTY_WEIGHT * (success_deficit**2)
+    time_term = math.log1p(mean_time)
+    curves_term = math.log1p(mean_curves)
+    score = (
+        success_deficit_penalty
+        + (SUCCESS_WEIGHT * success_penalty)
+        + (TIME_WEIGHT * time_term)
+        + (CURVE_WEIGHT * curves_term)
+    )
     stats: dict[str, float | int] = {
         "success_runs": sum(item.success_runs for item in evaluations),
         "total_runs": sum(item.runs for item in evaluations),
         "mean_success_rate": mean_success_rate,
         "mean_curves_to_outcome": mean_curves,
         "mean_time_to_outcome_sec": mean_time,
+        "target_success_rate": TARGET_SUCCESS_RATE,
+        "success_penalty": success_penalty,
+        "success_deficit": success_deficit,
+        "success_deficit_penalty": success_deficit_penalty,
+        "time_term": time_term,
+        "curves_term": curves_term,
     }
     return score, stats
 
@@ -123,3 +146,28 @@ def fitness_composite(
         workers=workers,
     )
     return score
+
+
+def _evaluate_many(
+    ecm_bin: str,
+    numbers: list[int],
+    b1: int,
+    b2: int,
+    max_curves_per_n: int,
+    repeats_per_n: int,
+    curve_timeout_sec: float | None,
+    workers: int,
+) -> list[EvaluationResult]:
+    tasks = [(ecm_bin, n, b1, b2, max_curves_per_n, repeats_per_n, curve_timeout_sec) for n in numbers]
+    if workers == 1:
+        return [_evaluate_pair_task(task) for task in tasks]
+    with ProcessPoolExecutor(max_workers=workers) as executor:
+        return list(executor.map(_evaluate_pair_task, tasks))
+
+
+def _mean_metrics(evaluations: list[EvaluationResult]) -> tuple[float, float, float]:
+    return (
+        mean(item.success_rate for item in evaluations),
+        mean(item.avg_curves for item in evaluations),
+        mean(item.avg_time for item in evaluations),
+    )
