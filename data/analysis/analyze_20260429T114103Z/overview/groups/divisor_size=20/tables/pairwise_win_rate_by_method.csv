@@ -1,0 +1,11 @@
+group_a,group_b,win_rate_a,win_rate_b
+bo,de,0.0,1.0
+bo,ga,0.0,1.0
+bo,pso,1.0,0.0
+bo,rs,0.0,1.0
+de,ga,1.0,0.0
+de,pso,1.0,0.0
+de,rs,0.0,1.0
+ga,pso,1.0,0.0
+ga,rs,0.0,1.0
+pso,rs,0.0,1.0

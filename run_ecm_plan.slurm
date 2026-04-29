@@ -70,3 +70,42 @@ PLAN_NAME="${PLAN_NAME:-full_all_methods_single_run_20d}"
 
 # Запуск плана (если PLAN_NAME без .json — CLI ищет файл в data/plans/)
 srun ecm-optimizer run-plan --plan "${PLAN_NAME}"
+
+# Автокоммит и отправка новых/изменённых результатов в git.
+# По умолчанию включено. Отключить можно через:
+#   sbatch --export=GIT_AUTOPUSH=0 run_ecm_plan.slurm
+# По умолчанию добавляются:
+#   - все *.out и *.err в корне проекта
+#   - вся папка data
+GIT_AUTOPUSH="${GIT_AUTOPUSH:-1}"
+
+if [ "${GIT_AUTOPUSH}" = "1" ]; then
+  if ! command -v git >/dev/null 2>&1; then
+    echo "WARN: git не найден, пропускаю автокоммит результатов." >&2
+    exit 0
+  fi
+
+  if ! git rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    echo "WARN: текущая директория не является git-репозиторием, пропускаю автокоммит." >&2
+    exit 0
+  fi
+
+  echo "Автодобавление результатов в git: *.out *.err data/"
+  git add --all -- ./*.out ./*.err data/ 2>/dev/null || true
+
+  if git diff --cached --quiet; then
+    echo "Новых изменений результатов для коммита нет."
+  else
+    COMMIT_MESSAGE="results: update after plan ${PLAN_NAME} (job ${SLURM_JOB_ID:-manual})"
+    git commit -m "${COMMIT_MESSAGE}"
+
+    CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+    if [ "${CURRENT_BRANCH}" = "HEAD" ]; then
+      echo "WARN: detached HEAD, пропускаю git push." >&2
+      exit 0
+    fi
+
+    git push origin "${CURRENT_BRANCH}"
+    echo "Результаты отправлены в origin/${CURRENT_BRANCH}"
+  fi
+fi

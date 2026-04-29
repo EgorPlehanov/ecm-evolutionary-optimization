@@ -6,7 +6,8 @@
 
 - Каркас Python-пайплайна для:
   - запуска `gmp-ecm` и парсинга результата;
-  - оценки composite-фитнеса: success-rate + число кривых до исхода + время до исхода;
+  - оценки baseline-независимого composite-фитнеса:
+    успех факторизации и время факторизации имеют равный приоритет, число кривых — вторичный критерий;
   - оптимизации `log10(B1), log10(B2)` через `scipy.optimize.differential_evolution`;
   - автоматической валидации найденных параметров против baseline;
   - генерации train/control наборов семипростых чисел (`N = p*q`) с настраиваемыми размерами множителей;
@@ -88,6 +89,26 @@ ecm-optimizer optimize \
 `--dataset` можно передать как полный путь к JSON-файлу/папке или как имя папки внутри `data/numbers` (например `35_dset_<UTC_TIMESTAMP>`).
 
 Поддерживаемый формат датасетов: JSON `ecm_dataset_v1`.
+
+### Логика fitness (актуальная)
+
+Для каждой пары `(B1, B2)` считается средняя метрика по train-набору:
+- `success_rate` — доля успешных repeated-run запусков;
+- `mean_time_to_outcome_sec` — среднее время до успеха или лимита;
+- `mean_curves_to_outcome` — среднее число кривых до исхода.
+
+Итоговый `score` (минимизируется) считается без привязки к baseline:
+- `success_penalty = 1 - success_rate`;
+- `time_term = log(1 + mean_time_to_outcome_sec)`;
+- `curves_term = log(1 + mean_curves_to_outcome)`.
+
+Композиция score:
+- `SUCCESS_WEIGHT * success_penalty`;
+- `TIME_WEIGHT * time_term`;
+- `CURVE_WEIGHT * curves_term`.
+
+В текущей конфигурации `SUCCESS_WEIGHT == TIME_WEIGHT`, поэтому успех и время равноприоритетны,
+а `CURVE_WEIGHT` меньше и выступает как вторичный стабилизатор.
 
 ### 3) Валидация
 

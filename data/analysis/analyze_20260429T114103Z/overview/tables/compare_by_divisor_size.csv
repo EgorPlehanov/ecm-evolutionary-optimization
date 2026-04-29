@@ -1,0 +1,2 @@
+group,run_count,median_objective,objective_ci_low,objective_ci_high,iqr_objective,cv_objective,success_share,median_runtime_sec,median_validation_gain_pct,validation_gain_ci_low,validation_gain_ci_high
+20,5,1.9576141868479144,1.820565268119669,2.185431040132353,0.1267742230366764,0.07190310036303019,0.4,274.2800799370161,-1.382043499986456,-7.802598187784065,10.77345948275188
