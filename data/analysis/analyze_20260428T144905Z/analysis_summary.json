@@ -1,0 +1,373 @@
+{
+  "analysis_run": {
+    "alpha": 0.05,
+    "auto_grouping": false,
+    "bootstrap_iterations": 2000,
+    "discovered_run_files": [
+      "data/experiments/20_dset_20260428T135130Z/bo/optimize_20260428T142408Z/bo_optimize_20260428T142408Z.json",
+      "data/experiments/20_dset_20260428T135130Z/de/optimize_20260428T135130Z/de_optimize_20260428T135130Z.json",
+      "data/experiments/20_dset_20260428T135130Z/ga/optimize_20260428T142659Z/ga_optimize_20260428T142659Z.json",
+      "data/experiments/20_dset_20260428T135130Z/pso/optimize_20260428T140816Z/pso_optimize_20260428T140816Z.json",
+      "data/experiments/20_dset_20260428T135130Z/rs/optimize_20260428T140438Z/rs_optimize_20260428T140438Z.json"
+    ],
+    "discovered_run_files_before_exclusions": [
+      "data/experiments/20_dset_20260428T135130Z/bo/optimize_20260428T142408Z/bo_optimize_20260428T142408Z.json",
+      "data/experiments/20_dset_20260428T135130Z/de/optimize_20260428T135130Z/de_optimize_20260428T135130Z.json",
+      "data/experiments/20_dset_20260428T135130Z/ga/optimize_20260428T142659Z/ga_optimize_20260428T142659Z.json",
+      "data/experiments/20_dset_20260428T135130Z/pso/optimize_20260428T140816Z/pso_optimize_20260428T140816Z.json",
+      "data/experiments/20_dset_20260428T135130Z/rs/optimize_20260428T140438Z/rs_optimize_20260428T140438Z.json"
+    ],
+    "exclude_rules": [],
+    "experiments_root": "data/experiments",
+    "include_paths": [
+      "data/experiments/20_dset_20260428T135130Z"
+    ],
+    "input_entries": [
+      "data/experiments/20_dset_20260428T135130Z"
+    ],
+    "max_eval_points": 300,
+    "max_series_per_plot": 10,
+    "max_time_points": 200,
+    "output_dir": "data/analysis/analyze_20260428T144905Z",
+    "resolved_group_by": [
+      "divisor_size",
+      "method"
+    ],
+    "success_threshold": null
+  },
+  "command": "analyze",
+  "command_line": "ecm-optimizer analyze --group-by divisor_size --group-by method --input data/experiments/20_dset_20260428T135130Z",
+  "coverage": {
+    "datasets": 1,
+    "methods": 5,
+    "nodes_with_plots_share": 0.2857142857142857,
+    "seeds": 1,
+    "validation_coverage_share": 1.0
+  },
+  "generated_at_utc": "20260428T144909Z",
+  "group_by": [
+    "divisor_size",
+    "method"
+  ],
+  "nodes": [
+    {
+      "analysis_level": "overview",
+      "artifacts_by_type": {
+        "plots": [
+          "data/analysis/analyze_20260428T144905Z/overview/plots/final_objective_by_divisor_size.png",
+          "data/analysis/analyze_20260428T144905Z/overview/plots/validation_gain_by_divisor_size.png",
+          "data/analysis/analyze_20260428T144905Z/overview/plots/pareto_runtime_gain_by_divisor_size.png",
+          "data/analysis/analyze_20260428T144905Z/overview/plots/risk_vs_gain_by_divisor_size.png",
+          "data/analysis/analyze_20260428T144905Z/overview/plots/time_to_best_by_divisor_size.png",
+          "data/analysis/analyze_20260428T144905Z/overview/plots/final_objective_by_method_overall.png",
+          "data/analysis/analyze_20260428T144905Z/overview/plots/final_objective_by_method_divisor_size=20.png"
+        ],
+        "reports": [
+          "data/analysis/analyze_20260428T144905Z/overview/report.md"
+        ],
+        "tables": [
+          "data/analysis/analyze_20260428T144905Z/overview/tables/runs.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/tables/summary.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/tables/compare_by_divisor_size.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/tables/method_ranking.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/tables/validation_gain_ranking.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/tables/coverage_matrix.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/tables/adoption_candidates.csv"
+        ]
+      },
+      "decision_summary": {
+        "adopt": [],
+        "deprioritize": [
+          "20"
+        ],
+        "significant_pairs": 0,
+        "top_by_gain": "20",
+        "top_by_objective": "20",
+        "watch": []
+      },
+      "group_key": "root",
+      "group_value": "all",
+      "level": 0,
+      "parent_path": null,
+      "plots": {
+        "final_objective_by_divisor_size": "data/analysis/analyze_20260428T144905Z/overview/plots/final_objective_by_divisor_size.png",
+        "final_objective_by_method_divisor_size=20": "data/analysis/analyze_20260428T144905Z/overview/plots/final_objective_by_method_divisor_size=20.png",
+        "final_objective_by_method_overall": "data/analysis/analyze_20260428T144905Z/overview/plots/final_objective_by_method_overall.png",
+        "pareto_runtime_gain_by_divisor_size": "data/analysis/analyze_20260428T144905Z/overview/plots/pareto_runtime_gain_by_divisor_size.png",
+        "risk_vs_gain_by_divisor_size": "data/analysis/analyze_20260428T144905Z/overview/plots/risk_vs_gain_by_divisor_size.png",
+        "time_to_best_by_divisor_size": "data/analysis/analyze_20260428T144905Z/overview/plots/time_to_best_by_divisor_size.png",
+        "validation_gain_by_divisor_size": "data/analysis/analyze_20260428T144905Z/overview/plots/validation_gain_by_divisor_size.png"
+      },
+      "report": "data/analysis/analyze_20260428T144905Z/overview/report.md",
+      "runs": 5,
+      "tables": {
+        "adoption_candidates": "data/analysis/analyze_20260428T144905Z/overview/tables/adoption_candidates.csv",
+        "compare_by_divisor_size": "data/analysis/analyze_20260428T144905Z/overview/tables/compare_by_divisor_size.csv",
+        "coverage_matrix": "data/analysis/analyze_20260428T144905Z/overview/tables/coverage_matrix.csv",
+        "method_ranking": "data/analysis/analyze_20260428T144905Z/overview/tables/method_ranking.csv",
+        "runs": "data/analysis/analyze_20260428T144905Z/overview/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260428T144905Z/overview/tables/summary.csv",
+        "validation_gain_ranking": "data/analysis/analyze_20260428T144905Z/overview/tables/validation_gain_ranking.csv"
+      }
+    },
+    {
+      "analysis_level": "divisor_size=20",
+      "artifacts_by_type": {
+        "plots": [
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/plots/final_objective_by_method.png",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/plots/validation_gain_by_method.png",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/plots/pareto_runtime_gain_by_method.png",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/plots/risk_vs_gain_by_method.png",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/plots/time_to_best_by_method.png",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/plots/convergence_ribbons_top3_methods.png",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/plots/final_objective_by_method_overall.png",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/plots/final_objective_by_method_dataset=20_dset_20260428T135130Z.png"
+        ],
+        "reports": [
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/report.md"
+        ],
+        "tables": [
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/runs.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/summary.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/compare_by_method.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/pairwise_significance_by_method.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/pairwise_win_rate_by_method.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/omnibus_tests_by_method.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/method_comparison.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/stability_table.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/validation_gain_by_method.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/adoption_candidates.csv"
+        ]
+      },
+      "decision_summary": {
+        "adopt": [],
+        "deprioritize": [
+          "de",
+          "ga",
+          "pso"
+        ],
+        "significant_pairs": 0,
+        "top_by_gain": "rs",
+        "top_by_objective": "de",
+        "watch": [
+          "bo",
+          "rs"
+        ]
+      },
+      "group_key": "divisor_size",
+      "group_value": "20",
+      "level": 1,
+      "parent_path": "data/analysis/analyze_20260428T144905Z/overview/groups",
+      "plots": {
+        "convergence_ribbons_top3_methods": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/plots/convergence_ribbons_top3_methods.png",
+        "final_objective_by_method": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/plots/final_objective_by_method.png",
+        "final_objective_by_method_dataset=20_dset_20260428T135130Z": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/plots/final_objective_by_method_dataset=20_dset_20260428T135130Z.png",
+        "final_objective_by_method_overall": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/plots/final_objective_by_method_overall.png",
+        "pareto_runtime_gain_by_method": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/plots/pareto_runtime_gain_by_method.png",
+        "risk_vs_gain_by_method": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/plots/risk_vs_gain_by_method.png",
+        "time_to_best_by_method": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/plots/time_to_best_by_method.png",
+        "validation_gain_by_method": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/plots/validation_gain_by_method.png"
+      },
+      "report": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/report.md",
+      "runs": 5,
+      "tables": {
+        "adoption_candidates": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/adoption_candidates.csv",
+        "compare_by_method": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/compare_by_method.csv",
+        "method_comparison": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/method_comparison.csv",
+        "omnibus_tests_by_method": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/omnibus_tests_by_method.csv",
+        "pairwise_significance_by_method": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/pairwise_significance_by_method.csv",
+        "pairwise_win_rate_by_method": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/pairwise_win_rate_by_method.csv",
+        "runs": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/runs.csv",
+        "stability_table": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/stability_table.csv",
+        "summary": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/summary.csv",
+        "validation_gain_by_method": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/tables/validation_gain_by_method.csv"
+      }
+    },
+    {
+      "analysis_level": "method=bo",
+      "artifacts_by_type": {
+        "plots": [],
+        "reports": [
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=bo/report.md"
+        ],
+        "tables": [
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=bo/tables/runs.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=bo/tables/summary.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=bo/tables/method_profile.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=bo/tables/method_sensitivity.csv"
+        ]
+      },
+      "decision_summary": {
+        "adopt": [],
+        "deprioritize": [],
+        "significant_pairs": 0,
+        "top_by_gain": null,
+        "top_by_objective": null,
+        "watch": []
+      },
+      "group_key": "method",
+      "group_value": "bo",
+      "level": 2,
+      "parent_path": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups",
+      "plots": {},
+      "report": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=bo/report.md",
+      "runs": 1,
+      "tables": {
+        "method_profile": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=bo/tables/method_profile.csv",
+        "method_sensitivity": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=bo/tables/method_sensitivity.csv",
+        "runs": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=bo/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=bo/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=de",
+      "artifacts_by_type": {
+        "plots": [],
+        "reports": [
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=de/report.md"
+        ],
+        "tables": [
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=de/tables/runs.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=de/tables/summary.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=de/tables/method_profile.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=de/tables/method_sensitivity.csv"
+        ]
+      },
+      "decision_summary": {
+        "adopt": [],
+        "deprioritize": [],
+        "significant_pairs": 0,
+        "top_by_gain": null,
+        "top_by_objective": null,
+        "watch": []
+      },
+      "group_key": "method",
+      "group_value": "de",
+      "level": 2,
+      "parent_path": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups",
+      "plots": {},
+      "report": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=de/report.md",
+      "runs": 1,
+      "tables": {
+        "method_profile": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=de/tables/method_profile.csv",
+        "method_sensitivity": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=de/tables/method_sensitivity.csv",
+        "runs": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=de/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=de/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=ga",
+      "artifacts_by_type": {
+        "plots": [],
+        "reports": [
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=ga/report.md"
+        ],
+        "tables": [
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=ga/tables/runs.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=ga/tables/summary.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=ga/tables/method_profile.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=ga/tables/method_sensitivity.csv"
+        ]
+      },
+      "decision_summary": {
+        "adopt": [],
+        "deprioritize": [],
+        "significant_pairs": 0,
+        "top_by_gain": null,
+        "top_by_objective": null,
+        "watch": []
+      },
+      "group_key": "method",
+      "group_value": "ga",
+      "level": 2,
+      "parent_path": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups",
+      "plots": {},
+      "report": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=ga/report.md",
+      "runs": 1,
+      "tables": {
+        "method_profile": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=ga/tables/method_profile.csv",
+        "method_sensitivity": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=ga/tables/method_sensitivity.csv",
+        "runs": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=ga/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=ga/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=pso",
+      "artifacts_by_type": {
+        "plots": [],
+        "reports": [
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=pso/report.md"
+        ],
+        "tables": [
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=pso/tables/runs.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=pso/tables/summary.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=pso/tables/method_profile.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=pso/tables/method_sensitivity.csv"
+        ]
+      },
+      "decision_summary": {
+        "adopt": [],
+        "deprioritize": [],
+        "significant_pairs": 0,
+        "top_by_gain": null,
+        "top_by_objective": null,
+        "watch": []
+      },
+      "group_key": "method",
+      "group_value": "pso",
+      "level": 2,
+      "parent_path": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups",
+      "plots": {},
+      "report": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=pso/report.md",
+      "runs": 1,
+      "tables": {
+        "method_profile": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=pso/tables/method_profile.csv",
+        "method_sensitivity": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=pso/tables/method_sensitivity.csv",
+        "runs": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=pso/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=pso/tables/summary.csv"
+      }
+    },
+    {
+      "analysis_level": "method=rs",
+      "artifacts_by_type": {
+        "plots": [],
+        "reports": [
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=rs/report.md"
+        ],
+        "tables": [
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=rs/tables/runs.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=rs/tables/summary.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=rs/tables/method_profile.csv",
+          "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=rs/tables/method_sensitivity.csv"
+        ]
+      },
+      "decision_summary": {
+        "adopt": [],
+        "deprioritize": [],
+        "significant_pairs": 0,
+        "top_by_gain": null,
+        "top_by_objective": null,
+        "watch": []
+      },
+      "group_key": "method",
+      "group_value": "rs",
+      "level": 2,
+      "parent_path": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups",
+      "plots": {},
+      "report": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=rs/report.md",
+      "runs": 1,
+      "tables": {
+        "method_profile": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=rs/tables/method_profile.csv",
+        "method_sensitivity": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=rs/tables/method_sensitivity.csv",
+        "runs": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=rs/tables/runs.csv",
+        "summary": "data/analysis/analyze_20260428T144905Z/overview/groups/divisor_size=20/groups/method=rs/tables/summary.csv"
+      }
+    }
+  ],
+  "package_version": "0.1.0",
+  "schema_version": "2.0",
+  "threshold": -0.2737085931414875,
+  "timestamp_utc": "20260428T144909Z",
+  "total_groups": 7,
+  "total_runs": 5
+}

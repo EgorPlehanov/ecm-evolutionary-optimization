@@ -1,0 +1,11 @@
+group_a,group_b,u_stat,p_raw,p_holm,is_significant,cliffs_delta,effect_size
+bo,de,0.0,0.31731050786291415,1.0,False,1.0,large
+bo,ga,0.0,0.31731050786291415,1.0,False,-1.0,large
+bo,pso,0.0,0.31731050786291415,1.0,False,-1.0,large
+bo,rs,0.0,0.31731050786291415,1.0,False,-1.0,large
+de,ga,0.0,0.31731050786291415,1.0,False,-1.0,large
+de,pso,0.0,0.31731050786291415,1.0,False,-1.0,large
+de,rs,0.0,0.31731050786291415,1.0,False,-1.0,large
+ga,pso,0.0,0.31731050786291415,1.0,False,1.0,large
+ga,rs,0.0,0.31731050786291415,1.0,False,1.0,large
+pso,rs,0.0,0.31731050786291415,1.0,False,1.0,large
