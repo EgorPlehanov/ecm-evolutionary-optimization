@@ -1,0 +1,2 @@
+group,run_count,median_objective,objective_ci_low,objective_ci_high,iqr_objective,cv_objective,success_share,median_runtime_sec,median_validation_gain_pct,validation_gain_ci_low,validation_gain_ci_high
+20_dset_20260429T132020Z,1,1.5611369505729829,1.5611369505729829,1.5611369505729829,0.0,nan,1.0,1921.430212268955,52.52087790048732,52.52087790048732,52.52087790048732
