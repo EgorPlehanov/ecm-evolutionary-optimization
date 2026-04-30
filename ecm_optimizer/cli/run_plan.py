@@ -6,6 +6,7 @@ import sys
 from itertools import product
 from pathlib import Path
 import shlex
+import json
 from typing import Any
 
 import click
@@ -699,6 +700,19 @@ def _materialize_operations(
             context[resolved_label] = {"type": op_type, "args": resolved_args, "output": {}}
 
 
+def _load_state_context(state_file: Path) -> dict[str, dict[str, Any]]:
+    if not state_file.exists():
+        return {}
+    payload = json.loads(state_file.read_text(encoding="utf-8"))
+    context = payload.get("context", {})
+    return context if isinstance(context, dict) else {}
+
+
+def _save_state_context(state_file: Path, context: dict[str, dict[str, Any]]) -> None:
+    state_file.parent.mkdir(parents=True, exist_ok=True)
+    state_file.write_text(json.dumps({"context": context}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
 @click.command("run-plan")
 @click.argument("plan_arg", required=False)
 @click.option(
@@ -755,6 +769,7 @@ def run_plan_command(plan_arg: str | None, plan_opt: str | None, dry_run: bool) 
 @click.option("--time-limit", default="12:00:00", show_default=True, type=str, help="Slurm time limit.")
 @click.option("--log-dir", default="slurm_logs", show_default=True, type=click.Path(path_type=Path), help="Directory for slurm stdout/stderr.")
 @click.option("--dry-run", is_flag=True, help="Print sbatch commands without submitting.")
+@click.option("--state-file", default="slurm_logs/plan_state.json", show_default=True, type=click.Path(path_type=Path), help="Shared JSON state with step outputs.")
 def run_plan_slurm_command(
     plan_name: str,
     partition: str,
@@ -762,6 +777,7 @@ def run_plan_slurm_command(
     time_limit: str,
     log_dir: Path,
     dry_run: bool,
+    state_file: Path,
 ) -> None:
     """Оркестрация одного плана в Slurm: один шаг плана = один Slurm job с зависимостями."""
     plan_path = _resolve_plan_path(plan_name)
@@ -780,18 +796,27 @@ def run_plan_slurm_command(
 
     ensure_dir = log_dir
     ensure_dir.mkdir(parents=True, exist_ok=True)
+    _save_state_context(state_file, base_context)
     label_to_jobid: dict[str, str] = {}
+    prev_job_id: str | None = None
 
     for op in materialized:
         dep_ids = [label_to_jobid[label] for label in op["depends_on"] if label in label_to_jobid]
+        if not dep_ids and prev_job_id is not None:
+            dep_ids = [prev_job_id]
         dep_arg = f"--dependency=afterok:{':'.join(dep_ids)}" if dep_ids else ""
-        cmd = [sys.executable, "-m", "ecm_optimizer.cli.main", *op["command_tail"]]
-        if not dry_run and any("<unresolved:" in str(part) for part in cmd):
-            raise click.UsageError(
-                f"Operation #{op['index']} contains unresolved refs. "
-                "For distributed run-plan-slurm, make sure args do not depend on runtime outputs "
-                "of previous steps (or precompute those values in plan params)."
-            )
+        cmd = [
+            sys.executable,
+            "-m",
+            "ecm_optimizer.cli.main",
+            "run-plan-slurm-step",
+            "--plan",
+            str(plan_path),
+            "--step-index",
+            str(op["index"]),
+            "--state-file",
+            str(state_file),
+        ]
         wrapped_cmd = shlex.join(cmd)
         op_name = op["label"] or f"step{op['index']}_{op['type']}"
         sbatch_cmd = (
@@ -807,5 +832,46 @@ def run_plan_slurm_command(
         result = subprocess.run(sbatch_cmd, shell=True, check=True, capture_output=True, text=True)
         job_id = result.stdout.strip()
         click.echo(f"submitted_job_id[{op_name}]={job_id}")
+        prev_job_id = job_id
         if op["label"]:
             label_to_jobid[str(op["label"])] = job_id
+
+
+@click.command("run-plan-slurm-step")
+@click.option("--plan", "plan_name", required=True, type=str)
+@click.option("--step-index", required=True, type=int)
+@click.option("--state-file", required=True, type=click.Path(path_type=Path))
+def run_plan_slurm_step_command(plan_name: str, step_index: int, state_file: Path) -> None:
+    """Internal: execute one materialized step using shared state context."""
+    plan_path = _resolve_plan_path(plan_name)
+    payload = read_json(plan_path)
+    operations = payload.get("operations")
+    if not isinstance(operations, list) or not operations:
+        raise click.UsageError("Plan must contain a non-empty 'operations' list.")
+    params = payload.get("params", {})
+    if not isinstance(params, dict):
+        raise click.UsageError("Plan field 'params' must be an object when provided.")
+
+    state_context = _load_state_context(state_file)
+    if "params" not in state_context:
+        state_context["params"] = _resolve_refs(params, {})
+    materialized: list[dict[str, Any]] = []
+    _materialize_operations(operations, context=dict(state_context), dry_run=False, out=materialized)
+    _validate_materialized_dependencies(materialized)
+    if step_index < 1 or step_index > len(materialized):
+        raise click.UsageError(f"step-index out of range: {step_index}")
+    op = materialized[step_index - 1]
+    cmd = [sys.executable, "-m", "ecm_optimizer.cli.main", *op["command_tail"]]
+    click.echo(f"run_step[{step_index}]: {' '.join(cmd)}")
+    run = subprocess.run(cmd, text=True, capture_output=True, check=False)
+    if run.stdout:
+        click.echo(run.stdout.rstrip())
+    if run.stderr:
+        click.echo(run.stderr.rstrip(), err=True)
+    if run.returncode != 0:
+        raise click.ClickException(f"Step {step_index} failed with exit code {run.returncode}.")
+    parsed = _parse_stdout(run.stdout or "")
+    label = op.get("label")
+    if isinstance(label, str) and label:
+        state_context[label] = {"type": op["type"], "args": op["args"], "output": parsed, **parsed}
+        _save_state_context(state_file, state_context)
