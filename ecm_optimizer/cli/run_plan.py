@@ -17,6 +17,7 @@ from ecm_optimizer.utils.io_utils import read_json
 PLANS_DIR = DATA_DIR / "plans"
 
 _REF_PATTERN = re.compile(r"\{\{\s*([a-zA-Z0-9_.-]+)\s*\}\}")
+_UNRESOLVED_REF_PATTERN = re.compile(r"<unresolved:([a-zA-Z0-9_.-]+)>")
 _SUPPORTED_OPERATION_TYPES = {"generate", "optimize", "validate", "analyze"}
 
 
@@ -713,6 +714,20 @@ def _save_state_context(state_file: Path, context: dict[str, dict[str, Any]]) ->
     state_file.write_text(json.dumps({"context": context}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
 
 
+def _collect_unresolved_labels(value: Any) -> set[str]:
+    labels: set[str] = set()
+    if isinstance(value, dict):
+        for item in value.values():
+            labels.update(_collect_unresolved_labels(item))
+    elif isinstance(value, list):
+        for item in value:
+            labels.update(_collect_unresolved_labels(item))
+    elif isinstance(value, str):
+        for match in _UNRESOLVED_REF_PATTERN.finditer(value):
+            labels.add(match.group(1).split(".", 1)[0])
+    return labels
+
+
 @click.command("run-plan")
 @click.argument("plan_arg", required=False)
 @click.option(
@@ -798,12 +813,25 @@ def run_plan_slurm_command(
     ensure_dir.mkdir(parents=True, exist_ok=True)
     _save_state_context(state_file, base_context)
     label_to_jobid: dict[str, str] = {}
-    prev_job_id: str | None = None
+    inferred_dep_labels: list[set[str]] = []
+    for idx, op in enumerate(materialized):
+        deps = set(op["depends_on"])
+        deps.update(_collect_unresolved_labels(op["args"]))
+        if op["type"] == "analyze":
+            analyze_inputs = op["args"].get("input")
+            analyze_tokens = set(_collect_unresolved_labels(analyze_inputs))
+            for prev_op in materialized[:idx]:
+                if prev_op["type"] not in {"optimize", "validate"}:
+                    continue
+                prev_dataset = prev_op["args"].get("dataset")
+                if prev_dataset == analyze_inputs or (analyze_tokens and _collect_unresolved_labels(prev_dataset) & analyze_tokens):
+                    if isinstance(prev_op.get("label"), str):
+                        deps.add(str(prev_op["label"]))
+        inferred_dep_labels.append(deps)
 
     for op in materialized:
-        dep_ids = [label_to_jobid[label] for label in op["depends_on"] if label in label_to_jobid]
-        if not dep_ids and prev_job_id is not None:
-            dep_ids = [prev_job_id]
+        deps = inferred_dep_labels[op["index"] - 1]
+        dep_ids = [label_to_jobid[label] for label in sorted(deps) if label in label_to_jobid]
         dep_arg = f"--dependency=afterok:{':'.join(dep_ids)}" if dep_ids else ""
         cmd = [
             sys.executable,
@@ -826,13 +854,13 @@ def run_plan_slurm_command(
             f"--error={shlex.quote(str(log_dir / (str(op_name) + '-%j.err')))} "
             f"{dep_arg} --wrap {shlex.quote(wrapped_cmd)}"
         ).strip()
-        click.echo(f"STEP {op['index']}: {sbatch_cmd}")
+        dep_labels_note = f" deps={sorted(deps)}" if deps else ""
+        click.echo(f"STEP {op['index']}{dep_labels_note}: {sbatch_cmd}")
         if dry_run:
             continue
         result = subprocess.run(sbatch_cmd, shell=True, check=True, capture_output=True, text=True)
         job_id = result.stdout.strip()
         click.echo(f"submitted_job_id[{op_name}]={job_id}")
-        prev_job_id = job_id
         if op["label"]:
             label_to_jobid[str(op["label"])] = job_id
 
