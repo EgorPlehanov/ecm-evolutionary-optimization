@@ -697,7 +697,7 @@ def _materialize_operations(
                 "command_tail": _operation_to_args(op_type, resolved_args),
             }
         )
-        if resolved_label:
+        if resolved_label and resolved_label not in context:
             context[resolved_label] = {"type": op_type, "args": resolved_args, "output": {}}
 
 
