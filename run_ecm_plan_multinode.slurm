@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=ecm_plan_multi
 #SBATCH --partition=tornado
-#SBATCH --nodes=4
+#SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=28
 #SBATCH --time=3-00:00:00
@@ -43,36 +43,17 @@ export MKL_NUM_THREADS="${SLURM_CPUS_PER_TASK}"
 command -v ecm-optimizer >/dev/null 2>&1 || { echo "ERROR: ecm-optimizer не найден." >&2; exit 1; }
 command -v ecm >/dev/null 2>&1 || { echo "ERROR: бинарник ecm не найден." >&2; exit 1; }
 
-# Список планов через пробел: экспортируйте при sbatch.
+# Один план: задается через PLAN_NAME.
 # Пример:
-# sbatch --export=PLAN_LIST="full_all_methods_20_25_30 tuned_all_methods_multiseed_20d" run_ecm_plan_multinode.slurm
-PLAN_LIST="${PLAN_LIST:-full_all_methods_single_run_20d}"
-read -r -a PLANS <<< "${PLAN_LIST}"
-PLAN_COUNT="${#PLANS[@]}"
+# sbatch --export=PLAN_NAME=full_all_methods_single_run_20d run_ecm_plan_multinode.slurm
+PLAN_NAME="${PLAN_NAME:-full_all_methods_single_run_20d}"
 
-if [ "${PLAN_COUNT}" -eq 0 ]; then
-  echo "ERROR: PLAN_LIST пуст." >&2
-  exit 1
-fi
+echo "Проверка плана (dry-run validation): ${PLAN_NAME}"
+ecm-optimizer run-plan --plan "${PLAN_NAME}" --dry-run >/dev/null
 
-if [ "${PLAN_COUNT}" -gt "${SLURM_NTASKS}" ]; then
-  echo "ERROR: планов (${PLAN_COUNT}) больше, чем доступных задач (${SLURM_NTASKS})." >&2
-  echo "Увеличьте --nodes/--ntasks-per-node или сократите PLAN_LIST." >&2
-  exit 1
-fi
+echo "Запуск одного плана: ${PLAN_NAME}"
+echo "Выделено нод: ${SLURM_NNODES}, задач: ${SLURM_NTASKS}, CPU/задача: ${SLURM_CPUS_PER_TASK}"
 
-echo "Проверка планов (dry-run validation)"
-for plan in "${PLANS[@]}"; do
-  echo "Validate: ${plan}"
-  ecm-optimizer run-plan --plan "${plan}" --dry-run >/dev/null
-done
-
-TMP_MULTI_PROG="$(mktemp)"
-trap 'rm -f "${TMP_MULTI_PROG}"' EXIT
-
-for idx in "${!PLANS[@]}"; do
-  printf "%s bash -lc 'ecm-optimizer run-plan --plan %q'\n" "${idx}" "${PLANS[$idx]}" >> "${TMP_MULTI_PROG}"
-done
-
-echo "Запуск ${PLAN_COUNT} plan(s) параллельно на ${PLAN_COUNT} task(s)"
-srun --ntasks="${PLAN_COUNT}" --multi-prog "${TMP_MULTI_PROG}"
+# Один orchestrator-процесс run-plan.
+# Внутренняя параллельность обеспечивается параметрами workers в шагах optimize/validate плана.
+srun --ntasks=1 --nodes=1 ecm-optimizer run-plan --plan "${PLAN_NAME}"
