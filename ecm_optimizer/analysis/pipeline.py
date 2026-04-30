@@ -199,17 +199,33 @@ def _extract_best_so_far(history: list[dict[str, Any]]) -> tuple[list[tuple[int,
     return by_eval, by_time, first_fitness
 
 
-def _find_validation_file(run_file: Path, method: str) -> Path | None:
-    match = re.search(r"_optimize_(\d{8}T\d{6}Z)", run_file.name)
-    if not match:
-        return None
-    ts = match.group(1)
-    candidate = run_file.parent / f"{method}_validate_{ts}.json"
-    if candidate.exists():
-        return candidate
+def _validation_matches_run(validation_file: Path, run_file: Path) -> bool:
+    payload = read_json(validation_file)
+    optimized = payload.get("optimized", {})
+    if not isinstance(optimized, dict):
+        return False
 
-    fallback = sorted(run_file.parent.glob(f"{method}_validate_*.json"))
-    return fallback[-1] if fallback else None
+    source_file = optimized.get("source_file")
+    if source_file is None:
+        return False
+
+    source_path = Path(str(source_file)).expanduser()
+    if source_path.is_absolute():
+        return source_path.resolve() == run_file.resolve()
+
+    return source_path.name == run_file.name
+
+
+def _find_validation_file(run_file: Path, method: str) -> Path | None:
+    candidates = sorted(run_file.parent.glob(f"{method}_validate_*.json"), reverse=True)
+    if not candidates:
+        return None
+
+    for candidate in candidates:
+        if _validation_matches_run(candidate, run_file):
+            return candidate
+
+    return candidates[0]
 
 
 def _parse_run_file(run_file: Path) -> RunRecord | None:
