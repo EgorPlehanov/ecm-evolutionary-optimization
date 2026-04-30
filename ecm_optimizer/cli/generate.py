@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import os
 
 import click
 
@@ -39,7 +40,15 @@ def generate_command(
     control = samples[train_count:]
 
     timestamp = utc_timestamp()
-    folder_name = f"{target_digits}_{prefix}_{timestamp}" if prefix else f"{target_digits}_{timestamp}"
+    slurm_job_id = os.getenv("SLURM_JOB_ID")
+    slurm_array_task_id = os.getenv("SLURM_ARRAY_TASK_ID")
+    job_suffix = f"_job{slurm_job_id}" if slurm_job_id else ""
+    task_suffix = f"_task{slurm_array_task_id}" if slurm_array_task_id else ""
+    folder_name = (
+        f"{target_digits}_{prefix}_{timestamp}{job_suffix}{task_suffix}"
+        if prefix
+        else f"{target_digits}_{timestamp}{job_suffix}{task_suffix}"
+    )
     artifact_dir = ensure_dir(output_dir / folder_name)
 
     generation_meta = {

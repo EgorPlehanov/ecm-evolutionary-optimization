@@ -5,6 +5,8 @@ import subprocess
 import sys
 from itertools import product
 from pathlib import Path
+import shlex
+import json
 from typing import Any
 
 import click
@@ -15,6 +17,7 @@ from ecm_optimizer.utils.io_utils import read_json
 PLANS_DIR = DATA_DIR / "plans"
 
 _REF_PATTERN = re.compile(r"\{\{\s*([a-zA-Z0-9_.-]+)\s*\}\}")
+_UNRESOLVED_REF_PATTERN = re.compile(r"<unresolved:([a-zA-Z0-9_.-]+)>")
 _SUPPORTED_OPERATION_TYPES = {"generate", "optimize", "validate", "analyze"}
 
 
@@ -314,6 +317,101 @@ def _to_positive_int(value: Any, *, field: str) -> int:
     return value
 
 
+def _normalize_depends_on(raw_depends_on: Any, *, op_index: int) -> list[str]:
+    if raw_depends_on is None:
+        return []
+    if isinstance(raw_depends_on, str):
+        return [raw_depends_on]
+    if isinstance(raw_depends_on, list) and all(isinstance(item, str) and item for item in raw_depends_on):
+        return raw_depends_on
+    raise click.UsageError(
+        f"Operation #{op_index} field 'depends_on' must be a string or a list of non-empty strings."
+    )
+
+
+def _collect_materialized_operations(
+    operations: list[Any],
+    *,
+    context: dict[str, dict[str, Any]],
+    dry_run: bool,
+    collected: list[dict[str, Any]],
+) -> None:
+    local_step_counter = [len(collected)]
+    for raw_op in operations:
+        if not isinstance(raw_op, dict):
+            raise click.UsageError(f"Operation #{local_step_counter[0] + 1} must be an object.")
+
+        if "repeat" in raw_op:
+            nested_operations = raw_op.get("operations")
+            if not isinstance(nested_operations, list) or not nested_operations:
+                raise click.UsageError("Repeat block must contain non-empty 'operations' list.")
+            alias, iterations = _build_repeat_iterations(raw_op["repeat"], context, dry_run=dry_run)
+            previous_alias = context.get(alias)
+            for iteration in iterations:
+                context[alias] = iteration
+                _collect_materialized_operations(
+                    nested_operations,
+                    context=context,
+                    dry_run=dry_run,
+                    collected=collected,
+                )
+            if previous_alias is None:
+                context.pop(alias, None)
+            else:
+                context[alias] = previous_alias
+            continue
+
+        local_step_counter[0] += 1
+        idx = local_step_counter[0]
+        label = raw_op.get("label")
+        resolved_label = _resolve_refs(label, context, allow_unresolved=dry_run) if label else None
+        depends_on_resolved = _resolve_refs(raw_op.get("depends_on"), context, allow_unresolved=dry_run)
+        depends_on = _normalize_depends_on(depends_on_resolved, op_index=idx)
+        collected.append({"index": idx, "label": resolved_label, "depends_on": depends_on, "type": raw_op.get("type")})
+
+
+def _validate_materialized_dependencies(collected: list[dict[str, Any]]) -> None:
+    label_to_index: dict[str, int] = {}
+    for op in collected:
+        label = op["label"]
+        if label is None:
+            continue
+        if not isinstance(label, str):
+            raise click.UsageError(f"Operation #{op['index']} resolved label must be a string.")
+        if label in label_to_index:
+            raise click.UsageError(f"Duplicate label detected during plan validation: '{label}'.")
+        label_to_index[label] = int(op["index"])
+
+    for op in collected:
+        op_index = int(op["index"])
+        op_type = str(op["type"])
+        for dep_label in op["depends_on"]:
+            if dep_label not in label_to_index:
+                raise click.UsageError(
+                    f"Operation #{op_index} depends on unknown label '{dep_label}'."
+                )
+            dep_index = label_to_index[dep_label]
+            if dep_index >= op_index:
+                raise click.UsageError(
+                    f"Operation #{op_index} depends on '{dep_label}' (step {dep_index}), "
+                    "but dependency must be defined earlier in the plan."
+                )
+            dep_op = collected[dep_index - 1]
+            dep_type = str(dep_op["type"])
+            if op_type == "optimize" and dep_type not in {"generate"}:
+                raise click.UsageError(
+                    f"Operation #{op_index} (optimize) has invalid dependency '{dep_label}' of type '{dep_type}'."
+                )
+            if op_type == "validate" and dep_type not in {"optimize", "generate"}:
+                raise click.UsageError(
+                    f"Operation #{op_index} (validate) has invalid dependency '{dep_label}' of type '{dep_type}'."
+                )
+            if op_type == "analyze" and dep_type not in {"validate", "optimize", "generate"}:
+                raise click.UsageError(
+                    f"Operation #{op_index} (analyze) has invalid dependency '{dep_label}' of type '{dep_type}'."
+                )
+
+
 def _build_repeat_iterations(
     repeat_spec: Any,
     context: dict[str, dict[str, Any]],
@@ -476,6 +574,13 @@ def _execute_operations(
             raise click.UsageError(f"Operation #{idx} resolved label must be a string.")
 
         resolved_args = _expand_arg_ref_spreads(args, context, allow_unresolved=dry_run)
+        depends_on_resolved = _resolve_refs(raw_op.get("depends_on"), context, allow_unresolved=dry_run)
+        depends_on = _normalize_depends_on(depends_on_resolved, op_index=idx)
+        for dep_label in depends_on:
+            if dep_label not in context:
+                raise click.UsageError(
+                    f"Operation #{idx} cannot start because dependency '{dep_label}' is not completed yet."
+                )
         if op_type == "analyze":
             resolved_args = _apply_analyze_shortcuts(resolved_args)
         command_tail = _operation_to_args(op_type, resolved_args)
@@ -549,6 +654,80 @@ def _count_operations(
     return total
 
 
+def _materialize_operations(
+    operations: list[Any],
+    *,
+    context: dict[str, dict[str, Any]],
+    dry_run: bool,
+    out: list[dict[str, Any]],
+) -> None:
+    for raw_op in operations:
+        if "repeat" in raw_op:
+            nested_operations = raw_op.get("operations")
+            if not isinstance(nested_operations, list) or not nested_operations:
+                raise click.UsageError("Repeat block must contain non-empty 'operations' list.")
+            alias, iterations = _build_repeat_iterations(raw_op["repeat"], context, dry_run=dry_run)
+            previous_alias = context.get(alias)
+            for iteration in iterations:
+                context[alias] = iteration
+                _materialize_operations(nested_operations, context=context, dry_run=dry_run, out=out)
+            if previous_alias is None:
+                context.pop(alias, None)
+            else:
+                context[alias] = previous_alias
+            continue
+
+        idx = len(out) + 1
+        op_type = raw_op.get("type")
+        label = raw_op.get("label")
+        args = raw_op.get("args", {})
+        resolved_label = _resolve_refs(label, context, allow_unresolved=dry_run) if label else None
+        resolved_args = _expand_arg_ref_spreads(args, context, allow_unresolved=dry_run)
+        if op_type == "analyze":
+            resolved_args = _apply_analyze_shortcuts(resolved_args)
+        depends_on_resolved = _resolve_refs(raw_op.get("depends_on"), context, allow_unresolved=dry_run)
+        depends_on = _normalize_depends_on(depends_on_resolved, op_index=idx)
+        out.append(
+            {
+                "index": idx,
+                "type": op_type,
+                "label": resolved_label,
+                "depends_on": depends_on,
+                "args": resolved_args,
+                "command_tail": _operation_to_args(op_type, resolved_args),
+            }
+        )
+        if resolved_label:
+            context[resolved_label] = {"type": op_type, "args": resolved_args, "output": {}}
+
+
+def _load_state_context(state_file: Path) -> dict[str, dict[str, Any]]:
+    if not state_file.exists():
+        return {}
+    payload = json.loads(state_file.read_text(encoding="utf-8"))
+    context = payload.get("context", {})
+    return context if isinstance(context, dict) else {}
+
+
+def _save_state_context(state_file: Path, context: dict[str, dict[str, Any]]) -> None:
+    state_file.parent.mkdir(parents=True, exist_ok=True)
+    state_file.write_text(json.dumps({"context": context}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def _collect_unresolved_labels(value: Any) -> set[str]:
+    labels: set[str] = set()
+    if isinstance(value, dict):
+        for item in value.values():
+            labels.update(_collect_unresolved_labels(item))
+    elif isinstance(value, list):
+        for item in value:
+            labels.update(_collect_unresolved_labels(item))
+    elif isinstance(value, str):
+        for match in _UNRESOLVED_REF_PATTERN.finditer(value):
+            labels.add(match.group(1).split(".", 1)[0])
+    return labels
+
+
 @click.command("run-plan")
 @click.argument("plan_arg", required=False)
 @click.option(
@@ -580,6 +759,10 @@ def run_plan_command(plan_arg: str | None, plan_opt: str | None, dry_run: bool) 
 
     context: dict[str, dict[str, Any]] = {"params": _resolve_refs(params, {})}
 
+    materialized_ops: list[dict[str, Any]] = []
+    _collect_materialized_operations(operations, context=dict(context), dry_run=dry_run, collected=materialized_ops)
+    _validate_materialized_dependencies(materialized_ops)
+
     total_steps = _count_operations(operations, context=dict(context), dry_run=dry_run)
 
     click.echo(f"plan_file: {plan_path}")
@@ -592,3 +775,131 @@ def run_plan_command(plan_arg: str | None, plan_opt: str | None, dry_run: bool) 
     )
 
     click.echo("plan_status: completed" if not dry_run else "plan_status: dry_run")
+
+
+@click.command("run-plan-slurm")
+@click.option("--plan", "plan_name", required=True, type=str, help="Path to JSON plan file OR file name inside data/plans.")
+@click.option("--partition", default="tornado", show_default=True, type=str, help="Slurm partition.")
+@click.option("--cpus-per-task", default=28, show_default=True, type=int, help="CPUs requested per task.")
+@click.option("--time-limit", default="12:00:00", show_default=True, type=str, help="Slurm time limit.")
+@click.option("--log-dir", default="slurm_logs", show_default=True, type=click.Path(path_type=Path), help="Directory for slurm stdout/stderr.")
+@click.option("--dry-run", is_flag=True, help="Print sbatch commands without submitting.")
+@click.option("--state-file", default="slurm_logs/plan_state.json", show_default=True, type=click.Path(path_type=Path), help="Shared JSON state with step outputs.")
+def run_plan_slurm_command(
+    plan_name: str,
+    partition: str,
+    cpus_per_task: int,
+    time_limit: str,
+    log_dir: Path,
+    dry_run: bool,
+    state_file: Path,
+) -> None:
+    """Оркестрация одного плана в Slurm: один шаг плана = один Slurm job с зависимостями."""
+    plan_path = _resolve_plan_path(plan_name)
+    plan_payload = read_json(plan_path)
+    operations = plan_payload.get("operations")
+    if not isinstance(operations, list) or not operations:
+        raise click.UsageError("Plan must contain a non-empty 'operations' list.")
+    params = plan_payload.get("params", {})
+    if not isinstance(params, dict):
+        raise click.UsageError("Plan field 'params' must be an object when provided.")
+
+    base_context: dict[str, dict[str, Any]] = {"params": _resolve_refs(params, {})}
+    materialized: list[dict[str, Any]] = []
+    _materialize_operations(operations, context=dict(base_context), dry_run=True, out=materialized)
+    _validate_materialized_dependencies(materialized)
+
+    ensure_dir = log_dir
+    ensure_dir.mkdir(parents=True, exist_ok=True)
+    _save_state_context(state_file, base_context)
+    label_to_jobid: dict[str, str] = {}
+    inferred_dep_labels: list[set[str]] = []
+    for idx, op in enumerate(materialized):
+        deps = set(op["depends_on"])
+        deps.update(_collect_unresolved_labels(op["args"]))
+        if op["type"] == "analyze":
+            analyze_inputs = op["args"].get("input")
+            analyze_tokens = set(_collect_unresolved_labels(analyze_inputs))
+            for prev_op in materialized[:idx]:
+                if prev_op["type"] not in {"optimize", "validate"}:
+                    continue
+                prev_dataset = prev_op["args"].get("dataset")
+                if prev_dataset == analyze_inputs or (analyze_tokens and _collect_unresolved_labels(prev_dataset) & analyze_tokens):
+                    if isinstance(prev_op.get("label"), str):
+                        deps.add(str(prev_op["label"]))
+        inferred_dep_labels.append(deps)
+
+    for op in materialized:
+        deps = inferred_dep_labels[op["index"] - 1]
+        dep_ids = [label_to_jobid[label] for label in sorted(deps) if label in label_to_jobid]
+        dep_arg = f"--dependency=afterok:{':'.join(dep_ids)}" if dep_ids else ""
+        cmd = [
+            sys.executable,
+            "-m",
+            "ecm_optimizer.cli.main",
+            "run-plan-slurm-step",
+            "--plan",
+            str(plan_path),
+            "--step-index",
+            str(op["index"]),
+            "--state-file",
+            str(state_file),
+        ]
+        wrapped_cmd = shlex.join(cmd)
+        op_name = op["label"] or f"step{op['index']}_{op['type']}"
+        sbatch_cmd = (
+            f"sbatch --parsable --partition={shlex.quote(partition)} --cpus-per-task={cpus_per_task} "
+            f"--time={shlex.quote(time_limit)} --job-name={shlex.quote('ecm_' + str(op_name))} "
+            f"--output={shlex.quote(str(log_dir / (str(op_name) + '-%j.out')))} "
+            f"--error={shlex.quote(str(log_dir / (str(op_name) + '-%j.err')))} "
+            f"{dep_arg} --wrap {shlex.quote(wrapped_cmd)}"
+        ).strip()
+        dep_labels_note = f" deps={sorted(deps)}" if deps else ""
+        click.echo(f"STEP {op['index']}{dep_labels_note}: {sbatch_cmd}")
+        if dry_run:
+            continue
+        result = subprocess.run(sbatch_cmd, shell=True, check=True, capture_output=True, text=True)
+        job_id = result.stdout.strip()
+        click.echo(f"submitted_job_id[{op_name}]={job_id}")
+        if op["label"]:
+            label_to_jobid[str(op["label"])] = job_id
+
+
+@click.command("run-plan-slurm-step")
+@click.option("--plan", "plan_name", required=True, type=str)
+@click.option("--step-index", required=True, type=int)
+@click.option("--state-file", required=True, type=click.Path(path_type=Path))
+def run_plan_slurm_step_command(plan_name: str, step_index: int, state_file: Path) -> None:
+    """Internal: execute one materialized step using shared state context."""
+    plan_path = _resolve_plan_path(plan_name)
+    payload = read_json(plan_path)
+    operations = payload.get("operations")
+    if not isinstance(operations, list) or not operations:
+        raise click.UsageError("Plan must contain a non-empty 'operations' list.")
+    params = payload.get("params", {})
+    if not isinstance(params, dict):
+        raise click.UsageError("Plan field 'params' must be an object when provided.")
+
+    state_context = _load_state_context(state_file)
+    if "params" not in state_context:
+        state_context["params"] = _resolve_refs(params, {})
+    materialized: list[dict[str, Any]] = []
+    _materialize_operations(operations, context=dict(state_context), dry_run=False, out=materialized)
+    _validate_materialized_dependencies(materialized)
+    if step_index < 1 or step_index > len(materialized):
+        raise click.UsageError(f"step-index out of range: {step_index}")
+    op = materialized[step_index - 1]
+    cmd = [sys.executable, "-m", "ecm_optimizer.cli.main", *op["command_tail"]]
+    click.echo(f"run_step[{step_index}]: {' '.join(cmd)}")
+    run = subprocess.run(cmd, text=True, capture_output=True, check=False)
+    if run.stdout:
+        click.echo(run.stdout.rstrip())
+    if run.stderr:
+        click.echo(run.stderr.rstrip(), err=True)
+    if run.returncode != 0:
+        raise click.ClickException(f"Step {step_index} failed with exit code {run.returncode}.")
+    parsed = _parse_stdout(run.stdout or "")
+    label = op.get("label")
+    if isinstance(label, str) and label:
+        state_context[label] = {"type": op["type"], "args": op["args"], "output": parsed, **parsed}
+        _save_state_context(state_file, state_context)

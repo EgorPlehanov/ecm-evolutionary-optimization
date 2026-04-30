@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import re
 from pathlib import Path
+import os
 from typing import Any
 
 import click
@@ -54,7 +55,7 @@ def _load_matplotlib_pyplot() -> Any | None:
 
 
 def _extract_run_timestamp(file_stem: str) -> str:
-    match = re.search(r"(\d{8}T\d{6}Z)$", file_stem)
+    match = re.search(r"(\d{8}T\d{6}Z)(?:_job\d+)?(?:_task\d+)?$", file_stem)
     if match:
         return match.group(1)
     return utc_timestamp()
@@ -412,7 +413,11 @@ def validate_command(
     else:
         dataset_name = dataset_path.parent.name
         out_dir = ensure_dir(results_dir / dataset_name)
-    out_file = out_dir / f"{opt_method}_validate_{utc_timestamp()}.json"
+    slurm_job_id = os.getenv("SLURM_JOB_ID")
+    slurm_array_task_id = os.getenv("SLURM_ARRAY_TASK_ID")
+    job_suffix = f"_job{slurm_job_id}" if slurm_job_id else ""
+    task_suffix = f"_task{slurm_array_task_id}" if slurm_array_task_id else ""
+    out_file = out_dir / f"{opt_method}_validate_{utc_timestamp()}{job_suffix}{task_suffix}.json"
     progress_tmp_file = out_file.with_suffix(f"{out_file.suffix}.tmp")
 
     progress_payload: dict[str, Any] = {
