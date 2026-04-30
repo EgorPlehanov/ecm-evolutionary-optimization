@@ -1,0 +1,1 @@
+run_step[8]: /home/ikntcit1/plehanoves/ecm-evolutionary-optimization/.venv/bin/python3 -m ecm_optimizer.cli.main optimize --dataset <unresolved:dataset_20_single.dataset_dir> --method bo --seed 42 --max-curves-per-n 100 --repeats-per-n 3 --bo-initial-samples 16 --bo-iterations 22 --bo-candidate-pool 2500 --b1-min 100 --b1-max 30000 --b2-min 100 --b2-max 600000 --ratio-max 100

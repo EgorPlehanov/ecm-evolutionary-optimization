@@ -5,8 +5,8 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=2
 #SBATCH --time=02:00:00
-#SBATCH --output=data/slurm_runs/job_%j/controller.out
-#SBATCH --error=data/slurm_runs/job_%j/controller.err
+#SBATCH --output=data/slurm_runs/%x-%j.out
+#SBATCH --error=data/slurm_runs/%x-%j.err
 
 set -euo pipefail
 
