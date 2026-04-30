@@ -5,6 +5,7 @@ import subprocess
 import sys
 from itertools import product
 from pathlib import Path
+import shlex
 from typing import Any
 
 import click
@@ -651,6 +652,53 @@ def _count_operations(
     return total
 
 
+def _materialize_operations(
+    operations: list[Any],
+    *,
+    context: dict[str, dict[str, Any]],
+    dry_run: bool,
+    out: list[dict[str, Any]],
+) -> None:
+    for raw_op in operations:
+        if "repeat" in raw_op:
+            nested_operations = raw_op.get("operations")
+            if not isinstance(nested_operations, list) or not nested_operations:
+                raise click.UsageError("Repeat block must contain non-empty 'operations' list.")
+            alias, iterations = _build_repeat_iterations(raw_op["repeat"], context, dry_run=dry_run)
+            previous_alias = context.get(alias)
+            for iteration in iterations:
+                context[alias] = iteration
+                _materialize_operations(nested_operations, context=context, dry_run=dry_run, out=out)
+            if previous_alias is None:
+                context.pop(alias, None)
+            else:
+                context[alias] = previous_alias
+            continue
+
+        idx = len(out) + 1
+        op_type = raw_op.get("type")
+        label = raw_op.get("label")
+        args = raw_op.get("args", {})
+        resolved_label = _resolve_refs(label, context, allow_unresolved=dry_run) if label else None
+        resolved_args = _expand_arg_ref_spreads(args, context, allow_unresolved=dry_run)
+        if op_type == "analyze":
+            resolved_args = _apply_analyze_shortcuts(resolved_args)
+        depends_on_resolved = _resolve_refs(raw_op.get("depends_on"), context, allow_unresolved=dry_run)
+        depends_on = _normalize_depends_on(depends_on_resolved, op_index=idx)
+        out.append(
+            {
+                "index": idx,
+                "type": op_type,
+                "label": resolved_label,
+                "depends_on": depends_on,
+                "args": resolved_args,
+                "command_tail": _operation_to_args(op_type, resolved_args),
+            }
+        )
+        if resolved_label:
+            context[resolved_label] = {"type": op_type, "args": resolved_args, "output": {}}
+
+
 @click.command("run-plan")
 @click.argument("plan_arg", required=False)
 @click.option(
@@ -698,3 +746,66 @@ def run_plan_command(plan_arg: str | None, plan_opt: str | None, dry_run: bool) 
     )
 
     click.echo("plan_status: completed" if not dry_run else "plan_status: dry_run")
+
+
+@click.command("run-plan-slurm")
+@click.option("--plan", "plan_name", required=True, type=str, help="Path to JSON plan file OR file name inside data/plans.")
+@click.option("--partition", default="tornado", show_default=True, type=str, help="Slurm partition.")
+@click.option("--cpus-per-task", default=28, show_default=True, type=int, help="CPUs requested per task.")
+@click.option("--time-limit", default="12:00:00", show_default=True, type=str, help="Slurm time limit.")
+@click.option("--log-dir", default="slurm_logs", show_default=True, type=click.Path(path_type=Path), help="Directory for slurm stdout/stderr.")
+@click.option("--dry-run", is_flag=True, help="Print sbatch commands without submitting.")
+def run_plan_slurm_command(
+    plan_name: str,
+    partition: str,
+    cpus_per_task: int,
+    time_limit: str,
+    log_dir: Path,
+    dry_run: bool,
+) -> None:
+    """Оркестрация одного плана в Slurm: один шаг плана = один Slurm job с зависимостями."""
+    plan_path = _resolve_plan_path(plan_name)
+    plan_payload = read_json(plan_path)
+    operations = plan_payload.get("operations")
+    if not isinstance(operations, list) or not operations:
+        raise click.UsageError("Plan must contain a non-empty 'operations' list.")
+    params = plan_payload.get("params", {})
+    if not isinstance(params, dict):
+        raise click.UsageError("Plan field 'params' must be an object when provided.")
+
+    base_context: dict[str, dict[str, Any]] = {"params": _resolve_refs(params, {})}
+    materialized: list[dict[str, Any]] = []
+    _materialize_operations(operations, context=dict(base_context), dry_run=True, out=materialized)
+    _validate_materialized_dependencies(materialized)
+
+    ensure_dir = log_dir
+    ensure_dir.mkdir(parents=True, exist_ok=True)
+    label_to_jobid: dict[str, str] = {}
+
+    for op in materialized:
+        dep_ids = [label_to_jobid[label] for label in op["depends_on"] if label in label_to_jobid]
+        dep_arg = f"--dependency=afterok:{':'.join(dep_ids)}" if dep_ids else ""
+        cmd = [sys.executable, "-m", "ecm_optimizer.cli.main", *op["command_tail"]]
+        if not dry_run and any("<unresolved:" in str(part) for part in cmd):
+            raise click.UsageError(
+                f"Operation #{op['index']} contains unresolved refs. "
+                "For distributed run-plan-slurm, make sure args do not depend on runtime outputs "
+                "of previous steps (or precompute those values in plan params)."
+            )
+        wrapped_cmd = shlex.join(cmd)
+        op_name = op["label"] or f"step{op['index']}_{op['type']}"
+        sbatch_cmd = (
+            f"sbatch --parsable --partition={shlex.quote(partition)} --cpus-per-task={cpus_per_task} "
+            f"--time={shlex.quote(time_limit)} --job-name={shlex.quote('ecm_' + str(op_name))} "
+            f"--output={shlex.quote(str(log_dir / (str(op_name) + '-%j.out')))} "
+            f"--error={shlex.quote(str(log_dir / (str(op_name) + '-%j.err')))} "
+            f"{dep_arg} --wrap {shlex.quote(wrapped_cmd)}"
+        ).strip()
+        click.echo(f"STEP {op['index']}: {sbatch_cmd}")
+        if dry_run:
+            continue
+        result = subprocess.run(sbatch_cmd, shell=True, check=True, capture_output=True, text=True)
+        job_id = result.stdout.strip()
+        click.echo(f"submitted_job_id[{op_name}]={job_id}")
+        if op["label"]:
+            label_to_jobid[str(op["label"])] = job_id
