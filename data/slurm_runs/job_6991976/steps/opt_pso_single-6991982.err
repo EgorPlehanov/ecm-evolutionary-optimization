@@ -1,0 +1,5 @@
+Usage: python -m ecm_optimizer.cli.main optimize [OPTIONS]
+Try 'python -m ecm_optimizer.cli.main optimize -h' for help.
+
+Error: Dataset file not found: <unresolved:dataset_20_single.dataset_dir>
+Error: Step 6 failed with exit code 2.

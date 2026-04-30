@@ -1,0 +1,1 @@
+run_step[2]: /home/ikntcit1/plehanoves/ecm-evolutionary-optimization/.venv/bin/python3 -m ecm_optimizer.cli.main optimize --dataset data/numbers/20_dset_20260430T205915Z_job6992126 --method de --seed 42 --max-curves-per-n 100 --repeats-per-n 3 --de-popsize 10 --de-maxiter 10 --b1-min 100 --b1-max 30000 --b2-min 100 --b2-max 600000 --ratio-max 100

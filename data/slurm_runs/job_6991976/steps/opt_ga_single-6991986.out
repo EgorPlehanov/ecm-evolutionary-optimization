@@ -1,0 +1,1 @@
+run_step[10]: /home/ikntcit1/plehanoves/ecm-evolutionary-optimization/.venv/bin/python3 -m ecm_optimizer.cli.main optimize --dataset <unresolved:dataset_20_single.dataset_dir> --method ga --seed 42 --max-curves-per-n 100 --repeats-per-n 3 --ga-population-size 22 --ga-generations 14 --ga-mutation-prob 0.14 --b1-min 100 --b1-max 30000 --b2-min 100 --b2-max 600000 --ratio-max 100

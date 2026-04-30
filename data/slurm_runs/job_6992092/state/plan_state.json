@@ -1,0 +1,202 @@
+{
+  "context": {
+    "params": {
+      "seed": 42,
+      "search": {
+        "b1-min": 100,
+        "b1-max": 30000,
+        "b2-min": 100,
+        "b2-max": 600000,
+        "ratio-max": 100
+      },
+      "method_list": [
+        "de",
+        "rs",
+        "pso",
+        "bo",
+        "ga"
+      ],
+      "method_opt": {
+        "de": {
+          "de-popsize": 10,
+          "de-maxiter": 10
+        },
+        "rs": {
+          "rs-budget": 60
+        },
+        "pso": {
+          "pso-swarm-size": 18,
+          "pso-iterations": 12
+        },
+        "bo": {
+          "bo-initial-samples": 16,
+          "bo-iterations": 22,
+          "bo-candidate-pool": 2500
+        },
+        "ga": {
+          "ga-population-size": 22,
+          "ga-generations": 14,
+          "ga-mutation-prob": 0.14
+        }
+      },
+      "shared_opt_args": {
+        "max-curves-per-n": 100,
+        "repeats-per-n": 3
+      },
+      "shared_val_args": {
+        "max-curves-per-n": 150,
+        "repeats-per-n": 5
+      },
+      "generate_args": {
+        "target-digits": 20,
+        "cofactor-digits": 30,
+        "train-count": 20,
+        "control-count": 20
+      },
+      "analyze_group_by": [
+        "divisor_size",
+        "method"
+      ]
+    },
+    "dataset_20_single": {
+      "type": "generate",
+      "args": {
+        "seed": 42,
+        "target-digits": 20,
+        "cofactor-digits": 30,
+        "train-count": 20,
+        "control-count": 20
+      },
+      "output": {
+        "dataset_dir": "data/numbers/20_dset_20260430T205915Z_job6992126",
+        "train_file": "data/numbers/20_dset_20260430T205915Z_job6992126/train.json",
+        "control_file": "data/numbers/20_dset_20260430T205915Z_job6992126/control.json",
+        "manifest_file": "data/numbers/20_dset_20260430T205915Z_job6992126/manifest.json",
+        "generation_file": "data/numbers/20_dset_20260430T205915Z_job6992126/generation.json",
+        "generated": "40"
+      },
+      "dataset_dir": "data/numbers/20_dset_20260430T205915Z_job6992126",
+      "train_file": "data/numbers/20_dset_20260430T205915Z_job6992126/train.json",
+      "control_file": "data/numbers/20_dset_20260430T205915Z_job6992126/control.json",
+      "manifest_file": "data/numbers/20_dset_20260430T205915Z_job6992126/manifest.json",
+      "generation_file": "data/numbers/20_dset_20260430T205915Z_job6992126/generation.json",
+      "generated": "40"
+    },
+    "opt_bo_single": {
+      "type": "optimize",
+      "args": {
+        "dataset": "data/numbers/20_dset_20260430T205915Z_job6992126",
+        "method": "bo",
+        "seed": 42,
+        "max-curves-per-n": 100,
+        "repeats-per-n": 3,
+        "bo-initial-samples": 16,
+        "bo-iterations": 22,
+        "bo-candidate-pool": 2500,
+        "b1-min": 100,
+        "b1-max": 30000,
+        "b2-min": 100,
+        "b2-max": 600000,
+        "ratio-max": 100
+      },
+      "output": {
+        "[optimize:bo] numbers": "20 max_curves_per_n=100 repeats_per_n=3 initial_samples=16 iterations=22 candidate_pool=2500 workers=56",
+        "[optimize:bo] new_best eval": "17 b1=13763 b2=380230 fitness=433684.25375127513",
+        "[optimize:bo] eval": "35 b1=9980 b2=399846 fitness=718617.680941154",
+        "[optimize:bo] initial_design_completed points": "16",
+        "[optimize:bo] iteration": "22/22 best_fitness=433684.25375127513",
+        "best_b1": "13763",
+        "best_b2": "380230",
+        "objective": "433684.253751",
+        "result_file": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/bo_optimize_20260430T205921Z_job6992133.json",
+        "plot_files": "",
+        "jump_plot": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/plots/bo_optimize_20260430T205921Z_job6992133_jump_plot.png",
+        "b1_b2_trajectory": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/plots/bo_optimize_20260430T205921Z_job6992133_b1_b2_trajectory.png",
+        "progress_by_phase": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/plots/bo_optimize_20260430T205921Z_job6992133_progress_by_phase.png",
+        "time_efficiency": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/plots/bo_optimize_20260430T205921Z_job6992133_time_efficiency.png",
+        "b1_ratio_heatmap": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/plots/bo_optimize_20260430T205921Z_job6992133_b1_ratio_heatmap.png",
+        "analysis_files": "",
+        "events_csv": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/tables/bo_optimize_20260430T205921Z_job6992133_events.csv",
+        "new_best_csv": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/tables/bo_optimize_20260430T205921Z_job6992133_new_best.csv",
+        "phase_summary_csv": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/tables/bo_optimize_20260430T205921Z_job6992133_phase_summary.csv",
+        "run_summary_csv": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/tables/bo_optimize_20260430T205921Z_job6992133_run_summary.csv",
+        "report_md": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/bo_optimize_20260430T205921Z_job6992133_report.md"
+      },
+      "[optimize:bo] numbers": "20 max_curves_per_n=100 repeats_per_n=3 initial_samples=16 iterations=22 candidate_pool=2500 workers=56",
+      "[optimize:bo] new_best eval": "17 b1=13763 b2=380230 fitness=433684.25375127513",
+      "[optimize:bo] eval": "35 b1=9980 b2=399846 fitness=718617.680941154",
+      "[optimize:bo] initial_design_completed points": "16",
+      "[optimize:bo] iteration": "22/22 best_fitness=433684.25375127513",
+      "best_b1": "13763",
+      "best_b2": "380230",
+      "objective": "433684.253751",
+      "result_file": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/bo_optimize_20260430T205921Z_job6992133.json",
+      "plot_files": "",
+      "jump_plot": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/plots/bo_optimize_20260430T205921Z_job6992133_jump_plot.png",
+      "b1_b2_trajectory": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/plots/bo_optimize_20260430T205921Z_job6992133_b1_b2_trajectory.png",
+      "progress_by_phase": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/plots/bo_optimize_20260430T205921Z_job6992133_progress_by_phase.png",
+      "time_efficiency": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/plots/bo_optimize_20260430T205921Z_job6992133_time_efficiency.png",
+      "b1_ratio_heatmap": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/plots/bo_optimize_20260430T205921Z_job6992133_b1_ratio_heatmap.png",
+      "analysis_files": "",
+      "events_csv": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/tables/bo_optimize_20260430T205921Z_job6992133_events.csv",
+      "new_best_csv": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/tables/bo_optimize_20260430T205921Z_job6992133_new_best.csv",
+      "phase_summary_csv": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/tables/bo_optimize_20260430T205921Z_job6992133_phase_summary.csv",
+      "run_summary_csv": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/tables/bo_optimize_20260430T205921Z_job6992133_run_summary.csv",
+      "report_md": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/bo_optimize_20260430T205921Z_job6992133_report.md"
+    },
+    "val_bo_single": {
+      "type": "validate",
+      "args": {
+        "dataset": "data/numbers/20_dset_20260430T205915Z_job6992126",
+        "opt-result-file": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/bo_optimize_20260430T205921Z_job6992133.json",
+        "seed": 42,
+        "max-curves-per-n": 150,
+        "repeats-per-n": 5
+      },
+      "output": {
+        "[validate:bo] numbers": "20 max_curves_per_n=150 repeats_per_n=5 workers=56",
+        "[validate": "bo] baseline 20/20",
+        "optimized_mean_score": "376541.272485",
+        "baseline_mean_score": "522161.132255",
+        "relative_improvement_pct": "27.89",
+        "optimized_mean_time_sec": "1.272485",
+        "baseline_mean_time_sec": "1.132255",
+        "time_improvement_pct": "-12.39",
+        "optimized_mean_curves": "86.540000",
+        "baseline_mean_curves": "102.160000",
+        "curves_improvement_pct": "15.29",
+        "optimized_mean_success_rate": "0.710000",
+        "baseline_mean_success_rate": "0.580000",
+        "success_rate_delta_pp": "13.0000",
+        "used_opt_b1": "13763",
+        "used_opt_b2": "380230",
+        "used_opt_method": "bo",
+        "used_base_b1": "11000",
+        "used_base_b2": "220000",
+        "result_file": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/bo_validate_20260430T210145Z_job6992134.json",
+        "report_file": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/bo_optimize_20260430T205921Z_job6992133_report.md"
+      },
+      "[validate:bo] numbers": "20 max_curves_per_n=150 repeats_per_n=5 workers=56",
+      "[validate": "bo] baseline 20/20",
+      "optimized_mean_score": "376541.272485",
+      "baseline_mean_score": "522161.132255",
+      "relative_improvement_pct": "27.89",
+      "optimized_mean_time_sec": "1.272485",
+      "baseline_mean_time_sec": "1.132255",
+      "time_improvement_pct": "-12.39",
+      "optimized_mean_curves": "86.540000",
+      "baseline_mean_curves": "102.160000",
+      "curves_improvement_pct": "15.29",
+      "optimized_mean_success_rate": "0.710000",
+      "baseline_mean_success_rate": "0.580000",
+      "success_rate_delta_pp": "13.0000",
+      "used_opt_b1": "13763",
+      "used_opt_b2": "380230",
+      "used_opt_method": "bo",
+      "used_base_b1": "11000",
+      "used_base_b2": "220000",
+      "result_file": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/bo_validate_20260430T210145Z_job6992134.json",
+      "report_file": "data/experiments/20_dset_20260430T205915Z_job6992126/bo/optimize_20260430T205921Z_job6992133/bo_optimize_20260430T205921Z_job6992133_report.md"
+    }
+  }
+}

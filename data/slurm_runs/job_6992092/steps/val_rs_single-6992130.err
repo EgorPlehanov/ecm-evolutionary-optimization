@@ -1,0 +1,5 @@
+Usage: python -m ecm_optimizer.cli.main validate [OPTIONS]
+Try 'python -m ecm_optimizer.cli.main validate -h' for help.
+
+Error: Cannot resolve optimization result '<unresolved:opt_rs_single.result_file>'. Pass a valid file path or file name inside the current dataset experiments folder.
+Error: Step 5 failed with exit code 2.
