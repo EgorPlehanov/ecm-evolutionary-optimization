@@ -1,0 +1,61 @@
+run_step[3]: /home/ikntcit1/plehanoves/ecm-evolutionary-optimization/.venv/bin/python3 -m ecm_optimizer.cli.main validate --dataset data/numbers/20_dset_20260430T220555Z_job6992343 --opt-result-file data/experiments/20_dset_20260430T220555Z_job6992343/de/optimize_20260430T220610Z_job6992344/de_optimize_20260430T220610Z_job6992344.json --seed 42 --max-curves-per-n 150 --repeats-per-n 5
+[validate:de] numbers=20 max_curves_per_n=150 repeats_per_n=5 workers=56
+[validate:de] optimized 1/20
+[validate:de] optimized 2/20
+[validate:de] optimized 3/20
+[validate:de] optimized 4/20
+[validate:de] optimized 5/20
+[validate:de] optimized 6/20
+[validate:de] optimized 7/20
+[validate:de] optimized 8/20
+[validate:de] optimized 9/20
+[validate:de] optimized 10/20
+[validate:de] optimized 11/20
+[validate:de] optimized 12/20
+[validate:de] optimized 13/20
+[validate:de] optimized 14/20
+[validate:de] optimized 15/20
+[validate:de] optimized 16/20
+[validate:de] optimized 17/20
+[validate:de] optimized 18/20
+[validate:de] optimized 19/20
+[validate:de] optimized 20/20
+[validate:de] baseline 1/20
+[validate:de] baseline 2/20
+[validate:de] baseline 3/20
+[validate:de] baseline 4/20
+[validate:de] baseline 5/20
+[validate:de] baseline 6/20
+[validate:de] baseline 7/20
+[validate:de] baseline 8/20
+[validate:de] baseline 9/20
+[validate:de] baseline 10/20
+[validate:de] baseline 11/20
+[validate:de] baseline 12/20
+[validate:de] baseline 13/20
+[validate:de] baseline 14/20
+[validate:de] baseline 15/20
+[validate:de] baseline 16/20
+[validate:de] baseline 17/20
+[validate:de] baseline 18/20
+[validate:de] baseline 19/20
+[validate:de] baseline 20/20
+optimized_mean_score=272121.564362
+baseline_mean_score=550221.105757
+relative_improvement_pct=50.54
+optimized_mean_time_sec=1.564362
+baseline_mean_time_sec=1.105757
+time_improvement_pct=-41.47
+optimized_mean_curves=72.120000
+baseline_mean_curves=100.220000
+curves_improvement_pct=28.04
+optimized_mean_success_rate=0.800000
+baseline_mean_success_rate=0.550000
+success_rate_delta_pp=25.0000
+used_opt_b1=29691
+used_opt_b2=306275
+used_opt_method=de
+used_base_b1=11000
+used_base_b2=220000
+result_file: data/experiments/20_dset_20260430T220555Z_job6992343/de/optimize_20260430T220610Z_job6992344/de_validate_20260430T222109Z_job6992345.json
+report_file: data/experiments/20_dset_20260430T220555Z_job6992343/de/optimize_20260430T220610Z_job6992344/de_optimize_20260430T220610Z_job6992344_report.md

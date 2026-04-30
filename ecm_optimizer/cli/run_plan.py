@@ -7,6 +7,7 @@ from itertools import product
 from pathlib import Path
 import shlex
 import json
+import fcntl
 from typing import Any
 
 import click
@@ -697,7 +698,7 @@ def _materialize_operations(
                 "command_tail": _operation_to_args(op_type, resolved_args),
             }
         )
-        if resolved_label:
+        if resolved_label and resolved_label not in context:
             context[resolved_label] = {"type": op_type, "args": resolved_args, "output": {}}
 
 
@@ -712,6 +713,17 @@ def _load_state_context(state_file: Path) -> dict[str, dict[str, Any]]:
 def _save_state_context(state_file: Path, context: dict[str, dict[str, Any]]) -> None:
     state_file.parent.mkdir(parents=True, exist_ok=True)
     state_file.write_text(json.dumps({"context": context}, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
+
+def _merge_state_label(state_file: Path, label: str, payload: dict[str, Any]) -> None:
+    state_file.parent.mkdir(parents=True, exist_ok=True)
+    lock_path = state_file.with_suffix(state_file.suffix + ".lock")
+    with lock_path.open("w", encoding="utf-8") as lock_fp:
+        fcntl.flock(lock_fp.fileno(), fcntl.LOCK_EX)
+        latest_context = _load_state_context(state_file)
+        latest_context[label] = payload
+        _save_state_context(state_file, latest_context)
+        fcntl.flock(lock_fp.fileno(), fcntl.LOCK_UN)
 
 
 def _collect_unresolved_labels(value: Any) -> set[str]:
@@ -785,6 +797,13 @@ def run_plan_command(plan_arg: str | None, plan_opt: str | None, dry_run: bool) 
 @click.option("--log-dir", default="slurm_logs", show_default=True, type=click.Path(path_type=Path), help="Directory for slurm stdout/stderr.")
 @click.option("--dry-run", is_flag=True, help="Print sbatch commands without submitting.")
 @click.option("--state-file", default="slurm_logs/plan_state.json", show_default=True, type=click.Path(path_type=Path), help="Shared JSON state with step outputs.")
+@click.option(
+    "--max-active-jobs",
+    default=25,
+    show_default=True,
+    type=click.IntRange(min=1),
+    help="Maximum plan step width. Enforced by adaptive lane dependencies without scheduler polling.",
+)
 def run_plan_slurm_command(
     plan_name: str,
     partition: str,
@@ -793,6 +812,7 @@ def run_plan_slurm_command(
     log_dir: Path,
     dry_run: bool,
     state_file: Path,
+    max_active_jobs: int,
 ) -> None:
     """Оркестрация одного плана в Slurm: один шаг плана = один Slurm job с зависимостями."""
     plan_path = _resolve_plan_path(plan_name)
@@ -814,6 +834,8 @@ def run_plan_slurm_command(
     _save_state_context(state_file, base_context)
     label_to_jobid: dict[str, str] = {}
     inferred_dep_labels: list[set[str]] = []
+    lane_tails: list[str | None] = [None for _ in range(max_active_jobs)]
+    lane_cursor = 0
     for idx, op in enumerate(materialized):
         deps = set(op["depends_on"])
         deps.update(_collect_unresolved_labels(op["args"]))
@@ -831,8 +853,20 @@ def run_plan_slurm_command(
 
     for op in materialized:
         deps = inferred_dep_labels[op["index"] - 1]
-        dep_ids = [label_to_jobid[label] for label in sorted(deps) if label in label_to_jobid]
-        dep_arg = f"--dependency=afterok:{':'.join(dep_ids)}" if dep_ids else ""
+        dep_ids = {label_to_jobid[label] for label in sorted(deps) if label in label_to_jobid}
+        preferred_lanes = [
+            idx for idx, tail in enumerate(lane_tails) if tail is None or tail in dep_ids
+        ]
+        if preferred_lanes:
+            lane_idx = preferred_lanes[lane_cursor % len(preferred_lanes)]
+            lane_cursor += 1
+        else:
+            lane_idx = lane_cursor % max_active_jobs
+            lane_cursor += 1
+        lane_dep = lane_tails[lane_idx]
+        if lane_dep:
+            dep_ids.add(lane_dep)
+        dep_arg = f"--dependency=afterok:{':'.join(sorted(dep_ids))}" if dep_ids else ""
         cmd = [
             sys.executable,
             "-m",
@@ -849,6 +883,7 @@ def run_plan_slurm_command(
         op_name = op["label"] or f"step{op['index']}_{op['type']}"
         sbatch_cmd = (
             f"sbatch --parsable --partition={shlex.quote(partition)} --cpus-per-task={cpus_per_task} "
+            f"--kill-on-invalid-dep=yes "
             f"--time={shlex.quote(time_limit)} --job-name={shlex.quote('ecm_' + str(op_name))} "
             f"--output={shlex.quote(str(log_dir / (str(op_name) + '-%j.out')))} "
             f"--error={shlex.quote(str(log_dir / (str(op_name) + '-%j.err')))} "
@@ -860,6 +895,7 @@ def run_plan_slurm_command(
             continue
         result = subprocess.run(sbatch_cmd, shell=True, check=True, capture_output=True, text=True)
         job_id = result.stdout.strip()
+        lane_tails[lane_idx] = job_id
         click.echo(f"submitted_job_id[{op_name}]={job_id}")
         if op["label"]:
             label_to_jobid[str(op["label"])] = job_id
@@ -884,7 +920,10 @@ def run_plan_slurm_step_command(plan_name: str, step_index: int, state_file: Pat
     if "params" not in state_context:
         state_context["params"] = _resolve_refs(params, {})
     materialized: list[dict[str, Any]] = []
-    _materialize_operations(operations, context=dict(state_context), dry_run=False, out=materialized)
+    # Materialize in dry-run mode to allow unresolved refs in future steps.
+    # A slurm-step invocation executes only one step, and future-step refs can
+    # legitimately be unresolved at this point.
+    _materialize_operations(operations, context=dict(state_context), dry_run=True, out=materialized)
     _validate_materialized_dependencies(materialized)
     if step_index < 1 or step_index > len(materialized):
         raise click.UsageError(f"step-index out of range: {step_index}")
@@ -901,5 +940,8 @@ def run_plan_slurm_step_command(plan_name: str, step_index: int, state_file: Pat
     parsed = _parse_stdout(run.stdout or "")
     label = op.get("label")
     if isinstance(label, str) and label:
-        state_context[label] = {"type": op["type"], "args": op["args"], "output": parsed, **parsed}
-        _save_state_context(state_file, state_context)
+        _merge_state_label(
+            state_file,
+            label,
+            {"type": op["type"], "args": op["args"], "output": parsed, **parsed},
+        )
