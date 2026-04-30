@@ -155,14 +155,11 @@ def _latest_opt_result_file_global(results_dir: Path) -> Path | None:
     return max(candidates_with_ts, key=lambda item: item[1])[0]
 
 
-TIMESTAMP_RE = re.compile(r"^\d{8}T\d{6}Z$")
+TIMESTAMP_RE = re.compile(r"(\d{8}T\d{6}Z)(?:_job\d+)?(?:_task\d+)?$")
 
 
 def _trailing_timestamp(name: str) -> str | None:
-    parts = name.rsplit("_", 1)
-    if len(parts) != 2:
+    match = TIMESTAMP_RE.search(name)
+    if not match:
         return None
-    ts = parts[1]
-    if TIMESTAMP_RE.match(ts):
-        return ts
-    return None
+    return match.group(1)
