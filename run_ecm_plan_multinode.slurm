@@ -55,6 +55,7 @@ PLAN_NAME="${PLAN_NAME:-full_all_methods_single_run_20d}"
 STEP_PARTITION="${STEP_PARTITION:-tornado}"
 STEP_CPUS_PER_TASK="${STEP_CPUS_PER_TASK:-28}"
 STEP_TIME_LIMIT="${STEP_TIME_LIMIT:-12:00:00}"
+STEP_MAX_ACTIVE_JOBS="${STEP_MAX_ACTIVE_JOBS:-25}"
 STEP_LOG_DIR="${STEP_LOG_DIR:-${RUN_ROOT}/steps}"
 STEP_STATE_FILE="${STEP_STATE_FILE:-${RUN_ROOT}/state/plan_state.json}"
 
@@ -64,6 +65,7 @@ ecm-optimizer run-plan-slurm \
   --partition "${STEP_PARTITION}" \
   --cpus-per-task "${STEP_CPUS_PER_TASK}" \
   --time-limit "${STEP_TIME_LIMIT}" \
+  --max-active-jobs "${STEP_MAX_ACTIVE_JOBS}" \
   --log-dir "${STEP_LOG_DIR}" \
   --state-file "${STEP_STATE_FILE}" \
   --dry-run >/dev/null
@@ -71,6 +73,7 @@ ecm-optimizer run-plan-slurm \
 echo "Оркестратор: ${PLAN_NAME}"
 echo "Controller node(s): ${SLURM_NNODES}, tasks: ${SLURM_NTASKS}, cpu/task: ${SLURM_CPUS_PER_TASK}"
 echo "Step resources: partition=${STEP_PARTITION}, cpus-per-task=${STEP_CPUS_PER_TASK}, time=${STEP_TIME_LIMIT}"
+echo "Step scheduler limit: max-active-jobs=${STEP_MAX_ACTIVE_JOBS}"
 echo "Step logs: ${STEP_LOG_DIR}, state: ${STEP_STATE_FILE}"
 
 # Оркестратор сабмитит шаги плана как отдельные sbatch jobs с afterok-зависимостями.
@@ -80,5 +83,6 @@ srun --ntasks=1 --nodes=1 ecm-optimizer run-plan-slurm \
   --partition "${STEP_PARTITION}" \
   --cpus-per-task "${STEP_CPUS_PER_TASK}" \
   --time-limit "${STEP_TIME_LIMIT}" \
+  --max-active-jobs "${STEP_MAX_ACTIVE_JOBS}" \
   --log-dir "${STEP_LOG_DIR}" \
   --state-file "${STEP_STATE_FILE}"
