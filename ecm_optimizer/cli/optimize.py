@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import os
 
 import click
 
@@ -164,7 +165,11 @@ def optimize_command(
     if seed is None:
         seed = dataset_generation_seed(dataset_path, fallback=DEFAULT_SEED)
     dataset_name = dataset_path.parent.name
-    run_id = f"optimize_{utc_timestamp()}"
+    slurm_job_id = os.getenv("SLURM_JOB_ID")
+    slurm_array_task_id = os.getenv("SLURM_ARRAY_TASK_ID")
+    job_suffix = f"_job{slurm_job_id}" if slurm_job_id else ""
+    task_suffix = f"_task{slurm_array_task_id}" if slurm_array_task_id else ""
+    run_id = f"optimize_{utc_timestamp()}{job_suffix}{task_suffix}"
     run_dir = ensure_dir(results_dir / dataset_name / method / run_id)
     run_stem = f"{method}_{run_id}"
     out_file = run_dir / f"{run_stem}.json"

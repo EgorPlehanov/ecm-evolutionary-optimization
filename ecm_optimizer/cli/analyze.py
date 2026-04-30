@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import os
 
 import click
 
@@ -67,7 +68,14 @@ def analyze_command(
         raise click.ClickException("Укажите --group-by ... или включите --auto-grouping.")
     resolved_auto_grouping = auto_grouping and not normalized_group_by
 
-    resolved_output_dir = output_dir or ensure_dir(DATA_DIR / "analysis" / f"analyze_{utc_timestamp()}")
+    if output_dir is None:
+        slurm_job_id = os.getenv("SLURM_JOB_ID")
+        slurm_array_task_id = os.getenv("SLURM_ARRAY_TASK_ID")
+        job_suffix = f"_job{slurm_job_id}" if slurm_job_id else ""
+        task_suffix = f"_task{slurm_array_task_id}" if slurm_array_task_id else ""
+        resolved_output_dir = ensure_dir(DATA_DIR / "analysis" / f"analyze_{utc_timestamp()}{job_suffix}{task_suffix}")
+    else:
+        resolved_output_dir = output_dir
 
     artifacts = run_analysis(
         input_entries=list(input_entries),

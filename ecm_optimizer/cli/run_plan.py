@@ -314,6 +314,101 @@ def _to_positive_int(value: Any, *, field: str) -> int:
     return value
 
 
+def _normalize_depends_on(raw_depends_on: Any, *, op_index: int) -> list[str]:
+    if raw_depends_on is None:
+        return []
+    if isinstance(raw_depends_on, str):
+        return [raw_depends_on]
+    if isinstance(raw_depends_on, list) and all(isinstance(item, str) and item for item in raw_depends_on):
+        return raw_depends_on
+    raise click.UsageError(
+        f"Operation #{op_index} field 'depends_on' must be a string or a list of non-empty strings."
+    )
+
+
+def _collect_materialized_operations(
+    operations: list[Any],
+    *,
+    context: dict[str, dict[str, Any]],
+    dry_run: bool,
+    collected: list[dict[str, Any]],
+) -> None:
+    local_step_counter = [len(collected)]
+    for raw_op in operations:
+        if not isinstance(raw_op, dict):
+            raise click.UsageError(f"Operation #{local_step_counter[0] + 1} must be an object.")
+
+        if "repeat" in raw_op:
+            nested_operations = raw_op.get("operations")
+            if not isinstance(nested_operations, list) or not nested_operations:
+                raise click.UsageError("Repeat block must contain non-empty 'operations' list.")
+            alias, iterations = _build_repeat_iterations(raw_op["repeat"], context, dry_run=dry_run)
+            previous_alias = context.get(alias)
+            for iteration in iterations:
+                context[alias] = iteration
+                _collect_materialized_operations(
+                    nested_operations,
+                    context=context,
+                    dry_run=dry_run,
+                    collected=collected,
+                )
+            if previous_alias is None:
+                context.pop(alias, None)
+            else:
+                context[alias] = previous_alias
+            continue
+
+        local_step_counter[0] += 1
+        idx = local_step_counter[0]
+        label = raw_op.get("label")
+        resolved_label = _resolve_refs(label, context, allow_unresolved=dry_run) if label else None
+        depends_on_resolved = _resolve_refs(raw_op.get("depends_on"), context, allow_unresolved=dry_run)
+        depends_on = _normalize_depends_on(depends_on_resolved, op_index=idx)
+        collected.append({"index": idx, "label": resolved_label, "depends_on": depends_on, "type": raw_op.get("type")})
+
+
+def _validate_materialized_dependencies(collected: list[dict[str, Any]]) -> None:
+    label_to_index: dict[str, int] = {}
+    for op in collected:
+        label = op["label"]
+        if label is None:
+            continue
+        if not isinstance(label, str):
+            raise click.UsageError(f"Operation #{op['index']} resolved label must be a string.")
+        if label in label_to_index:
+            raise click.UsageError(f"Duplicate label detected during plan validation: '{label}'.")
+        label_to_index[label] = int(op["index"])
+
+    for op in collected:
+        op_index = int(op["index"])
+        op_type = str(op["type"])
+        for dep_label in op["depends_on"]:
+            if dep_label not in label_to_index:
+                raise click.UsageError(
+                    f"Operation #{op_index} depends on unknown label '{dep_label}'."
+                )
+            dep_index = label_to_index[dep_label]
+            if dep_index >= op_index:
+                raise click.UsageError(
+                    f"Operation #{op_index} depends on '{dep_label}' (step {dep_index}), "
+                    "but dependency must be defined earlier in the plan."
+                )
+            dep_op = collected[dep_index - 1]
+            dep_type = str(dep_op["type"])
+            if op_type == "optimize" and dep_type not in {"generate"}:
+                raise click.UsageError(
+                    f"Operation #{op_index} (optimize) has invalid dependency '{dep_label}' of type '{dep_type}'."
+                )
+            if op_type == "validate" and dep_type not in {"optimize", "generate"}:
+                raise click.UsageError(
+                    f"Operation #{op_index} (validate) has invalid dependency '{dep_label}' of type '{dep_type}'."
+                )
+            if op_type == "analyze" and dep_type not in {"validate", "optimize", "generate"}:
+                raise click.UsageError(
+                    f"Operation #{op_index} (analyze) has invalid dependency '{dep_label}' of type '{dep_type}'."
+                )
+
+
 def _build_repeat_iterations(
     repeat_spec: Any,
     context: dict[str, dict[str, Any]],
@@ -476,6 +571,13 @@ def _execute_operations(
             raise click.UsageError(f"Operation #{idx} resolved label must be a string.")
 
         resolved_args = _expand_arg_ref_spreads(args, context, allow_unresolved=dry_run)
+        depends_on_resolved = _resolve_refs(raw_op.get("depends_on"), context, allow_unresolved=dry_run)
+        depends_on = _normalize_depends_on(depends_on_resolved, op_index=idx)
+        for dep_label in depends_on:
+            if dep_label not in context:
+                raise click.UsageError(
+                    f"Operation #{idx} cannot start because dependency '{dep_label}' is not completed yet."
+                )
         if op_type == "analyze":
             resolved_args = _apply_analyze_shortcuts(resolved_args)
         command_tail = _operation_to_args(op_type, resolved_args)
@@ -579,6 +681,10 @@ def run_plan_command(plan_arg: str | None, plan_opt: str | None, dry_run: bool) 
         raise click.UsageError("Plan field 'params' must be an object when provided.")
 
     context: dict[str, dict[str, Any]] = {"params": _resolve_refs(params, {})}
+
+    materialized_ops: list[dict[str, Any]] = []
+    _collect_materialized_operations(operations, context=dict(context), dry_run=dry_run, collected=materialized_ops)
+    _validate_materialized_dependencies(materialized_ops)
 
     total_steps = _count_operations(operations, context=dict(context), dry_run=dry_run)
 
