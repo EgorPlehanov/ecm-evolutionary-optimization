@@ -5,10 +5,15 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=2
 #SBATCH --time=02:00:00
-#SBATCH --output=data/slurm_runs/%x-%j.out
-#SBATCH --error=data/slurm_runs/%x-%j.err
+#SBATCH --output=/dev/null
+#SBATCH --error=/dev/null
 
 set -euo pipefail
+
+SUBMIT_DIR="${SLURM_SUBMIT_DIR:-$PWD}"
+RUN_ROOT="${SUBMIT_DIR}/data/slurm_runs/job_${SLURM_JOB_ID}"
+mkdir -p "${RUN_ROOT}/steps" "${RUN_ROOT}/state"
+exec >"${RUN_ROOT}/controller.out" 2>"${RUN_ROOT}/controller.err"
 
 if [ -f /etc/profile.d/modules-basis.sh ]; then
   source /etc/profile.d/modules-basis.sh
@@ -29,11 +34,7 @@ if [ -z "$PYTHON_MODULE" ]; then
 fi
 
 echo "Loaded Python module: ${PYTHON_MODULE}"
-cd "${SLURM_SUBMIT_DIR}"
-
-mkdir -p data/slurm_runs
-RUN_ROOT="data/slurm_runs/job_${SLURM_JOB_ID}"
-mkdir -p "${RUN_ROOT}/steps" "${RUN_ROOT}/state"
+cd "${SUBMIT_DIR}"
 
 if [ -d .venv ]; then
   source .venv/bin/activate
