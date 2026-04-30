@@ -5,8 +5,8 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=2
 #SBATCH --time=02:00:00
-#SBATCH --output=data/slurm_runs/%x-%j.out
-#SBATCH --error=data/slurm_runs/%x-%j.err
+#SBATCH --output=data/slurm_runs/job_%j/controller.out
+#SBATCH --error=data/slurm_runs/job_%j/controller.err
 
 set -euo pipefail
 
@@ -34,7 +34,6 @@ cd "${SLURM_SUBMIT_DIR}"
 mkdir -p data/slurm_runs
 RUN_ROOT="data/slurm_runs/job_${SLURM_JOB_ID}"
 mkdir -p "${RUN_ROOT}/steps" "${RUN_ROOT}/state"
-exec > >(tee -a "${RUN_ROOT}/controller.out") 2> >(tee -a "${RUN_ROOT}/controller.err" >&2)
 
 if [ -d .venv ]; then
   source .venv/bin/activate
