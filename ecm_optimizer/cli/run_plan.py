@@ -871,6 +871,7 @@ def run_plan_slurm_command(
         op_name = op["label"] or f"step{op['index']}_{op['type']}"
         sbatch_cmd = (
             f"sbatch --parsable --partition={shlex.quote(partition)} --cpus-per-task={cpus_per_task} "
+            f"--kill-on-invalid-dep=yes "
             f"--time={shlex.quote(time_limit)} --job-name={shlex.quote('ecm_' + str(op_name))} "
             f"--output={shlex.quote(str(log_dir / (str(op_name) + '-%j.out')))} "
             f"--error={shlex.quote(str(log_dir / (str(op_name) + '-%j.err')))} "
