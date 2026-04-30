@@ -199,17 +199,33 @@ def _extract_best_so_far(history: list[dict[str, Any]]) -> tuple[list[tuple[int,
     return by_eval, by_time, first_fitness
 
 
-def _find_validation_file(run_file: Path, method: str) -> Path | None:
-    match = re.search(r"_optimize_(\d{8}T\d{6}Z)", run_file.name)
-    if not match:
-        return None
-    ts = match.group(1)
-    candidate = run_file.parent / f"{method}_validate_{ts}.json"
-    if candidate.exists():
-        return candidate
+def _validation_matches_run(validation_file: Path, run_file: Path) -> bool:
+    payload = read_json(validation_file)
+    optimized = payload.get("optimized", {})
+    if not isinstance(optimized, dict):
+        return False
 
-    fallback = sorted(run_file.parent.glob(f"{method}_validate_*.json"))
-    return fallback[-1] if fallback else None
+    source_file = optimized.get("source_file")
+    if source_file is None:
+        return False
+
+    source_path = Path(str(source_file)).expanduser()
+    if source_path.is_absolute():
+        return source_path.resolve() == run_file.resolve()
+
+    return source_path.name == run_file.name
+
+
+def _find_validation_file(run_file: Path, method: str) -> Path | None:
+    candidates = sorted(run_file.parent.glob(f"{method}_validate_*.json"), reverse=True)
+    if not candidates:
+        return None
+
+    for candidate in candidates:
+        if _validation_matches_run(candidate, run_file):
+            return candidate
+
+    return candidates[0]
 
 
 def _parse_run_file(run_file: Path) -> RunRecord | None:
@@ -241,8 +257,8 @@ def _parse_run_file(run_file: Path) -> RunRecord | None:
         validation_payload = read_json(validation_file)
         metrics = validation_payload.get("metrics", {})
         if isinstance(metrics, dict):
-            baseline_mean = metrics.get("baseline_mean")
-            optimized_mean = metrics.get("optimized_mean")
+            baseline_mean = metrics.get("baseline_mean_score", metrics.get("baseline_mean"))
+            optimized_mean = metrics.get("optimized_mean_score", metrics.get("optimized_mean"))
             relative = metrics.get("relative_improvement_pct")
             validation_baseline_mean = float(baseline_mean) if baseline_mean is not None else None
             validation_optimized_mean = float(optimized_mean) if optimized_mean is not None else None
@@ -1216,6 +1232,7 @@ def run_analysis(
     experiments_root: Path,
     output_dir: Path,
     options: AnalysisOptions,
+    command_line: str | None = None,
 ) -> AnalysisArtifacts:
     include_entries, exclude_entries = _split_include_exclude_inputs(input_entries)
     include_paths = [Path(entry) for entry in include_entries]
@@ -1293,7 +1310,7 @@ def run_analysis(
     }
 
     summary_file = output_dir / "analysis_summary.json"
-    write_json_with_meta(summary_file, summary, command="analyze")
+    write_json_with_meta(summary_file, summary, command="analyze", command_line=command_line)
 
     return AnalysisArtifacts(
         output_dir=output_dir,

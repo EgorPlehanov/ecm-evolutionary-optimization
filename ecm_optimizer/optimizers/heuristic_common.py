@@ -5,9 +5,11 @@ import random
 import time
 from dataclasses import dataclass, field
 from datetime import datetime, timezone
+from pathlib import Path
 
-from ecm_optimizer.core.fitness import fitness_expected_time_with_stats
+from ecm_optimizer.core.fitness import fitness_with_stats
 from ecm_optimizer.models import OptimizationConfig, OptimizationResult
+from ecm_optimizer.utils.io_utils import write_json_atomic
 
 
 def decode_candidate(x_log: tuple[float, float], config: OptimizationConfig) -> tuple[int, int]:
@@ -44,6 +46,7 @@ class ProgressTracker:
     events: list[dict[str, float | int | str]] = field(default_factory=list)
     started_at_utc: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     _start_monotonic: float = field(default_factory=time.perf_counter)
+    _last_checkpoint_monotonic: float = 0.0
 
     def _elapsed_sec(self) -> float:
         return time.perf_counter() - self._start_monotonic
@@ -57,7 +60,7 @@ class ProgressTracker:
         config: OptimizationConfig,
         x_log: tuple[float, float],
         score: float,
-        successes: int | None = None,
+        metrics: dict[str, float | int] | None = None,
     ) -> None:
         self.eval_count += 1
         b1, b2 = decode_candidate(x_log, config)
@@ -70,9 +73,13 @@ class ProgressTracker:
             "elapsed_sec": self._elapsed_sec(),
             "timestamp_utc": self._timestamp_utc(),
         }
-        if successes is not None:
-            event["successes"] = successes
+        if metrics is not None:
+            event.update(metrics)
+            success_runs = metrics.get("success_runs")
+            if isinstance(success_runs, int):
+                event["successes"] = success_runs
         self.events.append(event)
+        self._checkpoint(config=config)
         if not config.verbose:
             return
         if self.eval_count % self.every != 0:
@@ -92,6 +99,7 @@ class ProgressTracker:
                 "timestamp_utc": self._timestamp_utc(),
             }
         )
+        self._checkpoint(config=config, force=True)
         if config.verbose:
             print(f"[optimize:{self.method}] {message}", flush=True)
 
@@ -119,12 +127,34 @@ class ProgressTracker:
                 "timestamp_utc": self._timestamp_utc(),
             }
         )
+        self._checkpoint(config=config, force=True)
         if not config.verbose:
             return
         print(
             f"[optimize:{self.method}] new_best eval={best_eval} b1={b1} b2={b2} fitness={score}",
             flush=True,
         )
+
+    def _checkpoint(self, *, config: OptimizationConfig, force: bool = False) -> None:
+        checkpoint_cfg = config.method_params.get("_checkpoint", {})
+        path = checkpoint_cfg.get("path")
+        if not path:
+            return
+        now = time.perf_counter()
+        min_interval_sec = float(checkpoint_cfg.get("min_interval_sec", 10.0))
+        if not force and (now - self._last_checkpoint_monotonic) < min_interval_sec:
+            return
+        payload: dict[str, float | int | str | list[dict[str, float | int | str]] | None] = {
+            "status": "in_progress",
+            "method": self.method,
+            "started_at_utc": self.started_at_utc,
+            "updated_at_utc": self._timestamp_utc(),
+            "eval_count": self.eval_count,
+            "best_score": self.best_score,
+            "optimization_trace": self.events,
+        }
+        write_json_atomic(Path(path), payload)
+        self._last_checkpoint_monotonic = now
 
 
 def evaluate_candidate(
@@ -137,17 +167,18 @@ def evaluate_candidate(
 ) -> EvaluatedPoint:
     """Вычислить fitness для кандидата в лог-пространстве."""
     b1, b2 = decode_candidate(x_log, config)
-    score, successes = fitness_expected_time_with_stats(
+    score, metrics = fitness_with_stats(
         ecm_bin=ecm_bin,
         numbers=numbers,
         b1=b1,
         b2=b2,
-        curves_per_n=config.curves_per_n,
+        max_curves_per_n=config.max_curves_per_n,
+        repeats_per_n=config.repeats_per_n,
         curve_timeout_sec=config.curve_timeout_sec,
         workers=config.workers,
     )
     if progress is not None:
-        progress.on_evaluation(config=config, x_log=x_log, score=score, successes=successes)
+        progress.on_evaluation(config=config, x_log=x_log, score=score, metrics=metrics)
         return EvaluatedPoint(x=x_log, score=score, eval_id=progress.eval_count)
     return EvaluatedPoint(x=x_log, score=score)
 

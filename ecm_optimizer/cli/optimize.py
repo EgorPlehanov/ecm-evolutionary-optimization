@@ -4,13 +4,24 @@ from pathlib import Path
 
 import click
 
-from ecm_optimizer.config import DEFAULT_B1_RANGE, DEFAULT_B2_RANGE, DEFAULT_CURVE_TIMEOUT_SEC, DEFAULT_CURVES_PER_N, DEFAULT_RATIO_MAX, DEFAULT_SEED, DEFAULT_WORKERS, ECM_PATH, EXPERIMENTS_DIR
+from ecm_optimizer.config import (
+    DEFAULT_B1_RANGE,
+    DEFAULT_B2_RANGE,
+    DEFAULT_CURVE_TIMEOUT_SEC,
+    DEFAULT_MAX_CURVES_PER_N,
+    DEFAULT_RATIO_MAX,
+    DEFAULT_REPEATS_PER_N,
+    DEFAULT_SEED,
+    DEFAULT_WORKERS,
+    ECM_PATH,
+    EXPERIMENTS_DIR,
+)
 from ecm_optimizer.cli.dataset_utils import dataset_generation_seed, resolve_dataset_path
 from ecm_optimizer.core.baseline import choose_baseline
 from ecm_optimizer.core.problem import load_numbers, read_dataset_metadata
 from ecm_optimizer.models import OptimizationConfig, resolve_workers
 from ecm_optimizer.optimizers import create_optimizer, normalize_optimizer_method
-from ecm_optimizer.utils.io_utils import ensure_dir, utc_timestamp, write_json_with_meta
+from ecm_optimizer.utils.io_utils import current_command_line, ensure_dir, utc_timestamp, write_json_with_meta
 from ecm_optimizer.utils.optimization_reporting import generate_analysis_artifacts, generate_run_artifacts
 
 
@@ -81,7 +92,8 @@ def _validate_method_specific_params(
     ),
     help="Optimization method (supports short and full aliases).",
 )
-@click.option("--curves-per-n", default=DEFAULT_CURVES_PER_N, show_default=True, type=int, help="Number of ECM curves to run per number when evaluating fitness.")
+@click.option("--max-curves-per-n", default=DEFAULT_MAX_CURVES_PER_N, show_default=True, type=int, help="Maximum number of ECM curves per repeated run during fitness evaluation.")
+@click.option("--repeats-per-n", default=DEFAULT_REPEATS_PER_N, show_default=True, type=int, help="Repeated stop-on-success runs per number for robust fitness estimation.")
 @click.option("--de-popsize", type=int, help="Population size multiplier for differential evolution.")
 @click.option("--de-maxiter", type=int, help="Maximum number of differential evolution iterations.")
 @click.option("--rs-budget", type=int, help="Evaluation budget for random search (defaults to de-popsize * de-maxiter).")
@@ -107,7 +119,8 @@ def optimize_command(
     dataset: str | None,
     ecm_bin: str,
     method: str,
-    curves_per_n: int,
+    max_curves_per_n: int,
+    repeats_per_n: int,
     de_popsize: int | None,
     de_maxiter: int | None,
     rs_budget: int | None,
@@ -150,8 +163,16 @@ def optimize_command(
     numbers = load_numbers(dataset_path)
     if seed is None:
         seed = dataset_generation_seed(dataset_path, fallback=DEFAULT_SEED)
+    dataset_name = dataset_path.parent.name
+    run_id = f"optimize_{utc_timestamp()}"
+    run_dir = ensure_dir(results_dir / dataset_name / method / run_id)
+    run_stem = f"{method}_{run_id}"
+    out_file = run_dir / f"{run_stem}.json"
+    progress_tmp_file = out_file.with_suffix(f"{out_file.suffix}.tmp")
+
     workers = resolve_workers(workers)
-    method_params: dict[str, dict[str, int | float]] = {}
+    method_params: dict[str, dict[str, int | float | str]] = {}
+    method_params["_checkpoint"] = {"path": str(progress_tmp_file), "min_interval_sec": 10.0}
     if method == "de":
         method_params["de"] = {"popsize": int(de_popsize), "maxiter": int(de_maxiter)}
     elif method == "rs":
@@ -171,13 +192,14 @@ def optimize_command(
             "mutation_prob": float(ga_mutation_prob),
         }
 
-    config_kwargs: dict[str, int | float | bool | str | dict[str, dict[str, int | float]] | None] = {
+    config_kwargs: dict[str, int | float | bool | str | dict[str, dict[str, int | float | str]] | None] = {
         "b1_min": b1_min,
         "b1_max": b1_max,
         "b2_min": b2_min,
         "b2_max": b2_max,
         "ratio_max": ratio_max,
-        "curves_per_n": curves_per_n,
+        "max_curves_per_n": max_curves_per_n,
+        "repeats_per_n": repeats_per_n,
         "seed": seed,
         "curve_timeout_sec": curve_timeout_sec,
         "workers": workers,
@@ -199,11 +221,6 @@ def optimize_command(
     target_digits = _parse_target_digits(dataset_path)
     baseline = choose_baseline(target_digits)
 
-    dataset_name = dataset_path.parent.name
-    run_id = f"optimize_{utc_timestamp()}"
-    run_dir = ensure_dir(results_dir / dataset_name / method / run_id)
-    run_stem = f"{method}_{run_id}"
-    out_file = run_dir / f"{run_stem}.json"
     plots_dir = ensure_dir(run_dir / "plots")
     artifacts = generate_run_artifacts(
         history=result.history,
@@ -226,7 +243,8 @@ def optimize_command(
                 "b2_min": b2_min,
                 "b2_max": b2_max,
                 "ratio_max": ratio_max,
-                "curves_per_n": curves_per_n,
+                "max_curves_per_n": max_curves_per_n,
+                "repeats_per_n": repeats_per_n,
             },
         },
     )
@@ -240,7 +258,8 @@ def optimize_command(
             "b2_min": b2_min,
             "b2_max": b2_max,
             "ratio_max": ratio_max,
-            "curves_per_n": curves_per_n,
+            "max_curves_per_n": max_curves_per_n,
+            "repeats_per_n": repeats_per_n,
             "seed": seed,
             "curve_timeout_sec": curve_timeout_sec,
             "workers": workers,
@@ -260,7 +279,13 @@ def optimize_command(
             "source": baseline.source,
         },
     }
-    write_json_with_meta(out_file, payload, command="optimize")
+    write_json_with_meta(
+        out_file,
+        payload,
+        command="optimize",
+        command_line=current_command_line(),
+    )
+    progress_tmp_file.unlink(missing_ok=True)
     click.echo(f"result_file: {out_file}")
     click.echo("plot_files:")
     for plot_name, plot_path in artifacts.plots.items():

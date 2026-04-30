@@ -6,7 +6,7 @@ import click
 
 from ecm_optimizer.analysis import AnalysisOptions, run_analysis
 from ecm_optimizer.config import DATA_DIR, EXPERIMENTS_DIR
-from ecm_optimizer.utils.io_utils import ensure_dir, utc_timestamp
+from ecm_optimizer.utils.io_utils import current_command_line, ensure_dir, utc_timestamp
 
 
 @click.command("analyze")
@@ -83,6 +83,7 @@ def analyze_command(
             bootstrap_iterations=bootstrap_iterations,
             alpha=alpha,
         ),
+        command_line=current_command_line(),
     )
 
     click.echo(f"analyzed_runs: {artifacts.total_runs}")
