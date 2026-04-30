@@ -908,7 +908,10 @@ def run_plan_slurm_step_command(plan_name: str, step_index: int, state_file: Pat
     if "params" not in state_context:
         state_context["params"] = _resolve_refs(params, {})
     materialized: list[dict[str, Any]] = []
-    _materialize_operations(operations, context=dict(state_context), dry_run=False, out=materialized)
+    # Materialize in dry-run mode to allow unresolved refs in future steps.
+    # A slurm-step invocation executes only one step, and future-step refs can
+    # legitimately be unresolved at this point.
+    _materialize_operations(operations, context=dict(state_context), dry_run=True, out=materialized)
     _validate_materialized_dependencies(materialized)
     if step_index < 1 or step_index > len(materialized):
         raise click.UsageError(f"step-index out of range: {step_index}")
