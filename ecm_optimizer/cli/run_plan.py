@@ -790,7 +790,7 @@ def run_plan_command(plan_arg: str | None, plan_opt: str | None, dry_run: bool) 
     default=25,
     show_default=True,
     type=click.IntRange(min=1),
-    help="Maximum plan step width. Enforced by lane dependencies without scheduler polling.",
+    help="Maximum plan step width. Enforced by adaptive lane dependencies without scheduler polling.",
 )
 def run_plan_slurm_command(
     plan_name: str,
@@ -823,6 +823,7 @@ def run_plan_slurm_command(
     label_to_jobid: dict[str, str] = {}
     inferred_dep_labels: list[set[str]] = []
     lane_tails: list[str | None] = [None for _ in range(max_active_jobs)]
+    lane_cursor = 0
     for idx, op in enumerate(materialized):
         deps = set(op["depends_on"])
         deps.update(_collect_unresolved_labels(op["args"]))
@@ -841,7 +842,15 @@ def run_plan_slurm_command(
     for op in materialized:
         deps = inferred_dep_labels[op["index"] - 1]
         dep_ids = {label_to_jobid[label] for label in sorted(deps) if label in label_to_jobid}
-        lane_idx = (op["index"] - 1) % max_active_jobs
+        preferred_lanes = [
+            idx for idx, tail in enumerate(lane_tails) if tail is None or tail in dep_ids
+        ]
+        if preferred_lanes:
+            lane_idx = preferred_lanes[lane_cursor % len(preferred_lanes)]
+            lane_cursor += 1
+        else:
+            lane_idx = lane_cursor % max_active_jobs
+            lane_cursor += 1
         lane_dep = lane_tails[lane_idx]
         if lane_dep:
             dep_ids.add(lane_dep)
