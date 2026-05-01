@@ -1,6 +1,6 @@
 {
   "format": "ecm_run_plan_v1",
-  "description": "Полный бенчмарк-план: repeat по target-digits=20/25/30, внутри repeat по методам de/rs/pso/bo/ga, затем общий analyze.",
+  "description": "Полный бенчмарк-план: repeat по target-digits=20/25/30, внутри repeat по методам de/rs/pso/bo/ga; max-curves-per-n задается по target-digits с запасом относительно ECM-таблицы, затем общий analyze.",
   "params": {
     "seed": 515151,
     "target_digits_list": [
@@ -43,14 +43,6 @@
         "ga-mutation-prob": 0.14
       }
     },
-    "shared_opt_args": {
-      "curves-per-n": 12,
-      "curve-timeout-sec": 5
-    },
-    "shared_val_args": {
-      "curves-per-n": 24,
-      "curve-timeout-sec": 5
-    },
     "analyze_group_by": [
       "divisor_size",
       "method"
@@ -76,6 +68,34 @@
         "b2-min": 3000,
         "b2-max": 1200000,
         "ratio-max": 28
+      }
+    },
+    "opt_eval_by_target_digits": {
+      "20": {
+        "max-curves-per-n": 100,
+        "repeats-per-n": 3
+      },
+      "25": {
+        "max-curves-per-n": 300,
+        "repeats-per-n": 3
+      },
+      "30": {
+        "max-curves-per-n": 600,
+        "repeats-per-n": 3
+      }
+    },
+    "val_eval_by_target_digits": {
+      "20": {
+        "max-curves-per-n": 150,
+        "repeats-per-n": 5
+      },
+      "25": {
+        "max-curves-per-n": 450,
+        "repeats-per-n": 5
+      },
+      "30": {
+        "max-curves-per-n": 900,
+        "repeats-per-n": 5
       }
     }
   },
@@ -114,7 +134,7 @@
                 "method": "$ref:method_iter.method",
                 "seed": "$ref:params.seed",
                 "$spread_ref": [
-                  "params.shared_opt_args",
+                  "params.opt_eval_by_target_digits.{{size_iter.target_digits}}",
                   "params.method_opt.{{method_iter.method}}",
                   "params.search_by_target_digits.{{size_iter.target_digits}}"
                 ]
@@ -127,7 +147,9 @@
                 "dataset": "$ref:dataset_{{size_iter.target_digits}}.dataset_dir",
                 "opt-result-file": "$ref:opt_{{method_iter.method}}_{{size_iter.target_digits}}.result_file",
                 "seed": "$ref:params.seed",
-                "$spread_ref": "params.shared_val_args"
+                "$spread_ref": [
+                  "params.val_eval_by_target_digits.{{size_iter.target_digits}}"
+                ]
               }
             }
           ]

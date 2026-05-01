@@ -1,12 +1,13 @@
 from __future__ import annotations
 
 from pathlib import Path
+import os
 
 import click
 
 from ecm_optimizer.config import DEFAULT_COFACTOR_DIGITS, DEFAULT_CONTROL_COUNT, DEFAULT_PREFIX, DEFAULT_SEED, DEFAULT_TRAIN_COUNT, NUMBERS_DIR
 from ecm_optimizer.core.problem import generate_semiprime_samples, write_dataset, write_generation_metadata, write_manifest
-from ecm_optimizer.utils.io_utils import ensure_dir, utc_timestamp
+from ecm_optimizer.utils.io_utils import current_command_line, ensure_dir, utc_timestamp
 
 
 @click.command("generate")
@@ -39,7 +40,15 @@ def generate_command(
     control = samples[train_count:]
 
     timestamp = utc_timestamp()
-    folder_name = f"{target_digits}_{prefix}_{timestamp}" if prefix else f"{target_digits}_{timestamp}"
+    slurm_job_id = os.getenv("SLURM_JOB_ID")
+    slurm_array_task_id = os.getenv("SLURM_ARRAY_TASK_ID")
+    job_suffix = f"_job{slurm_job_id}" if slurm_job_id else ""
+    task_suffix = f"_task{slurm_array_task_id}" if slurm_array_task_id else ""
+    folder_name = (
+        f"{target_digits}_{prefix}_{timestamp}{job_suffix}{task_suffix}"
+        if prefix
+        else f"{target_digits}_{timestamp}{job_suffix}{task_suffix}"
+    )
     artifact_dir = ensure_dir(output_dir / folder_name)
 
     generation_meta = {
@@ -75,6 +84,7 @@ def generate_command(
         generation_path,
         {
             "format": "ecm_generation_v1",
+            "command_line": current_command_line(),
             "generation": generation_meta,
             "files": {
                 "train": str(train_path),

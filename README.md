@@ -6,7 +6,7 @@
 
 - Каркас Python-пайплайна для:
   - запуска `gmp-ecm` и парсинга результата;
-  - оценки фитнеса как эмпирического `E[T_success]`;
+  - оценки composite-фитнеса: success-rate + число кривых до исхода + время до исхода;
   - оптимизации `log10(B1), log10(B2)` через `scipy.optimize.differential_evolution`;
   - автоматической валидации найденных параметров против baseline;
   - генерации train/control наборов семипростых чисел (`N = p*q`) с настраиваемыми размерами множителей;
@@ -42,7 +42,8 @@ ecm-optimizer generate \
 
 ```bash
 ecm-optimizer optimize \
-  --curves-per-n 50 \
+  --max-curves-per-n 80 \
+  --repeats-per-n 3 \
   --de-popsize 16 \
   --de-maxiter 25 \
   --b1-min 1e3 \
@@ -96,7 +97,7 @@ ecm-optimizer validate
 
 `--opt-result-file` можно передать как полный путь к JSON-файлу или только имя файла (поиск в `data/experiments/<DATASET_FOLDER>/`). Если не передавать, будет взят последний `*_optimize_*.json` (для выбранного датасета, либо глобально если `--dataset` не задан).
 
-Если `--dataset` не указан, он берётся из поля `dataset` в выбранном optimize-результате. Если не заданы `--curves-per-n` и `--curve-timeout-sec`, они также подтягиваются из `config` optimize-результата.
+Если `--dataset` не указан, он берётся из поля `dataset` в выбранном optimize-результате. Если не заданы `--max-curves-per-n` и `--curve-timeout-sec`, они также подтягиваются из `config` optimize-результата.
 
 
 ### 4) Автоматизированный прогон по плану
@@ -148,7 +149,7 @@ ecm-optimizer run-plan example_full_run
   - можно передать список спредов: `"$spread_ref": ["params.shared_opt_args", "params.method_opt.{{iter.method}}", "params.search"]`
     или объектами `"$spread_ref": [{...}, {...}]`.
 - ссылки между шагами/параметрами: `{"$ref": "<label>.<field>"}` или строка `$ref:<label>.<field>`.
-  Для общих параметров используйте label `params`, например: `{"$ref": "params.shared.curves_per_n"}`.
+  Для общих параметров используйте label `params`, например: `{"$ref": "params.shared.max_curves_per_n"}`.
 - shortcut для `analyze`: можно передать `dataset` (строку или список), и `run-plan` автоматически
   преобразует его в `input=data/experiments/<dataset_name>`. Это удобно вместо длинного списка `opt_*.result_file`.
 
@@ -188,7 +189,7 @@ ecm-optimizer run-plan example_full_run
 {
   "params": {
     "shared": {
-      "curves_per_n": 12,
+      "max_curves_per_n": 12,
       "curve_timeout_sec": 5
     }
   },
@@ -200,7 +201,7 @@ ecm-optimizer run-plan example_full_run
         "dataset": {"$ref": "gen1.dataset_dir"},
         "method": "rs",
         "rs-budget": 20,
-        "curves-per-n": {"$ref": "params.shared.curves_per_n"},
+        "max-curves-per-n": {"$ref": "params.shared.max_curves_per_n"},
         "curve-timeout-sec": {"$ref": "params.shared.curve_timeout_sec"}
       }
     }
@@ -226,13 +227,38 @@ ecm-optimizer run-plan example_full_run
 }
 ```
 
-План **одного полного прогона по всем методам** (один датасет `target-digits=20`, шаги `generate + optimize + validate + analyze`):
+План **одного полного прогона по всем методам для `target-digits=20` под новую composite-логику**
+(`max-curves-per-n` + `repeats-per-n` на optimize/validate):
 
 ```bash
 ecm-optimizer run-plan --plan full_all_methods_single_run_20d
 ```
 
 Файл плана: `data/plans/full_all_methods_single_run_20d.json`.
+
+### Референс по B1/B2 и ожидаемому числу кривых (ECM)
+
+Для выбора `max-curves-per-n` в планах ориентируемся на таблицу из исходного проекта ECM:
+https://gitlab.inria.fr/zimmerma/ecm/
+
+Ниже оставлены только нужные нам поля: `digits`, оптимальный `B1`, `B2` (default), и ожидаемое число кривых `N(B1,B2,D)` (default poly).
+
+| digits D | optimal B1 | default B2 | expected curves N(B1,B2,D) |
+|---:|---:|---:|---:|
+| 20 | 11e3 | 1.9e6 | 74 |
+| 25 | 5e4 | 1.3e7 | 214 |
+| 30 | 25e4 | 1.3e8 | 430 |
+| 35 | 1e6 | 1.0e9 | 904 |
+| 40 | 3e6 | 5.7e9 | 2350 |
+| 45 | 11e6 | 3.5e10 | 4480 |
+| 50 | 43e6 | 2.4e11 | 7553 |
+| 55 | 11e7 | 7.8e11 | 17769 |
+| 60 | 26e7 | 3.2e12 | 42017 |
+| 65 | 85e7 | 1.6e13 | 69408 |
+
+Во всех актуальных планах:
+- для `target-digits=20` используется запасной бюджет `max-curves-per-n=100` (optimize) и `150` (validate);
+- для мульти-размерных планов (`20/25/30`) бюджеты масштабируются по размеру: `100/300/600` (optimize) и `150/450/900` (validate).
 
 План **мульти-seed тюнинга** (`target-digits=20`, seeds `17/2718/31415`, все методы + общий analyze):
 
@@ -260,7 +286,7 @@ ecm-optimizer run-plan --plan tuned_all_methods_multiseed_20d --dry-run
 
 В опорном плане используется единый `seed` на шаге `generate`; для `optimize`/`validate` seed не задаётся отдельно, поэтому команды автоматически берут seed датасета.
 Параметр `workers` в плане не указан, значит используется поведение CLI по умолчанию (`-1`, все доступные CPU).
-Параметры плана облегчены для быстрого старта: уменьшены размеры датасета, `curves-per-n` и бюджеты/итерации оптимизаторов.
+Параметры плана облегчены для быстрого старта: уменьшены размеры датасета, `max-curves-per-n` и бюджеты/итерации оптимизаторов.
 
 
 ### 5) Иерархический multi-run анализ (optimize + validate)
@@ -313,4 +339,4 @@ ecm-optimizer analyze \
 - Фиксируйте версию GMP-ECM, Python и SciPy.
 - Для генерации датасетов и оптимизатора используйте фиксированный `--seed`.
 - Для независимых этапов применяются детерминированные производные seed'ы через `seed_utils`.
-- Для финальной валидации увеличивайте `--curves-per-n`.
+- Для финальной валидации увеличивайте `--max-curves-per-n`.

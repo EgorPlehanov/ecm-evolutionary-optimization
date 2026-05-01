@@ -5,7 +5,7 @@ import click
 from ecm_optimizer.cli.analyze import analyze_command
 from ecm_optimizer.cli.generate import generate_command
 from ecm_optimizer.cli.optimize import optimize_command
-from ecm_optimizer.cli.run_plan import run_plan_command
+from ecm_optimizer.cli.run_plan import run_plan_command, run_plan_slurm_command, run_plan_slurm_step_command
 from ecm_optimizer.cli.validate import validate_command
 from ecm_optimizer.utils.logging_utils import configure_logging
 
@@ -23,6 +23,8 @@ main.add_command(generate_command)
 main.add_command(optimize_command)
 main.add_command(validate_command)
 main.add_command(run_plan_command)
+main.add_command(run_plan_slurm_command)
+main.add_command(run_plan_slurm_step_command)
 main.add_command(analyze_command)
 
 

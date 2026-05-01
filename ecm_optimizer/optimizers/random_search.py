@@ -4,7 +4,7 @@ import math
 import random
 from typing import Iterable
 
-from ecm_optimizer.core.fitness import fitness_expected_time_with_stats
+from ecm_optimizer.core.fitness import fitness_with_stats
 from ecm_optimizer.models import OptimizationConfig, OptimizationResult
 from ecm_optimizer.optimizers.base import Optimizer
 from ecm_optimizer.optimizers.heuristic_common import ProgressTracker
@@ -24,19 +24,21 @@ class RandomSearchOptimizer(Optimizer):
         progress = ProgressTracker(method="rs")
         if config.verbose:
             print(
-                f"[optimize:rs] numbers={len(numbers)} curves_per_n={config.curves_per_n} budget={budget} workers={config.workers}",
+                f"[optimize:rs] numbers={len(numbers)} max_curves_per_n={config.max_curves_per_n} "
+                f"repeats_per_n={config.repeats_per_n} budget={budget} workers={config.workers}",
                 flush=True,
             )
         for step in range(1, budget + 1):
             b1 = int(10 ** rng.uniform(math.log10(config.b1_min), math.log10(config.b1_max)))
             b2 = int(10 ** rng.uniform(math.log10(max(config.b2_min, b1)), math.log10(config.b2_max)))
             b2 = min(max(b2, b1), int(b1 * config.ratio_max), int(config.b2_max))
-            score, successes = fitness_expected_time_with_stats(
+            score, metrics = fitness_with_stats(
                 ecm_bin=ecm_bin,
                 numbers=numbers,
                 b1=b1,
                 b2=b2,
-                curves_per_n=config.curves_per_n,
+                max_curves_per_n=config.max_curves_per_n,
+                repeats_per_n=config.repeats_per_n,
                 curve_timeout_sec=config.curve_timeout_sec,
                 workers=config.workers,
             )
@@ -44,7 +46,7 @@ class RandomSearchOptimizer(Optimizer):
                 config=config,
                 x_log=(math.log10(b1), math.log10(max(b2, 1))),
                 score=score,
-                successes=successes,
+                metrics=metrics,
             )
             candidate = OptimizationResult(b1=b1, b2=b2, objective=score)
             if best is None or candidate.objective < best.objective:
