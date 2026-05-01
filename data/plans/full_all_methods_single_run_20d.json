@@ -1,14 +1,14 @@
 {
   "format": "ecm_run_plan_v1",
-  "description": "Один полный прогон по всем методам (de/rs/pso/bo/ga) на одном датасете target-digits=20: generate + repeat(method)->optimize+validate + общий analyze.",
+  "description": "Полный прогон по всем методам (de/rs/pso/bo/ga) для target-digits=20 под новую composite-логику: generate + repeat(method)->optimize+validate + общий analyze.",
   "params": {
     "seed": 42,
     "search": {
-      "b1-min": 1000,
+      "b1-min": 100,
       "b1-max": 30000,
-      "b2-min": 1000,
+      "b2-min": 100,
       "b2-max": 600000,
-      "ratio-max": 20
+      "ratio-max": 100
     },
     "method_list": [
       "de",
@@ -41,12 +41,12 @@
       }
     },
     "shared_opt_args": {
-      "curves-per-n": 12,
-      "curve-timeout-sec": 5
+      "max-curves-per-n": 100,
+      "repeats-per-n": 3
     },
     "shared_val_args": {
-      "curves-per-n": 24,
-      "curve-timeout-sec": 5
+      "max-curves-per-n": 150,
+      "repeats-per-n": 5
     },
     "generate_args": {
       "target-digits": 20,

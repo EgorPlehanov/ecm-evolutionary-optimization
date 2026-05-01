@@ -32,7 +32,7 @@ class ParticleSwarmOptimizer(Optimizer):
         progress.log_step(
             config=config,
             message=(
-                f"numbers={len(numbers)} curves_per_n={config.curves_per_n} "
+                f"numbers={len(numbers)} max_curves_per_n={config.max_curves_per_n} repeats_per_n={config.repeats_per_n} "
                 f"swarm_size={swarm_size} iterations={iterations} workers={config.workers}"
             ),
         )

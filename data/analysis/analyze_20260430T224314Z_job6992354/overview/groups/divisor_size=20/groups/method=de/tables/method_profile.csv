@@ -1,0 +1,2 @@
+group,run_count,median_objective,objective_ci_low,objective_ci_high,iqr_objective,cv_objective,success_share,median_runtime_sec,median_validation_gain_pct,validation_gain_ci_low,validation_gain_ci_high
+20_dset_20260430T220555Z_job6992343,1,235684.4189362649,235684.4189362649,235684.4189362649,0.0,nan,0.0,855.7705220679927,50.54323407171658,50.54323407171658,50.54323407171658
