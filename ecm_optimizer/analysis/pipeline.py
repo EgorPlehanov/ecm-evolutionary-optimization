@@ -656,6 +656,7 @@ def _decision_summary(comparison_rows: list[dict[str, Any]], pairwise_rows: list
         return {
             "top_by_objective": None,
             "top_by_gain": None,
+            "pareto_front": [],
             "adopt": [],
             "watch": [],
             "deprioritize": [],
@@ -672,6 +673,8 @@ def _decision_summary(comparison_rows: list[dict[str, Any]], pairwise_rows: list
             significant_groups.add(str(row["group_a"]))
             significant_groups.add(str(row["group_b"]))
 
+    pareto_front = _pareto_front_labels(comparison_rows)
+
     adopt: list[str] = []
     watch: list[str] = []
     deprioritize: list[str] = []
@@ -683,7 +686,14 @@ def _decision_summary(comparison_rows: list[dict[str, Any]], pairwise_rows: list
         run_count = int(row.get("run_count", 0))
         has_signal = label in significant_groups
 
-        if gain is not None and not math.isnan(gain) and gain >= 20 and run_count >= 3 and (has_signal or cv_value < 0.25):
+        is_pareto = label in pareto_front
+        if (
+            gain is not None
+            and not math.isnan(gain)
+            and gain >= 20
+            and run_count >= 3
+            and (has_signal or cv_value < 0.25 or is_pareto)
+        ):
             adopt.append(label)
         elif gain is not None and not math.isnan(gain) and gain < 0:
             deprioritize.append(label)
@@ -693,11 +703,43 @@ def _decision_summary(comparison_rows: list[dict[str, Any]], pairwise_rows: list
     return {
         "top_by_objective": by_objective[0]["group"],
         "top_by_gain": by_gain[0]["group"] if by_gain else None,
+        "pareto_front": sorted(pareto_front),
         "adopt": adopt,
         "watch": watch,
         "deprioritize": deprioritize,
         "significant_pairs": sum(1 for row in pairwise_rows if row.get("is_significant")),
     }
+
+
+def _pareto_front_labels(comparison_rows: list[dict[str, Any]]) -> set[str]:
+    """Возвращает Pareto-эффективные группы по двум целям:
+    - минимизировать median_objective
+    - максимизировать median_validation_gain_pct
+    """
+    points: list[tuple[str, float, float]] = []
+    for row in comparison_rows:
+        objective = row.get("median_objective")
+        gain = row.get("median_validation_gain_pct")
+        if objective is None or gain is None:
+            continue
+        if math.isnan(objective) or math.isnan(gain):
+            continue
+        points.append((str(row["group"]), float(objective), float(gain)))
+
+    pareto: set[str] = set()
+    for label, objective, gain in points:
+        dominated = False
+        for other_label, other_objective, other_gain in points:
+            if other_label == label:
+                continue
+            no_worse = other_objective <= objective and other_gain >= gain
+            strictly_better = other_objective < objective or other_gain > gain
+            if no_worse and strictly_better:
+                dominated = True
+                break
+        if not dominated:
+            pareto.add(label)
+    return pareto
 
 
 def _profile_tables(
@@ -1116,6 +1158,7 @@ def _build_node_artifacts(
             "## Executive summary",
             f"- лучший сегмент по objective: **{decision['top_by_objective'] or 'N/A'}**",
             f"- лучший сегмент по validation gain: **{decision['top_by_gain'] or 'N/A'}**",
+            f"- Pareto-фронт (objective↓, validation gain↑): **{', '.join(decision['pareto_front']) if decision['pareto_front'] else 'N/A'}**",
             f"- statistically significant пар: **{decision['significant_pairs']}**",
             f"- кандидаты на adoption: **{', '.join(decision['adopt']) if decision['adopt'] else 'нет'}**",
             f"- кандидаты под наблюдение: **{', '.join(decision['watch']) if decision['watch'] else 'нет'}**",
