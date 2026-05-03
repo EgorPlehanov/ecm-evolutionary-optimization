@@ -1,0 +1,61 @@
+run_step[7]: /home/ikntcit1/plehanoves/ecm-evolutionary-optimization/.venv/bin/python3 -m ecm_optimizer.cli.main validate --dataset data/numbers/20_dset_20260503T101749Z_job6993099 --opt-result-file data/experiments/20_dset_20260503T101749Z_job6993099/pso/optimize_20260503T103128Z_job6993104/pso_optimize_20260503T103128Z_job6993104.json --seed 42 --max-curves-per-n 150 --repeats-per-n 5
+[validate:pso] numbers=20 max_curves_per_n=150 repeats_per_n=5 workers=56
+[validate:pso] optimized 1/20
+[validate:pso] optimized 2/20
+[validate:pso] optimized 3/20
+[validate:pso] optimized 4/20
+[validate:pso] optimized 5/20
+[validate:pso] optimized 6/20
+[validate:pso] optimized 7/20
+[validate:pso] optimized 8/20
+[validate:pso] optimized 9/20
+[validate:pso] optimized 10/20
+[validate:pso] optimized 11/20
+[validate:pso] optimized 12/20
+[validate:pso] optimized 13/20
+[validate:pso] optimized 14/20
+[validate:pso] optimized 15/20
+[validate:pso] optimized 16/20
+[validate:pso] optimized 17/20
+[validate:pso] optimized 18/20
+[validate:pso] optimized 19/20
+[validate:pso] optimized 20/20
+[validate:pso] baseline 1/20
+[validate:pso] baseline 2/20
+[validate:pso] baseline 3/20
+[validate:pso] baseline 4/20
+[validate:pso] baseline 5/20
+[validate:pso] baseline 6/20
+[validate:pso] baseline 7/20
+[validate:pso] baseline 8/20
+[validate:pso] baseline 9/20
+[validate:pso] baseline 10/20
+[validate:pso] baseline 11/20
+[validate:pso] baseline 12/20
+[validate:pso] baseline 13/20
+[validate:pso] baseline 14/20
+[validate:pso] baseline 15/20
+[validate:pso] baseline 16/20
+[validate:pso] baseline 17/20
+[validate:pso] baseline 18/20
+[validate:pso] baseline 19/20
+[validate:pso] baseline 20/20
+optimized_mean_score=142277.658204
+baseline_mean_score=407411.633282
+relative_improvement_pct=65.08
+optimized_mean_time_sec=1.597358
+baseline_mean_time_sec=1.266333
+time_improvement_pct=-26.14
+optimized_mean_curves=68.030000
+baseline_mean_curves=114.530000
+curves_improvement_pct=40.60
+optimized_mean_success_rate=0.800000
+baseline_mean_success_rate=0.500000
+success_rate_delta_pp=30.0000
+used_opt_b1=30000
+used_opt_b2=600000
+used_opt_method=pso
+used_base_b1=11000
+used_base_b2=220000
+result_file: data/experiments/20_dset_20260503T101749Z_job6993099/pso/optimize_20260503T103128Z_job6993104/pso_validate_20260503T105359Z_job6993105.json
+report_file: data/experiments/20_dset_20260503T101749Z_job6993099/pso/optimize_20260503T103128Z_job6993104/pso_optimize_20260503T103128Z_job6993104_report.md

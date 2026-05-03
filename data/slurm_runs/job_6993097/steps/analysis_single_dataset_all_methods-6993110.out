@@ -1,0 +1,6 @@
+run_step[12]: /home/ikntcit1/plehanoves/ecm-evolutionary-optimization/.venv/bin/python3 -m ecm_optimizer.cli.main analyze --group-by divisor_size --group-by method --input data/experiments/20_dset_20260503T101749Z_job6993099
+analyzed_runs: 5
+group_by: divisor_size, method
+summary_file: data/analysis/analyze_20260503T112309Z_job6993110/analysis_summary.json
+overview_report: data/analysis/analyze_20260503T112309Z_job6993110/overview/report.md
+output_dir: data/analysis/analyze_20260503T112309Z_job6993110

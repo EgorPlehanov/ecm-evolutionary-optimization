@@ -1,0 +1,2 @@
+analysis_level,run_count,median_objective,iqr_objective,median_runtime_sec,median_time_to_best_sec,median_evaluation_count,success_share,median_improvement_per_eval,median_improvement_per_sec,median_validation_gain_abs,median_validation_gain_pct
+method=ga,1,51450.62097289632,0.0,1588.8149985909986,1369.339535741994,316,1.0,2690.743084047714,535.1628825968554,280004.14792072447,75.23487416614988
