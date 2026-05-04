@@ -1,0 +1,2 @@
+analysis_level,run_count,median_objective,iqr_objective,median_runtime_sec,median_time_to_best_sec,median_evaluation_count,success_share,median_improvement_per_eval,median_improvement_per_sec,median_validation_gain_abs,median_validation_gain_pct
+divisor_size=20,5,16535.58311749793,167452.7080370171,789.5833934930852,693.0109474250348,220,0.4,3571.766286652294,614.5888972814114,181067.2098761757,63.083589345850285

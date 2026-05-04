@@ -1,0 +1,102 @@
+run_step[10]: /home/ikntcit1/plehanoves/ecm-evolutionary-optimization/.venv/bin/python3 -m ecm_optimizer.cli.main optimize --dataset data/numbers/20_dset_20260504T131739Z_job6996702 --method ga --seed 42 --max-curves-per-n 100 --repeats-per-n 3 --ga-population-size 22 --ga-generations 14 --ga-mutation-prob 0.14 --b1-min 100 --b1-max 30000 --b2-min 100 --b2-max 600000 --ratio-max 100
+[optimize:ga] numbers=20 max_curves_per_n=100 repeats_per_n=3 population_size=22 generations=14 mutation_prob=0.14 workers=56
+[optimize:ga] eval=5 b1=3969 b2=396900 fitness=649281.2932264886
+[optimize:ga] eval=10 b1=19810 b2=160232 fitness=350630.179416088
+[optimize:ga] eval=15 b1=5366 b2=197984 fitness=666644.4529228363
+[optimize:ga] eval=20 b1=9046 b2=442677 fitness=416606.6243794627
+[optimize:ga] new_best eval=10 b1=19810 b2=160232 fitness=350630.179416088
+[optimize:ga] init_best fitness=350630.179416088
+[optimize:ga] eval=25 b1=1664 b2=1664 fitness=866198.8194078634
+[optimize:ga] eval=30 b1=2732 b2=42395 fitness=765538.1546537435
+[optimize:ga] eval=35 b1=20777 b2=167559 fitness=318397.30007380404
+[optimize:ga] eval=40 b1=12953 b2=277944 fitness=399910.3270120263
+[optimize:ga] new_best eval=35 b1=20777 b2=167559 fitness=318397.30007380404
+[optimize:ga] generation=1/14 best_fitness=318397.30007380404
+[optimize:ga] eval=45 b1=16648 b2=201870 fitness=400387.9828361577
+[optimize:ga] eval=50 b1=19100 b2=161182 fitness=368331.6631491967
+[optimize:ga] eval=55 b1=8107 b2=208825 fitness=634465.2807962112
+[optimize:ga] eval=60 b1=14427 b2=222102 fitness=400579.6356783229
+[optimize:ga] new_best eval=46 b1=22506 b2=302169 fitness=249938.21604706615
+[optimize:ga] generation=2/14 best_fitness=249938.21604706615
+[optimize:ga] eval=65 b1=13822 b2=264890 fitness=366673.82355895283
+[optimize:ga] eval=70 b1=15024 b2=225492 fitness=350283.6636231995
+[optimize:ga] eval=75 b1=21647 b2=226802 fitness=351800.05475728196
+[optimize:ga] eval=80 b1=16800 b2=191218 fitness=518503.55453735526
+[optimize:ga] eval=85 b1=20521 b2=298394 fitness=216564.822558903
+[optimize:ga] new_best eval=76 b1=21534 b2=242635 fitness=99809.06583025474
+[optimize:ga] generation=3/14 best_fitness=99809.06583025474
+[optimize:ga] eval=90 b1=21795 b2=257574 fitness=199038.05824678586
+[optimize:ga] eval=95 b1=21293 b2=254656 fitness=402921.90918060986
+[optimize:ga] eval=100 b1=21009 b2=278802 fitness=267591.8214621596
+[optimize:ga] eval=105 b1=20370 b2=315674 fitness=150625.24702844597
+[optimize:ga] generation=4/14 best_fitness=99809.06583025474
+[optimize:ga] eval=110 b1=25200 b2=271946 fitness=268598.6623548871
+[optimize:ga] eval=115 b1=16967 b2=253759 fitness=283210.22456510464
+[optimize:ga] eval=120 b1=21368 b2=253425 fitness=164073.34001798573
+[optimize:ga] eval=125 b1=22420 b2=350013 fitness=200145.67587033845
+[optimize:ga] new_best eval=127 b1=29587 b2=414229 fitness=65733.614376407
+[optimize:ga] generation=5/14 best_fitness=65733.614376407
+[optimize:ga] eval=130 b1=30000 b2=224929 fitness=235217.5119030053
+[optimize:ga] eval=135 b1=17113 b2=253350 fitness=334082.63263806695
+[optimize:ga] eval=140 b1=23192 b2=311991 fitness=267827.0424134897
+[optimize:ga] eval=145 b1=21355 b2=279100 fitness=352686.96378511965
+[optimize:ga] generation=6/14 best_fitness=65733.614376407
+[optimize:ga] eval=150 b1=25676 b2=368318 fitness=184569.37757042467
+[optimize:ga] eval=155 b1=27104 b2=366350 fitness=202102.64350253003
+[optimize:ga] eval=160 b1=26114 b2=372458 fitness=217773.4824292101
+[optimize:ga] eval=165 b1=22022 b2=283953 fitness=285797.3993555002
+[optimize:ga] generation=7/14 best_fitness=65733.614376407
+[optimize:ga] eval=170 b1=22487 b2=323633 fitness=234559.2202902632
+[optimize:ga] eval=175 b1=29261 b2=405164 fitness=169159.83334753898
+[optimize:ga] eval=180 b1=28275 b2=416154 fitness=152123.41635809667
+[optimize:ga] eval=185 b1=22547 b2=325060 fitness=234537.26492311072
+[optimize:ga] eval=190 b1=29587 b2=414229 fitness=116386.66747246246
+[optimize:ga] generation=8/14 best_fitness=65733.614376407
+[optimize:ga] eval=195 b1=29328 b2=407025 fitness=152356.1730613385
+[optimize:ga] eval=200 b1=30000 b2=384119 fitness=100573.51660567496
+[optimize:ga] eval=205 b1=27700 b2=359289 fitness=149228.99676973736
+[optimize:ga] eval=210 b1=26991 b2=339685 fitness=269723.729080559
+[optimize:ga] generation=9/14 best_fitness=65733.614376407
+[optimize:ga] eval=215 b1=30000 b2=245044 fitness=202721.6637748705
+[optimize:ga] eval=220 b1=29329 b2=404174 fitness=201658.72633541626
+[optimize:ga] eval=225 b1=29913 b2=390189 fitness=152256.64170411142
+[optimize:ga] eval=230 b1=15421 b2=529036 fitness=266314.3485907678
+[optimize:ga] generation=10/14 best_fitness=65733.614376407
+[optimize:ga] eval=235 b1=26719 b2=390881 fitness=82477.05180076533
+[optimize:ga] eval=240 b1=27081 b2=376519 fitness=216919.44553231815
+[optimize:ga] eval=245 b1=27109 b2=350568 fitness=167641.22270809257
+[optimize:ga] eval=250 b1=26749 b2=390728 fitness=302275.46291448834
+[optimize:ga] generation=11/14 best_fitness=65733.614376407
+[optimize:ga] eval=255 b1=28912 b2=406781 fitness=82316.45914090602
+[optimize:ga] eval=260 b1=26919 b2=369584 fitness=134419.90422819823
+[optimize:ga] eval=265 b1=29649 b2=399412 fitness=16535.58311749793
+[optimize:ga] eval=270 b1=28252 b2=375221 fitness=167523.9753555662
+[optimize:ga] new_best eval=265 b1=29649 b2=399412 fitness=16535.58311749793
+[optimize:ga] generation=12/14 best_fitness=16535.58311749793
+[optimize:ga] eval=275 b1=30000 b2=559955 fitness=66102.69023163637
+[optimize:ga] eval=280 b1=30000 b2=370889 fitness=116640.80936339565
+[optimize:ga] eval=285 b1=30000 b2=380888 fitness=65571.05263412974
+[optimize:ga] eval=290 b1=29610 b2=408535 fitness=217686.905612708
+[optimize:ga] eval=295 b1=28354 b2=375900 fitness=84702.97649158745
+[optimize:ga] generation=13/14 best_fitness=16535.58311749793
+[optimize:ga] eval=300 b1=28851 b2=374350 fitness=199861.6251694644
+[optimize:ga] eval=305 b1=28954 b2=390282 fitness=252870.11561654697
+[optimize:ga] eval=310 b1=29109 b2=406302 fitness=116711.88441446202
+[optimize:ga] eval=315 b1=29321 b2=412106 fitness=134596.19099832492
+[optimize:ga] generation=14/14 best_fitness=16535.58311749793
+best_b1=29649
+best_b2=399412
+objective=16535.583117
+result_file: data/experiments/20_dset_20260504T131739Z_job6996702/ga/optimize_20260504T133118Z_job6996711/ga_optimize_20260504T133118Z_job6996711.json
+plot_files:
+  jump_plot: data/experiments/20_dset_20260504T131739Z_job6996702/ga/optimize_20260504T133118Z_job6996711/plots/ga_optimize_20260504T133118Z_job6996711_jump_plot.png
+  b1_b2_trajectory: data/experiments/20_dset_20260504T131739Z_job6996702/ga/optimize_20260504T133118Z_job6996711/plots/ga_optimize_20260504T133118Z_job6996711_b1_b2_trajectory.png
+  progress_by_phase: data/experiments/20_dset_20260504T131739Z_job6996702/ga/optimize_20260504T133118Z_job6996711/plots/ga_optimize_20260504T133118Z_job6996711_progress_by_phase.png
+  time_efficiency: data/experiments/20_dset_20260504T131739Z_job6996702/ga/optimize_20260504T133118Z_job6996711/plots/ga_optimize_20260504T133118Z_job6996711_time_efficiency.png
+  b1_ratio_heatmap: data/experiments/20_dset_20260504T131739Z_job6996702/ga/optimize_20260504T133118Z_job6996711/plots/ga_optimize_20260504T133118Z_job6996711_b1_ratio_heatmap.png
+analysis_files:
+  events_csv: data/experiments/20_dset_20260504T131739Z_job6996702/ga/optimize_20260504T133118Z_job6996711/tables/ga_optimize_20260504T133118Z_job6996711_events.csv
+  new_best_csv: data/experiments/20_dset_20260504T131739Z_job6996702/ga/optimize_20260504T133118Z_job6996711/tables/ga_optimize_20260504T133118Z_job6996711_new_best.csv
+  phase_summary_csv: data/experiments/20_dset_20260504T131739Z_job6996702/ga/optimize_20260504T133118Z_job6996711/tables/ga_optimize_20260504T133118Z_job6996711_phase_summary.csv
+  run_summary_csv: data/experiments/20_dset_20260504T131739Z_job6996702/ga/optimize_20260504T133118Z_job6996711/tables/ga_optimize_20260504T133118Z_job6996711_run_summary.csv
+  report_md: data/experiments/20_dset_20260504T131739Z_job6996702/ga/optimize_20260504T133118Z_job6996711/ga_optimize_20260504T133118Z_job6996711_report.md

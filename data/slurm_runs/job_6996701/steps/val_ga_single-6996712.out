@@ -1,0 +1,61 @@
+run_step[11]: /home/ikntcit1/plehanoves/ecm-evolutionary-optimization/.venv/bin/python3 -m ecm_optimizer.cli.main validate --dataset data/numbers/20_dset_20260504T131739Z_job6996702 --opt-result-file data/experiments/20_dset_20260504T131739Z_job6996702/ga/optimize_20260504T133118Z_job6996711/ga_optimize_20260504T133118Z_job6996711.json --seed 42 --max-curves-per-n 150 --repeats-per-n 5
+[validate:ga] numbers=20 max_curves_per_n=150 repeats_per_n=5 workers=56
+[validate:ga] optimized 1/20
+[validate:ga] optimized 2/20
+[validate:ga] optimized 3/20
+[validate:ga] optimized 4/20
+[validate:ga] optimized 5/20
+[validate:ga] optimized 6/20
+[validate:ga] optimized 7/20
+[validate:ga] optimized 8/20
+[validate:ga] optimized 9/20
+[validate:ga] optimized 10/20
+[validate:ga] optimized 11/20
+[validate:ga] optimized 12/20
+[validate:ga] optimized 13/20
+[validate:ga] optimized 14/20
+[validate:ga] optimized 15/20
+[validate:ga] optimized 16/20
+[validate:ga] optimized 17/20
+[validate:ga] optimized 18/20
+[validate:ga] optimized 19/20
+[validate:ga] optimized 20/20
+[validate:ga] baseline 1/20
+[validate:ga] baseline 2/20
+[validate:ga] baseline 3/20
+[validate:ga] baseline 4/20
+[validate:ga] baseline 5/20
+[validate:ga] baseline 6/20
+[validate:ga] baseline 7/20
+[validate:ga] baseline 8/20
+[validate:ga] baseline 9/20
+[validate:ga] baseline 10/20
+[validate:ga] baseline 11/20
+[validate:ga] baseline 12/20
+[validate:ga] baseline 13/20
+[validate:ga] baseline 14/20
+[validate:ga] baseline 15/20
+[validate:ga] baseline 16/20
+[validate:ga] baseline 17/20
+[validate:ga] baseline 18/20
+[validate:ga] baseline 19/20
+[validate:ga] baseline 20/20
+optimized_mean_score=105960.227455
+baseline_mean_score=287027.437332
+relative_improvement_pct=63.08
+optimized_mean_time_sec=1.622523
+baseline_mean_time_sec=1.155944
+time_improvement_pct=-40.36
+optimized_mean_curves=72.350000
+baseline_mean_curves=104.680000
+curves_improvement_pct=30.88
+optimized_mean_success_rate=0.820000
+baseline_mean_success_rate=0.600000
+success_rate_delta_pp=22.0000
+used_opt_b1=29649
+used_opt_b2=399412
+used_opt_method=ga
+used_base_b1=11000
+used_base_b2=220000
+result_file: data/experiments/20_dset_20260504T131739Z_job6996702/ga/optimize_20260504T133118Z_job6996711/ga_validate_20260504T135824Z_job6996712.json
+report_file: data/experiments/20_dset_20260504T131739Z_job6996702/ga/optimize_20260504T133118Z_job6996711/ga_optimize_20260504T133118Z_job6996711_report.md
