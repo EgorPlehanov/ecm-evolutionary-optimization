@@ -3,6 +3,7 @@ from __future__ import annotations
 import re
 import subprocess
 import sys
+import time
 from itertools import product
 from pathlib import Path
 import shlex
@@ -20,6 +21,7 @@ PLANS_DIR = DATA_DIR / "plans"
 _REF_PATTERN = re.compile(r"\{\{\s*([a-zA-Z0-9_.-]+)\s*\}\}")
 _UNRESOLVED_REF_PATTERN = re.compile(r"<unresolved:([a-zA-Z0-9_.-]+)>")
 _SUPPORTED_OPERATION_TYPES = {"generate", "optimize", "validate", "analyze"}
+_SQUEUE_POLL_INTERVAL_SEC = 10
 
 
 def _resolve_plan_path(plan: str) -> Path:
@@ -802,7 +804,7 @@ def run_plan_command(plan_arg: str | None, plan_opt: str | None, dry_run: bool) 
     default=25,
     show_default=True,
     type=click.IntRange(min=1),
-    help="Maximum plan step width. Enforced by adaptive lane dependencies without scheduler polling.",
+    help="Maximum number of submitted (PENDING/RUNNING) step jobs at once.",
 )
 def run_plan_slurm_command(
     plan_name: str,
@@ -833,9 +835,28 @@ def run_plan_slurm_command(
     ensure_dir.mkdir(parents=True, exist_ok=True)
     _save_state_context(state_file, base_context)
     label_to_jobid: dict[str, str] = {}
+    in_flight_jobids: set[str] = set()
+
+    def wait_for_submission_slot() -> None:
+        while len(in_flight_jobids) >= max_active_jobs:
+            jobs_arg = ",".join(sorted(in_flight_jobids))
+            result = subprocess.run(
+                ["squeue", "-h", "-j", jobs_arg, "-o", "%A"],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+            active = {line.strip() for line in result.stdout.splitlines() if line.strip()}
+            in_flight_jobids.intersection_update(active)
+            if len(in_flight_jobids) < max_active_jobs:
+                return
+            click.echo(
+                "submission_throttle: active_step_jobs="
+                f"{len(in_flight_jobids)} limit={max_active_jobs}; waiting for free slot...",
+                err=True,
+            )
+            time.sleep(_SQUEUE_POLL_INTERVAL_SEC)
     inferred_dep_labels: list[set[str]] = []
-    lane_tails: list[str | None] = [None for _ in range(max_active_jobs)]
-    lane_cursor = 0
     for idx, op in enumerate(materialized):
         deps = set(op["depends_on"])
         deps.update(_collect_unresolved_labels(op["args"]))
@@ -854,18 +875,6 @@ def run_plan_slurm_command(
     for op in materialized:
         deps = inferred_dep_labels[op["index"] - 1]
         dep_ids = {label_to_jobid[label] for label in sorted(deps) if label in label_to_jobid}
-        preferred_lanes = [
-            idx for idx, tail in enumerate(lane_tails) if tail is None or tail in dep_ids
-        ]
-        if preferred_lanes:
-            lane_idx = preferred_lanes[lane_cursor % len(preferred_lanes)]
-            lane_cursor += 1
-        else:
-            lane_idx = lane_cursor % max_active_jobs
-            lane_cursor += 1
-        lane_dep = lane_tails[lane_idx]
-        if lane_dep:
-            dep_ids.add(lane_dep)
         dep_arg = f"--dependency=afterok:{':'.join(sorted(dep_ids))}" if dep_ids else ""
         cmd = [
             sys.executable,
@@ -893,9 +902,10 @@ def run_plan_slurm_command(
         click.echo(f"STEP {op['index']}{dep_labels_note}: {sbatch_cmd}")
         if dry_run:
             continue
+        wait_for_submission_slot()
         result = subprocess.run(sbatch_cmd, shell=True, check=True, capture_output=True, text=True)
         job_id = result.stdout.strip()
-        lane_tails[lane_idx] = job_id
+        in_flight_jobids.add(job_id)
         click.echo(f"submitted_job_id[{op_name}]={job_id}")
         if op["label"]:
             label_to_jobid[str(op["label"])] = job_id
