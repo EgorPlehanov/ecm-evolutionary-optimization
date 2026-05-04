@@ -4,9 +4,10 @@ from concurrent.futures import ProcessPoolExecutor
 from statistics import mean
 from typing import Iterable
 
-SUCCESS_RATE_WEIGHT = 1_000_000.0
-CURVE_WEIGHT = 1_000.0
-TIME_WEIGHT = 1.0
+SUCCESS_RATE_TARGET = 0.85
+SUCCESS_SHORTFALL_WEIGHT = 1_000_000.0
+CURVE_WEIGHT = 100.0
+TIME_WEIGHT = 10_000.0
 
 from ecm_optimizer.core.ecm_runner import run_single_curve
 from ecm_optimizer.models import EvaluationResult
@@ -73,10 +74,10 @@ def fitness_with_stats(
 ) -> tuple[float, dict[str, float | int]]:
     """Вычислить composite fitness по набору чисел.
 
-    Fitness минимизируется:
-    - максимизирует success_rate (через штраф 1-success_rate);
-    - минимизирует среднее число кривых до исхода (успех или лимит);
-    - минимизирует среднее время до исхода.
+    Fitness минимизируется с акцентом на снижение времени при высокой успешности:
+    - жёстко штрафует только недобор до целевой успешности `SUCCESS_RATE_TARGET`;
+    - после достижения целевой успешности в первую очередь снижает среднее время;
+    - дополнительно снижает среднее число кривых до исхода.
     """
     numbers = list(numbers)
     tasks = [(ecm_bin, n, b1, b2, max_curves_per_n, repeats_per_n, curve_timeout_sec) for n in numbers]
@@ -90,7 +91,8 @@ def fitness_with_stats(
     mean_success_rate = mean(item.success_rate for item in evaluations)
     mean_curves = mean(item.avg_curves for item in evaluations)
     mean_time = mean(item.avg_time for item in evaluations)
-    score = ((1.0 - mean_success_rate) * SUCCESS_RATE_WEIGHT) + (mean_curves * CURVE_WEIGHT) + (mean_time * TIME_WEIGHT)
+    success_shortfall = max(0.0, SUCCESS_RATE_TARGET - mean_success_rate)
+    score = (success_shortfall * SUCCESS_SHORTFALL_WEIGHT) + (mean_time * TIME_WEIGHT) + (mean_curves * CURVE_WEIGHT)
     stats: dict[str, float | int] = {
         "success_runs": sum(item.success_runs for item in evaluations),
         "total_runs": sum(item.runs for item in evaluations),
