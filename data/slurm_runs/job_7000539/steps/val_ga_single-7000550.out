@@ -1,0 +1,101 @@
+run_step[11]: /home/ikntcit1/plehanoves/ecm-evolutionary-optimization/.venv/bin/python3 -m ecm_optimizer.cli.main validate --dataset data/numbers/20_dset_20260505T012126Z_job7000540 --opt-result-file data/experiments/20_dset_20260505T012126Z_job7000540/ga/optimize_20260505T012856Z_job7000549/ga_optimize_20260505T012856Z_job7000549.json --seed 42 --max-curves-per-n 300 --repeats-per-n 40
+[validate:ga] numbers=40 max_curves_per_n=300 repeats_per_n=40 workers=56
+[validate:ga] optimized 1/40
+[validate:ga] optimized 2/40
+[validate:ga] optimized 3/40
+[validate:ga] optimized 4/40
+[validate:ga] optimized 5/40
+[validate:ga] optimized 6/40
+[validate:ga] optimized 7/40
+[validate:ga] optimized 8/40
+[validate:ga] optimized 9/40
+[validate:ga] optimized 10/40
+[validate:ga] optimized 11/40
+[validate:ga] optimized 12/40
+[validate:ga] optimized 13/40
+[validate:ga] optimized 14/40
+[validate:ga] optimized 15/40
+[validate:ga] optimized 16/40
+[validate:ga] optimized 17/40
+[validate:ga] optimized 18/40
+[validate:ga] optimized 19/40
+[validate:ga] optimized 20/40
+[validate:ga] optimized 21/40
+[validate:ga] optimized 22/40
+[validate:ga] optimized 23/40
+[validate:ga] optimized 24/40
+[validate:ga] optimized 25/40
+[validate:ga] optimized 26/40
+[validate:ga] optimized 27/40
+[validate:ga] optimized 28/40
+[validate:ga] optimized 29/40
+[validate:ga] optimized 30/40
+[validate:ga] optimized 31/40
+[validate:ga] optimized 32/40
+[validate:ga] optimized 33/40
+[validate:ga] optimized 34/40
+[validate:ga] optimized 35/40
+[validate:ga] optimized 36/40
+[validate:ga] optimized 37/40
+[validate:ga] optimized 38/40
+[validate:ga] optimized 39/40
+[validate:ga] optimized 40/40
+[validate:ga] baseline 1/40
+[validate:ga] baseline 2/40
+[validate:ga] baseline 3/40
+[validate:ga] baseline 4/40
+[validate:ga] baseline 5/40
+[validate:ga] baseline 6/40
+[validate:ga] baseline 7/40
+[validate:ga] baseline 8/40
+[validate:ga] baseline 9/40
+[validate:ga] baseline 10/40
+[validate:ga] baseline 11/40
+[validate:ga] baseline 12/40
+[validate:ga] baseline 13/40
+[validate:ga] baseline 14/40
+[validate:ga] baseline 15/40
+[validate:ga] baseline 16/40
+[validate:ga] baseline 17/40
+[validate:ga] baseline 18/40
+[validate:ga] baseline 19/40
+[validate:ga] baseline 20/40
+[validate:ga] baseline 21/40
+[validate:ga] baseline 22/40
+[validate:ga] baseline 23/40
+[validate:ga] baseline 24/40
+[validate:ga] baseline 25/40
+[validate:ga] baseline 26/40
+[validate:ga] baseline 27/40
+[validate:ga] baseline 28/40
+[validate:ga] baseline 29/40
+[validate:ga] baseline 30/40
+[validate:ga] baseline 31/40
+[validate:ga] baseline 32/40
+[validate:ga] baseline 33/40
+[validate:ga] baseline 34/40
+[validate:ga] baseline 35/40
+[validate:ga] baseline 36/40
+[validate:ga] baseline 37/40
+[validate:ga] baseline 38/40
+[validate:ga] baseline 39/40
+[validate:ga] baseline 40/40
+optimized_mean_score=26382.771390
+baseline_mean_score=28538.767453
+relative_improvement_pct=7.55
+optimized_mean_time_sec=2.253587
+baseline_mean_time_sec=2.334905
+time_improvement_pct=3.48
+optimized_mean_curves=76.938125
+baseline_mean_curves=88.794375
+curves_improvement_pct=13.35
+optimized_mean_success_rate=0.982500
+baseline_mean_success_rate=0.954375
+success_rate_delta_pp=2.8125
+used_opt_b1=28090
+used_opt_b2=479272
+used_opt_method=ga
+used_base_b1=11000
+used_base_b2=1900000
+result_file: data/experiments/20_dset_20260505T012126Z_job7000540/ga/optimize_20260505T012856Z_job7000549/ga_validate_20260505T023906Z_job7000550.json
+report_file: data/experiments/20_dset_20260505T012126Z_job7000540/ga/optimize_20260505T012856Z_job7000549/ga_optimize_20260505T012856Z_job7000549_report.md
