@@ -80,6 +80,16 @@ def _build_validation_trace_plots(out_file: Path, trace_points: list[dict[str, A
             "baseline_key": "baseline_score",
             "optimized_key": "optimized_score",
             "delta_key": "delta_pct",
+            "delta_label": "Delta, %",
+        },
+        {
+            "name": "success",
+            "title": "Validation trace: success rate (baseline vs optimized)",
+            "left_label": "Success rate",
+            "baseline_key": "baseline_success_rate",
+            "optimized_key": "optimized_success_rate",
+            "delta_label": "Delta, pp",
+            "delta_from_series": True,
         },
         {
             "name": "time",
@@ -88,6 +98,7 @@ def _build_validation_trace_plots(out_file: Path, trace_points: list[dict[str, A
             "baseline_key": "baseline_mean_time_sec",
             "optimized_key": "optimized_mean_time_sec",
             "delta_key": "delta_pct_time",
+            "delta_label": "Delta, %",
         },
         {
             "name": "curves",
@@ -96,13 +107,19 @@ def _build_validation_trace_plots(out_file: Path, trace_points: list[dict[str, A
             "baseline_key": "baseline_mean_curves",
             "optimized_key": "optimized_mean_curves",
             "delta_key": "delta_pct_curves",
+            "delta_label": "Delta, %",
         },
     ]
 
     for spec in chart_specs:
         baseline = [float(point.get(spec["baseline_key"], 0.0)) for point in trace_points]
         optimized = [float(point.get(spec["optimized_key"], 0.0)) for point in trace_points]
-        delta_pct = [float(point.get(spec["delta_key"], 0.0)) for point in trace_points]
+        if spec.get("delta_from_series"):
+            delta_pct = [(opt - base) * 100.0 for base, opt in zip(baseline, optimized)]
+            delta_key_label = "delta_pp"
+        else:
+            delta_pct = [float(point.get(spec["delta_key"], 0.0)) for point in trace_points]
+            delta_key_label = str(spec["delta_key"])
 
         fig, ax_left = plt.subplots(figsize=(12, 6))
 
@@ -115,7 +132,7 @@ def _build_validation_trace_plots(out_file: Path, trace_points: list[dict[str, A
             color=bar_colors,
             alpha=0.25,
             edgecolor="none",
-            label=str(spec["delta_key"]),
+            label=delta_key_label,
             zorder=1,
         )
         ax_right.axhline(0.0, color="tab:orange", linewidth=1.0, alpha=0.85, zorder=2)
@@ -142,7 +159,7 @@ def _build_validation_trace_plots(out_file: Path, trace_points: list[dict[str, A
 
         ax_left.set_xlabel("Validation run index")
         ax_left.set_ylabel(str(spec["left_label"]))
-        ax_right.set_ylabel("Delta, %")
+        ax_right.set_ylabel(str(spec.get("delta_label", "Delta, %")))
         ax_left.set_title(f"{spec['title']} — lollipop + delta bars")
 
         ax_left.set_xlim(0.35, len(x_idx) + 0.65)
@@ -156,7 +173,7 @@ def _build_validation_trace_plots(out_file: Path, trace_points: list[dict[str, A
         handles_right, labels_right = ax_right.get_legend_handles_labels()
         if bars:
             handles_right = [bars]
-            labels_right = [str(spec["delta_key"])]
+            labels_right = [delta_key_label]
         ax_left.legend(handles_left + handles_right, labels_left + labels_right, loc="best")
 
         trace_plot_file = plots_dir / f"{out_file.stem}_{spec['name']}_trace.png"
@@ -273,7 +290,21 @@ def _append_validation_section(
 
     if trace_plot_files:
         lines.append("- trace plots:")
-        for plot_name, plot_path in sorted(trace_plot_files.items()):
+        ordered_prefixes = ("score", "success", "time", "curves")
+        ordered_items: list[tuple[str, Path]] = []
+        seen: set[str] = set()
+
+        for prefix in ordered_prefixes:
+            for plot_name, plot_path in trace_plot_files.items():
+                if plot_name.startswith(prefix):
+                    ordered_items.append((plot_name, plot_path))
+                    seen.add(plot_name)
+
+        for plot_name, plot_path in trace_plot_files.items():
+            if plot_name not in seen:
+                ordered_items.append((plot_name, plot_path))
+
+        for plot_name, plot_path in ordered_items:
             rel_plot = plot_path.relative_to(report_dir)
             lines.append(f"  - {plot_name}: [`{rel_plot.name}`]({rel_plot.as_posix()})")
             lines.append(f"![{plot_name}]({rel_plot.as_posix()})")
