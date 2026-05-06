@@ -1,0 +1,177 @@
+run_step[6]: /home/ikntcit1/plehanoves/ecm-evolutionary-optimization/.venv/bin/python3 -m ecm_optimizer.cli.main optimize --dataset data/numbers/20_dset_20260505T214657Z_job7012254 --method pso --seed 42 --max-curves-per-n 260 --repeats-per-n 8 --pso-swarm-size 18 --pso-iterations 32 --b1-min 500 --b1-max 50000 --b2-min 5000 --b2-max 3000000 --ratio-max 1000
+[optimize:pso] numbers=80 max_curves_per_n=260 repeats_per_n=8 swarm_size=18 iterations=32 workers=56
+[optimize:pso] eval=5 b1=1891 b2=124126 fitness=197026.2889617014
+[optimize:pso] eval=10 b1=11593 b2=21068 fitness=141635.31041189402
+[optimize:pso] eval=15 b1=1466 b2=15638 fitness=218348.93284978572
+[optimize:pso] new_best eval=17 b1=39470 b2=952035 fitness=30250.217414173094
+[optimize:pso] init_best fitness=30250.217414173094
+[optimize:pso] eval=20 b1=49999 b2=1060045 fitness=32357.94223300556
+[optimize:pso] new_best eval=21 b1=49999 b2=1635067 fitness=29457.12130754906
+[optimize:pso] new_best eval=23 b1=16701 b2=1466486 fitness=28776.139614159656
+[optimize:pso] eval=25 b1=39328 b2=331500 fitness=35475.641542473095
+[optimize:pso] eval=30 b1=18633 b2=2199540 fitness=29151.548074046223
+[optimize:pso] new_best eval=31 b1=33557 b2=1091902 fitness=28728.19135581569
+[optimize:pso] eval=35 b1=19889 b2=1278341 fitness=29570.08467776741
+[optimize:pso] iteration=1/32 best_fitness=28728.19135581569
+[optimize:pso] new_best eval=38 b1=49999 b2=3000000 fitness=27464.92826841244
+[optimize:pso] eval=40 b1=36677 b2=3000000 fitness=27555.78465436367
+[optimize:pso] new_best eval=41 b1=49999 b2=3000000 fitness=26861.95643756222
+[optimize:pso] new_best eval=44 b1=44041 b2=3000000 fitness=25011.332359970256
+[optimize:pso] eval=45 b1=20914 b2=1702351 fitness=28330.20284198181
+[optimize:pso] eval=50 b1=49999 b2=3000000 fitness=28519.36015837422
+[optimize:pso] iteration=2/32 best_fitness=25011.332359970256
+[optimize:pso] eval=55 b1=18657 b2=3000000 fitness=27585.7020113858
+[optimize:pso] eval=60 b1=49999 b2=3000000 fitness=28041.289778261125
+[optimize:pso] eval=65 b1=49999 b2=3000000 fitness=28561.966404393606
+[optimize:pso] new_best eval=68 b1=49999 b2=3000000 fitness=24832.54100751201
+[optimize:pso] eval=70 b1=49999 b2=3000000 fitness=28471.321147572562
+[optimize:pso] iteration=3/32 best_fitness=24832.54100751201
+[optimize:pso] eval=75 b1=49999 b2=3000000 fitness=27731.859235199372
+[optimize:pso] eval=80 b1=49999 b2=3000000 fitness=30279.13937671543
+[optimize:pso] eval=85 b1=44990 b2=3000000 fitness=27724.204976926594
+[optimize:pso] eval=90 b1=49999 b2=3000000 fitness=26651.54653385489
+[optimize:pso] iteration=4/32 best_fitness=24832.54100751201
+[optimize:pso] eval=95 b1=49999 b2=3000000 fitness=28159.214005158647
+[optimize:pso] eval=100 b1=49999 b2=2921080 fitness=28518.44478179857
+[optimize:pso] eval=105 b1=49999 b2=3000000 fitness=28617.855377337837
+[optimize:pso] iteration=5/32 best_fitness=24832.54100751201
+[optimize:pso] eval=110 b1=49999 b2=3000000 fitness=28859.761196472282
+[optimize:pso] eval=115 b1=49999 b2=3000000 fitness=26253.813862077477
+[optimize:pso] eval=120 b1=49999 b2=3000000 fitness=29169.62065549069
+[optimize:pso] eval=125 b1=49999 b2=3000000 fitness=27002.803068462963
+[optimize:pso] iteration=6/32 best_fitness=24832.54100751201
+[optimize:pso] eval=130 b1=49999 b2=3000000 fitness=27910.934102590836
+[optimize:pso] eval=135 b1=49999 b2=3000000 fitness=28254.764743320266
+[optimize:pso] eval=140 b1=49999 b2=3000000 fitness=28301.605851285385
+[optimize:pso] iteration=7/32 best_fitness=24832.54100751201
+[optimize:pso] eval=145 b1=49999 b2=3000000 fitness=28225.698234193478
+[optimize:pso] eval=150 b1=49999 b2=3000000 fitness=28309.82484037486
+[optimize:pso] eval=155 b1=49999 b2=3000000 fitness=27535.472846803168
+[optimize:pso] eval=160 b1=49999 b2=3000000 fitness=26558.330035492618
+[optimize:pso] iteration=8/32 best_fitness=24832.54100751201
+[optimize:pso] eval=165 b1=49999 b2=3000000 fitness=26401.115482277237
+[optimize:pso] eval=170 b1=46444 b2=3000000 fitness=26907.296752031616
+[optimize:pso] eval=175 b1=48946 b2=3000000 fitness=28419.221791939453
+[optimize:pso] eval=180 b1=49999 b2=3000000 fitness=27582.209639066023
+[optimize:pso] iteration=9/32 best_fitness=24832.54100751201
+[optimize:pso] eval=185 b1=49999 b2=3000000 fitness=28747.33831967038
+[optimize:pso] eval=190 b1=49999 b2=2421139 fitness=28260.374562565303
+[optimize:pso] eval=195 b1=49999 b2=3000000 fitness=28157.97603153642
+[optimize:pso] iteration=10/32 best_fitness=24832.54100751201
+[optimize:pso] eval=200 b1=49999 b2=3000000 fitness=27758.495182309125
+[optimize:pso] eval=205 b1=49999 b2=3000000 fitness=28502.09205743795
+[optimize:pso] eval=210 b1=49999 b2=3000000 fitness=26589.51679494152
+[optimize:pso] eval=215 b1=49999 b2=3000000 fitness=27501.65361909123
+[optimize:pso] iteration=11/32 best_fitness=24832.54100751201
+[optimize:pso] eval=220 b1=49999 b2=3000000 fitness=27519.53501259395
+[optimize:pso] eval=225 b1=49999 b2=3000000 fitness=27648.938899962486
+[optimize:pso] eval=230 b1=49999 b2=3000000 fitness=28119.81480713308
+[optimize:pso] iteration=12/32 best_fitness=24832.54100751201
+[optimize:pso] eval=235 b1=49999 b2=3000000 fitness=27009.603272511304
+[optimize:pso] eval=240 b1=49999 b2=3000000 fitness=30246.0540973167
+[optimize:pso] eval=245 b1=49999 b2=3000000 fitness=27283.58445006008
+[optimize:pso] eval=250 b1=49999 b2=3000000 fitness=26877.72137846463
+[optimize:pso] iteration=13/32 best_fitness=24832.54100751201
+[optimize:pso] eval=255 b1=49999 b2=3000000 fitness=27476.242024159874
+[optimize:pso] eval=260 b1=46839 b2=3000000 fitness=30044.308391942068
+[optimize:pso] eval=265 b1=39234 b2=3000000 fitness=26455.282126473794
+[optimize:pso] eval=270 b1=49999 b2=3000000 fitness=26211.095965958993
+[optimize:pso] iteration=14/32 best_fitness=24832.54100751201
+[optimize:pso] eval=275 b1=49999 b2=3000000 fitness=29035.94062901775
+[optimize:pso] eval=280 b1=49999 b2=2706131 fitness=29396.032147753467
+[optimize:pso] eval=285 b1=49999 b2=3000000 fitness=29168.719560294994
+[optimize:pso] iteration=15/32 best_fitness=24832.54100751201
+[optimize:pso] eval=290 b1=49999 b2=3000000 fitness=27457.434919635743
+[optimize:pso] eval=295 b1=49999 b2=3000000 fitness=29476.398006956915
+[optimize:pso] eval=300 b1=49999 b2=3000000 fitness=27868.829024517436
+[optimize:pso] eval=305 b1=49999 b2=3000000 fitness=26692.561687352718
+[optimize:pso] iteration=16/32 best_fitness=24832.54100751201
+[optimize:pso] eval=310 b1=49999 b2=3000000 fitness=29846.800439674516
+[optimize:pso] eval=315 b1=49999 b2=3000000 fitness=28691.686881115893
+[optimize:pso] eval=320 b1=49999 b2=3000000 fitness=29862.937385439545
+[optimize:pso] iteration=17/32 best_fitness=24832.54100751201
+[optimize:pso] eval=325 b1=49999 b2=3000000 fitness=29278.59545738178
+[optimize:pso] eval=330 b1=49999 b2=3000000 fitness=28444.8586068023
+[optimize:pso] eval=335 b1=49999 b2=3000000 fitness=28326.77037944777
+[optimize:pso] eval=340 b1=49999 b2=3000000 fitness=27961.12857502376
+[optimize:pso] iteration=18/32 best_fitness=24832.54100751201
+[optimize:pso] eval=345 b1=49999 b2=3000000 fitness=26772.166782861605
+[optimize:pso] eval=350 b1=49999 b2=3000000 fitness=29218.916048434367
+[optimize:pso] eval=355 b1=49254 b2=3000000 fitness=30047.384824268083
+[optimize:pso] eval=360 b1=49999 b2=3000000 fitness=26753.72757457193
+[optimize:pso] iteration=19/32 best_fitness=24832.54100751201
+[optimize:pso] eval=365 b1=49999 b2=3000000 fitness=28629.86290985693
+[optimize:pso] eval=370 b1=49620 b2=3000000 fitness=28848.325805633394
+[optimize:pso] eval=375 b1=49999 b2=3000000 fitness=28492.855221950813
+[optimize:pso] iteration=20/32 best_fitness=24832.54100751201
+[optimize:pso] eval=380 b1=49999 b2=3000000 fitness=28379.252264590395
+[optimize:pso] eval=385 b1=49999 b2=3000000 fitness=27601.140514115577
+[optimize:pso] eval=390 b1=49999 b2=3000000 fitness=27070.44187502881
+[optimize:pso] eval=395 b1=49999 b2=3000000 fitness=28359.838038047455
+[optimize:pso] iteration=21/32 best_fitness=24832.54100751201
+[optimize:pso] eval=400 b1=49999 b2=3000000 fitness=27445.811198159463
+[optimize:pso] eval=405 b1=49999 b2=3000000 fitness=30494.258740434816
+[optimize:pso] eval=410 b1=49999 b2=3000000 fitness=27879.783160215047
+[optimize:pso] iteration=22/32 best_fitness=24832.54100751201
+[optimize:pso] eval=415 b1=49999 b2=3000000 fitness=28877.50767228852
+[optimize:pso] eval=420 b1=49999 b2=3000000 fitness=28336.763763664094
+[optimize:pso] eval=425 b1=49999 b2=3000000 fitness=28335.97955654346
+[optimize:pso] eval=430 b1=49999 b2=3000000 fitness=27376.8599486542
+[optimize:pso] iteration=23/32 best_fitness=24832.54100751201
+[optimize:pso] eval=435 b1=49999 b2=3000000 fitness=26682.123303206536
+[optimize:pso] eval=440 b1=49716 b2=3000000 fitness=29418.671376655293
+[optimize:pso] eval=445 b1=48244 b2=3000000 fitness=28970.396812058134
+[optimize:pso] eval=450 b1=49999 b2=3000000 fitness=27709.277632603444
+[optimize:pso] iteration=24/32 best_fitness=24832.54100751201
+[optimize:pso] eval=455 b1=49999 b2=3000000 fitness=27610.348028647168
+[optimize:pso] eval=460 b1=49598 b2=3000000 fitness=26464.748916844037
+[optimize:pso] eval=465 b1=49999 b2=3000000 fitness=28472.74509379593
+[optimize:pso] iteration=25/32 best_fitness=24832.54100751201
+[optimize:pso] eval=470 b1=49999 b2=3000000 fitness=29265.984390620397
+[optimize:pso] eval=475 b1=49999 b2=3000000 fitness=29378.3141932113
+[optimize:pso] eval=480 b1=49999 b2=3000000 fitness=28622.39658353985
+[optimize:pso] eval=485 b1=49999 b2=3000000 fitness=28827.107898095237
+[optimize:pso] iteration=26/32 best_fitness=24832.54100751201
+[optimize:pso] eval=490 b1=49999 b2=3000000 fitness=28240.64842238651
+[optimize:pso] eval=495 b1=49999 b2=3000000 fitness=26348.916720504676
+[optimize:pso] eval=500 b1=49999 b2=3000000 fitness=26645.289502155283
+[optimize:pso] iteration=27/32 best_fitness=24832.54100751201
+[optimize:pso] eval=505 b1=49999 b2=3000000 fitness=28076.9510961794
+[optimize:pso] eval=510 b1=49999 b2=3000000 fitness=27260.4541682321
+[optimize:pso] eval=515 b1=49999 b2=3000000 fitness=30054.48917243244
+[optimize:pso] eval=520 b1=49999 b2=3000000 fitness=28424.68820805727
+[optimize:pso] iteration=28/32 best_fitness=24832.54100751201
+[optimize:pso] eval=525 b1=49999 b2=3000000 fitness=29668.63045264101
+[optimize:pso] eval=530 b1=49999 b2=3000000 fitness=28619.186113697615
+[optimize:pso] eval=535 b1=49999 b2=3000000 fitness=26426.957072947916
+[optimize:pso] eval=540 b1=49999 b2=3000000 fitness=29064.06021654744
+[optimize:pso] iteration=29/32 best_fitness=24832.54100751201
+[optimize:pso] eval=545 b1=49999 b2=3000000 fitness=29761.76771217568
+[optimize:pso] eval=550 b1=48735 b2=3000000 fitness=31395.428547185365
+[optimize:pso] eval=555 b1=49999 b2=3000000 fitness=28381.443039191072
+[optimize:pso] iteration=30/32 best_fitness=24832.54100751201
+[optimize:pso] eval=560 b1=49999 b2=3000000 fitness=29357.8481526452
+[optimize:pso] eval=565 b1=49999 b2=3000000 fitness=27589.95696159269
+[optimize:pso] eval=570 b1=49999 b2=3000000 fitness=29187.114104468783
+[optimize:pso] eval=575 b1=49999 b2=3000000 fitness=27302.765458835638
+[optimize:pso] iteration=31/32 best_fitness=24832.54100751201
+[optimize:pso] eval=580 b1=49999 b2=3000000 fitness=28198.913495384877
+[optimize:pso] eval=585 b1=49999 b2=3000000 fitness=28604.285537012183
+[optimize:pso] eval=590 b1=49999 b2=3000000 fitness=26935.062474451624
+[optimize:pso] iteration=32/32 best_fitness=24832.54100751201
+best_b1=49999
+best_b2=3000000
+objective=24832.541008
+result_file: data/experiments/20_dset_20260505T214657Z_job7012254/pso/optimize_20260505T214714Z_job7012259/pso_optimize_20260505T214714Z_job7012259.json
+plot_files:
+  jump_plot: data/experiments/20_dset_20260505T214657Z_job7012254/pso/optimize_20260505T214714Z_job7012259/plots/pso_optimize_20260505T214714Z_job7012259_jump_plot.png
+  b1_b2_trajectory: data/experiments/20_dset_20260505T214657Z_job7012254/pso/optimize_20260505T214714Z_job7012259/plots/pso_optimize_20260505T214714Z_job7012259_b1_b2_trajectory.png
+  progress_by_phase: data/experiments/20_dset_20260505T214657Z_job7012254/pso/optimize_20260505T214714Z_job7012259/plots/pso_optimize_20260505T214714Z_job7012259_progress_by_phase.png
+  time_efficiency: data/experiments/20_dset_20260505T214657Z_job7012254/pso/optimize_20260505T214714Z_job7012259/plots/pso_optimize_20260505T214714Z_job7012259_time_efficiency.png
+  b1_ratio_heatmap: data/experiments/20_dset_20260505T214657Z_job7012254/pso/optimize_20260505T214714Z_job7012259/plots/pso_optimize_20260505T214714Z_job7012259_b1_ratio_heatmap.png
+analysis_files:
+  events_csv: data/experiments/20_dset_20260505T214657Z_job7012254/pso/optimize_20260505T214714Z_job7012259/tables/pso_optimize_20260505T214714Z_job7012259_events.csv
+  new_best_csv: data/experiments/20_dset_20260505T214657Z_job7012254/pso/optimize_20260505T214714Z_job7012259/tables/pso_optimize_20260505T214714Z_job7012259_new_best.csv
+  phase_summary_csv: data/experiments/20_dset_20260505T214657Z_job7012254/pso/optimize_20260505T214714Z_job7012259/tables/pso_optimize_20260505T214714Z_job7012259_phase_summary.csv
+  run_summary_csv: data/experiments/20_dset_20260505T214657Z_job7012254/pso/optimize_20260505T214714Z_job7012259/tables/pso_optimize_20260505T214714Z_job7012259_run_summary.csv
+  report_md: data/experiments/20_dset_20260505T214657Z_job7012254/pso/optimize_20260505T214714Z_job7012259/pso_optimize_20260505T214714Z_job7012259_report.md
