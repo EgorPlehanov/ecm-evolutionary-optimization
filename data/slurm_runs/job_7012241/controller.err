@@ -1,2 +1,0 @@
-slurmstepd: error: execve(): ecm-optimizer: No such file or directory
-srun: error: n01p134: task 0: Exited with exit code 2
