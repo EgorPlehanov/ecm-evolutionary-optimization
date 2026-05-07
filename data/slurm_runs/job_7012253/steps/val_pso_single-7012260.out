@@ -1,0 +1,181 @@
+run_step[7]: /home/ikntcit1/plehanoves/ecm-evolutionary-optimization/.venv/bin/python3 -m ecm_optimizer.cli.main validate --dataset data/numbers/20_dset_20260505T214657Z_job7012254 --opt-result-file data/experiments/20_dset_20260505T214657Z_job7012254/pso/optimize_20260505T214714Z_job7012259/pso_optimize_20260505T214714Z_job7012259.json --seed 42 --max-curves-per-n 600 --repeats-per-n 80
+[validate:pso] numbers=80 max_curves_per_n=600 repeats_per_n=80 workers=56
+[validate:pso] optimized 1/80
+[validate:pso] optimized 2/80
+[validate:pso] optimized 3/80
+[validate:pso] optimized 4/80
+[validate:pso] optimized 5/80
+[validate:pso] optimized 6/80
+[validate:pso] optimized 7/80
+[validate:pso] optimized 8/80
+[validate:pso] optimized 9/80
+[validate:pso] optimized 10/80
+[validate:pso] optimized 11/80
+[validate:pso] optimized 12/80
+[validate:pso] optimized 13/80
+[validate:pso] optimized 14/80
+[validate:pso] optimized 15/80
+[validate:pso] optimized 16/80
+[validate:pso] optimized 17/80
+[validate:pso] optimized 18/80
+[validate:pso] optimized 19/80
+[validate:pso] optimized 20/80
+[validate:pso] optimized 21/80
+[validate:pso] optimized 22/80
+[validate:pso] optimized 23/80
+[validate:pso] optimized 24/80
+[validate:pso] optimized 25/80
+[validate:pso] optimized 26/80
+[validate:pso] optimized 27/80
+[validate:pso] optimized 28/80
+[validate:pso] optimized 29/80
+[validate:pso] optimized 30/80
+[validate:pso] optimized 31/80
+[validate:pso] optimized 32/80
+[validate:pso] optimized 33/80
+[validate:pso] optimized 34/80
+[validate:pso] optimized 35/80
+[validate:pso] optimized 36/80
+[validate:pso] optimized 37/80
+[validate:pso] optimized 38/80
+[validate:pso] optimized 39/80
+[validate:pso] optimized 40/80
+[validate:pso] optimized 41/80
+[validate:pso] optimized 42/80
+[validate:pso] optimized 43/80
+[validate:pso] optimized 44/80
+[validate:pso] optimized 45/80
+[validate:pso] optimized 46/80
+[validate:pso] optimized 47/80
+[validate:pso] optimized 48/80
+[validate:pso] optimized 49/80
+[validate:pso] optimized 50/80
+[validate:pso] optimized 51/80
+[validate:pso] optimized 52/80
+[validate:pso] optimized 53/80
+[validate:pso] optimized 54/80
+[validate:pso] optimized 55/80
+[validate:pso] optimized 56/80
+[validate:pso] optimized 57/80
+[validate:pso] optimized 58/80
+[validate:pso] optimized 59/80
+[validate:pso] optimized 60/80
+[validate:pso] optimized 61/80
+[validate:pso] optimized 62/80
+[validate:pso] optimized 63/80
+[validate:pso] optimized 64/80
+[validate:pso] optimized 65/80
+[validate:pso] optimized 66/80
+[validate:pso] optimized 67/80
+[validate:pso] optimized 68/80
+[validate:pso] optimized 69/80
+[validate:pso] optimized 70/80
+[validate:pso] optimized 71/80
+[validate:pso] optimized 72/80
+[validate:pso] optimized 73/80
+[validate:pso] optimized 74/80
+[validate:pso] optimized 75/80
+[validate:pso] optimized 76/80
+[validate:pso] optimized 77/80
+[validate:pso] optimized 78/80
+[validate:pso] optimized 79/80
+[validate:pso] optimized 80/80
+[validate:pso] baseline 1/80
+[validate:pso] baseline 2/80
+[validate:pso] baseline 3/80
+[validate:pso] baseline 4/80
+[validate:pso] baseline 5/80
+[validate:pso] baseline 6/80
+[validate:pso] baseline 7/80
+[validate:pso] baseline 8/80
+[validate:pso] baseline 9/80
+[validate:pso] baseline 10/80
+[validate:pso] baseline 11/80
+[validate:pso] baseline 12/80
+[validate:pso] baseline 13/80
+[validate:pso] baseline 14/80
+[validate:pso] baseline 15/80
+[validate:pso] baseline 16/80
+[validate:pso] baseline 17/80
+[validate:pso] baseline 18/80
+[validate:pso] baseline 19/80
+[validate:pso] baseline 20/80
+[validate:pso] baseline 21/80
+[validate:pso] baseline 22/80
+[validate:pso] baseline 23/80
+[validate:pso] baseline 24/80
+[validate:pso] baseline 25/80
+[validate:pso] baseline 26/80
+[validate:pso] baseline 27/80
+[validate:pso] baseline 28/80
+[validate:pso] baseline 29/80
+[validate:pso] baseline 30/80
+[validate:pso] baseline 31/80
+[validate:pso] baseline 32/80
+[validate:pso] baseline 33/80
+[validate:pso] baseline 34/80
+[validate:pso] baseline 35/80
+[validate:pso] baseline 36/80
+[validate:pso] baseline 37/80
+[validate:pso] baseline 38/80
+[validate:pso] baseline 39/80
+[validate:pso] baseline 40/80
+[validate:pso] baseline 41/80
+[validate:pso] baseline 42/80
+[validate:pso] baseline 43/80
+[validate:pso] baseline 44/80
+[validate:pso] baseline 45/80
+[validate:pso] baseline 46/80
+[validate:pso] baseline 47/80
+[validate:pso] baseline 48/80
+[validate:pso] baseline 49/80
+[validate:pso] baseline 50/80
+[validate:pso] baseline 51/80
+[validate:pso] baseline 52/80
+[validate:pso] baseline 53/80
+[validate:pso] baseline 54/80
+[validate:pso] baseline 55/80
+[validate:pso] baseline 56/80
+[validate:pso] baseline 57/80
+[validate:pso] baseline 58/80
+[validate:pso] baseline 59/80
+[validate:pso] baseline 60/80
+[validate:pso] baseline 61/80
+[validate:pso] baseline 62/80
+[validate:pso] baseline 63/80
+[validate:pso] baseline 64/80
+[validate:pso] baseline 65/80
+[validate:pso] baseline 66/80
+[validate:pso] baseline 67/80
+[validate:pso] baseline 68/80
+[validate:pso] baseline 69/80
+[validate:pso] baseline 70/80
+[validate:pso] baseline 71/80
+[validate:pso] baseline 72/80
+[validate:pso] baseline 73/80
+[validate:pso] baseline 74/80
+[validate:pso] baseline 75/80
+[validate:pso] baseline 76/80
+[validate:pso] baseline 77/80
+[validate:pso] baseline 78/80
+[validate:pso] baseline 79/80
+[validate:pso] baseline 80/80
+optimized_mean_score=27875.715439
+baseline_mean_score=36731.764485
+relative_improvement_pct=24.11
+optimized_mean_time_sec=2.600913
+baseline_mean_time_sec=3.191620
+time_improvement_pct=18.51
+optimized_mean_curves=37.331719
+baseline_mean_curves=96.311250
+curves_improvement_pct=61.24
+optimized_mean_success_rate=1.000000
+baseline_mean_success_rate=0.996875
+success_rate_delta_pp=0.3125
+used_opt_b1=49999
+used_opt_b2=3000000
+used_opt_method=pso
+used_base_b1=11000
+used_base_b2=1900000
+result_file: data/experiments/20_dset_20260505T214657Z_job7012254/pso/optimize_20260505T214714Z_job7012259/pso_validate_20260506T051020Z_job7012260.json
+report_file: data/experiments/20_dset_20260505T214657Z_job7012254/pso/optimize_20260505T214714Z_job7012259/pso_optimize_20260505T214714Z_job7012259_report.md

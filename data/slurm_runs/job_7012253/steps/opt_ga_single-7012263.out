@@ -1,0 +1,216 @@
+run_step[10]: /home/ikntcit1/plehanoves/ecm-evolutionary-optimization/.venv/bin/python3 -m ecm_optimizer.cli.main optimize --dataset data/numbers/20_dset_20260505T214657Z_job7012254 --method ga --seed 42 --max-curves-per-n 260 --repeats-per-n 8 --ga-population-size 22 --ga-generations 36 --ga-mutation-prob 0.14 --b1-min 500 --b1-max 50000 --b2-min 5000 --b2-max 3000000 --ratio-max 1000
+[optimize:ga] numbers=80 max_curves_per_n=260 repeats_per_n=8 population_size=22 generations=36 mutation_prob=0.14 workers=56
+[optimize:ga] eval=5 b1=9767 b2=2677671 fitness=40462.66785882255
+[optimize:ga] eval=10 b1=35764 b2=1136284 fitness=29091.943861976026
+[optimize:ga] eval=15 b1=12459 b2=1327547 fitness=30863.2762815143
+[optimize:ga] eval=20 b1=18994 b2=2398901 fitness=29037.681685165764
+[optimize:ga] new_best eval=20 b1=18994 b2=2398901 fitness=29037.681685165764
+[optimize:ga] init_best fitness=29037.681685165764
+[optimize:ga] eval=25 b1=12638 b2=56216 fitness=97706.70231941526
+[optimize:ga] eval=30 b1=7224 b2=427452 fitness=76310.02445333292
+[optimize:ga] eval=35 b1=37167 b2=1174267 fitness=28863.999402552883
+[optimize:ga] eval=40 b1=25380 b2=1703656 fitness=28650.450057382594
+[optimize:ga] new_best eval=33 b1=17106 b2=2525929 fitness=27618.85880912435
+[optimize:ga] generation=1/36 best_fitness=27618.85880912435
+[optimize:ga] eval=45 b1=33805 b2=1073485 fitness=29449.058355733177
+[optimize:ga] eval=50 b1=17147 b2=1549573 fitness=27333.93402940036
+[optimize:ga] eval=55 b1=17385 b2=1380619 fitness=29680.069662185044
+[optimize:ga] eval=60 b1=18916 b2=2265181 fitness=30039.315800524666
+[optimize:ga] new_best eval=46 b1=36535 b2=2390592 fitness=26125.51457383668
+[optimize:ga] generation=2/36 best_fitness=26125.51457383668
+[optimize:ga] eval=65 b1=21857 b2=1792835 fitness=28521.82119232819
+[optimize:ga] eval=70 b1=19766 b2=2349243 fitness=26040.489157313852
+[optimize:ga] eval=75 b1=25255 b2=2455513 fitness=28477.84739747898
+[optimize:ga] eval=80 b1=20992 b2=1456777 fitness=28364.300910657876
+[optimize:ga] eval=85 b1=33372 b2=2270764 fitness=26977.366300225796
+[optimize:ga] new_best eval=79 b1=33720 b2=2590516 fitness=24309.002722921115
+[optimize:ga] generation=3/36 best_fitness=24309.002722921115
+[optimize:ga] eval=90 b1=30150 b2=2069357 fitness=26961.721404708496
+[optimize:ga] eval=95 b1=22340 b2=2330658 fitness=28132.150446930536
+[optimize:ga] eval=100 b1=27883 b2=1981233 fitness=27509.931622150933
+[optimize:ga] eval=105 b1=25848 b2=2467472 fitness=27445.365121263705
+[optimize:ga] generation=4/36 best_fitness=24309.002722921115
+[optimize:ga] eval=110 b1=38400 b2=2155462 fitness=26367.28170656231
+[optimize:ga] eval=115 b1=24731 b2=1996895 fitness=29669.684876916854
+[optimize:ga] eval=120 b1=31772 b2=2381887 fitness=26136.746163398893
+[optimize:ga] eval=125 b1=35971 b2=2428121 fitness=27192.8480723163
+[optimize:ga] generation=5/36 best_fitness=24309.002722921115
+[optimize:ga] eval=130 b1=46187 b2=1782799 fitness=28129.04462988312
+[optimize:ga] eval=135 b1=33086 b2=2540784 fitness=28184.749247506108
+[optimize:ga] eval=140 b1=30509 b2=2326261 fitness=28512.988385119115
+[optimize:ga] eval=145 b1=33634 b2=2297550 fitness=28226.081014650037
+[optimize:ga] generation=6/36 best_fitness=24309.002722921115
+[optimize:ga] eval=150 b1=16484 b2=2759310 fitness=30008.801930629725
+[optimize:ga] eval=155 b1=26808 b2=1943214 fitness=27498.710006669062
+[optimize:ga] eval=160 b1=44597 b2=1802612 fitness=29433.86868923184
+[optimize:ga] eval=165 b1=28719 b2=2039122 fitness=27389.76554041088
+[optimize:ga] generation=7/36 best_fitness=24309.002722921115
+[optimize:ga] eval=170 b1=34534 b2=2245481 fitness=27329.348031170648
+[optimize:ga] eval=175 b1=31552 b2=2157244 fitness=27985.195680040943
+[optimize:ga] eval=180 b1=33372 b2=2518184 fitness=27855.216471955973
+[optimize:ga] eval=185 b1=32698 b2=2761408 fitness=28375.916230465937
+[optimize:ga] eval=190 b1=33720 b2=2590516 fitness=27915.397665765322
+[optimize:ga] generation=8/36 best_fitness=24309.002722921115
+[optimize:ga] eval=195 b1=34335 b2=2399713 fitness=27483.202112232666
+[optimize:ga] eval=200 b1=49999 b2=2560757 fitness=26644.793615607177
+[optimize:ga] eval=205 b1=32428 b2=2283088 fitness=27330.180956365493
+[optimize:ga] eval=210 b1=31346 b2=2160075 fitness=28629.736924272856
+[optimize:ga] generation=9/36 best_fitness=24309.002722921115
+[optimize:ga] eval=215 b1=49999 b2=1519939 fitness=28726.810901863428
+[optimize:ga] eval=220 b1=33380 b2=2519814 fitness=27667.183036186943
+[optimize:ga] eval=225 b1=32331 b2=2639848 fitness=29709.087297769693
+[optimize:ga] eval=230 b1=17959 b2=3000000 fitness=29296.810140082325
+[optimize:ga] generation=10/36 best_fitness=24309.002722921115
+[optimize:ga] eval=235 b1=33054 b2=2240303 fitness=28102.82340930369
+[optimize:ga] eval=240 b1=35356 b2=2281332 fitness=29771.199631591026
+[optimize:ga] eval=245 b1=33423 b2=2386682 fitness=26803.96564194416
+[optimize:ga] eval=250 b1=32973 b2=2226951 fitness=27959.94017220928
+[optimize:ga] generation=11/36 best_fitness=24309.002722921115
+[optimize:ga] eval=255 b1=33343 b2=2461012 fitness=26984.940152072177
+[optimize:ga] eval=260 b1=33203 b2=2307783 fitness=29163.72491558619
+[optimize:ga] eval=265 b1=31864 b2=2230155 fitness=27351.547109177918
+[optimize:ga] eval=270 b1=34078 b2=2244785 fitness=27355.8826243383
+[optimize:ga] generation=12/36 best_fitness=24309.002722921115
+[optimize:ga] eval=275 b1=49999 b2=3000000 fitness=26103.213424004916
+[optimize:ga] eval=280 b1=48329 b2=2319473 fitness=27565.817908577228
+[optimize:ga] eval=285 b1=34260 b2=2187484 fitness=27488.98088578382
+[optimize:ga] eval=290 b1=33254 b2=2505848 fitness=28215.372629098674
+[optimize:ga] eval=295 b1=33155 b2=2476526 fitness=28902.059072331867
+[optimize:ga] generation=13/36 best_fitness=24309.002722921115
+[optimize:ga] eval=300 b1=33713 b2=2329994 fitness=28732.754902055112
+[optimize:ga] eval=305 b1=34156 b2=2221150 fitness=29190.37812116696
+[optimize:ga] eval=310 b1=33499 b2=2555116 fitness=26764.535283459154
+[optimize:ga] eval=315 b1=32762 b2=2464047 fitness=27138.701993772283
+[optimize:ga] generation=14/36 best_fitness=24309.002722921115
+[optimize:ga] eval=320 b1=34577 b2=3000000 fitness=26937.871410986518
+[optimize:ga] eval=325 b1=34825 b2=2621815 fitness=26922.864740684054
+[optimize:ga] eval=330 b1=42910 b2=3000000 fitness=29757.3538219249
+[optimize:ga] eval=335 b1=33389 b2=2759309 fitness=26840.079503594698
+[optimize:ga] generation=15/36 best_fitness=24309.002722921115
+[optimize:ga] eval=340 b1=33707 b2=2415378 fitness=26120.42998452389
+[optimize:ga] eval=345 b1=36530 b2=2770223 fitness=27339.803030964104
+[optimize:ga] eval=350 b1=33680 b2=2664241 fitness=26033.624615267872
+[optimize:ga] eval=355 b1=33232 b2=2681419 fitness=27913.132922162004
+[optimize:ga] generation=16/36 best_fitness=24309.002722921115
+[optimize:ga] eval=360 b1=34200 b2=2534948 fitness=27594.972506646536
+[optimize:ga] eval=365 b1=49999 b2=3000000 fitness=27214.804836179865
+[optimize:ga] eval=370 b1=33667 b2=2671488 fitness=27708.688572515184
+[optimize:ga] eval=375 b1=33720 b2=2590516 fitness=25428.169808804323
+[optimize:ga] generation=17/36 best_fitness=24309.002722921115
+[optimize:ga] eval=380 b1=33790 b2=2573256 fitness=26633.219810592527
+[optimize:ga] eval=385 b1=33867 b2=2554393 fitness=26015.06485542088
+[optimize:ga] eval=390 b1=36161 b2=2735700 fitness=26050.248377344305
+[optimize:ga] eval=395 b1=34758 b2=2544732 fitness=25711.66344594778
+[optimize:ga] eval=400 b1=40653 b2=2703777 fitness=27236.136088249295
+[optimize:ga] generation=18/36 best_fitness=24309.002722921115
+[optimize:ga] eval=405 b1=49999 b2=2996870 fitness=27144.33327003342
+[optimize:ga] eval=410 b1=41238 b2=2790528 fitness=27935.244196573112
+[optimize:ga] eval=415 b1=35372 b2=2651149 fitness=29215.679962441336
+[optimize:ga] eval=420 b1=37413 b2=2726383 fitness=26887.937248184026
+[optimize:ga] generation=19/36 best_fitness=24309.002722921115
+[optimize:ga] eval=425 b1=36557 b2=2635622 fitness=27516.334716202982
+[optimize:ga] eval=430 b1=32099 b2=1710080 fitness=27912.980771096973
+[optimize:ga] eval=435 b1=36250 b2=2676583 fitness=25837.847644624926
+[optimize:ga] eval=440 b1=37403 b2=2631769 fitness=27318.888431412906
+[optimize:ga] generation=20/36 best_fitness=24309.002722921115
+[optimize:ga] eval=445 b1=34032 b2=2090176 fitness=26994.39027586248
+[optimize:ga] eval=450 b1=34184 b2=2469078 fitness=27308.0415361005
+[optimize:ga] eval=455 b1=33799 b2=2425490 fitness=26379.983986560346
+[optimize:ga] eval=460 b1=34075 b2=2602816 fitness=29442.157150834428
+[optimize:ga] generation=21/36 best_fitness=24309.002722921115
+[optimize:ga] eval=465 b1=33863 b2=2299484 fitness=27444.327196978484
+[optimize:ga] eval=470 b1=35382 b2=2476752 fitness=28829.280225855964
+[optimize:ga] eval=475 b1=33967 b2=2602900 fitness=26786.24120716322
+[optimize:ga] eval=480 b1=34140 b2=2092340 fitness=27628.099514857895
+[optimize:ga] generation=22/36 best_fitness=24309.002722921115
+[optimize:ga] eval=485 b1=34168 b2=2162587 fitness=28245.564745054362
+[optimize:ga] eval=490 b1=28762 b2=1608455 fitness=28273.32318863915
+[optimize:ga] eval=495 b1=34338 b2=2340460 fitness=25408.500134336464
+[optimize:ga] eval=500 b1=34894 b2=2533247 fitness=27226.11066842428
+[optimize:ga] eval=505 b1=34249 b2=2138568 fitness=26700.2471837779
+[optimize:ga] new_best eval=497 b1=35658 b2=2589186 fitness=23880.639852048043
+[optimize:ga] generation=23/36 best_fitness=23880.639852048043
+[optimize:ga] eval=510 b1=33720 b2=2590516 fitness=26237.376055987515
+[optimize:ga] eval=515 b1=34731 b2=2445464 fitness=26482.185689525122
+[optimize:ga] eval=520 b1=35249 b2=2537341 fitness=26718.127841518617
+[optimize:ga] eval=525 b1=34541 b2=2383287 fitness=26653.109223259708
+[optimize:ga] generation=24/36 best_fitness=23880.639852048043
+[optimize:ga] eval=530 b1=35497 b2=2577398 fitness=27014.94991164207
+[optimize:ga] eval=535 b1=35268 b2=2512641 fitness=27391.113204278736
+[optimize:ga] eval=540 b1=49999 b2=1658981 fitness=28427.320302369535
+[optimize:ga] eval=545 b1=47130 b2=2748377 fitness=27078.390667258936
+[optimize:ga] generation=25/36 best_fitness=23880.639852048043
+[optimize:ga] eval=550 b1=37168 b2=2872706 fitness=27721.616916056555
+[optimize:ga] eval=555 b1=29128 b2=1184419 fitness=29050.27499719883
+[optimize:ga] eval=560 b1=35077 b2=2461279 fitness=27934.414294223097
+[optimize:ga] eval=565 b1=14778 b2=3000000 fitness=32231.846665442008
+[optimize:ga] new_best eval=554 b1=37480 b2=2545245 fitness=23774.72927544306
+[optimize:ga] generation=26/36 best_fitness=23774.72927544306
+[optimize:ga] eval=570 b1=43053 b2=1546679 fitness=26579.02631958863
+[optimize:ga] eval=575 b1=34755 b2=2265713 fitness=27327.566142296673
+[optimize:ga] eval=580 b1=35639 b2=2585374 fitness=26819.312651417258
+[optimize:ga] eval=585 b1=35100 b2=2460162 fitness=26651.767679631812
+[optimize:ga] generation=27/36 best_fitness=23774.72927544306
+[optimize:ga] eval=590 b1=36566 b2=2578150 fitness=26468.842651579853
+[optimize:ga] eval=595 b1=36831 b2=2522307 fitness=26873.998411685934
+[optimize:ga] eval=600 b1=35629 b2=2578017 fitness=27752.772952742544
+[optimize:ga] eval=605 b1=32528 b2=2874964 fitness=27931.989628575993
+[optimize:ga] eval=610 b1=36887 b2=2558211 fitness=28770.476696379137
+[optimize:ga] generation=28/36 best_fitness=23774.72927544306
+[optimize:ga] eval=615 b1=49999 b2=2234115 fitness=29831.051472071613
+[optimize:ga] eval=620 b1=35925 b2=2582138 fitness=26243.99214221843
+[optimize:ga] eval=625 b1=49999 b2=2482261 fitness=28460.642668943292
+[optimize:ga] eval=630 b1=36180 b2=2556418 fitness=27857.627789566614
+[optimize:ga] generation=29/36 best_fitness=23774.72927544306
+[optimize:ga] eval=635 b1=44047 b2=2923465 fitness=26928.32314623016
+[optimize:ga] eval=640 b1=36077 b2=2590558 fitness=26309.086431177002
+[optimize:ga] eval=645 b1=37076 b2=2559670 fitness=26772.34615908368
+[optimize:ga] eval=650 b1=37210 b2=2536382 fitness=27682.78449673784
+[optimize:ga] generation=30/36 best_fitness=23774.72927544306
+[optimize:ga] eval=655 b1=35944 b2=2596150 fitness=27023.86867752708
+[optimize:ga] eval=660 b1=37396 b2=2542872 fitness=26083.189514101778
+[optimize:ga] eval=665 b1=38193 b2=2640997 fitness=28992.817249212276
+[optimize:ga] eval=670 b1=35838 b2=2610526 fitness=26309.117244015306
+[optimize:ga] generation=31/36 best_fitness=23774.72927544306
+[optimize:ga] eval=675 b1=34593 b2=2661760 fitness=26010.026851920866
+[optimize:ga] eval=680 b1=49999 b2=2168277 fitness=29390.72522830673
+[optimize:ga] eval=685 b1=36497 b2=2565479 fitness=28446.684884483402
+[optimize:ga] eval=690 b1=36648 b2=2575272 fitness=26249.671671843207
+[optimize:ga] generation=32/36 best_fitness=23774.72927544306
+[optimize:ga] eval=695 b1=31976 b2=2932438 fitness=25149.731922515075
+[optimize:ga] eval=700 b1=35041 b2=2642677 fitness=27751.56675546441
+[optimize:ga] eval=705 b1=35450 b2=2626092 fitness=26802.834750059737
+[optimize:ga] eval=710 b1=30699 b2=2351214 fitness=27238.25408813531
+[optimize:ga] eval=715 b1=49999 b2=1968879 fitness=29017.0057630056
+[optimize:ga] generation=33/36 best_fitness=23774.72927544306
+[optimize:ga] eval=720 b1=30855 b2=2356181 fitness=28100.74232071038
+[optimize:ga] eval=725 b1=37480 b2=2545245 fitness=26654.078711647016
+[optimize:ga] eval=730 b1=36699 b2=2586956 fitness=27275.199919648076
+[optimize:ga] eval=735 b1=47362 b2=2807922 fitness=27944.590491473045
+[optimize:ga] generation=34/36 best_fitness=23774.72927544306
+[optimize:ga] eval=740 b1=36934 b2=2629759 fitness=28336.062377956387
+[optimize:ga] eval=745 b1=30943 b2=3000000 fitness=25292.281997063656
+[optimize:ga] eval=750 b1=34820 b2=2694749 fitness=25643.904665442224
+[optimize:ga] eval=755 b1=37942 b2=2640382 fitness=28486.119819389696
+[optimize:ga] generation=35/36 best_fitness=23774.72927544306
+[optimize:ga] eval=760 b1=36316 b2=2648089 fitness=27699.034392681515
+[optimize:ga] eval=765 b1=35958 b2=2625868 fitness=27209.880116404
+[optimize:ga] eval=770 b1=37777 b2=2627328 fitness=27529.241170719815
+[optimize:ga] eval=775 b1=37462 b2=2546193 fitness=26842.61405756706
+[optimize:ga] generation=36/36 best_fitness=23774.72927544306
+best_b1=37480
+best_b2=2545245
+objective=23774.729275
+result_file: data/experiments/20_dset_20260505T214657Z_job7012254/ga/optimize_20260505T224607Z_job7012263/ga_optimize_20260505T224607Z_job7012263.json
+plot_files:
+  jump_plot: data/experiments/20_dset_20260505T214657Z_job7012254/ga/optimize_20260505T224607Z_job7012263/plots/ga_optimize_20260505T224607Z_job7012263_jump_plot.png
+  b1_b2_trajectory: data/experiments/20_dset_20260505T214657Z_job7012254/ga/optimize_20260505T224607Z_job7012263/plots/ga_optimize_20260505T224607Z_job7012263_b1_b2_trajectory.png
+  progress_by_phase: data/experiments/20_dset_20260505T214657Z_job7012254/ga/optimize_20260505T224607Z_job7012263/plots/ga_optimize_20260505T224607Z_job7012263_progress_by_phase.png
+  time_efficiency: data/experiments/20_dset_20260505T214657Z_job7012254/ga/optimize_20260505T224607Z_job7012263/plots/ga_optimize_20260505T224607Z_job7012263_time_efficiency.png
+  b1_ratio_heatmap: data/experiments/20_dset_20260505T214657Z_job7012254/ga/optimize_20260505T224607Z_job7012263/plots/ga_optimize_20260505T224607Z_job7012263_b1_ratio_heatmap.png
+analysis_files:
+  events_csv: data/experiments/20_dset_20260505T214657Z_job7012254/ga/optimize_20260505T224607Z_job7012263/tables/ga_optimize_20260505T224607Z_job7012263_events.csv
+  new_best_csv: data/experiments/20_dset_20260505T214657Z_job7012254/ga/optimize_20260505T224607Z_job7012263/tables/ga_optimize_20260505T224607Z_job7012263_new_best.csv
+  phase_summary_csv: data/experiments/20_dset_20260505T214657Z_job7012254/ga/optimize_20260505T224607Z_job7012263/tables/ga_optimize_20260505T224607Z_job7012263_phase_summary.csv
+  run_summary_csv: data/experiments/20_dset_20260505T214657Z_job7012254/ga/optimize_20260505T224607Z_job7012263/tables/ga_optimize_20260505T224607Z_job7012263_run_summary.csv
+  report_md: data/experiments/20_dset_20260505T214657Z_job7012254/ga/optimize_20260505T224607Z_job7012263/ga_optimize_20260505T224607Z_job7012263_report.md

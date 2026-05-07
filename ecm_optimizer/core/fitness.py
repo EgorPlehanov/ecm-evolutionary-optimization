@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from concurrent.futures import ProcessPoolExecutor
 from statistics import mean
-from typing import Iterable
+from typing import Any, Iterable
 
 TARGET_SUCCESS_RATE = 0.90
 SUCCESS_SHORTFALL_WEIGHT = 200_000.0
@@ -40,18 +40,24 @@ def evaluate_pair_for_n(
     success_runs = 0
     total_curves = 0
     total_seconds = 0.0
+    raw_runs: list[dict[str, float | int | bool]] = []
 
-    for _ in range(repeats_per_n):
+    for repeat_idx in range(1, repeats_per_n + 1):
         run_success = False
+        run_curves = 0
+        run_seconds = 0.0
         for curve_idx in range(1, max_curves_per_n + 1):
             run = run_single_curve(ecm_bin=ecm_bin, n=n, b1=b1, b2=b2, timeout_sec=curve_timeout_sec)
             total_seconds += run.seconds
             total_curves += 1
+            run_seconds += run.seconds
+            run_curves += 1
             if run.success:
                 run_success = True
                 break
         if run_success:
             success_runs += 1
+        raw_runs.append({"repeat": repeat_idx, "success": run_success, "curves": run_curves, "seconds": run_seconds})
 
     return EvaluationResult(
         n=n,
@@ -59,6 +65,7 @@ def evaluate_pair_for_n(
         runs=repeats_per_n,
         total_curves=total_curves,
         total_seconds=total_seconds,
+        raw_runs=tuple(raw_runs),
     )
 
 
@@ -71,7 +78,7 @@ def fitness_with_stats(
     repeats_per_n: int,
     curve_timeout_sec: float | None = None,
     workers: int = 1,
-) -> tuple[float, dict[str, float | int]]:
+) -> tuple[float, dict[str, Any]]:
     """Вычислить composite fitness по набору чисел.
 
     Fitness минимизируется:
@@ -93,13 +100,16 @@ def fitness_with_stats(
     mean_time = mean(item.avg_time for item in evaluations)
     success_shortfall = max(0.0, TARGET_SUCCESS_RATE - mean_success_rate)
     score = (success_shortfall * SUCCESS_SHORTFALL_WEIGHT) + (mean_time * TIME_WEIGHT) + (mean_curves * CURVE_WEIGHT)
-    stats: dict[str, float | int] = {
+    stats: dict[str, Any] = {
         "success_runs": sum(item.success_runs for item in evaluations),
         "total_runs": sum(item.runs for item in evaluations),
         "mean_success_rate": mean_success_rate,
         "mean_curves_to_outcome": mean_curves,
         "mean_time_to_outcome_sec": mean_time,
     }
+    if len(evaluations) == 1:
+        stats["raw_runs"] = evaluations[0].raw_runs
+    stats["raw_runs_by_n"] = {item.n: item.raw_runs for item in evaluations}
     return score, stats
 
 

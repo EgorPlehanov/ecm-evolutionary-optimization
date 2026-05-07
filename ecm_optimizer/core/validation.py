@@ -48,6 +48,7 @@ def _evaluate_single_number_task(args: tuple[str, int, int, int, int, int, float
         "mean_success_rate": float(stats["mean_success_rate"]),
         "mean_curves_to_outcome": float(stats["mean_curves_to_outcome"]),
         "mean_time_to_outcome_sec": float(stats["mean_time_to_outcome_sec"]),
+        "raw_runs": stats.get("raw_runs", ()),
     }
 
 
@@ -156,6 +157,8 @@ def validate_on_control(
                 "baseline_mean_curves": float(base_point["mean_curves_to_outcome"]),
                 "optimized_mean_time_sec": float(opt_point["mean_time_to_outcome_sec"]),
                 "baseline_mean_time_sec": float(base_point["mean_time_to_outcome_sec"]),
+                "optimized_raw_runs": list(opt_point.get("raw_runs", ())),
+                "baseline_raw_runs": list(base_point.get("raw_runs", ())),
                 "delta_pct_time": (
                     (
                         (float(base_point["mean_time_to_outcome_sec"]) - float(opt_point["mean_time_to_outcome_sec"]))
