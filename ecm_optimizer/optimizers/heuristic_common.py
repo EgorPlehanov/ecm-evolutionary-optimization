@@ -4,6 +4,7 @@ import math
 import random
 import time
 from dataclasses import dataclass, field
+from typing import Any
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -43,7 +44,7 @@ class ProgressTracker:
     every: int = 5
     eval_count: int = 0
     best_score: float | None = None
-    events: list[dict[str, float | int | str]] = field(default_factory=list)
+    events: list[dict[str, Any]] = field(default_factory=list)
     started_at_utc: str = field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     _start_monotonic: float = field(default_factory=time.perf_counter)
     _last_checkpoint_monotonic: float = 0.0
@@ -60,11 +61,11 @@ class ProgressTracker:
         config: OptimizationConfig,
         x_log: tuple[float, float],
         score: float,
-        metrics: dict[str, float | int] | None = None,
+        metrics: dict[str, Any] | None = None,
     ) -> None:
         self.eval_count += 1
         b1, b2 = decode_candidate(x_log, config)
-        event: dict[str, float | int | str] = {
+        event: dict[str, Any] = {
             "kind": "evaluation",
             "eval": self.eval_count,
             "b1": b1,
@@ -144,7 +145,7 @@ class ProgressTracker:
         min_interval_sec = float(checkpoint_cfg.get("min_interval_sec", 10.0))
         if not force and (now - self._last_checkpoint_monotonic) < min_interval_sec:
             return
-        payload: dict[str, float | int | str | list[dict[str, float | int | str]] | None] = {
+        payload: dict[str, Any] = {
             "status": "in_progress",
             "method": self.method,
             "started_at_utc": self.started_at_utc,
@@ -186,7 +187,7 @@ def evaluate_candidate(
 def evaluated_point_to_result(
     point: EvaluatedPoint,
     config: OptimizationConfig,
-    history: list[dict[str, float | int | str]] | None = None,
+    history: list[dict[str, Any]] | None = None,
 ) -> OptimizationResult:
     """Преобразовать оцененную точку в стандартный OptimizationResult."""
     b1, b2 = decode_candidate(point.x, config)

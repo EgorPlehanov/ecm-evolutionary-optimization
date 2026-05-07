@@ -35,6 +35,7 @@ class EvaluationResult:
     runs: int
     total_curves: int
     total_seconds: float
+    raw_runs: tuple[dict[str, float | int | bool], ...] = ()
 
     @property
     def success_rate(self) -> float:
