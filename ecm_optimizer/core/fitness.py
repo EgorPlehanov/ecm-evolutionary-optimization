@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from concurrent.futures import ProcessPoolExecutor
 from statistics import mean
-from typing import Iterable
+from typing import Any, Iterable
 
 TARGET_SUCCESS_RATE = 0.90
 SUCCESS_SHORTFALL_WEIGHT = 200_000.0
@@ -78,7 +78,7 @@ def fitness_with_stats(
     repeats_per_n: int,
     curve_timeout_sec: float | None = None,
     workers: int = 1,
-) -> tuple[float, dict[str, float | int]]:
+) -> tuple[float, dict[str, Any]]:
     """Вычислить composite fitness по набору чисел.
 
     Fitness минимизируется:
@@ -100,7 +100,7 @@ def fitness_with_stats(
     mean_time = mean(item.avg_time for item in evaluations)
     success_shortfall = max(0.0, TARGET_SUCCESS_RATE - mean_success_rate)
     score = (success_shortfall * SUCCESS_SHORTFALL_WEIGHT) + (mean_time * TIME_WEIGHT) + (mean_curves * CURVE_WEIGHT)
-    stats: dict[str, float | int | tuple[dict[str, float | int | bool], ...] | dict[int, tuple[dict[str, float | int | bool], ...]]] = {
+    stats: dict[str, Any] = {
         "success_runs": sum(item.success_runs for item in evaluations),
         "total_runs": sum(item.runs for item in evaluations),
         "mean_success_rate": mean_success_rate,
