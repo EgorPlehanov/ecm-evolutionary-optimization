@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import math
 import re
 from pathlib import Path
 import os
@@ -70,6 +71,7 @@ def _build_validation_trace_plots(out_file: Path, trace_points: list[dict[str, A
 
     plots_dir = ensure_dir(out_file.parent / "plots")
     x_idx = list(range(1, len(trace_points) + 1))
+    run_count = len(x_idx)
     plots: dict[str, Path] = {}
 
     chart_specs = [
@@ -121,7 +123,8 @@ def _build_validation_trace_plots(out_file: Path, trace_points: list[dict[str, A
             delta_pct = [float(point.get(spec["delta_key"], 0.0)) for point in trace_points]
             delta_key_label = str(spec["delta_key"])
 
-        fig, ax_left = plt.subplots(figsize=(12, 6))
+        figure_width = max(12.0, min(22.0, 10.0 + run_count * 0.22))
+        fig, ax_left = plt.subplots(figsize=(figure_width, 6))
 
         ax_right = ax_left.twinx()
         bar_colors = ["tab:green" if value >= 0 else "tab:red" for value in delta_pct]
@@ -163,8 +166,16 @@ def _build_validation_trace_plots(out_file: Path, trace_points: list[dict[str, A
         ax_left.set_title(f"{spec['title']} — lollipop + delta bars")
 
         ax_left.set_xlim(0.35, len(x_idx) + 0.65)
-        ax_left.xaxis.set_major_locator(ticker.FixedLocator(x_idx))
+        max_visible_labels = 16
+        tick_step = max(1, math.ceil(run_count / max_visible_labels))
+        tick_positions = x_idx[::tick_step]
+        if x_idx[-1] not in tick_positions:
+            tick_positions.append(x_idx[-1])
+
+        ax_left.xaxis.set_major_locator(ticker.FixedLocator(tick_positions))
         ax_left.xaxis.set_major_formatter(ticker.FormatStrFormatter("%d"))
+        label_rotation = 0 if run_count <= max_visible_labels else 30
+        ax_left.tick_params(axis="x", labelrotation=label_rotation)
 
         ax_left.grid(axis="y", alpha=0.28)
         ax_left.grid(axis="x", alpha=0.10)
