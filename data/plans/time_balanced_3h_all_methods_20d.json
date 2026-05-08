@@ -2,7 +2,7 @@
   "format": "ecm_run_plan_v1",
   "description": "Time-balanced прогон по всем методам (de/rs/pso/bo/ga) для target-digits=20: бюджеты method_opt выровнены к ~3ч elapsed на основе RUN-2026-05-05-214657Z.",
   "params": {
-    "seed": 42,
+    "seed": 666,
     "search": {
       "b1-min": 100,
       "b1-max": 100000,
