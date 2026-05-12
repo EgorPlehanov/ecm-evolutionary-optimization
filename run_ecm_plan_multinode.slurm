@@ -50,7 +50,7 @@ command -v ecm >/dev/null 2>&1 || { echo "ERROR: бинарник ecm не на�
 
 # Один план: задается через PLAN_NAME.
 # Пример:
-# sbatch --export=PLAN_NAME=full_all_methods_single_run_20d run_ecm_plan_multinode.slurm
+# sbatch --export=ALL,PLAN_NAME=full_all_methods_single_run_20d run_ecm_plan_multinode.slurm
 PLAN_NAME="${PLAN_NAME:-full_all_methods_single_run_20d}"
 STEP_PARTITION="${STEP_PARTITION:-tornado}"
 STEP_CPUS_PER_TASK="${STEP_CPUS_PER_TASK:-28}"
