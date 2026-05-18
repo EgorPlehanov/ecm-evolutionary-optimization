@@ -10,6 +10,38 @@ from ecm_optimizer.optimizers.heuristic_common import ProgressTracker, candidate
 from ecm_optimizer.utils.seed_utils import get_seed
 
 
+def _clamp_position_and_velocity(
+    *,
+    position: tuple[float, float],
+    velocity: tuple[float, float],
+    bounds: tuple[tuple[float, float], tuple[float, float]],
+    boundary_damping: float,
+) -> tuple[tuple[float, float], tuple[float, float]]:
+    """Clamp PSO position and damp velocity components that hit search bounds.
+
+    Keeping the original outward velocity after clipping makes particles repeatedly
+    propose the same boundary point.  Damping the offending component preserves
+    deterministic PSO dynamics while allowing the cognitive/social terms to pull
+    the particle back into the feasible interior on later iterations.
+    """
+    clamped: list[float] = []
+    adjusted_velocity: list[float] = []
+    damping = min(max(boundary_damping, 0.0), 1.0)
+
+    for coordinate, component, (lower, upper) in zip(position, velocity, bounds):
+        if coordinate < lower:
+            clamped.append(lower)
+            adjusted_velocity.append(abs(component) * damping)
+        elif coordinate > upper:
+            clamped.append(upper)
+            adjusted_velocity.append(-abs(component) * damping)
+        else:
+            clamped.append(coordinate)
+            adjusted_velocity.append(component)
+
+    return (clamped[0], clamped[1]), (adjusted_velocity[0], adjusted_velocity[1])
+
+
 class ParticleSwarmOptimizer(Optimizer):
     """Простой PSO в логарифмическом пространстве `(log10(B1), log10(B2))`."""
 
@@ -21,6 +53,7 @@ class ParticleSwarmOptimizer(Optimizer):
         cognitive = float(pso_params.get("cognitive", 1.4))
         social = float(pso_params.get("social", 1.4))
         velocity_scale = float(pso_params.get("velocity_scale", 0.2))
+        boundary_damping = float(pso_params.get("boundary_damping", 0.0))
 
         rng = random.Random(get_seed(config.seed, "particle-swarm-optimization"))
         numbers = list(numbers)
@@ -33,7 +66,7 @@ class ParticleSwarmOptimizer(Optimizer):
             config=config,
             message=(
                 f"numbers={len(numbers)} max_curves_per_n={config.max_curves_per_n} repeats_per_n={config.repeats_per_n} "
-                f"swarm_size={swarm_size} iterations={iterations} workers={config.workers}"
+                f"swarm_size={swarm_size} iterations={iterations} boundary_damping={boundary_damping} workers={config.workers}"
             ),
         )
 
@@ -58,11 +91,12 @@ class ParticleSwarmOptimizer(Optimizer):
 
                 nv1 = inertia * v1 + cognitive * r1 * (p1 - x1) + social * r3 * (g1 - x1)
                 nv2 = inertia * v2 + cognitive * r2 * (p2 - x2) + social * r4 * (g2 - x2)
-                nx1 = min(max(x1 + nv1, low1), high1)
-                nx2 = min(max(x2 + nv2, low2), high2)
-
-                velocities[i] = (nv1, nv2)
-                positions[i] = (nx1, nx2)
+                positions[i], velocities[i] = _clamp_position_and_velocity(
+                    position=(x1 + nv1, x2 + nv2),
+                    velocity=(nv1, nv2),
+                    bounds=((low1, high1), (low2, high2)),
+                    boundary_damping=boundary_damping,
+                )
                 current = evaluate_candidate(x_log=positions[i], ecm_bin=ecm_bin, numbers=numbers, config=config, progress=progress)
                 if current.score < personal_best[i].score:
                     personal_best[i] = current
