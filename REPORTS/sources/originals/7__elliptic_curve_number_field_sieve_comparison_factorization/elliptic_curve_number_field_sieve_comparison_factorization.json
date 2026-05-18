@@ -1,0 +1,1282 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"elliptic curve\" \"number field sieve\" comparison factorization",
+    "requested_limit": 50,
+    "saved_records": 50,
+    "hl": "en",
+    "created_at_utc": "2026-05-14T16:04:09.971106+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22elliptic+curve%22+%22number+field+sieve%22+comparison+factorization&hl=en&start=0",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22elliptic+curve%22+%22number+field+sieve%22+comparison+factorization&hl=en&start=10",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 20,
+      "url": "https://scholar.google.com/scholar?q=%22elliptic+curve%22+%22number+field+sieve%22+comparison+factorization&hl=en&start=20",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 30,
+      "url": "https://scholar.google.com/scholar?q=%22elliptic+curve%22+%22number+field+sieve%22+comparison+factorization&hl=en&start=30",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 40,
+      "url": "https://scholar.google.com/scholar?q=%22elliptic+curve%22+%22number+field+sieve%22+comparison+factorization&hl=en&start=40",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "Area-time efficient implementation of the method of in reconfigurable hardware for application in the elliptic curve factoring number field sieve",
+      "url": "https://ieeexplore.ieee.org/abstract/document/5374380/",
+      "publication_info": ", , P Baier, P Kohlbrenner… - IEEE Transactions …, 2010 - ieeexplore.ieee.org K Gaj S Kwon",
+      "snippet": "… ]), the [6], [14], and special purpose … ) of the method Number Field Sieve factoring elliptic curve of integer , originally … how to optimize the design and our work both to an … factoring compare",
+      "pdf": {
+        "label": "gmu.edu [PDF]",
+        "url": "https://mason.gmu.edu/~mrogawsk/arch/ieee_tc2009.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "gmu.edu [PDF]",
+          "url": "https://mason.gmu.edu/~mrogawsk/arch/ieee_tc2009.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Reflections on the number field sieve",
+      "url": "https://search.proquest.com/openview/6c7dd9f5012356e557d90b49c256afcb/1?pq-origsite=gscholar&cbl=2026366",
+      "publication_info": "- 2007 - search.proquest.com EH Cliffe",
+      "snippet": "… ) that are not more suited to other algo rithms such as the method [47]. … factoring elliptic curve known special cases of the , and contrasting these with the … number field sieve comparing",
+      "pdf": {
+        "label": "bath.ac.uk [PDF]",
+        "url": "https://researchportal.bath.ac.uk/files/419775/CSBU-2007-03.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "bath.ac.uk [PDF]",
+          "url": "https://researchportal.bath.ac.uk/files/419775/CSBU-2007-03.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "integers with the Factoring number field sieve",
+      "url": "https://link.springer.com/chapter/10.1007/BFb0091539",
+      "publication_info": "JP Buhler, HW Lenstra Jr, - … of the , 2006 - Springer C Pomerance number field sieve",
+      "snippet": "… algorithms, such as the quadratic sieve and the … earlier algorithm we will refer elliptic curve to it as the special . … If we the relative predicted performance of the … number field sieve compare",
+      "pdf": null,
+      "cited_by_count": 439,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=12725920857222557651&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:0y98RpiNm7AJ:scholar.google.com/&scioq=%22elliptic+curve%22+%22number+field+sieve%22+comparison+factorization&hl=en&as_sdt=0,5",
+      "versions_count": 8,
+      "versions_url": "https://scholar.google.com/scholar?cluster=12725920857222557651&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "The Number Field Sieve",
+      "url": "https://www.untruth.org/~josh/math/NFS-old.pdf",
+      "publication_info": "JE Hill - 2010 - untruth.org",
+      "snippet": "… Both the Quadratic Sieve and the General … high probability that we will Number Field Sieve find a non-trivial . … this that allows the General to … factorization difference Number Field Sieve",
+      "pdf": {
+        "label": "untruth.org [PDF]",
+        "url": "https://www.untruth.org/~josh/math/NFS-old.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "untruth.org [PDF]",
+          "url": "https://www.untruth.org/~josh/math/NFS-old.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "Analysis of the method based on elliptic curves theory factorization",
+      "url": "https://eltecs.op.edu.ua/index.php/journal/article/view/3115",
+      "publication_info": "G Vostrov, I Dermenzhy - Електротехнічні та комп'ютерні …, 2019 - eltecs.op.edu.ua",
+      "snippet": "… The purpose of this paper is the analysis of method, in … A analysis elliptic curve comparative of the existing methods is given. The … General method … factorization number field sieve",
+      "pdf": {
+        "label": "op.edu.ua [PDF]",
+        "url": "https://eltecs.op.edu.ua/index.php/journal/article/download/3115/1074"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "op.edu.ua [PDF]",
+          "url": "https://eltecs.op.edu.ua/index.php/journal/article/download/3115/1074"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "ANALYSIS OF THE METHOD BASED ON ELLIPTIC CURVES THEORY FACTORIZATION",
+      "url": "https://www.academia.edu/download/83131976/1074.pdf",
+      "publication_info": "I Dermenzhy, G Vostrov - 2019 - academia.edu",
+      "snippet": "… The purpose of this paper is the analysis of method, in … A analysis elliptic curve comparative of the existing methods is given. The … General method … factorization number field sieve",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/83131976/1074.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/83131976/1074.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "Framework for evaluation and of integer algorithms comparison factorization",
+      "url": "https://ieeexplore.ieee.org/abstract/document/7556107/",
+      "publication_info": "CL Duta, L Gheorghe, - 2016 SAI Computing …, 2016 - ieeexplore.ieee.org N Tapus",
+      "snippet": "… , Special and General . We implemented the … of Number Field Sieve Number Field Sieve points on a random . Even though the operations of an group are more … elliptic curve elliptic curve",
+      "pdf": null,
+      "cited_by_count": 13,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=7901915178209452929&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:gSNxCv09qW0J:scholar.google.com/&scioq=%22elliptic+curve%22+%22number+field+sieve%22+comparison+factorization&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=7901915178209452929&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "The algorithm number field sieve factoring",
+      "url": "https://www.researchgate.net/profile/Eric-Landquist/publication/249911306_THE_NUMBER_FIELD_SIEVE_FACTORING_ALGORITHM/links/0deec537e58fc776e2000000/THE-NUMBER-FIELD-SIEVE-FACTORING-ALGORITHM.pdf",
+      "publication_info": "E Landquist - 2002 - researchgate.net",
+      "snippet": "… of F11 had been found using the Method. The 158-digit Mersenne number … Elliptic Curve However, we the results of the input modulo n, output, and output squared modulo … compare",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Eric-Landquist/publication/249911306_THE_NUMBER_FIELD_SIEVE_FACTORING_ALGORITHM/links/0deec537e58fc776e2000000/THE-NUMBER-FIELD-SIEVE-FACTORING-ALGORITHM.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Eric-Landquist/publication/249911306_THE_NUMBER_FIELD_SIEVE_FACTORING_ALGORITHM/links/0deec537e58fc776e2000000/THE-NUMBER-FIELD-SIEVE-FACTORING-ALGORITHM.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "Polynomial selection for the integer algorithm number field sieve factorisation",
+      "url": "https://maths-people.anu.edu.au/brent/pd/Murphy-thesis.pdf",
+      "publication_info": "BA Murphy - 1999 - maths-people.anu.edu.au",
+      "snippet": "… cryptosystems that there is no known analogue of the elliptic curve number field sieve addressing the … degree to n. There is no known sub-exponential attack on … elliptic curve compared",
+      "pdf": {
+        "label": "anu.edu.au [PDF]",
+        "url": "https://maths-people.anu.edu.au/brent/pd/Murphy-thesis.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PDF]",
+          "url": "https://maths-people.anu.edu.au/brent/pd/Murphy-thesis.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "Polynomial selection for the number field sieve",
+      "url": "https://maths-people.anu.edu.au/~brent/pd/Bai-thesis.pdf",
+      "publication_info": "白石 - 2011 - maths-people.anu.edu.au",
+      "snippet": "… We choose a random E and a random point P on … of the for elliptic curve number field sieve integer in the next … We also discuss some methods to quantify and the … factorization compare",
+      "pdf": {
+        "label": "anu.edu.au [PDF]",
+        "url": "https://maths-people.anu.edu.au/~brent/pd/Bai-thesis.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PDF]",
+          "url": "https://maths-people.anu.edu.au/~brent/pd/Bai-thesis.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "The quadratic sieve algorithm factoring",
+      "url": "https://home.cs.colorado.edu/~jrblack/class/csci7000/s05/quadsieve.pdf",
+      "publication_info": "E Landquist - Math, 2001 - cs.colorado.edu",
+      "snippet": "… If the is not a perfect square, then we find the next … presented, such as the difference Elliptic Method discovered by H. … known algorithm until the was … Curve factoring Number Field Sieve",
+      "pdf": {
+        "label": "colorado.edu [PDF]",
+        "url": "https://home.cs.colorado.edu/~jrblack/class/csci7000/s05/quadsieve.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "colorado.edu [PDF]",
+          "url": "https://home.cs.colorado.edu/~jrblack/class/csci7000/s05/quadsieve.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "Advancements and Prospects in Large Integer : A Comprehensive Review of the Method Factorization Number Field Sieve",
+      "url": "https://pdfs.semanticscholar.org/7003/0a159c209a34bffd9118dc5a5ce625407991.pdf",
+      "publication_info": "J Gao - Appl. Comput. Eng, 2024 - pdfs.semanticscholar.org",
+      "snippet": "… Traditional methods, including trial division and algorithms, have factorization elliptic curve proven … techniques has grown significantly [1, 2]. Among various algorithms, the … factorization",
+      "pdf": {
+        "label": "semanticscholar.org [PDF]",
+        "url": "https://pdfs.semanticscholar.org/7003/0a159c209a34bffd9118dc5a5ce625407991.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "semanticscholar.org [PDF]",
+          "url": "https://pdfs.semanticscholar.org/7003/0a159c209a34bffd9118dc5a5ce625407991.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "Modern Methods Factoring",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-3-662-02945-9_10?pdf=chapter%20toc",
+      "publication_info": "H Cohen - A Course in Computational Algebraic Number Theory, 1993 - Springer",
+      "snippet": "… Hence we are going to work on an modulo N (… the important of being elliptic curve difference sensitive to the size of p. … This is the basic distinction between the general … number field sieve",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:B98LZCYnE4wJ:scholar.google.com/&scioq=%22elliptic+curve%22+%22number+field+sieve%22+comparison+factorization&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=10093454235708153607&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "On class group computations using the number field sieve",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-540-40061-5_19",
+      "publication_info": "ML Bauer, S Hamdy - International Conference on the Theory and …, 2003 - Springer",
+      "snippet": "… based on the intractability of integers or finite field … , the between the factoring difference generalized (… points on an , we call this the Discrete … number field sieve elliptic curve Elliptic Curve",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/72809418/28940064.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/72809418/28940064.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "The number field sieve",
+      "url": "https://dl.acm.org/doi/pdf/10.1145/100216.100295",
+      "publication_info": ", HW Lenstra Jr, … - Proceedings of the …, 1990 - dl.acm.org AK Lenstra MS Manasse",
+      "snippet": "… of the algorithm in 1985 we have not seen any significant theoretical elliptic curve factoring advances in integer … The only is that we now have to allow for negative … factoring difference",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/100216.100295"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/100216.100295"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "Smooth numbers and the quadratic sieve",
+      "url": "https://pub.math.leidenuniv.nl/~stevenhagenp/ANTproc/03carl.pdf",
+      "publication_info": "- Proc. of an MSRI workshop, J. Buhler and P …, 2008 - pub.math.leidenuniv.nl C Pomerance",
+      "snippet": "… since n as a of … method, nor does the number succumb factoring difference elliptic curve easily to other special methods such as the p1 method or the special .… factoring number field sieve",
+      "pdf": {
+        "label": "leidenuniv.nl [PDF]",
+        "url": "https://pub.math.leidenuniv.nl/~stevenhagenp/ANTproc/03carl.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "leidenuniv.nl [PDF]",
+          "url": "https://pub.math.leidenuniv.nl/~stevenhagenp/ANTproc/03carl.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "Sieve algorithms for the discrete logarithm in medium characteristic finite fields",
+      "url": "https://theses.hal.science/tel-01647623/",
+      "publication_info": "L Grémy - 2017 - theses.hal.science",
+      "snippet": "… uses the (NFS) algorithm. NFS was first used in the context number field sieve factorization at the … Another interesting group is the group of rational points of an . Let E be an … elliptic curve",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://theses.hal.science/tel-01647623/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://theses.hal.science/tel-01647623/document"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "title": "MODELING THE FORMATION PROCESSES OF ALGORITHMS BASED ON THE ELLIPTIC CURVES THEORY FACTORIZATION",
+      "url": "https://eltecs.op.edu.ua/index.php/journal/article/view/126",
+      "publication_info": "G Vostrov, I Dermenji - Електротехнічні та комп'ютерні системи, 2018 - eltecs.op.edu.ua",
+      "snippet": "… is the general for integers . … It is necessary to get the clear number field sieve factorization assessment of the … the stochastic model of method for the research. … difference elliptic curve",
+      "pdf": {
+        "label": "op.edu.ua [PDF]",
+        "url": "https://eltecs.op.edu.ua/index.php/journal/article/download/126/19"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "op.edu.ua [PDF]",
+          "url": "https://eltecs.op.edu.ua/index.php/journal/article/download/126/19"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "The impact of the on the discrete logarithm problem in finite fields number field sieve",
+      "url": "http://uat-library.msri.org/books/Book44/files/12oliver.pdf",
+      "publication_info": "- Algorithmic Number Theory, 2008 - uat-library.msri.org O Schirokauer",
+      "snippet": "… In order to this bound with the one arising in the prime field case, we assume that … compare for instance, these must be done with the method and are … factorizations elliptic curve factoring",
+      "pdf": {
+        "label": "msri.org [PDF]",
+        "url": "http://uat-library.msri.org/books/Book44/files/12oliver.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "msri.org [PDF]",
+          "url": "http://uat-library.msri.org/books/Book44/files/12oliver.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "Using number fields to compute logarithms in finite fields",
+      "url": "https://www.ams.org/mcom/2000-69-231/S0025-5718-99-01137-0/",
+      "publication_info": "- Mathematics of Computation, 2000 - ams.org O Schirokauer",
+      "snippet": "… We describe an adaptation of the to the … The number field sieve number field sieve factoring algorithm is conjectured to … §4 are not affected if the method of [21] is … elliptic curve factoring",
+      "pdf": {
+        "label": "archive.org [PDF]",
+        "url": "https://scholar.archive.org/work/uhejncpi6bcf3cnx6aibghchji/access/wayback/http://www.ams.org/journals/mcom/2000-69-231/S0025-5718-99-01137-0/S0025-5718-99-01137-0.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "archive.org [PDF]",
+          "url": "https://scholar.archive.org/work/uhejncpi6bcf3cnx6aibghchji/access/wayback/http://www.ams.org/journals/mcom/2000-69-231/S0025-5718-99-01137-0/S0025-5718-99-01137-0.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "[CITATION] [C] Integer factorization",
+      "url": null,
+      "publication_info": "PL Jensen - University of Copenhagen, 2005 - Citeseer",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": 17,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=16102062399871937498&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:2muKt3AEdt8J:scholar.google.com/&scioq=%22elliptic+curve%22+%22number+field+sieve%22+comparison+factorization&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "title": "Emmanouil Doulgerakis",
+      "url": "http://users.math.uoc.gr/~antoniad/DoulgerakisMaster.pdf",
+      "publication_info": "JA Antoniadis - users.math.uoc.gr",
+      "snippet": "… world records for integer we choose to study this … quadratic sieve or the factorization elliptic method will probably be … between the special and the general , as … curve number field sieve",
+      "pdf": {
+        "label": "uoc.gr [PDF]",
+        "url": "http://users.math.uoc.gr/~antoniad/DoulgerakisMaster.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "uoc.gr [PDF]",
+          "url": "http://users.math.uoc.gr/~antoniad/DoulgerakisMaster.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "title": "On the alpha value of polynomials in the tower algorithm number field sieve",
+      "url": "https://journals.flvc.org/mathcryptology/article/view/125142",
+      "publication_info": ", - Transactions on Mathematical Cryptology, 2021 - journals.flvc.org A Guillevic S Singh",
+      "snippet": "… in the group of points of an and in a finite field F … The subsequent work [27] elliptic curve focuses on the between … obtain for free its into smooth ideals by applying … differences factorisation",
+      "pdf": {
+        "label": "flvc.org [PDF]",
+        "url": "https://journals.flvc.org/mathcryptology/article/download/125142/128887"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "flvc.org [PDF]",
+          "url": "https://journals.flvc.org/mathcryptology/article/download/125142/128887"
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "title": "A guide to general for integer number field sieve factorization",
+      "url": "https://www.researchgate.net/profile/Gireesh-Pandey/publication/280463963_A_Guide_to_General_Number_Field_Sieve_for_Integer_Factorization/links/55b5d17d08aed621de02f01f/A-Guide-to-General-Number-Field-Sieve-for-Integer-Factorization.pdf",
+      "publication_info": "G Pandey, SK Pal - Investigations in Mathematical Sciences, 2014 - researchgate.net",
+      "snippet": "… method (ECM) was announced by … The basic (NFS) Elliptic curve factoring number field sieve algorithm was introduced … integer can be expressed as of squares of two integers… difference",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Gireesh-Pandey/publication/280463963_A_Guide_to_General_Number_Field_Sieve_for_Integer_Factorization/links/55b5d17d08aed621de02f01f/A-Guide-to-General-Number-Field-Sieve-for-Integer-Factorization.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Gireesh-Pandey/publication/280463963_A_Guide_to_General_Number_Field_Sieve_for_Integer_Factorization/links/55b5d17d08aed621de02f01f/A-Guide-to-General-Number-Field-Sieve-for-Integer-Factorization.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "title": "integers using the Web and the Factoring number field sieve",
+      "url": "https://infoscience.epfl.ch/bitstreams/45a7d086-cdeb-418c-be9a-75db2604f37d/download",
+      "publication_info": "- Proceedings JAIST Symposium on Multimedia and …, 1995 - infoscience.epfl.ch AK Lenstra",
+      "snippet": "… a considerable for the two Internet . This … Even the difference factorizations elliptic curve method (one of the special purpose … time (where the worst case for the method is the … elliptic curve",
+      "pdf": {
+        "label": "epfl.ch [PDF]",
+        "url": "https://infoscience.epfl.ch/bitstreams/45a7d086-cdeb-418c-be9a-75db2604f37d/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "epfl.ch [PDF]",
+          "url": "https://infoscience.epfl.ch/bitstreams/45a7d086-cdeb-418c-be9a-75db2604f37d/download"
+        }
+      ]
+    },
+    {
+      "rank": 26,
+      "title": "Experiments using an analogue of the algorithm to solve the discrete logarithm problem in the Jacobians of hyperelliptic curves number field sieve",
+      "url": "http://shiftleft.com/mirrors/www.hpl.hp.com/techreports/97/HPL-97-130.pdf",
+      "publication_info": "- HP LABORATORIES TECHNICAL REPORT HPL, 1997 - shiftleft.com NP Smart",
+      "snippet": "… related to the method which … the group of points on an Number Field Sieve factoring elliptic . There is however some… carried out such a for imaginary quadratic function … curve comparison",
+      "pdf": {
+        "label": "shiftleft.com [PDF]",
+        "url": "http://shiftleft.com/mirrors/www.hpl.hp.com/techreports/97/HPL-97-130.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "shiftleft.com [PDF]",
+          "url": "http://shiftleft.com/mirrors/www.hpl.hp.com/techreports/97/HPL-97-130.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 27,
+      "title": "The development of the number field sieve",
+      "url": "https://books.google.com/books?hl=en&lr=&id=_QBvFRP69xEC&oi=fnd&pg=PA1&dq=%22elliptic+curve%22+%22number+field+sieve%22+comparison+factorization&ots=NQdZAK5kNo&sig=HUP7e1L3wBw60e7zEPLgmR658sg",
+      "publication_info": ", HW Lenstra - 1993 - books.google.com AK Lenstra",
+      "snippet": "… We describe a algorithm, the , that … to what we had earlier, the factoring number field sieve main being that Z[a] is … , the method, the , Dixon's … difference elliptic curve number field sieve",
+      "pdf": {
+        "label": "epfl.ch [PDF]",
+        "url": "https://infoscience.epfl.ch/bitstreams/c32ec1e5-4070-4ebf-8752-6147c94fdb29/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "epfl.ch [PDF]",
+          "url": "https://infoscience.epfl.ch/bitstreams/c32ec1e5-4070-4ebf-8752-6147c94fdb29/download"
+        }
+      ]
+    },
+    {
+      "rank": 28,
+      "title": "Refined analysis of the asymptotic complexity of the number field sieve",
+      "url": "https://arxiv.org/abs/2007.02730",
+      "publication_info": "AL Gluher, , - arXiv preprint arXiv:2007.02730, 2020 - arxiv.org PJ Spaenlehauer E Thomé",
+      "snippet": "… be useful for cryptography are far too small to the radius of convergence at infinity compared … computations in number fields, or of the method. In all of these cases, … elliptic curve factoring",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2007.02730"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2007.02730"
+        }
+      ]
+    },
+    {
+      "rank": 29,
+      "title": "We are on the same side. alternative sieving strategies for the number field sieve",
+      "url": "https://link.springer.com/chapter/10.1007/978-981-99-8730-6_5",
+      "publication_info": ", A Fleury, … - … Conference on the Theory …, 2023 - Springer C Bouillaguet PA Fouque",
+      "snippet": "… tool to assess the hardness of integer , and therefore the … ), and uses the factoring elliptic method in the cofactorization step. … the difficulty of and discrete … curve Comparing factorization",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/hal-04112671/file/main.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/hal-04112671/file/main.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 30,
+      "title": "A unified polynomial selection method for the (tower) algorithm number field sieve",
+      "url": "https://digitalcommons.isical.ac.in/journal-articles/1042/",
+      "publication_info": ", - Advances in Mathematics of …, 2019 - digitalcommons.isical.ac.in P Sarkar S Singh",
+      "snippet": "… each norm is tested for smoothness using Method (ECM). Asymptotically, Elliptic Curve factoring the … In Table 1, we the expressions for the norm bounds for various polynomial … compare",
+      "pdf": {
+        "label": "isical.ac.in [PDF]",
+        "url": "https://digitalcommons.isical.ac.in/cgi/viewcontent.cgi?article=2796&context=journal-articles"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "isical.ac.in [PDF]",
+          "url": "https://digitalcommons.isical.ac.in/cgi/viewcontent.cgi?article=2796&context=journal-articles"
+        }
+      ]
+    },
+    {
+      "rank": 31,
+      "title": "Hardware based on method factorization elliptic curve",
+      "url": "https://ieeexplore.ieee.org/abstract/document/1508531/",
+      "publication_info": "M Simka, , T Kleinjung, J Franke… - 13th Annual IEEE …, 2005 - ieeexplore.ieee.org J Pelzl",
+      "snippet": "… For instance, the Generalized (GNFS, see [7]) is the best for … Number Field Sieve factoring From the to the timings obtained from the implemented hardware … comparison factorization",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Martin-Simka/publication/4174989_Hardware_Factorization_Based_on_Elliptic_Curve_Method/links/0c960524c6bb62e69a000000/Hardware-Factorization-Based-on-Elliptic-Curve-Method.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Martin-Simka/publication/4174989_Hardware_Factorization_Based_on_Elliptic_Curve_Method/links/0c960524c6bb62e69a000000/Hardware-Factorization-Based-on-Elliptic-Curve-Method.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 32,
+      "title": "Integer algorithms factorization",
+      "url": "https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=osu1730465522249482&disposition=inline",
+      "publication_info": "EJ Krebs - 2001 - etd.ohiolink.edu",
+      "snippet": "… Polynomial Sieve and , or Lenstra's Algorithm. These … Number Field Sieve Elliptic Curve Mostly, this algorithm is introduced (in this paper) because the idea of n being the … difference",
+      "pdf": {
+        "label": "ohiolink.edu [PDF]",
+        "url": "https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=osu1730465522249482&disposition=inline"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ohiolink.edu [PDF]",
+          "url": "https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=osu1730465522249482&disposition=inline"
+        }
+      ]
+    },
+    {
+      "rank": 33,
+      "title": "EFFICIENT AND THE FACTORING NUMBER FIELD SIEVE",
+      "url": "https://rbsaul.github.io/efficient-factoring.pdf",
+      "publication_info": "R Saul - 2022 - rbsaul.github.io",
+      "snippet": "… When via the , we wish to use a similar trick to determine if the factoring Number Field Sieve … So in conclusion, as to the case of the Quadratic Sieve, the estimate for X/ψ(X, Y ) … compared",
+      "pdf": {
+        "label": "github.io [PDF]",
+        "url": "https://rbsaul.github.io/efficient-factoring.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "github.io [PDF]",
+          "url": "https://rbsaul.github.io/efficient-factoring.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 34,
+      "title": "Impact of Decreasing Polynomial Degree in Time Needed to Factor a 100 Digits Integer by General Algorithm Number Field Sieve",
+      "url": "https://pdfs.semanticscholar.org/2e87/d2c0f6f75e870cb06ba7a4b13189df4dee67.pdf",
+      "publication_info": "- pdfs.semanticscholar.org JA Othman",
+      "snippet": "… against cryptosystems is exponential in nature. So the use of an Elliptic curve elliptic curve … polynomial as a first step in the process and the time needed to factor (n) … factoring compare",
+      "pdf": {
+        "label": "semanticscholar.org [PDF]",
+        "url": "https://pdfs.semanticscholar.org/2e87/d2c0f6f75e870cb06ba7a4b13189df4dee67.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "semanticscholar.org [PDF]",
+          "url": "https://pdfs.semanticscholar.org/2e87/d2c0f6f75e870cb06ba7a4b13189df4dee67.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 35,
+      "title": "Agile Asymmetric Cryptography and the Case for Finite Fields",
+      "url": "https://iacr.steepath.eu/2024/1426-AgileAsymmetricCryptographyandtheCaseforFiniteFields.pdf",
+      "publication_info": "AM Johnston - Cryptology ePrint Archive, 2024 - iacr.steepath.eu",
+      "snippet": "… , which in turn leads to very different parameter and algorithmic choices number field sieve to what is done for . … to both and based al… compared factoring compared factoring elliptic curve",
+      "pdf": {
+        "label": "steepath.eu [PDF]",
+        "url": "https://iacr.steepath.eu/2024/1426-AgileAsymmetricCryptographyandtheCaseforFiniteFields.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "steepath.eu [PDF]",
+          "url": "https://iacr.steepath.eu/2024/1426-AgileAsymmetricCryptographyandtheCaseforFiniteFields.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 36,
+      "title": "Discrete Logarithm Cryptanalyses: and Lattice Tools for Side-Channel Attacks Number Field Sieve",
+      "url": "https://gmicheli.github.io/thesis/these.pdf",
+      "publication_info": "- Theses, Université de Lorraine, 2021 - gmicheli.github.io G De Micheli",
+      "snippet": "… ), the group of points of an E defined over the prime … In this work, we argue that elliptic curve should focus on the … know there exists a unique into a product of … comparisons decomposition",
+      "pdf": {
+        "label": "github.io [PDF]",
+        "url": "https://gmicheli.github.io/thesis/these.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "github.io [PDF]",
+          "url": "https://gmicheli.github.io/thesis/these.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 37,
+      "title": "- , Witnesses Elliptic Curve Factoring",
+      "url": "https://books.google.com/books?hl=en&lr=&id=jb5HEQAAQBAJ&oi=fnd&pg=PA85&dq=%22elliptic+curve%22+%22number+field+sieve%22+comparison+factorization&ots=GRmo2ETY_f&sig=kW817tCxvuFhHQkaDctuQ2u-qM0",
+      "publication_info": "J Pomykała - Number-Theoretic Methods in Cryptology: 4th …, 2025 - books.google.com",
+      "snippet": "… version of the . The particular cases a =±1 were … supported number field sieve factorization by the Sato-Tate conjecture with the oracle OrdEll that returns the order En of E … elliptic curve",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:OmNygkxkfccJ:scholar.google.com/&scioq=%22elliptic+curve%22+%22number+field+sieve%22+comparison+factorization&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 38,
+      "title": "[CITATION] [C] Application of Algebraic Number Theory in Factorization",
+      "url": null,
+      "publication_info": "LK Hung - 1998 - The Chinese University of Hong …",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:UyEb3gngIs8J:scholar.google.com/&scioq=%22elliptic+curve%22+%22number+field+sieve%22+comparison+factorization&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 39,
+      "title": "A study of the General and a development of a CT2 plug-in using YAFU Number Field Sieve",
+      "url": "https://research.tue.nl/files/46944529/855108-1.pdf",
+      "publication_info": ", , H de Valence, C Balasoiu… - 2016 - research.tue.nl I Querejeta T Lange",
+      "snippet": "… (NFS) is the fastest known algorithm for general numbers having more than … factoring and finally we present some with the previously existing … number field sieve comparisons factoring",
+      "pdf": {
+        "label": "tue.nl [PDF]",
+        "url": "https://research.tue.nl/files/46944529/855108-1.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "tue.nl [PDF]",
+          "url": "https://research.tue.nl/files/46944529/855108-1.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 40,
+      "title": "Integer based on method: Towards better exploitation of reconfigurable hardware factorization elliptic curve",
+      "url": "https://ieeexplore.ieee.org/abstract/document/4297256/",
+      "publication_info": "G De Meulenaer, F Gosset… - 15th Annual IEEE …, 2007 - ieeexplore.ieee.org",
+      "snippet": "… the RSA public key cryptosystem is the . One of its important phases usually Number Field Sieve … For this , the Method (ECM) is an attractive solution. As ECM is … factorization Elliptic Curve",
+      "pdf": null,
+      "cited_by_count": 37,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=16029939943686971327&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:v59O0nLJdd4J:scholar.google.com/&scioq=%22elliptic+curve%22+%22number+field+sieve%22+comparison+factorization&hl=en&as_sdt=0,5",
+      "versions_count": 6,
+      "versions_url": "https://scholar.google.com/scholar?cluster=16029939943686971327&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 41,
+      "title": "The for Barreto-Naehrig Curves: Smoothness of Norms Number Field Sieve",
+      "url": "https://uwspace.uwaterloo.ca/items/105c8eb1-c7dd-4e9d-a39e-3a54110f33c8",
+      "publication_info": "M Shantz - 2015 - uwspace.uwaterloo.ca",
+      "snippet": "… the group of points on an , and G2 is a subgroup … will use the of elliptic curve factorization NKi (α) to find the of (ϕ(… different algorithms for particular DLP instances. … factorization compare",
+      "pdf": {
+        "label": "uwaterloo.ca [PDF]",
+        "url": "https://uwspace.uwaterloo.ca/bitstreams/b03f0d9c-6ed8-4720-99db-edca48b98a22/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "uwaterloo.ca [PDF]",
+          "url": "https://uwspace.uwaterloo.ca/bitstreams/b03f0d9c-6ed8-4720-99db-edca48b98a22/download"
+        }
+      ]
+    },
+    {
+      "rank": 42,
+      "title": "A usability study of elliptic curves",
+      "url": "https://www.utupub.fi/items/d4699908-3226-4bc9-a8a7-4849f41201fd",
+      "publication_info": "D Tariq - utupub.fi",
+      "snippet": "… to compute the DL for an with 109 … 200-digit number elliptic curve elliptic curve factorization using (NFS) … we function-field sieve and - and … number field sieve compared number field sieve",
+      "pdf": {
+        "label": "utupub.fi [PDF]",
+        "url": "https://www.utupub.fi/bitstreams/e1c0319f-a8b7-44da-a444-30bca6db0e4e/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "utupub.fi [PDF]",
+          "url": "https://www.utupub.fi/bitstreams/e1c0319f-a8b7-44da-a444-30bca6db0e4e/download"
+        }
+      ]
+    },
+    {
+      "rank": 43,
+      "title": "The tower number field sieve",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-662-48800-3_2",
+      "publication_info": "R Barbulescu, , T Kleinjung - … on the Theory and Application of …, 2015 - Springer P Gaudry",
+      "snippet": "… The (NFS) started life as a … the norms, but for a first number field sieve factoring comparison we can use the default … 2 we TNFS to JLSV when p is a general prime (not SNFS), … compare",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://hal.science/hal-01155635v1/file/TNFS.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://hal.science/hal-01155635v1/file/TNFS.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 44,
+      "title": "ANALYSIS OF EXPONENTIAL AND SUB-EXPONENTIAL INTEGER ALGORITHMS COMPARATIVE FACTORIZATION",
+      "url": "https://stem.kiut.uz/index.php/journal/article/download/155/92",
+      "publication_info": "AB Fayziyevich - Центрально азиатский журнал STEM, 2025 - stem.kiut.uz",
+      "snippet": "… , Lenstra’s Method, and the . Each … Finally, the Elliptic Curve Number Field Sieve Number stands as the culmination of … that currently defines the limits of classical . … Field Sieve factorization",
+      "pdf": {
+        "label": "kiut.uz [PDF]",
+        "url": "https://stem.kiut.uz/index.php/journal/article/download/155/92"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "kiut.uz [PDF]",
+          "url": "https://stem.kiut.uz/index.php/journal/article/download/155/92"
+        }
+      ]
+    },
+    {
+      "rank": 45,
+      "title": "Discrete Logarithms in Using the Number Field Sieve",
+      "url": "https://epubs.siam.org/doi/abs/10.1137/0406010",
+      "publication_info": "- SIAM Journal on Discrete Mathematics, 1993 - SIAM DM Gordon",
+      "snippet": "… The method (ECM) for an integer n depends on finding an elliptic curve factoring elliptic curve … The only is that we must keep (18) and (19) and find other equations with rank … difference",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Daniel-Gordon-4/publication/255673189_Discrete_Logarithms_in_GFP_Using_the_Number_Field_Sieve/links/57fd2c5308ae49db475537fa/Discrete-Logarithms-in-GFP-Using-the-Number-Field-Sieve.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Daniel-Gordon-4/publication/255673189_Discrete_Logarithms_in_GFP_Using_the_Number_Field_Sieve/links/57fd2c5308ae49db475537fa/Discrete-Logarithms-in-GFP-Using-the-Number-Field-Sieve.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 46,
+      "title": "Quadratic Sieve",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-3-030-71522-9_474.pdf",
+      "publication_info": "R Silverman - Encyclopedia of Cryptography, Security and Privacy, 2025 - Springer",
+      "snippet": "… The entries⊳ integer and⊳ discuss the history of these factoring Number Field Sieve algorithms. For those interested in implementing QS, reference (Silverman 1987) gives all of the …",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:wqUgjupI1zYJ:scholar.google.com/&scioq=%22elliptic+curve%22+%22number+field+sieve%22+comparison+factorization&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 47,
+      "title": "A new implementation of the method of integer using Edwards and Hessian curves elliptic curve factorization",
+      "url": "https://search.proquest.com/openview/6603b544401e9b27379c1ffb63a59347/1?pq-origsite=gscholar&cbl=2026366",
+      "publication_info": "- 2015 - search.proquest.com O Robinson",
+      "snippet": "… out of reach of the (for example) are amenable to by ECM, … number field sieve factorisation The largest factors found are presented, and software timings are given and with … compared",
+      "pdf": {
+        "label": "ucd.ie [PDF]",
+        "url": "https://researchrepository.ucd.ie/bitstreams/6387bd84-848c-4d11-82a1-0a9c62ca0dc7/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ucd.ie [PDF]",
+          "url": "https://researchrepository.ucd.ie/bitstreams/6387bd84-848c-4d11-82a1-0a9c62ca0dc7/download"
+        }
+      ]
+    },
+    {
+      "rank": 48,
+      "title": "A new angle on lattice sieving for the number field sieve",
+      "url": "https://arxiv.org/abs/2001.10860",
+      "publication_info": ", - arXiv preprint arXiv:2001.10860, 2020 - arxiv.org G McGuire O Robinson",
+      "snippet": "… We sieving statistics in table 1 between our … access are intertwined and we compare compare this to our combined … and two rounds of Edwards . Although the … elliptic curve factorization",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2001.10860"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2001.10860"
+        }
+      ]
+    },
+    {
+      "rank": 49,
+      "title": "method: Towards better exploitation of reconfigurable hardware Elliptic curve factorization",
+      "url": "https://www.researchgate.net/profile/Jean-Jacques-Quisquater/publication/4272853_Integer_Factorization_Based_on_Elliptic_Curve_Method_Towards_Better_Exploitation_of_Reconfigurable_Hardware/links/0fcfd50c5ccf0c9f49000000/Integer-Factorization-Based-on-Elliptic-Curve-Method-Towards-Better-Exploitation-of-Reconfigurable-Hardware.pdf",
+      "publication_info": "G de Meulenaer, F Gosset… - SHARCS Workshop …, 2007 - researchgate.net",
+      "snippet": "… the RSA public key cryptosystem is the . One of its important phases usually Number Field Sieve … For this , the Method (ECM) is an attractive solution. As ECM is … factorization Elliptic Curve",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Jean-Jacques-Quisquater/publication/4272853_Integer_Factorization_Based_on_Elliptic_Curve_Method_Towards_Better_Exploitation_of_Reconfigurable_Hardware/links/0fcfd50c5ccf0c9f49000000/Integer-Factorization-Based-on-Elliptic-Curve-Method-Towards-Better-Exploitation-of-Reconfigurable-Hardware.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Jean-Jacques-Quisquater/publication/4272853_Integer_Factorization_Based_on_Elliptic_Curve_Method_Towards_Better_Exploitation_of_Reconfigurable_Hardware/links/0fcfd50c5ccf0c9f49000000/Integer-Factorization-Based-on-Elliptic-Curve-Method-Towards-Better-Exploitation-of-Reconfigurable-Hardware.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 50,
+      "title": "The role of smooth numbers in number theoretic algorithms",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-0348-9078-6_34",
+      "publication_info": "- Proceedings of the International Congress of …, 1995 - Springer C Pomerance",
+      "snippet": "… In this section we shall discuss the connection between Lemma 2.1 and . An old … factoring tries the method before attempting the quadratic sieve or the . … elliptic curve number field sieve",
+      "pdf": {
+        "label": "archive.org [PDF]",
+        "url": "https://scholar.archive.org/work/2rym2e7iojgijilyabx3dzgkbe/access/wayback/http://www.mathunion.org/ICM/ICM1994.1/Main/icm1994.1.0411.0422.ocr.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "archive.org [PDF]",
+          "url": "https://scholar.archive.org/work/2rym2e7iojgijilyabx3dzgkbe/access/wayback/http://www.mathunion.org/ICM/ICM1994.1/Main/icm1994.1.0411.0422.ocr.pdf"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

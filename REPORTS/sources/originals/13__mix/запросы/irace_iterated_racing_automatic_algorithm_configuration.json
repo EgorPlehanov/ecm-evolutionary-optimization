@@ -1,0 +1,768 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"irace\" \"iterated racing\" \"automatic algorithm configuration\"",
+    "requested_limit": 30,
+    "saved_records": 30,
+    "hl": "en",
+    "created_at_utc": "2026-05-17T14:31:05.941692+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22irace%22+%22iterated+racing%22+%22automatic+algorithm+configuration%22&hl=en&start=0",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22irace%22+%22iterated+racing%22+%22automatic+algorithm+configuration%22&hl=en&start=10",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 20,
+      "url": "https://scholar.google.com/scholar?q=%22irace%22+%22iterated+racing%22+%22automatic+algorithm+configuration%22&hl=en&start=20",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "The package: for irace Iterated racing automatic algorithm configuration",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2214716015300270",
+      "publication_info": ", , … - Operations Research …, 2016 - Elsevier M López-Ibáñez J Dubois-Lacoste LP Cáceres",
+      "snippet": "… the procedures and … and demonstrate with a number of example iterated racing irace applications the use and potential of , in particular, and … irace automatic algorithm configuration",
+      "pdf": {
+        "label": "sciencedirect.com [HTML]",
+        "url": "https://www.sciencedirect.com/science/article/pii/S2214716015300270"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "sciencedirect.com [HTML]",
+          "url": "https://www.sciencedirect.com/science/article/pii/S2214716015300270"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Algorithm configuration via continuously racing: preliminary results",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3583133.3596408",
+      "publication_info": "Y Xiao, , … - Proceedings of the …, 2023 - dl.acm.org L Pérez Cáceres M López-Ibáñez",
+      "snippet": "… procedures aim at supporting the design and application Automatic algorithm configuration of … motivated by this resource usage shortcoming of the procedure. … irace iterated racing",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3583133.3596408"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3583133.3596408"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Automated algorithm configuration and design",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3377929.3389875",
+      "publication_info": ", - Proceedings of the 2020 Genetic and …, 2020 - dl.acm.org M López-Ibáñez T Stützle",
+      "snippet": "… Towards apply powerful automatic algorithm configuration Automatic algorithm configuration … MOACO framework 2 Explore the space of potential designs automatically using … irace",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3377929.3389875"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3377929.3389875"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "Automated algorithm configuration and design",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3520304.3533663",
+      "publication_info": ", … - Proceedings of the genetic …, 2022 - dl.acm.org T Stützle M López-Ibáñez",
+      "snippet": "… Towards apply powerful automatic algorithm configuration Automatic algorithm configuration search techniques to … How to use to design algorithms from a grammar description? … irace",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3520304.3533663"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3520304.3533663"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "Automated algorithm configuration and design",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3583133.3595046",
+      "publication_info": ", … - Proceedings of the …, 2023 - dl.acm.org L Pérez Cáceres M López-Ibáñez",
+      "snippet": "… Towards apply … automatic algorithm configuration Automatic algorithm configuration irace 4 Most effort done by the computer 4 Best configurations selected by the computer: Unbiased …",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3583133.3595046"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3583133.3595046"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "Automated Algorithm Configuration for Hard Optimization Problems",
+      "url": "https://dipot.ulb.ac.be/dspace/bitstream/2013/295173/4/TOC.pdf",
+      "publication_info": ", , - 2019 - dipot.ulb.ac.be Z Yuan T STUTZLE M BIRATTARI",
+      "snippet": "… tools, also known as . • We extended the family of by hybridizing the sta… irace iterated racing to the main topic of this thesis, . Their topics are mainly on … automatic algorithm configuration",
+      "pdf": {
+        "label": "ulb.ac.be [PDF]",
+        "url": "https://dipot.ulb.ac.be/dspace/bitstream/2013/295173/4/TOC.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ulb.ac.be [PDF]",
+          "url": "https://dipot.ulb.ac.be/dspace/bitstream/2013/295173/4/TOC.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "algorithm for simulation-optimisation of maintenance planning Iterated racing",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8477843/",
+      "publication_info": ", , J Lonchampt - 2018 IEEE Congress on …, 2018 - ieeexplore.ieee.org B Lacroix J McCall",
+      "snippet": "… For the rest of this paper, we use the notation (k+μ) to denote the … of IRACE iterated racing using to tackle maintenance optimisation problems. The idea of using for … iterated racing IRACE",
+      "pdf": {
+        "label": "worktribe.com [PDF]",
+        "url": "https://rgu-repository.worktribe.com/file/249059/1/LACROIX%202018%20Iterated%20racing%20algorithm"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "worktribe.com [PDF]",
+          "url": "https://rgu-repository.worktribe.com/file/249059/1/LACROIX%202018%20Iterated%20racing%20algorithm"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "Automated Algorithm Configuration",
+      "url": "https://pub.uni-bielefeld.de/record/3006393",
+      "publication_info": "D Weiß - 2025 - pub.uni-bielefeld.de",
+      "snippet": "… The for ( ) [88] method does not iterated racing automatic algorithm configuration Irace employ a surrogate model. Instead, it relies on statistical racing. The evaluation scheme of …",
+      "pdf": {
+        "label": "uni-bielefeld.de [PDF]",
+        "url": "https://pub.uni-bielefeld.de/download/3006393/3006394/PhD_Thesis_Dimitri_Wei%C3%9F_Final.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "uni-bielefeld.de [PDF]",
+          "url": "https://pub.uni-bielefeld.de/download/3006393/3006394/PhD_Thesis_Dimitri_Wei%C3%9F_Final.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "A literature survey on offline automatic algorithm configuration",
+      "url": "https://www.mdpi.com/2076-3417/12/13/6316",
+      "publication_info": "Y Eryoldaş, - Applied Sciences, 2022 - mdpi.com A Durmuşoglu",
+      "snippet": "… this recent version of on two configuration cases. It has … importance for guiding the irace procedures to find … improvements over lead to a high-performing that … iterated racing irace irace",
+      "pdf": {
+        "label": "mdpi.com [HTML]",
+        "url": "https://www.mdpi.com/2076-3417/12/13/6316"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "mdpi.com [HTML]",
+          "url": "https://www.mdpi.com/2076-3417/12/13/6316"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "Hybridization of evolutionary operators with elitist for the simulation optimization of traffic lights programs iterated racing",
+      "url": "https://direct.mit.edu/evco/article-abstract/31/1/31/112596",
+      "publication_info": ", , … - Evolutionary …, 2023 - direct.mit.edu C Cintrano J Ferrer M López-Ibáñez",
+      "snippet": "… In this work, we combine the elitist strategy from with evolutionary iterated racing IRACE operators … The elitist strategy of decides how many simulations should be … iterated racing IRACE",
+      "pdf": {
+        "label": "uma.es [PDF]",
+        "url": "https://riuma.uma.es/bitstreams/429896e3-b02a-4718-b8a5-e78b2c0c1d31/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "uma.es [PDF]",
+          "url": "https://riuma.uma.es/bitstreams/429896e3-b02a-4718-b8a5-e78b2c0c1d31/download"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "Automatic (offline) configuration of algorithms",
+      "url": "https://dl.acm.org/doi/abs/10.1145/2464576.2482681",
+      "publication_info": ", - Proceedings of the 15th annual conference …, 2013 - dl.acm.org T Stützle M López-Ibáñez",
+      "snippet": "… Why ? … How to use to design algorithms from a automatic algorithm configuration irace grammar description? … works better than GE for designing IG algorithms for bin-packing and … irace",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/2464576.2482681"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/2464576.2482681"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "Real-time algorithm configuration",
+      "url": "https://cora.ucc.ie/handle/10468/11303",
+      "publication_info": "- 2021 - cora.ucc.ie T Fitzgerald",
+      "snippet": "… to tackle the problem which … F-Race is continuing in automatic algorithm configuration the form of the package [LIDLC… Elitist prevents accidental removal of … irace iterated racing",
+      "pdf": {
+        "label": "ucc.ie [PDF]",
+        "url": "https://cora.ucc.ie/bitstream/10468/11303/1/react_thesis_final.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ucc.ie [PDF]",
+          "url": "https://cora.ucc.ie/bitstream/10468/11303/1/react_thesis_final.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "A survey of methods for automated algorithm configuration",
+      "url": "https://www.jair.org/index.php/jair/article/view/13676",
+      "publication_info": "E Schede, , , … - Journal of Artificial …, 2022 - jair.org J Brandt A Tornede M Wever",
+      "snippet": "… to be adaptive itself by introducing a dependence on the size of the current problem instance set, leading to a less aggressive capping strategy compared to ParamILS or . Lastly, a … irace",
+      "pdf": {
+        "label": "jair.org [PDF]",
+        "url": "https://www.jair.org/index.php/jair/article/download/13676/26852"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "jair.org [PDF]",
+          "url": "https://www.jair.org/index.php/jair/article/download/13676/26852"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "Hybridization of racing methods with evolutionary operators for simulation optimization of traffic lights programs",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-030-72904-2_2",
+      "publication_info": ", , … - European Conference on …, 2021 - Springer C Cintrano J Ferrer M López-Ibáñez",
+      "snippet": "… In this work, we combine the elitist strategy from with evolutionary iterated racing IRACE operators … The elitist strategy of decides how many simulations should be … iterated racing IRACE",
+      "pdf": null,
+      "cited_by_count": 5,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=13428254765849297784&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:eMPkR5C-WroJ:scholar.google.com/&scioq=%22irace%22+%22iterated+racing%22+%22automatic+algorithm+configuration%22&hl=en&as_sdt=0,5",
+      "versions_count": 4,
+      "versions_url": "https://scholar.google.com/scholar?cluster=13428254765849297784&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "Automatic design for matheuristics",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-030-70277-9_2",
+      "publication_info": ", , - Matheuristics: Algorithms and …, 2021 - Springer V Maniezzo MA Boschetti T Stützle",
+      "snippet": "… and then learn about three methods: ParamILS, SMAC, and automatic algorithm configuration … 2.2.6 we will see an example of a configurator based on the approach. … irace iterated racing",
+      "pdf": {
+        "label": "unibo.it [PDF]",
+        "url": "https://cris.unibo.it/bitstream/11585/832891/3/Chapter%20-%20Automatic%20Design%20for%20Matheuristics%20-%20Maniezzo%20Boschetti%20Stuzle%20%28003%29.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "unibo.it [PDF]",
+          "url": "https://cris.unibo.it/bitstream/11585/832891/3/Chapter%20-%20Automatic%20Design%20for%20Matheuristics%20-%20Maniezzo%20Boschetti%20Stuzle%20%28003%29.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "Automated offline design of algorithms",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3067695.3067722",
+      "publication_info": ", - Proceedings of the Genetic and Evolutionary …, 2017 - dl.acm.org M López-Ibáñez T Stützle",
+      "snippet": "… Towards apply powerful automatic algorithm configuration Automatic algorithm configuration search techniques to … How to use to design algorithms from a grammar description? … irace",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3067695.3067722"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3067695.3067722"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "Hybridization of Racing Methods with Evolutionary Operators for Simulation",
+      "url": "https://books.google.com/books?hl=en&lr=&id=BAomEAAAQBAJ&oi=fnd&pg=PA17&dq=%22irace%22+%22iterated+racing%22+%22automatic+algorithm+configuration%22&ots=1VJTFLZCn2&sig=7OyBQdZ97Z4L03AHho2pnmwRNzk",
+      "publication_info": "- … : 21st European Conference, EvoCOP 2021, Held as …, 2021 - books.google.com E Alba",
+      "snippet": "… In this work, we combine the elitist strategy from with evolutionary iterated racing IRACE operators … The elitist strategy of decides how many simulations should be … iterated racing IRACE",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:uPPxRw9i0wgJ:scholar.google.com/&scioq=%22irace%22+%22iterated+racing%22+%22automatic+algorithm+configuration%22&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "title": "Automatic DRAM Subsystem Configuration with irace",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3579170.3579259",
+      "publication_info": ", , I Prando da Silva… - Proceedings of the …, 2023 - dl.acm.org L Steiner G Delazeri",
+      "snippet": "… can be viewed as a threestep process: (1) … The package is an Iterated racing irace implementation of … In this work we showed that … iterated racing automatic algorithm configuration",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3579170.3579259"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3579170.3579259"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "title": ": methods and applications Automatic algorithm configuration",
+      "url": "https://lume.ufrgs.br/handle/10183/236350",
+      "publication_info": "- 2022 - lume.ufrgs.br M Souza",
+      "snippet": "… We present existing automatic configuration methods and detail the configurator. We irace review the literature and discuss several applications of on … automatic algorithm configuration",
+      "pdf": {
+        "label": "ufrgs.br [PDF]",
+        "url": "https://lume.ufrgs.br/bitstream/handle/10183/236350/001138869.pdf?sequence=1"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ufrgs.br [PDF]",
+          "url": "https://lume.ufrgs.br/bitstream/handle/10183/236350/001138869.pdf?sequence=1"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "Automatic configuration of multi-objective optimizers and multi-objective configuration",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-030-18764-4_4",
+      "publication_info": ", , - High-Performance Simulation …, 2019 - Springer LCT Bezerra M López-Ibáñez T Stützle",
+      "snippet": "… [33], SMAC [32], and [45]. The applications of these advanced … background on irace automatic and then in … package that implements algorithms for … algorithm configuration iterated racing",
+      "pdf": {
+        "label": "ulb.ac.be [PDF]",
+        "url": "https://iridia.ulb.ac.be/~leonardo/publications/chapters/BezLopStu2019chapter.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ulb.ac.be [PDF]",
+          "url": "https://iridia.ulb.ac.be/~leonardo/publications/chapters/BezLopStu2019chapter.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "Latin hypercube designs with branching and nested factors for initialization of automatic algorithm configuration",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8660767/",
+      "publication_info": "S Wessing, - Evolutionary computation, 2019 - ieeexplore.ieee.org M López-Ibáñez",
+      "snippet": "… , we describe in detail ( ), one of such methods. 3 … Iterated Racing irace Iterated Racing Various algorithms exist for . Some of them use fractional factorial … automatic algorithm configuration",
+      "pdf": {
+        "label": "manchester.ac.uk [PDF]",
+        "url": "https://pure.manchester.ac.uk/ws/portalfiles/portal/78783236/ECJ_2018_032_single.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "manchester.ac.uk [PDF]",
+          "url": "https://pure.manchester.ac.uk/ws/portalfiles/portal/78783236/ECJ_2018_032_single.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "title": "A framework for the runtime analysis of algorithm configurators",
+      "url": "https://etheses.whiterose.ac.uk/id/eprint/29537/",
+      "publication_info": "- 2021 - etheses.whiterose.ac.uk GT Hall",
+      "snippet": "… In this chapter, we provide an overview of the field of … automatic algorithm configuration configurator [91]. One improvement of over I/F-Race is to use an elitist … irace irace iterated racing",
+      "pdf": {
+        "label": "whiterose.ac.uk [PDF]",
+        "url": "https://etheses.whiterose.ac.uk/id/eprint/29537/1/thesis.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "whiterose.ac.uk [PDF]",
+          "url": "https://etheses.whiterose.ac.uk/id/eprint/29537/1/thesis.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "title": "Automatic Configuration of Metaheuristics for Solving the Quadratic Three-Dimensional Assignment Problem Using Irace",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-031-26504-4_25",
+      "publication_info": ", - Metaheuristics International Conference, 2022 - Springer I Ait Abderrahim T Stützle",
+      "snippet": "… This paper contributes to overcoming the challenge of automatically configured metaheuristics using the for applied to the … iterated racing automatic algorithm configuration irace",
+      "pdf": {
+        "label": "ulb.ac.be [PDF]",
+        "url": "https://dipot.ulb.ac.be/dspace/bitstream/2013/371810/3/MIC2022_AutoConfigQ3AP.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ulb.ac.be [PDF]",
+          "url": "https://dipot.ulb.ac.be/dspace/bitstream/2013/371810/3/MIC2022_AutoConfigQ3AP.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "title": "Automated configuration of genetic algorithms by tuning for anytime performance",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9733420/",
+      "publication_info": ", , , - IEEE Transactions on …, 2022 - ieeexplore.ieee.org F Ye C Doerr H Wang T Bäck",
+      "snippet": "… [31] is a so-called method … -ERT significantly outperforms -AUC. Irace iterated racing Irace Irace On F2-3, F5, and F20, we observe that the result of most runs of -AUC and -ERT … Irace Irace",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2106.06304"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2106.06304"
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "title": "Using automated algorithm configuration for parameter control",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3594805.3607127",
+      "publication_info": "D Chen, , , - Proceedings of the 17th ACM …, 2023 - dl.acm.org M Buzdalov C Doerr N Dang",
+      "snippet": "… each ’s iteration before the first statistical test is applied) is increased from 5 (default) to irace 10. All other parameters of are set as default. For comparison, we also apply on a … irace irace",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3594805.3607127"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3594805.3607127"
+        }
+      ]
+    },
+    {
+      "rank": 26,
+      "title": "Towards landscape-aware : preliminary experiments on neutral and rugged landscapes automatic algorithm configuration",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-55453-2_15",
+      "publication_info": "A Liefooghe, B Derbel, S Verel, H Aguirre… - European Conference on …, 2017 - Springer",
+      "snippet": "… methods. Specifically, we show that using landscape features automatic algorithm configuration in … the main steps of conventional as performed in [6]. … iterated racing iterated racing irace",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://hal.science/hal-01824982/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://hal.science/hal-01824982/document"
+        }
+      ]
+    },
+    {
+      "rank": 27,
+      "title": "Loss Function Regularization on the Procedure for Automatic Tuning of RatSLAM Parameters Iterated Racing",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-031-08443-0_4",
+      "publication_info": "PGB Gomes, CJRL de Oliveira, … - … American Workshop on …, 2021 - Springer MC Menezes",
+      "snippet": "… Their approach applies the ( for ) [4] … irace Iterated Racing Automatic Algorithm Configuration Then, the created maps with RatSLAM and parameters are evaluated by the Iterative … irace",
+      "pdf": null,
+      "cited_by_count": 2,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=10466087542615594140&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:nFS-FSsDP5EJ:scholar.google.com/&scioq=%22irace%22+%22iterated+racing%22+%22automatic+algorithm+configuration%22&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 28,
+      "title": "Advanced Use of : Single-and Multi-Objective Approaches Automatic Algorithm Configuration",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3712255.3716537",
+      "publication_info": ", - Proceedings of the Genetic and Evolutionary …, 2025 - dl.acm.org J Rook M López-Ibáñez",
+      "snippet": "… He is the lead developer and current maintainer of the software package (http://mlopez-ibanez.github.io/ ) irace irace and the moocore packages (https://github.com/ multi-objective/…",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3712255.3716537"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3712255.3716537"
+        }
+      ]
+    },
+    {
+      "rank": 29,
+      "title": "Evaluation of alternative design choices for evolutionary mutation testing by means of automated configuration",
+      "url": "https://link.springer.com/article/10.1007/s11219-020-09530-1",
+      "publication_info": ", - Software Quality Journal, 2022 - Springer P Delgado-Pérez F Chicano",
+      "snippet": "… out in this paper applying , a well-known … new configuration found by iterated racing iterated was able to enhance … configuration found applying with . It shows … racing iterated racing irace",
+      "pdf": {
+        "label": "uca.es [PDF]",
+        "url": "https://rodin.uca.es/bitstream/handle/10498/25776/SQJ%20-%20Evaluation%20of%20alternative%20design%20choices%20for%20evolutionary%20mutation%20testing%20by%20means%20of%20automated%20configuration.pdf?sequence=1"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "uca.es [PDF]",
+          "url": "https://rodin.uca.es/bitstream/handle/10498/25776/SQJ%20-%20Evaluation%20of%20alternative%20design%20choices%20for%20evolutionary%20mutation%20testing%20by%20means%20of%20automated%20configuration.pdf?sequence=1"
+        }
+      ]
+    },
+    {
+      "rank": 30,
+      "title": "A study on auto-configuration of multi-objective particle swarm optimization algorithm",
+      "url": "https://ieeexplore.ieee.org/abstract/document/7969381/",
+      "publication_info": ", - 2017 IEEE Congress on …, 2017 - ieeexplore.ieee.org RHR de Lima ATR Pozo",
+      "snippet": "… Two design algorithms were used: the Grammatical Evolution (GE) and ( ). Iterated Racing IRACE The framework was proposed to expand the concepts addressed in [13]. …",
+      "pdf": null,
+      "cited_by_count": 12,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=13899737408081770121&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:iTbsV4fJ5cAJ:scholar.google.com/&scioq=%22irace%22+%22iterated+racing%22+%22automatic+algorithm+configuration%22&hl=en&as_sdt=0,5",
+      "versions_count": 3,
+      "versions_url": "https://scholar.google.com/scholar?cluster=13899737408081770121&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

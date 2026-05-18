@@ -1,0 +1,502 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"RSA factorization\" \"number field sieve\" \"record\"",
+    "requested_limit": 20,
+    "saved_records": 20,
+    "hl": "en",
+    "created_at_utc": "2026-05-15T17:47:12.900460+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22RSA+factorization%22+%22number+field+sieve%22+%22record%22&hl=en&start=0",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22RSA+factorization%22+%22number+field+sieve%22+%22record%22&hl=en&start=10",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "Implementation of factorization of RSA using GNFS on ordinary computer",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8275867/",
+      "publication_info": ", SN Mandal - 2017 International Conference on …, 2017 - ieeexplore.ieee.org A Hasnat",
+      "snippet": "… In this article, General is used for factoring … Section II discusses Number Field Sieve RSA challenge numbers … Zayer, “A World Wide factoring : On … factorization Number Field Sieve record",
+      "pdf": null,
+      "cited_by_count": 3,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=16158406350010842885&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:Bf_P5PYwPuAJ:scholar.google.com/&scioq=%22RSA+factorization%22+%22number+field+sieve%22+%22record%22&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Quantum inspired factorization up to 100-bit RSA number in polynomial time",
+      "url": "https://www.researchgate.net/profile/Giuseppe-Magnifico/publication/385139947_Quantum_inspired_factorization_up_to_100-bit_RSA_number_in_polynomial_time/links/67c0e083645ef274a49669b0/Quantum-inspired-factorization-up-to-100-bit-RSA-number-in-polynomial-time.pdf",
+      "publication_info": ", , , … - arXiv preprint arXiv …, 2024 - researchgate.net M Tesoro I Siloi D Jaschke G Magnifico",
+      "snippet": "… Here, we attack building on Schnorr’s … algorithm is the General RSA factorization Number (GNFS), which … In Section E we provide the prime factors of our RSA-key … Field Sieve record",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Giuseppe-Magnifico/publication/385139947_Quantum_inspired_factorization_up_to_100-bit_RSA_number_in_polynomial_time/links/67c0e083645ef274a49669b0/Quantum-inspired-factorization-up-to-100-bit-RSA-number-in-polynomial-time.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Giuseppe-Magnifico/publication/385139947_Quantum_inspired_factorization_up_to_100-bit_RSA_number_in_polynomial_time/links/67c0e083645ef274a49669b0/Quantum-inspired-factorization-up-to-100-bit-RSA-number-in-polynomial-time.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Integer factorization via tensor-network Schnorr's sieving",
+      "url": "https://link.aps.org/doi/10.1103/d9dl-ctt4",
+      "publication_info": ", , , … - Physical Review A, 2026 - APS M Tesoro I Siloi D Jaschke G Magnifico",
+      "snippet": "… Here, we address building on Schnorr’s … classical algorithm is the general RSA factorization (GNFS), … In Appendix A 5 we provide the prime factors of our RSA… number field sieve record",
+      "pdf": {
+        "label": "aps.org [PDF]",
+        "url": "https://link.aps.org/pdf/10.1103/d9dl-ctt4"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "aps.org [PDF]",
+          "url": "https://link.aps.org/pdf/10.1103/d9dl-ctt4"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "Some results on cryptanalysis of RSA and factorization",
+      "url": "https://search.proquest.com/openview/46cc712dea74f180afce261c149aee2e/1?pq-origsite=gscholar&cbl=2026366&diss=y",
+      "publication_info": "S Sarkar - 2011 - search.proquest.com",
+      "snippet": "… the Integer Factorization problem is the , which has a … An attempt at Number Field Sieve RSA based on this implicit … 2 years to execute and is currently the in the field. … factorization record",
+      "pdf": {
+        "label": "isical.ac.in [PDF]",
+        "url": "https://digitalcommons.isical.ac.in/cgi/viewcontent.cgi?article=1035&context=doctoral-theses"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "isical.ac.in [PDF]",
+          "url": "https://digitalcommons.isical.ac.in/cgi/viewcontent.cgi?article=1035&context=doctoral-theses"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "An Efficient All-to-All GCD Algorithm for Low Entropy RSA Key Factorization",
+      "url": "https://arxiv.org/abs/2405.03166",
+      "publication_info": "- arXiv preprint arXiv:2405.03166, 2024 - arxiv.org E Pelofske",
+      "snippet": "… “A world wide factoring : on to 512 bits”. In: International number field sieve record Conference on the Theory and Application of Cryptology and Information Security. Springer. …",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2405.03166"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2405.03166"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "Hardware factorization based on elliptic curve method",
+      "url": "https://ieeexplore.ieee.org/abstract/document/1508531/",
+      "publication_info": "M Simka, , T Kleinjung, J Franke… - 13th Annual IEEE …, 2005 - ieeexplore.ieee.org J Pelzl",
+      "snippet": "… The current world in factoring a random RSA modulus is 576 bits and was achieved record … SHARK distinguishes itself from other proposed architectures for (see, eg, [… RSA factorization",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Martin-Simka/publication/4174989_Hardware_Factorization_Based_on_Elliptic_Curve_Method/links/0c960524c6bb62e69a000000/Hardware-Factorization-Based-on-Elliptic-Curve-Method.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Martin-Simka/publication/4174989_Hardware_Factorization_Based_on_Elliptic_Curve_Method/links/0c960524c6bb62e69a000000/Hardware-Factorization-Based-on-Elliptic-Curve-Method.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "Discrete logarithm problem in degree six finite fields",
+      "url": "https://www.researchgate.net/profile/Pavol_Zajac/publication/372647261_Discrete_Logarithm_Problem_in_Degree_Six_Finite_Fields/links/64c130098de7ed28bac4d049/Discrete-Logarithm-Problem-in-Degree-Six-Finite-Fields.pdf",
+      "publication_info": "- 2008 - researchgate.net P Zajac",
+      "snippet": "… Thus it can be surprising that the is nowadays the fastest general … On Number Field Sieve the other hand, we can view the not as a single algorithm, but as a class of … Number Field Sieve",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Pavol_Zajac/publication/372647261_Discrete_Logarithm_Problem_in_Degree_Six_Finite_Fields/links/64c130098de7ed28bac4d049/Discrete-Logarithm-Problem-in-Degree-Six-Finite-Fields.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Pavol_Zajac/publication/372647261_Discrete_Logarithm_Problem_in_Degree_Six_Finite_Fields/links/64c130098de7ed28bac4d049/Discrete-Logarithm-Problem-in-Degree-Six-Finite-Fields.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "The state of the art in integer factoring and breaking public-key cryptography",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9740707/",
+      "publication_info": ", , … - IEEE Security & …, 2022 - ieeexplore.ieee.org F Boudot P Gaudry A Guillevic",
+      "snippet": "… much better results for current computational sizes: in our most recent , this record record allowed a … His research on the parametrization of the contributes to the latest … number field sieve",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://hal.science/hal-03691141/file/cryptography.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://hal.science/hal-03691141/file/cryptography.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "An efficient hardware architecture for factoring integers with the elliptic curve method",
+      "url": "http://cr.yp.to/conferences/2006-sharcs/www.ruhr-uni-bochum.de/itsc/tanja/SHARCS/talks/ecm_paper.pdf",
+      "publication_info": "J Franke, T Kleinjung, , , C Priplata… - … -Purpose Hardware for …, 2005 - cr.yp.to C Paar J Pelzl",
+      "snippet": "… factorization is the General (GNFS). One … The current world in Number Field Sieve record factoring a random RSA modulus … other proposed architectures for (see, eg [4]… RSA factorization",
+      "pdf": {
+        "label": "yp.to [PDF]",
+        "url": "http://cr.yp.to/conferences/2006-sharcs/www.ruhr-uni-bochum.de/itsc/tanja/SHARCS/talks/ecm_paper.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "yp.to [PDF]",
+          "url": "http://cr.yp.to/conferences/2006-sharcs/www.ruhr-uni-bochum.de/itsc/tanja/SHARCS/talks/ecm_paper.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "A heterogeneous computing environment to solve the 768-bit RSA challenge",
+      "url": "https://link.springer.com/article/10.1007/s10586-010-0149-0",
+      "publication_info": "T Kleinjung, , , , … - Cluster …, 2012 - Springer JW Bos AK Lenstra DA Osvik K Aoki",
+      "snippet": "… -768 was factored using the . Overall, the … to set a new integer factorization number field sieve by factoring the chal… been dedicated to the - problem. Therefore, … record RSA factorization",
+      "pdf": {
+        "label": "epfl.ch [PDF]",
+        "url": "https://infoscience.epfl.ch/bitstreams/b154e253-7689-4a92-9811-40d82ab9198e/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "epfl.ch [PDF]",
+          "url": "https://infoscience.epfl.ch/bitstreams/b154e253-7689-4a92-9811-40d82ab9198e/download"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "Network Security &Cryptographic Techniques",
+      "url": "https://www.researchgate.net/profile/Priti_Puri/publication/274315447_Network_Security_Cryptographic_Techniques/links/551b92d40cf2fdce8438a030/Network-Security-Cryptographic-Techniques",
+      "publication_info": "PR Suri, - researchgate.net P Puri",
+      "snippet": "… using the (NFS) factoring algorithm and beats the 129 digit by the number field sieve record … Conclusion: Public key cryptographic systems, have some drawbacks as … RSA Factorization",
+      "pdf": {
+        "label": "researchgate.net [DOC]",
+        "url": "https://www.researchgate.net/profile/Priti_Puri/publication/274315447_Network_Security_Cryptographic_Techniques/links/551b92d40cf2fdce8438a030/Network-Security-Cryptographic-Techniques"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [DOC]",
+          "url": "https://www.researchgate.net/profile/Priti_Puri/publication/274315447_Network_Security_Cryptographic_Techniques/links/551b92d40cf2fdce8438a030/Network-Security-Cryptographic-Techniques"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "On the Security of 1024-bit RSA and 160-bit Elliptic Curve Cryptography",
+      "url": "https://infoscience.epfl.ch/entities/publication/741fd3ac-02da-4ce0-9703-7b2f2aabadec",
+      "publication_info": ", M Kaihara, T Kleinjung, … - 2009 - infoscience.epfl.ch J Bos AK Lenstra",
+      "snippet": "… referred to as the Special (SNFS), was … new NFS that would beat Number Field Sieve record the current factoring of … ” effort a 1024-bit is currently out of reach. … record RSA factorization",
+      "pdf": {
+        "label": "epfl.ch [PDF]",
+        "url": "https://infoscience.epfl.ch/bitstreams/39d4c54d-0ccf-45b6-96d2-4b8d657d93db/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "epfl.ch [PDF]",
+          "url": "https://infoscience.epfl.ch/bitstreams/39d4c54d-0ccf-45b6-96d2-4b8d657d93db/download"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "RSA weak public keys available on the Internet",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-47238-6_6",
+      "publication_info": "M Barbulescu, A Stratulat, V Traista-Popescu… - International Conference …, 2016 - Springer",
+      "snippet": "… In history we can denote the following milestones of : … factored using the RSA factorization factoring method, same method that was used in the previous , from … Number Field Sieve record",
+      "pdf": {
+        "label": "iacr.org [PDF]",
+        "url": "https://eprint.iacr.org/2016/515.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iacr.org [PDF]",
+          "url": "https://eprint.iacr.org/2016/515.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "Mining your Ps and Qs: Detection of widespread weak keys in network devices",
+      "url": "https://www.usenix.org/system/files/conference/usenixsecurity12/sec12-final228.pdf",
+      "publication_info": ", , … - 21st USENIX Security …, 2012 - usenix.org N Heninger Z Durumeric E Wustrow",
+      "snippet": "… for general integers is the , which has … Ubuntu Server 10.04 system to number field sieve its estimate of the entropy … cause for concern than the vulnerability. The … record RSA factorization",
+      "pdf": {
+        "label": "usenix.org [PDF]",
+        "url": "https://www.usenix.org/system/files/conference/usenixsecurity12/sec12-final228.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "usenix.org [PDF]",
+          "url": "https://www.usenix.org/system/files/conference/usenixsecurity12/sec12-final228.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "HABILITATION À DIRIGER LES RECHERCHES",
+      "url": "https://people.rennes.inria.fr/Aurore.Guillevic/hdr/20260309_AuroreGuillevic_HDR.pdf",
+      "publication_info": "- 2026 - people.rennes.inria.fr A GUILLEVIC",
+      "snippet": "… the world top-leaders on the . I would like to thank my … the number field sieve number field algorithm and computational number theory in general, and the many discussions, … sieve record",
+      "pdf": {
+        "label": "inria.fr [PDF]",
+        "url": "https://people.rennes.inria.fr/Aurore.Guillevic/hdr/20260309_AuroreGuillevic_HDR.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "inria.fr [PDF]",
+          "url": "https://people.rennes.inria.fr/Aurore.Guillevic/hdr/20260309_AuroreGuillevic_HDR.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "A low-resource quantum factoring algorithm",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-59879-6_19",
+      "publication_info": ", , M Mosca - International Workshop on Post …, 2017 - Springer DJ Bernstein JF Biasse",
+      "snippet": "… The - (NFS) is a factoring method introduced by Pollard [21] and … asymptotic number field sieve speed mentioned above; it was also used for the latest , the … record RSA factorization record",
+      "pdf": {
+        "label": "iacr.org [PDF]",
+        "url": "https://eprint.iacr.org/2017/352.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iacr.org [PDF]",
+          "url": "https://eprint.iacr.org/2017/352.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "Securing Cloud-The Quantum Way",
+      "url": "https://arxiv.org/abs/1512.02196",
+      "publication_info": "M Pandya - arXiv preprint arXiv:1512.02196, 2015 - arxiv.org",
+      "snippet": "… Alice can send her photons through randomly chosen filters and the polarization of … record the best algorithm for solving it is the with a sub-exponential running time. … Number Field Sieve",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/1512.02196"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/1512.02196"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "title": "Semiprime Factorization with the Cell Method: A QUBO-Based and a Memory-Efficient Classical Cell-Decomposition Study",
+      "url": "https://www.researchsquare.com/article/rs-8712674/latest",
+      "publication_info": "G Curato, D Tezza, D Galati, L Ferrara, M Ponzi… - 2026 - researchsquare.com",
+      "snippet": "… Among them, the General (GNFS) remains the fastest and most … Table Number Field Sieve 2: Multiplicative table illustrating the Cell Method for an 8-bit (LN = 8,k = 4). … RSA factorization",
+      "pdf": {
+        "label": "researchsquare.com [PDF]",
+        "url": "https://www.researchsquare.com/article/rs-8712674/latest.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchsquare.com [PDF]",
+          "url": "https://www.researchsquare.com/article/rs-8712674/latest.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "ECRYPT yearly report on algorithms and keysizes",
+      "url": "https://infoscience.epfl.ch/bitstreams/3b71dba4-1d7b-44a9-bae1-198563639656/download",
+      "publication_info": "S Babbage, , , B de Weger… - 2009 - infoscience.epfl.ch D Catalano C Cid",
+      "snippet": "… recommendations for factoring/RSA based and DLOG based schemes are based on an estimate for n512 and an extrapolation of the attack complexity of the general … number field sieve",
+      "pdf": {
+        "label": "epfl.ch [PDF]",
+        "url": "https://infoscience.epfl.ch/bitstreams/3b71dba4-1d7b-44a9-bae1-198563639656/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "epfl.ch [PDF]",
+          "url": "https://infoscience.epfl.ch/bitstreams/3b71dba4-1d7b-44a9-bae1-198563639656/download"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "Using Large-Scale Empirical Methods to Understand Fragile Cryptographic Ecosystems",
+      "url": "https://deepblue.lib.umich.edu/items/35556c46-da14-467e-9c7a-76c280262579",
+      "publication_info": "- 2018 - deepblue.lib.umich.edu D Adrian",
+      "snippet": "… for discrete log— This algorithm consists of a precomputation stage that Number field sieve depends only on the prime p and a descent stage that computes individual logarithms. With …",
+      "pdf": {
+        "label": "umich.edu [PDF]",
+        "url": "https://deepblue.lib.umich.edu/bitstreams/974b5a21-d090-4aa5-9bd2-3ac92ffdb9d4/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "umich.edu [PDF]",
+          "url": "https://deepblue.lib.umich.edu/bitstreams/974b5a21-d090-4aa5-9bd2-3ac92ffdb9d4/download"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

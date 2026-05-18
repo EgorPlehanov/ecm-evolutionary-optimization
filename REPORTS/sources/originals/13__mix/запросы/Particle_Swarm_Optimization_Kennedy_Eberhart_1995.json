@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"Particle Swarm Optimization\" \"Kennedy\" \"Eberhart\" \"1995\"",
+    "requested_limit": 30,
+    "saved_records": 2,
+    "hl": "en",
+    "created_at_utc": "2026-05-17T14:03:31.138912+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22Particle+Swarm+Optimization%22+%22Kennedy%22+%22Eberhart%22+%221995%22&hl=en&start=0",
+      "records_found": 2,
+      "diagnostics": {
+        "result_nodes_found": 2,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22Particle+Swarm+Optimization%22+%22Kennedy%22+%22Eberhart%22+%221995%22&hl=en&start=10",
+      "records_found": 0,
+      "diagnostics": {
+        "result_nodes_found": 0,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "Particle swarm optimization",
+      "url": "https://ieeexplore.ieee.org/abstract/document/488968/",
+      "publication_info": "J , R - Proceedings of ICNN'95-international …, - ieeexplore.ieee.org Kennedy Eberhart 1995",
+      "snippet": "A concept for the optimization of nonlinear functions using particle swarm methodology is introduced. The evolution of several paradigms is outlined, and an implementation of one of the paradigms is discussed. Benchmark testing of the paradigm is described, and applications, including nonlinear function optimization and neural network training, are proposed. The relationships between particle swarm optimization and both artificial life and genetic algorithms are described.",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/30280202/_reading6_1995_particle_swarming.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/30280202/_reading6_1995_particle_swarming.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "(PSO) Particle swarm optimization",
+      "url": "http://www.cs.cmu.edu/~arielpro/15381f16/c_slides/781f16-26.pdf",
+      "publication_info": "J , R - Proc. IEEE international conference on neural …, - cs.cmu.edu Kennedy Eberhart 1995",
+      "snippet": "• PSO consists of a swarm of bird-like particles• Each particle resides at a position in the search space• The fitness of each particle represents the quality of its position• The particles move over the search space with a certain velocity• Each particle has an internal state+ network of social connections• The velocity (both direction and speed) of each particle is influenced by its own best position found so far, pbest, the best solution that was found so far by its social neighbors, lbest, and/or the global best so far gbest•“Eventually” the swarm will …",
+      "pdf": {
+        "label": "cmu.edu [PDF]",
+        "url": "http://www.cs.cmu.edu/~arielpro/15381f16/c_slides/781f16-26.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "cmu.edu [PDF]",
+          "url": "http://www.cs.cmu.edu/~arielpro/15381f16/c_slides/781f16-26.pdf"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

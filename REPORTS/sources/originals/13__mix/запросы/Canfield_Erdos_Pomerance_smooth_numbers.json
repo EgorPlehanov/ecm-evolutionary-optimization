@@ -1,0 +1,795 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"Canfield\" \"Erdos\" \"Pomerance\" \"smooth numbers\"",
+    "requested_limit": 30,
+    "saved_records": 30,
+    "hl": "en",
+    "created_at_utc": "2026-05-17T16:55:02.838411+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22Canfield%22+%22Erdos%22+%22Pomerance%22+%22smooth+numbers%22&hl=en&start=0",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22Canfield%22+%22Erdos%22+%22Pomerance%22+%22smooth+numbers%22&hl=en&start=10",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 20,
+      "url": "https://scholar.google.com/scholar?q=%22Canfield%22+%22Erdos%22+%22Pomerance%22+%22smooth+numbers%22&hl=en&start=20",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "The role of in number theoretic algorithms smooth numbers",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-0348-9078-6_34",
+      "publication_info": "- Proceedings of the International Congress of …, 1995 - Springer C Pomerance",
+      "snippet": "… on a 1956 heuristic argument of . This heuristic method … himself had proved Erdos Erdos such a result in 1935 for some … It is interesting that the heuristic method in fact suggests … Erdos",
+      "pdf": {
+        "label": "archive.org [PDF]",
+        "url": "https://scholar.archive.org/work/2rym2e7iojgijilyabx3dzgkbe/access/wayback/http://www.mathunion.org/ICM/ICM1994.1/Main/icm1994.1.0411.0422.ocr.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "archive.org [PDF]",
+          "url": "https://scholar.archive.org/work/2rym2e7iojgijilyabx3dzgkbe/access/wayback/http://www.mathunion.org/ICM/ICM1994.1/Main/icm1994.1.0411.0422.ocr.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Anatomy of smooth integers",
+      "url": "https://umontreal.scholaris.ca/items/42e6fead-e845-4ad3-9f63-bc3853c1338e",
+      "publication_info": "- 2017 - umontreal.scholaris.ca M Mehdizadeh",
+      "snippet": "… Le problème de sur la table de multiplication demande quel est le nombre d’entiers … Erdos Dans le quatrième chapitre, nous prouvons un théorème de -Kac modifié pour l’… Erdos",
+      "pdf": {
+        "label": "scholaris.ca [PDF]",
+        "url": "https://umontreal.scholaris.ca/bitstreams/d5ec6cd2-5713-4bc8-938a-a86b7f3ac1e4/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "scholaris.ca [PDF]",
+          "url": "https://umontreal.scholaris.ca/bitstreams/d5ec6cd2-5713-4bc8-938a-a86b7f3ac1e4/download"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Modern Factoring Methods",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-3-662-02945-9_10?pdf=chapter%20toc",
+      "publication_info": "H Cohen - A Course in Computational Algebraic Number Theory, 1993 - Springer",
+      "snippet": "… The running time is essentially governed by the abundance of , ie by the smooth numbers theorem of , and , and so it is not surprising that the running time of … Canfield Erdos Pomerance",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:B98LZCYnE4wJ:scholar.google.com/&scioq=%22Canfield%22+%22Erdos%22+%22Pomerance%22+%22smooth+numbers%22&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=10093454235708153607&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": ": computational number theory and beyond Smooth numbers",
+      "url": "http://math.utoledo.edu/~codenth/Spring_13/3200/NT-books/Smooth_Numbers-Computational_Number_Theory_and_Beyond-Granville.pdf",
+      "publication_info": "- Algorithmic number theory: lattices, number fields …, 2008 - math.utoledo.edu A Granville",
+      "snippet": "… for the number of in various sequences. In this … After this, we will describe smooth numbers applications of to … has featured in many of and ’s works on … smooth numbers Erdos Pomerance",
+      "pdf": {
+        "label": "utoledo.edu [PDF]",
+        "url": "http://math.utoledo.edu/~codenth/Spring_13/3200/NT-books/Smooth_Numbers-Computational_Number_Theory_and_Beyond-Granville.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "utoledo.edu [PDF]",
+          "url": "http://math.utoledo.edu/~codenth/Spring_13/3200/NT-books/Smooth_Numbers-Computational_Number_Theory_and_Beyond-Granville.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "and the quadratic sieve Smooth numbers",
+      "url": "https://pub.math.leidenuniv.nl/~stevenhagenp/ANTproc/03carl.pdf",
+      "publication_info": "- Proc. of an MSRI workshop, J. Buhler and P …, 2008 - pub.math.leidenuniv.nl C Pomerance",
+      "snippet": "… However, we are not so interested in locating in the interval from 2 to X, … smooth numbers A result of ER , P. , and myself is that even if u is not fixed, we still have … Canfield Erdos",
+      "pdf": {
+        "label": "leidenuniv.nl [PDF]",
+        "url": "https://pub.math.leidenuniv.nl/~stevenhagenp/ANTproc/03carl.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "leidenuniv.nl [PDF]",
+          "url": "https://pub.math.leidenuniv.nl/~stevenhagenp/ANTproc/03carl.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "On the distribution of the Euler function of shifted smooth numbers",
+      "url": "https://arxiv.org/abs/0810.1093",
+      "publication_info": "SS Loiperdinger, - arXiv preprint arXiv:0810.1093, 2008 - arxiv.org IE Shparlinski",
+      "snippet": "… on shifted . The result is based on various estimates on the distribution of smooth numbers in arithmetic progressions which are due to A. Granville and É. Fouvry & G. … smooth numbers",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/0810.1093"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/0810.1093"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "A hyperelliptic smoothness test. I",
+      "url": "https://royalsocietypublishing.org/rsta/article-abstract/345/1676/397/113403",
+      "publication_info": "…, J Pila, - … Transactions of the …, 1993 - royalsocietypublishing.org C Pomerance",
+      "snippet": "… In this first paper in the series a new density theorem is presented for in smooth numbers short … Thus if the 2- ^ x are not too wildly distributed, then we might expect, for … smooth numbers",
+      "pdf": {
+        "label": "royalsocietypublishing.org [PDF]",
+        "url": "https://royalsocietypublishing.org/rsta/article-pdf/345/1676/397/1333773/rsta.1993.0138.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "royalsocietypublishing.org [PDF]",
+          "url": "https://royalsocietypublishing.org/rsta/article-pdf/345/1676/397/1333773/rsta.1993.0138.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "Towards the equivalence of breaking the Diffie-Hellman protocol and computing discrete logarithms",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-48658-5_26",
+      "publication_info": "- Annual international cryptology conference, 1994 - Springer UM Maurer",
+      "snippet": "… about the existence of in short intervals, … for answering my smooth numbers Pomerance questions on the state of knowledge in number theory about the existence of in … smooth numbers",
+      "pdf": {
+        "label": "ethz.ch [PS]",
+        "url": "https://crypto.ethz.ch/publications/files/Maurer94.ps"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ethz.ch [PS]",
+          "url": "https://crypto.ethz.ch/publications/files/Maurer94.ps"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "A rigorous time bound for factoring integers",
+      "url": "https://www.ams.org/jams/1992-05-03/S0894-0347-1992-1137100-0/",
+      "publication_info": "HW Lenstra, - Journal of the American Mathematical Society, 1992 - ams.org C Pomerance",
+      "snippet": "… In §7 we discuss the method by which we recognize , which is the elliptic smooth numbers … recognizable y- in the ranges we consider as there are y- . … smooth numbers smooth numbers",
+      "pdf": {
+        "label": "leidenuniv.nl [PDF]",
+        "url": "https://pub.math.leidenuniv.nl/~lenstrahw/PUBLICATIONS/1992c/art.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "leidenuniv.nl [PDF]",
+          "url": "https://pub.math.leidenuniv.nl/~lenstrahw/PUBLICATIONS/1992c/art.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "Fast bounds on the distribution of smooth numbers",
+      "url": "https://link.springer.com/chapter/10.1007/11792086_13",
+      "publication_info": "ST Parsell, - International Algorithmic Number Theory …, 2006 - Springer JP Sorenson",
+      "snippet": "… are utilized by many integer factoring and discrete logarithm algorithms, Smooth numbers and hence they are of interest in cryptography [19,22]. Define Ψ(x, y) to be the number of …",
+      "pdf": {
+        "label": "butler.edu [PDF]",
+        "url": "https://digitalcommons.butler.edu/cgi/viewcontent.cgi?article=1094&context=facsch_papers"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "butler.edu [PDF]",
+          "url": "https://digitalcommons.butler.edu/cgi/viewcontent.cgi?article=1094&context=facsch_papers"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "Asymptotics for in short intervals smooth numbers",
+      "url": "https://arxiv.org/abs/2409.05761",
+      "publication_info": "K Younis - arXiv preprint arXiv:2409.05761, 2024 - arxiv.org",
+      "snippet": "… - in the short interval [x, x + xθ] is asymptotically equal to the density of y- smooth numbers smooth … Our approach is to count using a Perron integral, shift this to … numbers smooth numbers",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2409.05761"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2409.05761"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "Better polynomials for GNFS",
+      "url": "https://www.ams.org/mcom/2016-85-298/S0025-5718-2015-03048-8/",
+      "publication_info": ", C Bouvier, A Kruppa, P Zimmermann - Mathematics of Computation, 2016 - ams.org S Bai",
+      "snippet": "… For practical purposes, the frequency of can be approximated by the smooth numbers - - theorem, which can be stated as follows (Corollary 1.3 from [8]): … Canfield Erdos Pomerance",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/hal-01089507/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/hal-01089507/document"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "On primes recognizable in deterministic polynomial time",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-60408-9_15",
+      "publication_info": "S Konyagin, - The Mathematics of Paul Erdös I, 1997 - Springer C Pomerance",
+      "snippet": "… In [9], and van Lint show that in some sense 'ljJ(x, y) can be approximated by the Erdos binomial coefficient (11'(Y(uj[… Let Z denote the set of y- up to x2 . Suppose p is a … smooth numbers",
+      "pdf": {
+        "label": "dartmouth.edu [PDF]",
+        "url": "https://math.dartmouth.edu/~carlp/PDF/110.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "dartmouth.edu [PDF]",
+          "url": "https://math.dartmouth.edu/~carlp/PDF/110.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "Divisibility, smoothness and cryptographic applications",
+      "url": "https://arxiv.org/abs/0810.2067",
+      "publication_info": ", - arXiv preprint arXiv:0810.2067, 2008 - arxiv.org D Naccache IE Shparlinski",
+      "snippet": "… known as . play a crucial role in information theory, signal smooth numbers Smooth numbers processing and cryptography. We present various properties of relating to … smooth numbers",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/0810.2067"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/0810.2067"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "Period of the power generator and small values of Carmichael's function",
+      "url": "https://www.ams.org/mcom/2001-70-236/S0025-5718-00-01282-5/",
+      "publication_info": "J Friedlander, , - Mathematics of computation, 2001 - ams.org C Pomerance I Shparlinski",
+      "snippet": "… Let Ψ(X, Y ) denote the total number of Y - k ≤ X. The following estimate is smooth numbers a substantially relaxed and simplified version of (for example) Corollary 1.3 of [16], see also […",
+      "pdf": {
+        "label": "dartmouth.edu [PDF]",
+        "url": "https://www.math.dartmouth.edu/~carlp/PDF/paper124.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "dartmouth.edu [PDF]",
+          "url": "https://www.math.dartmouth.edu/~carlp/PDF/paper124.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "On mathematics in Kraków through the centuries",
+      "url": "https://ems.press/content/serial-issue-files/13710#page=21",
+      "publication_info": ", - Eur. Math. Soc. Newsl, 2012 - ems.press K Ciesielski Z Pogoda",
+      "snippet": "… , and [CEP], who proved that Theorem 1 ( , and Canfield Erdos Pomerance Canfield Erdos … gx ≡ b mod p , one uses as follows. Fix a smoothness bound y … Pomerance smooth numbers",
+      "pdf": {
+        "label": "upc.edu [PDF]",
+        "url": "https://upcommons.upc.edu/bitstreams/43ac80e3-5f5a-447c-b1cf-a39031cfeaa6/download#page=21"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "upc.edu [PDF]",
+          "url": "https://upcommons.upc.edu/bitstreams/43ac80e3-5f5a-447c-b1cf-a39031cfeaa6/download#page=21"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "A hyperelliptic smoothness test. I",
+      "url": "https://www.researchgate.net/profile/Carl-Pomerance/publication/28641105_A_Hyperelliptic_Smoothness_Test_II/links/0a85e53cd14e147034000000/A-Hyperelliptic-Smoothness-Test-II.pdf",
+      "publication_info": "HWL Jn, J PiLA - researchgate.net",
+      "snippet": "… of probabilistic algorithm and expected time are äs given by Lenstra & (1992). … Pomerance Thu& if the z- ^ x are not too wildly distributed, then we might expect, for … smooth numbers",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Carl-Pomerance/publication/28641105_A_Hyperelliptic_Smoothness_Test_II/links/0a85e53cd14e147034000000/A-Hyperelliptic-Smoothness-Test-II.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Carl-Pomerance/publication/28641105_A_Hyperelliptic_Smoothness_Test_II/links/0a85e53cd14e147034000000/A-Hyperelliptic-Smoothness-Test-II.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "title": "Factoring Report",
+      "url": "https://www.cryptrec.go.jp/exreport/cryptrec-ex-0018-2001.pdf",
+      "publication_info": "- 2001 - cryptrec.go.jp P Mihailescu",
+      "snippet": "… - , ie integers x which split into prime factors p which are all p < y. Their smooth numbers practical relevance stems from the following seminal theorem of , and : … Canfield Erdos Pomerance",
+      "pdf": {
+        "label": "cryptrec.go.jp [PDF]",
+        "url": "https://www.cryptrec.go.jp/exreport/cryptrec-ex-0018-2001.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "cryptrec.go.jp [PDF]",
+          "url": "https://www.cryptrec.go.jp/exreport/cryptrec-ex-0018-2001.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "Square form factorization, II",
+      "url": "https://homes.cerias.purdue.edu/~ssw/squfof2.pdf",
+      "publication_info": "C Bradford, SS Wagstaff Jr - Bulletin Polish Acad. Sci …, 2022 - homes.cerias.purdue.edu",
+      "snippet": "… The authors thank D Buell, MJ Jacobson Jr, HW Lenstra Jr, H Montgomery and C for valuable … Next, we assume the sieve will produce enough . … Pomerance smooth numbers",
+      "pdf": {
+        "label": "purdue.edu [PDF]",
+        "url": "https://homes.cerias.purdue.edu/~ssw/squfof2.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "purdue.edu [PDF]",
+          "url": "https://homes.cerias.purdue.edu/~ssw/squfof2.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "Factoring integers with the number field sieve",
+      "url": "https://link.springer.com/chapter/10.1007/BFb0091539",
+      "publication_info": "JP Buhler, HW Lenstra Jr, - The development of the number …, 2006 - Springer C Pomerance",
+      "snippet": "In 1990, the ninth Fermat number was factored into primes by means of a new algorithm, the “number field sieve”, which was proposed by John Pollard. The present paper is devoted to …",
+      "pdf": null,
+      "cited_by_count": 439,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=12725920857222557651&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:0y98RpiNm7AJ:scholar.google.com/&scioq=%22Canfield%22+%22Erdos%22+%22Pomerance%22+%22smooth+numbers%22&hl=en&as_sdt=0,5",
+      "versions_count": 8,
+      "versions_url": "https://scholar.google.com/scholar?cluster=12725920857222557651&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "Discrete logarithms and local units",
+      "url": "https://royalsocietypublishing.org/rsta/article-abstract/345/1676/409/113398",
+      "publication_info": "- … Transactions of the Royal Society of …, 1993 - royalsocietypublishing.org O Schirokauer",
+      "snippet": "… We begin in the next section with some background information on , … smooth numbers Though neither this problem nor the algorithm we present to solve it refer to … smooth numbers",
+      "pdf": {
+        "label": "royalsocietypublishing.org [PDF]",
+        "url": "https://royalsocietypublishing.org/rsta/article-pdf/345/1676/409/1333758/rsta.1993.0139.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "royalsocietypublishing.org [PDF]",
+          "url": "https://royalsocietypublishing.org/rsta/article-pdf/345/1676/409/1333758/rsta.1993.0139.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "title": "Elliptic curves from a statistical point of view",
+      "url": "https://search.proquest.com/openview/de72a45d520e4364f3a830e4f71dd686/1?pq-origsite=gscholar&cbl=18750",
+      "publication_info": "A Gottschlich - 2013 - search.proquest.com",
+      "snippet": "… Our lower bound is the same as that of and Shparlinski, but our proof is for … Pomerance For N1(x), we need the number of y- (n such that P(n) ≤ y) less than x, ψ(x, … smooth numbers",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:XgtHwk6MmPUJ:scholar.google.com/&scioq=%22Canfield%22+%22Erdos%22+%22Pomerance%22+%22smooth+numbers%22&hl=en&as_sdt=0,5",
+      "versions_count": 4,
+      "versions_url": "https://scholar.google.com/scholar?cluster=17697049005647137630&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "title": "Some divisibility properties of the Euler function",
+      "url": "https://www.cambridge.org/core/journals/glasgow-mathematical-journal/article/some-divisibility-properties-of-the-euler-function/764181CC4435971218CE1896517136A4",
+      "publication_info": ", , - Glasgow Mathematical Journal, 2005 - cambridge.org WD Banks F Luca IE Shparlinski",
+      "snippet": "… Our arguments rely on several well-known results about the distribution of , smooth numbers that … We need the following result of , and [3] on (… Canfield Erdos Pomerance smooth numbers",
+      "pdf": {
+        "label": "cambridge.org [PDF]",
+        "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/764181CC4435971218CE1896517136A4/S0017089505002752a.pdf/some_divisibility_properties_of_the_euler_function.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "cambridge.org [PDF]",
+          "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/764181CC4435971218CE1896517136A4/S0017089505002752a.pdf/some_divisibility_properties_of_the_euler_function.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "title": "AMS Early View Article",
+      "url": "https://www.researchgate.net/profile/Serge-Nicaise/publication/283175713_A_mixed_discontinuous_finite_element_method_for_folded_Naghdi's_shell_in_Cartesian_coordinates/links/564c8d5d08ae4ae893ba7213/A-mixed-discontinuous-finite-element-method-for-folded-Naghdis-shell-in-Cartesian-coordinates.pdf",
+      "publication_info": "T Kleinjung - researchgate.net",
+      "snippet": "… Heuristically, by the theorem of - - [4] the smoothness probability for Canfield Erdos Pomerance the … where a1,...,an are pairwise co-prime odd F- such that N is a non-trivial … smooth numbers",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Serge-Nicaise/publication/283175713_A_mixed_discontinuous_finite_element_method_for_folded_Naghdi's_shell_in_Cartesian_coordinates/links/564c8d5d08ae4ae893ba7213/A-mixed-discontinuous-finite-element-method-for-folded-Naghdis-shell-in-Cartesian-coordinates.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Serge-Nicaise/publication/283175713_A_mixed_discontinuous_finite_element_method_for_folded_Naghdi's_shell_in_Cartesian_coordinates/links/564c8d5d08ae4ae893ba7213/A-mixed-discontinuous-finite-element-method-for-folded-Naghdis-shell-in-Cartesian-coordinates.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "title": "A fast algorithm for approximately counting smooth numbers",
+      "url": "https://link.springer.com/content/pdf/10.1007/10722028.pdf#page=537",
+      "publication_info": "- ANTS, 2000 - Springer JP Sorenson",
+      "snippet": "Let Ψ (x, y) denote the number of integers≤ x that are composed entirely of primes bounded by y. We present an algorithm for estimating the value of Ψ (x, y) with a running time roughly …",
+      "pdf": null,
+      "cited_by_count": 15,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=14967431761048944487&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:Z784xeL_ts8J:scholar.google.com/&scioq=%22Canfield%22+%22Erdos%22+%22Pomerance%22+%22smooth+numbers%22&hl=en&as_sdt=0,5",
+      "versions_count": 10,
+      "versions_url": "https://scholar.google.com/scholar?cluster=14967431761048944487&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 26,
+      "title": "[CITATION] [C] JOURNAL OF THE AMERICAN MATHEMATICAL SOCIETY",
+      "url": null,
+      "publication_info": "HW LENSTRA JR, - American Mathematical Society, 1992 C POMERANCE",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": 4,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=12955564355261451817&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:KU4SvCNpy7MJ:scholar.google.com/&scioq=%22Canfield%22+%22Erdos%22+%22Pomerance%22+%22smooth+numbers%22&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=12955564355261451817&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 27,
+      "title": "The sharp threshold for making squares",
+      "url": "https://www.jstor.org/stable/10.4007/annals.2018.188.1.2",
+      "publication_info": ", B Bollobás, - Annals of Mathematics, 2018 - JSTOR P Balister R Morris",
+      "snippet": "… estimates we need from known results on , and in Section 4 we recall some smooth numbers … proved by de Bruijn [10] and by , and [11], respectively. We will … Canfield Erdos Pomerance",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/1608.03857"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/1608.03857"
+        }
+      ]
+    },
+    {
+      "rank": 28,
+      "title": "Anatomy of integers and cryptography",
+      "url": "https://www.researchgate.net/profile/Igor-Shparlinski/publication/228847285_Anatomy_of_Integers_and_Cryptography/links/0c9605193db7eb1067000000/Anatomy-of-Integers-and-Cryptography.pdf",
+      "publication_info": "- 2008 - researchgate.net I Shparlinski",
+      "snippet": "… well-known that heuristic and rigorous analysis of many integer factorisation and discrete logarithm algorithms depends on our various results about the distribution of . … smooth numbers",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Igor-Shparlinski/publication/228847285_Anatomy_of_Integers_and_Cryptography/links/0c9605193db7eb1067000000/Anatomy-of-Integers-and-Cryptography.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Igor-Shparlinski/publication/228847285_Anatomy_of_Integers_and_Cryptography/links/0c9605193db7eb1067000000/Anatomy-of-Integers-and-Cryptography.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 29,
+      "title": "Quadratic sieving",
+      "url": "https://www.ams.org/mcom/2016-85-300/S0025-5718-2015-03058-0/",
+      "publication_info": "T Kleinjung - Mathematics of computation, 2016 - ams.org",
+      "snippet": "… Heuristically, by the theorem of - - [4] the smoothness probability Canfield Erdos Pomerance … where a1,...,an are pairwise co-prime odd F- such that N is a non-trivial … smooth numbers",
+      "pdf": null,
+      "cited_by_count": 18,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=5815398957705119425&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:wcYwbYpytFAJ:scholar.google.com/&scioq=%22Canfield%22+%22Erdos%22+%22Pomerance%22+%22smooth+numbers%22&hl=en&as_sdt=0,5",
+      "versions_count": 3,
+      "versions_url": "https://scholar.google.com/scholar?cluster=5815398957705119425&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 30,
+      "title": "Primes!",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-1-4684-9316-0_1?pdf=chapter%20toc",
+      "publication_info": "R Crandall, - Prime Numbers: A Computational Perspective, 2005 - Springer C Pomerance",
+      "snippet": "Prime numbers belong to an exclusive world of intellectual conceptions. We speak of those marvelous notions that enjoy simple, elegant description, yet lead to extreme~ one might say …",
+      "pdf": null,
+      "cited_by_count": 3,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=17030243700931229428&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:9PZWeGqUV-wJ:scholar.google.com/&scioq=%22Canfield%22+%22Erdos%22+%22Pomerance%22+%22smooth+numbers%22&hl=en&as_sdt=0,5",
+      "versions_count": 4,
+      "versions_url": "https://scholar.google.com/scholar?cluster=17030243700931229428&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

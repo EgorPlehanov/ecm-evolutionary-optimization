@@ -1,0 +1,831 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"Differential Evolution\" \"global optimization\" \"survey\"",
+    "requested_limit": 30,
+    "saved_records": 30,
+    "hl": "en",
+    "created_at_utc": "2026-05-17T14:03:08.872484+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22Differential+Evolution%22+%22global+optimization%22+%22survey%22&hl=en&start=0",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22Differential+Evolution%22+%22global+optimization%22+%22survey%22&hl=en&start=10",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 20,
+      "url": "https://scholar.google.com/scholar?q=%22Differential+Evolution%22+%22global+optimization%22+%22survey%22&hl=en&start=20",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": ": A and analysis Differential evolution survey",
+      "url": "https://www.mdpi.com/2076-3417/8/10/1945",
+      "publication_info": ", - Applied Sciences, 2018 - mdpi.com T Eltaeib A Mahmood",
+      "snippet": "… (DE) has been extensively used in … a vital role in achieving stochastic Differential evolution . However, DE is … In particular, we present a state-of-the-art of the … global optimization survey",
+      "pdf": {
+        "label": "mdpi.com [HTML]",
+        "url": "https://www.mdpi.com/2076-3417/8/10/1945"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "mdpi.com [HTML]",
+          "url": "https://www.mdpi.com/2076-3417/8/10/1945"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "An adaptive algorithm for in dynamic environments differential evolution global optimization",
+      "url": "https://ieeexplore.ieee.org/abstract/document/6587535/",
+      "publication_info": ", , - IEEE transactions on …, 2013 - ieeexplore.ieee.org S Das A Mandal R Mukherjee",
+      "snippet": "… tive (DE) algorithm to solve dynamic optimization problems (DOPs) in differential evolution … Das and PN Suganthan, “ : A of the state-of-the-art,” IEEE Trans. … Differential evolution survey",
+      "pdf": null,
+      "cited_by_count": 133,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=2692826754875752889&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:uYEJlqrXXiUJ:scholar.google.com/&scioq=%22Differential+Evolution%22+%22global+optimization%22+%22survey%22&hl=en&as_sdt=0,5",
+      "versions_count": 6,
+      "versions_url": "https://scholar.google.com/scholar?cluster=2692826754875752889&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": ": A of the state-of-the-art Differential evolution survey",
+      "url": "https://ieeexplore.ieee.org/abstract/document/5601760/",
+      "publication_info": ", - IEEE transactions on evolutionary …, 2010 - ieeexplore.ieee.org S Das PN Suganthan",
+      "snippet": "… rank), CEC 2008 competition on large scale (third rank), CEC 2009 … global optimization tool and as we shall proceed through this , these reasons will become more obvious. … survey",
+      "pdf": {
+        "label": "i2pc.es [PDF]",
+        "url": "https://i2pc.es/coss/Docencia/SignalProcessingReviews/Das2011.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "i2pc.es [PDF]",
+          "url": "https://i2pc.es/coss/Docencia/SignalProcessingReviews/Das2011.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "Enhanced versions of : state-of-the-art differential evolution survey",
+      "url": "https://www.inderscienceonline.com/doi/abs/10.1504/IJCSM.2014.064064",
+      "publication_info": "- International Journal of Computing Science …, 2014 - inderscienceonline.com WK Mashwani",
+      "snippet": "… ‘An effective hybrid algorithm based on simplex search and for differential evolution global ’. Emerging Intelligent Computing Technology and Applications with Aspects of … optimization",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/33176303/IJCSM_HYBRID-DE.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/33176303/IJCSM_HYBRID-DE.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "Multi-objective optimization using : a of the state-of-the-art differential evolution survey",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-540-68830-3_7",
+      "publication_info": ", … - … in , 2008 - Springer E Mezura-Montes M Reyes-Sierra differential evolution",
+      "snippet": "… is currently one of the most popular heuristics to solve single-objective … Differential Evolution In this chapter, we present a of algorithms based on which have … survey differential evolution",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/116052340/mezura-chapter-DE.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/116052340/mezura-chapter-DE.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "Self-adapting spherical search algorithm with for differential evolution global optimization",
+      "url": "https://www.mdpi.com/2227-7390/10/23/4519",
+      "publication_info": ", B Zhang, , , Z Li - Mathematics, 2022 - mdpi.com J Zhao X Guo L Qi",
+      "snippet": "… To solve problems more efficiently, a self-… bound-constrained global optimization global problems. SASS has a … spherical search algorithm with (SSDE). … optimization differential evolution",
+      "pdf": {
+        "label": "mdpi.com [HTML]",
+        "url": "https://www.mdpi.com/2227-7390/10/23/4519"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "mdpi.com [HTML]",
+          "url": "https://www.mdpi.com/2227-7390/10/23/4519"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "Solving large-scale problems using enhanced adaptive algorithm global optimization differential evolution",
+      "url": "https://link.springer.com/article/10.1007/s40747-017-0041-0",
+      "publication_info": "- Complex & Intelligent Systems, 2017 - Springer AW Mohamed",
+      "snippet": "… This paper presents enhanced adaptive (EADE) algorithm for solving differential evolution high-dimensional optimization problems over continuous space. To utilize the information of …",
+      "pdf": {
+        "label": "springer.com [PDF]",
+        "url": "https://link.springer.com/content/pdf/10.1007/s40747-017-0041-0.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "springer.com [PDF]",
+          "url": "https://link.springer.com/content/pdf/10.1007/s40747-017-0041-0.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": ": , genetic algorithms, particle swarm, and hybrid methods Global optimization Differential evolution",
+      "url": "https://link.springer.com/chapter/10.1007/978-1-4939-0752-6_3",
+      "publication_info": ", , , A Ashtari - … : …, 2014 - Springer S Noghanian A Sabouni T Desell Global Optimization",
+      "snippet": "… methods, such as , genetic algorithms, and particle global optimization differential evolution swarm optimization. It provides a … In some sense, methods are by … survey global optimization",
+      "pdf": null,
+      "cited_by_count": 8,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=3082658483405264831&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:vxc3247NxyoJ:scholar.google.com/&scioq=%22Differential+Evolution%22+%22global+optimization%22+%22survey%22&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "Optimizing functionals using differential evolution",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0952197620303407",
+      "publication_info": ", … - … Applications of Artificial …, 2021 - Elsevier KB Cantún-Avila D González-Sánchez",
+      "snippet": "… the evolutionary algorithm known as . Unlike traditional techniques … Differential Evolution solve the large scale problems arisen in the optimization of functionals. … global optimization",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Francisco-Penunuri/publication/345883475_Optimizing_functionals_using_Differential_Evolution/links/60070d9f45851553a0581cbf/Optimizing-functionals-using-Differential-Evolution.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Francisco-Penunuri/publication/345883475_Optimizing_functionals_using_Differential_Evolution/links/60070d9f45851553a0581cbf/Optimizing-functionals-using-Differential-Evolution.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "A hybrid whale optimization algorithm based on modified for problems differential evolution global optimization",
+      "url": "https://link.springer.com/article/10.1007/s10489-018-1362-4",
+      "publication_info": ", B Shi - Applied Intelligence, 2019 - Springer J Luo",
+      "snippet": "… [31] hybridized particle swarm optimization with algorithm to handle … differential evolution and to solve problems. The … Differential Evolution global optimization differential evolution",
+      "pdf": null,
+      "cited_by_count": 125,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=8719277316534479834&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:2qsozoUYAXkJ:scholar.google.com/&scioq=%22Differential+Evolution%22+%22global+optimization%22+%22survey%22&hl=en&as_sdt=0,5",
+      "versions_count": 4,
+      "versions_url": "https://scholar.google.com/scholar?cluster=8719277316534479834&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": ": An overview Differential evolution",
+      "url": "https://link.springer.com/chapter/10.1007/978-981-10-0448-3_17",
+      "publication_info": ", - Proceedings of Fifth International Conference on Soft …, 2016 - Springer A Singh S Kumar",
+      "snippet": "… In past few years, has got attention from a lot of researchers worldwide. global optimization As optimization problems are all over the place in the field of engineering, finance, and other …",
+      "pdf": null,
+      "cited_by_count": 16,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=4794737222079200674&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:or1fkRlUikIJ:scholar.google.com/&scioq=%22Differential+Evolution%22+%22global+optimization%22+%22survey%22&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=4794737222079200674&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": ": An updated Differential evolution survey",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-93659-8_62",
+      "publication_info": "- Conference on complex, intelligent, and software …, 2018 - Springer N Javaid",
+      "snippet": "… makes its simple and efficient for over continuous spaces. The … global optimization survey started with an extensive and in depth introduction of DE following by comprehensive … survey",
+      "pdf": null,
+      "cited_by_count": 9,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=14402065997858426222&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:bk0VOrhq3scJ:scholar.google.com/&scioq=%22Differential+Evolution%22+%22global+optimization%22+%22survey%22&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "Parameter control and hybridization techniques in : a differential evolution survey",
+      "url": "https://link.springer.com/article/10.1007/s10462-015-9452-8",
+      "publication_info": ", V Dafinescu - Artificial Intelligence Review, 2016 - Springer EN Dragoi",
+      "snippet": "… In this context, (DE) is optimized by employing different approaches differential evolution belonging to different research directions. The focus of the current review is on two main …",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/115871769/s10462-015-9452-820240611-1-2ffqz1.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/115871769/s10462-015-9452-820240611-1-2ffqz1.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "Global optimum-based search differential evolution",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8651892/",
+      "publication_info": "Y Yu, , , - IEEE/CAA Journal of …, 2019 - ieeexplore.ieee.org S Gao Y Wang Y Todo",
+      "snippet": "… Abstract—In this paper, a global optimum-based search strategy is proposed to alleviate the situation that the (DE) usually sticks into a stagnation, especially on … differential evolution",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/58835336/Global_Optimum-Based_Search_Differential_Evolution.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/58835336/Global_Optimum-Based_Search_Differential_Evolution.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "Design and implementation of parallel self-adaptive for differential evolution global optimization",
+      "url": "https://academic.oup.com/jigpal/article-abstract/31/4/701/6535730",
+      "publication_info": ", , , … - Logic Journal of the …, 2023 - academic.oup.com I Fister A Iglesias A Galvez D Fister",
+      "snippet": "… At first, the basics of DE are discussed, because this is a well-known algorithm for global and serves in this study as an inspiration for implementing the actions of … optimization",
+      "pdf": {
+        "label": "unican.es [PDF]",
+        "url": "https://repositorio.unican.es/xmlui/bitstream/handle/10902/35082/DesignImplementationParallel.pdf?sequence=2"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "unican.es [PDF]",
+          "url": "https://repositorio.unican.es/xmlui/bitstream/handle/10902/35082/DesignImplementationParallel.pdf?sequence=2"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "Reinforcement learning-based for differential evolution global optimization",
+      "url": "https://link.springer.com/chapter/10.1007/978-981-16-8082-3_3",
+      "publication_info": ", , - : From Theory to Practice, 2022 - Springer I Fister D Fister I Fister Jr Differential Evolution",
+      "snippet": "… Reinforcement learning is proposed in this study. On the one hand, differential evolution a Q-learning algorithm capable of ensuring the good behavior of the evolutionary search …",
+      "pdf": {
+        "label": "iztok-jr-fister.eu [PDF]",
+        "url": "https://www.iztok-jr-fister.eu/static/publications/332.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iztok-jr-fister.eu [PDF]",
+          "url": "https://www.iztok-jr-fister.eu/static/publications/332.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "An insight into bio-inspired and evolutionary algorithms for : review, analysis, and lessons learnt over a decade of competitions global optimization",
+      "url": "https://link.springer.com/article/10.1007/s12559-018-9554-0",
+      "publication_info": ", , - Cognitive Computation, 2018 - Springer D Molina A LaTorre F Herrera",
+      "snippet": "… , also referred to as real-parameter optimization, or continuous … Global optimization Global implies the minimization or maximization of a specific objective function (but we … optimization",
+      "pdf": {
+        "label": "ugr.es [PDF]",
+        "url": "https://sci2s.ugr.es/sites/default/files/ficherosPublicaciones/2463_Molina_et_al-2018-Cognitive_Computation.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ugr.es [PDF]",
+          "url": "https://sci2s.ugr.es/sites/default/files/ficherosPublicaciones/2463_Molina_et_al-2018-Cognitive_Computation.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "title": ": A of theoretical analyses Differential Evolution survey",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2210650217304224",
+      "publication_info": ", - Swarm and evolutionary computation, 2019 - Elsevier KR Opara J Arabas",
+      "snippet": "… (DE) is a state-of-the art technique. Considerable Differential Evolution global optimization research effort has been made to improve this algorithm and apply it to a variety of practical …",
+      "pdf": null,
+      "cited_by_count": 572,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=9888308200040501310&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:PhD_3OpTOokJ:scholar.google.com/&scioq=%22Differential+Evolution%22+%22global+optimization%22+%22survey%22&hl=en&as_sdt=0,5",
+      "versions_count": 4,
+      "versions_url": "https://scholar.google.com/scholar?cluster=9888308200040501310&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "A Review on Optimization Techniques Differential Evolution",
+      "url": "https://www.academia.edu/download/79522093/A_Review_on_Differential_Evolution_Optimization_Techniques.pdf",
+      "publication_info": "C Venkateswaran, … - Data Analytics and …, 2021 - academia.edu M Ramachandran",
+      "snippet": "… We DE calculations distributed in pre-positioning diaries … study of survey differential evolution variants for .\" … algorithm with strategy adaptation for … global optimization Differential evolution",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/79522093/A_Review_on_Differential_Evolution_Optimization_Techniques.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/79522093/A_Review_on_Differential_Evolution_Optimization_Techniques.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "Low-dimensional space modeling-based for large-scale problems differential evolution global optimization",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9973396/",
+      "publication_info": ", SM Nassar… - IEEE Transactions …, 2022 - ieeexplore.ieee.org THL Fonseca",
+      "snippet": "… and Competition on Large-Scale , SHADE-ILS is a SHADE-based Global Optimization hybrid algorithm that combines a modern algorithm with a local search … Differential Evolution",
+      "pdf": {
+        "label": "ucc.ie [PDF]",
+        "url": "https://cora.ucc.ie/bitstreams/8106fd76-e683-4f5d-b8af-f42a88471f30/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ucc.ie [PDF]",
+          "url": "https://cora.ucc.ie/bitstreams/8106fd76-e683-4f5d-b8af-f42a88471f30/download"
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "An efficient modified algorithm for solving constrained non-linear integer and mixed-integer problems differential evolution global optimization",
+      "url": "https://link.springer.com/article/10.1007/s13042-015-0479-6",
+      "publication_info": "- International Journal of Machine Learning and …, 2017 - Springer AW Mohamed",
+      "snippet": "… In this paper, an efficient modified algorithm, named EMDE, is proposed Differential Evolution for solving constrained non-linear integer and mixed-integer problems. … global optimization",
+      "pdf": null,
+      "cited_by_count": 47,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=2282278349692386374&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:Rrz6JxFIrB8J:scholar.google.com/&scioq=%22Differential+Evolution%22+%22global+optimization%22+%22survey%22&hl=en&as_sdt=0,5",
+      "versions_count": 3,
+      "versions_url": "https://scholar.google.com/scholar?cluster=2282278349692386374&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "title": "… developments in and particle swarm optimization with their advanced suggestion: A systematic overview of developments in … differential evolution differential evolution",
+      "url": "https://link.springer.com/article/10.1007/s10489-021-02803-7",
+      "publication_info": ", - Applied Intelligence, 2022 - Springer RP Parouha P Verma",
+      "snippet": "… Among successful MAs, (DE) and … in the present study and an extensive differential evolution of their recent-past … in solving complex problems. According to … survey global optimization",
+      "pdf": null,
+      "cited_by_count": 45,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=3918396303899158791&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:B-kch63wYDYJ:scholar.google.com/&scioq=%22Differential+Evolution%22+%22global+optimization%22+%22survey%22&hl=en&as_sdt=0,5",
+      "versions_count": 3,
+      "versions_url": "https://scholar.google.com/scholar?cluster=3918396303899158791&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "title": "using memetic with applications to low level machine vision Global optimization differential evolution",
+      "url": "https://jyx.jyu.fi/jyx/Record/jyx_123456789_75945",
+      "publication_info": "- 2008 - jyx.jyu.fi V Tirronen",
+      "snippet": "… in the context of Algorithm that is among the best modern generic Differential Evolution optimization algorithms. A whole setting of Memetic methods is discovered … Differential Evolution",
+      "pdf": {
+        "label": "jyu.fi [PDF]",
+        "url": "https://jyx.jyu.fi/bitstreams/41b1c179-831c-40d4-8fc2-b3c08d47dea9/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "jyu.fi [PDF]",
+          "url": "https://jyx.jyu.fi/bitstreams/41b1c179-831c-40d4-8fc2-b3c08d47dea9/download"
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "title": "Hybrid grasshopper optimization algorithm and for differential evolution global optimization",
+      "url": "https://journals.sagepub.com/doi/abs/10.3233/JIFS-190782",
+      "publication_info": ", Y Li, C Lang, … - Journal of Intelligent & …, 2019 - journals.sagepub.com H Jia X Peng",
+      "snippet": "… In 2019, the moth search (MSDE) … algorithm (GSA) and differential evolution differential named SGSADE has been … algorithm of chaotic and estimation of … evolution differential evolution",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Heming-Jia/publication/336756464_Hybrid_grasshopper_optimization_algorithm_and_differential_evolution_for_global_optimization/links/5e19321aa6fdcc2837689b0f/Hybrid-grasshopper-optimization-algorithm-and-differential-evolution-for-global-optimization.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Heming-Jia/publication/336756464_Hybrid_grasshopper_optimization_algorithm_and_differential_evolution_for_global_optimization/links/5e19321aa6fdcc2837689b0f/Hybrid-grasshopper-optimization-algorithm-and-differential-evolution-for-global-optimization.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "title": ": A on Their Operators and Variants: E. Reyes-Davila et al. Differential Evolution Survey",
+      "url": "https://link.springer.com/article/10.1007/s11831-024-10136-0",
+      "publication_info": ", , … - … Methods in Engineering, 2025 - Springer E Reyes-Davila EH Haro A Casas-Ordaz",
+      "snippet": "… The (DE) algorithm is one of the most … the drafting of many review and Differential Evolution works. However, none … Therefore, in this work, a analysis of the variants of DE … survey survey",
+      "pdf": null,
+      "cited_by_count": 67,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=5212121797101423968&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:YA1N0igtVUgJ:scholar.google.com/&scioq=%22Differential+Evolution%22+%22global+optimization%22+%22survey%22&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=5212121797101423968&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 26,
+      "title": "An improved self-adaptive algorithm for optimization problems differential evolution",
+      "url": "https://ieeexplore.ieee.org/abstract/document/6198328/",
+      "publication_info": "SM Elsayed, … - IEEE Transactions on …, 2012 - ieeexplore.ieee.org RA Sarker",
+      "snippet": "… In this paper, we propose an improved algorithm that uses a mix of … differential evolution Rönkkönen, “Continuous multimodal with -based … global optimization differential evolution",
+      "pdf": null,
+      "cited_by_count": 190,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=10426964250315849664&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:wP_Fwb0EtJAJ:scholar.google.com/&scioq=%22Differential+Evolution%22+%22global+optimization%22+%22survey%22&hl=en&as_sdt=0,5",
+      "versions_count": 4,
+      "versions_url": "https://scholar.google.com/scholar?cluster=10426964250315849664&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 27,
+      "title": "A Robust Archived Algorithm for Problems. Differential Evolution Global Optimization",
+      "url": "https://www.researchgate.net/profile/Chengen-Wang/publication/220405681_A_Robust_Archived_Differential_Evolution_Algorithm_for_Global_Optimization_Problems/links/5754e65008ae02ac128117f3/A-Robust-Archived-Differential-Evolution-Algorithm-for-Global-Optimization-Problems.pdf",
+      "publication_info": "Z Huang, C Wang, M Ma - J. Comput., 2009 - researchgate.net",
+      "snippet": "… a population by using different knowledge sources to influence the differential evolution variation operator of the … [7] provided a comprehensive of the most … differential evolution survey",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Chengen-Wang/publication/220405681_A_Robust_Archived_Differential_Evolution_Algorithm_for_Global_Optimization_Problems/links/5754e65008ae02ac128117f3/A-Robust-Archived-Differential-Evolution-Algorithm-for-Global-Optimization-Problems.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Chengen-Wang/publication/220405681_A_Robust_Archived_Differential_Evolution_Algorithm_for_Global_Optimization_Problems/links/5754e65008ae02ac128117f3/A-Robust-Archived-Differential-Evolution-Algorithm-for-Global-Optimization-Problems.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 28,
+      "title": "DE/BBO: a hybrid with biogeography-based optimization for global numerical optimization differential evolution",
+      "url": "https://link.springer.com/article/10.1007/s00500-010-0591-1",
+      "publication_info": ", Z Cai, - Soft Computing, 2010 - Springer W Gong CX Ling",
+      "snippet": "… Suppose that we have a problem and a population of candidate individuals. global optimization The individual is represented by a D-dimensional vector. The population consists of \\(NP…",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Wenyin-Gong-2/publication/220176077_DEBBO_A_hybrid_differential_evolution_with_biogeography-based_optimization_for_global_numerical_optimization/links/0c96053433ddd1dfd1000000/DE-BBO-A-hybrid-differential-evolution-with-biogeography-based-optimization-for-global-numerical-optimization.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Wenyin-Gong-2/publication/220176077_DEBBO_A_hybrid_differential_evolution_with_biogeography-based_optimization_for_global_numerical_optimization/links/0c96053433ddd1dfd1000000/DE-BBO-A-hybrid-differential-evolution-with-biogeography-based-optimization-for-global-numerical-optimization.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 29,
+      "title": "Research of algorithms survey differential evolution",
+      "url": "http://tis.hrbeu.edu.cn/en/oa/darticle.aspx?type=view&id=201605015",
+      "publication_info": "D Qingfeng, Y Xiaoyu - CAAI Transactions on Intelligent Systems, 2017 - tis.hrbeu.edu.cn",
+      "snippet": "… A new highly efficient scheme and its … using spline approximation and differential evolution algorithm[J… interaction network based on algorithm[J]… differential evolution differential evolution",
+      "pdf": null,
+      "cited_by_count": 37,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=10102117568835642549&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:tWSu0WfuMYwJ:scholar.google.com/&scioq=%22Differential+Evolution%22+%22global+optimization%22+%22survey%22&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": "http://scholar.googleusercontent.com/scholar?q=cache:tWSu0WfuMYwJ:scholar.google.com/+%22Differential+Evolution%22+%22global+optimization%22+%22survey%22&hl=en&as_sdt=0,5",
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 30,
+      "title": "An adaptive with combined strategy for global numerical optimization: G. Sun et al. differential evolution",
+      "url": "https://link.springer.com/article/10.1007/s00500-019-03934-3",
+      "publication_info": "G Sun, B Yang, Z Yang, G Xu - Soft Computing, 2020 - Springer",
+      "snippet": "… (DE) is a simple yet powerful evolutionary algorithm for numerical Differential evolution optimization. However, the performance of DE significantly relies on its mutation operator and …",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Gao-Ji-Sun/publication/331991455_An_adaptive_differential_evolution_with_combined_strategy_for_global_numerical_optimization/links/5e36307a299bf1cdb9056680/An-adaptive-differential-evolution-with-combined-strategy-for-global-numerical-optimization.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Gao-Ji-Sun/publication/331991455_An_adaptive_differential_evolution_with_combined_strategy_for_global_numerical_optimization/links/5e36307a299bf1cdb9056680/An-adaptive-differential-evolution-with-combined-strategy-for-global-numerical-optimization.pdf"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

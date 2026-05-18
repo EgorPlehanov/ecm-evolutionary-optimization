@@ -1,0 +1,1327 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"factoring algorithms\" RSA \"number field sieve\" quadratic sieve",
+    "requested_limit": 50,
+    "saved_records": 50,
+    "hl": "en",
+    "created_at_utc": "2026-05-14T16:03:57.615550+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22factoring+algorithms%22+RSA+%22number+field+sieve%22+quadratic+sieve&hl=en&start=0",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22factoring+algorithms%22+RSA+%22number+field+sieve%22+quadratic+sieve&hl=en&start=10",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 20,
+      "url": "https://scholar.google.com/scholar?q=%22factoring+algorithms%22+RSA+%22number+field+sieve%22+quadratic+sieve&hl=en&start=20",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 30,
+      "url": "https://scholar.google.com/scholar?q=%22factoring+algorithms%22+RSA+%22number+field+sieve%22+quadratic+sieve&hl=en&start=30",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 40,
+      "url": "https://scholar.google.com/scholar?q=%22factoring+algorithms%22+RSA+%22number+field+sieve%22+quadratic+sieve&hl=en&start=40",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "A beginner's guide to the general number field sieve",
+      "url": "http://www.cs.umd.edu/~gasarch/TOPICS/factoring/NFSmadeeasy.pdf",
+      "publication_info": "M Case - Oregon State University, ECE575 Data Security and …, 2003 - cs.umd.edu",
+      "snippet": "… to advancements in . The is an example of factoring algorithms General Number Field Sieve … The Rivest, Shamir, Adleman ( ) cryptosystem is a scheme for encrypting and decrypting … RSA",
+      "pdf": {
+        "label": "umd.edu [PDF]",
+        "url": "http://www.cs.umd.edu/~gasarch/TOPICS/factoring/NFSmadeeasy.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "umd.edu [PDF]",
+          "url": "http://www.cs.umd.edu/~gasarch/TOPICS/factoring/NFSmadeeasy.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "The Factoring Algorithm Number Field Sieve",
+      "url": "http://dr.iiserpune.ac.in:8080/xmlui/handle/123456789/7362",
+      "publication_info": "R Kumar - 2012 - dr.iiserpune.ac.in",
+      "snippet": "… It is still not known that breaking is equivalent to efficiently … Now we will look into some RSA of the : … is that in we require auxiliary numbers of size O… factoring Algorithms Quadratic Sieve",
+      "pdf": {
+        "label": "iiserpune.ac.in [PDF]",
+        "url": "http://dr.iiserpune.ac.in:8080/xmlui/bitstream/handle/123456789/7362/20071012_Rahul_kumar.pdf?sequence=1"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iiserpune.ac.in [PDF]",
+          "url": "http://dr.iiserpune.ac.in:8080/xmlui/bitstream/handle/123456789/7362/20071012_Rahul_kumar.pdf?sequence=1"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "The Number Field Sieve",
+      "url": "https://www.untruth.org/~josh/math/NFS-old.pdf",
+      "publication_info": "JE Hill - 2010 - untruth.org",
+      "snippet": "… the recent - challenge team’s computation. [] … the and the RSA Quadratic Sieve use … outline of these two is similar, they differ … General Number Field Sieve factoring algorithms",
+      "pdf": {
+        "label": "untruth.org [PDF]",
+        "url": "https://www.untruth.org/~josh/math/NFS-old.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "untruth.org [PDF]",
+          "url": "https://www.untruth.org/~josh/math/NFS-old.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "A survey of Fermat factorization algorithms for factoring composite numbers RSA",
+      "url": "https://pdfs.semanticscholar.org/e12b/e6d83c790106a7b6f7bee8c6f2931219b537.pdf",
+      "publication_info": ", MP Pitchai - Multidisciplinary …, 2023 - pdfs.semanticscholar.org K Balasubramanian",
+      "snippet": "… the and the are prevalent choices for factoring large Number Field Sieve Quadratic Sieve RSA … numbers utilizing diverse , while Appendix E provides a compilation of … factoring algorithms",
+      "pdf": {
+        "label": "semanticscholar.org [PDF]",
+        "url": "https://pdfs.semanticscholar.org/e12b/e6d83c790106a7b6f7bee8c6f2931219b537.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "semanticscholar.org [PDF]",
+          "url": "https://pdfs.semanticscholar.org/e12b/e6d83c790106a7b6f7bee8c6f2931219b537.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "Polynomial selection for the integer factorisation algorithm number field sieve",
+      "url": "https://maths-people.anu.edu.au/brent/pd/Murphy-thesis.pdf",
+      "publication_info": "BA Murphy - 1999 - maths-people.anu.edu.au",
+      "snippet": "… and compromising the security of and similar systems, … called the multiple polynomial RSA (MPQS) [65], [… , the better general tend to be those which … quadratic sieve factoring algorithms",
+      "pdf": {
+        "label": "anu.edu.au [PDF]",
+        "url": "https://maths-people.anu.edu.au/brent/pd/Murphy-thesis.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PDF]",
+          "url": "https://maths-people.anu.edu.au/brent/pd/Murphy-thesis.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "Reflections on the number field sieve",
+      "url": "https://search.proquest.com/openview/6c7dd9f5012356e557d90b49c256afcb/1?pq-origsite=gscholar&cbl=2026366",
+      "publication_info": "- 2007 - search.proquest.com EH Cliffe",
+      "snippet": "… parameters for we continue to conduct research into general . … RSA factoring algorithms In the the numbers that we test for smoothness are also of size up to 0 (n1/2+… quadratic sieve",
+      "pdf": {
+        "label": "bath.ac.uk [PDF]",
+        "url": "https://researchportal.bath.ac.uk/files/419775/CSBU-2007-03.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "bath.ac.uk [PDF]",
+          "url": "https://researchportal.bath.ac.uk/files/419775/CSBU-2007-03.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "On the amount of in factorization methods sieving",
+      "url": "https://math.leidenuniv.nl/scripties/EkkelkampThesis.pdf",
+      "publication_info": "WH Ekkelkamp - 2010 - math.leidenuniv.nl",
+      "snippet": "… It has not been proved that breaking is equivalent with … polynomial RSA quadratic sieve and the in the … kept during the step of are semi… number field sieve sieving factoring algorithms",
+      "pdf": {
+        "label": "leidenuniv.nl [PDF]",
+        "url": "https://math.leidenuniv.nl/scripties/EkkelkampThesis.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "leidenuniv.nl [PDF]",
+          "url": "https://math.leidenuniv.nl/scripties/EkkelkampThesis.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "The Challenge of Factoring Large Numbers",
+      "url": "https://campus.lakeforest.edu/trevino/KevinThesis.pdf",
+      "publication_info": "K Nguyen - 2025 - campus.lakeforest.edu",
+      "snippet": "… Pollard ρ algorithm and the , which we discuss … The is one of quadratic sieve quadratic sieve the best on … Another , called the , performs better … factoring algorithms sieve number field sieve",
+      "pdf": {
+        "label": "lakeforest.edu [PDF]",
+        "url": "https://campus.lakeforest.edu/trevino/KevinThesis.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "lakeforest.edu [PDF]",
+          "url": "https://campus.lakeforest.edu/trevino/KevinThesis.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "We are on the same side. alternative strategies for the sieving number field sieve",
+      "url": "https://link.springer.com/chapter/10.1007/978-981-99-8730-6_5",
+      "publication_info": ", A Fleury, … - … Conference on the Theory …, 2023 - Springer C Bouillaguet PA Fouque",
+      "snippet": "… security of -based cryptography, is the … It follows that improving RSA Number Field Sieve algorithms would have a … integer , and in turn on the security of . … sieving factoring algorithms RSA",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/hal-04112671/file/main.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/hal-04112671/file/main.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "On the cost of factoring -1024 RSA",
+      "url": "http://target0.be/madchat/crypto/papers/cbtwirl.pdf",
+      "publication_info": "A Shamir, - CryptoBytes, 2003 - target0.be E Tromer RSA",
+      "snippet": "… First, the performance of modern is not … (and also in its predecessor, factoring algorithms the ). This … In the we have to perform two tasks … Quadratic Sieve Number Field Sieve sieving",
+      "pdf": {
+        "label": "target0.be [PDF]",
+        "url": "http://target0.be/madchat/crypto/papers/cbtwirl.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "target0.be [PDF]",
+          "url": "http://target0.be/madchat/crypto/papers/cbtwirl.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "Nonstandard factoring methods for cryptographic applications",
+      "url": "https://ucalgary.scholaris.ca/items/898f4dbd-8e81-4a8f-8681-1d8bfa5940a6",
+      "publication_info": "R Ball - 2009 - ucalgary.scholaris.ca",
+      "snippet": "… Motivations of research into test the … an algorithm called the factoring algorithms general (GNFS) [7]… The is the second fastest factoring algorithm … number field sieve quadratic sieve",
+      "pdf": {
+        "label": "scholaris.ca [PDF]",
+        "url": "https://ucalgary.scholaris.ca/bitstreams/7765f867-dbee-45f2-96f8-02cac44dbede/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "scholaris.ca [PDF]",
+          "url": "https://ucalgary.scholaris.ca/bitstreams/7765f867-dbee-45f2-96f8-02cac44dbede/download"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "[CITATION] [C] Integer Factorization using Hadoop Quadratic Sieve",
+      "url": null,
+      "publication_info": "ST Ghebregiorgish - 2012 - Master's Thesis]. University of …",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": 1,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=12550702517425995457&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:wf7GcHENLa4J:scholar.google.com/&scioq=%22factoring+algorithms%22+RSA+%22number+field+sieve%22+quadratic+sieve&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "Acceleration analysis of the method based on the online matrix solving quadratic sieve",
+      "url": "http://www.irbis-nbuv.gov.ua/cgi-bin/irbis_nbuv/cgiirbis_64.exe?C21COM=2&I21DBN=UJRN&P21DBN=UJRN&IMAGE_FILE_DOWNLOAD=1&Image_file_name=PDF/Vejpte_2018_2(4)__5.pdf",
+      "publication_info": "S Vynnychuk, V Misko - Восточно-Европейский журнал …, 2018 - irbis-nbuv.gov.ua",
+      "snippet": "… , the cryptosystem will be extremely vulnerable. That is why the Security company RSA RSA … ing complexity of the and (GNFS) methods, it … quadratic sieve general number field sieve",
+      "pdf": {
+        "label": "irbis-nbuv.gov.ua [PDF]",
+        "url": "http://www.irbis-nbuv.gov.ua/cgi-bin/irbis_nbuv/cgiirbis_64.exe?C21COM=2&I21DBN=UJRN&P21DBN=UJRN&IMAGE_FILE_DOWNLOAD=1&Image_file_name=PDF/Vejpte_2018_2(4)__5.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "irbis-nbuv.gov.ua [PDF]",
+          "url": "http://www.irbis-nbuv.gov.ua/cgi-bin/irbis_nbuv/cgiirbis_64.exe?C21COM=2&I21DBN=UJRN&P21DBN=UJRN&IMAGE_FILE_DOWNLOAD=1&Image_file_name=PDF/Vejpte_2018_2(4)__5.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "The quadratic sieve",
+      "url": "https://link.springer.com/chapter/10.1007/978-0-387-88757-9_10",
+      "publication_info": "GV Bard - Algebraic Cryptanalysis, 2009 - Springer",
+      "snippet": "… ( ) has eclipsed the as an … we will quickly present the Number Field Sieve Quadratic Sieve rudiments of the algorithm. … Other examples of include the continued … RSA factoring algorithms",
+      "pdf": null,
+      "cited_by_count": 1,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=3156647466852607520&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:IObifiWqzisJ:scholar.google.com/&scioq=%22factoring+algorithms%22+RSA+%22number+field+sieve%22+quadratic+sieve&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=3156647466852607520&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "A Compare between Shor's quantum factoring algorithm and General Number Field Sieve",
+      "url": "https://ieeexplore.ieee.org/abstract/document/6919115/",
+      "publication_info": ", , … - … Conference on Electrical …, 2014 - ieeexplore.ieee.org SM Hamdi ST Zuhori F Mahmud",
+      "snippet": "… computation, all the , which were designed to run … the factoring algorithms quadratic sieve had factored the famous 129digit … But the is no longer the champion. It was … RSA quadratic sieve",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Shah-Muhammad-Hamdi-2/publication/283333255_A_Compare_between_Shor's_Quantum_Factoring_Algorithm_and_General_Number_Field_Sieve/links/56342c4e08ae88cf81ba5363/A-Compare-between-Shors-Quantum-Factoring-Algorithm-and-General-Number-Field-Sieve.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Shah-Muhammad-Hamdi-2/publication/283333255_A_Compare_between_Shor's_Quantum_Factoring_Algorithm_and_General_Number_Field_Sieve/links/56342c4e08ae88cf81ba5363/A-Compare-between-Shors-Quantum-Factoring-Algorithm-and-General-Number-Field-Sieve.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "Implementation of factorization of using GNFS on ordinary computer RSA",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8275867/",
+      "publication_info": ", SN Mandal - 2017 International Conference on …, 2017 - ieeexplore.ieee.org A Hasnat",
+      "snippet": "… is used for factoring the large integer numbers for implementation General Number Field Sieve of … In section III, discussed, in section IV, practical … RSA General number Field Sieve",
+      "pdf": null,
+      "cited_by_count": 3,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=16158406350010842885&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:Bf_P5PYwPuAJ:scholar.google.com/&scioq=%22factoring+algorithms%22+RSA+%22number+field+sieve%22+quadratic+sieve&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "The and Shor's Algorithm: A Comparison of Classical and Quantum General Number Field Sieve Factoring Algorithms",
+      "url": "https://search.proquest.com/openview/706e3d61766cda8f596d66e3ba45e743/1?pq-origsite=gscholar&cbl=18750&diss=y",
+      "publication_info": "J Lairson - 2025 - search.proquest.com",
+      "snippet": "… systems such as . Many … to be able to factor any integer. RSA General Number Field Sieve The algorithm can be thought of as a generalization of its predecessor, the … Quadratic Sieve",
+      "pdf": {
+        "label": "ohiolink.edu [PDF]",
+        "url": "https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=kent1751725432830685&disposition=inline"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ohiolink.edu [PDF]",
+          "url": "https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=kent1751725432830685&disposition=inline"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "title": "[CITATION] [C] Cryptanalysis by Factoring",
+      "url": null,
+      "publication_info": "A Collins - 1997 - Citeseer",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:fNc-m570aFQJ:scholar.google.com/&scioq=%22factoring+algorithms%22+RSA+%22number+field+sieve%22+quadratic+sieve&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "Framework for evaluation and comparison of integer factorization algorithms",
+      "url": "https://ieeexplore.ieee.org/abstract/document/7556107/",
+      "publication_info": "CL Duta, L Gheorghe, - 2016 SAI Computing …, 2016 - ieeexplore.ieee.org N Tapus",
+      "snippet": "… was replaced by the method, which established a new quadratic sieve number field sieve record: factorization of a 200 decimal digits … regarding modern such … RSA factoring algorithms",
+      "pdf": null,
+      "cited_by_count": 13,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=7901915178209452929&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:gSNxCv09qW0J:scholar.google.com/&scioq=%22factoring+algorithms%22+RSA+%22number+field+sieve%22+quadratic+sieve&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=7901915178209452929&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "Quadratic Sieve",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-3-030-71522-9_474.pdf",
+      "publication_info": "R Silverman - Encyclopedia of Cryptography, Security and Privacy, 2025 - Springer",
+      "snippet": "… The (QS) and its variants are the first of the modern ⊳ integer Quadratic Sieve factoring … The entries ⊳ integer factoring and ⊳ discuss the history of these … algorithms Number Field Sieve",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:wqUgjupI1zYJ:scholar.google.com/&scioq=%22factoring+algorithms%22+RSA+%22number+field+sieve%22+quadratic+sieve&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "[CITATION] [C] Integer factorization",
+      "url": null,
+      "publication_info": "PL Jensen - University of Copenhagen, 2005 - Citeseer",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": 17,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=16102062399871937498&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:2muKt3AEdt8J:scholar.google.com/&scioq=%22factoring+algorithms%22+RSA+%22number+field+sieve%22+quadratic+sieve&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "title": "Summary of the Number Field Sieve",
+      "url": "https://ttu-ir.tdl.org/bitstreams/1c800e82-34ba-4211-aa6e-82fafb4349f5/download",
+      "publication_info": "M Peterson - 2004 - ttu-ir.tdl.org",
+      "snippet": "… Public key cryptography (more specifically, ) relies on the fact that very large integers … RSA to known . However, if we can efficiently factor large integers, … factoring algorithms RSA",
+      "pdf": {
+        "label": "tdl.org [PDF]",
+        "url": "https://ttu-ir.tdl.org/bitstreams/1c800e82-34ba-4211-aa6e-82fafb4349f5/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "tdl.org [PDF]",
+          "url": "https://ttu-ir.tdl.org/bitstreams/1c800e82-34ba-4211-aa6e-82fafb4349f5/download"
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "title": "On the factorization of -120 RSA",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-48329-2_15",
+      "publication_info": "T Denny, , … - Annual International …, 1993 - Springer B Dodson AK Lenstra",
+      "snippet": "… numbers, using either the method or the , and discuss quadratic sieve number field sieve the … purpose are the (QS) and the (NFS), … factoring algorithms quadratic sieve number field sieve",
+      "pdf": {
+        "label": "epfl.ch [PDF]",
+        "url": "https://infoscience.epfl.ch/bitstreams/a21b5688-39c7-4460-82f3-93c8f1e4d201/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "epfl.ch [PDF]",
+          "url": "https://infoscience.epfl.ch/bitstreams/a21b5688-39c7-4460-82f3-93c8f1e4d201/download"
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "title": "[CITATION] [C] II. On the Cost of Factoring -1024 RSA",
+      "url": null,
+      "publication_info": "A Shamir, - CryptoBytes - Citeseer E Tromer",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:2kiDALshNLcJ:scholar.google.com/&scioq=%22factoring+algorithms%22+RSA+%22number+field+sieve%22+quadratic+sieve&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "title": "Modern factoring algorithms",
+      "url": "http://www.cs.columbia.edu/~rjaiswal/factoring-survey.pdf",
+      "publication_info": ", - University of California, San Diego, 2005 - cs.columbia.edu K Bimpikis R Jaiswal",
+      "snippet": "… and . These two algorithms follow the same pattern and quadratic sieve number field sieve that is why we categorize them under the same name: … security of the cryptosystem. … sieve RSA",
+      "pdf": {
+        "label": "columbia.edu [PDF]",
+        "url": "http://www.cs.columbia.edu/~rjaiswal/factoring-survey.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "columbia.edu [PDF]",
+          "url": "http://www.cs.columbia.edu/~rjaiswal/factoring-survey.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 26,
+      "title": "Factoring integers using the Web and the number field sieve",
+      "url": "https://infoscience.epfl.ch/bitstreams/45a7d086-cdeb-418c-be9a-75db2604f37d/download",
+      "publication_info": "- Proceedings JAIST Symposium on Multimedia and …, 1995 - infoscience.epfl.ch AK Lenstra",
+      "snippet": "… on this category of integer . Examples of … (QS) combines factoring algorithms Quadratic sieve this better way of choosing of … For the factorization of -130 (a 130-digit number that is … RSA",
+      "pdf": {
+        "label": "epfl.ch [PDF]",
+        "url": "https://infoscience.epfl.ch/bitstreams/45a7d086-cdeb-418c-be9a-75db2604f37d/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "epfl.ch [PDF]",
+          "url": "https://infoscience.epfl.ch/bitstreams/45a7d086-cdeb-418c-be9a-75db2604f37d/download"
+        }
+      ]
+    },
+    {
+      "rank": 27,
+      "title": "A Study on Parallel Factorization. RSA",
+      "url": "https://scholar.archive.org/work/p6gvuxjyb5fqhjshpfr4e5f5da/access/wayback/http://pdfs.semanticscholar.org/a296/cad54edd720f9bc43a5818feecd2dba77b82.pdf",
+      "publication_info": "YS Yeh, TY Huang, , YH Chang - J. Comput., 2009 - scholar.archive.org HY Lin",
+      "snippet": "… (MPQS) for simulating the parallel … , we first introduce some Quadratic Sieve RSA factoring including the Dixon’s … The development of the , Lecture Notes in … algorithms number field sieve",
+      "pdf": {
+        "label": "archive.org [PDF]",
+        "url": "https://scholar.archive.org/work/p6gvuxjyb5fqhjshpfr4e5f5da/access/wayback/http://pdfs.semanticscholar.org/a296/cad54edd720f9bc43a5818feecd2dba77b82.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "archive.org [PDF]",
+          "url": "https://scholar.archive.org/work/p6gvuxjyb5fqhjshpfr4e5f5da/access/wayback/http://pdfs.semanticscholar.org/a296/cad54edd720f9bc43a5818feecd2dba77b82.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 28,
+      "title": "Quantum Shor's Algorithm vs. Classical (GNFS) Approach for Large Integer Factorization General Number Field Sieve",
+      "url": "https://ieeexplore.ieee.org/abstract/document/11019635/",
+      "publication_info": ", , … - … Conference on Next …, 2025 - ieeexplore.ieee.org SS Kavitha N Kaulgud BS Sharmila",
+      "snippet": "… The algorithm uses a pair of keys, public and private, for encryption and decryption of RSA data. The fundamental principle of … over conventional integer , brings … RSA factoring algorithms",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:bZCdH6DtMnMJ:scholar.google.com/&scioq=%22factoring+algorithms%22+RSA+%22number+field+sieve%22+quadratic+sieve&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 29,
+      "title": "Factoring",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-1-4684-0496-8_8?pdf=chapter%20toc",
+      "publication_info": "JA Buchmann - Introduction to Cryptography, 2001 - Springer",
+      "snippet": "… Those integers must be avoided as or Rabin moduli. As … in other , RSA factoring algorithms such as the (… We describe how x and yare found in the . Let … number field sieve quadratic sieve",
+      "pdf": null,
+      "cited_by_count": 1,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=13838387911552928425&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:qQoslHzUC8AJ:scholar.google.com/&scioq=%22factoring+algorithms%22+RSA+%22number+field+sieve%22+quadratic+sieve&hl=en&as_sdt=0,5",
+      "versions_count": 4,
+      "versions_url": "https://scholar.google.com/scholar?cluster=13838387911552928425&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 30,
+      "title": "Runtime and Implementation of : A Comparison Factoring Algorithms",
+      "url": "https://cs.rochester.edu/u/brown/Crypto/studprojs/Factor.pdf",
+      "publication_info": "J Moore - 2003 - cs.rochester.edu",
+      "snippet": "… methods for breaking without factoring the modulus [3]. … known algorithm, the RSA number . This algorithm works … number , the is the fastest that has … field sieve sieve quadratic sieve sieve",
+      "pdf": {
+        "label": "rochester.edu [PDF]",
+        "url": "https://cs.rochester.edu/u/brown/Crypto/studprojs/Factor.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "rochester.edu [PDF]",
+          "url": "https://cs.rochester.edu/u/brown/Crypto/studprojs/Factor.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 31,
+      "title": "Factoring large numbers with programmable hardware",
+      "url": "https://dl.acm.org/doi/abs/10.1145/329166.329177",
+      "publication_info": "HJ Kim, WH Mangione-Smith - Proceedings of the 2000 ACM/SIGDA …, 2000 - dl.acm.org",
+      "snippet": "… kernels, which forms the heart of high-performance number , we are … factoring algorithms polynomial (MPQS) which was the fastest algorithm until the (… quadratic sieve number field sieve",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/329166.329177"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/329166.329177"
+        }
+      ]
+    },
+    {
+      "rank": 32,
+      "title": "Impact of Decreasing Polynomial Degree in Time Needed to Factor a 100 Digits Integer by Algorithm General Number Field Sieve",
+      "url": "https://pdfs.semanticscholar.org/2e87/d2c0f6f75e870cb06ba7a4b13189df4dee67.pdf",
+      "publication_info": "- pdfs.semanticscholar.org JA Othman",
+      "snippet": "… The (GNFS) considered being the state of the art for the general number field sieve factoring … For the public key cryptosystem which is depend upon factoring, if we could … algorithms RSA",
+      "pdf": {
+        "label": "semanticscholar.org [PDF]",
+        "url": "https://pdfs.semanticscholar.org/2e87/d2c0f6f75e870cb06ba7a4b13189df4dee67.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "semanticscholar.org [PDF]",
+          "url": "https://pdfs.semanticscholar.org/2e87/d2c0f6f75e870cb06ba7a4b13189df4dee67.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 33,
+      "title": "Integer Factorization",
+      "url": "https://martinlauridsen.info/pub/bsc_thesis.pdf",
+      "publication_info": "- martinlauridsen.info MM Lauridsen",
+      "snippet": "… the , an algorithm beyond the scope of this thesis. Many General Number Field Sieve factoring … We shall cover the and Multiple Polynomial … algorithms Quadratic Sieve Quadratic Sieve",
+      "pdf": {
+        "label": "martinlauridsen.info [PDF]",
+        "url": "https://martinlauridsen.info/pub/bsc_thesis.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "martinlauridsen.info [PDF]",
+          "url": "https://martinlauridsen.info/pub/bsc_thesis.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 34,
+      "title": "Smooth numbers and the quadratic sieve",
+      "url": "https://pub.math.leidenuniv.nl/~stevenhagenp/ANTproc/03carl.pdf",
+      "publication_info": "- Proc. of an MSRI workshop, J. Buhler and P …, 2008 - pub.math.leidenuniv.nl C Pomerance",
+      "snippet": "… For example, if n were a modulus being used in the … intact manner, for many RSA factoring . What may change is … ” between the and the is … algorithms quadratic sieve number field sieve",
+      "pdf": {
+        "label": "leidenuniv.nl [PDF]",
+        "url": "https://pub.math.leidenuniv.nl/~stevenhagenp/ANTproc/03carl.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "leidenuniv.nl [PDF]",
+          "url": "https://pub.math.leidenuniv.nl/~stevenhagenp/ANTproc/03carl.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 35,
+      "title": "Integer factoring algorithms",
+      "url": "https://www.igi-global.com/chapter/integer-factoring-algorithms/188525",
+      "publication_info": ", - Algorithmic Strategies for Solving …, 2018 - igi-global.com K Balasubramanian AM Abbas",
+      "snippet": "… The cryptosystem and many other cryptosystems rely on the … and RSA Number field Sieve the are … Fractions Algorithms and the Algorithm. … General Number Field Sieve Quadratic Sieve",
+      "pdf": null,
+      "cited_by_count": 7,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=10839704972170743649&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:Yc9FsD1ebpYJ:scholar.google.com/&scioq=%22factoring+algorithms%22+RSA+%22number+field+sieve%22+quadratic+sieve&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=10839704972170743649&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 36,
+      "title": "Extracted text: Factorization and Collision Algorithms in Cryptography",
+      "url": "https://digitalcollections.wesleyan.edu/node/16920/ocr",
+      "publication_info": "J Murphy - Birth - digitalcollections.wesleyan.edu",
+      "snippet": "… To understand the description of the … the , and the number field sieve quadratic sieve that follows, it … number first factored with the is known … number field sieve RSA quadratic sieve",
+      "pdf": {
+        "label": "wesleyan.edu [HTML]",
+        "url": "https://digitalcollections.wesleyan.edu/node/16920/ocr"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "wesleyan.edu [HTML]",
+          "url": "https://digitalcollections.wesleyan.edu/node/16920/ocr"
+        }
+      ]
+    },
+    {
+      "rank": 37,
+      "title": "A parallel line for the GNFS Algorithm sieve",
+      "url": "https://www.academia.edu/download/36617197/Paper_27-A_parallel_line_sieve_for_the_GNFS_Algorithm.pdf",
+      "publication_info": "- International Journal of Advanced Computer Science …, 2014 - academia.edu I Gad",
+      "snippet": "… Due to advances in and advances in computing … relies on the difficulty factoring algorithms of The (GNFS) algorithm [… The factoring algorithm… General Number Field Sieve quadratic sieve",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/36617196/Paper_27-A_parallel_line_sieve_for_the_GNFS_Algorithm.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/36617196/Paper_27-A_parallel_line_sieve_for_the_GNFS_Algorithm.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 38,
+      "title": "[CITATION] [C] CrypTool Extensions Number Field Sieve",
+      "url": null,
+      "publication_info": "T Winograd - Copyright of Baltic Journal of Modern Computing is the … - Citeseer",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": 2,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=9039567830637662564&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:ZNE0XAz_cn0J:scholar.google.com/&scioq=%22factoring+algorithms%22+RSA+%22number+field+sieve%22+quadratic+sieve&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 39,
+      "title": "Systematic mapping study on fast factorization using parallel or distributed processing applied to cryptanalysis",
+      "url": "http://www.scielo.org.co/scielo.php?pid=S0121-11292024000300007&script=sci_arttext",
+      "publication_info": "JA Melo, … - Revista Facultad de …, 2024 - scielo.org.co S Amador-Donado",
+      "snippet": "… The security of relies on the difficulty of factoring very large … (MPQS) RSA Quadratic Sieve and the (… up in integer- 13 2017 [12] … General Number Field Sieve sieving factoring algorithms",
+      "pdf": {
+        "label": "scielo.org.co [HTML]",
+        "url": "http://www.scielo.org.co/scielo.php?pid=S0121-11292024000300007&script=sci_arttext"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "scielo.org.co [HTML]",
+          "url": "http://www.scielo.org.co/scielo.php?pid=S0121-11292024000300007&script=sci_arttext"
+        }
+      ]
+    },
+    {
+      "rank": 40,
+      "title": "Integer Factorization: Another perspective",
+      "url": "https://arxiv.org/abs/2507.07055",
+      "publication_info": "GR Bansimba, - arXiv preprint arXiv:2507.07055, 2025 - arxiv.org RF Babindamana",
+      "snippet": "… to sophisticated methods like the , no known algorithm can … General Number Field Sieve of were proposed, the most important of which are the (… factoring algorithms Quadratic Sieve",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2507.07055"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2507.07055"
+        }
+      ]
+    },
+    {
+      "rank": 41,
+      "title": "Evaluation Report on the Factoring Problem",
+      "url": "https://www.cryptrec.go.jp/exreport/cryptrec-ex-1023-2001.pdf",
+      "publication_info": "J Stern - Evaluation of Cryptographic Techniques in FY 2003 … - cryptrec.go.jp",
+      "snippet": "… main general purpose , the sive (QS) … The factoring algorithms quadratic quadratic sieve method (QS) factors n by gathering … The was used to factor the 130-digit … number field sieve RSA",
+      "pdf": {
+        "label": "cryptrec.go.jp [PDF]",
+        "url": "https://www.cryptrec.go.jp/exreport/cryptrec-ex-1023-2001.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "cryptrec.go.jp [PDF]",
+          "url": "https://www.cryptrec.go.jp/exreport/cryptrec-ex-1023-2001.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 42,
+      "title": "Some parallel algorithms for integer factorisation",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-48311-x_1",
+      "publication_info": "- European Conference on Parallel Processing, 1999 - Springer RP Brent",
+      "snippet": "… In the system we usually take N = p1p2, where p1,p2 are … was developed from the RSA special (SNFS), … In concept it is similar to the algorithm, but it … number field sieve quadratic sieve",
+      "pdf": {
+        "label": "anu.edu.au [PS]",
+        "url": "https://maths-people.anu.edu.au/brent/ftp/rpb193.ps.gz"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PS]",
+          "url": "https://maths-people.anu.edu.au/brent/ftp/rpb193.ps.gz"
+        }
+      ]
+    },
+    {
+      "rank": 43,
+      "title": "Polynomial-Time Algorithms for Semiprime Factorization",
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5464916",
+      "publication_info": "FF da Silva - Available at SSRN 5464916 - papers.ssrn.com",
+      "snippet": "… The cryptosystem derives its security … Any modulus could be factored efficiently, RSA RSA allowing the private key to be derived from the public key. This would break the security of … RSA",
+      "pdf": {
+        "label": "ssrn.com [PDF]",
+        "url": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=5464916"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ssrn.com [PDF]",
+          "url": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=5464916"
+        }
+      ]
+    },
+    {
+      "rank": 44,
+      "title": "Evaluation of complexity of mathematical algorithms",
+      "url": "https://www.cryptrec.go.jp/exreport/cryptrec-ex-0601-2006.pdf",
+      "publication_info": "T Kleinjung - cryptrec.go.jp",
+      "snippet": "… First, we give a brief overview of the (… (see General Number Field Sieve factoring algorithms for example [Coh]) for doing the cofactoring, namely the Multiple Polynomial … Quadratic Sieve",
+      "pdf": {
+        "label": "cryptrec.go.jp [PDF]",
+        "url": "https://www.cryptrec.go.jp/exreport/cryptrec-ex-0601-2006.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "cryptrec.go.jp [PDF]",
+          "url": "https://www.cryptrec.go.jp/exreport/cryptrec-ex-0601-2006.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 45,
+      "title": "History of integer factorization",
+      "url": "https://www.cs.purdue.edu/homes/ssw/chapter3.pdf",
+      "publication_info": "SS Wagstaff Jr - LonD. Mathematical Society Lecture Note Series, 2021 - cs.purdue.edu",
+      "snippet": "… of , more and more were developed and fine-tuned, from the Elliptic RSA factoring algorithms Curve Method to the . … This idea led to the Algorithm. … Number Field Sieve Quadratic Sieve",
+      "pdf": {
+        "label": "purdue.edu [PDF]",
+        "url": "https://www.cs.purdue.edu/homes/ssw/chapter3.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "purdue.edu [PDF]",
+          "url": "https://www.cs.purdue.edu/homes/ssw/chapter3.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 46,
+      "title": "Integer factorization algorithms",
+      "url": "https://www.diva-portal.org/smash/record.jsf?pid=diva2:1460632",
+      "publication_info": "J Nilsson - 2020 - diva-portal.org",
+      "snippet": "… of the algorithm (QS), we have now arrived at the Quadratic sieve General Number Field (… as well as the public cryptosystem . We can see that from the very early days of the … Sieve RSA",
+      "pdf": {
+        "label": "diva-portal.org [PDF]",
+        "url": "https://www.diva-portal.org/smash/get/diva2:1460632/FULLTEXT01.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "diva-portal.org [PDF]",
+          "url": "https://www.diva-portal.org/smash/get/diva2:1460632/FULLTEXT01.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 47,
+      "title": "[CITATION] [C] A look at the Special using ideals as implementable in the magma computational algebra software system Number Field Sieve",
+      "url": null,
+      "publication_info": "RM Thompson - 1911 - Sciences",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:7-Vbv8820PYJ:scholar.google.com/&scioq=%22factoring+algorithms%22+RSA+%22number+field+sieve%22+quadratic+sieve&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 48,
+      "title": "factorization quantum algorithm and its simulation Quadratic sieve",
+      "url": "https://arxiv.org/abs/2005.11668",
+      "publication_info": ", - arXiv preprint arXiv:2005.11668, 2020 - arxiv.org AS Bhatia A Kumar",
+      "snippet": "… The fastest algorithm and second fastest algo… General number field sieve quadratic sieve Recently, in 1994, it has factored 129 decimal-digit challenge number [20]. It is based … RSA",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2005.11668"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2005.11668"
+        }
+      ]
+    },
+    {
+      "rank": 49,
+      "title": "Geometric Index (SEMT): A Novel Deterministic Approach to Factoring Large Integers and its High-Efficiency Parallel Implementation Sieve",
+      "url": "https://siforaibi.com/rsa.pdf",
+      "publication_info": "- 2025 - siforaibi.com SIFE ORAIBI",
+      "snippet": "… , notably the (… demonstration that the SEMT factoring algorithms General Number Field Sieve is not only theoretically … factorization speeds on large moduli, as evidenced by … Sieve RSA",
+      "pdf": {
+        "label": "siforaibi.com [PDF]",
+        "url": "https://siforaibi.com/rsa.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "siforaibi.com [PDF]",
+          "url": "https://siforaibi.com/rsa.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 50,
+      "title": "Integer factorization–cryptology meets number theory",
+      "url": "https://sjgmu.umg.edu.pl/index.php/sjgmu/article/view/1",
+      "publication_info": "- Scientific Journal of Gdynia Maritime University, 2019 - sjgmu.umg.edu.pl J Pieprzyk",
+      "snippet": "… explains the , which is a good representative of modern . quadratic sieve factoring algorithms … The factorization was done using the (NFS) and required around 3 × 105 … number field sieve",
+      "pdf": {
+        "label": "umg.edu.pl [PDF]",
+        "url": "https://sjgmu.umg.edu.pl/index.php/sjgmu/article/download/1/175"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "umg.edu.pl [PDF]",
+          "url": "https://sjgmu.umg.edu.pl/index.php/sjgmu/article/download/1/175"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

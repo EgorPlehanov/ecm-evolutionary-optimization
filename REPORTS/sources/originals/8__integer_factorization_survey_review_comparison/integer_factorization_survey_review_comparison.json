@@ -1,0 +1,1358 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"integer factorization\" survey review comparison",
+    "requested_limit": 50,
+    "saved_records": 50,
+    "hl": "en",
+    "created_at_utc": "2026-05-14T16:03:44.197514+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22integer+factorization%22+survey+review+comparison&hl=en&start=0",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22integer+factorization%22+survey+review+comparison&hl=en&start=10",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 20,
+      "url": "https://scholar.google.com/scholar?q=%22integer+factorization%22+survey+review+comparison&hl=en&start=20",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 30,
+      "url": "https://scholar.google.com/scholar?q=%22integer+factorization%22+survey+review+comparison&hl=en&start=30",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 40,
+      "url": "https://scholar.google.com/scholar?q=%22integer+factorization%22+survey+review+comparison&hl=en&start=40",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "A of modern algorithms survey integer factorization",
+      "url": "https://ir.cwi.nl/pub/18252/18252B.pdf",
+      "publication_info": "PL Montgomery - CWI quarterly, 1994 - ir.cwi.nl",
+      "snippet": "… We some elementary number theory. We some fundamental algorithms … review review Each entry in one table is to each entry in the other. Variations work for the P + 1 and … compared",
+      "pdf": {
+        "label": "cwi.nl [PDF]",
+        "url": "https://ir.cwi.nl/pub/18252/18252B.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "cwi.nl [PDF]",
+          "url": "https://ir.cwi.nl/pub/18252/18252B.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "of methods for applied to cryptography Review integer factorization",
+      "url": "https://www.researchgate.net/profile/Kefa-Rabah-2/publication/26567611_Review_of_Methods_for_Integer_Factorization_Applied_to_Cryptography/links/02e7e51af7fd502c40000000/Review-of-Methods-for-Integer-Factorization-Applied-to-Cryptography.pdf",
+      "publication_info": "K Rabah - Journal of applied Sciences, 2006 - researchgate.net",
+      "snippet": "… However, the problem of still appears difficult, both in a practical integer factorization sense (… In this we will outline some useful and recent algorithms, … study integer factorization",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Kefa-Rabah-2/publication/26567611_Review_of_Methods_for_Integer_Factorization_Applied_to_Cryptography/links/02e7e51af7fd502c40000000/Review-of-Methods-for-Integer-Factorization-Applied-to-Cryptography.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Kefa-Rabah-2/publication/26567611_Review_of_Methods_for_Integer_Factorization_Applied_to_Cryptography/links/02e7e51af7fd502c40000000/Review-of-Methods-for-Integer-Factorization-Applied-to-Cryptography.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "A on the limitations of evolutionary computation and other bio-inspired approaches for study integer factorization",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1877050915026885",
+      "publication_info": "M Mishra, V Gupta, U Chaturvedi, … - Procedia Computer …, 2015 - Elsevier KK Shukla",
+      "snippet": "… algorithm based approach for . For experiments, we also adopted a integer factorization similar strategy for solving the problem, however, with subtle in the objective function, … differences",
+      "pdf": {
+        "label": "sciencedirect.com [PDF]",
+        "url": "https://www.sciencedirect.com/science/article/pii/S1877050915026885/pdf?md5=8a541fd7a1a76bce334c72b6072836e6&pid=1-s2.0-S1877050915026885-main.pdf&_valck=1"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "sciencedirect.com [PDF]",
+          "url": "https://www.sciencedirect.com/science/article/pii/S1877050915026885/pdf?md5=8a541fd7a1a76bce334c72b6072836e6&pid=1-s2.0-S1877050915026885-main.pdf&_valck=1"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "Enhanced Method: Sequential and Parallel Approaches Integer Factorization",
+      "url": "https://www.mdpi.com/2073-8994/18/5/780",
+      "publication_info": ", , , - Symmetry, 2026 - mdpi.com ET Alnfrawy HM Bahig HM Bahig R Elbarougy",
+      "snippet": "… The first direction is related to sequential computation, in which we the two algorithms compare SF … The original contributions presented in this are included in the article. Further … study",
+      "pdf": {
+        "label": "mdpi.com [HTML]",
+        "url": "https://www.mdpi.com/2073-8994/18/5/780"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "mdpi.com [HTML]",
+          "url": "https://www.mdpi.com/2073-8994/18/5/780"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "The algorithm with pisano period integer factorization",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8901977/",
+      "publication_info": ", HJ Cai, Z Gong - IEEE Access, 2019 - ieeexplore.ieee.org L Wu",
+      "snippet": "… In the following comparative , we give up the with this method. In addition, study comparison … and related simulation platforms; the following comparative does not consider Shor’s … study",
+      "pdf": {
+        "label": "ieee.org [PDF]",
+        "url": "https://ieeexplore.ieee.org/iel7/6287639/8600701/08901977.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ieee.org [PDF]",
+          "url": "https://ieeexplore.ieee.org/iel7/6287639/8600701/08901977.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "with compositional distributed representations Integer factorization",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3517343.3517368",
+      "publication_info": ", , , … - Proceedings of the …, 2022 - dl.acm.org D Kleyko C Bybee CJ Kymn BA Olshausen",
+      "snippet": "… Please consult [32, 33] for a comprehensive . The key components of any VSA model survey … Note that to the case of semiprimes, for 3-almost primes larger values of n were … compared",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3517343.3517368"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3517343.3517368"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "COMPARATIVE ANALYSIS OF EXPONENTIAL AND SUB-EXPONENTIAL ALGORITHMS INTEGER FACTORIZATION",
+      "url": "https://stem.kiut.uz/index.php/journal/article/download/155/92",
+      "publication_info": "AB Fayziyevich - Центрально азиатский журнал STEM, 2025 - stem.kiut.uz",
+      "snippet": "… comparative analysis, this adopts a multi-stage methodological approach consisting study of classification, theoretical , empirical interpretation, and structured . … review comparison",
+      "pdf": {
+        "label": "kiut.uz [PDF]",
+        "url": "https://stem.kiut.uz/index.php/journal/article/download/155/92"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "kiut.uz [PDF]",
+          "url": "https://stem.kiut.uz/index.php/journal/article/download/155/92"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "A novel approach to : a paradigm in cryptography integer factorization",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/cpe.8365",
+      "publication_info": ", , … - … Practice and Experience, 2025 - Wiley Online Library B Ilkhom A Khan R Das",
+      "snippet": "… This approach [35], validated on a case for predicting … , highlighting Shor's algorithm's study efficiency to classical … The research gap identified in the literature of this … compared review",
+      "pdf": null,
+      "cited_by_count": 1,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=17882942892781386799&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:L7zUJtD5LPgJ:scholar.google.com/&scioq=%22integer+factorization%22+survey+review+comparison&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=17882942892781386799&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "Performance analysis of fermat factorization algorithms",
+      "url": "https://pdfs.semanticscholar.org/ed0e/00aea5eb433df8bed640e04ab121411e74f7.pdf",
+      "publication_info": ", , … - International …, 2020 - pdfs.semanticscholar.org HM Bahig MA Mahdi KA Alutaibi",
+      "snippet": "… In this paper, we several algorithms … From a of the literature, study integer factorization review it seems that the best time … the experimental undertaken to and measure … study compare",
+      "pdf": {
+        "label": "semanticscholar.org [PDF]",
+        "url": "https://pdfs.semanticscholar.org/ed0e/00aea5eb433df8bed640e04ab121411e74f7.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "semanticscholar.org [PDF]",
+          "url": "https://pdfs.semanticscholar.org/ed0e/00aea5eb433df8bed640e04ab121411e74f7.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "A of Prime Numbers, Squaring Prime Pattern, Different Types of Primes and Prime Factorization Analysis Review",
+      "url": "https://www.researchgate.net/profile/Aayush-Shah-21/publication/372779725_A_Review_of_Prime_Numbers_Squaring_Prime_Pattern_Different_Types_of_Primes_and_Prime_Factorization_Analysis/links/64d677a278e40b48bd3e7916/A-Review-of-Prime-Numbers-Squaring-Prime-Pattern-Different-Types-of-Primes-and-Prime-Factorization-Analysis.pdf",
+      "publication_info": "P Mahato, - International Journal for Research in Applied …, 2023 - researchgate.net A Shah",
+      "snippet": "… : The of … on Algorithms [11] presents the graph of decimal digits study Integer Factorization in prime factors and number of steps required to factorize a number. In this paper, … comparison",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Aayush-Shah-21/publication/372779725_A_Review_of_Prime_Numbers_Squaring_Prime_Pattern_Different_Types_of_Primes_and_Prime_Factorization_Analysis/links/64d677a278e40b48bd3e7916/A-Review-of-Prime-Numbers-Squaring-Prime-Pattern-Different-Types-of-Primes-and-Prime-Factorization-Analysis.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Aayush-Shah-21/publication/372779725_A_Review_of_Prime_Numbers_Squaring_Prime_Pattern_Different_Types_of_Primes_and_Prime_Factorization_Analysis/links/64d677a278e40b48bd3e7916/A-Review-of-Prime-Numbers-Squaring-Prime-Pattern-Different-Types-of-Primes-and-Prime-Factorization-Analysis.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "Rydberg-atom experiment for the problem integer factorization",
+      "url": "https://journals.aps.org/prresearch/abstract/10.1103/PhysRevResearch.6.023241",
+      "publication_info": ", , , , , … - Physical …, 2024 - APS J Park S Jeong M Kim K Kim A Byun L Vignoli Review",
+      "snippet": "… efficiently address this problem to classical algorithms. Thus, it is crucial to develop compared quantum computing algorithms to address this problem. This introduces a quantum … study",
+      "pdf": {
+        "label": "aps.org [PDF]",
+        "url": "https://link.aps.org/pdf/10.1103/PhysRevResearch.6.023241"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "aps.org [PDF]",
+          "url": "https://link.aps.org/pdf/10.1103/PhysRevResearch.6.023241"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "[CITATION] [C] Computer Methods for and Discrete Logarithm: A Cryptographic Perspective Integer Factorization",
+      "url": null,
+      "publication_info": "S Bai - Mater Thesis, Australian National University, 2006 - Citeseer",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": 1,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=3360764153283817842&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:cjFZ-jDVoy4J:scholar.google.com/&scioq=%22integer+factorization%22+survey+review+comparison&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": ". Integer factorization",
+      "url": "https://dspacep01.emporia.edu/items/74a6fe68-6c2c-48d3-992d-678fb7e709c0",
+      "publication_info": "OM Hamad - 2012 - dspacep01.emporia.edu",
+      "snippet": "… The aim of this is to discuss some of the old integer factoring methods, as well as some study … A of some concepts of elementary number theory and some details about continued … review",
+      "pdf": {
+        "label": "emporia.edu [PDF]",
+        "url": "https://dspacep01.emporia.edu/bitstreams/a4eb719e-344e-4b7e-b3b2-7cb1ad65f9c4/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "emporia.edu [PDF]",
+          "url": "https://dspacep01.emporia.edu/bitstreams/a4eb719e-344e-4b7e-b3b2-7cb1ad65f9c4/download"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "P System Design for Integer Factorization",
+      "url": "https://www.mdpi.com/2076-3417/13/15/8910",
+      "publication_info": "H Nan, Z Xue, C Li, M Zhou, - Applied Sciences, 2023 - mdpi.com X Liu",
+      "snippet": "… is structured as follows: In Section 2, we give a brief description of the cell-like P system study and an introduction to the theory related to … and the results … integer factorization comparison",
+      "pdf": {
+        "label": "mdpi.com [HTML]",
+        "url": "https://www.mdpi.com/2076-3417/13/15/8910"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "mdpi.com [HTML]",
+          "url": "https://www.mdpi.com/2076-3417/13/15/8910"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "Exploring lattice-based post-quantum signature for JWT authentication: and case review study",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9129505/",
+      "publication_info": ", - 2020 IEEE 91st Vehicular …, 2020 - ieeexplore.ieee.org A Alkhulaifi ESM El-Alfy",
+      "snippet": "… encryption algorithms that are based on or discrete logarithm problems; integer factorization … a of relevant related work. Section IV presents a case to evaluate and … review study compare",
+      "pdf": null,
+      "cited_by_count": 27,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=10811950477318643372&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:rF6xyazDC5YJ:scholar.google.com/&scioq=%22integer+factorization%22+survey+review+comparison&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "Performance Analysis of Shor's Algorithm for Using Quantum and Classical Approaches Integer Factorization",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10717174/",
+      "publication_info": ", B Singh… - 2024 10th …, 2024 - ieeexplore.ieee.org T Thamaraimanalan",
+      "snippet": "… Shor’s factorization algorithm, based on quantum mechanics, suggests a way to factor numbers in a shorter time to classical methods. This could significantly affect data … compared",
+      "pdf": null,
+      "cited_by_count": 12,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=11341788481186373448&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:SB-7QoggZp0J:scholar.google.com/&scioq=%22integer+factorization%22+survey+review+comparison&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "A comparative on Shor's quantum algorithm and classical algorithms based on runtime and accuracy study integer factorization",
+      "url": "https://www.diva-portal.org/smash/record.jsf?pid=diva2:1985720",
+      "publication_info": "N Cheraghi Dehdezi, H Tricopoulos - 2025 - diva-portal.org",
+      "snippet": "… In this , we have used a quantum algorithm and it with study integer factorization compared classical … This aims to evaluate Shor’s quantum algorithm and … study integer factorization",
+      "pdf": {
+        "label": "diva-portal.org [PDF]",
+        "url": "https://www.diva-portal.org/smash/get/diva2:1985720/FULLTEXT01.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "diva-portal.org [PDF]",
+          "url": "https://www.diva-portal.org/smash/get/diva2:1985720/FULLTEXT01.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "title": "Probabilistic computing accelerated by spike-frequency adaptation: Applications in integer factorization",
+      "url": "https://link.aps.org/doi/10.1103/dvxz-w9ts",
+      "publication_info": "H Xu, C Wang, Y Zhang, , - Physical Applied, 2025 - APS Y Zhang Z Yuan Review",
+      "snippet": "… Using of semiprime numbers ranging from 16 to 30 bits as a case , integer factorization study … We introduce a second comparator to the input voltage with 0, with an output of 1 … compare",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Yue-Zhang-5/publication/395802173_Probabilistic_computing_accelerated_by_spike-frequency_adaptation_Applications_in_integer_factorization/links/68d48876f3032e2b4be3095b/Probabilistic-computing-accelerated-by-spike-frequency-adaptation-Applications-in-integer-factorization.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Yue-Zhang-5/publication/395802173_Probabilistic_computing_accelerated_by_spike-frequency_adaptation_Applications_in_integer_factorization/links/68d48876f3032e2b4be3095b/Probabilistic-computing-accelerated-by-spike-frequency-adaptation-Applications-in-integer-factorization.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "Evolution of service-oriented computing: Integrating quantum techniques for integer factorization",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10543362/",
+      "publication_info": ", , HM Alsalmi… - 2024 IEEE 9th …, 2024 - ieeexplore.ieee.org R Salama W Alghamdi",
+      "snippet": "… In particular, problems have developed due to in vendor … In this , the differences study researchers use a SOC approach to the existing quantum software. Using the … integer factorization",
+      "pdf": null,
+      "cited_by_count": 6,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=17404166522179862756&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:5MBGnj0FiPEJ:scholar.google.com/&scioq=%22integer+factorization%22+survey+review+comparison&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "Deterministic Algorithms Integer Factorization",
+      "url": "https://arxiv.org/abs/1308.2891",
+      "publication_info": "NA Carella - arXiv preprint arXiv:1308.2891, 2013 - arxiv.org",
+      "snippet": "… , and uses an equivalent formulation based on the of squares equation 4N = x2 difference − y2. … also have a of current literature on this class of algorithms. … survey integer factorization",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/1308.2891"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/1308.2891"
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "Advances in composite integer factorization",
+      "url": "http://41.89.243.34:8080/xmlui/handle/123456789/265",
+      "publication_info": ", , , - 2013 - 41.89.243.34 AW Wanambisi S Aywa C Maende GM Muketha",
+      "snippet": "… to the … in trends in between consecutive primes is the way to compared study differences go in seeking a much faster algorithm to factor composite integers. A closer look at … differences",
+      "pdf": {
+        "label": "41.89.243.34 [PDF]",
+        "url": "http://41.89.243.34:8080/xmlui/bitstream/handle/123456789/265/Advances%20in%20composite%20integer%20factorization.pdf?sequence=1&isAllowed=y"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "41.89.243.34 [PDF]",
+          "url": "http://41.89.243.34:8080/xmlui/bitstream/handle/123456789/265/Advances%20in%20composite%20integer%20factorization.pdf?sequence=1&isAllowed=y"
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "title": "using stochastic magnetic tunnel junctions Integer factorization",
+      "url": "https://www.nature.com/articles/s41586-019-1557-9",
+      "publication_info": ", , , … - Nature, 2019 - nature.com WA Borders AZ Pervaiz S Fukami KY Camsari",
+      "snippet": "… In the case of , we use the cost function … Next, we the integer factorization compare demonstrated probabilistic computing … Because the purpose of this was to establish a system … study",
+      "pdf": null,
+      "cited_by_count": 776,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=11680258216125133554&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:8vL5gPacGKIJ:scholar.google.com/&scioq=%22integer+factorization%22+survey+review+comparison&hl=en&as_sdt=0,5",
+      "versions_count": 9,
+      "versions_url": "https://scholar.google.com/scholar?cluster=11680258216125133554&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "title": "Implementation of Algorithm with Pisano Period Integer Factorization",
+      "url": "https://link.springer.com/chapter/10.1007/978-981-15-5309-7_34",
+      "publication_info": ", A Tamang, AS Garia, A Shaji… - Data Science and Security …, 2020 - Springer T Tom",
+      "snippet": "… overview of algorithms, the is … literature , the implementation integer factorization study review of … The algorithmic complexities of different methods are . It is … integer factorization compared",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/65660292/2021_Book_DataScienceAndSecurity.pdf#page=311"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/65660292/2021_Book_DataScienceAndSecurity.pdf#page=311"
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "title": "Research on quantum annealing based on different columns integer factorization",
+      "url": "https://www.frontiersin.org/journals/physics/articles/10.3389/fphy.2022.914578/full",
+      "publication_info": "B Wang, X Yang, D Zhang - Frontiers in Physics, 2022 - frontiersin.org",
+      "snippet": "… Figure 4 shows a of the number of bits required by different … Therefore, the comparison theoretical research proposed in this that the factorization scale of large numbers can be … study",
+      "pdf": {
+        "label": "frontiersin.org [PDF]",
+        "url": "https://www.frontiersin.org/journals/physics/articles/10.3389/fphy.2022.914578/pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "frontiersin.org [PDF]",
+          "url": "https://www.frontiersin.org/journals/physics/articles/10.3389/fphy.2022.914578/pdf"
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "title": "Highly durable and energy‐efficient probabilistic bits based on h‐BN/SnS interface for 2 integer factorization",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/inf2.70018",
+      "publication_info": ", , , , … - InfoMat, 2025 - Wiley Online Library JK Han JY Park S Rehman MF Khan MS Kim",
+      "snippet": "… a more complex comparator circuit ( to our buffer) … Although this demonstrates compared study single-digit decimal … beyond the scope of the examined in this . … integer factorization study",
+      "pdf": {
+        "label": "wiley.com [PDF]",
+        "url": "https://onlinelibrary.wiley.com/doi/pdf/10.1002/inf2.70018"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "wiley.com [PDF]",
+          "url": "https://onlinelibrary.wiley.com/doi/pdf/10.1002/inf2.70018"
+        },
+        {
+          "label": "Full View",
+          "url": "https://scholar.google.com/scholar?output=instlink&q=info:yk-U2Wt8XYAJ:scholar.google.com/&hl=en&as_sdt=0,5&scillfp=6602048504329536430&oi=lle"
+        }
+      ]
+    },
+    {
+      "rank": 26,
+      "title": "on implementation of Shor's factorization algorithm on quantum computer Study",
+      "url": "https://link.springer.com/article/10.1007/s42979-024-02771-y",
+      "publication_info": ", - SN Computer Science, 2024 - Springer M Kumar B Mondal",
+      "snippet": "… of Shor’s factorization problem and discusses different approaches to solving the study … In to current circuits for using the Grover … integer factorization comparison integer factorization",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Mandeep-Kumar-23/publication/379667366_Study_on_Implementation_of_Shor's_Factorization_Algorithm_on_Quantum_Computer/links/66b4a4e951aa0775f270fb01/Study-on-Implementation-of-Shors-Factorization-Algorithm-on-Quantum-Computer.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Mandeep-Kumar-23/publication/379667366_Study_on_Implementation_of_Shor's_Factorization_Algorithm_on_Quantum_Computer/links/66b4a4e951aa0775f270fb01/Study-on-Implementation-of-Shors-Factorization-Algorithm-on-Quantum-Computer.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 27,
+      "title": "[CITATION] [C] Advances in composite integer factorization",
+      "url": null,
+      "publication_info": "- 2015 W Aldrin",
+      "snippet": "",
+      "pdf": {
+        "label": "41.89.243.34 [PDF]",
+        "url": "http://41.89.243.34:8080/xmlui/bitstream/handle/123456789/64/Advances%20in%20composite%20integer%20factorization.pdf?sequence=1&isAllowed=y"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "41.89.243.34 [PDF]",
+          "url": "http://41.89.243.34:8080/xmlui/bitstream/handle/123456789/64/Advances%20in%20composite%20integer%20factorization.pdf?sequence=1&isAllowed=y"
+        }
+      ]
+    },
+    {
+      "rank": 28,
+      "title": "Algebraic approach to composite integer factorization",
+      "url": "http://41.89.243.34:8080/xmlui/handle/123456789/266",
+      "publication_info": ", , , - 2013 - 41.89.243.34 AW Wanambisi S Aywa C Maende GM Muketha",
+      "snippet": "… A of of consecutive primes reveals trends … of papers to be included in study differences the final . SA, CM and GMM … in this research and for their support of this . … review study study",
+      "pdf": {
+        "label": "41.89.243.34 [PDF]",
+        "url": "http://41.89.243.34:8080/xmlui/bitstream/handle/123456789/266/ALGEBRAIC-APPROACH-TO-COMPOSITE-INTEGER-FACTORIZATION.pdf?sequence=1&isAllowed=y"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "41.89.243.34 [PDF]",
+          "url": "http://41.89.243.34:8080/xmlui/bitstream/handle/123456789/266/ALGEBRAIC-APPROACH-TO-COMPOSITE-INTEGER-FACTORIZATION.pdf?sequence=1&isAllowed=y"
+        }
+      ]
+    },
+    {
+      "rank": 29,
+      "title": "A of quantum secure group signature schemes: Lattice-based approach survey",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2214212623000170",
+      "publication_info": ", - Journal of Information Security and Applications, 2023 - Elsevier MS Şahin S Akleylek",
+      "snippet": "… such as the discrete logarithm and the problem. The fact that the … before integer factorization we all group signature schemes over lattices. In addition, we all proposed … review compare",
+      "pdf": null,
+      "cited_by_count": 17,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=11488620539711295237&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:BY-_9ILHb58J:scholar.google.com/&scioq=%22integer+factorization%22+survey+review+comparison&hl=en&as_sdt=0,5",
+      "versions_count": 5,
+      "versions_url": "https://scholar.google.com/scholar?cluster=11488620539711295237&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 30,
+      "title": "Exploring smooth number-based MAC algorithms for secure communication in IoT devices: a systematic literature review",
+      "url": "https://link.springer.com/article/10.1007/s10207-024-00938-5",
+      "publication_info": "EM Constantinescu, , - International Journal of …, 2025 - Springer M El-Hajj L Mariot",
+      "snippet": "… in fast . Through a Systematic Literature … this, this will employ a integer factorization study Systematic Literature … this within the existing literature and our … Review study comparing survey",
+      "pdf": {
+        "label": "springer.com [PDF]",
+        "url": "https://link.springer.com/content/pdf/10.1007/s10207-024-00938-5.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "springer.com [PDF]",
+          "url": "https://link.springer.com/content/pdf/10.1007/s10207-024-00938-5.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 31,
+      "title": "A on implementations of homomorphic encryption schemes: DT Van Thao et al. survey",
+      "url": "https://link.springer.com/article/10.1007/s11227-023-05233-z",
+      "publication_info": ", , G Gavin, - The Journal of …, 2023 - Springer TVT Doan ML Messai J Darmont",
+      "snippet": "… and evaluation of homomorphic cryptosystems’ performance based on their comparison experimental results. The … plaintext attack and attacks on classical and … study integer factorization",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://hal.science/hal-04047955v1/file/papier-revision-HE.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://hal.science/hal-04047955v1/file/papier-revision-HE.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 32,
+      "title": "via tensor-network Schnorr's sieving Integer factorization",
+      "url": "https://link.aps.org/doi/10.1103/d9dl-ctt4",
+      "publication_info": ", , , … - Physical A, 2026 - APS M Tesoro I Siloi D Jaschke G Magnifico Review",
+      "snippet": "… We the resource requirement of different algorithms: the classical Schnorr’s compare algorithm (Babai) [13] with lattice size and smoothness bound beyond the original sublinear …",
+      "pdf": {
+        "label": "aps.org [PDF]",
+        "url": "https://link.aps.org/pdf/10.1103/d9dl-ctt4"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "aps.org [PDF]",
+          "url": "https://link.aps.org/pdf/10.1103/d9dl-ctt4"
+        }
+      ]
+    },
+    {
+      "rank": 33,
+      "title": "RSA Cryptanalysis: An Elitist Genetic Algorithm for Integer Factorization",
+      "url": "https://ieeexplore.ieee.org/abstract/document/11010442/",
+      "publication_info": "A Kumari, , S Bandyopadhyay… - … IEEE Symposium on …, 2025 - ieeexplore.ieee.org U Garain",
+      "snippet": "… We have incorpo the concept of elitism by retaining elite … performance of the proposed rated model to other state-of… Chaturvedi, KK Shukla, and RV Yampolskiy, “A on the … compared study",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:oaVRRhVY1MkJ:scholar.google.com/&scioq=%22integer+factorization%22+survey+review+comparison&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 34,
+      "title": "A on post-quantum cryptography for constrained devices survey",
+      "url": "https://www.academia.edu/download/91333209/ijaerv14n11_12.pdf",
+      "publication_info": ", - International Journal of Applied Engineering …, 2019 - academia.edu KS Roy HK Kalita",
+      "snippet": "… RSA and ECC depends on problem and … In this section we explore integer factorization and critically these … cryptography schemes and provided a in Table 2. as … review comparison",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/91333209/ijaerv14n11_12.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/91333209/ijaerv14n11_12.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 35,
+      "title": "A Novel Hybrid Quantum Circuit for : End-to-End Evaluation in Simulation and Real Quantum Hardware Integer Factorization",
+      "url": "https://www.mdpi.com/2624-800X/6/2/71",
+      "publication_info": "JVG Thé, , - Journal of Cybersecurity and …, 2026 - mdpi.com V Oliveira Santos B Gharabaghi",
+      "snippet": "… At this stage of the , the … establishes JVG’s hybrid classical–quantum study comparison study circuit as a promising alternative toward implementing practical quantum … integer factorization",
+      "pdf": {
+        "label": "mdpi.com [HTML]",
+        "url": "https://www.mdpi.com/2624-800X/6/2/71"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "mdpi.com [HTML]",
+          "url": "https://www.mdpi.com/2624-800X/6/2/71"
+        }
+      ]
+    },
+    {
+      "rank": 36,
+      "title": "Prime Generation and Factorization Parallelization: A comparative of CPU and GPU Parallelization Study",
+      "url": "https://ieeexplore.ieee.org/abstract/document/11324654/",
+      "publication_info": "S Tasevska, V Kostadinoski… - … and Informatics (ICAI), 2025 - ieeexplore.ieee.org",
+      "snippet": "… When the performance of Pollard’s Rho algorithm for across comparing integer factorization sequential and parallel implementations (3, 6, and 12 cores), we observed that for smaller …",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:iy15L_Nxq1EJ:scholar.google.com/&scioq=%22integer+factorization%22+survey+review+comparison&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 37,
+      "title": "Copyright Protection of E-books by Data Hiding Based on . Integer Factorization",
+      "url": "https://search.ebscohost.com/login.aspx?direct=true&profile=ehost&scope=site&authtype=crawler&jrnl=19767277&AN=152914984&h=78LsBUenqigsKPDLnmI7QUZmq%2BUw8Hdnjq0dfyPcLSdyqId14jUAFanMQ%2Fgr2SxV1NGSA3OsMLdUVa5X45WFrw%3D%3D&crl=c",
+      "publication_info": ", PY Hsieh - KSII Transactions on Internet & …, 2021 - search.ebscohost.com DC Wu",
+      "snippet": "… In the remainder of this paper, a of the structure of the e-… In this , we utilize all review study the possible … Three of the proposed method with five others … integer factorization comparisons",
+      "pdf": null,
+      "cited_by_count": 1,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=16266555320238366743&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:F2AMPuFpvuEJ:scholar.google.com/&scioq=%22integer+factorization%22+survey+review+comparison&hl=en&as_sdt=0,5",
+      "versions_count": 3,
+      "versions_url": "https://scholar.google.com/scholar?cluster=16266555320238366743&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 38,
+      "title": "Post-quantum cryptography: A solution to the challenges of classical encryption algorithms",
+      "url": "https://link.springer.com/chapter/10.1007/978-981-19-6383-4_3",
+      "publication_info": ", , , … - … electronics devices and …, 2023 - Springer S Sharma KR Ramkumar A Kaur T Hasija",
+      "snippet": "… The aim of this is to present the technical overview … as to classical methods review compared such as and … The results of the have shown isogeny algorithms as … integer factorization study",
+      "pdf": null,
+      "cited_by_count": 49,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=17578876154211249429&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:Fa1Ysrm29PMJ:scholar.google.com/&scioq=%22integer+factorization%22+survey+review+comparison&hl=en&as_sdt=0,5",
+      "versions_count": 3,
+      "versions_url": "https://scholar.google.com/scholar?cluster=17578876154211249429&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 39,
+      "title": "Forty years of attacks on the RSA cryptosystem: A brief survey",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/09720529.2018.1564201",
+      "publication_info": ", L Ping - Journal of Discrete Mathematical Sciences and …, 2019 - Taylor & Francis M Mumtaz",
+      "snippet": "… In section 2, we an problem with respect to RSA perspective as survey integer factorization … is less effective for LSBsRSA with small e as with standard RSA. Whereas, LSBs-… compared",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/99569997/09720529.2018.156420120230308-1-szj9mj.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/99569997/09720529.2018.156420120230308-1-szj9mj.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 40,
+      "title": "Logically synthesized and hardware-accelerated restricted Boltzmann machines for combinatorial optimization and integer factorization",
+      "url": "https://www.nature.com/articles/s41928-022-00714-0",
+      "publication_info": ", , - Nature Electronics, 2022 - nature.com S Patel P Canoza S Salahuddin",
+      "snippet": "… 4 billion possible states), in to implementing the same … for the RBM sizes in this comparison . The weights and biases are stored … for their contribution to the peer of this work. … study review",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2007.13489"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2007.13489"
+        }
+      ]
+    },
+    {
+      "rank": 41,
+      "title": "Design of a digital circuit for via solving the inverse problem of logic integer factorization",
+      "url": "https://www.researchgate.net/profile/Ali-Rushdi/publication/322981978_Design_of_a_Digital_Circuit_for_Integer_Factorization_via_Solving_the_Inverse_Problem_of_Logic/links/5a7e1c4faca272a73765cb0f/Design-of-a-Digital-Circuit-for-Integer-Factorization-via-Solving-the-Inverse-Problem-of-Logic.pdf",
+      "publication_info": ", - Journal of Advances in Mathematics …, 2018 - researchgate.net AMA Rushdi SS Zagzoog",
+      "snippet": "… To make the paper self-contained, we briefly some of the concepts and facts needed review … techniques in . This paper must be supplemented with a of the … integer factorization study",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Ali-Rushdi/publication/322981978_Design_of_a_Digital_Circuit_for_Integer_Factorization_via_Solving_the_Inverse_Problem_of_Logic/links/5a7e1c4faca272a73765cb0f/Design-of-a-Digital-Circuit-for-Integer-Factorization-via-Solving-the-Inverse-Problem-of-Logic.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Ali-Rushdi/publication/322981978_Design_of_a_Digital_Circuit_for_Integer_Factorization_via_Solving_the_Inverse_Problem_of_Logic/links/5a7e1c4faca272a73765cb0f/Design-of-a-Digital-Circuit-for-Integer-Factorization-via-Solving-the-Inverse-Problem-of-Logic.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 42,
+      "title": "of Shor's Algorithm for Using IBM Qiskit Integer Factorization",
+      "url": "https://books.google.com/books?hl=en&lr=&id=blKTEQAAQBAJ&oi=fnd&pg=PA44&dq=%22integer+factorization%22+survey+review+comparison&ots=2A0As6Hz5P&sig=Q-CfZ6rsgEIkMNtMbhoGUnXyyrw",
+      "publication_info": "A Saxena, , SS Kushwaha - ICT for Intelligent Systems …, 2025 - books.google.com DK Saini",
+      "snippet": "… The objective of this is to implement Shor’s factoring … of quantum computers, study review followed by a concise of … power of quantum computers to classical computers. … review compared",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:hhkckV8Z6KQJ:scholar.google.com/&scioq=%22integer+factorization%22+survey+review+comparison&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 43,
+      "title": "A on NIST 3 Round Post Quantum Digital Signature Algorithms Survey rd",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10493941/",
+      "publication_info": "R Shajahan, , - 2024 5th International …, 2024 - ieeexplore.ieee.org K Jain P Krishnan",
+      "snippet": "… discrete logarithms and . The introduction of … from fundamental algorithmic integer factorization . PQC algorithms, … submissions, holding public , and going through … differences reviews",
+      "pdf": null,
+      "cited_by_count": 30,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=13091683406581555707&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:-2ErEbIAr7UJ:scholar.google.com/&scioq=%22integer+factorization%22+survey+review+comparison&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=13091683406581555707&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 44,
+      "title": "A on quantum Fourier transform review",
+      "url": "https://link.springer.com/article/10.1007/s11128-026-05067-7",
+      "publication_info": ", P Álvarez, B Vidal, - Quantum Information Processing, 2026 - Springer T Barros M Solar",
+      "snippet": "… algorithms like Shor’s algorithm for . The analysis also addresses the … integer factorization , which exponentially speeds up the process to classical methods. This … compared survey",
+      "pdf": {
+        "label": "springer.com [PDF]",
+        "url": "https://link.springer.com/content/pdf/10.1007/s11128-026-05067-7.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "springer.com [PDF]",
+          "url": "https://link.springer.com/content/pdf/10.1007/s11128-026-05067-7.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 45,
+      "title": "A novel quantum circuit for : Evaluation via simulation and real quantum hardware integer factorization",
+      "url": "https://www.preprints.org/manuscript/202510.1649",
+      "publication_info": ", - 2025 - preprints.org VO Santos B Gharabaghi",
+      "snippet": "… At the current phase of this , the will be restricted between the proposed … study comparison By establishing a direct , it becomes possible to quantify the resource savings and … comparison",
+      "pdf": {
+        "label": "preprints.org [PDF]",
+        "url": "https://www.preprints.org/frontend/manuscript/63009198e949e24aec54cb63dccf0ee1/download_pub"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "preprints.org [PDF]",
+          "url": "https://www.preprints.org/frontend/manuscript/63009198e949e24aec54cb63dccf0ee1/download_pub"
+        }
+      ]
+    },
+    {
+      "rank": 46,
+      "title": "Assessing Quantum Performance with Shor's Algorithm Integer Factorization",
+      "url": "https://api.taylorfrancis.com/content/chapters/edit/download?identifierName=doi&identifierValue=10.1201/9781003475286-11&type=chapterpdf",
+      "publication_info": "- Quantum Computing, 2024 - api.taylorfrancis.com J Lee",
+      "snippet": "… Therefore, we want to the time required to factor … this , we evaluated the compare study scalability of … Comparing the performance of between pre-… integer factorization integer factorization",
+      "pdf": null,
+      "cited_by_count": 2,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=18247238242200957171&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:87BP1oA2O_0J:scholar.google.com/&scioq=%22integer+factorization%22+survey+review+comparison&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 47,
+      "title": "Quantum service-oriented computing: current landscape and challenges",
+      "url": "https://link.springer.com/article/10.1007/S11219-022-09589-Y",
+      "publication_info": ", , , … - Software Quality …, 2022 - Springer E Moguel J Rojo D Valencia J Berrocal",
+      "snippet": "… This with other … , the result obtained or that the algorithm difference study integer factorization does not work in all executions is not of great relevance because our interest is the … study",
+      "pdf": {
+        "label": "springer.com [PDF]",
+        "url": "https://link.springer.com/content/pdf/10.1007/s11219-022-09589-y.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "springer.com [PDF]",
+          "url": "https://link.springer.com/content/pdf/10.1007/s11219-022-09589-y.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 48,
+      "title": "algorithms Integer factorization",
+      "url": "https://www.diva-portal.org/smash/record.jsf?pid=diva2:1460632",
+      "publication_info": "J Nilsson - 2020 - diva-portal.org",
+      "snippet": "… of the various methods mentioned. I will also make a of the integer factorization comparison … The of has a very long history and the studies have a wide range … study integer factorization",
+      "pdf": {
+        "label": "diva-portal.org [PDF]",
+        "url": "https://www.diva-portal.org/smash/get/diva2:1460632/FULLTEXT01.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "diva-portal.org [PDF]",
+          "url": "https://www.diva-portal.org/smash/get/diva2:1460632/FULLTEXT01.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 49,
+      "title": "Efficiency of zero-knowledge proofs: a through and analysis review",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10729195/",
+      "publication_info": ", , G Singh - … on public key infrastructure and its …, 2024 - ieeexplore.ieee.org CP Sah M Kaur",
+      "snippet": "… This explores various challenges associated … Despite these , the review study differences research observes a positive … cost between and discrete … comparison integer factorization",
+      "pdf": null,
+      "cited_by_count": 12,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=3066899205854692964&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:ZIblHpTQjyoJ:scholar.google.com/&scioq=%22integer+factorization%22+survey+review+comparison&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 50,
+      "title": "Ecc over rsa for asymmetric encryption: A review",
+      "url": "https://search.proquest.com/openview/d19ab430e1e466f226eaebab6036a2af/1?pq-origsite=gscholar&cbl=55228",
+      "publication_info": "K Gupta, S Silakari - International Journal of Computer …, 2011 - search.proquest.com",
+      "snippet": "… This paper gives the of Elliptic Curve … ECC is a when to RSA and discrete survey compared logarithm systems, is a … application of elliptic curves in , Neal Koblitz and … integer factorization",
+      "pdf": null,
+      "cited_by_count": 65,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=12405802715158470334&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:vt6YNtdDKqwJ:scholar.google.com/&scioq=%22integer+factorization%22+survey+review+comparison&hl=en&as_sdt=0,5",
+      "versions_count": 3,
+      "versions_url": "https://scholar.google.com/scholar?cluster=12405802715158470334&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

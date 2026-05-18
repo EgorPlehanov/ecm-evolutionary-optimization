@@ -1,0 +1,763 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"derivative-free optimization\" \"noisy functions\" \"Conn\" \"Scheinberg\" \"Vicente\"",
+    "requested_limit": 30,
+    "saved_records": 30,
+    "hl": "en",
+    "created_at_utc": "2026-05-17T14:32:05.259809+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22derivative-free+optimization%22+%22noisy+functions%22+%22Conn%22+%22Scheinberg%22+%22Vicente%22&hl=en&start=0",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22derivative-free+optimization%22+%22noisy+functions%22+%22Conn%22+%22Scheinberg%22+%22Vicente%22&hl=en&start=10",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 20,
+      "url": "https://scholar.google.com/scholar?q=%22derivative-free+optimization%22+%22noisy+functions%22+%22Conn%22+%22Scheinberg%22+%22Vicente%22&hl=en&start=20",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "Methodologies and software for - derivative free optimization",
+      "url": "https://run.unl.pt/bitstreams/352185de-0334-4f75-afa5-cfed2efa0bdb/download",
+      "publication_info": ", , - 2017 - run.unl.pt AL Custódio LN Vicente K Scheinberg",
+      "snippet": "… Simplex gradients are also used as search directions for the optimization Noisy functions of . In implicit filtering [36], a (not too refined) line search is performed along a … noisy functions",
+      "pdf": {
+        "label": "unl.pt [PDF]",
+        "url": "https://run.unl.pt/bitstreams/352185de-0334-4f75-afa5-cfed2efa0bdb/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "unl.pt [PDF]",
+          "url": "https://run.unl.pt/bitstreams/352185de-0334-4f75-afa5-cfed2efa0bdb/download"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "- of Derivative free optimization noisy functions",
+      "url": "https://search.proquest.com/openview/22a48830ef29066dd5fa836595e70b4d/1?pq-origsite=gscholar&cbl=18750",
+      "publication_info": "- 2012 - search.proquest.com JM Larson",
+      "snippet": "… For example, the , , and framework (which we refer to as the Conn Scheinberg Vicente CSV2-framework) builds models mk from a specified class of models M using a sample set of …",
+      "pdf": {
+        "label": "auraria.edu [PDF]",
+        "url": "https://digital.auraria.edu/files/pdf?fileid=8cc19ea4-3284-4c82-91f5-db05c596c1c2"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "auraria.edu [PDF]",
+          "url": "https://digital.auraria.edu/files/pdf?fileid=8cc19ea4-3284-4c82-91f5-db05c596c1c2"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Geometry of sample sets in - : polynomial regression and underdetermined interpolation derivative free optimization",
+      "url": "https://ieeexplore.ieee.org/abstract/document/8179001/",
+      "publication_info": "…, , - IMA journal of numerical …, 2008 - ieeexplore.ieee.org K Scheinberg LN Vicente",
+      "snippet": "… numerical methods for - problems. … - derivative free optimization derivative free optimization algorithm we need to be able to control the Lebesgue constant of the sample set Y. As in … Conn",
+      "pdf": {
+        "label": "uc.pt [PDF]",
+        "url": "https://www.mat.uc.pt/~lnv/papers/csv2.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "uc.pt [PDF]",
+          "url": "https://www.mat.uc.pt/~lnv/papers/csv2.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "A theoretical and empirical comparison of gradient approximations in - derivative free optimization",
+      "url": "https://link.springer.com/article/10.1007/s10208-021-09513-z",
+      "publication_info": "…, , , - Foundations of …, 2022 - Springer L Cao K Choromanski K Scheinberg",
+      "snippet": "… In this paper, we analyze several methods for approximating gradients of … noisy functions as their performance in conjunction with a line search - algorithm. … derivative free optimization",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/1905.01332"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/1905.01332"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "- of via quasi-Newton methods Derivative free optimization noisy functions",
+      "url": "https://epubs.siam.org/doi/abs/10.1137/18M1177718",
+      "publication_info": ", , - SIAM Journal on Optimization, 2019 - SIAM AS Berahas RH Byrd J Nocedal",
+      "snippet": "… We do not report CPU times because the FI code of , , and [12] is Conn Scheinberg Vicente not designed to be efficient in this respect, requiring O(n6) flops per iteration, and is thus much …",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/1803.10173"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/1803.10173"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "Dynamic anisotropic smoothing for noisy - derivative free optimization",
+      "url": "https://arxiv.org/abs/2405.01731",
+      "publication_info": ", , - arXiv preprint arXiv:2405.01731, 2024 - arxiv.org S Reifenstein T Leleu Y Yamamoto",
+      "snippet": "… Left: Cartoon depiction of different - methods discussed in this derivative free optimization work while optimizing a 2-D objective function. Red represents the distribution of sampled …",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2405.01731"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2405.01731"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "Sequential test sampling for stochastic - derivative free optimization",
+      "url": "https://arxiv.org/abs/2509.14505",
+      "publication_info": ", , - arXiv preprint arXiv:2509.14505, 2025 - arxiv.org A Ding F Rinaldi LN Vicente",
+      "snippet": "… subject of - (DFO). In … - We start by derivative free optimization derivative free optimization giving a brief overview of the main results in the literature on stochastic … derivative free optimization",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2509.14505"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2509.14505"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "Optimization by moving ridge functions: - for computationally intensive functions derivative free optimization",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/0305215X.2021.1886286",
+      "publication_info": "JC Gross, - Engineering Optimization, 2022 - Taylor & Francis GT Parks",
+      "snippet": "… conditions on the sample set X ( , , and Citation2008). Moreover, Conn Scheinberg Vicente numerous … models are presented in , , and (Citation2009, Chapter 6). … Conn Scheinberg Vicente",
+      "pdf": {
+        "label": "tandfonline.com [PDF]",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/0305215X.2021.1886286"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "tandfonline.com [PDF]",
+          "url": "https://www.tandfonline.com/doi/pdf/10.1080/0305215X.2021.1886286"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "- of expensive functions with computational error using weighted regression Derivative free optimization",
+      "url": "https://epubs.siam.org/doi/abs/10.1137/100814688",
+      "publication_info": ", , - SIAM Journal on Optimization, 2013 - SIAM SC Billups J Larson P Graf",
+      "snippet": "… method by , , and [AR , K. , and LN , IMA Conn Scheinberg Vicente Conn Scheinberg Vicente J… There have been previous attempts at optimizing without derivatives. For … noisy functions",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Jeffrey-Larson-4/publication/255814702_Derivative-Free_Optimization_of_Expensive_Functions_with_Computational_Error_Using_Weighted_Regression/links/00b7d53c66d2902b64000000/Derivative-Free-Optimization-of-Expensive-Functions-with-Computational-Error-Using-Weighted-Regression.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Jeffrey-Larson-4/publication/255814702_Derivative-Free_Optimization_of_Expensive_Functions_with_Computational_Error_Using_Weighted_Regression/links/00b7d53c66d2902b64000000/Derivative-Free-Optimization-of-Expensive-Functions-with-Computational-Error-Using-Weighted-Regression.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "Full-low evaluation methods for bound and linearly constrained - derivative free optimization",
+      "url": "https://link.springer.com/article/10.1007/s10589-024-00596-2",
+      "publication_info": ", , - Computational Optimization and …, 2024 - Springer CW Royer O Sohab LN Vicente",
+      "snippet": "… - (DFO) consists in finding the best … and linearly constrained Derivative free optimization - . We derive … The field of - now spans a wide … derivative free optimization derivative free optimization",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2310.00755"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2310.00755"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "Enhancing Model Based using Direct Search Derivative Free Optimization",
+      "url": "https://arxiv.org/abs/2604.15492",
+      "publication_info": "Z Li, - arXiv preprint arXiv:2604.15492, 2026 - arxiv.org A Kannan",
+      "snippet": "… is the development of a novel (DFO) algorithm that dynamically derivative free optimization … results (see , , , Introduction to - , Chap. … Conn Scheinberg Vicente Derivative Free Optimization",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2604.15492"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2604.15492"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "Interpolation-Based Gradient-Error Bounds for Use in - of Derivative Free Optimization Noisy Functions",
+      "url": "https://arxiv.org/abs/2507.19661",
+      "publication_info": ", - arXiv preprint arXiv:2507.19661, 2025 - arxiv.org AG Marchetti D Bonvin",
+      "snippet": "… established error bound for the simplex gradient in the literature of - derivative free optimization [20… -error bound has been extensively used in the literature of - . … derivative free optimization",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2507.19661"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2507.19661"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "Derivative-Free Sequential Quadratic Programming for Equality-Constrained Stochastic Optimization",
+      "url": "https://arxiv.org/abs/2510.22458",
+      "publication_info": "- arXiv preprint arXiv:2510.22458, 2025 - arxiv.org S Na",
+      "snippet": "… This setup situates our work within the broad framework of - (DFO). derivative free optimization DFO methods do not require the accessibility of derivatives, making them widely …",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2510.22458"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2510.22458"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "Full-low evaluation methods for - derivative free optimization",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/10556788.2022.2142582",
+      "publication_info": ", , - Optimization Methods and …, 2023 - Taylor & Francis AS Berahas O Sohab LN Vicente",
+      "snippet": "… Moreover, these methods work for non-smooth and possibly . … In this paper, noisy functions we introduce a new class of - methods called Full-Low Evaluation, … derivative free optimization",
+      "pdf": {
+        "label": "tandfonline.com [PDF]",
+        "url": "https://www.tandfonline.com/doi/pdf/10.1080/10556788.2022.2142582"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "tandfonline.com [PDF]",
+          "url": "https://www.tandfonline.com/doi/pdf/10.1080/10556788.2022.2142582"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "A stochastic - method with importance sampling: Theory and learning to control derivative free optimization",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/5727",
+      "publication_info": ", , , … - Proceedings of the AAAI …, 2020 - ojs.aaai.org A Bibi EH Bergou O Sener B Ghanem",
+      "snippet": "… In this paper, we propose the first method with importance sampling derivative free optimization and derive new improved complexity results on non-convex, convex and strongly convex …",
+      "pdf": {
+        "label": "aaai.org [PDF]",
+        "url": "https://ojs.aaai.org/index.php/AAAI/article/view/5727/5583"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "aaai.org [PDF]",
+          "url": "https://ojs.aaai.org/index.php/AAAI/article/view/5727/5583"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "Linear interpolation gives better gradients than gaussian smoothing in - derivative free optimization",
+      "url": "https://arxiv.org/abs/1905.13043",
+      "publication_info": "…, , , - arXiv preprint arXiv …, 2019 - arxiv.org L Cao K Choromanski K Scheinberg",
+      "snippet": "… In this paper, we consider … 20], and that can be formulated derivative free optimization as … [8] Andrew R , Katya , and Philippe L Toint. … derivative free optimization Conn Scheinberg",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/1905.13043"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/1905.13043"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "On the numerical performance of finite-difference-based methods for - derivative free optimization",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/10556788.2022.2121832",
+      "publication_info": ", , … - … Methods and Software, 2023 - Taylor & Francis HJM Shi M Qiming Xuan F Oztoprak",
+      "snippet": "… For , we observed that newuoa is more efficient and accurate than the noisy functions finite-difference l-bfgs method for unconstrained optimization, but not by a wide margin. dfo-ls is …",
+      "pdf": null,
+      "cited_by_count": 44,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=10053787522440106565&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:RRJMAnw6hosJ:scholar.google.com/&scioq=%22derivative-free+optimization%22+%22noisy+functions%22+%22Conn%22+%22Scheinberg%22+%22Vicente%22&hl=en&as_sdt=0,5",
+      "versions_count": 3,
+      "versions_url": "https://scholar.google.com/scholar?cluster=10053787522440106565&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "title": "A stochastic subspace approach to gradient-free optimization in high dimensions",
+      "url": "https://link.springer.com/article/10.1007/s10589-021-00271-w",
+      "publication_info": ", , , L Tenorio - … Optimization and Applications, 2021 - Springer D Kozak S Becker A Doostan",
+      "snippet": "… There is a plethora of - (DFO) algorithms, including grid search, derivative free optimization Nelder–Mead, (quasi-) Monte-Carlo sampling, simulated annealing and MCMC methods [43]. …",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2003.02684"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2003.02684"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "On the numerical performance of - methods based on finite-difference approximations derivative free optimization",
+      "url": "https://arxiv.org/abs/2102.09762",
+      "publication_info": ", , , - arXiv preprint arXiv …, 2021 - arxiv.org HJM Shi MQ Xuan F Oztoprak J Nocedal",
+      "snippet": "… The book by , and [18] gives a thorough treatment of the … • Conn Scheinberg Vicente For , we observed that newuoa is more efficient and accurate than the finite-… noisy functions",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2102.09762"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2102.09762"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "A derivative-free trust-region algorithm for the optimization of functions smoothed via gaussian convolution using adaptive multiple importance sampling",
+      "url": "https://epubs.siam.org/doi/abs/10.1137/15M1031679",
+      "publication_info": ", , , J Staum - SIAM Journal on Optimization, 2018 - SIAM A Maggiar A Wachter IS Dolinskaya",
+      "snippet": "… set of benchmark problems with compare the … - . noisy functions Derivative free optimization In this paper we assume that the … In [4], Bendeira, , and generalize the trust-… Scheinberg Vicente",
+      "pdf": {
+        "label": "google.com [PDF]",
+        "url": "https://drive.google.com/file/d/1zFTA0FsQT28p_wxOIBuVr-mWwJe5WocX/view"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "google.com [PDF]",
+          "url": "https://drive.google.com/file/d/1zFTA0FsQT28p_wxOIBuVr-mWwJe5WocX/view"
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "A discussion on variational analysis in - derivative free optimization",
+      "url": "https://link.springer.com/article/10.1007/s11228-020-00556-y",
+      "publication_info": "- Set-Valued and Variational Analysis, 2020 - Springer W Hare",
+      "snippet": "… On the other hand, - studies algorithms for … - Derivative Free Optimization Derivative free of via quasiN,ewton … , AR, , K., Toint, Ph.L.: A … optimization noisy functions Conn Scheinberg",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Warren-Hare/publication/344243520_A_Discussion_on_Variational_Analysis_in_Derivative-Free_Optimization/links/5f5fe2c6a6fdcc11641318f4/A-Discussion-on-Variational-Analysis-in-Derivative-Free-Optimization.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Warren-Hare/publication/344243520_A_Discussion_on_Variational_Analysis_in_Derivative-Free_Optimization/links/5f5fe2c6a6fdcc11641318f4/A-Discussion-on-Variational-Analysis-in-Derivative-Free-Optimization.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "title": "A Stochastic - Method with Importance\\n Sampling Derivative Free Optimization",
+      "url": "https://repository.kaust.edu.sa/bitstreams/9d09dd77-8800-4242-8994-4580f52ba38e/download",
+      "publication_info": ", , , , - 2019 - repository.kaust.edu.sa A Bibi EH Bergou O Sener B Ghanem P Richtarik",
+      "snippet": "We consider the problem of unconstrained minimization of a smooth objective function in Rn in a setting where only function evaluations are possible. While importance sampling is one …",
+      "pdf": {
+        "label": "kaust.edu.sa [PDF]",
+        "url": "https://repository.kaust.edu.sa/bitstreams/9d09dd77-8800-4242-8994-4580f52ba38e/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "kaust.edu.sa [PDF]",
+          "url": "https://repository.kaust.edu.sa/bitstreams/9d09dd77-8800-4242-8994-4580f52ba38e/download"
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "title": "On the construction of quadratic models for derivative-free trust-region algorithms",
+      "url": "https://link.springer.com/article/10.1007/s13675-017-0081-7",
+      "publication_info": "…, , , - EURO Journal on …, 2017 - Springer EW Karas LG Pedroso K Scheinberg",
+      "snippet": "We consider derivative-free trust-region algorithms based on sampling approaches for convex constrained problems and discuss two conditions on the quadratic models for ensuring …",
+      "pdf": null,
+      "cited_by_count": 20,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=5993647979035800584&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:CLQqyxS3LVMJ:scholar.google.com/&scioq=%22derivative-free+optimization%22+%22noisy+functions%22+%22Conn%22+%22Scheinberg%22+%22Vicente%22&hl=en&as_sdt=0,5",
+      "versions_count": 7,
+      "versions_url": "https://scholar.google.com/scholar?cluster=5993647979035800584&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "title": "Introduction to - derivative free optimization",
+      "url": "https://epubs.siam.org/doi/pdf/10.1137/1.9780898718768.bm",
+      "publication_info": ", , - 2009 - SIAM AR Conn K Scheinberg LN Vicente",
+      "snippet": "For many years all three of us have been interested in, and have tried to make contributions to, - . Our motivation for writing this book resulted from various … derivative free optimization",
+      "pdf": {
+        "label": "siam.org [PDF]",
+        "url": "https://epubs.siam.org/doi/pdf/10.1137/1.9780898718768.bm"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "siam.org [PDF]",
+          "url": "https://epubs.siam.org/doi/pdf/10.1137/1.9780898718768.bm"
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "title": "Improving the flexibility and robustness of model-based - solvers derivative free optimization",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3338517",
+      "publication_info": ", J Fiala, B Marteau, - ACM Transactions on …, 2019 - dl.acm.org C Cartis L Roberts",
+      "snippet": "… We present two software packages for - (DFO): DFO-LS for … derivative free optimization accuracy measure for data profiles of , striking a balance between measuring … noisy functions",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3338517"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3338517"
+        },
+        {
+          "label": "Full View",
+          "url": "https://scholar.google.com/scholar?output=instlink&q=info:cwy2LGQjLrgJ:scholar.google.com/&hl=en&as_sdt=0,5&scillfp=4889001147102943900&oi=lle"
+        }
+      ]
+    },
+    {
+      "rank": 26,
+      "title": "- with Transformed Objective Functions and the Algorithm Based on the Least Frobenius Norm Updating Quadratic Model: P.-C. Xie, Y.-X … Derivative Free Optimization",
+      "url": "https://link.springer.com/article/10.1007/s40305-023-00532-x",
+      "publication_info": ", - Journal of the Operations Research Society of China, 2025 - Springer PC Xie YX Yuan",
+      "snippet": "… A provable algorithmic framework of model-based derivative-free trust-region algorithms for original objective functions can be found in the book of , and [1]. As … Conn Scheinberg Vicente",
+      "pdf": null,
+      "cited_by_count": 13,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=13056596734094964919&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:t3hBh41ZMrUJ:scholar.google.com/&scioq=%22derivative-free+optimization%22+%22noisy+functions%22+%22Conn%22+%22Scheinberg%22+%22Vicente%22&hl=en&as_sdt=0,5",
+      "versions_count": 3,
+      "versions_url": "https://scholar.google.com/scholar?cluster=13056596734094964919&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 27,
+      "title": "Modeling Hessian-vector products in nonlinear optimization: new Hessian-free methods",
+      "url": "https://academic.oup.com/imajna/article-abstract/42/2/1766/6199349",
+      "publication_info": "L Song, - IMA Journal of Numerical Analysis, 2022 - academic.oup.com LN Vicente",
+      "snippet": "… In this paper we showed how to use interpolation techniques from - derivative free optimization to model Hessian-vector products. We aimed at presenting new, refreshing ideas, laying …",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/1912.10523"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/1912.10523"
+        }
+      ]
+    },
+    {
+      "rank": 28,
+      "title": "- of via Quasi-Newton Methods Derivative Free Optimization Noisy Functions",
+      "url": "https://pdfs.semanticscholar.org/f913/74f5c332030fc5dd088d04e7d486ea3358a5.pdf",
+      "publication_info": "- pdfs.semanticscholar.org J Nocedal",
+      "snippet": "… Model based trust region code DFOtr by , , … Difference of Conn Scheinberg Vicente noisy dangerous 2. Just one bad update once in a while: disastrous 3. Not done to the best of … functions",
+      "pdf": {
+        "label": "semanticscholar.org [PDF]",
+        "url": "https://pdfs.semanticscholar.org/f913/74f5c332030fc5dd088d04e7d486ea3358a5.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "semanticscholar.org [PDF]",
+          "url": "https://pdfs.semanticscholar.org/f913/74f5c332030fc5dd088d04e7d486ea3358a5.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 29,
+      "title": "Black-box optimization in machine learning with trust region based derivative free algorithm",
+      "url": "https://arxiv.org/abs/1703.06925",
+      "publication_info": ", - arXiv preprint arXiv:1703.06925, 2017 - arxiv.org H Ghanbari K Scheinberg",
+      "snippet": "… -TR or STORM for deterministic nonsooth, , the existing results indicate that noisy functions the DFO… In this work, we demonstrate that model-based is a better … derivative free optimization",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/1703.06925"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/1703.06925"
+        }
+      ]
+    },
+    {
+      "rank": 30,
+      "title": "MNH: A - algorithm using minimal norm Hessians derivative free optimization",
+      "url": "https://ecommons.cornell.edu/bitstream/1813/9443/1/mnh_cmcim.pdf",
+      "publication_info": "- 2008 - ecommons.cornell.edu SM Wild",
+      "snippet": "… result of , and [3] guarantees that our algorithm will converge to … Conn Scheinberg Vicente mildly in a test of three frequently-used - algorithms [7… noisy functions derivative free optimization",
+      "pdf": {
+        "label": "cornell.edu [PDF]",
+        "url": "https://ecommons.cornell.edu/bitstream/1813/9443/1/mnh_cmcim.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "cornell.edu [PDF]",
+          "url": "https://ecommons.cornell.edu/bitstream/1813/9443/1/mnh_cmcim.pdf"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

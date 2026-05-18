@@ -1,0 +1,1309 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"ECM\" \"B1\" \"B2\" parameter selection",
+    "requested_limit": 50,
+    "saved_records": 50,
+    "hl": "en",
+    "created_at_utc": "2026-05-14T15:28:55.409899+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22ECM%22+%22B1%22+%22B2%22+parameter+selection&hl=en&start=0",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22ECM%22+%22B1%22+%22B2%22+parameter+selection&hl=en&start=10",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 20,
+      "url": "https://scholar.google.com/scholar?q=%22ECM%22+%22B1%22+%22B2%22+parameter+selection&hl=en&start=20",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 30,
+      "url": "https://scholar.google.com/scholar?q=%22ECM%22+%22B1%22+%22B2%22+parameter+selection&hl=en&start=30",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 40,
+      "url": "https://scholar.google.com/scholar?q=%22ECM%22+%22B1%22+%22B2%22+parameter+selection&hl=en&start=40",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "Optimization of machining in of Al/B4C composites using Taguchi method parameters ECM",
+      "url": "https://www.researchgate.net/profile/Sadineni-Rama-Rao/publication/284593750_Optimization_of_Machining_Parameters_in_ECM_of_AlB4C_Composites_Using_Taguchi_Method/links/5810393108ae009606bb913e/Optimization-of-Machining-Parameters-in-ECM-of-Al-B4C-Composites-Using-Taguchi-Method.pdf",
+      "publication_info": "SR Rao, G Padmanabhan - International Journal of Applied …, 2014 - researchgate.net",
+      "snippet": "… Based on literature [2] electrolyte concentration is in the range of 10-30 g/lit. In selected ECM … Therefore, to study the effect of percentage of reinforcement on machining criteria in , … ECM",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Sadineni-Rama-Rao/publication/284593750_Optimization_of_Machining_Parameters_in_ECM_of_AlB4C_Composites_Using_Taguchi_Method/links/5810393108ae009606bb913e/Optimization-of-Machining-Parameters-in-ECM-of-Al-B4C-Composites-Using-Taguchi-Method.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Sadineni-Rama-Rao/publication/284593750_Optimization_of_Machining_Parameters_in_ECM_of_AlB4C_Composites_Using_Taguchi_Method/links/5810393108ae009606bb913e/Optimization-of-Machining-Parameters-in-ECM-of-Al-B4C-Composites-Using-Taguchi-Method.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Optimum for multi performance characteristics in by using differential evolution parameters ECM",
+      "url": "https://ieeexplore.ieee.org/abstract/document/6992959/",
+      "publication_info": ", , MD Anand… - … Conference on Control …, 2014 - ieeexplore.ieee.org TMC Jegan D Ravindran",
+      "snippet": "… The multi objective optimization problem aims to optimize input . … selected parameters , the size of the population must be N (it must be at least 4). The … parameters selected parameter",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:fEW-P59sJDIJ:scholar.google.com/&scioq=%22ECM%22+%22B1%22+%22B2%22+parameter+selection&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=3613132232283014524&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "at work ECM",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-34961-4_29",
+      "publication_info": ", T Kleinjung - International Conference on the Theory and …, 2012 - Springer JW Bos",
+      "snippet": "… -subtracting chains to optimize Edwards in terms of both … For commonly used ECM ECM we are able to lower the … In general, for a given ratio, we the integers which … parameters select",
+      "pdf": {
+        "label": "iacr.org [PDF]",
+        "url": "https://eprint.iacr.org/2012/089.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iacr.org [PDF]",
+          "url": "https://eprint.iacr.org/2012/089.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "using Edwards curves ECM",
+      "url": "https://www.ams.org/mcom/2013-82-282/S0025-5718-2012-02633-0/",
+      "publication_info": ", P Birkner, , - Mathematics of Computation, 2013 - ams.org D Bernstein T Lange C Peters",
+      "snippet": "… to increase the window size; (5) curves with small and base points; (6) … choose parameters it is the method of for finding medium-size prime factors. also plays an important … choice ECM",
+      "pdf": {
+        "label": "iacr.org [PDF]",
+        "url": "https://eprint.iacr.org/2008/016.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iacr.org [PDF]",
+          "url": "https://eprint.iacr.org/2008/016.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "Revisiting on GPUs ECM",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-3-030-65411-5.pdf#page=306",
+      "publication_info": "T Kleinjung, C Priplata, - Cryptology and Network Security …, 2020 - Springer T Güneysu",
+      "snippet": "… sets such that a throughput of 2 781 trials per second is achieved using parameter ECM B1 = 50 000, … are good for to detect an n -bit factor ( n∈{ 44 , 45 ,..., 80 } ) using … B2 choices ECM",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:NeSBMg7lWu8J:scholar.google.com/&scioq=%22ECM%22+%22B1%22+%22B2%22+parameter+selection&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=17247349572108411957&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "Hybrid multi criteria decision making methodology for improving sustainability of the manufacturing sector",
+      "url": "https://link.springer.com/article/10.1007/s12008-024-01846-7",
+      "publication_info": ", , KMJ Ignatia… - International Journal on …, 2025 - Springer AK Sharma N Aravindan",
+      "snippet": "… to find the optimal combination for improving the … ( ) were the two manufacturing parametric ECM processes for … speed were the distinct LW for study, while … selected parameters selected",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Aravindan-Na/publication/381324389_Hybrid_multi_criteria_decision_making_methodology_for_improving_sustainability_of_the_manufacturing_sector/links/667454c18408575b837bd4ac/Hybrid-multi-criteria-decision-making-methodology-for-improving-sustainability-of-the-manufacturing-sector.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Aravindan-Na/publication/381324389_Hybrid_multi_criteria_decision_making_methodology_for_improving_sustainability_of_the_manufacturing_sector/links/667454c18408575b837bd4ac/Hybrid-multi-criteria-decision-making-methodology-for-improving-sustainability-of-the-manufacturing-sector.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "Efficient factorization in parallel with the Lyness map ECM",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3373207.3404044",
+      "publication_info": "- Proceedings of the 45th International Symposium on …, 2020 - dl.acm.org A Hone",
+      "snippet": "… ( ) for integer factorization, which is based on iteration of the Lyness map with a particular ECM … for twisted Edwards curves with the special 𝑎 = −1 (which gives … choice parameter choice",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3373207.3404044"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3373207.3404044"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "Development of multi-objective optimization models for electrochemical machining process",
+      "url": "https://link.springer.com/article/10.1007/s00170-007-1204-8",
+      "publication_info": "P Asokan, , … - The International Journal …, 2008 - Springer R Ravi Kumar R Jeyapaul",
+      "snippet": "… Hence, optimization of operating is an important step in machining, particularly parameters … ing procedures like . A suitable of machining for the process … ECM selection parameters ECM",
+      "pdf": null,
+      "cited_by_count": 190,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=15635090647427791969&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:YTz3BhsA-9gJ:scholar.google.com/&scioq=%22ECM%22+%22B1%22+%22B2%22+parameter+selection&hl=en&as_sdt=0,5",
+      "versions_count": 9,
+      "versions_url": "https://scholar.google.com/scholar?cluster=15635090647427791969&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "20 years of ECM",
+      "url": "https://link.springer.com/chapter/10.1007/11792086_37",
+      "publication_info": "P Zimmermann, - International Algorithmic Number Theory …, 2006 - Springer B Dodson",
+      "snippet": "… a composite integer d< , then all primes up to can be written … GMP- Choose B2 B2 ECM uses Dickson polynomials of α = −1 with the notation from [19]: D1 = x, … parameter",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/inria-00070192/file/RR-5834.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/inria-00070192/file/RR-5834.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "An efficient hardware architecture for factoring integers with the elliptic curve method",
+      "url": "http://cr.yp.to/conferences/2006-sharcs/www.ruhr-uni-bochum.de/itsc/tanja/SHARCS/talks/ecm_paper.pdf",
+      "publication_info": "J Franke, T Kleinjung, , , C Priplata… - … -Purpose Hardware for …, 2005 - cr.yp.to C Paar J Pelzl",
+      "snippet": "… the use of rather than MQPS is the better for this … bit lengths (by changing a ECM choice in the VHDL code). In … other in SHARK, massive use of our units … parameter parameters ECM",
+      "pdf": {
+        "label": "yp.to [PDF]",
+        "url": "http://cr.yp.to/conferences/2006-sharcs/www.ruhr-uni-bochum.de/itsc/tanja/SHARCS/talks/ecm_paper.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "yp.to [PDF]",
+          "url": "http://cr.yp.to/conferences/2006-sharcs/www.ruhr-uni-bochum.de/itsc/tanja/SHARCS/talks/ecm_paper.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "Estimation of genetic and trends for energy-corrected 305-d milk yield in Iranian Holsteins parameters",
+      "url": "https://aab.copernicus.org/articles/55/420/2012/",
+      "publication_info": "- Archives Animal Breeding, 2012 - aab.copernicus.org NG Hossein-Zadeh",
+      "snippet": "… with these traits in other lactations shows that higher potential exists for animals ECM selecting for … of and the other objective was to estimate the genetic trends for … ECM parameters ECM",
+      "pdf": {
+        "label": "copernicus.org [PDF]",
+        "url": "https://aab.copernicus.org/articles/55/420/2012/aab-55-420-2012.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "copernicus.org [PDF]",
+          "url": "https://aab.copernicus.org/articles/55/420/2012/aab-55-420-2012.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "Fast modular arithmetic on the Kalray MPPA-256 processor for an energy-efficient implementation of ECM",
+      "url": "https://ieeexplore.ieee.org/abstract/document/7927487/",
+      "publication_info": ", J Detrey, , A Inomata… - IEEE Transactions on …, 2017 - ieeexplore.ieee.org M Ishii P Gaudry",
+      "snippet": "… is also an important subroutine for more general algorithms. We focus here on ECM ECM … However, we found that, for this value of , it is better to w ¼ 420, yielding … parameters B2 choose",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/hal-01299697/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/hal-01299697/document"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "Computerized Machinability Data Base Systems as Applied to and Edm Processes Ecm",
+      "url": "https://journals.ekb.eg/article_52555.html",
+      "publication_info": "SJ EBEID - The International Conference on Applied Mechanics …, 1986 - journals.ekb.eg",
+      "snippet": "… The paper presents the and use of integrated machining data modelling … choice selection With operations tool life is considered to be one of the main that control … ECM parameters",
+      "pdf": {
+        "label": "ekb.eg [PDF]",
+        "url": "https://journals.ekb.eg/article_52555_5d72a98562c9632189ed18a4700068bd.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ekb.eg [PDF]",
+          "url": "https://journals.ekb.eg/article_52555_5d72a98562c9632189ed18a4700068bd.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "Hardware factorization based on elliptic curve method",
+      "url": "https://ieeexplore.ieee.org/abstract/document/1508531/",
+      "publication_info": "M Simka, , T Kleinjung, J Franke… - 13th Annual IEEE …, 2005 - ieeexplore.ieee.org J Pelzl",
+      "snippet": "… We show that massive parallel and cost efficient hardware … the use of rather than ECM ECM MQPS is the better for this task… for the given that we need to run on … choice parameters ECM",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Martin-Simka/publication/4174989_Hardware_Factorization_Based_on_Elliptic_Curve_Method/links/0c960524c6bb62e69a000000/Hardware-Factorization-Based-on-Elliptic-Curve-Method.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Martin-Simka/publication/4174989_Hardware_Factorization_Based_on_Elliptic_Curve_Method/links/0c960524c6bb62e69a000000/Hardware-Factorization-Based-on-Elliptic-Curve-Method.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "Area–time efficient hardware architecture for factoring integers with the elliptic curve method",
+      "url": "https://digital-library.theiet.org/doi/abs/10.1049/ip-ifs%3A20055018",
+      "publication_info": ", M Šimka, T Kleinjung, J Franke, C Priplata… - IEE Proceedings …, 2005 - IET J Pelzl",
+      "snippet": "… of the checks for each prime < p 4 whether pQ … This happens rarely for reasonable ECM B1 B2 and … software experiments, we ¼ 960 and ¼ 57 000 as … parameter choices choose B1 B2",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://ujm.hal.science/ujm-00289036/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://ujm.hal.science/ujm-00289036/document"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "optimization in electrochemical machining using utility based Taguchi method Parametric",
+      "url": "http://jestec.taylors.edu.my/Vol%2010%20issue%201%20January%202015/Volume%20(10)%20Issue%20(1)%2081-96.pdf",
+      "publication_info": "SR Rao, G Padmanabhan - Journal of Engineering Science …, 2015 - jestec.taylors.edu.my",
+      "snippet": "… METATECH setup is used to conduct the experiments. The machining ECM ECM parameters … The factors and their levels are given in Table 1. The MRR was measured by … selected",
+      "pdf": {
+        "label": "taylors.edu.my [PDF]",
+        "url": "http://jestec.taylors.edu.my/Vol%2010%20issue%201%20January%202015/Volume%20(10)%20Issue%20(1)%2081-96.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "taylors.edu.my [PDF]",
+          "url": "http://jestec.taylors.edu.my/Vol%2010%20issue%201%20January%202015/Volume%20(10)%20Issue%20(1)%2081-96.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "Real-time lithium plating onset detection for lithium-ion batteries via dynamic impedance spectra analysis",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0306261925015405",
+      "publication_info": ", , , , - Applied Energy, 2025 - Elsevier X Du J Meng Y Amirat F Gao M Benbouzid",
+      "snippet": "… To overcome this challenge, this work proposes a dynamic impedance tracking framework based on a specifically designed equivalent circuit model ( ), enabling real-time … ECM",
+      "pdf": {
+        "label": "sciencedirect.com [HTML]",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0306261925015405"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "sciencedirect.com [HTML]",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0306261925015405"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "title": "Implementing the elliptic curve method of factoring in reconfigurable hardware",
+      "url": "https://link.springer.com/chapter/10.1007/11894063_10",
+      "publication_info": ", , P Baier, P Kohlbrenner, H Le… - … and Embedded Systems, 2006 - Springer K Gaj S Kwon",
+      "snippet": "… [6,7], we = 960 and = 57000 to find a 40-bit … Our system consists of multiple choose B1 B2 ECM units working … of the system the following dependent on and D: … ECM ECM parameters B2",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Mohammed-Khaleeluddin-2/publication/221291916_Implementing_the_Elliptic_Curve_Method_of_Factoring_in_Reconfigurable_Hardware/links/0deec53631696ca01b000000/Implementing-the-Elliptic-Curve-Method-of-Factoring-in-Reconfigurable-Hardware.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Mohammed-Khaleeluddin-2/publication/221291916_Implementing_the_Elliptic_Curve_Method_of_Factoring_in_Reconfigurable_Hardware/links/0deec53631696ca01b000000/Implementing-the-Elliptic-Curve-Method-of-Factoring-in-Reconfigurable-Hardware.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "Micro electrochemical machining of array micro-grooves using in-situ disk electrode fabricated by micro-WEDM",
+      "url": "https://www.mdpi.com/2072-666X/11/1/66",
+      "publication_info": "Y Wang, H Wang, Y Zhang, X He, Z Wang, G Chi… - Micromachines, 2020 - mdpi.com",
+      "snippet": "… The initial processing are shown in Table 2. Then, we adjust the feed ECM parameters rate, electrolyte … Finally, we suitable to prepare better array micro-grooves. … select parameters",
+      "pdf": {
+        "label": "mdpi.com [HTML]",
+        "url": "https://www.mdpi.com/2072-666X/11/1/66"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "mdpi.com [HTML]",
+          "url": "https://www.mdpi.com/2072-666X/11/1/66"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "A comprehensive equivalent circuit model for lithium-ion batteries, incorporating the effects of state of health, state of charge, and temperature on model parameters",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2352152X2100949X",
+      "publication_info": ", , S Janhunen, … - Journal of Energy …, 2021 - Elsevier MK Tran M Mathew S Panchal",
+      "snippet": "… has not been widely investigated. Without a good understanding of the effect of parameters SOH on , … of SOH on Thevenin , in addition to … ECM parameters parameter ECM parameters",
+      "pdf": {
+        "label": "google.com [PDF]",
+        "url": "https://drive.google.com/file/d/1YZWtmGOYAoDMe9QosRfCD1MQmLyqisMq/view"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "google.com [PDF]",
+          "url": "https://drive.google.com/file/d/1YZWtmGOYAoDMe9QosRfCD1MQmLyqisMq/view"
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "Diagnostic checks for single‐equation error‐correction and autoregressive distributed lag models",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1111/1467-9957.00098",
+      "publication_info": "WJ Gerrard, LG Godfrey - The Manchester School, 1998 - Wiley Online Library",
+      "snippet": "… (dynamics) that appear in the with which the … checks for alternative forms parameters ECM of the , we propose a speci¢… The of has little impact on the performance of … ECM choice ECM",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Chuck-Arize/post/On_postestimation_in_ARDL_is_it_okay_if_the_p-value_for_the_Jarque-Bera_test_for_normality_is_significant_even_when_those_from_other_tests_are_not/attachment/59d6511179197b80779a9b62/AS%3A505962999934977%401497642387672/download/DIAGNOSTIC+CHECKS+FOR+SINGLE-EQUATION.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Chuck-Arize/post/On_postestimation_in_ARDL_is_it_okay_if_the_p-value_for_the_Jarque-Bera_test_for_normality_is_significant_even_when_those_from_other_tests_are_not/attachment/59d6511179197b80779a9b62/AS%3A505962999934977%401497642387672/download/DIAGNOSTIC+CHECKS+FOR+SINGLE-EQUATION.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "title": "Improved Linear Estimation of Battery Open-Circuit Voltage and RC Model from Pulse-Relaxation Data Parameters",
+      "url": "https://ieeexplore.ieee.org/abstract/document/11384222/",
+      "publication_info": ", … - 2025 IEEE 4th Industrial …, 2025 - ieeexplore.ieee.org S Sunil KR Pattipati",
+      "snippet": "… The of depends on the application. While the Rint … estimation choice ECM ECM parameter techniques are generally clas… LS approach for estimating 2RC from pulse-… ECM parameters",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:uIDBdzrac6gJ:scholar.google.com/&scioq=%22ECM%22+%22B1%22+%22B2%22+parameter+selection&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "title": "Comparative evaluation for studying the influences on quality of electrode using Taguchi method coupled with MOORA, DFA, and TOPSIS method for … parametric",
+      "url": "https://link.springer.com/chapter/10.1007/978-981-32-9971-9_13",
+      "publication_info": ", , , … - Recent Advances in …, 2019 - Springer SN Panda DK Bagal A Pattanaik D Patnaik",
+      "snippet": "… The of optimal of electrochemical machining ( ) processes plays selection parameters ECM a noteworthy part in optimizing the measures of process . Hence, evaluation of … parameters",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Dilip-Bagal/publication/336670729_Comparative_Evaluation_for_Studying_the_Parametric_Influences_on_Quality_of_Electrode_Using_Taguchi_Method_Coupled_with_MOORA_DFA_and_TOPSIS_Method_for_Electrochemical_Machining/links/5eee8ab5a6fdcc73be908369/Comparative-Evaluation-for-Studying-the-Parametric-Influences-on-Quality-of-Electrode-Using-Taguchi-Method-Coupled-with-MOORA-DFA-and-TOPSIS-Method-for-Electrochemical-Machining.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Dilip-Bagal/publication/336670729_Comparative_Evaluation_for_Studying_the_Parametric_Influences_on_Quality_of_Electrode_Using_Taguchi_Method_Coupled_with_MOORA_DFA_and_TOPSIS_Method_for_Electrochemical_Machining/links/5eee8ab5a6fdcc73be908369/Comparative-Evaluation-for-Studying-the-Parametric-Influences-on-Quality-of-Electrode-Using-Taguchi-Method-Coupled-with-MOORA-DFA-and-TOPSIS-Method-for-Electrochemical-Machining.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "title": "Invasion from a cell aggregate—the roles of active cell motion and mechanical equilibrium",
+      "url": "https://iopscience.iop.org/article/10.1088/1478-3975/9/1/016010/meta",
+      "publication_info": "A Szabó, K Varga, , B Hegedűs… - Physical biology, 2012 - iopscience.iop.org T Garay",
+      "snippet": "… structures comparable to the cell size, so the is … pECM and p11 ECM ECM Parameters define the density and filament length, respectively, as demonstrated for … ECM selected parameter",
+      "pdf": {
+        "label": "nih.gov [PDF]",
+        "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4149418/pdf/nihms615311.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "nih.gov [PDF]",
+          "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4149418/pdf/nihms615311.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "title": "Predict the Surface Finish by using Fuzzy Logic Techniques in Processes ECM",
+      "url": "https://www.academia.edu/download/103333471/Irjet-v2i3343.pdf",
+      "publication_info": "H Pandey - 2015 - academia.edu",
+      "snippet": "… The correct of machining is very important factor to achieve … selection parameters selected as machining while surface roughness is considered as performance … parameters parameters",
+      "pdf": {
+        "label": "academia.edu [HTML]",
+        "url": "https://www.academia.edu/download/103333471/Irjet-v2i3343.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [HTML]",
+          "url": "https://www.academia.edu/download/103333471/Irjet-v2i3343.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 26,
+      "title": "Modelling cell migration strategies in the extracellular matrix",
+      "url": "https://link.springer.com/article/10.1007/s00285-008-0217-8",
+      "publication_info": "- Journal of mathematical biology, 2009 - Springer KJ Painter",
+      "snippet": "… can spatially organise cell populations. Furthermore, when combined with … ECM ECM The first two dictate the of cell movement turning functions and : contact … choice parameters",
+      "pdf": null,
+      "cited_by_count": 164,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=7312801752106229786&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:GmAl23JKfGUJ:scholar.google.com/&scioq=%22ECM%22+%22B1%22+%22B2%22+parameter+selection&hl=en&as_sdt=0,5",
+      "versions_count": 14,
+      "versions_url": "https://scholar.google.com/scholar?cluster=7312801752106229786&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 27,
+      "title": "Soft- : An extension of Evidential C-Means for complex data ECM",
+      "url": "https://ieeexplore.ieee.org/abstract/document/11152191/",
+      "publication_info": ", , - 2025 IEEE International …, 2025 - ieeexplore.ieee.org A Soubeiga T Guyet V Antoine",
+      "snippet": "… λ : In this section, we examine the sensitivity of Soft- results to the new Parameter ECM parameter λ … appropriate values for λ on each dataset improves the performance of Soft-… Selecting",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2507.13417"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2507.13417"
+        }
+      ]
+    },
+    {
+      "rank": 28,
+      "title": "Real-time vision-assisted electrochemical machining with constant inter-electrode gap",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1526612521006769",
+      "publication_info": "J Wang, , J Liu, X Tang - Journal of Manufacturing Processes, 2021 - Elsevier Z Xu",
+      "snippet": "… machining ( ) has attracted … process performance in terms of process stability, ECM ECM machining accuracy, and surface quality. To understand the evolution of the IEG during the … ECM",
+      "pdf": null,
+      "cited_by_count": 21,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=15602313485787361139&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:c2-kYnONhtgJ:scholar.google.com/&scioq=%22ECM%22+%22B1%22+%22B2%22+parameter+selection&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 29,
+      "title": "High-performance integer factoring with reconfigurable devices",
+      "url": "https://ieeexplore.ieee.org/abstract/document/5694225/",
+      "publication_info": "R Zimmermann, … - … Conference on Field …, 2010 - ieeexplore.ieee.org T Güneysu",
+      "snippet": "… More precisely, we demonstrate an implementation … e as product of all prime ECM choose powers pr i lower than … , each core contains a local memory storing and … B1 ECM parameters",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/37194187/factoringfpga.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/37194187/factoringfpga.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 30,
+      "title": "Area-time efficient implementation of the elliptic curve method of factoring in reconfigurable hardware for application in the number field sieve",
+      "url": "https://ieeexplore.ieee.org/abstract/document/5374380/",
+      "publication_info": ", , P Baier, P Kohlbrenner… - IEEE Transactions …, 2010 - ieeexplore.ieee.org K Gaj S Kwon",
+      "snippet": "… : Units Our system consists of multiple units … of the system the following ECM ECM ECM ECM dependent on and … For each family, a representative device is and … parameters B2 selected",
+      "pdf": {
+        "label": "gmu.edu [PDF]",
+        "url": "https://mason.gmu.edu/~mrogawsk/arch/ieee_tc2009.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "gmu.edu [PDF]",
+          "url": "https://mason.gmu.edu/~mrogawsk/arch/ieee_tc2009.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 31,
+      "title": "An enhanced equivalent circuit model with real-time identification for battery state-of-charge estimation parameter",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9403925/",
+      "publication_info": ", , … - IEEE Transactions on …, 2021 - ieeexplore.ieee.org F Naseri E Schaltz DI Stroe",
+      "snippet": "… of a simple linear followed by a static output … estimator based on ECM parameter extended-kernel iterative recursive least squares algorithm for real-time estimation of the … parameters",
+      "pdf": {
+        "label": "aau.dk [PDF]",
+        "url": "https://vbn.aau.dk/ws/files/409380840/An_Enhanced_ECM_with_Real_Time_Parameter_Identification_for_Battery_SOC_Estimation.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "aau.dk [PDF]",
+          "url": "https://vbn.aau.dk/ws/files/409380840/An_Enhanced_ECM_with_Real_Time_Parameter_Identification_for_Battery_SOC_Estimation.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 32,
+      "title": "Ephrin- overexpression enhances integrin-mediated -attachment and migration of B16 melanoma cells B2 ECM",
+      "url": "https://www.spandidos-publications.com/ijo/27/5/1197",
+      "publication_info": "S Meyer, C Hafner, … - International …, 2005 - spandidos-publications.com M Guba",
+      "snippet": "… consequences of overexpressed ephrin- by transfection, we a model cell line B2 selected with absent ephrin-B 2 expression by screening a panel of 20 human and rodent cancer cell …",
+      "pdf": null,
+      "cited_by_count": 94,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=11821136754388731961&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:OYinPj8dDaQJ:scholar.google.com/&scioq=%22ECM%22+%22B1%22+%22B2%22+parameter+selection&hl=en&as_sdt=0,5",
+      "versions_count": 10,
+      "versions_url": "https://scholar.google.com/scholar?cluster=11821136754388731961&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 33,
+      "title": "Predict the Surface Finish by using Fuzzy Logic Techniques in Processes ECM",
+      "url": "https://www.academia.edu/download/38289104/Irjet-v2i3343.pdf",
+      "publication_info": ", D Shrivastava, H Pandey - 2015 - academia.edu A Sharma",
+      "snippet": "… to obtain better SR through of optimal settings. Experimental results selection parameters are … It has been found that all the three machining have significant effect on SR. … parameters",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/38289104/Irjet-v2i3343.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/38289104/Irjet-v2i3343.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 34,
+      "title": "Factorization of the tenth Fermat number",
+      "url": "https://www.ams.org/mcom/1999-68-225/S0025-5718-99-00992-8/",
+      "publication_info": "- Mathematics of Computation, 1999 - ams.org R Brent",
+      "snippet": "… describe some implementations of which were used in … If is used with ECM ECM parameters and , and the (improved… Given , we so the time for phase 2 is about half … B1 B2 B1 choose B2",
+      "pdf": {
+        "label": "uniroma2.it [PDF]",
+        "url": "https://www.mat.uniroma2.it/~geo2/TEN/BrentF10.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "uniroma2.it [PDF]",
+          "url": "https://www.mat.uniroma2.it/~geo2/TEN/BrentF10.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 35,
+      "title": "Spatial distribution of ectomycorrhizas and arbuscular mycorrhizas in Korup National Park rain forest, Cameroon, in relation to edaphic parameters",
+      "url": "https://nph.onlinelibrary.wiley.com/doi/abs/10.1046/j.1469-8137.1998.00190.x",
+      "publication_info": "B Moyersoen, , IJ Alexander - New Phytologist, 1998 - Wiley Online Library AH Fitter",
+      "snippet": "… differentiation between and AM colonization, we compare distribution in relation to ECM edaphic . … 2 m, depending on the total root length) of fine roots randomly. … parameters selected",
+      "pdf": {
+        "label": "wiley.com [PDF]",
+        "url": "https://nph.onlinelibrary.wiley.com/doi/pdf/10.1046/j.1469-8137.1998.00190.x"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "wiley.com [PDF]",
+          "url": "https://nph.onlinelibrary.wiley.com/doi/pdf/10.1046/j.1469-8137.1998.00190.x"
+        }
+      ]
+    },
+    {
+      "rank": 36,
+      "title": "Effects of the manufacturing chain on the surface integrity when machining fir tree slots with alternative manufacturing processes",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2212827122006175",
+      "publication_info": "U Küpper, T Seelbach, L Heidemanns, S Prinz… - Procedia CIRP, 2022 - Elsevier",
+      "snippet": "… electrochemical machining ( ) for the same task, whereby the capability of to produce ECM ECM the … were . The used machining technology respectively setting has … selected parameter",
+      "pdf": {
+        "label": "sciencedirect.com [PDF]",
+        "url": "https://www.sciencedirect.com/science/article/pii/S2212827122006175/pdf?md5=a2a3fa4d6cf6471a6f03a3350a237e9a&pid=1-s2.0-S2212827122006175-main.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "sciencedirect.com [PDF]",
+          "url": "https://www.sciencedirect.com/science/article/pii/S2212827122006175/pdf?md5=a2a3fa4d6cf6471a6f03a3350a237e9a&pid=1-s2.0-S2212827122006175-main.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 37,
+      "title": "Mode structure of a vertical-cavity surface-emitting laser subject to optical feedback",
+      "url": "https://research.tue.nl/files/4402693/615874.pdf#page=142",
+      "publication_info": "K Green, , - Eleventh Annual Symposium of …, 2006 - research.tue.nl B Krauskopf D Lenstra",
+      "snippet": "… More specifically, we study the external-cavity mode ( ) structure of a VCSEL with a small ECM … Furthermore, for our , the ECMs are shown to lie on four separate -… parameter choice ECM",
+      "pdf": {
+        "label": "tue.nl [PDF]",
+        "url": "https://research.tue.nl/files/4402693/615874.pdf#page=142"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "tue.nl [PDF]",
+          "url": "https://research.tue.nl/files/4402693/615874.pdf#page=142"
+        }
+      ]
+    },
+    {
+      "rank": 38,
+      "title": "An information appraisal procedure: Endows reliable online identification to lithium-ion battery model parameter",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9467819/",
+      "publication_info": ", , Y Zhang, … - IEEE Transactions …, 2021 - ieeexplore.ieee.org X Du J Meng X Huang",
+      "snippet": "… online identification method for battery … that a reliable identification parameter ECM parameter of battery could be achieved. … Therefore, Cell B and Cell C are in this work to … ECM selected",
+      "pdf": null,
+      "cited_by_count": 84,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=2917637964069552519&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:h0GPH0WIfSgJ:scholar.google.com/&scioq=%22ECM%22+%22B1%22+%22B2%22+parameter+selection&hl=en&as_sdt=0,5",
+      "versions_count": 5,
+      "versions_url": "https://scholar.google.com/scholar?cluster=2917637964069552519&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 39,
+      "title": "Cofactorization on graphics processing units",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-662-44709-3_19",
+      "publication_info": ", , T Kleinjung, - International Workshop on …, 2014 - Springer A Miele JW Bos AK Lenstra",
+      "snippet": "… We have determined good for two different … We also curves for which parameters select 16 divides the group order, … of , as it significantly improves the performance of . … ECM ECM",
+      "pdf": {
+        "label": "iacr.org [PDF]",
+        "url": "https://eprint.iacr.org/2014/397.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iacr.org [PDF]",
+          "url": "https://eprint.iacr.org/2014/397.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 40,
+      "title": "JKL- : an implementation of using Hessian curves ECM ECM",
+      "url": "https://www.cambridge.org/core/journals/lms-journal-of-computation-and-mathematics/article/jklecm-an-implementation-of-ecm-using-hessian-curves/30EE6BE8CCF8A6F0592B3B536B08326E",
+      "publication_info": "H Heer, , - LMS Journal of Computation and …, 2016 - cambridge.org G McGuire O Robinson",
+      "snippet": "… of needing the small speedup. In addition, all 25 of Bernstein et al.’s small ECM parameter … To this end, a had to be made as to the eventual application: record setting (… parameter choice",
+      "pdf": {
+        "label": "cambridge.org [PDF]",
+        "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/30EE6BE8CCF8A6F0592B3B536B08326E/S1461157016000231a.pdf/jklecm_an_implementation_of_ecm_using_hessian_curves.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "cambridge.org [PDF]",
+          "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/30EE6BE8CCF8A6F0592B3B536B08326E/S1461157016000231a.pdf/jklecm_an_implementation_of_ecm_using_hessian_curves.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 41,
+      "title": "Study on ultrasonic transverse vibration assisted micro electrochemical machining of high aspect-ratio groove with controllable cross section",
+      "url": "https://www.sciencedirect.com/science/article/pii/S1526612525002713",
+      "publication_info": "J Cai, J Li, G Liu, H Luo, Y Zhang - Journal of Manufacturing Processes, 2025 - Elsevier",
+      "snippet": "… UTVA- . Firstly, in order to explore the influence of bubble layer distribution in UTVA- , … ECM ECM of different processing on groove machining by UTVA- was studied. With … parameters ECM",
+      "pdf": null,
+      "cited_by_count": 6,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=17548424885507578334&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:3tlNNHWHiPMJ:scholar.google.com/&scioq=%22ECM%22+%22B1%22+%22B2%22+parameter+selection&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 42,
+      "title": "Integer number crunching on the cell processor",
+      "url": "https://ieeexplore.ieee.org/abstract/document/5599255/",
+      "publication_info": ", , … - 2010 39th International …, 2010 - ieeexplore.ieee.org HC Chen CM Cheng SH Hung",
+      "snippet": "… is the method of for finding mediumsized prime … In Section III, we describe in ECM choice detail our implementation … , is a probabilistic algorithm, with and … ECM ECM parameters B1 B2",
+      "pdf": null,
+      "cited_by_count": 6,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=11366210523857007010&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:orHNLEDkvJ0J:scholar.google.com/&scioq=%22ECM%22+%22B1%22+%22B2%22+parameter+selection&hl=en&as_sdt=0,5",
+      "versions_count": 6,
+      "versions_url": "https://scholar.google.com/scholar?cluster=11366210523857007010&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 43,
+      "title": "Adaptive State of Power Estimation Using Fuzzy Logic Real Driving Patterns Recognition Based on Error-Effort Tradeoff",
+      "url": "https://ieeexplore.ieee.org/abstract/document/11049034/",
+      "publication_info": ", - IEEE Transactions on …, 2025 - ieeexplore.ieee.org A Najafi M Masih-Tehrani",
+      "snippet": "… fitting within the . It is necessary to explain that the process of the driving cycle ECM selecting in … This study examines SOP estimation and through polynomial methods, … ECM parameters",
+      "pdf": null,
+      "cited_by_count": 1,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=16411863203991839614&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:fuM8WKGmwuMJ:scholar.google.com/&scioq=%22ECM%22+%22B1%22+%22B2%22+parameter+selection&hl=en&as_sdt=0,5",
+      "versions_count": 3,
+      "versions_url": "https://scholar.google.com/scholar?cluster=16411863203991839614&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 44,
+      "title": "Factorization of the tenth and eleventh Fermat numbers",
+      "url": "https://openresearch-repository.anu.edu.au/items/abc6b84d-200c-46a6-a9e3-7c1b33ae636f",
+      "publication_info": "- 1996 - openresearch-repository.anu.edu.au RP Brent",
+      "snippet": "… x5 we describe some implementations of with which we … If is used with ECM ECM parameters and , and the (improved… Given , we so the time for phase 2 is about half … B1 B2 B1 choose B2",
+      "pdf": {
+        "label": "anu.edu.au [PDF]",
+        "url": "https://openresearch-repository.anu.edu.au/bitstreams/26737318-5c8c-481b-9015-a26f5667219c/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PDF]",
+          "url": "https://openresearch-repository.anu.edu.au/bitstreams/26737318-5c8c-481b-9015-a26f5667219c/download"
+        }
+      ]
+    },
+    {
+      "rank": 45,
+      "title": "Improvement of the equivalent circuit method for analysis of frequency selective surfaces using genetic algorithms and rational algebraic models",
+      "url": "https://repositorio.ufrn.br/bitstreams/f94cd3f2-7154-47ed-a61e-d8fc76f151d5/download",
+      "publication_info": "GLR Araújo, , - 2015 - repositorio.ufrn.br ALPS Campos AM Martins",
+      "snippet": "… : the relevant is a … to adjust the N in order to converge parameter selection ECM parameter the resonance frequencies obtained with a commercial software to those generated with . … ECM",
+      "pdf": {
+        "label": "ufrn.br [PDF]",
+        "url": "https://repositorio.ufrn.br/bitstreams/f94cd3f2-7154-47ed-a61e-d8fc76f151d5/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ufrn.br [PDF]",
+          "url": "https://repositorio.ufrn.br/bitstreams/f94cd3f2-7154-47ed-a61e-d8fc76f151d5/download"
+        }
+      ]
+    },
+    {
+      "rank": 46,
+      "title": "Two-photon polymerized poly (2-ethyl-2-oxazoline) hydrogel 3D microstructures with tunable mechanical properties for tissue engineering",
+      "url": "https://www.mdpi.com/1420-3049/25/21/5066",
+      "publication_info": "S Czich, T Wloka, H Rothe, , F Penzold… - Molecules, 2020 - mdpi.com J Rost",
+      "snippet": "… extracellular matrix ( ) by an artificial (scaffold) … tissues, thus mechanically simulating ECM ECM the . In this work, we … to the key of the viscoelastic constitutive … ECM parameters selected",
+      "pdf": {
+        "label": "mdpi.com [HTML]",
+        "url": "https://www.mdpi.com/1420-3049/25/21/5066"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "mdpi.com [HTML]",
+          "url": "https://www.mdpi.com/1420-3049/25/21/5066"
+        }
+      ]
+    },
+    {
+      "rank": 47,
+      "title": "Investigation of critical factors effect to predict leakage current and time to failure due to on PCB under humidity ECM",
+      "url": "https://www.sciencedirect.com/science/article/pii/S002627142100384X",
+      "publication_info": ", - Microelectronics reliability, 2021 - Elsevier S Bahrebar R Ambat",
+      "snippet": "… due to dendrite formation due to electrochemical migration ( ). The time at the start of this ECM … and the resulting statistical models give new insight into the failure process related to . … ECM",
+      "pdf": {
+        "label": "sciencedirect.com [HTML]",
+        "url": "https://www.sciencedirect.com/science/article/pii/S002627142100384X"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "sciencedirect.com [HTML]",
+          "url": "https://www.sciencedirect.com/science/article/pii/S002627142100384X"
+        }
+      ]
+    },
+    {
+      "rank": 48,
+      "title": "Experimental Investigation on MRR of PulseElectrochemical machining (PECM) based onTaguchi Method",
+      "url": "https://www.academia.edu/download/107817411/experimental-investigation-on-mrr-of-pulseelectrochemical-machining-pecm-based-ontaguchi-method.pdf",
+      "publication_info": "PV Jadhav, , S Sharan… - International Journal of …, 2014 - academia.edu DS Bilgi",
+      "snippet": "… with coupled pulse for machining of INCONEL Super Alloy (77Ni--13Cr- 10Fe) commonly ECM used in making turbine blades [2] In … optimal machining was for a … ECM parameter selected",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/107817411/experimental-investigation-on-mrr-of-pulseelectrochemical-machining-pecm-based-ontaguchi-method.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/107817411/experimental-investigation-on-mrr-of-pulseelectrochemical-machining-pecm-based-ontaguchi-method.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 49,
+      "title": "Equivalent circuit modelling of large hydropower plants with complex tailrace system for ultra-low frequency oscillation analysis",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0307904X21004881",
+      "publication_info": "Y Zheng, Q Chen, , H Zhang - Applied Mathematical Modelling, 2022 - Elsevier D Yan",
+      "snippet": "… mathematical expression of equivalent circuit model ( ) for open channels is deduced, ECM thus to expand the utilization of to hydraulic transients description in pressurized pipe … ECM",
+      "pdf": {
+        "label": "sciencedirect.com [HTML]",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0307904X21004881"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "sciencedirect.com [HTML]",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0307904X21004881"
+        }
+      ]
+    },
+    {
+      "rank": 50,
+      "title": "BMSC-derived extracellular matrix better optimizes the microenvironment to support nerve regeneration",
+      "url": "https://www.sciencedirect.com/science/article/pii/S0142961221006086",
+      "publication_info": "S Wang, C Zhu, B Zhang, J Hu, J Xu, , S Bao… - Biomaterials, 2022 - Elsevier C Xue",
+      "snippet": "… BMSC- -NGs exhibit the most promising nerve repair properties based on the histology, ECM … by the -NGs is also characterized by proteomics, and the advantages of BMSC- -… ECM ECM",
+      "pdf": {
+        "label": "sciencedirect.com [HTML]",
+        "url": "https://www.sciencedirect.com/science/article/pii/S0142961221006086"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "sciencedirect.com [HTML]",
+          "url": "https://www.sciencedirect.com/science/article/pii/S0142961221006086"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

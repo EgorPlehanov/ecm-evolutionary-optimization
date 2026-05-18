@@ -1,0 +1,758 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"Bayesian optimization\" \"expensive black-box\" \"survey\"",
+    "requested_limit": 30,
+    "saved_records": 30,
+    "hl": "en",
+    "created_at_utc": "2026-05-17T14:25:56.756015+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22Bayesian+optimization%22+%22expensive+black-box%22+%22survey%22&hl=en&start=0",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22Bayesian+optimization%22+%22expensive+black-box%22+%22survey%22&hl=en&start=10",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 20,
+      "url": "https://scholar.google.com/scholar?q=%22Bayesian+optimization%22+%22expensive+black-box%22+%22survey%22&hl=en&start=20",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "Recent advances in Bayesian optimization",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3582078",
+      "publication_info": ", , , - ACM computing surveys, 2023 - dl.acm.org X Wang Y Jin S Schmitt M Olhofer",
+      "snippet": "… has emerged at the forefront of - optimization due Bayesian optimization expensive black box … a comprehensive and updated of recent advances in that are … survey Bayesian optimization",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3582078"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3582078"
+        },
+        {
+          "label": "Full View",
+          "url": "https://scholar.google.com/scholar?output=instlink&q=info:TjcufUUTGjwJ:scholar.google.com/&hl=en&as_sdt=0,5&scillfp=13593849231302971302&oi=lle"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "in materials science: a Bayesian optimization survey",
+      "url": "https://arxiv.org/abs/2108.00002",
+      "publication_info": ", , - arXiv preprint arXiv:2108.00002, 2021 - arxiv.org L Kotthoff H Wahab P Johnson",
+      "snippet": "… of evaluations of the - function while maximizing the quality of the result, expensive black box and similar results have been achieved, firmly establishing as a state-… Bayesian optimization",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2108.00002"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2108.00002"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Machine Learning Algorithms for Improving Black Box Optimization Solvers",
+      "url": "https://arxiv.org/abs/2509.25592",
+      "publication_info": ", - arXiv preprint arXiv:2509.25592, 2025 - arxiv.org M Kimiaei V Kungurtsev",
+      "snippet": "… , , and surrogate-assisted methods. … In this section, we the main Bayesian optimization survey families of classical … global optimization and handling functions, Dakota … expensive black box",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2509.25592"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2509.25592"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "Transfer learning for : A Bayesian optimization survey",
+      "url": "https://arxiv.org/abs/2302.05927",
+      "publication_info": "T Bai, , , , … - arXiv preprint arXiv …, 2023 - arxiv.org Y Li Y Shen X Zhang W Zhang",
+      "snippet": "… (BO) is a powerful tool that models and optimizes such “ - … Bayesian optimization expensive black box However, at the beginning of optimization, vanilla methods … Bayesian optimization",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2302.05927"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2302.05927"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "Transfer for - optimization in dynamic environment Bayesian optimization expensive black box",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9659200/",
+      "publication_info": ", - 2021 IEEE International Conference on Systems …, 2021 - ieeexplore.ieee.org R Chen K Li",
+      "snippet": "… In this paper, we aim to solve - optimization problem … expensive black box Bayesian optimization (BO) [1] has been widely recognized … Yang, “A of swarm intelligence for dynamic … survey",
+      "pdf": null,
+      "cited_by_count": 20,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=11641376455791649063&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:J6EOODV6jqEJ:scholar.google.com/&scioq=%22Bayesian+optimization%22+%22expensive+black-box%22+%22survey%22&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=11641376455791649063&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "Hybrid statistical and engineering optimization architectures in early multidisciplinary designs of resilience and - complex systems expensive black box",
+      "url": "https://ir.library.oregonstate.edu/concern/graduate_thesis_or_dissertations/cc08hp06m",
+      "publication_info": "- 2020 - ir.library.oregonstate.edu A Biswas",
+      "snippet": "… To address the issues of sections 3.1.1 and 3.1.1.1, this chapter proposes an approach to in solving the stated classification problem, to predict the … Bayesian Optimization",
+      "pdf": {
+        "label": "oregonstate.edu [PDF]",
+        "url": "https://ir.library.oregonstate.edu/downloads/v405sj02n"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "oregonstate.edu [PDF]",
+          "url": "https://ir.library.oregonstate.edu/downloads/v405sj02n"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "Multi‐Objective for Networked Black‐Box Systems: A Path to Greener Profits and Smarter Designs Bayesian Optimization",
+      "url": "https://onlinelibrary.wiley.com/doi/abs/10.1002/9781394205646.ch3",
+      "publication_info": ", , - Optimization of Sustainable …, 2026 - Wiley Online Library A Kudva WT Tang JA Paulson",
+      "snippet": "… In this chapter, we extend MOBO to handle complex networked systems, where each node in the network represents a potentially - function (eg a simulator or data-… expensive black box",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2502.14121"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2502.14121"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "is superior to random search for machine learning hyperparameter tuning: Analysis of the black-box optimization challenge 2020 Bayesian optimization",
+      "url": "https://proceedings.mlr.press/v133/turner21a.html",
+      "publication_info": "R Turner, , … - NeurIPS 2020 …, 2021 - proceedings.mlr.press D Eriksson M McCourt",
+      "snippet": "… Ω f(x), where f is a computationally - function and the domain Ω is commonly expensive black box a … Motivated by the original NeurIPS 2019 we decided to submit a proposal for a … survey",
+      "pdf": {
+        "label": "mlr.press [PDF]",
+        "url": "http://proceedings.mlr.press/v133/turner21a/turner21a.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "mlr.press [PDF]",
+          "url": "http://proceedings.mlr.press/v133/turner21a/turner21a.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "A and benchmark of high-dimensional of discrete sequences survey bayesian optimization",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2024/hash/fe0007fcfd707673660ec0f9014bc48e-Abstract-Datasets_and_Benchmarks_Track.html",
+      "publication_info": ", … - Advances in …, 2024 - proceedings.neurips.cc M González-Duque R Michael",
+      "snippet": "… categorical have been proposed recently. However, our of the Bayesian optimization survey … to test a vast array of high-dimensional methods and a collection of … Bayesian optimization",
+      "pdf": {
+        "label": "neurips.cc [PDF]",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/fe0007fcfd707673660ec0f9014bc48e-Paper-Datasets_and_Benchmarks_Track.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "neurips.cc [PDF]",
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2024/file/fe0007fcfd707673660ec0f9014bc48e-Paper-Datasets_and_Benchmarks_Track.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "Information-theoretic : and tutorial bayesian optimization survey",
+      "url": "https://arxiv.org/abs/2502.06789",
+      "publication_info": "- arXiv preprint arXiv:2502.06789, 2025 - arxiv.org EC Garrido-Merchán",
+      "snippet": "… is position as a state-of-the-art class of methods for hyperparameter Bayesian optimization tuning, particularly due to its ability to handle functions. A black-box … expensive black box",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2502.06789"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2502.06789"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "Constrained : A review bayesian optimization",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10815962/",
+      "publication_info": ", I Vannieuwenhuyse… - Ieee …, 2024 - ieeexplore.ieee.org S Amini",
+      "snippet": "… presents the first comprehensive for single-objective … explicitly on settings with survey functions, and … the topic of constrained , identifying the … expensive black box Bayesian optimization",
+      "pdf": {
+        "label": "ieee.org [PDF]",
+        "url": "https://ieeexplore.ieee.org/iel8/6287639/6514899/10815962.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ieee.org [PDF]",
+          "url": "https://ieeexplore.ieee.org/iel8/6287639/6514899/10815962.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "for Black-Box Evasion of Machine Learning Systems Bayesian Optimization",
+      "url": "https://www.imperial.ac.uk/media/imperial-college/faculty-of-engineering/computing/public/distinguished-projects/1617-pg-projects/CoK-Bayesian-Optimization-for-Black-Box-Evasion-of-Machine-Learning-Systems.pdf",
+      "publication_info": "- 2017 - imperial.ac.uk L Munoz-González",
+      "snippet": "… is primarily used in optimizing - functions. It has Bayesian optimization expensive black box … To measure this rigorously, we would need to human subjects to classify the images … survey",
+      "pdf": {
+        "label": "imperial.ac.uk [PDF]",
+        "url": "https://www.imperial.ac.uk/media/imperial-college/faculty-of-engineering/computing/public/distinguished-projects/1617-pg-projects/CoK-Bayesian-Optimization-for-Black-Box-Evasion-of-Machine-Learning-Systems.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "imperial.ac.uk [PDF]",
+          "url": "https://www.imperial.ac.uk/media/imperial-college/faculty-of-engineering/computing/public/distinguished-projects/1617-pg-projects/CoK-Bayesian-Optimization-for-Black-Box-Evasion-of-Machine-Learning-Systems.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "Strategies for Black-Box and Multi-Objective Optimization",
+      "url": "https://kilthub.cmu.edu/ndownloader/files/38231901",
+      "publication_info": "- 2022 - kilthub.cmu.edu B Paria",
+      "snippet": "… In the first part of this thesis, we look at several problems in optimization. expensive black box In particular, multi-objective , cost-aware Bayesian optimization, and … Bayesian optimization",
+      "pdf": {
+        "label": "cmu.edu [PDF]",
+        "url": "https://kilthub.cmu.edu/ndownloader/files/38231901"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "cmu.edu [PDF]",
+          "url": "https://kilthub.cmu.edu/ndownloader/files/38231901"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "Black-box optimization for automated discovery",
+      "url": "https://pubs.acs.org/doi/abs/10.1021/acs.accounts.0c00713",
+      "publication_info": ", , … - Accounts of Chemical …, 2021 - ACS Publications K Terayama M Sumita R Tamura",
+      "snippet": "… We introduce (BO) as a representative … can use GP and Bayesian optimization Bayesian without being aware … global optimization of - functions. Journal … optimization expensive black box",
+      "pdf": {
+        "label": "acs.org [PDF]",
+        "url": "https://pubs.acs.org/doi/pdf/10.1021/acs.accounts.0c00713"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acs.org [PDF]",
+          "url": "https://pubs.acs.org/doi/pdf/10.1021/acs.accounts.0c00713"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "Optimizing the Unknown: Black Box with Energy-Based Model and Reinforcement Learning Bayesian Optimization",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2025/hash/d52d2281babd36913643392a09a56832-Abstract-Conference.html",
+      "publication_info": "R Miao, , S Tsang, … - Advances in Neural …, 2026 - proceedings.neurips.cc J Xiao H Xiong",
+      "snippet": "… By formulating as a sequence of MDP steps, we go beyond static, Bayesian Optimization single-step selection rules. Even though EBM-UCB (Module B) already introduces a global …",
+      "pdf": {
+        "label": "neurips.cc [PDF]",
+        "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/d52d2281babd36913643392a09a56832-Paper-Conference.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "neurips.cc [PDF]",
+          "url": "https://proceedings.neurips.cc/paper_files/paper/2025/file/d52d2281babd36913643392a09a56832-Paper-Conference.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "An approach to for design feasibility check on discontinuous black-box functions Bayesian optimization",
+      "url": "https://asmedigitalcollection.asme.org/mechanicaldesign/article-abstract/143/3/031716/1095550",
+      "publication_info": ", - Journal of Mechanical Design, 2021 - asmedigitalcollection.asme.org A Biswas C Hoyle",
+      "snippet": "… for design problems having - objective functions. … expensive black box Bayesian optimization adopts a Bayesian perspective and … A of implementation of different GP packages has … survey",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Arpan-Biswas/publication/349120718_An_Approach_to_Bayesian_Optimization_for_Design_Feasibility_Check_on_Discontinuous_Black-Box_Functions/links/60218f0c299bf1cc26b2412a/An-Approach-to-Bayesian-Optimization-for-Design-Feasibility-Check-on-Discontinuous-Black-Box-Functions.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Arpan-Biswas/publication/349120718_An_Approach_to_Bayesian_Optimization_for_Design_Feasibility_Check_on_Discontinuous_Black-Box_Functions/links/60218f0c299bf1cc26b2412a/An-Approach-to-Bayesian-Optimization-for-Design-Feasibility-Check-on-Discontinuous-Black-Box-Functions.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "in high dimensions: a journey through subspaces and challenges Bayesian optimization",
+      "url": "https://lup.lub.lu.se/search/files/218696831/thesis_may_5_final.pdf",
+      "publication_info": "- 2025 - lup.lub.lu.se L Papenmeier",
+      "snippet": "… (BO) is a powerful method for optimizing - functions, but its effectiveness expensive black box diminishes as the dimensionality of the search space increases due to the curse of …",
+      "pdf": {
+        "label": "lu.se [PDF]",
+        "url": "https://lup.lub.lu.se/search/files/218696831/thesis_may_5_final.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "lu.se [PDF]",
+          "url": "https://lup.lub.lu.se/search/files/218696831/thesis_may_5_final.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "title": "A on high-dimensional Gaussian process modeling with application to survey Bayesian optimization",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3545611",
+      "publication_info": ", - ACM Transactions on Evolutionary Learning and …, 2022 - dl.acm.org M Binois N Wycoff",
+      "snippet": "… to high-dimensional . In … of modeling and optimization Bayesian optimization Survey strategies to solve high-dimensional design problems with computationally- - … expensive black box",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3545611"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3545611"
+        },
+        {
+          "label": "Full View",
+          "url": "https://scholar.google.com/scholar?output=instlink&q=info:mLrKae1HFIYJ:scholar.google.com/&hl=en&as_sdt=0,5&scillfp=10011907330800138451&oi=lle"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "Unveiling the Power of : Methods, Insights, and Applications Bayesian Optimization",
+      "url": "https://link.springer.com/chapter/10.1007/978-981-95-3309-1_35",
+      "publication_info": "P Narayanan - International Conference on Numerical Optimization in …, 2024 - Springer",
+      "snippet": "… in the application of (BO) for - functions. Utilizing Bayesian optimization expensive black box … ] provided a comprehensive on meta-learning in , discussing … survey Bayesian optimization",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:q6hWJFiw9eIJ:scholar.google.com/&scioq=%22Bayesian+optimization%22+%22expensive+black-box%22+%22survey%22&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=16354171514479093931&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "Finding interior optimum of black-box constrained objective with bayesian optimization",
+      "url": "https://openreview.net/forum?id=0kW2LHEx7z",
+      "publication_info": ", - The 41st Conference on Uncertainty in Artificial …, 2025 - openreview.net F Zhang Y Chen",
+      "snippet": "… (BO) has been extensively studied over the past few decades as a Bayesian optimization powerful framework for addressing - … A on highdimensional … expensive black box survey",
+      "pdf": {
+        "label": "openreview.net [PDF]",
+        "url": "https://openreview.net/pdf?id=0kW2LHEx7z"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "openreview.net [PDF]",
+          "url": "https://openreview.net/pdf?id=0kW2LHEx7z"
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "Beacon: A strategy for novelty search in - systems bayesian optimization expensive black box",
+      "url": "https://arxiv.org/abs/2406.03616",
+      "publication_info": ", , - arXiv preprint arXiv:2406.03616, 2024 - arxiv.org WT Tang A Chakrabarty JA Paulson",
+      "snippet": "… the input space, making them impractical for - systems. In this work, we expensive black box introduce BEACON, a sample-efficient, -inspired approach to NS that is … Bayesian optimization",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2406.03616"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2406.03616"
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "title": "Thinking inside the box: A tutorial on grey-box Bayesian optimization",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9715343/",
+      "publication_info": ", - 2021 Winter Simulation Conference …, 2021 - ieeexplore.ieee.org R Astudillo PI Frazier",
+      "snippet": "… We refer collectively to such methods as grey-box methods. Bayesian optimization Specifically, we refer to any method as a grey-box BO method if it leverages access to the internal …",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2201.00272"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2201.00272"
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "title": "AN EMPIRICAL REVIEW OF MODEL-BASED ADAPTIVE SAMPLING FOR GLOBAL OPTIMIZATION OF - FUNCTIONS EXPENSIVE BLACK BOX",
+      "url": "https://www.academia.edu/download/89669363/2204.10795.pdf",
+      "publication_info": "B Feng, , , S Shashaani… - arXiv preprint arXiv …, 2022 - academia.edu G Pedrielli Y Peng",
+      "snippet": "… “Combining radial basis function surrogates and dynamic coordinate search in high-dimensional - optimization”. Engineering Optimization 45(5):529–555. Rios, LM, … expensive black box",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/89669363/2204.10795.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/89669363/2204.10795.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "title": "Surrogate-Assisted Global Optimization for Expensive Engineering Systems: From Trust Regions to Bayesian Optimization",
+      "url": "https://www.jmesopen.com/index.php/jmesopen/article/view/40",
+      "publication_info": "L Bergström, T Nkosi - Multidisciplinary Engineering Science Open, 2025 - jmesopen.com",
+      "snippet": "… optimization (SAGO) for computationally expensive engineering systems, highlighting the evolution from deterministic trustregion frameworks to probabilistic … Bayesian optimization",
+      "pdf": {
+        "label": "jmesopen.com [PDF]",
+        "url": "https://www.jmesopen.com/index.php/jmesopen/article/download/40/35"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "jmesopen.com [PDF]",
+          "url": "https://www.jmesopen.com/index.php/jmesopen/article/download/40/35"
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "title": "An empirical review of model-based adaptive sampling for global optimization of - functions expensive black box",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10015334/",
+      "publication_info": ", - 2022 Winter Simulation Conference …, 2022 - ieeexplore.ieee.org N Nezami H Anahideh",
+      "snippet": "This paper reviews the state-of-the-art model-based adaptive sampling approaches for single-objective black-box optimization (BBO). While BBO literature includes various promising …",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2204.10795"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2204.10795"
+        }
+      ]
+    },
+    {
+      "rank": 26,
+      "title": "Building trust in black-box optimization: a comprehensive framework for explainability",
+      "url": "https://arxiv.org/abs/2410.14573",
+      "publication_info": ", - arXiv preprint arXiv:2410.14573, 2024 - arxiv.org N Nezami H Anahideh",
+      "snippet": "… primarily focus on and do not … from existing explainable Bayesian optimization Bayesian (BO) papers … Efficient global optimization of - functions… optimization expensive black box",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2410.14573"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2410.14573"
+        }
+      ]
+    },
+    {
+      "rank": 27,
+      "title": "A tutorial on of expensive cost functions, with application to active user modeling and hierarchical reinforcement learning Bayesian optimization",
+      "url": "https://arxiv.org/abs/1012.2599",
+      "publication_info": ", VM Cora, - arXiv preprint arXiv:1012.2599, 2010 - arxiv.org E Brochu N De Freitas",
+      "snippet": "… Abstract We present a tutorial on , a … detailed extensions of Bayesian optimization Bayesian , with experiments… and cons of based on our experiences. … optimization Bayesian optimization",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/1012.2599"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/1012.2599"
+        }
+      ]
+    },
+    {
+      "rank": 28,
+      "title": "on methodology and applications Survey Bayesian optimization",
+      "url": "https://www.sciengine.com/doi/10.13328/j.cnki.jos.005607",
+      "publication_info": ", B Yang - Journal of software, 2018 - sciengine.com JX CUI",
+      "snippet": "… In recent years, , which acts as a very … function appropriately, Bayesian optimization Bayesian framework can … a detailed analysis on in methodology … optimization Bayesian optimization",
+      "pdf": {
+        "label": "sciengine.com [PDF]",
+        "url": "https://www.sciengine.com/doi/pdf/9E943A26BDFA4AA5BF674ECB534FE3E8"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "sciengine.com [PDF]",
+          "url": "https://www.sciengine.com/doi/pdf/9E943A26BDFA4AA5BF674ECB534FE3E8"
+        }
+      ]
+    },
+    {
+      "rank": 29,
+      "title": "as a flexible and efficient design framework for sustainable process systems Bayesian optimization",
+      "url": "https://www.sciencedirect.com/science/article/pii/S2452223624001044",
+      "publication_info": ", - Current Opinion in Green and Sustainable Chemistry, 2025 - Elsevier JA Paulson C Tsay",
+      "snippet": "(BO) is a powerful technology for optimizing noisy, expensive-to-evaluate Bayesian optimization black-box functions, with a broad range of real-world applications in science, …",
+      "pdf": {
+        "label": "sciencedirect.com [HTML]",
+        "url": "https://www.sciencedirect.com/science/article/pii/S2452223624001044"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "sciencedirect.com [HTML]",
+          "url": "https://www.sciencedirect.com/science/article/pii/S2452223624001044"
+        }
+      ]
+    },
+    {
+      "rank": 30,
+      "title": "A nested weighted Tchebycheff multi-objective approach for flexibility of unknown Utopia estimation in - design problems Bayesian optimization expensive black box",
+      "url": "https://asmedigitalcollection.asme.org/computingengineering/article-abstract/23/1/014501/1140686",
+      "publication_info": ", C Fuentes, - … of Computing and …, 2023 - asmedigitalcollection.asme.org A Biswas C Hoyle",
+      "snippet": "… In the domain of - problems, we do not find the true utopia and need expensive black box to settle with a cheap surrogate model to estimate the same; however, the goal would be to …",
+      "pdf": {
+        "label": "asme.org [PDF]",
+        "url": "https://asmedigitalcollection.asme.org/computingengineering/article-pdf/23/1/014501/6882471/jcise_23_1_014501.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "asme.org [PDF]",
+          "url": "https://asmedigitalcollection.asme.org/computingengineering/article-pdf/23/1/014501/6882471/jcise_23_1_014501.pdf"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

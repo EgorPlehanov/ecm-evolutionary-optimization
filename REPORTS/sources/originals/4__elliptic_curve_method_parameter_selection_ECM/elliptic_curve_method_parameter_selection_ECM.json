@@ -1,0 +1,924 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"elliptic curve method\" \"parameter selection\" ECM",
+    "requested_limit": 50,
+    "saved_records": 36,
+    "hl": "en",
+    "created_at_utc": "2026-05-13T14:10:20.302724+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22elliptic+curve+method%22+%22parameter+selection%22+ECM&hl=en&start=0",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22elliptic+curve+method%22+%22parameter+selection%22+ECM&hl=en&start=10",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 20,
+      "url": "https://scholar.google.com/scholar?q=%22elliptic+curve+method%22+%22parameter+selection%22+ECM&hl=en&start=20",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 30,
+      "url": "https://scholar.google.com/scholar?q=%22elliptic+curve+method%22+%22parameter+selection%22+ECM&hl=en&start=30",
+      "records_found": 6,
+      "diagnostics": {
+        "result_nodes_found": 6,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 40,
+      "url": "https://scholar.google.com/scholar?q=%22elliptic+curve+method%22+%22parameter+selection%22+ECM&hl=en&start=40",
+      "records_found": 0,
+      "diagnostics": {
+        "result_nodes_found": 0,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "A practical analysis of the elliptic curve factoring algorithm",
+      "url": "https://www.ams.org/mcom/1993-61-203/S0025-5718-1993-1122078-7/",
+      "publication_info": "RD Silverman, SS Wagstaff - Mathematics of computation, 1993 - ams.org",
+      "snippet": "… The is aided by a novel use of Bayesian statistical decision techniques parameter selection … and quadratic sieve perform for current real-world sized problems. … elliptic curve method ECM",
+      "pdf": {
+        "label": "archive.org [PDF]",
+        "url": "https://scholar.archive.org/work/atfhvswsffb3rlqxlwr3edqcna/access/wayback/http://www.ams.org/journals/mcom/1993-61-203/S0025-5718-1993-1122078-7/S0025-5718-1993-1122078-7.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "archive.org [PDF]",
+          "url": "https://scholar.archive.org/work/atfhvswsffb3rlqxlwr3edqcna/access/wayback/http://www.ams.org/journals/mcom/1993-61-203/S0025-5718-1993-1122078-7/S0025-5718-1993-1122078-7.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Security Analysis of Modified ESRKGS-RSA Using Lenstra's Elliptic Curve Method",
+      "url": "https://www.researchgate.net/profile/Bety-Susanti/publication/394461101_Security_Analysis_of_Modified_ESRKGS-RSA_Using_Lenstra's_Elliptic_Curve_Method/links/689c392dfc368579b82f98ea/Security-Analysis-of-Modified-ESRKGS-RSA-Using-Lenstras-Elliptic-Curve-Method.pdf",
+      "publication_info": ", ASL Sumule… - … : Jurnal Matematika Murni …, 2025 - researchgate.net BH Susanti",
+      "snippet": "… ’s ( ) to assess the factorization resistance of the four-prime modulus Elliptic Curve Method ECM when ϕ(N) is not known. Experimental results indicate that … the … ECM parameter selection",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Bety-Susanti/publication/394461101_Security_Analysis_of_Modified_ESRKGS-RSA_Using_Lenstra's_Elliptic_Curve_Method/links/689c392dfc368579b82f98ea/Security-Analysis-of-Modified-ESRKGS-RSA-Using-Lenstras-Elliptic-Curve-Method.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Bety-Susanti/publication/394461101_Security_Analysis_of_Modified_ESRKGS-RSA_Using_Lenstra's_Elliptic_Curve_Method/links/689c392dfc368579b82f98ea/Security-Analysis-of-Modified-ESRKGS-RSA-Using-Lenstras-Elliptic-Curve-Method.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "CERIAS Tech Report 2007-03 ELLIPTIC CURVE FACTORING METHOD VIA FFTS WITH DIVISION",
+      "url": "https://www.cerias.purdue.edu/assets/pdf/bibtex_archive/bibtex_archive/2007-03.pdf",
+      "publication_info": "Z Li - 2006 - cerias.purdue.edu",
+      "snippet": "… discovered a new factoring method, the ( )… However, the reason Elliptic Curve Method ECM why is not a deterministic … issue about , which is optimizing the . … ECM ECM parameter selection",
+      "pdf": {
+        "label": "purdue.edu [PDF]",
+        "url": "https://www.cerias.purdue.edu/assets/pdf/bibtex_archive/bibtex_archive/2007-03.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "purdue.edu [PDF]",
+          "url": "https://www.cerias.purdue.edu/assets/pdf/bibtex_archive/bibtex_archive/2007-03.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "CERIAS Tech Report 2006-43 ELLIPTIC CURVE FACTORING METHOD VIA FFTS WITH DIVISION POLYNOMIALS",
+      "url": "https://www.cerias.purdue.edu/assets/pdf/bibtex_archive/bibtex_archive/2006-43.pdf",
+      "publication_info": "Z Li - 2006 - cerias.purdue.edu",
+      "snippet": "… discovered a new factoring method, the ( )… However, the reason Elliptic Curve Method ECM why is not a deterministic … issue about , which is optimizing the . … ECM ECM parameter selection",
+      "pdf": {
+        "label": "purdue.edu [PDF]",
+        "url": "https://www.cerias.purdue.edu/assets/pdf/bibtex_archive/bibtex_archive/2006-43.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "purdue.edu [PDF]",
+          "url": "https://www.cerias.purdue.edu/assets/pdf/bibtex_archive/bibtex_archive/2006-43.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "Abstracts of the CADO workshop on integer factorization",
+      "url": "https://dl.acm.org/doi/abs/10.1145/1610296.1610298",
+      "publication_info": "- ACM Communications in Computer Algebra, 2009 - dl.acm.org E Thomé",
+      "snippet": "… , factorization using the and solving the … We give a brief overview of elliptic curve method the method and Edwards … , considerations for for individual methods, … ECM parameter selection",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/1610296.1610298"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/1610296.1610298"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "Unbelievable Security Matching AES Security Using Public Key Systems",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-45682-1_5",
+      "publication_info": "- International Conference on the Theory and …, 2001 - Springer AK Lenstra",
+      "snippet": "… expected time required by the ( ) to find a … In that case the can elliptic curve method ECM ECM in general be expected to be … For all public key systems except ECC, is … parameter selection",
+      "pdf": {
+        "label": "epfl.ch [PDF]",
+        "url": "https://infoscience.epfl.ch/bitstreams/cd86106f-26bc-4e96-bc3c-33c54949b2ef/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "epfl.ch [PDF]",
+          "url": "https://infoscience.epfl.ch/bitstreams/cd86106f-26bc-4e96-bc3c-33c54949b2ef/download"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "Enhanced authentication mechanism in wireless multimedia sensor network using ECCDH",
+      "url": "https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3329224",
+      "publication_info": ", - International Journal of Advanced Studies of …, 2018 - papers.ssrn.com B Patil SR Biradar",
+      "snippet": "… is a cryptography method and it is a part of ECC for the execution of Elliptic curve method key cryptography. ECC algorithm and … The block diagram for proposed method is fig 1. … ECM",
+      "pdf": {
+        "label": "ssrn.com [PDF]",
+        "url": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=3329224"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ssrn.com [PDF]",
+          "url": "https://papers.ssrn.com/sol3/Delivery.cfm?abstractid=3329224"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "Special issue in honor of Peter Lawrence Montgomery",
+      "url": "https://link.springer.com/article/10.1007/s13389-017-0168-3",
+      "publication_info": ", - Journal of Cryptographic Engineering, 2018 - Springer F Rodríguez-Henríquez E Savaş",
+      "snippet": "… Montgomery was also able to speed up Lenstra’s … In order to speed up Lenstra’s ECM ECM factorization algorithm, this … provide strategies such as criteria to obtain … parameter selection",
+      "pdf": {
+        "label": "springer.com [PDF]",
+        "url": "https://link.springer.com/content/pdf/10.1007/s13389-017-0168-3.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "springer.com [PDF]",
+          "url": "https://link.springer.com/content/pdf/10.1007/s13389-017-0168-3.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "A Digital Signature on Cubic Pell Cryptosystem CP256-1299",
+      "url": "https://www.researchgate.net/profile/Nur-Abu-3/publication/391533395_A_Digital_Signature_on_Cubic_Pell_Cryptosystem_CP256-1299/links/6825731a6b5a287c3041b7c6/A-Digital-Signature-on-Cubic-Pell-Cryptosystem-CP256-1299.pdf",
+      "publication_info": ", , - International Journal of Computer …, 2025 - researchgate.net NA Abu A Nitaj MRK Ariffin",
+      "snippet": "… highly secure, but the development of the ( ) [2, 3] for factorization Elliptic Curve Method ECM … Base Point and Take a sequence starting from an identity point P0(x0, … Parameter Selection",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Nur-Abu-3/publication/391533395_A_Digital_Signature_on_Cubic_Pell_Cryptosystem_CP256-1299/links/6825731a6b5a287c3041b7c6/A-Digital-Signature-on-Cubic-Pell-Cryptosystem-CP256-1299.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Nur-Abu-3/publication/391533395_A_Digital_Signature_on_Cubic_Pell_Cryptosystem_CP256-1299/links/6825731a6b5a287c3041b7c6/A-Digital-Signature-on-Cubic-Pell-Cryptosystem-CP256-1299.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "A security analysis of two classes of RSA-like cryptosystems",
+      "url": "https://www.degruyterbrill.com/document/doi/10.1515/jmc-2024-0013/html",
+      "publication_info": "P Cotan, G Teşeleanu - Journal of Mathematical Cryptology, 2024 - degruyterbrill.com",
+      "snippet": "… enough to prevent factorization via the ( ) and the number field … elliptic curve method ECM scheme vulnerable to the algorithm [41]. Compared to the NFS, the has the running … ECM ECM",
+      "pdf": {
+        "label": "degruyterbrill.com [HTML]",
+        "url": "https://www.degruyterbrill.com/document/doi/10.1515/jmc-2024-0013/html"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "degruyterbrill.com [HTML]",
+          "url": "https://www.degruyterbrill.com/document/doi/10.1515/jmc-2024-0013/html"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "Cofactorization on graphics processing units",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-662-44709-3_19",
+      "publication_info": ", , T Kleinjung, - International Workshop on …, 2014 - Springer A Miele JW Bos AK Lenstra",
+      "snippet": "… The ( ) for integer factorization [31] works analogously but … elliptic curve method ECM Area-time efficient hardware architecture for factoring integers with the . IEE … elliptic curve method",
+      "pdf": {
+        "label": "iacr.org [PDF]",
+        "url": "https://eprint.iacr.org/2014/397.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iacr.org [PDF]",
+          "url": "https://eprint.iacr.org/2014/397.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "On the analysis of public-key cryptologic algorithms",
+      "url": "https://infoscience.epfl.ch/entities/publication/15c06bc0-92bc-49ce-80dd-be492ec1af83/files",
+      "publication_info": "- 2015 - infoscience.epfl.ch A Miele",
+      "snippet": "… The ( ) for integer factorization was proposed by Hendrik ECM elliptic curve method ECM Lenstra in 1985 [130]. can be derived from Pollard’s (p −1)-method (see Section 2.6.2) … ECM",
+      "pdf": {
+        "label": "epfl.ch [PDF]",
+        "url": "https://infoscience.epfl.ch/bitstreams/78469334-475d-46e2-adcd-c0bd2ef78ad6/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "epfl.ch [PDF]",
+          "url": "https://infoscience.epfl.ch/bitstreams/78469334-475d-46e2-adcd-c0bd2ef78ad6/download"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "Multi-power post-quantum RSA",
+      "url": "https://jmschanck.info/papers/20180409-multipowerpqrsa.pdf",
+      "publication_info": "- Cryptology ePrint Archive, 2018 - jmschanck.info JM Schanck",
+      "snippet": "… Lenstra’s ( ) heuristically finds a … for multi-prime elliptic curve method ECM parameter selection pqRSA come from … that lattice attacks cost more than and that special purpose … ECM ECM",
+      "pdf": {
+        "label": "jmschanck.info [PDF]",
+        "url": "https://jmschanck.info/papers/20180409-multipowerpqrsa.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "jmschanck.info [PDF]",
+          "url": "https://jmschanck.info/papers/20180409-multipowerpqrsa.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "Quantum-Resistant RSA Modulus Decomposition via Adaptive R\\'enyi Entropy Optimization",
+      "url": "https://arxiv.org/abs/2508.00840",
+      "publication_info": "R Xu, C Liu - arXiv preprint arXiv:2508.00840, 2025 - arxiv.org",
+      "snippet": "… RSA’s . RSA, as standardized in PKCS #1 [2] and IEEE 1363 [3], relies parameter selection … ] The ( ) complexity [15] depends on the size of the smallest factor: … elliptic curve method ECM",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2508.00840"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2508.00840"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "Factoring estimates for a 1024-bit RSA modulus",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-540-40061-5_4",
+      "publication_info": ", , A Shamir, W Kortsmit… - … Conference on the …, 2003 - Springer A Lenstra E Tromer",
+      "snippet": "… different from sieving is used (in [5] the … provide some insight into elliptic curve method , but the … With proper parameter settings and reasonably sized ya (and yr… parameter selection ECM",
+      "pdf": {
+        "label": "epfl.ch [PDF]",
+        "url": "https://infoscience.epfl.ch/bitstreams/ab0a1b10-77e8-4852-8bbd-cb6f4ac5fa26/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "epfl.ch [PDF]",
+          "url": "https://infoscience.epfl.ch/bitstreams/ab0a1b10-77e8-4852-8bbd-cb6f4ac5fa26/download"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "A kilobit special number field sieve factorization",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-540-76900-2_1",
+      "publication_info": ", J Franke, T Kleinjung, … - … Conference on the …, 2007 - Springer K Aoki AK Lenstra",
+      "snippet": "… ( , cf. [12]). Thus, for all kilobit special form numbers under consideration, elliptic curve method ECM we first spent a considerable … using, for instance, . Of the candidates that we … ECM ECM",
+      "pdf": {
+        "label": "epfl.ch [PDF]",
+        "url": "https://infoscience.epfl.ch/bitstreams/0d630cf3-8ef5-4437-8163-5f9c0e168886/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "epfl.ch [PDF]",
+          "url": "https://infoscience.epfl.ch/bitstreams/0d630cf3-8ef5-4437-8163-5f9c0e168886/download"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "MMSC-RSA: Miller-Rabin, Montgomery, Sliding Window, and Shamir's Chinese Remainder Theorem Optimization-based RSA",
+      "url": "https://www.researchsquare.com/article/rs-8730094/latest",
+      "publication_info": ", BY Adane, SY Techan - 2026 - researchsquare.com GA Zimbele",
+      "snippet": "… increase vulnerability to ( ) factorization [6]. An enhanced CRT … Elliptic Curve Method ECM to balance efficiency and security in RSA . It begins with prime generation … parameter selection",
+      "pdf": {
+        "label": "researchsquare.com [PDF]",
+        "url": "https://www.researchsquare.com/article/rs-8730094/latest.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchsquare.com [PDF]",
+          "url": "https://www.researchsquare.com/article/rs-8730094/latest.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "title": "Towards practical key exchange from ordinary isogeny graphs",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-030-03332-3_14",
+      "publication_info": ", , - International conference on the theory and …, 2018 - Springer L De Feo J Kieffer B Smith",
+      "snippet": "… This idea is used in the procedure of selecting elliptic curves in the Elliptic Curve Method for factoring [70, 71]. In our implementation we used \\(N = 17\\), and also incorporated the …",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/1809.07543"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/1809.07543"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "New number-theoretic cryptographic primitives",
+      "url": "https://www.degruyterbrill.com/document/doi/10.1515/jmc-2019-0035/html",
+      "publication_info": "É Brier, H Ferradi, … - Journal of Mathematical …, 2020 - degruyterbrill.com M Joye",
+      "snippet": "… There are four main approaches of factorization algorithms for the structure p r q: the elliptic ( ) [25] which was improved by Peralta and Okamoto [34], the number field … curve method ECM",
+      "pdf": {
+        "label": "degruyterbrill.com [HTML]",
+        "url": "https://www.degruyterbrill.com/document/doi/10.1515/jmc-2019-0035/html"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "degruyterbrill.com [HTML]",
+          "url": "https://www.degruyterbrill.com/document/doi/10.1515/jmc-2019-0035/html"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "Generalized Mersenne Numbers in Pairing-Based Cryptography",
+      "url": "https://crysp.uwaterloo.ca/software/gmnt/gmz_mcs_thesis.pdf",
+      "publication_info": "G Zaverucha - 2006 - crysp.uwaterloo.ca",
+      "snippet": "… We will use the implementation from the GMP- project. (The GMP- project implements ECM ECM the for factoring large integers [1].) It is optimized and implemented … elliptic curve method",
+      "pdf": {
+        "label": "uwaterloo.ca [PDF]",
+        "url": "https://crysp.uwaterloo.ca/software/gmnt/gmz_mcs_thesis.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "uwaterloo.ca [PDF]",
+          "url": "https://crysp.uwaterloo.ca/software/gmnt/gmz_mcs_thesis.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "Dual RSA and its security analysis",
+      "url": "https://ieeexplore.ieee.org/abstract/document/4276937/",
+      "publication_info": ", , … - IEEE Transactions on …, 2007 - ieeexplore.ieee.org HM Sun ME Wu WC Ting",
+      "snippet": "… In fact, Rivest and Silverman [34], concluded that the development of elliptic curve method ( ) … In Table IV, we give restrictions on the (size of exponents) for each … ECM parameter selection",
+      "pdf": {
+        "label": "umd.edu [PDF]",
+        "url": "https://www.cs.umd.edu/~gasarch/TOPICS/miscrypto/dualrsa.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "umd.edu [PDF]",
+          "url": "https://www.cs.umd.edu/~gasarch/TOPICS/miscrypto/dualrsa.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "title": "Factoring Algorithm Based on Quadratic Residue Minimization: Efficiency Analysis and Limitations",
+      "url": "https://www.researchgate.net/profile/Vladimir-Veselov/publication/396720537_Factoring_Algorithm_Based_on_Quadratic_Residue_Minimization_Efficiency_Analysis_and_Limitations/links/68f73772f3032e2b4beaed31/Factoring-Algorithm-Based-on-Quadratic-Residue-Minimization-Efficiency-Analysis-and-Limitations.pdf",
+      "publication_info": "VF Veselov - researchgate.net",
+      "snippet": "… the Number Field Sieve (NFS) and ( ), the search for specialized Elliptic Curve Method ECM … Improved stability with respect to initial 3. Enhanced numerical stability … parameter selection",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Vladimir-Veselov/publication/396720537_Factoring_Algorithm_Based_on_Quadratic_Residue_Minimization_Efficiency_Analysis_and_Limitations/links/68f73772f3032e2b4beaed31/Factoring-Algorithm-Based-on-Quadratic-Residue-Minimization-Efficiency-Analysis-and-Limitations.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Vladimir-Veselov/publication/396720537_Factoring_Algorithm_Based_on_Quadratic_Residue_Minimization_Efficiency_Analysis_and_Limitations/links/68f73772f3032e2b4beaed31/Factoring-Algorithm-Based-on-Quadratic-Residue-Minimization-Efficiency-Analysis-and-Limitations.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "title": "[CITATION] [C] Factoring Estimates for a 1024-Bit RSA Modulus",
+      "url": null,
+      "publication_info": ", P Leyland - Citeseer B Dodson",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:T3bd5OwaJ5MJ:scholar.google.com/&scioq=%22elliptic+curve+method%22+%22parameter+selection%22+ECM&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "title": "The Case of Small Prime Numbers Versus the Joye–Libert Cryptosystem",
+      "url": "https://www.mdpi.com/2227-7390/10/9/1577",
+      "publication_info": "G Teşeleanu - Mathematics, 2022 - mdpi.com",
+      "snippet": "… ( ) [14] if we lower the size of the factors below a certain threshold. Elliptic Curve Method ECM Compared to the NFS, the … p is the smallest factor, then the running time of the is … ECM ECM",
+      "pdf": {
+        "label": "mdpi.com [HTML]",
+        "url": "https://www.mdpi.com/2227-7390/10/9/1577"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "mdpi.com [HTML]",
+          "url": "https://www.mdpi.com/2227-7390/10/9/1577"
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "title": "Analysis of Bernstein's factorization circuit",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-36178-2_1",
+      "publication_info": ", A Shamir, J Tomlinson… - … Conference on the Theory …, 2002 - Springer AK Lenstra",
+      "snippet": "… ) memory using the ( ) embellished in … For the asymptotic argument, Elliptic Curve Method ECM suffices. In improved NFS … Therefore, unlike the ordinary method, … ECM parameter selection",
+      "pdf": {
+        "label": "epfl.ch [PDF]",
+        "url": "https://infoscience.epfl.ch/server/api/core/bitstreams/ebd1c73a-0ac3-4c31-8e21-0174b0653b13/content"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "epfl.ch [PDF]",
+          "url": "https://infoscience.epfl.ch/server/api/core/bitstreams/ebd1c73a-0ac3-4c31-8e21-0174b0653b13/content"
+        }
+      ]
+    },
+    {
+      "rank": 26,
+      "title": "Efficient modular multiplication",
+      "url": "https://eprint.iacr.org/2021/1151",
+      "publication_info": ", T Kleinjung, - Cryptology ePrint Archive, 2021 - eprint.iacr.org JW Bos D Page",
+      "snippet": "… To solve this problem he adopted word-slicing, vectorising an [41] implementation “… ECM [38] developed a methodology and analysis of for a range of cryptographic … parameter selection",
+      "pdf": {
+        "label": "iacr.org [PDF]",
+        "url": "https://eprint.iacr.org/2021/1151.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iacr.org [PDF]",
+          "url": "https://eprint.iacr.org/2021/1151.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 27,
+      "title": "Post-quantum RSA",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-59879-6_18",
+      "publication_info": ", , , - International Workshop on …, 2017 - Springer DJ Bernstein N Heninger P Lou L Valenta",
+      "snippet": "… GEECM turns out to be one of the main constraints upon for post-… . parameter selection ECM (There are occasional primes for which the \\(p-1\\) and \\(p+1\\) methods are faster than , … ECM",
+      "pdf": {
+        "label": "iacr.org [PDF]",
+        "url": "https://eprint.iacr.org/2017/351.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iacr.org [PDF]",
+          "url": "https://eprint.iacr.org/2017/351.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 28,
+      "title": "Parallel implementations of cryptographic algorithms on GPU",
+      "url": "https://s-space.snu.ac.kr/handle/10371/118878",
+      "publication_info": "김정우 - 2013 - s-space.snu.ac.kr",
+      "snippet": "… They implemented the - for integer factorization on GPUs. In 2010, … elliptic curve method The well known method to reduce this complexity is to select r and F with … parameter selection",
+      "pdf": {
+        "label": "snu.ac.kr [PDF]",
+        "url": "https://s-space.snu.ac.kr/bitstream/10371/118878/1/000000008410.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "snu.ac.kr [PDF]",
+          "url": "https://s-space.snu.ac.kr/bitstream/10371/118878/1/000000008410.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 29,
+      "title": "Measuring And Securing Cryptographic Deployments",
+      "url": "https://search.proquest.com/openview/33b7b8e42d65eb5a2ac49266ec555da2/1?pq-origsite=gscholar&cbl=18750&diss=y",
+      "publication_info": "- 2019 - search.proquest.com L Valenta",
+      "snippet": "This dissertation examines security vulnerabilities that arise due to communication failures and incentive mismatches along the path from cryptographic algorithm design to eventual …",
+      "pdf": {
+        "label": "upenn.edu [PDF]",
+        "url": "https://repository.upenn.edu/bitstreams/e872ed73-fe07-434f-87d2-8189820d1268/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "upenn.edu [PDF]",
+          "url": "https://repository.upenn.edu/bitstreams/e872ed73-fe07-434f-87d2-8189820d1268/download"
+        }
+      ]
+    },
+    {
+      "rank": 30,
+      "title": "Recovering Multi-prime RSA Keys with Erasures and Errors",
+      "url": "https://link.springer.com/chapter/10.1007/978-981-99-7032-2_16",
+      "publication_info": "G Liu, , , - International Conference on Information …, 2023 - Springer Y Liu Y Zhou Y Gao",
+      "snippet": "… Optimal . Figure 2 represents the increase … for in Parameter Selection parameter selection our subsequent experiments. … (NFS) Footnote 1 or ( ) Footnote 2 . … elliptic curve method ECM",
+      "pdf": {
+        "label": "google.com [PDF]",
+        "url": "https://drive.google.com/file/d/1JoLfQ6-6_UAmNajuOaT7MsininXGRRHA/view"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "google.com [PDF]",
+          "url": "https://drive.google.com/file/d/1JoLfQ6-6_UAmNajuOaT7MsininXGRRHA/view"
+        }
+      ]
+    },
+    {
+      "rank": 31,
+      "title": "A secure resilient homomorphic encryption scheme for control systems",
+      "url": "https://ieeexplore.ieee.org/abstract/document/10803041/",
+      "publication_info": ", - IEEE Transactions on Automatic Control, 2024 - ieeexplore.ieee.org M Fauser P Zhang",
+      "snippet": "… is given in Section VI to show the and the performance of the SRHE … parameter selection p are the - ( ) [48] and the number field sieve (NFS) [49]. : Recall … elliptic curve method ECM ECM",
+      "pdf": null,
+      "cited_by_count": 14,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=2815993966526009849&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:-RFtwJdrFCcJ:scholar.google.com/&scioq=%22elliptic+curve+method%22+%22parameter+selection%22+ECM&hl=en&as_sdt=0,5",
+      "versions_count": 4,
+      "versions_url": "https://scholar.google.com/scholar?cluster=2815993966526009849&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 32,
+      "title": "Another look at security definitions",
+      "url": "https://eprint.iacr.org/2011/343",
+      "publication_info": ", - Cryptology ePrint Archive, 2011 - eprint.iacr.org N Koblitz A Menezes",
+      "snippet": "… The conventional wisdom about is that for … He can factor N/ using the parameter selection if N/ is the … smooth so that N/ is -factorizable with current techniques. … Elliptic Curve Method ECM",
+      "pdf": {
+        "label": "iacr.org [PDF]",
+        "url": "https://eprint.iacr.org/2011/343.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iacr.org [PDF]",
+          "url": "https://eprint.iacr.org/2011/343.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 33,
+      "title": "Using Large-Scale Empirical Methods to Understand Fragile Cryptographic Ecosystems",
+      "url": "https://deepblue.lib.umich.edu/items/35556c46-da14-467e-9c7a-76c280262579",
+      "publication_info": "- 2018 - deepblue.lib.umich.edu D Adrian",
+      "snippet": "… translated into reliable and consistent defenses being built into protocols and implementations, likely due to the complexity of the trade-offs surrounding finite-field . … parameter selection",
+      "pdf": {
+        "label": "umich.edu [PDF]",
+        "url": "https://deepblue.lib.umich.edu/bitstreams/974b5a21-d090-4aa5-9bd2-3ac92ffdb9d4/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "umich.edu [PDF]",
+          "url": "https://deepblue.lib.umich.edu/bitstreams/974b5a21-d090-4aa5-9bd2-3ac92ffdb9d4/download"
+        }
+      ]
+    },
+    {
+      "rank": 34,
+      "title": "The case of small prime numbers versus the Okamoto-Uchiyama cryptosystem",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-031-82380-0_9",
+      "publication_info": "G Teşeleanu - … Conference on Number-Theoretic Methods in …, 2024 - Springer",
+      "snippet": "… ( ) [11], if we lower the size of the factors below a certain threshold. Elliptic Curve Method ECM Compared to the NFS, the … p is the smallest factor, then the running time of the is … ECM ECM",
+      "pdf": null,
+      "cited_by_count": 2,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=6979548548768746953&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:yU30BW1W3GAJ:scholar.google.com/&scioq=%22elliptic+curve+method%22+%22parameter+selection%22+ECM&hl=en&as_sdt=0,5",
+      "versions_count": 4,
+      "versions_url": "https://scholar.google.com/scholar?cluster=6979548548768746953&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 35,
+      "title": "the Okamoto-Uchiyama Cryptosystem",
+      "url": "https://books.google.com/books?hl=en&lr=&id=jb5HEQAAQBAJ&oi=fnd&pg=PA262&dq=%22elliptic+curve+method%22+%22parameter+selection%22+ECM&ots=GRmo1EZ4Xf&sig=iLwYWqeGdR0BxoJOD2lyuC3Xrv8",
+      "publication_info": "G Teşeleanu - Number-Theoretic Methods in Cryptology: 4th …, 2025 - books.google.com",
+      "snippet": "… ( )[11], if we lower the size of the factors below a certain threshold. Elliptic Curve Method ECM Compared to the NFS, the … p is the smallest factor, then the running time of the is … ECM ECM",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:ch79W9gApdIJ:scholar.google.com/&scioq=%22elliptic+curve+method%22+%22parameter+selection%22+ECM&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 36,
+      "title": "Resilient Encryption of Cloud-Based Control Systems",
+      "url": "https://kluedo.ub.rptu.de/frontdoor/deliver/index/docId/8564/file/Dissertation_Fauser_Moritz.pdf",
+      "publication_info": "- 2024 - kluedo.ub.rptu.de M Fauser",
+      "snippet": "… The security analysis and the of the RHE scheme is given in Section parameter selection 3.5. The quantization error that occurs in the encrypted cloud-based control system is analyzed …",
+      "pdf": {
+        "label": "rptu.de [PDF]",
+        "url": "https://kluedo.ub.rptu.de/frontdoor/deliver/index/docId/8564/file/Dissertation_Fauser_Moritz.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "rptu.de [PDF]",
+          "url": "https://kluedo.ub.rptu.de/frontdoor/deliver/index/docId/8564/file/Dissertation_Fauser_Moritz.pdf"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

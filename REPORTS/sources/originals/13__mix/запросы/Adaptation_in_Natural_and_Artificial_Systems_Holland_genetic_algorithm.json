@@ -1,0 +1,65 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"Adaptation in Natural and Artificial Systems\" \"Holland\" \"genetic algorithm\"",
+    "requested_limit": 30,
+    "saved_records": 1,
+    "hl": "en",
+    "created_at_utc": "2026-05-17T14:03:21.334161+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22Adaptation+in+Natural+and+Artificial+Systems%22+%22Holland%22+%22genetic+algorithm%22&hl=en&start=0",
+      "records_found": 1,
+      "diagnostics": {
+        "result_nodes_found": 1,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22Adaptation+in+Natural+and+Artificial+Systems%22+%22Holland%22+%22genetic+algorithm%22&hl=en&start=10",
+      "records_found": 0,
+      "diagnostics": {
+        "result_nodes_found": 0,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "[CITATION] [C] Adaptation in natural and artificial systems",
+      "url": null,
+      "publication_info": "JH Holland - University of Michigan Press google schola, 1975",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": 99,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=11182912940713122334&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:HhpT6RGwMZsJ:scholar.google.com/&scioq=%22Adaptation+in+Natural+and+Artificial+Systems%22+%22Holland%22+%22genetic+algorithm%22&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

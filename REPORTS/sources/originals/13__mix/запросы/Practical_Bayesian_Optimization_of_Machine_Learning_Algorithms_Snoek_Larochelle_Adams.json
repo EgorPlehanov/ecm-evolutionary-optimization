@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"Practical Bayesian Optimization of Machine Learning Algorithms\" \"Snoek\" \"Larochelle\" \"Adams\"",
+    "requested_limit": 30,
+    "saved_records": 1,
+    "hl": "en",
+    "created_at_utc": "2026-05-17T14:03:50.422233+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22Practical+Bayesian+Optimization+of+Machine+Learning+Algorithms%22+%22Snoek%22+%22Larochelle%22+%22Adams%22&hl=en&start=0",
+      "records_found": 1,
+      "diagnostics": {
+        "result_nodes_found": 1,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22Practical+Bayesian+Optimization+of+Machine+Learning+Algorithms%22+%22Snoek%22+%22Larochelle%22+%22Adams%22&hl=en&start=10",
+      "records_found": 0,
+      "diagnostics": {
+        "result_nodes_found": 0,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "Practical bayesian optimization of machine learning algorithms",
+      "url": "https://proceedings.neurips.cc/paper/2012/hash/05311655a15b75fab86956663e1819cd-Abstract.html",
+      "publication_info": ", … - Advances in neural …, 2012 - proceedings.neurips.cc J Snoek H Larochelle",
+      "snippet": "The use of machine learning algorithms frequently involves careful tuning of learning parameters and model hyperparameters. Unfortunately, this tuning is often a “black art” requiring expert experience, rules of thumb, or sometimes brute-force search. There is therefore great appeal for automatic approaches that can optimize the performance of any given learning algorithm to the problem at hand. In this work, we consider this problem through the framework of Bayesian optimization, in which a learning algorithm's …",
+      "pdf": {
+        "label": "neurips.cc [PDF]",
+        "url": "https://proceedings.neurips.cc/paper/2012/file/05311655a15b75fab86956663e1819cd-Paper.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "neurips.cc [PDF]",
+          "url": "https://proceedings.neurips.cc/paper/2012/file/05311655a15b75fab86956663e1819cd-Paper.pdf"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,1264 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"Brent\" elliptic curve method factorization",
+    "requested_limit": 50,
+    "saved_records": 50,
+    "hl": "en",
+    "created_at_utc": "2026-05-14T14:41:36.798752+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22Brent%22+elliptic+curve+method+factorization&hl=en&start=0",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22Brent%22+elliptic+curve+method+factorization&hl=en&start=10",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 20,
+      "url": "https://scholar.google.com/scholar?q=%22Brent%22+elliptic+curve+method+factorization&hl=en&start=20",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 30,
+      "url": "https://scholar.google.com/scholar?q=%22Brent%22+elliptic+curve+method+factorization&hl=en&start=30",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 40,
+      "url": "https://scholar.google.com/scholar?q=%22Brent%22+elliptic+curve+method+factorization&hl=en&start=40",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "Some integer algorithms using factorization elliptic curves",
+      "url": "https://arxiv.org/abs/1004.3366",
+      "publication_info": "- arXiv preprint arXiv:1004.3366, 2010 - arxiv.org RP Brent",
+      "snippet": "… The algorithms which we consider use … Because N is assumed to be large, factorization we can simplify the by … When applying the results of this section to , p is … analysis factorization",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/1004.3366"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/1004.3366"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Speeding the Pollard and of elliptic curve methods factorization",
+      "url": "https://www.ams.org/mcom/1987-48-177/S0025-5718-1987-0866113-7/",
+      "publication_info": "PL Montgomery - Mathematics of computation, 1987 - ams.org",
+      "snippet": "… shows that his is 24% faster than the original … We can further reduce that cost, Brent method and speed version of the … tests x, against Xj where j is fixed as i varies … Brent's Brent's method",
+      "pdf": {
+        "label": "wstein.org [PDF]",
+        "url": "https://www.wstein.org/edu/124/misc/montgomery.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "wstein.org [PDF]",
+          "url": "https://www.wstein.org/edu/124/misc/montgomery.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Lenstra's with factoring method elliptic curves",
+      "url": "https://spectrum.library.concordia.ca/id/eprint/8466/",
+      "publication_info": "X He - 2005 - spectrum.library.concordia.ca",
+      "snippet": "… Lenstra's algorithm and . Some background knowledge on is Brent's method elliptic curves provided in Chapter 2. And all the theoretical tools about are assembled in … factoring methods",
+      "pdf": {
+        "label": "concordia.ca [PDF]",
+        "url": "https://spectrum.library.concordia.ca/id/eprint/8466/1/MR10213.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "concordia.ca [PDF]",
+          "url": "https://spectrum.library.concordia.ca/id/eprint/8466/1/MR10213.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "OF THE BASED ON THEORY ANALYSIS FACTORIZATION METHOD ELLIPTIC CURVES",
+      "url": "https://www.academia.edu/download/83131976/1074.pdf",
+      "publication_info": "I Dermenzhy, G Vostrov - 2019 - academia.edu",
+      "snippet": "… The purpose of this paper is the of , in particularly the probabilistic analysis elliptic curve method approach of research… ’s suggests that this value can be reduced to … method Brent analysis",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/83131976/1074.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/83131976/1074.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "The Computational Complexity of the Algorithm over Real Field Elliptic Curve Factorization",
+      "url": "https://iopscience.iop.org/article/10.1088/1742-6596/1897/1/012046/meta",
+      "publication_info": "HM Hashim, - Journal of Physics: Conference …, 2021 - iopscience.iop.org RKK Ajeena",
+      "snippet": "… In this work, two versions of the have been proposed. These elliptic curve factoring method versions applied the over the real field (ECM-R). the real … elliptic curve factorization Factoring",
+      "pdf": {
+        "label": "iop.org [PDF]",
+        "url": "https://iopscience.iop.org/article/10.1088/1742-6596/1897/1/012046/pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iop.org [PDF]",
+          "url": "https://iopscience.iop.org/article/10.1088/1742-6596/1897/1/012046/pdf"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "An FFT extension of the of elliptic curve method factorization",
+      "url": "https://search.proquest.com/openview/93ac46d6eb096baf397e4d1a6c650814/1?pq-origsite=gscholar&cbl=18750&diss=y",
+      "publication_info": "PL Montgomery - 1992 - search.proquest.com",
+      "snippet": "… … and Montgomery difTer on how to select the n,. Montgomery suggests elliptic curve Brent comparing multiples of Q along an arit hmetic progression to a few fixed multiples of Q. … Brent",
+      "pdf": {
+        "label": "yp.to [PDF]",
+        "url": "https://cr.yp.to/bib/1992/montgomery.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "yp.to [PDF]",
+          "url": "https://cr.yp.to/bib/1992/montgomery.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "integers with Factoring elliptic curves",
+      "url": "https://www.jstor.org/stable/1971363",
+      "publication_info": "HW Lenstra Jr - Annals of mathematics, 1987 - JSTOR",
+      "snippet": "… A different will give rise to a new value for tp so that p + 1 - … The of the curve analysis elliptic that I … , Some integer algorithms using … curve factorization method BRENT factorization elliptic",
+      "pdf": {
+        "label": "wisc.edu [PDF]",
+        "url": "https://pages.cs.wisc.edu/~cs812-1/Lenstra1987.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "wisc.edu [PDF]",
+          "url": "https://pages.cs.wisc.edu/~cs812-1/Lenstra1987.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "FFT extension for algebraic-group algorithms factorization",
+      "url": "https://www.academia.edu/download/116079100/document.pdf",
+      "publication_info": "- Cambridge University Press eBooks, 2017 - academia.edu R Brent",
+      "snippet": "… 1.2 FFT extension for the To fix our notation, we first give a high-level elliptic curve method description of ECM. Suppose that the stage one and stage two limits are B1 and B2 , …",
+      "pdf": {
+        "label": "academia.edu [HTML]",
+        "url": "https://www.academia.edu/download/116079100/document.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [HTML]",
+          "url": "https://www.academia.edu/download/116079100/document.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "A new implementation of the of integer using Edwards and Hessian elliptic curve method factorization curves",
+      "url": "https://search.proquest.com/openview/6603b544401e9b27379c1ffb63a59347/1?pq-origsite=gscholar&cbl=2026366",
+      "publication_info": "- 2015 - search.proquest.com O Robinson",
+      "snippet": "… ’s original formulation of using has become … The -Suyama factoring elliptic curves Brent extension would seem to offer a potential … The Suyama extension was not done in the imple… Brent",
+      "pdf": {
+        "label": "ucd.ie [PDF]",
+        "url": "https://researchrepository.ucd.ie/bitstreams/6387bd84-848c-4d11-82a1-0a9c62ca0dc7/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ucd.ie [PDF]",
+          "url": "https://researchrepository.ucd.ie/bitstreams/6387bd84-848c-4d11-82a1-0a9c62ca0dc7/download"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "Hardware implementation of the of elliptic curve method factoring",
+      "url": "https://www.researchgate.net/profile/Mohammed-Khaleeluddin-2/publication/237634881_HARDWARE_IMPLEMENTATION_OF_THE_ELLIPTIC_CURVE_METHOD_OF_FACTORING/links/0deec53631696a8e07000000/HARDWARE-IMPLEMENTATION-OF-THE-ELLIPTIC-CURVE-METHOD-OF-FACTORING.pdf",
+      "publication_info": "M Khaleeluddin - 2006 - researchgate.net",
+      "snippet": "… It was subsequently extended by [1] and Montgomery [13]. The original part of the Brent algorithm proposed by Lenstra is typically referred to as Phase 1 and the extension by and … Brent",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Mohammed-Khaleeluddin-2/publication/237634881_HARDWARE_IMPLEMENTATION_OF_THE_ELLIPTIC_CURVE_METHOD_OF_FACTORING/links/0deec53631696a8e07000000/HARDWARE-IMPLEMENTATION-OF-THE-ELLIPTIC-CURVE-METHOD-OF-FACTORING.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Mohammed-Khaleeluddin-2/publication/237634881_HARDWARE_IMPLEMENTATION_OF_THE_ELLIPTIC_CURVE_METHOD_OF_FACTORING/links/0deec53631696a8e07000000/HARDWARE-IMPLEMENTATION-OF-THE-ELLIPTIC-CURVE-METHOD-OF-FACTORING.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "Integer based on : Towards better exploitation of reconfigurable hardware factorization elliptic curve method",
+      "url": "https://ieeexplore.ieee.org/abstract/document/4297256/",
+      "publication_info": "G De Meulenaer, F Gosset… - 15th Annual IEEE …, 2007 - ieeexplore.ieee.org",
+      "snippet": "… In this work, with Montgomery form in homogeneous … elliptic curves elliptic curve method for integer was invented by Lenstra [9]. It is an improvement of the p − 1 of … factorization method",
+      "pdf": null,
+      "cited_by_count": 37,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=16029939943686971327&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:v59O0nLJdd4J:scholar.google.com/&scioq=%22Brent%22+elliptic+curve+method+factorization&hl=en&as_sdt=0,5",
+      "versions_count": 6,
+      "versions_url": "https://scholar.google.com/scholar?cluster=16029939943686971327&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "Hardware based on factorization elliptic curve method",
+      "url": "https://ieeexplore.ieee.org/abstract/document/1508531/",
+      "publication_info": "M Simka, , T Kleinjung, J Franke… - 13th Annual IEEE …, 2005 - ieeexplore.ieee.org J Pelzl",
+      "snippet": "… The best known for large integers is the … is the of mid-size method factorization factorization numbers for smoothness testing, an efficient algorithm for which is the (… Elliptic Curve Method",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Martin-Simka/publication/4174989_Hardware_Factorization_Based_on_Elliptic_Curve_Method/links/0c960524c6bb62e69a000000/Hardware-Factorization-Based-on-Elliptic-Curve-Method.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Martin-Simka/publication/4174989_Hardware_Factorization_Based_on_Elliptic_Curve_Method/links/0c960524c6bb62e69a000000/Hardware-Factorization-Based-on-Elliptic-Curve-Method.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "Integer based on the using reconfigurable hardware factorization elliptic curve method",
+      "url": "https://informatik.rub.de/wp-content/uploads/2021/11/da_roepke.pdf",
+      "publication_info": "C Röpke, IC Paar - 2008 - informatik.rub.de",
+      "snippet": "In this work we present a novel and efficient implementation of the for elliptic curve method small to mid-sized integers (up to a few hundred bits). Among others, the ECM is an … factoring",
+      "pdf": {
+        "label": "rub.de [PDF]",
+        "url": "https://informatik.rub.de/wp-content/uploads/2021/11/da_roepke.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "rub.de [PDF]",
+          "url": "https://informatik.rub.de/wp-content/uploads/2021/11/da_roepke.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "title": ": Towards better exploitation of reconfigurable hardware Elliptic curve factorization method",
+      "url": "https://www.researchgate.net/profile/Jean-Jacques-Quisquater/publication/4272853_Integer_Factorization_Based_on_Elliptic_Curve_Method_Towards_Better_Exploitation_of_Reconfigurable_Hardware/links/0fcfd50c5ccf0c9f49000000/Integer-Factorization-Based-on-Elliptic-Curve-Method-Towards-Better-Exploitation-of-Reconfigurable-Hardware.pdf",
+      "publication_info": "G de Meulenaer, F Gosset… - SHARCS Workshop …, 2007 - researchgate.net",
+      "snippet": "… In this work, with Montgomery form in homogeneous … elliptic curves elliptic curve method for integer was invented by Lenstra [10]. It is an improvement of the p − 1 of … factorization method",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Jean-Jacques-Quisquater/publication/4272853_Integer_Factorization_Based_on_Elliptic_Curve_Method_Towards_Better_Exploitation_of_Reconfigurable_Hardware/links/0fcfd50c5ccf0c9f49000000/Integer-Factorization-Based-on-Elliptic-Curve-Method-Towards-Better-Exploitation-of-Reconfigurable-Hardware.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Jean-Jacques-Quisquater/publication/4272853_Integer_Factorization_Based_on_Elliptic_Curve_Method_Towards_Better_Exploitation_of_Reconfigurable_Hardware/links/0fcfd50c5ccf0c9f49000000/Integer-Factorization-Based-on-Elliptic-Curve-Method-Towards-Better-Exploitation-of-Reconfigurable-Hardware.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "PARALLEL ALGORITHMS",
+      "url": "https://books.google.com/books?hl=en&lr=&id=1AXx0v2pvMAC&oi=fnd&pg=PA26&dq=%22Brent%22+elliptic+curve+method+factorization&ots=H_FSV8zCV5&sig=sZQRZzHQuINpxMmnNColKHneGU4",
+      "publication_info": "- Number theory and cryptography, 1990 - books.google.com RP Brent",
+      "snippet": "… , depends on the difficulty of the public keys. In recent … algorithms , including the factoring , and the multiple … results are mentioned-for , the complete fac… elliptic curve method example",
+      "pdf": {
+        "label": "anu.edu.au [PDF]",
+        "url": "https://maths-people.anu.edu.au/~brent/pd/rpb115.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PDF]",
+          "url": "https://maths-people.anu.edu.au/~brent/pd/rpb115.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "Integer Factorization",
+      "url": "https://maths-people.anu.edu.au/~brent/ftp/rpb150.ps.gz",
+      "publication_info": "- Grand Challenges in Supercomputing at the …, 1994 - maths-people.anu.edu.au RP Brent",
+      "snippet": "… The algorithm (ECM) is the best known algorithm for nding moderately large elliptic curve factors of very large numbers. For , ECM was used to complete the factorisation of the … example",
+      "pdf": {
+        "label": "anu.edu.au [PS]",
+        "url": "https://maths-people.anu.edu.au/~brent/ftp/rpb150.ps.gz"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PS]",
+          "url": "https://maths-people.anu.edu.au/~brent/ftp/rpb150.ps.gz"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "INFORMATION SECURITY BASED ON THE DIFFICULTY OF OF ODD NUMBERS BY OF FACTORIZATION METHODS ELLIPTIC CURVES",
+      "url": "https://economics.net.ua/en/files/science/ek_kiber/2017/37.pdf",
+      "publication_info": "G Vostrov, I Dermenji - economics.net.ua",
+      "snippet": "… the difficulty of the of odd numbers by using the Lenstra . Effective ways factorization method … of of large numbers in the attempts of hacking by the of … factorization method elliptic curves",
+      "pdf": {
+        "label": "economics.net.ua [PDF]",
+        "url": "https://economics.net.ua/en/files/science/ek_kiber/2017/37.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "economics.net.ua [PDF]",
+          "url": "https://economics.net.ua/en/files/science/ek_kiber/2017/37.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "title": "Arithmetic Elliptic Curve",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-1-4684-9316-0_7?pdf=chapter%20toc",
+      "publication_info": "R Crandall, - Prime Numbers: A Computational Perspective, 2001 - Springer C Pomerance",
+      "snippet": "… of for will be the fact that, if one has a composite n to be factored, elliptic curves factorization one can try to work on an … After the 33-digit prime factor p was uncovered, … elliptic curve Brent",
+      "pdf": null,
+      "cited_by_count": 3,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=17178770939536579384&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:OJvhCCdBZ-4J:scholar.google.com/&scioq=%22Brent%22+elliptic+curve+method+factorization&hl=en&as_sdt=0,5",
+      "versions_count": 4,
+      "versions_url": "https://scholar.google.com/scholar?cluster=17178770939536579384&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "Framework for evaluation and comparison of integer algorithms factorization",
+      "url": "https://ieeexplore.ieee.org/abstract/document/7556107/",
+      "publication_info": "CL Duta, L Gheorghe, - 2016 SAI Computing …, 2016 - ieeexplore.ieee.org N Tapus",
+      "snippet": "… (ECM) was designed by Lenstra in 1985 [13] and was refined shortly Elliptic curve method after by and is the fastest of the special-purpose … on a random . … Brent factorization elliptic curve",
+      "pdf": null,
+      "cited_by_count": 13,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=7901915178209452929&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:gSNxCv09qW0J:scholar.google.com/&scioq=%22Brent%22+elliptic+curve+method+factorization&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=7901915178209452929&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "Some parallel algorithms for integer factorisation",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-48311-x_1",
+      "publication_info": "- European Conference on Parallel Processing, 1999 - Springer RP Brent",
+      "snippet": "… logarithms over , which is one reason for the popularity of in … elliptic curves elliptic curves [83] RD Silverman and SS Wagstaff, Jr., A practical of the … analysis elliptic curve factoring",
+      "pdf": {
+        "label": "anu.edu.au [PS]",
+        "url": "https://maths-people.anu.edu.au/brent/ftp/rpb193.ps.gz"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PS]",
+          "url": "https://maths-people.anu.edu.au/brent/ftp/rpb193.ps.gz"
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "= with the Factoring N pq 2 Elliptic Curve Method",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-45455-1_37",
+      "publication_info": ", E Teske - International Algorithmic Number Theory Symposium, 2002 - Springer P Ebinger",
+      "snippet": "… In Section 2 we outline the and some of its continuations for Elliptic Curve Method factoring … ’s cycle-finding algorithm We have an auxiliary element R and an auxiliary index r. We … Brent",
+      "pdf": null,
+      "cited_by_count": 12,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=16092780331864168481&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:IRgo2XIKVd8J:scholar.google.com/&scioq=%22Brent%22+elliptic+curve+method+factorization&hl=en&as_sdt=0,5",
+      "versions_count": 9,
+      "versions_url": "https://scholar.google.com/scholar?cluster=16092780331864168481&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "title": "Implementing the of in reconfigurable hardware elliptic curve method factoring",
+      "url": "https://link.springer.com/chapter/10.1007/11894063_10",
+      "publication_info": ", , P Baier, P Kohlbrenner, H Le… - … and Embedded Systems, 2006 - Springer K Gaj S Kwon",
+      "snippet": "… The contribution of this paper is an implementation of the in hardware elliptic curve method (FPGAs). We describe in detail … RP , “Some integer algorithms using … Brent factorization elliptic",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Mohammed-Khaleeluddin-2/publication/221291916_Implementing_the_Elliptic_Curve_Method_of_Factoring_in_Reconfigurable_Hardware/links/0deec53631696ca01b000000/Implementing-the-Elliptic-Curve-Method-of-Factoring-in-Reconfigurable-Hardware.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Mohammed-Khaleeluddin-2/publication/221291916_Implementing_the_Elliptic_Curve_Method_of_Factoring_in_Reconfigurable_Hardware/links/0deec53631696ca01b000000/Implementing-the-Elliptic-Curve-Method-of-Factoring-in-Reconfigurable-Hardware.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "title": "Integer : Another perspective Factorization",
+      "url": "https://arxiv.org/abs/2507.07055",
+      "publication_info": "GR Bansimba, - arXiv preprint arXiv:2507.07055, 2025 - arxiv.org RF Babindamana",
+      "snippet": "… Finding suitable for the of . Mathematics of curves elliptic curve method factorization Computation, 60:399–405, 1993. [4] Abubakar, SI, Ariffin, MRK and Asbullah, MA (2019). …",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2507.07055"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2507.07055"
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "title": "Factor: an integer program for the IBM PC factorization",
+      "url": "https://openresearch-repository.anu.edu.au/items/fecd3570-e379-494e-8bcf-7be26d34f664",
+      "publication_info": "- 1994 - openresearch-repository.anu.edu.au RP Brent",
+      "snippet": "… , we needed many of an ,1 for a = 13;19;31;127. Some of the required example factorizations … majority were computed using Lenstra's (ECM) and in … factorizations Elliptic Curve Method",
+      "pdf": {
+        "label": "anu.edu.au [PDF]",
+        "url": "https://openresearch-repository.anu.edu.au/bitstreams/91e8fbe2-0fde-443b-908a-0dba2ffa24d7/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PDF]",
+          "url": "https://openresearch-repository.anu.edu.au/bitstreams/91e8fbe2-0fde-443b-908a-0dba2ffa24d7/download"
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "title": "Optimized Implementation of the on a Highly Parallelized Hardware Cluster Elliptic Curve Factorization Method",
+      "url": "https://informatik.rub.de/wp-content/uploads/2021/11/ralf_zimmermann_diplomarbeit.pdf",
+      "publication_info": "R Zimmermann - 2009 - informatik.rub.de",
+      "snippet": "… Other extensions and to speed up the such as the fast polynomial methods elliptic curve method arithmetic, fast polynomial multiplication, block windows, the -Suyama’s Extension … Brent",
+      "pdf": {
+        "label": "rub.de [PDF]",
+        "url": "https://informatik.rub.de/wp-content/uploads/2021/11/ralf_zimmermann_diplomarbeit.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "rub.de [PDF]",
+          "url": "https://informatik.rub.de/wp-content/uploads/2021/11/ralf_zimmermann_diplomarbeit.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 26,
+      "title": "cryptosystems Elliptic curve",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-31515-7_4",
+      "publication_info": "R Ahlswede - Hiding Data-Selected Topics: Rudolf Ahlswede's …, 2016 - Springer",
+      "snippet": "… and finding the discrete logarithm in a cyclic group. In the next chapter we shall factorization discuss the theory of … present the for integer . … elliptic curves elliptic curve method factorization",
+      "pdf": null,
+      "cited_by_count": 6,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=9259495216077914903&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:F8PAEddVgIAJ:scholar.google.com/&scioq=%22Brent%22+elliptic+curve+method+factorization&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 27,
+      "title": "Flexible Hardware Design for of Integer Elliptic Curve Method Factorization",
+      "url": "https://search.proquest.com/openview/a76b39176163fdb34cf9c366feb8b007/1?pq-origsite=gscholar&cbl=2026366&diss=y",
+      "publication_info": "- 2023 - search.proquest.com MH Solmaz",
+      "snippet": "… primitives used in (ECM) for integer in FPGA platform. … elliptic curve method factorization and scalar multiplication of a point on . The used for this purpose are defined … elliptic curve curves",
+      "pdf": {
+        "label": "metu.edu.tr [PDF]",
+        "url": "https://open.metu.edu.tr/bitstream/handle/11511/105410/phd_thesis_hsolmaz_openmetu.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "metu.edu.tr [PDF]",
+          "url": "https://open.metu.edu.tr/bitstream/handle/11511/105410/phd_thesis_hsolmaz_openmetu.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 28,
+      "title": "integere with -HW Lenstra, Ji-verewn 19860508 Factoring elliptic curves",
+      "url": "https://scholarlypublications.universiteitleiden.nl/access/item%3A2717413/download",
+      "publication_info": "HW Lenstra Jr, M Initituut, U van Amsterdam - scholarlypublications …",
+      "snippet": "… The of the that I … of parameters, the analysis elliptic curve factorization method elliptic determines with … RP , Some integer algorithm» ueing … curve method Brent factorization elliptic",
+      "pdf": {
+        "label": "universiteitleiden.nl [PDF]",
+        "url": "https://scholarlypublications.universiteitleiden.nl/access/item%3A2717413/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "universiteitleiden.nl [PDF]",
+          "url": "https://scholarlypublications.universiteitleiden.nl/access/item%3A2717413/download"
+        }
+      ]
+    },
+    {
+      "rank": 29,
+      "title": "ECM with QRT maps factorization",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-030-70873-3_28",
+      "publication_info": "- Advances in Software Engineering, Education, and e …, 2021 - Springer ANW Hone",
+      "snippet": "… . In this preliminary study, we explore versions of the (ECM) elliptic curve elliptic curve method for integer … of a point on an by iterating three different QRT maps … factorization elliptic curve",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2001.09076"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2001.09076"
+        }
+      ]
+    },
+    {
+      "rank": 30,
+      "title": "cryptographic systems Elliptic curve",
+      "url": "https://inria.hal.science/hal-00764963/document",
+      "publication_info": "A Enge - Handbook of Finite Fields, 2013 - inria.hal.science",
+      "snippet": "… Extrapolating the theoretical subexponential complexity for or the DLP in finite factoring fields … They are summarized in the following table; the figures for the based RSA … factorization",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/hal-00764963/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/hal-00764963/document"
+        }
+      ]
+    },
+    {
+      "rank": 31,
+      "title": "Recent progress and prospects for integer factorisation algorithms",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-44968-X_2",
+      "publication_info": "- International Computing and Combinatorics …, 2000 - Springer RP Brent",
+      "snippet": "… 3 Lenstra’s Algorithm Lenstra’s /algorithm (abbreviated Elliptic Curve elliptic curve method ECM) was discovered … Zayer, A world wide number field sieve record: on to 512 bits, … factoring",
+      "pdf": {
+        "label": "leidenuniv.nl [PDF]",
+        "url": "https://websites.math.leidenuniv.nl/edixhoven/public_html_rennes/cours/brent.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "leidenuniv.nl [PDF]",
+          "url": "https://websites.math.leidenuniv.nl/edixhoven/public_html_rennes/cours/brent.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 32,
+      "title": "of the tenth Fermat number Factorization",
+      "url": "https://www.ams.org/mcom/1999-68-225/S0025-5718-99-00992-8/",
+      "publication_info": "- Mathematics of Computation, 1999 - ams.org R Brent",
+      "snippet": "… [57] uses the multiplicative group of the finite field K. ECM is analogous, but uses a method group G defined on an . … that the is given in Weierstrass normal form … elliptic curve elliptic curve",
+      "pdf": {
+        "label": "uniroma2.it [PDF]",
+        "url": "https://www.mat.uniroma2.it/~geo2/TEN/BrentF10.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "uniroma2.it [PDF]",
+          "url": "https://www.mat.uniroma2.it/~geo2/TEN/BrentF10.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 33,
+      "title": "Primality testing and integer factorisation",
+      "url": "https://openresearch-repository.anu.edu.au/items/2b23b573-dfa6-42f7-87a8-701153705806",
+      "publication_info": "- 1990 - openresearch-repository.anu.edu.au RP Brent",
+      "snippet": "… We give two examples below: Pollard's p ,1 algorithm and Lenstra's . … elliptic curve method RP , \\Some integer algorithms using \", Australian Computer … Brent factorization elliptic curves",
+      "pdf": {
+        "label": "anu.edu.au [PDF]",
+        "url": "https://openresearch-repository.anu.edu.au/bitstreams/81bed94a-1930-4cfd-b46f-8a06ddb131f4/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PDF]",
+          "url": "https://openresearch-repository.anu.edu.au/bitstreams/81bed94a-1930-4cfd-b46f-8a06ddb131f4/download"
+        }
+      ]
+    },
+    {
+      "rank": 34,
+      "title": "CERIAS Tech Report 2006-43 VIA FFTS WITH DIVISION POLYNOMIALS ELLIPTIC CURVE FACTORING METHOD",
+      "url": "https://www.cerias.purdue.edu/assets/pdf/bibtex_archive/bibtex_archive/2006-43.pdf",
+      "publication_info": "Z Li - 2006 - cerias.purdue.edu",
+      "snippet": "… Both Montgomery [16] and [3] proposed to implement this second step. Both Brent methods … the proposed in this thesis differs from Lenstra’s is the … elliptic curve factoring method method",
+      "pdf": {
+        "label": "purdue.edu [PDF]",
+        "url": "https://www.cerias.purdue.edu/assets/pdf/bibtex_archive/bibtex_archive/2006-43.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "purdue.edu [PDF]",
+          "url": "https://www.cerias.purdue.edu/assets/pdf/bibtex_archive/bibtex_archive/2006-43.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 35,
+      "title": "A practical of the algorithm analysis elliptic curve factoring",
+      "url": "https://www.ams.org/mcom/1993-61-203/S0025-5718-1993-1122078-7/",
+      "publication_info": "RD Silverman, SS Wagstaff - Mathematics of computation, 1993 - ams.org",
+      "snippet": "… suggests that this should be lowered by logp for the two-step version. We … Brent's analysis In this paper we discuss how the and quadratic sieve perform for current … elliptic curve method",
+      "pdf": {
+        "label": "archive.org [PDF]",
+        "url": "https://scholar.archive.org/work/atfhvswsffb3rlqxlwr3edqcna/access/wayback/http://www.ams.org/journals/mcom/1993-61-203/S0025-5718-1993-1122078-7/S0025-5718-1993-1122078-7.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "archive.org [PDF]",
+          "url": "https://scholar.archive.org/work/atfhvswsffb3rlqxlwr3edqcna/access/wayback/http://www.ams.org/journals/mcom/1993-61-203/S0025-5718-1993-1122078-7/S0025-5718-1993-1122078-7.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 36,
+      "title": "A rigorous time bound for integers factoring",
+      "url": "https://www.ams.org/jams/1992-05-03/S0894-0347-1992-1137100-0/",
+      "publication_info": "HW Lenstra, - Journal of the American Mathematical Society, 1992 - ams.org C Pomerance",
+      "snippet": "… In §7 we discuss the by which we recognize smooth numbers, which is … method elliptic [24]. Unfortunately we are not able to prove that the … curve factoring method elliptic curve method",
+      "pdf": {
+        "label": "leidenuniv.nl [PDF]",
+        "url": "https://pub.math.leidenuniv.nl/~lenstrahw/PUBLICATIONS/1992c/art.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "leidenuniv.nl [PDF]",
+          "url": "https://pub.math.leidenuniv.nl/~lenstrahw/PUBLICATIONS/1992c/art.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 37,
+      "title": "Modular over number fields and ECM curves",
+      "url": "https://link.springer.com/article/10.1007/s40993-022-00394-x",
+      "publication_info": "F Morain - Research in Number Theory, 2022 - Springer",
+      "snippet": "… The (ECM) is a algorithm which uses … some Elliptic Curve Method factoring factorizations of numbers of the form \\(b^n \\pm 1\\) for \\(12< b < 10^4\\) (from the tables initially created by … Brent",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/hal-03606355/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/hal-03606355/document"
+        }
+      ]
+    },
+    {
+      "rank": 38,
+      "title": "A new lower bound for odd perfect numbers",
+      "url": "https://www.ams.org/mcom/1989-53-187/S0025-5718-1989-0968150-2/",
+      "publication_info": ", GL Cohen - Mathematics of Computation, 1989 - ams.org RP Brent",
+      "snippet": "… of the present paper.) For the many large required in our proof, an methods factorizations … the art in , in which 80-digit numbers are accessible. … elliptic curve method factorization methods",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/116079110/S0025-5718-1989-0968150-2.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/116079110/S0025-5718-1989-0968150-2.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 39,
+      "title": "Integer algorithms factorization",
+      "url": "https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=osu1730465522249482&disposition=inline",
+      "publication_info": "EJ Krebs - 2001 - etd.ohiolink.edu",
+      "snippet": "… , Pollard's p — 1 and p algorithms, the Quadratic Sieve and Lenstra's method Elliptic Curve . … starts with the difference between i and j equal to 2, then increases it … Method Brent's Method",
+      "pdf": {
+        "label": "ohiolink.edu [PDF]",
+        "url": "https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=osu1730465522249482&disposition=inline"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ohiolink.edu [PDF]",
+          "url": "https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=osu1730465522249482&disposition=inline"
+        }
+      ]
+    },
+    {
+      "rank": 40,
+      "title": "An implementation of the integer elliptic curve factorization method",
+      "url": "https://link.springer.com/chapter/10.1007/978-94-017-1108-1_9",
+      "publication_info": ", - Computational algebra and number theory, 1995 - Springer W Bosma AK Lenstra",
+      "snippet": "… second author's implementation of the for the of integers as elliptic curve method factorization it is … 6.1 birthday paradox second phase. Let e, rand r be three positive integers that … Brent's",
+      "pdf": {
+        "label": "epfl.ch [PDF]",
+        "url": "https://infoscience.epfl.ch/bitstreams/5860c511-3766-43a1-8dbc-f67af5b5b77f/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "epfl.ch [PDF]",
+          "url": "https://infoscience.epfl.ch/bitstreams/5860c511-3766-43a1-8dbc-f67af5b5b77f/download"
+        }
+      ]
+    },
+    {
+      "rank": 41,
+      "title": "Experiments on Distributed Parallel Processing for Speeding up Prime in the Factorization Elliptic Curve Method",
+      "url": "https://www.jstage.jst.go.jp/article/ieejeiss1987/122/5/122_5_885/_article/-char/ja/",
+      "publication_info": "H Tsurusawa, S Nakayama, T Futida… - IEEJ Transactions on …, 2002 - jstage.jst.go.jp",
+      "snippet": "… has been greatly concerned with the safety of the security. In order to speed up factorization the prime by using … in the … factorization elliptic curve method factorization elliptic curve method",
+      "pdf": {
+        "label": "jst.go.jp [PDF]",
+        "url": "https://www.jstage.jst.go.jp/article/ieejeiss1987/122/5/122_5_885/_pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "jst.go.jp [PDF]",
+          "url": "https://www.jstage.jst.go.jp/article/ieejeiss1987/122/5/122_5_885/_pdf"
+        }
+      ]
+    },
+    {
+      "rank": 42,
+      "title": "GMP-ECM: yet another implementation of the (or how to find a 40-digit prime factor within 2· 1011 modular multiplications) Elliptic Curve Method",
+      "url": "https://members.loria.fr/PZimmermann/talks/gmpecm.pdf",
+      "publication_info": "P Zimmermann, I Lorraine - Workshop Computational Number …, 1999 - members.loria.fr",
+      "snippet": "… This talk will describe how to combine -Suyama’s improvement and fast polynomial Brent multipoint evaluation into the improved standard continuation of the . … Elliptic Curve Method",
+      "pdf": {
+        "label": "loria.fr [PDF]",
+        "url": "https://members.loria.fr/PZimmermann/talks/gmpecm.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "loria.fr [PDF]",
+          "url": "https://members.loria.fr/PZimmermann/talks/gmpecm.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 43,
+      "title": "with genus 2 Factorization curves",
+      "url": "https://www.ams.org/mcom/2010-79-270/S0025-5718-09-02295-9/",
+      "publication_info": "R Cosset - Mathematics of Computation, 2010 - ams.org",
+      "snippet": "… The (ECM) is one of the best available. It is … elliptic curve method factorization methods Contrary to the -Suyama parametrization for , it is possible here to find a point … Brent elliptic curves",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/0905.2325"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/0905.2325"
+        }
+      ]
+    },
+    {
+      "rank": 44,
+      "title": "of Fermat Numbers Factorization",
+      "url": "https://maths-people.anu.edu.au/~brent/ftp/rpb161t4.ps.gz",
+      "publication_info": "- maths-people.anu.edu.au RP Brent",
+      "snippet": "… , and describes the complete of the tenth Fermat … The 40-digit factor was found factorization by the … ECM uses groups de ned by pseudo-random … elliptic curve method elliptic curves",
+      "pdf": {
+        "label": "anu.edu.au [PS]",
+        "url": "https://maths-people.anu.edu.au/~brent/ftp/rpb161t4.ps.gz"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PS]",
+          "url": "https://maths-people.anu.edu.au/~brent/ftp/rpb161t4.ps.gz"
+        }
+      ]
+    },
+    {
+      "rank": 45,
+      "title": "Computational Number Theory",
+      "url": "https://maths-people.anu.edu.au/~brent/ftp/ICS98wt.ps.gz",
+      "publication_info": "- 1998 - maths-people.anu.edu.au RP Brent",
+      "snippet": "… With numbers of the same size El Gamal is slower than RSA, but because the discrete logarithm problem (especially over ) seems more di cult than , we may … elliptic curves factorization",
+      "pdf": {
+        "label": "anu.edu.au [PS]",
+        "url": "https://maths-people.anu.edu.au/~brent/ftp/ICS98wt.ps.gz"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PS]",
+          "url": "https://maths-people.anu.edu.au/~brent/ftp/ICS98wt.ps.gz"
+        }
+      ]
+    },
+    {
+      "rank": 46,
+      "title": "using a “partially oblivious” function Elliptic curve factorization",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-0348-8295-8_11",
+      "publication_info": "- Cryptography and Computational Number Theory, 2001 - Springer R Peralta",
+      "snippet": "… Let w = (x, y) be a point in an y2 = x3 + ax + b. We will use additive notation elliptic curve for the operation. Let ~ be the cardinality of the modulo P. Provided … elliptic curve elliptic curve",
+      "pdf": null,
+      "cited_by_count": 7,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=14792234429566113551&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:D1eXUNeSSM0J:scholar.google.com/&scioq=%22Brent%22+elliptic+curve+method+factorization&hl=en&as_sdt=0,5",
+      "versions_count": 3,
+      "versions_url": "https://scholar.google.com/scholar?cluster=14792234429566113551&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 47,
+      "title": "Week 13. over Q, application to ECM Elliptic Curves",
+      "url": "https://people.rennes.inria.fr/Aurore.Guillevic/teaching/AU/lectures/lecture13A.pdf",
+      "publication_info": "- 2022 - people.rennes.inria.fr A Guillevic",
+      "snippet": "… Some chosen by the –Suyama parametrization with group order divisible elliptic curves Brent by 12, … Finding suitable for the of . Mathematics of … curves elliptic curve method factorization",
+      "pdf": {
+        "label": "inria.fr [PDF]",
+        "url": "https://people.rennes.inria.fr/Aurore.Guillevic/teaching/AU/lectures/lecture13A.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "inria.fr [PDF]",
+          "url": "https://people.rennes.inria.fr/Aurore.Guillevic/teaching/AU/lectures/lecture13A.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 48,
+      "title": "Challenges in Solving Large Sparse Linear Systems over Finite Fields",
+      "url": "https://maths-people.anu.edu.au/brent/pd/osbornet4.pdf",
+      "publication_info": "- 2005 - maths-people.anu.edu.au RP Brent",
+      "snippet": "… , such as the integer and discrete logarithm problems. The linear … factorization elliptic curve over a finite field, and g to be some point of large order in G. This is the basis of … elliptic curve",
+      "pdf": {
+        "label": "anu.edu.au [PDF]",
+        "url": "https://maths-people.anu.edu.au/brent/pd/osbornet4.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PDF]",
+          "url": "https://maths-people.anu.edu.au/brent/pd/osbornet4.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 49,
+      "title": "Algorithmic processes of the large numbers based on the theory of factorization elliptic curves",
+      "url": "https://eltecs.op.edu.ua/index.php/journal/article/download/163/49",
+      "publication_info": "G Vostrov, I Dermenji - Електротехнічні та комп'ютерні системи, 2018 - eltecs.op.edu.ua",
+      "snippet": "… the composite numbers . Various for solving this problem were described factorization methods and also their comparative characteristics were given. The Lenstra algorithm was … method",
+      "pdf": {
+        "label": "op.edu.ua [PDF]",
+        "url": "https://eltecs.op.edu.ua/index.php/journal/article/download/163/49"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "op.edu.ua [PDF]",
+          "url": "https://eltecs.op.edu.ua/index.php/journal/article/download/163/49"
+        }
+      ]
+    },
+    {
+      "rank": 50,
+      "title": "and primality proving Elliptic curves",
+      "url": "https://www.ams.org/mcom/1993-61-203/S0025-5718-1993-1199989-X/S0025-5718-1993-1199989-X.pdf",
+      "publication_info": "AOL Atkin, - Mathematics of computation, 1993 - ams.org F Morain",
+      "snippet": "… of in a manner similar to that of [57]: This unified approach is well suited for our elliptic curves purpose, which goes from classical over C to … multiply all … elliptic curves curves factorization",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/inria-00075302/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/inria-00075302/document"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

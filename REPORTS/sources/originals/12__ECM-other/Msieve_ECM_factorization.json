@@ -1,0 +1,662 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"Msieve\" \"ECM\" \"factorization\"",
+    "requested_limit": 30,
+    "saved_records": 25,
+    "hl": "en",
+    "created_at_utc": "2026-05-16T14:13:51.359822+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22Msieve%22+%22ECM%22+%22factorization%22&hl=en&start=0",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22Msieve%22+%22ECM%22+%22factorization%22&hl=en&start=10",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 20,
+      "url": "https://scholar.google.com/scholar?q=%22Msieve%22+%22ECM%22+%22factorization%22&hl=en&start=20",
+      "records_found": 5,
+      "diagnostics": {
+        "result_nodes_found": 5,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 30,
+      "url": "https://scholar.google.com/scholar?q=%22Msieve%22+%22ECM%22+%22factorization%22&hl=en&start=30",
+      "records_found": 0,
+      "diagnostics": {
+        "result_nodes_found": 0,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "INTEGER IMPLEMENTATIONS. FACTORIZATION",
+      "url": "https://search.ebscohost.com/login.aspx?direct=true&profile=ehost&scope=site&authtype=crawler&jrnl=09760091&AN=117026867&h=vdjCsE2cHxpJygWLWbpUCFbBobxdGx155lfXBx3YW%2BDkEwo0%2B6iOJFXFNyvlqFZi0QL5NWkZFbuBp0g1TME%2FkQ%3D%3D&crl=c",
+      "publication_info": ", HR Arkian - ICTACT Journal on Communication …, 2016 - search.ebscohost.com R Alimoradi",
+      "snippet": "… digits through the method. Significance … also includes a complete implementation ECM Msieve of the number field sieve algorithm which can be applied in bigger numbers’ . … factorization",
+      "pdf": null,
+      "cited_by_count": 4,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=1181591393466611963&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:-3g8rRzbZRAJ:scholar.google.com/&scioq=%22Msieve%22+%22ECM%22+%22factorization%22&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=1181591393466611963&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Factoring Small to Medium Size Integers: An Experimental Comparison",
+      "url": "https://inria.hal.science/inria-00188645/",
+      "publication_info": "J Milan - 2010 - inria.hal.science",
+      "snippet": "… It is almost cliché to recall that integer is a … On the utilitarian side, the main factorization interest in integer certainly … It should be mentioned that our implementation is … factorization ECM",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/inria-00188645/file/smallint_expcomp_draft_02_1.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/inria-00188645/file/smallint_expcomp_draft_02_1.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Efficiency of RSA key by open-source libraries and distributed system architecture factorization",
+      "url": "https://www.bjmc.lu.lv/fileadmin/user_upload/lu_portal/projekti/bjmc/Contents/5_3_02_Vuicik.pdf",
+      "publication_info": "EJ Vuicik, D Šešok, - Baltic Journal of Modern …, 2017 - bjmc.lu.lv S Ramanauskaitė",
+      "snippet": "… The research cases of large RSA number were … in computer factorization factorization cluster we noticed is lacking efficiency in sieving stage. However, by integrating … Msieve Msieve",
+      "pdf": {
+        "label": "lu.lv [PDF]",
+        "url": "https://www.bjmc.lu.lv/fileadmin/user_upload/lu_portal/projekti/bjmc/Contents/5_3_02_Vuicik.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "lu.lv [PDF]",
+          "url": "https://www.bjmc.lu.lv/fileadmin/user_upload/lu_portal/projekti/bjmc/Contents/5_3_02_Vuicik.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "Abstracts of the CADO workshop on integer factorization",
+      "url": "https://dl.acm.org/doi/abs/10.1145/1610296.1610298",
+      "publication_info": "- ACM Communications in Computer Algebra, 2009 - dl.acm.org E Thomé",
+      "snippet": "… NFS filtering module of , an integer library that has helped … method Msieve factorization ECM and Edwards curves, and show how to construct Edwards curves which are suitable for … ECM",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/1610296.1610298"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/1610296.1610298"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "Smooth Subsum Search A Heuristic for Practical Integer Factorization",
+      "url": "https://www.worldscientific.com/doi/abs/10.1142/S0129054123500296",
+      "publication_info": "M Hittmeir - International Journal of Foundations of Computer …, 2024 - World Scientific",
+      "snippet": "… stay somewhat competitive up to a small input length (see [23]), tools ECM factorization usually use … in Python, which uses similar parameters as v1.52 and is one of the … ECM Msieve",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2301.10529"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2301.10529"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "attack on RSA Factorization",
+      "url": "https://www.researchgate.net/profile/Daniel-Lerch-Hostalot/publication/259475277_Factorization_Attack_to_RSA/links/0c96052c005af7dde0000000/Factorization-Attack-to-RSA.pdf",
+      "publication_info": "- 2007 - researchgate.net DL Hostalot",
+      "snippet": "… have such fast algorithms as the Elliptic Curve Method ( ), the Quadratic Sieve (QS) or ECM … system of with GNFS as we have done with (QS). The author of , … factorization msieve msieve",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Daniel-Lerch-Hostalot/publication/259475277_Factorization_Attack_to_RSA/links/0c96052c005af7dde0000000/Factorization-Attack-to-RSA.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Daniel-Lerch-Hostalot/publication/259475277_Factorization_Attack_to_RSA/links/0c96052c005af7dde0000000/Factorization-Attack-to-RSA.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "Algorithms for integer and discrete logarithms computation factorization",
+      "url": "https://www.lirmm.fr/~bouvier/thesis/Bouvier.thesis.slides.pdf",
+      "publication_info": "C Bouvier - 2015 - lirmm.fr",
+      "snippet": "… So there are some differences between the and discrete logarithm contexts. … factorization § Proposed 31 weight functions and tested them on data coming from actual and … factorization",
+      "pdf": {
+        "label": "lirmm.fr [PDF]",
+        "url": "https://www.lirmm.fr/~bouvier/thesis/Bouvier.thesis.slides.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "lirmm.fr [PDF]",
+          "url": "https://www.lirmm.fr/~bouvier/thesis/Bouvier.thesis.slides.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "Implementing the ECC Brainpool curve generation procedure using open source software",
+      "url": "http://world-comp.org/p2013/SAM9709.pdf",
+      "publication_info": ", - Proceedings of the International …, 2013 - world-comp.org VG Martínez LH Encinas",
+      "snippet": "… utility for integer . It implements multi-threaded NFS, SIQS, and as well as factorization ECM P+… as yafu and, to least extent, , this implies an important reduction of the working time. … Msieve",
+      "pdf": {
+        "label": "world-comp.org [PDF]",
+        "url": "http://world-comp.org/p2013/SAM9709.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "world-comp.org [PDF]",
+          "url": "http://world-comp.org/p2013/SAM9709.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "Odd perfect numbers are greater than 10¹⁵⁰⁰",
+      "url": "https://www.ams.org/mcom/2012-81-279/S0025-5718-2012-02563-4/",
+      "publication_info": ", M Rao - Mathematics of Computation, 2012 - ams.org P Ochem",
+      "snippet": "… in the used techniques, and of efforts. We discuss that in Section 6. … : • factorization GMP- for P-1, P+1 and , • and yafu for MPQS, • combined with GGNFS for … ECM ECM msieve msieve",
+      "pdf": {
+        "label": "lirmm.fr [PDF]",
+        "url": "https://www.lirmm.fr/~ochem/opn/opn.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "lirmm.fr [PDF]",
+          "url": "https://www.lirmm.fr/~ochem/opn/opn.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "Polynomial selection for the number field sieve",
+      "url": "https://maths-people.anu.edu.au/~brent/pd/Bai-thesis.pdf",
+      "publication_info": "白石 - 2011 - maths-people.anu.edu.au",
+      "snippet": "… We also discuss some algorithms for integer and … factorizations by include factorization ECM the complete of … A768 is generated by [78] (followed by optimization … factorization Msieve",
+      "pdf": {
+        "label": "anu.edu.au [PDF]",
+        "url": "https://maths-people.anu.edu.au/~brent/pd/Bai-thesis.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PDF]",
+          "url": "https://maths-people.anu.edu.au/~brent/pd/Bai-thesis.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "High Performance Linux Clusters For Breaking RSA",
+      "url": "https://www.benthamdirect.com/content/books/9781608050772.chapter-3",
+      "publication_info": ", N Ikram, J Zubairi - Applications of Modern High …, 2009 - benthamdirect.com A Mahboob",
+      "snippet": "… Integer is a hard mathematical problem which forms the basis of many public factorization … integer by using implementation of QS. We show screen shot of 8 concurrent … msieve msieve",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:vUP781H9H50J:scholar.google.com/&scioq=%22Msieve%22+%22ECM%22+%22factorization%22&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=11322046516660224957&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "When one vulnerable primitive turns viral: Novel single-trace attacks on ECDSA and RSA",
+      "url": "https://eprint.iacr.org/2020/055",
+      "publication_info": ", - Cryptology ePrint Archive, 2020 - eprint.iacr.org AC Aldaya BB Brumley",
+      "snippet": "… remaining number of candidates without complete , and Ti the remaining number factorization of unsolved trials at stage i. On the cluster, we performed an initial factoring pass (i = 1… ECM",
+      "pdf": {
+        "label": "iacr.org [PDF]",
+        "url": "https://eprint.iacr.org/2020/055.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iacr.org [PDF]",
+          "url": "https://eprint.iacr.org/2020/055.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "Numerical and statistical analysis of aliquot sequences",
+      "url": "https://www.tandfonline.com/doi/abs/10.1080/10586458.2018.1477077",
+      "publication_info": "K Chum, RK Guy, … - Experimental …, 2020 - Taylor & Francis MJ Jacobson, Jr",
+      "snippet": "… Klasson 17] to manage the of sequence terms. Aliqueit uses a combination of factorization packages to factor each term, including GMP- , , Yafu, and GGNFS. … factorization ECM Msieve",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2110.14136"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2110.14136"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "A NOVEL SIEVING ALGORITHM AND ITS APPLICATION TO AN ADAPTATION OF POCKLINGTON'S THEOREM FOR PRIME SEARCH",
+      "url": "https://www.techrxiv.org/doi/full/10.36227/techrxiv.175373801.16133264",
+      "publication_info": "RR Cunillera - Authorea Preprints, 2025 - techrxiv.org",
+      "snippet": "… other sieving algorithms exist, such as [5], most only work with … typically Msieve factorization proceeds as follows: first apply trial factoring, then Pollard’s rho algorithm, followed by , … ECM",
+      "pdf": {
+        "label": "techrxiv.org [PDF]",
+        "url": "https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.175373801.16133264"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "techrxiv.org [PDF]",
+          "url": "https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.175373801.16133264"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "Symbolic Computation and Complexity Analyses for Number Theory and Cryptography",
+      "url": "http://docnum.univ-lorraine.fr/public/DDOC_T_2021_0245_LE_GLUHER.pdf",
+      "publication_info": "A Le Gluher - 2021 - docnum.univ-lorraine.fr",
+      "snippet": "… that allows to address both integer and discrete logarithm computations in finite factorization … input had a size that made integer or discrete logarithm computation feasible, … factorization",
+      "pdf": {
+        "label": "univ-lorraine.fr [PDF]",
+        "url": "http://docnum.univ-lorraine.fr/public/DDOC_T_2021_0245_LE_GLUHER.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "univ-lorraine.fr [PDF]",
+          "url": "http://docnum.univ-lorraine.fr/public/DDOC_T_2021_0245_LE_GLUHER.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "Algorithmes pour la factorisation d'entiers et le calcul de logarithme discret",
+      "url": "https://theses.hal.science/tel-01751648/",
+      "publication_info": "C Bouvier - 2015 - theses.hal.science",
+      "snippet": "Dans cette thèse, nous étudions les problèmes de la factorisation d'entier et de calcul de logarithme discret dans les corps finis. Dans un premier temps, nous nous intéressons à l'…",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://theses.hal.science/tel-01167281/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://theses.hal.science/tel-01167281/document"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "A study of the General Number Field Sieve and a development of a CT2 plug-in using YAFU",
+      "url": "https://research.tue.nl/files/46944529/855108-1.pdf",
+      "publication_info": ", , H de Valence, C Balasoiu… - 2016 - research.tue.nl I Querejeta T Lange",
+      "snippet": "… Dixon’s method relies on Fermat’s method, ie: that … this will be when we have factorization no of n. We can see in … that this was the unique prime , but as we will … factorization factorization",
+      "pdf": {
+        "label": "tue.nl [PDF]",
+        "url": "https://research.tue.nl/files/46944529/855108-1.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "tue.nl [PDF]",
+          "url": "https://research.tue.nl/files/46944529/855108-1.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "title": "Zeit-Experimente zur Faktorisierung: ein Beitrag zur Didaktik der Kryptologie",
+      "url": "https://refubium.fu-berlin.de/handle/fub188/19450",
+      "publication_info": "RH Schulz, H Witten - 2010 - refubium.fu-berlin.de",
+      "snippet": "… Bei CrypTool 2 (CT2) wird zum Faktorisieren eine modifizierte “ ”-Bibliothek verwendet; msieve verwendet unter CT2 hauptsächlich das sogenannte MPQS (Multiple polynomial … Msieve",
+      "pdf": {
+        "label": "fu-berlin.de [PDF]",
+        "url": "https://refubium.fu-berlin.de/bitstream/handle/fub188/19450/Pr-A-10-11.pdf?sequence=1"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "fu-berlin.de [PDF]",
+          "url": "https://refubium.fu-berlin.de/bitstream/handle/fub188/19450/Pr-A-10-11.pdf?sequence=1"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "Algorithmic Number Theory for Cryptography and Cryptanalysis: Primality, Factoring and Discrete Logarithms",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-32166-5_6",
+      "publication_info": "- Introduction to Cryptography with Maple, 2012 - Springer JL Gómez Pardo",
+      "snippet": "… Also, computational number-theoretic problems which are presumed to be hard made their appearance and we mentioned, in particular, the integer problem and the … factorization",
+      "pdf": null,
+      "cited_by_count": 1,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=3663595502706791203&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:I5OO-7K01zIJ:scholar.google.com/&scioq=%22Msieve%22+%22ECM%22+%22factorization%22&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=3663595502706791203&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "de factorización a RSA",
+      "url": "https://www.researchgate.net/profile/Daniel-Lerch-Hostalot/publication/259475095_Ataque_de_Factorizacion_a_RSA/links/00b7d52c005673c68a000000/Ataque-de-Factorizacion-a-RSA.pdf",
+      "publication_info": "- researchgate.net DL Hostalot",
+      "snippet": "… distribuido de factorización con GNFS, al igual que hemos hecho con (QS). Sin msieve embargo, el autor de lo está dotando de soporte para GNFS, y aunque éste se encuentra … msieve",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Daniel-Lerch-Hostalot/publication/259475095_Ataque_de_Factorizacion_a_RSA/links/00b7d52c005673c68a000000/Ataque-de-Factorizacion-a-RSA.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Daniel-Lerch-Hostalot/publication/259475095_Ataque_de_Factorizacion_a_RSA/links/00b7d52c005673c68a000000/Ataque-de-Factorizacion-a-RSA.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "Factorización de números enteros grandes usando General Number Field Sieve en paralelo",
+      "url": "https://repositorio.uniandes.edu.co/bitstreams/c55f7796-72e6-408b-a4d0-b73de3dad282/download",
+      "publication_info": "JC Corena Bossa, IM Rey Salazar - 2006 - repositorio.uniandes.edu.co",
+      "snippet": "… Empezando de abajo hacia arriba, la implementaciόn de tiene a favor que es msieve totalmente auto contenida, por lo cual no necesita ninguna librería adicional para ser compilada y …",
+      "pdf": {
+        "label": "uniandes.edu.co [PDF]",
+        "url": "https://repositorio.uniandes.edu.co/bitstreams/c55f7796-72e6-408b-a4d0-b73de3dad282/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "uniandes.edu.co [PDF]",
+          "url": "https://repositorio.uniandes.edu.co/bitstreams/c55f7796-72e6-408b-a4d0-b73de3dad282/download"
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "title": "Nagyhatékonyságu számıtások: faktorizálás",
+      "url": "https://vmtdk.edu.rs/fex.file:vatai-DOL_pdf/vatai-DOL.pdf",
+      "publication_info": "- 2009 - vmtdk.edu.rs V Emil",
+      "snippet": "… Valószınuleg ma a GGNFS és a nyilvános forrású programok a legnépszerubb és msieve talán a leghatékonyabb kivitelezései a GNFS-nek. Ezek viszont a GNFS szitáját rács szitával …",
+      "pdf": {
+        "label": "vmtdk.edu.rs [PDF]",
+        "url": "https://vmtdk.edu.rs/fex.file:vatai-DOL_pdf/vatai-DOL.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "vmtdk.edu.rs [PDF]",
+          "url": "https://vmtdk.edu.rs/fex.file:vatai-DOL_pdf/vatai-DOL.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "title": "Ataques al RSA mediante curvas elípticas",
+      "url": "https://oa.upm.es/id/eprint/68536",
+      "publication_info": "DJ Abengózar Vilar - 2021 - oa.upm.es",
+      "snippet": "… We primarily focus on the integer problem, where the main security of the RSA factorization rests. We analyze all the different methods indepth and try to explain them in an … factorization",
+      "pdf": {
+        "label": "upm.es [PDF]",
+        "url": "https://oa.upm.es/68536/1/TFG_DIEGO_JOSE_ABENGOZAR_VILAR.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "upm.es [PDF]",
+          "url": "https://oa.upm.es/68536/1/TFG_DIEGO_JOSE_ABENGOZAR_VILAR.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "title": "Théorie algorithmique des nombres et applications à la cryptanalyse de primitives cryptographiques",
+      "url": "https://theses.hal.science/tel-00765982/",
+      "publication_info": "- 2012 - theses.hal.science E Thomé",
+      "snippet": "… inclut des travaux récents sur la sélection polynomiale, en exploitant notamment msieve la présence de cartes graphiques pour accélérer le calcul. Parmi les atouts de …",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://theses.hal.science/tel-00765982/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://theses.hal.science/tel-00765982/document"
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "title": "[CITATION] [C] Gpu integer factorisation with the quadratic sieve",
+      "url": null,
+      "publication_info": "C Archer - 2010 - Citeseer",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": 1,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=11847764210860149134&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:jsnnEse2a6QJ:scholar.google.com/&scioq=%22Msieve%22+%22ECM%22+%22factorization%22&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

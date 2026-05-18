@@ -1,0 +1,97 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"Genetic Algorithms in Search Optimization and Machine Learning\" \"Goldberg\"",
+    "requested_limit": 30,
+    "saved_records": 2,
+    "hl": "en",
+    "created_at_utc": "2026-05-17T14:03:17.508163+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22Genetic+Algorithms+in+Search+Optimization+and+Machine+Learning%22+%22Goldberg%22&hl=en&start=0",
+      "records_found": 2,
+      "diagnostics": {
+        "result_nodes_found": 2,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22Genetic+Algorithms+in+Search+Optimization+and+Machine+Learning%22+%22Goldberg%22&hl=en&start=10",
+      "records_found": 0,
+      "diagnostics": {
+        "result_nodes_found": 0,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "Genetic algorithms in search, optimization and machine learning",
+      "url": "https://cir.nii.ac.jp/crid/1370576118699539492",
+      "publication_info": "G Zames - Inf Tech J, 1981 - cir.nii.ac.jp",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": 131,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=17590223121372558996&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:lDZGXbsGHfQJ:scholar.google.com/&scioq=%22Genetic+Algorithms+in+Search+Optimization+and+Machine+Learning%22+%22Goldberg%22&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": "https://scholar.googleusercontent.com/scholar?q=cache:lDZGXbsGHfQJ:scholar.google.com/+%22Genetic+Algorithms+in+Search+Optimization+and+Machine+Learning%22+%22Goldberg%22&hl=en&as_sdt=0,5",
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "[CITATION] [C] Genetic Algorithms in Search. Optimization and Machine Learning",
+      "url": null,
+      "publication_info": "GD Eo - 1989 - Addison-Wesley, Reading, MA",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": 36,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=12109220989740215856&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:MG4rMFWYDKgJ:scholar.google.com/&scioq=%22Genetic+Algorithms+in+Search+Optimization+and+Machine+Learning%22+%22Goldberg%22&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

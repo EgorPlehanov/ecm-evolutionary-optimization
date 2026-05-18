@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"Random Search for Hyper-Parameter Optimization\" \"Bergstra\" \"Bengio\"",
+    "requested_limit": 30,
+    "saved_records": 1,
+    "hl": "en",
+    "created_at_utc": "2026-05-17T14:26:50.014331+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22Random+Search+for+Hyper-Parameter+Optimization%22+%22Bergstra%22+%22Bengio%22&hl=en&start=0",
+      "records_found": 1,
+      "diagnostics": {
+        "result_nodes_found": 1,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22Random+Search+for+Hyper-Parameter+Optimization%22+%22Bergstra%22+%22Bengio%22&hl=en&start=10",
+      "records_found": 0,
+      "diagnostics": {
+        "result_nodes_found": 0,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "Random search for hyper-parameter optimization.",
+      "url": "http://www.jmlr.org/papers/volume13/bergstra12a/bergstra12a.pdf",
+      "publication_info": ", - Journal of machine learning research, 2012 - jmlr.org J Bergstra Y Bengio",
+      "snippet": "Grid search and manual search are the most widely used strategies for hyper-parameter optimization. This paper shows empirically and theoretically that randomly chosen trials are more efficient for hyper-parameter optimization than trials on a grid. Empirical evidence comes from a comparison with a large previous study that used grid search and manual search to configure neural networks and deep belief networks. Compared with neural networks configured by a pure grid search, we find that random search over the same …",
+      "pdf": {
+        "label": "jmlr.org [PDF]",
+        "url": "http://www.jmlr.org/papers/volume13/bergstra12a/bergstra12a.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "jmlr.org [PDF]",
+          "url": "http://www.jmlr.org/papers/volume13/bergstra12a/bergstra12a.pdf"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

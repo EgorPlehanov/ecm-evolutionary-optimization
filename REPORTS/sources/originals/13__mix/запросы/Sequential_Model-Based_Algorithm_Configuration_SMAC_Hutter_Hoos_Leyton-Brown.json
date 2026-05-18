@@ -1,0 +1,763 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"Sequential Model-Based Algorithm Configuration\" \"SMAC\" \"Hutter\" \"Hoos\" \"Leyton-Brown\"",
+    "requested_limit": 30,
+    "saved_records": 30,
+    "hl": "en",
+    "created_at_utc": "2026-05-17T14:30:12.622562+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22Sequential+Model-Based+Algorithm+Configuration%22+%22SMAC%22+%22Hutter%22+%22Hoos%22+%22Leyton-Brown%22&hl=en&start=0",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22Sequential+Model-Based+Algorithm+Configuration%22+%22SMAC%22+%22Hutter%22+%22Hoos%22+%22Leyton-Brown%22&hl=en&start=10",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 20,
+      "url": "https://scholar.google.com/scholar?q=%22Sequential+Model-Based+Algorithm+Configuration%22+%22SMAC%22+%22Hutter%22+%22Hoos%22+%22Leyton-Brown%22&hl=en&start=20",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "Sequential model-based optimization for general algorithm configuration",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-25566-3_40",
+      "publication_info": ", , - International conference on learning …, 2011 - Springer F Hutter HH Hoos K - Leyton Brown",
+      "snippet": "… - ( ) … MIP solver CPLEX), Sequential Model based Algorithm Configuration SMAC SMAC indeed compared favourably to the … scenarios, defining ROAR and , respectively. Section … SMAC",
+      "pdf": {
+        "label": "uni-freiburg.de [PDF]",
+        "url": "https://aad.informatik.uni-freiburg.de/wp-content/uploads/papers/11-LION5-SMAC-slides.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "uni-freiburg.de [PDF]",
+          "url": "https://aad.informatik.uni-freiburg.de/wp-content/uploads/papers/11-LION5-SMAC-slides.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "An evaluation of sequential model-based optimization for expensive blackbox functions",
+      "url": "https://dl.acm.org/doi/abs/10.1145/2464576.2501592",
+      "publication_info": ", , - Proceedings of the 15th annual …, 2013 - dl.acm.org F Hutter H Hoos K - Leyton Brown",
+      "snippet": "… obtained by applying the - procedure sequential model based algorithm configuration SMAC [7] to … We first describe the general procedure and the particular variant, -BBOB, … SMAC SMAC",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/2464576.2501592"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/2464576.2501592"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Parallel algorithm configuration",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-34413-8_5",
+      "publication_info": ", , - International Conference on …, 2012 - Springer F Hutter HH Hoos K - Leyton Brown",
+      "snippet": "… The parallelized version of we present here (dubbed D- ) is therefore based SMAC SMAC on a different approach, slightly changing the structure of to bypass the chokepoint … SMAC",
+      "pdf": {
+        "label": "academia.edu [HTML]",
+        "url": "https://www.academia.edu/download/42125452/Parallel_Algorithm_Configuration20160205-15510-12f2fry.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [HTML]",
+          "url": "https://www.academia.edu/download/42125452/Parallel_Algorithm_Configuration20160205-15510-12f2fry.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "Mo- : Multiobjective - smac sequential model based algorithm configuration",
+      "url": "https://direct.mit.edu/evco/article-abstract/doi/10.1162/evco_a_00371/128339",
+      "publication_info": "…, , , … - Evolutionary …, 2026 - direct.mit.edu J Bossek H Trautmann HH Hoos",
+      "snippet": "… - , followed by an empirical evaluation of MO- against other configurators on six SMAC SMAC different scenarios, showing state-of-the-art performance of MO- … described by et … SMAC Hutter",
+      "pdf": {
+        "label": "mit.edu [PDF]",
+        "url": "https://direct.mit.edu/evco/article-pdf/doi/10.1162/evco_a_00371/2507559/evco_a_00371.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "mit.edu [PDF]",
+          "url": "https://direct.mit.edu/evco/article-pdf/doi/10.1162/evco_a_00371/2507559/evco_a_00371.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "Warmstarting of model-based algorithm configuration",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/11532",
+      "publication_info": ", - Proceedings of the AAAI conference on artificial …, 2018 - ojs.aaai.org M Lindauer F Hutter",
+      "snippet": "… idea of - is to … reached the PAR10 sequential model based algorithm configuration SMAC performance default that … importance analysis ( , , and - 2014; … SMAC Hutter Hoos Leyton Brown",
+      "pdf": {
+        "label": "aaai.org [PDF]",
+        "url": "https://ojs.aaai.org/index.php/AAAI/article/download/11532/11391"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "aaai.org [PDF]",
+          "url": "https://ojs.aaai.org/index.php/AAAI/article/download/11532/11391"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "Combining - with default-guided probabilistic sampling sequential model based algorithm configuration",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3377929.3389999",
+      "publication_info": ", - Proceedings of the 2020 Genetic and …, 2020 - dl.acm.org M Anastacio HH Hoos",
+      "snippet": "… We compare SMPS to and irace on 16 configuration scenarios for running time … SMAC 1 for one scenario on which SMPS achieves better results than (fig. 1a) and one in … SMAC",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3377929.3389999"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3377929.3389999"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "Understanding the Empirical Hardness of NP-Complete Problems Using machine learning to predict algorithm runtime.",
+      "url": "https://cacm.acm.org/research/understanding-the-empirical-hardness-of-np-complete-problems/",
+      "publication_info": ", , , - cacm.acm.org K - Leyton Brown HH Hoos F Hutter L Xu",
+      "snippet": "… One state-of-the-art method for solving this problem is based on EHMs: - sequential model based ( ) 19 iterates between using an EHM to select promising … algorithm configuration SMAC",
+      "pdf": {
+        "label": "acm.org [HTML]",
+        "url": "https://cacm.acm.org/research/understanding-the-empirical-hardness-of-np-complete-problems/"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [HTML]",
+          "url": "https://cacm.acm.org/research/understanding-the-empirical-hardness-of-np-complete-problems/"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "Smbox: A scalable and efficient method for sequential model-based parameter optimization",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-031-53966-4_12",
+      "publication_info": ", J Woodward - … on Machine Learning, Optimization, and Data …, 2023 - Springer T Salhi",
+      "snippet": "… This new and improved approach developed by [15] is called - Sequential Model based ( ) and has become a popular choice when optimising … Algorithm Configuration SMAC",
+      "pdf": null,
+      "cited_by_count": 3,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=17261337617010494290&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:Uov_sRuXjO8J:scholar.google.com/&scioq=%22Sequential+Model-Based+Algorithm+Configuration%22+%22SMAC%22+%22Hutter%22+%22Hoos%22+%22Leyton-Brown%22&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=17261337617010494290&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "Improving the computational efficiency of stochastic programs using automated algorithm configuration: an application to decentralized energy systems",
+      "url": "https://link.springer.com/article/10.1007/s10479-018-3122-6",
+      "publication_info": "H Schwarz, , , … - Annals of Operations …, 2025 - Springer L Kotthoff H Hoos W Fichtner",
+      "snippet": "… ( - , et al. 2011). There are SMAC Sequential Model based Algorithm Configuration Hutter similar approaches in the literature but they are less general and comprehensive. Avdoulas et al. …",
+      "pdf": {
+        "label": "uwyo.edu [PDF]",
+        "url": "https://www.cs.uwyo.edu/~larsko/papers/schwarz_improving_2019.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "uwyo.edu [PDF]",
+          "url": "https://www.cs.uwyo.edu/~larsko/papers/schwarz_improving_2019.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "OSMAC: a dynamic for data streams SMAC",
+      "url": "https://ieeexplore.ieee.org/abstract/document/11272853/",
+      "publication_info": "É Royer, , - 2025 IEEE 37th International …, 2025 - ieeexplore.ieee.org M Bahri N Georgantas",
+      "snippet": "… learning such as the - ( ) leverage Sequential Model based Algorithm Configuration SMAC model… , HH , and K. - , “Sequential model-based optimization for general … Hutter Hoos Leyton Brown",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/hal-05383821/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/hal-05383821/document"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "Automatic configuration of sequential planning portfolios",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/9640",
+      "publication_info": ", , , - Proceedings of the AAAI …, 2015 - ojs.aaai.org J Seipp S Sievers M Helmert F Hutter",
+      "snippet": "… -search based algorithm configuration method ParamILS ( et al. 2009), which … Hutter - method ( , , and - … sequential model based algorithm configuration SMAC Hutter Hoos Leyton Brown",
+      "pdf": {
+        "label": "aaai.org [PDF]",
+        "url": "https://ojs.aaai.org/index.php/AAAI/article/view/9640/9499"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "aaai.org [PDF]",
+          "url": "https://ojs.aaai.org/index.php/AAAI/article/view/9640/9499"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "Auto-weka: Automated selection and hyper-parameter optimization of classification algorithms",
+      "url": "https://www.academia.edu/download/42125440/Auto-WEKA_Combined_Selection_and_Hyperpa20160205-8584-h17xsy.pdf",
+      "publication_info": "…, , , - CoRR, abs …, 2012 - academia.edu F Hutter HH Hoos K - Leyton Brown",
+      "snippet": "… - ( [6]) models c(λ) directly as p(c | λ). Sequential model based algorithm configuration SMAC … While random forests are not usually treated as probabilistic models, obtains a … SMAC SMAC",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/42125440/Auto-WEKA_Combined_Selection_and_Hyperpa20160205-8584-h17xsy.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/42125440/Auto-WEKA_Combined_Selection_and_Hyperpa20160205-8584-h17xsy.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "[CITATION] [C] Automated tuning of an algorithm for the vehicle routing problem",
+      "url": null,
+      "publication_info": "KH Demkes, , … - 2014 - Masters Thesis MRK Mes JMJ Schutten",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": 1,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=6084306553344424049&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:cfisAJPMb1QJ:scholar.google.com/&scioq=%22Sequential+Model-Based+Algorithm+Configuration%22+%22SMAC%22+%22Hutter%22+%22Hoos%22+%22Leyton-Brown%22&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "Auto-WEKA: Combined selection and hyperparameter optimization of classification algorithms",
+      "url": "https://dl.acm.org/doi/abs/10.1145/2487575.2487629",
+      "publication_info": "…, , , - Proceedings of the 19th …, 2013 - dl.acm.org F Hutter HH Hoos K - Leyton Brown",
+      "snippet": "… Algorithm Configuration ( ) - [ ; 15] SMAC Sequential model based algorithm configuration SMAC … handles conditional parameters by instantiating inactive conditional parameters in λ … SMAC",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/2487575.2487629"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/2487575.2487629"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "Using automated algorithm configuration to improve the optimization of decentralized energy systems modeled as large-scale, two-stage stochastic programs",
+      "url": "https://www.econstor.eu/handle/10419/176750",
+      "publication_info": "H Schwarz, , , , - 2017 - econstor.eu L Kotthoff H Hoos W Fichtner V Bertsch",
+      "snippet": "… an iterative approach, where we run on a small number of instances first and use the SMAC optimized configuration from this step as a starting point for running on the full set of … SMAC",
+      "pdf": {
+        "label": "econstor.eu [PDF]",
+        "url": "https://www.econstor.eu/bitstream/10419/176750/1/kit-iip-wp-24.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "econstor.eu [PDF]",
+          "url": "https://www.econstor.eu/bitstream/10419/176750/1/kit-iip-wp-24.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "A literature survey on offline automatic algorithm configuration",
+      "url": "https://www.mdpi.com/2076-3417/12/13/6316",
+      "publication_info": "Y Eryoldaş, - Applied Sciences, 2022 - mdpi.com A Durmuşoglu",
+      "snippet": "… Online Adaptive Racing (ROAR) method and the - Sequential Model based Algorithm ( ) method. starts with an initial configuration set and evaluates its … Configuration SMAC SMAC",
+      "pdf": {
+        "label": "mdpi.com [HTML]",
+        "url": "https://www.mdpi.com/2076-3417/12/13/6316"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "mdpi.com [HTML]",
+          "url": "https://www.mdpi.com/2076-3417/12/13/6316"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "SynthACticBench: A Capability-Based Synthetic Benchmark for Algorithm Configuration",
+      "url": "https://dl.acm.org/doi/abs/10.1145/3712256.3726330",
+      "publication_info": ", A Lappe, , … - Proceedings of the …, 2025 - dl.acm.org V Margraf M Wever C Benjamins",
+      "snippet": "… Using SynthACticBench, we evaluate two state-of-the-art algorithm configurators, and SMAC irace, examining their complementary capabilities and analyzing their performances across …",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/3712256.3726330"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/3712256.3726330"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "title": "Towards an empirical foundation for assessing bayesian optimization of hyperparameters",
+      "url": "https://www.cs.ubc.ca/~hoos/Publ/EggEtAl13.pdf",
+      "publication_info": "…, , , , - NIPS workshop on …, 2013 - cs.ubc.ca J Bergstra J Snoek H Hoos K - Leyton Brown",
+      "snippet": "… To alleviate this problem, we introduce a library of benchmarks from the prominent application of hyperparameter optimization and use it to compare Spearmint, TPE, and , three … SMAC",
+      "pdf": {
+        "label": "ubc.ca [PDF]",
+        "url": "https://www.cs.ubc.ca/~hoos/Publ/EggEtAl13.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ubc.ca [PDF]",
+          "url": "https://www.cs.ubc.ca/~hoos/Publ/EggEtAl13.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "Efficient benchmarking of hyperparameter optimizers via surrogates",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/9375",
+      "publication_info": "…, , , - Proceedings of the AAAI …, 2015 - ojs.aaai.org F Hutter H Hoos K - Leyton Brown",
+      "snippet": "… the error for some configurations that found in the end. … surrogate benchmarks with SMAC TPE or , as compared to … larger overhead than TPE and due to its MCMC steps… SMAC SMAC",
+      "pdf": {
+        "label": "aaai.org [PDF]",
+        "url": "https://ojs.aaai.org/index.php/AAAI/article/download/9375/9234"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "aaai.org [PDF]",
+          "url": "https://ojs.aaai.org/index.php/AAAI/article/download/9375/9234"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "Autofolio: An automatically configured algorithm selector",
+      "url": "https://www.jair.org/index.php/jair/article/view/10955",
+      "publication_info": ", , , - Journal of Artificial Intelligence …, 2015 - jair.org M Lindauer HH Hoos F Hutter T Schaub",
+      "snippet": "… - method ( et al., 2011; , sequential model based algorithm configuration SMAC Hutter Hutter , & - … m : C × I → R ( , Xu, , & - , 2014). It follows the … Hoos Leyton Brown Hutter Hoos Leyton Brown",
+      "pdf": {
+        "label": "jair.org [PDF]",
+        "url": "https://www.jair.org/index.php/jair/article/download/10955/26096/"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "jair.org [PDF]",
+          "url": "https://www.jair.org/index.php/jair/article/download/10955/26096/"
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "Advances in meta-algorithmic software libraries for distributed automated algorithm configuration",
+      "url": "https://open.library.ubc.ca/soa/cIRcle/collections/ubctheses/24/items/1.0167184",
+      "publication_info": "SEA Ramage - 2015 - open.library.ubc.ca",
+      "snippet": "… , Kevin - and especially my unofficial third supervisor Frank . … Hoos Leyton Brown Hutter In this chapter, we outlined the re-implementation of the algorithm from et al. [… SMAC Hutter",
+      "pdf": {
+        "label": "ubc.ca [PDF]",
+        "url": "https://open.library.ubc.ca/media/download/pdf/24/1.0167184/3"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ubc.ca [PDF]",
+          "url": "https://open.library.ubc.ca/media/download/pdf/24/1.0167184/3"
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "title": "Automated algorithm configuration and parameter tuning",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-3-642-21434-9.pdf#page=49",
+      "publication_info": "- Autonomous search, 2012 - Springer HH Hoos",
+      "snippet": "… at UBC, primarily involving Frank , Kevin - and Kevin Murphy, as well as Hutter Leyton Brown … I gratefully acknowledge valuable comments by Frank , Thomas Stützle and Maverick … Hutter",
+      "pdf": {
+        "label": "liacs.nl [PDF]",
+        "url": "https://ada.liacs.nl/papers/Hoos12b.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "liacs.nl [PDF]",
+          "url": "https://ada.liacs.nl/papers/Hoos12b.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "title": "Surrogate Benchmarks for Hyperparameter Optimization.",
+      "url": "https://repositorio.inesctec.pt/bitstream/123456789/4540/1/P-00G-699.pdf#page=29",
+      "publication_info": "…, , , - MetaSel …, 2014 - repositorio.inesctec.pt F Hutter HH Hoos K - Leyton Brown",
+      "snippet": "… For each of them, we repeated the 10 runs for TPE, and SPEARMINT we previously SMAC conducted on the real benchmarks, but now used surrogate benchmarks based on RFs and …",
+      "pdf": {
+        "label": "inesctec.pt [PDF]",
+        "url": "https://repositorio.inesctec.pt/bitstream/123456789/4540/1/P-00G-699.pdf#page=29"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "inesctec.pt [PDF]",
+          "url": "https://repositorio.inesctec.pt/bitstream/123456789/4540/1/P-00G-699.pdf#page=29"
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "title": "[CITATION] [C] : - SMAC Sequential model based algorithm configuration",
+      "url": null,
+      "publication_info": "F , HH , K - , K Murphy… - 2011 Hutter Hoos Leyton Brown",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": 3,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=16193337175605511708&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:HAYYgF1KuuAJ:scholar.google.com/&scioq=%22Sequential+Model-Based+Algorithm+Configuration%22+%22SMAC%22+%22Hutter%22+%22Hoos%22+%22Leyton-Brown%22&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "title": "and Hyperparameter Optimization in",
+      "url": "https://books.google.com/books?hl=en&lr=&id=zQiZDwAAQBAJ&oi=fnd&pg=PA81&dq=%22Sequential+Model-Based+Algorithm+Configuration%22+%22SMAC%22+%22Hutter%22+%22Hoos%22+%22Leyton-Brown%22&ots=9v42I-7z1g&sig=8yydheqIEpEBfqyRzgJIt2WZww0",
+      "publication_info": "…, , , - Automated Machine …, 2019 - books.google.com HH Hoos F Hutter K - Leyton Brown",
+      "snippet": "… ( ) - ( )[16] supports a variety of SMAC Sequential model based algorithm configuration SMAC … handles conditional parameters by instantiating inactive conditional parameters in a … SMAC",
+      "pdf": {
+        "label": "google.com [HTML]",
+        "url": "https://books.google.com/books?hl=en&lr=&id=zQiZDwAAQBAJ&oi=fnd&pg=PA81&dq=%22Sequential+Model-Based+Algorithm+Configuration%22+%22SMAC%22+%22Hutter%22+%22Hoos%22+%22Leyton-Brown%22&ots=9v42I-7z1g&sig=8yydheqIEpEBfqyRzgJIt2WZww0"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "google.com [HTML]",
+          "url": "https://books.google.com/books?hl=en&lr=&id=zQiZDwAAQBAJ&oi=fnd&pg=PA81&dq=%22Sequential+Model-Based+Algorithm+Configuration%22+%22SMAC%22+%22Hutter%22+%22Hoos%22+%22Leyton-Brown%22&ots=9v42I-7z1g&sig=8yydheqIEpEBfqyRzgJIt2WZww0"
+        }
+      ]
+    },
+    {
+      "rank": 26,
+      "title": "Efficient evolutionary methods for game agent optimisation: Model-based is best",
+      "url": "https://arxiv.org/abs/1901.00723",
+      "publication_info": ", , , , J Woodward… - arXiv preprint arXiv …, 2019 - arxiv.org SM Lucas J Liu I Bravi RD Gaina",
+      "snippet": "… For comparison, we consider one of the most popular hyperparameter optimization algorithms, - ( ), proposed by et al. (… Sequential Model based Algorithm Configuration SMAC Hutter",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/1901.00723"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/1901.00723"
+        }
+      ]
+    },
+    {
+      "rank": 27,
+      "title": "Understanding the empirical hardness of -complete problems NP",
+      "url": "https://dl.acm.org/doi/abs/10.1145/2594413.2594424",
+      "publication_info": ", , , - Communications of the ACM, 2014 - dl.acm.org K - Leyton Brown HH Hoos F Hutter L Xu",
+      "snippet": "… As mentioned earlier, we have also gone beyond quadratic basis function regression to study more than a dozen other statistical modeling techniques, including lasso regression …",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/2594413.2594424"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/2594413.2594424"
+        },
+        {
+          "label": "Full View",
+          "url": "https://scholar.google.com/scholar?output=instlink&q=info:t2S-l50e-jcJ:scholar.google.com/&hl=en&as_sdt=0,5&scillfp=13439890863009811107&oi=lle"
+        }
+      ]
+    },
+    {
+      "rank": 28,
+      "title": "Project Proposal: Model-Based Optimization of Strategy Schedules",
+      "url": "http://aitp-conference.org/2021/slides/FB.pdf",
+      "publication_info": "- 2021 - aitp-conference.org FBM Suda",
+      "snippet": "… iteratively Modify : Replace the incumbent configuration with an incumbent SMAC schedule … Frank , Holger H. , and Kevin - . Sequential model-based … Hutter Hoos Leyton Brown",
+      "pdf": {
+        "label": "aitp-conference.org [PDF]",
+        "url": "http://aitp-conference.org/2021/slides/FB.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "aitp-conference.org [PDF]",
+          "url": "http://aitp-conference.org/2021/slides/FB.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 29,
+      "title": "Solving the station repacking problem",
+      "url": "https://ojs.aaai.org/index.php/AAAI/article/view/10077",
+      "publication_info": ", , - Proceedings of the AAAI …, 2016 - ojs.aaai.org A Fréchette N Newman K - Leyton Brown",
+      "snippet": "… or data structures ( et al. 2014a). We performed configuration using the Hutter Sequential - algorithm, or ( , , and - … Model based Algorithm Configuration SMAC Hutter Hoos Leyton Brown",
+      "pdf": {
+        "label": "aaai.org [PDF]",
+        "url": "https://ojs.aaai.org/index.php/AAAI/article/view/10077/9936"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "aaai.org [PDF]",
+          "url": "https://ojs.aaai.org/index.php/AAAI/article/view/10077/9936"
+        }
+      ]
+    },
+    {
+      "rank": 30,
+      "title": ": Automated Configuration and Performance Analysis of SAT Solvers SpySMAC",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-24318-4_16",
+      "publication_info": ", , - International Conference on Theory and …, 2015 - Springer S Falkner M Lindauer F Hutter",
+      "snippet": "… , consistently achieved the largest speedups in the challenge; therefore, we decided SMAC to use it in our tool. is a - system: it … SMAC sequential model based algorithm configuration",
+      "pdf": {
+        "label": "uni-freiburg.de [PDF]",
+        "url": "https://ml.informatik.uni-freiburg.de/wp-content/uploads/papers/15-SAT-SpySMAC.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "uni-freiburg.de [PDF]",
+          "url": "https://ml.informatik.uni-freiburg.de/wp-content/uploads/papers/15-SAT-SpySMAC.pdf"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

@@ -1,0 +1,680 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "GMP-ECM parameter tuning optimization",
+    "requested_limit": 50,
+    "saved_records": 25,
+    "hl": "en",
+    "created_at_utc": "2026-05-14T15:29:09.381810+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=GMP-ECM+parameter+tuning+optimization&hl=en&start=0",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=GMP-ECM+parameter+tuning+optimization&hl=en&start=10",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 20,
+      "url": "https://scholar.google.com/scholar?q=GMP-ECM+parameter+tuning+optimization&hl=en&start=20",
+      "records_found": 5,
+      "diagnostics": {
+        "result_nodes_found": 5,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 30,
+      "url": "https://scholar.google.com/scholar?q=GMP-ECM+parameter+tuning+optimization&hl=en&start=30",
+      "records_found": 0,
+      "diagnostics": {
+        "result_nodes_found": 0,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "Revisiting ECM on GPUs",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-030-65411-5_15",
+      "publication_info": ", , C Stahlke… - … on Cryptology and …, 2020 - Springer J Wloka J Richter-Brockmann",
+      "snippet": "… We present a highly implementation of Lenstra’s … - Footnote 1 , which optimized GMP ECM features support for computing … ECM We show that currently used for … Parameters parameters",
+      "pdf": {
+        "label": "iacr.org [PDF]",
+        "url": "https://eprint.iacr.org/2020/1265.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iacr.org [PDF]",
+          "url": "https://eprint.iacr.org/2020/1265.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Revisiting ECM on GPUs",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-3-030-65411-5.pdf#page=306",
+      "publication_info": "T Kleinjung, C Priplata, - Cryptology and Network Security …, 2020 - Springer T Güneysu",
+      "snippet": "… We present a highly implementation of Lenstra’s … arbitrarily scaling ECM’s optimized allowing an application even … - 1, which features support for computing the … parameters GMP ECM",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:NeSBMg7lWu8J:scholar.google.com/&scioq=GMP-ECM+parameter+tuning+optimization&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=17247349572108411957&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "20 years of ECM",
+      "url": "https://link.springer.com/chapter/10.1007/11792086_37",
+      "publication_info": "P Zimmermann, - International Algorithmic Number Theory …, 2006 - Springer B Dodson",
+      "snippet": "… the algorithms implemented in the - software. §1 … To generate a sequence close GMP ECM to , a natural idea is to … - uses Dickson polynomials of α = −1 … optimal GMP ECM parameter",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/inria-00070192/file/RR-5834.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/inria-00070192/file/RR-5834.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "A NOVEL SIEVING ALGORITHM AND ITS APPLICATION TO AN ADAPTATION OF POCKLINGTON'S THEOREM FOR PRIME SEARCH",
+      "url": "https://www.techrxiv.org/doi/full/10.36227/techrxiv.175373801.16133264",
+      "publication_info": "RR Cunillera - Authorea Preprints, 2025 - techrxiv.org",
+      "snippet": "… the … - version 7.0.4 [3], configured with GMP 6.2.1. Similar to optimal parameters GMP ECM the Pollard’s rho tests, the program is terminated as soon as a factor is found. The … parameter",
+      "pdf": {
+        "label": "techrxiv.org [PDF]",
+        "url": "https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.175373801.16133264"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "techrxiv.org [PDF]",
+          "url": "https://www.techrxiv.org/doi/pdf/10.36227/techrxiv.175373801.16133264"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "Fast modular arithmetic on the Kalray MPPA-256 processor for an energy-efficient implementation of ECM",
+      "url": "https://ieeexplore.ieee.org/abstract/document/7927487/",
+      "publication_info": ", J Detrey, , A Inomata… - IEEE Transactions on …, 2017 - ieeexplore.ieee.org M Ishii P Gaudry",
+      "snippet": "… We focus here on ECM that are relevant in the … , and most of our parameters optimization efforts concentrated on minimiz… is an adaptation of - targetting specially the sizes con… GMP ECM",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/hal-01299697/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/hal-01299697/document"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "Faster cofactorization with ECM using mixed representations",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-030-45388-6_17",
+      "publication_info": "C Bouvier, - IACR International Conference on Public-Key …, 2020 - Springer L Imbert",
+      "snippet": "… of primes, fast point tripling, double-base decompositions and … This setting is used optimal in - [28], a state-of-the-art … In Table 5, we give the for m, D and T that we … GMP ECM parameters",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://hal.science/hal-01951942/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://hal.science/hal-01951942/document"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "20 Years of ECM",
+      "url": "https://www.academia.edu/download/48201297/years_of_ECM20160820-27933-rv9rca.pdf",
+      "publication_info": "- Lecture Notes in Computer Science, 2006 - academia.edu B Dodson",
+      "snippet": "… the algorithms implemented in the - software. §1 recalls … The value of k then GMP ECM optimal depends on the ratio r/q. Without … - uses Dickson polynomials of α = −1 … GMP ECM parameter",
+      "pdf": {
+        "label": "academia.edu [HTML]",
+        "url": "https://www.academia.edu/download/48201297/years_of_ECM20160820-27933-rv9rca.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [HTML]",
+          "url": "https://www.academia.edu/download/48201297/years_of_ECM20160820-27933-rv9rca.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "Efficient SIMD arithmetic modulo a Mersenne number",
+      "url": "https://ieeexplore.ieee.org/abstract/document/5992129/",
+      "publication_info": ", T Kleinjung, … - 2011 IEEE 20th …, 2011 - ieeexplore.ieee.org JW Bos AK Lenstra",
+      "snippet": "… stage one of - to the SPE, … multiplication obtained using the GMP ECM optimal parameters -up script, and taking advantage of the special Mersenne-arithmetic available in - … tune GMP ECM",
+      "pdf": {
+        "label": "epfl.ch [PDF]",
+        "url": "https://infoscience.epfl.ch/bitstreams/3e37f4c7-cac0-43be-be3f-fd9fe81e94c4/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "epfl.ch [PDF]",
+          "url": "https://infoscience.epfl.ch/bitstreams/3e37f4c7-cac0-43be-be3f-fd9fe81e94c4/download"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "Imperfect forward secrecy: How Diffie-Hellman fails in practice",
+      "url": "https://dl.acm.org/doi/abs/10.1145/2810103.2813707",
+      "publication_info": ", , … - Proceedings of the …, 2015 - dl.acm.org D Adrian K Bhargavan Z Durumeric",
+      "snippet": "… We expect that could bring this cost down by at … We then ran the - optimizations GMP ECM implementations of the Pollard p … to the complexity of and to tradeoffs between … parameter tuning",
+      "pdf": {
+        "label": "acm.org [PDF]",
+        "url": "https://dl.acm.org/doi/pdf/10.1145/2810103.2813707"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "acm.org [PDF]",
+          "url": "https://dl.acm.org/doi/pdf/10.1145/2810103.2813707"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "Number theory algorithms on GPU clusters",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-01520-0_16",
+      "publication_info": ", D Georgiev, N Manev - … Communities: Results of the HP-SEE …, 2014 - Springer E Atanassov",
+      "snippet": "… Starting with a given d1 (input or randomly chosen) … numbers of d parameter parameters equals to the number of threads. … Our parallel implementation of - demonstrated … GMP ECM",
+      "pdf": null,
+      "cited_by_count": 3,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=11672137661778439390&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:3izDm1zD-6EJ:scholar.google.com/&scioq=GMP-ECM+parameter+tuning+optimization&hl=en&as_sdt=0,5",
+      "versions_count": 3,
+      "versions_url": "https://scholar.google.com/scholar?cluster=11672137661778439390&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "Efficient SIMD arithmetic modulo a Mersenne number",
+      "url": "https://www.researchgate.net/profile/Joppe-Bos/publication/220334474_Efficient_SIMD_Arithmetic_Modulo_a_Mersenne_Number/links/5524ef9c0cf2b123c5175ec7/Efficient-SIMD-Arithmetic-Modulo-a-Mersenne-Number.pdf",
+      "publication_info": "EIC LACAL - researchgate.net",
+      "snippet": "… using - 6.3 powered … multiplication obtained using the -up GMP ECM optimal parameters tune script, and while taking advantage of the special Mersenne-arithmetic available in … GMP ECM",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Joppe-Bos/publication/220334474_Efficient_SIMD_Arithmetic_Modulo_a_Mersenne_Number/links/5524ef9c0cf2b123c5175ec7/Efficient-SIMD-Arithmetic-Modulo-a-Mersenne-Number.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Joppe-Bos/publication/220334474_Efficient_SIMD_Arithmetic_Modulo_a_Mersenne_Number/links/5524ef9c0cf2b123c5175ec7/Efficient-SIMD-Arithmetic-Modulo-a-Mersenne-Number.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "[CITATION] [C] Curves, Algebra, Computer Arithmetic, and so On",
+      "url": null,
+      "publication_info": "NG Est - Citeseer",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:fUJu-yhf7LAJ:scholar.google.com/&scioq=GMP-ECM+parameter+tuning+optimization&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=12748669274800669309&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "[CITATION] [C] Cryptology, Arithmetic: Hardware and Software",
+      "url": null,
+      "publication_info": "NG Est - Citeseer",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:HxixIphOfOoJ:scholar.google.com/&scioq=GMP-ECM+parameter+tuning+optimization&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "The billion-mulmod-per-second PC",
+      "url": "https://eecm.cr.yp.to/pc109-20090901.pdf",
+      "publication_info": ", , … - Workshop record of …, 2009 - eecm.cr.yp.to DJ Bernstein HC Chen MS Chen",
+      "snippet": "… For comparison, the standard - software package, … For completeness, we tested GMP ECM and single-thread … on a single curve with a large B1 is not as effective as … optimized parameter",
+      "pdf": {
+        "label": "yp.to [PDF]",
+        "url": "https://eecm.cr.yp.to/pc109-20090901.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "yp.to [PDF]",
+          "url": "https://eecm.cr.yp.to/pc109-20090901.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "Flexible Hardware Design for Elliptic Curve Method of Integer Factorization",
+      "url": "https://search.proquest.com/openview/a76b39176163fdb34cf9c366feb8b007/1?pq-origsite=gscholar&cbl=2026366&diss=y",
+      "publication_info": "- 2023 - search.proquest.com MH Solmaz",
+      "snippet": "… Logic synthesis software are capable to far more complex circuit descriptions. … optimize are m′ and n, number of digits for number representation. If these two … parameters parameters",
+      "pdf": {
+        "label": "metu.edu.tr [PDF]",
+        "url": "https://open.metu.edu.tr/bitstream/handle/11511/105410/phd_thesis_hsolmaz_openmetu.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "metu.edu.tr [PDF]",
+          "url": "https://open.metu.edu.tr/bitstream/handle/11511/105410/phd_thesis_hsolmaz_openmetu.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "A kilobit hidden SNFS discrete logarithm computation",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-56620-7_8",
+      "publication_info": ", , , - … International Conference on the …, 2017 - Springer J Fried P Gaudry N Heninger E Thomé",
+      "snippet": "… In other words, the value is unchanged whether we … Then we used - with optimal GMP ECM 600 curves and \\(B_1=500,000\\… technique and all the involved is not a … optimizing parameters",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/1610.02874"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/1610.02874"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "FFT extension for algebraic-group factorization algorithms",
+      "url": "https://www.academia.edu/download/116079100/document.pdf",
+      "publication_info": "- Cambridge University Press eBooks, 2017 - academia.edu R Brent",
+      "snippet": "… proposes an model that … - , which takes into account the effect of the optimization GMP ECM BrentSuyama extension with powers or Dickson polynomials. The recommended … parameters",
+      "pdf": {
+        "label": "academia.edu [HTML]",
+        "url": "https://www.academia.edu/download/116079100/document.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [HTML]",
+          "url": "https://www.academia.edu/download/116079100/document.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "title": "Generalized Mersenne Numbers in Pairing-Based Cryptography",
+      "url": "https://crysp.uwaterloo.ca/software/gmnt/gmz_mcs_thesis.pdf",
+      "publication_info": "G Zaverucha - 2006 - crysp.uwaterloo.ca",
+      "snippet": "… be constructed with GM are limited, we may be forced to forgo other . parameters optimizations Once the benefits of GM … We will use the implementation from the - project. (The … GMP ECM",
+      "pdf": {
+        "label": "uwaterloo.ca [PDF]",
+        "url": "https://crysp.uwaterloo.ca/software/gmnt/gmz_mcs_thesis.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "uwaterloo.ca [PDF]",
+          "url": "https://crysp.uwaterloo.ca/software/gmnt/gmz_mcs_thesis.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "Integer factorization and discrete logarithm problems",
+      "url": "https://www.numdam.org/item/CCIRM_2014__4_1_A2_0/",
+      "publication_info": "- Les cours du CIRM, 2014 - numdam.org P Gaudry",
+      "snippet": "… implementations exist, most notable - [28, 13]. … can get a perfect balance and GMP ECM the overall cost. By the … In fact, in this paragraph, we will only write the first in … optimize parameter",
+      "pdf": {
+        "label": "numdam.org [PDF]",
+        "url": "https://www.numdam.org/article/CCIRM_2014__4_1_A2_0.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "numdam.org [PDF]",
+          "url": "https://www.numdam.org/article/CCIRM_2014__4_1_A2_0.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "Computation",
+      "url": "https://books.google.com/books?hl=en&lr=&id=zT2jDgAAQBAJ&oi=fnd&pg=PA202&dq=GMP-ECM+parameter+tuning+optimization&ots=JNYZnpxv0T&sig=HHcCMWavny93Yj3sKBrzcII2_dk",
+      "publication_info": "AKHSD Logarithm - … 36th Annual International Conference on the …, 2017 - books.google.com",
+      "snippet": "… Then we used - with 600 curves and B1 = 500 , 000, hoping to remove most of the GMP ECM … Analyzing this technique and all the involved is not a simple task; … optimizing parameters",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:Y4HwMzQDZ_cJ:scholar.google.com/&scioq=GMP-ECM+parameter+tuning+optimization&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "When -th Roots Become Easier Than Factoring e",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-540-76900-2_2",
+      "publication_info": ", , - … Conference on the Theory and Application …, 2007 - Springer A Joux D Naccache E Thomé",
+      "snippet": "… It remains to s. To maximize the smoothness odds … We start by selecting a optimize parameter d and finding a polynomial f … produced was handled by the - program. The descent … gmp ecm",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/inria-00187782/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/inria-00187782/document"
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "title": "Journées Nationales de Calcul Formel",
+      "url": "https://www.numdam.org/item/10.5802/ccirm.21.pdf",
+      "publication_info": "- numdam.org P Gaudry",
+      "snippet": "… implementations exist, most notable - [28, 13]. … can get a perfect balance and GMP ECM the overall cost. By the … In fact, in this paragraph, we will only write the first in … optimize parameter",
+      "pdf": {
+        "label": "numdam.org [PDF]",
+        "url": "https://www.numdam.org/item/10.5802/ccirm.21.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "numdam.org [PDF]",
+          "url": "https://www.numdam.org/item/10.5802/ccirm.21.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "title": "Using Large-Scale Empirical Methods to Understand Fragile Cryptographic Ecosystems",
+      "url": "https://deepblue.lib.umich.edu/items/35556c46-da14-467e-9c7a-76c280262579",
+      "publication_info": "- 2018 - deepblue.lib.umich.edu D Adrian",
+      "snippet": "… Estimating costs for factoring and discrete log—For sieving, we give one important … parameter We introduce to the ZMap network scanner that achieve a 10-fold increase in … optimizations",
+      "pdf": {
+        "label": "umich.edu [PDF]",
+        "url": "https://deepblue.lib.umich.edu/bitstreams/974b5a21-d090-4aa5-9bd2-3ac92ffdb9d4/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "umich.edu [PDF]",
+          "url": "https://deepblue.lib.umich.edu/bitstreams/974b5a21-d090-4aa5-9bd2-3ac92ffdb9d4/download"
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "title": "Measuring And Securing Cryptographic Deployments",
+      "url": "https://search.proquest.com/openview/33b7b8e42d65eb5a2ac49266ec555da2/1?pq-origsite=gscholar&cbl=18750&diss=y",
+      "publication_info": "- 2019 - search.proquest.com L Valenta",
+      "snippet": "… language, performance , algorithm support, and selection. For example, optimizations parameter … with modern computing capabilities, we and parallelized the Cado-NFS imple… optimized",
+      "pdf": {
+        "label": "upenn.edu [PDF]",
+        "url": "https://repository.upenn.edu/bitstreams/e872ed73-fe07-434f-87d2-8189820d1268/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "upenn.edu [PDF]",
+          "url": "https://repository.upenn.edu/bitstreams/e872ed73-fe07-434f-87d2-8189820d1268/download"
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "title": "When e-th Roots Become Easier Than Factoring",
+      "url": "https://books.google.com/books?hl=en&lr=&id=UHCIDH26--kC&oi=fnd&pg=PA13&dq=GMP-ECM+parameter+tuning+optimization&ots=Vadcl5mFMU&sig=bVM7vmHUqoZAxWevMPxjH5RcvcE",
+      "publication_info": "A Joux¹, , - Advances in Cryptology …, 2007 - books.google.com D Naccache E Thomé",
+      "snippet": "… We start by selecting a d and finding a polynomial f of degree d having … The parameter factorization of the numerous sieve residues produced was handled by the - program. … gmp ecm",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:4fmxiAUrBaAJ:scholar.google.com/&scioq=GMP-ECM+parameter+tuning+optimization&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

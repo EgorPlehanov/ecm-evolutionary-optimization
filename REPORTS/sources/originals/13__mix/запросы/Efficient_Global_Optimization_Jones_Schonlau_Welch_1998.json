@@ -1,0 +1,56 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"Efficient Global Optimization\" \"Jones\" \"Schonlau\" \"Welch\" \"1998\"",
+    "requested_limit": 30,
+    "saved_records": 1,
+    "hl": "en",
+    "created_at_utc": "2026-05-17T14:03:46.642691+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22Efficient+Global+Optimization%22+%22Jones%22+%22Schonlau%22+%22Welch%22+%221998%22&hl=en&start=0",
+      "records_found": 1,
+      "diagnostics": {
+        "result_nodes_found": 1,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22Efficient+Global+Optimization%22+%22Jones%22+%22Schonlau%22+%22Welch%22+%221998%22&hl=en&start=10",
+      "records_found": 0,
+      "diagnostics": {
+        "result_nodes_found": 0,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "of expensive black-box functions Efficient global optimization",
+      "url": "https://link.springer.com/article/10.1023/A:1008306431147",
+      "publication_info": ", , - Journal of Global optimization, - Springer DR Jones M Schonlau WJ Welch 1998",
+      "snippet": "In many engineering optimization problems, the number of function evaluations is severely limited by time or cost. These problems pose a special challenge to the field of global optimization, since existing methods often require more function evaluations than can be comfortably afforded. One way to address this challenge is to fit response surfaces to data collected by evaluating the objective and constraint functions at a few points. These surfaces can then be used for visualization, tradeoff analysis, and optimization. In this paper, we …",
+      "pdf": {
+        "label": "ressources-actuarielles.net [PDF]",
+        "url": "http://www.ressources-actuarielles.net/ext/isfa/1226.nsf/9c8e3fd4d8874d60c1257052003eced6/f84f7ac703bf5862c12576d8002f5259/$file/jones98.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ressources-actuarielles.net [PDF]",
+          "url": "http://www.ressources-actuarielles.net/ext/isfa/1226.nsf/9c8e3fd4d8874d60c1257052003eced6/f84f7ac703bf5862c12576d8002f5259/$file/jones98.pdf"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

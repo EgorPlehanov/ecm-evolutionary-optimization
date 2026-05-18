@@ -1,0 +1,368 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"CADO-NFS\" \"ECM\" \"cofactorization\"",
+    "requested_limit": 30,
+    "saved_records": 13,
+    "hl": "en",
+    "created_at_utc": "2026-05-16T14:13:20.087549+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22CADO-NFS%22+%22ECM%22+%22cofactorization%22&hl=en&start=0",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22CADO-NFS%22+%22ECM%22+%22cofactorization%22&hl=en&start=10",
+      "records_found": 3,
+      "diagnostics": {
+        "result_nodes_found": 3,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 20,
+      "url": "https://scholar.google.com/scholar?q=%22CADO-NFS%22+%22ECM%22+%22cofactorization%22&hl=en&start=20",
+      "records_found": 0,
+      "diagnostics": {
+        "result_nodes_found": 0,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "Faster with using mixed representations cofactorization ECM",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-030-45388-6_17",
+      "publication_info": "C Bouvier, - IACR International Conference on Public-Key …, 2020 - Springer L Imbert",
+      "snippet": "… in for these medium-size, yet hard to factor integers is therefore substantial. For example, ECM with - [24], the … Our results are implemented in the - … CADO NFS cofactorization CADO NFS",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://hal.science/hal-01951942/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://hal.science/hal-01951942/document"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "We are on the same side. alternative sieving strategies for the number field sieve",
+      "url": "https://link.springer.com/chapter/10.1007/978-981-99-8730-6_5",
+      "publication_info": ", A Fleury, … - … Conference on the Theory …, 2023 - Springer C Bouillaguet PA Fouque",
+      "snippet": "… factor the remaining part using the algorithm. On the one … 4 we describe the ECM relation collection algorithm of - … In - , the step after sieving is called “ ”. … Cado NFS Cado NFS cofactorization",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/hal-04112671/file/main.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/hal-04112671/file/main.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "Comparing the difficulty of factorization and discrete logarithm: a 240-digit experiment",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-030-56880-1_3",
+      "publication_info": ", , , … - Annual International …, 2020 - Springer F Boudot P Gaudry A Guillevic N Heninger",
+      "snippet": "… Any prime ideal that appears in this “ ” is called … , the machinery implemented cofactorization in - was sufficient. It … ones along the chain of they go through. This strategy, … Cado NFS ECM",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2006.06197"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2006.06197"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "(Non) practicabilité de l'algorithme classique-quantique de factorisation des entiers",
+      "url": "https://hal.science/hal-03483274/",
+      "publication_info": "R Barbulescu - 2021 - hal.science",
+      "snippet": "… L’exemple d’un entier de 70 chiffres décimaux Dans le Tableau 3 nous comparons les résultsts de - si on augmente la proportion d’entiers qui sont envoyés `a la … CADO NFS",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://hal.science/hal-03483274/file/report.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://hal.science/hal-03483274/file/report.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "Lattice enumeration for tower NFS: a 521-bit discrete logarithm computation",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-030-92062-3_3",
+      "publication_info": ", , C Pierrot - … on the Theory and Application of …, 2021 - Springer G De Micheli P Gaudry",
+      "snippet": "… batch and is done sequentially in - . Here we choose not to run as the ECM CADO NFS ECM … In order to easily use - implementation of Schirokauer maps, we propose a rather … CADO NFS",
+      "pdf": {
+        "label": "iacr.org [PDF]",
+        "url": "https://eprint.iacr.org/2021/707.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iacr.org [PDF]",
+          "url": "https://eprint.iacr.org/2021/707.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "Comparing the Difficulty of Factorization and Discrete Logarithm: A 240-Digit",
+      "url": "https://books.google.com/books?hl=en&lr=&id=-CL3DwAAQBAJ&oi=fnd&pg=PA62&dq=%22CADO-NFS%22+%22ECM%22+%22cofactorization%22&ots=py1ZyLhgfc&sig=yuUioJGyF3Wwcsul9nheeY9fUo0",
+      "publication_info": ", … - Advances in Cryptology …, 2020 - books.google.com N Heninger E Thomé",
+      "snippet": "… - uses the notation lim for this upper bound, and … Any prime ideal that appears in Cado NFS this “ ” is called … promising ones along the chain of they go through. This … cofactorization ECM",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:KyQsBYzEBTYJ:scholar.google.com/&scioq=%22CADO-NFS%22+%22ECM%22+%22cofactorization%22&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "Computing Discrete Logarithms in Fp6",
+      "url": "https://books.google.com/books?hl=en&lr=&id=qJ1GDwAAQBAJ&oi=fnd&pg=PA83&dq=%22CADO-NFS%22+%22ECM%22+%22cofactorization%22&ots=IxekgKLcnG&sig=UEujFnjbmgJWfnnw9_hKiMUPf2Q",
+      "publication_info": "L Grémy¹, , F Morain - Selected Areas in Cryptography …, 2018 - books.google.com A Guillevic",
+      "snippet": "… Block Wiedemann implementation from - to find the … threshold bits, a CADO NFS cofactorization process with tries to factor … We increased the threshold on side 1 from … ECM cofactorization",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:DaedsROZkY4J:scholar.google.com/&scioq=%22CADO-NFS%22+%22ECM%22+%22cofactorization%22&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "Lattice Enumeration and Automorphisms for Tower NFS: A 521-Bit Discrete Logarithm Computation",
+      "url": "https://link.springer.com/article/10.1007/s00145-023-09487-x",
+      "publication_info": ", , C Pierrot - Journal of Cryptology, 2024 - Springer G De Micheli P Gaudry",
+      "snippet": "… Sieving algorithms are usually combined with batch algorithms and to provide the ECM most efficient relation collection. We give details on this relation collection step, and give new …",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/hal-04269837/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/hal-04269837/document"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "Implementation of the Elliptic Curve Method",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-031-45933-7_7",
+      "publication_info": "X Li, W Yu, K Wang - International Conference on Science of Cyber …, 2023 - Springer",
+      "snippet": "… Although it is not the fastest universal integer factorization method, can speed up the ECM factorization in Number Field Sieve (NFS), for example, used in the phase … cofactorization",
+      "pdf": null,
+      "cited_by_count": 1,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=13918391735958587756&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:bEmLgooPKMEJ:scholar.google.com/&scioq=%22CADO-NFS%22+%22ECM%22+%22cofactorization%22&hl=en&as_sdt=0,5",
+      "versions_count": 4,
+      "versions_url": "https://scholar.google.com/scholar?cluster=13918391735958587756&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "Sieve algorithms for the discrete logarithm in medium characteristic finite fields",
+      "url": "https://theses.hal.science/tel-01647623/",
+      "publication_info": "L Grémy - 2017 - theses.hal.science",
+      "snippet": "… : initialization of the norms, sieving and . In addition to the line sieve… - cofactorization CADO NFS and the challenges we need to solve to provide an automatic tool, as done by the - .… cado nfs",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://theses.hal.science/tel-01647623/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://theses.hal.science/tel-01647623/document"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "Computing Discrete Logarithms in",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-72565-9_5",
+      "publication_info": "L Grémy, , , - International Conference on …, 2017 - Springer A Guillevic F Morain E Thomé",
+      "snippet": "… Block Wiedemann implementation from - to find the … threshold bits, a CADO NFS cofactorization process with tries to factor … We increased the threshold on side 1 from … ECM cofactorization",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/hal-01624662/file/p6hd.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/hal-01624662/file/p6hd.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "A classification of -friendly families of elliptic curves using modular curves ECM",
+      "url": "https://www.ams.org/mcom/2022-91-335/S0025-5718-2021-03697-2/",
+      "publication_info": "R Barbulescu, S Shinde - Mathematics of Computation, 2022 - ams.org",
+      "snippet": "… In this work, we establish a link between the classification of friendly elliptic … ECM ECM both in the complexity analysis and in practice, eg in the open source implementation - … CADO NFS",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://hal.science/hal-01822144/file/Applications_of_elliptic_curves%20%288%29.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://hal.science/hal-01822144/file/Applications_of_elliptic_curves%20%288%29.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "and the Elliott-Halberstam conjecture for quadratic fields ECM",
+      "url": "https://arxiv.org/abs/2212.11724",
+      "publication_info": "R Barbulescu, F Jouve - arXiv preprint arXiv:2212.11724, 2022 - arxiv.org",
+      "snippet": "… [LLJMP93], where is used as a building block in the step of the relation ECM cofactorization … For example, the record factorizations of RSA moduli obtained with the - software … CADO NFS",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/2212.11724"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/2212.11724"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

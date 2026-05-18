@@ -1,0 +1,1345 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"Lenstra elliptic curve\" factorization 1987",
+    "requested_limit": 50,
+    "saved_records": 50,
+    "hl": "en",
+    "created_at_utc": "2026-05-14T14:41:20.744128+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&start=0",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&start=10",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 20,
+      "url": "https://scholar.google.com/scholar?q=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&start=20",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 30,
+      "url": "https://scholar.google.com/scholar?q=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&start=30",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 40,
+      "url": "https://scholar.google.com/scholar?q=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&start=40",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "Speeding the Pollard and elliptic curve methods of factorization",
+      "url": "https://www.ams.org/mcom/1987-48-177/S0025-5718-1987-0866113-7/",
+      "publication_info": "PL Montgomery - Mathematics of computation, - ams.org 1987",
+      "snippet": "… The Elliptic Curve Method of . method of [15], [16] Factoring Lenstra's elliptic curve factoring notes that although the ring of integers modulo N is not a field, unless N is prime, the same …",
+      "pdf": {
+        "label": "wstein.org [PDF]",
+        "url": "https://www.wstein.org/edu/124/misc/montgomery.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "wstein.org [PDF]",
+          "url": "https://www.wstein.org/edu/124/misc/montgomery.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "Integer using Elliptic Curves Factorization",
+      "url": "https://studenttheses.uu.nl/bitstream/handle/20.500.12932/40063/Bachelor_thesis_Integer_Factorization_using_Elliptic_Curves.pdf",
+      "publication_info": "JJ Lin - 2021 - studenttheses.uu.nl",
+      "snippet": "… algorithm invented in by HW Lenstra, Jr. and published, [1]. Some context factorization 1987 regarding integer … The main topic of this thesis is the algorithm invented in … factorization 1987",
+      "pdf": {
+        "label": "uu.nl [PDF]",
+        "url": "https://studenttheses.uu.nl/bitstream/handle/20.500.12932/40063/Bachelor_thesis_Integer_Factorization_using_Elliptic_Curves.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "uu.nl [PDF]",
+          "url": "https://studenttheses.uu.nl/bitstream/handle/20.500.12932/40063/Bachelor_thesis_Integer_Factorization_using_Elliptic_Curves.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "The Computational Complexity of the Elliptic Curve Algorithm over Real Field Factorization",
+      "url": "https://iopscience.iop.org/article/10.1088/1742-6596/1897/1/012046/meta",
+      "publication_info": "HM Hashim, - Journal of Physics: Conference …, 2021 - iopscience.iop.org RKK Ajeena",
+      "snippet": "… With elliptic curves, factorizing integers was presented by Lenstra in [4]. Lenstra’s method 1987 … factorizing method or elliptic curve method (ECM) [5] … Lenstra's elliptic curve factorization",
+      "pdf": {
+        "label": "iop.org [PDF]",
+        "url": "https://iopscience.iop.org/article/10.1088/1742-6596/1897/1/012046/pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iop.org [PDF]",
+          "url": "https://iopscience.iop.org/article/10.1088/1742-6596/1897/1/012046/pdf"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "The Multi-Primes Lanstra's Elliptic Curve Algorithm Factorization",
+      "url": "https://ieeexplore.ieee.org/abstract/document/9122912/",
+      "publication_info": "SJ Yaqoob, - 2020 6th International Engineering …, 2020 - ieeexplore.ieee.org RKK Ajeena",
+      "snippet": "… N through applying the proposed multiprimes factoring Lenstra's elliptic curve factorization (M… Factorizing the integers with elliptic curves has been proposed by HW Lenstra in [7]. It … 1987",
+      "pdf": null,
+      "cited_by_count": 6,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=17402036114597307107&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:42IXc6VzgPEJ:scholar.google.com/&scioq=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "Elliptic Curves",
+      "url": "https://link.springer.com/chapter/10.1007/978-1-4684-0310-7_6",
+      "publication_info": "- A Course in Number Theory and Cryptography, - Springer N Koblitz 1987",
+      "snippet": "… Before proceeding to algorithm, we give a classical Lenstra's elliptic curve factorization … In each case (a)-(k) find this factor by method, choosing B = 5, … factoring Lenstra's elliptic curve",
+      "pdf": null,
+      "cited_by_count": 2,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=493357899727193364&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:FEVfWGXC2AYJ:scholar.google.com/&scioq=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "Fast, rigorous and discrete logarithm algorithms factorization",
+      "url": "https://www.sciencedirect.com/science/article/pii/B9780123868701500149",
+      "publication_info": "- Discrete algorithms and complexity, - Elsevier C Pomerance 1987",
+      "snippet": "… The algorithm will have expected worst case … In particular, the algorithm factoring factoring is a variant of Dixon's … method is augmented with method and … Lenstra's elliptic curve factoring",
+      "pdf": null,
+      "cited_by_count": 176,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=12338642298385723619&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:4_DjJcypO6sJ:scholar.google.com/&scioq=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&as_sdt=0,5",
+      "versions_count": 3,
+      "versions_url": "https://scholar.google.com/scholar?cluster=12338642298385723619&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "Substantiation of correctness and advantages of Lenstra method on Edwards curves factorization",
+      "url": "http://www.irbis-nbuv.gov.ua/cgi-bin/irbis_nbuv/cgiirbis_64.exe?I21DBN=LINK&P21DBN=UJRN&Z21ID=&S21REF=10&S21CNR=20&S21STN=1&S21FMT=ASP_meta&C21COM=S&2_S21P03=FILA=&2_S21STR=Vejpte_2018_6(4)__2",
+      "publication_info": ", , … - Восточно …, 2018 - irbis-nbuv.gov.ua L Kovalchuk O Bespalov N Kuchynska",
+      "snippet": "… The sub-exponential algorithms include the quadratic sieve algorithm, other sifting algorithms, the Dixon method, the - algorithm. We will note that the … Lenstra elliptic curve factorization",
+      "pdf": {
+        "label": "irbis-nbuv.gov.ua [PDF]",
+        "url": "http://www.irbis-nbuv.gov.ua/cgi-bin/irbis_nbuv/cgiirbis_64.exe?C21COM=2&I21DBN=UJRN&P21DBN=UJRN&IMAGE_FILE_DOWNLOAD=1&Image_file_name=PDF/Vejpte_2018_6(4)__2.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "irbis-nbuv.gov.ua [PDF]",
+          "url": "http://www.irbis-nbuv.gov.ua/cgi-bin/irbis_nbuv/cgiirbis_64.exe?C21COM=2&I21DBN=UJRN&P21DBN=UJRN&IMAGE_FILE_DOWNLOAD=1&Image_file_name=PDF/Vejpte_2018_6(4)__2.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "Cryptanalytic Evaluation of a Modified RSA Scheme Using and Coppersmith's LLL Attack Lenstra's Elliptic Curve Factorization",
+      "url": "https://ieeexplore.ieee.org/abstract/document/11384097/",
+      "publication_info": "MH Wijaya, … - 2025 IEEE 2nd …, 2025 - ieeexplore.ieee.org BH Susanti",
+      "snippet": "… The algorithm aims to find a non-trivial factor of N [16] [22]. This method Lenstra elliptic curve uses elliptic curves and is analogous to Pollard’sp − 1 method [17]. The steps are as follows…",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:BE-7vVYwyTsJ:scholar.google.com/&scioq=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "Integer algorithms factorization",
+      "url": "https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=osu1730465522249482&disposition=inline",
+      "publication_info": "EJ Krebs - 2001 - etd.ohiolink.edu",
+      "snippet": "… that most large integers is quite difficult. This paper will explore both deterministic factoring … 1 and p algorithms, the Quadratic Sieve and Method. In addition, the … Lenstra's Elliptic Curve",
+      "pdf": {
+        "label": "ohiolink.edu [PDF]",
+        "url": "https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=osu1730465522249482&disposition=inline"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ohiolink.edu [PDF]",
+          "url": "https://etd.ohiolink.edu/acprod/odb_etd/ws/send_file/send?accession=osu1730465522249482&disposition=inline"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "PARALLEL ALGORITHMS",
+      "url": "https://books.google.com/books?hl=en&lr=&id=1AXx0v2pvMAC&oi=fnd&pg=PA26&dq=%22Lenstra+elliptic+curve%22+factorization+1987&ots=H_FSV8zCT6&sig=SqahfzNuDP1t7T_6XesMCA8_8K8",
+      "publication_info": "- Number theory and cryptography, 1990 - books.google.com RP Brent",
+      "snippet": "… Both the Pollard\" p -1\" and algorithms can be speeded up by the addition Lenstra elliptic curve of a second phase. The idea of the second phase is to find a factor in the case that the first …",
+      "pdf": {
+        "label": "anu.edu.au [PDF]",
+        "url": "https://maths-people.anu.edu.au/~brent/pd/rpb115.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PDF]",
+          "url": "https://maths-people.anu.edu.au/~brent/pd/rpb115.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "Methods of large integers factoring",
+      "url": "https://link.springer.com/content/pdf/10.1007/BFb0072986.pdf",
+      "publication_info": "SS Wagstaff Jr, JW Smith - Number Theory: A Seminar held at the …, 2006 - Springer",
+      "snippet": "… Section 6 describes algorithm. As a prelude to his method, in Section Lenstra's elliptic curve 5 we discuss briefly Pollard's p - 1 algorithm, which is older but closely related to Lenstra's …",
+      "pdf": {
+        "label": "purdue.edu [PDF]",
+        "url": "https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1503&context=cstech"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "purdue.edu [PDF]",
+          "url": "https://docs.lib.purdue.edu/cgi/viewcontent.cgi?article=1503&context=cstech"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "[CITATION] [C] Fast Methods based on Elliptic Curves over Finite Fields Factorization",
+      "url": null,
+      "publication_info": "YT Kim - The Journal of the Korea institute of …, 2015 - Korea Institute of Electronic …",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:ibIRAFh6fpwJ:scholar.google.com/&scioq=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "L (p)√ 2, where p is the least prime factor of n. In the worst case, p≈√ n",
+      "url": "https://books.google.com/books?hl=en&lr=&id=yyfS7MKQhJUC&oi=fnd&pg=PA27&dq=%22Lenstra+elliptic+curve%22+factorization+1987&ots=ZxHSG5Gkrv&sig=bSAzsVlxSQlQdEnoVvm_3nNQhhc",
+      "publication_info": "- Cryptology and Computational Number Theory, 1990 - books.google.com C POMERANCE",
+      "snippet": "… method (abbreviated ecm) and my quadratic sieve Lenstra's elliptic curve factoring factoring … Most of the algorithms we know can be divided into two camps. The first is known … factoring",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:zxdnMCCbHo4J:scholar.google.com/&scioq=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "Elliptic Curve Arithmetic",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-1-4684-9316-0_7?pdf=chapter%20toc",
+      "publication_info": "R Crandall, - Prime Numbers: A Computational Perspective, 2001 - Springer C Pomerance",
+      "snippet": "… method (ECM) for , whose details are discussed in Section Lenstra's elliptic curve factorization … The equations are stated in the following result of [Montgomery , 1992a]' though we … 1987",
+      "pdf": null,
+      "cited_by_count": 3,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=17178770939536579384&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:OJvhCCdBZ-4J:scholar.google.com/&scioq=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&as_sdt=0,5",
+      "versions_count": 4,
+      "versions_url": "https://scholar.google.com/scholar?cluster=17178770939536579384&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "On the oracle complexity of integers factoring",
+      "url": "https://link.springer.com/article/10.1007/BF01206320",
+      "publication_info": "- Computational Complexity, 1995 - Springer UM Maurer",
+      "snippet": "… There exist various special-purpose algorithms for integers of a special form. factoring algorithm (Lenstra ) finds small factors efficiently. The largest … Lenstra's elliptic curve factoring 1987",
+      "pdf": {
+        "label": "ethz.ch [PS]",
+        "url": "https://crypto.ethz.ch/publications/files/Maurer96.ps"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ethz.ch [PS]",
+          "url": "https://crypto.ethz.ch/publications/files/Maurer96.ps"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "Condition on composite numbers easily factored with elliptic curve method",
+      "url": "https://eprint.iacr.org/2017/403",
+      "publication_info": "M Shirase - Cryptology ePrint Archive, 2017 - eprint.iacr.org",
+      "snippet": "… Prime experiments are hence important to decide the key … factorization factorization methods [4] include the number field sieve (NFS), the quadratic sieve (QS), … Lenstra elliptic curve",
+      "pdf": {
+        "label": "iacr.org [PDF]",
+        "url": "https://eprint.iacr.org/2017/403.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iacr.org [PDF]",
+          "url": "https://eprint.iacr.org/2017/403.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "Elliptic curve public key cryptosystems",
+      "url": "https://books.google.com/books?hl=en&lr=&id=bIb54ShKS68C&oi=fnd&pg=PR9&dq=%22Lenstra+elliptic+curve%22+factorization+1987&ots=_kr2wJ_w0X&sig=F9II9Zv8bXn6H3cFl5pffLIirUw",
+      "publication_info": "- 1993 - books.google.com AJ Menezes",
+      "snippet": "… We say that the security of RSA is based on the problem. A great deal of progress factoring … , which was a key ingredient in algorithm for integers [80]. … Lenstra's elliptic curve factoring",
+      "pdf": {
+        "label": "kaist.ac.kr [PDF]",
+        "url": "https://caislab.kaist.ac.kr/lecture/2010/spring/cs548/ECC-by-kkj.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "kaist.ac.kr [PDF]",
+          "url": "https://caislab.kaist.ac.kr/lecture/2010/spring/cs548/ECC-by-kkj.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "title": "Computational aspects of number theory",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-3-642-56478-9_13?pdf=chapter%20toc",
+      "publication_info": "H Cohen - Mathematics unlimited—2001 and beyond, 2001 - Springer",
+      "snippet": "… Another important method which shares this property is method (ECM). Lenstra's elliptic curve Contrary to Pollard rho, whose expected running time is 0 (p 112), the ECM method has a …",
+      "pdf": null,
+      "cited_by_count": 4,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=1634940378029484662&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:dupjjZx5sBYJ:scholar.google.com/&scioq=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&as_sdt=0,5",
+      "versions_count": 5,
+      "versions_url": "https://scholar.google.com/scholar?cluster=1634940378029484662&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "Some parallel algorithms for integer factorisation",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-48311-x_1",
+      "publication_info": "- European Conference on Parallel Processing, 1999 - Springer RP Brent",
+      "snippet": "… The reader interested in quantum computers could start by reading [71, ]. … Both the Pollard 87 “p−1” and algorithms can be speeded up by the addition of a second … Lenstra elliptic curve",
+      "pdf": {
+        "label": "anu.edu.au [PS]",
+        "url": "https://maths-people.anu.edu.au/brent/ftp/rpb193.ps.gz"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PS]",
+          "url": "https://maths-people.anu.edu.au/brent/ftp/rpb193.ps.gz"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "The improvement of elliptic curve method to recover rsa's prime factors factorization",
+      "url": "https://www.mdpi.com/2073-8994/13/8/1314",
+      "publication_info": "- Symmetry, 2021 - mdpi.com K Somsuk",
+      "snippet": "… General-purpose is a class of algorithms whose performance is … The Factoring factorization first algorithm is - or Elliptic-curve Method (ECM… Lenstra elliptic curve factorization Factorization",
+      "pdf": {
+        "label": "mdpi.com [HTML]",
+        "url": "https://www.mdpi.com/2073-8994/13/8/1314"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "mdpi.com [HTML]",
+          "url": "https://www.mdpi.com/2073-8994/13/8/1314"
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "A pseudo-random bit generator based on elliptic logarithms",
+      "url": "https://link.springer.com/chapter/10.1007/3-540-47721-7_7",
+      "publication_info": "- Conference on the Theory and Application of …, 1986 - Springer BS Kaliski Jr",
+      "snippet": "… z, given the complete of N, the order of G; then we analyze a similar algorithm factorization in the case when only partial is known-the small factors determined in section … factorization",
+      "pdf": null,
+      "cited_by_count": 166,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=2285550927478140561&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:kS5mjHXotx8J:scholar.google.com/&scioq=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&as_sdt=0,5",
+      "versions_count": 8,
+      "versions_url": "https://scholar.google.com/scholar?cluster=2285550927478140561&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "title": "Security Analysis of Modified ESRKGS-RSA Using Method Lenstra's Elliptic Curve",
+      "url": "https://www.researchgate.net/profile/Bety-Susanti/publication/394461101_Security_Analysis_of_Modified_ESRKGS-RSA_Using_Lenstra's_Elliptic_Curve_Method/links/689c392dfc368579b82f98ea/Security-Analysis-of-Modified-ESRKGS-RSA-Using-Lenstras-Elliptic-Curve-Method.pdf",
+      "publication_info": ", ASL Sumule… - … : Jurnal Matematika Murni …, 2025 - researchgate.net BH Susanti",
+      "snippet": "… is introduced, employing the algorithm to N. Together, these Lenstra elliptic curve factorize ap… mathematician Hendrik Lenstra in , is a method designed to decompose … 1987 factorization",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Bety-Susanti/publication/394461101_Security_Analysis_of_Modified_ESRKGS-RSA_Using_Lenstra's_Elliptic_Curve_Method/links/689c392dfc368579b82f98ea/Security-Analysis-of-Modified-ESRKGS-RSA-Using-Lenstras-Elliptic-Curve-Method.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Bety-Susanti/publication/394461101_Security_Analysis_of_Modified_ESRKGS-RSA_Using_Lenstra's_Elliptic_Curve_Method/links/689c392dfc368579b82f98ea/Security-Analysis-of-Modified-ESRKGS-RSA-Using-Lenstras-Elliptic-Curve-Method.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "title": "COMPARATIVE ANALYSIS OF EXPONENTIAL AND SUB-EXPONENTIAL INTEGER ALGORITHMS FACTORIZATION",
+      "url": "https://stem.kiut.uz/index.php/journal/article/download/155/92",
+      "publication_info": "AB Fayziyevich - Центрально азиатский журнал STEM, 2025 - stem.kiut.uz",
+      "snippet": "… The analysis presented throughout this paper highlights how integer has factorization gradually evolved from simple, intuitive methods to highly sophisticated algorithms capable of …",
+      "pdf": {
+        "label": "kiut.uz [PDF]",
+        "url": "https://stem.kiut.uz/index.php/journal/article/download/155/92"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "kiut.uz [PDF]",
+          "url": "https://stem.kiut.uz/index.php/journal/article/download/155/92"
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "title": "Efficient approach of finding curve order",
+      "url": "http://20.198.91.3:8080/jspui/bitstream/123456789/1971/1/M.%20E.%20%28Information%20Technology%29%20Zeeshan%20Mehboob.pdf",
+      "publication_info": "Z Mehboob - 2019 - 20.198.91.3",
+      "snippet": "… Montgomery in . A Montgomery curve equation over a finite field F is … 1987 factorization algorithms that have applications in cryptography, such as . … Lenstra elliptic curve factorization",
+      "pdf": {
+        "label": "20.198.91.3 [PDF]",
+        "url": "http://20.198.91.3:8080/jspui/bitstream/123456789/1971/1/M.%20E.%20%28Information%20Technology%29%20Zeeshan%20Mehboob.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "20.198.91.3 [PDF]",
+          "url": "http://20.198.91.3:8080/jspui/bitstream/123456789/1971/1/M.%20E.%20%28Information%20Technology%29%20Zeeshan%20Mehboob.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "title": "Reconfigurable Hardware Implementation of the Lenstra Algorithm Factorization",
+      "url": "https://ieeexplore.ieee.org/abstract/document/4018024/",
+      "publication_info": "… - … on Electrical and …, 2006 - ieeexplore.ieee.org S Zapotecas-Martinez",
+      "snippet": "… In the following we explain the design and implementation of the … of Lenstra elliptic curve MHz while occupying a total of 6868 slices. The elliptic curve algorithm has as … 87 factorization",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Cuauhtemoc-Mancillas-Lopez/publication/241147660_Reconfigurable_Hardware_Implementation_of_the_Lenstra_Factorization_Algorithm/links/0f317537c52a814b25000000/Reconfigurable-Hardware-Implementation-of-the-Lenstra-Factorization-Algorithm.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Cuauhtemoc-Mancillas-Lopez/publication/241147660_Reconfigurable_Hardware_Implementation_of_the_Lenstra_Factorization_Algorithm/links/0f317537c52a814b25000000/Reconfigurable-Hardware-Implementation-of-the-Lenstra-Factorization-Algorithm.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 26,
+      "title": "Elliptic Curves",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-1-4419-8592-7_6?pdf=chapter%20toc",
+      "publication_info": "- A Course in Number Theory and Cryptography, 1994 - Springer N Koblitz",
+      "snippet": "… of cryptosystems based on the assumed intractability of (its time estimate has the factoring same … to algorithm, we give a classical technique … Lenstra's elliptic curve factorization factoring",
+      "pdf": null,
+      "cited_by_count": 2,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=13383268966099321305&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:2QHckTfsurkJ:scholar.google.com/&scioq=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&as_sdt=0,5",
+      "versions_count": 3,
+      "versions_url": "https://scholar.google.com/scholar?cluster=13383268966099321305&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 27,
+      "title": "Elliptic curve using a “partially oblivious” function factorization",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-0348-8295-8_11",
+      "publication_info": "- Cryptography and Computational Number Theory, 2001 - Springer R Peralta",
+      "snippet": "Let N = P · R where P is a prime not dividing R. We show how a special class of functions f : Z N → Z can be used to help obtain P given N. The requirements of f are that it be non-trivial …",
+      "pdf": null,
+      "cited_by_count": 7,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=14792234429566113551&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:D1eXUNeSSM0J:scholar.google.com/&scioq=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&as_sdt=0,5",
+      "versions_count": 3,
+      "versions_url": "https://scholar.google.com/scholar?cluster=14792234429566113551&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 28,
+      "title": "Factor: an integer program for the IBM PC factorization",
+      "url": "https://openresearch-repository.anu.edu.au/items/fecd3570-e379-494e-8bcf-7be26d34f664",
+      "publication_info": "- 1994 - openresearch-repository.anu.edu.au RP Brent",
+      "snippet": "… many of an ,1 for a = 13;19;31;127. Some of the required for a factorizations factorizations 30… ], but the majority were computed using Method (ECM) and in some … Lenstra's Elliptic Curve",
+      "pdf": {
+        "label": "anu.edu.au [PDF]",
+        "url": "https://openresearch-repository.anu.edu.au/bitstreams/91e8fbe2-0fde-443b-908a-0dba2ffa24d7/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PDF]",
+          "url": "https://openresearch-repository.anu.edu.au/bitstreams/91e8fbe2-0fde-443b-908a-0dba2ffa24d7/download"
+        }
+      ]
+    },
+    {
+      "rank": 29,
+      "title": "of Fermat Numbers Factorization",
+      "url": "https://maths-people.anu.edu.au/~brent/ftp/rpb161t4.ps.gz",
+      "publication_info": "- maths-people.anu.edu.au RP Brent",
+      "snippet": "… The \\rho\" method is now largely superseded by method (ECM), of … Lenstra's elliptic curve If our of F10 had been performed entirely on the VP2200, it would have taken … factorization",
+      "pdf": {
+        "label": "anu.edu.au [PS]",
+        "url": "https://maths-people.anu.edu.au/~brent/ftp/rpb161t4.ps.gz"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PS]",
+          "url": "https://maths-people.anu.edu.au/~brent/ftp/rpb161t4.ps.gz"
+        }
+      ]
+    },
+    {
+      "rank": 30,
+      "title": "Novel elliptic curve scalar multiplication algorithms for faster and safer public-key cryptosystems",
+      "url": "https://www.academia.edu/download/38055006/11.pdf",
+      "publication_info": "VS Iyengar - International Journal on Cryptography and Information …, 2012 - academia.edu",
+      "snippet": "… scalar multiplication has applications towards both elliptic curve cryptosystems (ECC) as well testing the security of RSA methods using the method [8]. … Lenstra elliptic curve factorization",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/38055006/11.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/38055006/11.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 31,
+      "title": "Integer Factorization",
+      "url": "https://maths-people.anu.edu.au/~brent/ftp/rpb150.ps.gz",
+      "publication_info": "- Grand Challenges in Supercomputing at the …, 1994 - maths-people.anu.edu.au RP Brent",
+      "snippet": "… di culty of the product of two large primes. This is a practical motivation for the current factoring interest in integer … algorithm 8], which under plausible … factorisation Lenstra's Elliptic Curve",
+      "pdf": {
+        "label": "anu.edu.au [PS]",
+        "url": "https://maths-people.anu.edu.au/~brent/ftp/rpb150.ps.gz"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PS]",
+          "url": "https://maths-people.anu.edu.au/~brent/ftp/rpb150.ps.gz"
+        }
+      ]
+    },
+    {
+      "rank": 32,
+      "title": "The Improvement of Elliptic Curve Method to Recover RSA's Prime Factors. Symmetry 2021, 13, 1314 Factorization",
+      "url": "https://pdfs.semanticscholar.org/d0fe/d230913f14929fbc7ddd33661c033811e0a5.pdf",
+      "publication_info": "- 2021 - pdfs.semanticscholar.org K Somsuk",
+      "snippet": "… General-purpose is a class of algorithms whose performance is … Factoring factorization as below: The first algorithm is - or Elliptic-curve Factorization … Lenstra elliptic curve factorization",
+      "pdf": {
+        "label": "semanticscholar.org [PDF]",
+        "url": "https://pdfs.semanticscholar.org/d0fe/d230913f14929fbc7ddd33661c033811e0a5.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "semanticscholar.org [PDF]",
+          "url": "https://pdfs.semanticscholar.org/d0fe/d230913f14929fbc7ddd33661c033811e0a5.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 33,
+      "title": "Lenstra's Algorithm Factorization",
+      "url": "https://open.icm.edu.pl/server/api/core/bitstreams/3a2062c3-0549-4bf3-b238-1728dbfbbf56/content",
+      "publication_info": "- 2017 - open.icm.edu.pl W Maleszewski",
+      "snippet": "This poster describes Lenstras Elliptic Curve Algorithm for large numbers. The authors factoring starts from the definition of elliptic curves over fields of characteristic different than 2 or 3. …",
+      "pdf": {
+        "label": "icm.edu.pl [PDF]",
+        "url": "https://open.icm.edu.pl/server/api/core/bitstreams/3a2062c3-0549-4bf3-b238-1728dbfbbf56/content"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "icm.edu.pl [PDF]",
+          "url": "https://open.icm.edu.pl/server/api/core/bitstreams/3a2062c3-0549-4bf3-b238-1728dbfbbf56/content"
+        }
+      ]
+    },
+    {
+      "rank": 34,
+      "title": "[CITATION] [C] On problems of cryptography: Primality testing and integers factoring",
+      "url": null,
+      "publication_info": "S Pope - ProQuest Dissertations and Theses, 2001",
+      "snippet": "",
+      "pdf": {
+        "label": "bac-lac.gc.ca [PDF]",
+        "url": "https://central.bac-lac.gc.ca/.item?id=MQ55945&op=pdf&app=Library&oclc_number=1006985104"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "bac-lac.gc.ca [PDF]",
+          "url": "https://central.bac-lac.gc.ca/.item?id=MQ55945&op=pdf&app=Library&oclc_number=1006985104"
+        }
+      ]
+    },
+    {
+      "rank": 35,
+      "title": "[CITATION] [C] Efficient and secure elliptic curves",
+      "url": null,
+      "publication_info": "D Davies-Batista - 2021",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:CgmBYUfp7MQJ:scholar.google.com/&scioq=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=14189973018725386506&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 36,
+      "title": "RATIONAL POINTS ON ELLIPTIC CURVES",
+      "url": "https://www.academia.edu/download/34704307/Rational_Points_on_Elliptic_Curves.pdf",
+      "publication_info": "D SPENCER - academia.edu",
+      "snippet": "… among others, called . There are … We leave most of the Lenstra elliptic curve factorisation proof to Silverman and Tate [1] pages 86- . … The following lemma, which is given on page of … 87 87",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/34704307/Rational_Points_on_Elliptic_Curves.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/34704307/Rational_Points_on_Elliptic_Curves.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 37,
+      "title": "of large integers on some vector and parallel computers Factorization",
+      "url": "https://openresearch-repository.anu.edu.au/items/65f7b79c-6b59-4c96-a50d-3e6f88c5136f",
+      "publication_info": ", - 1995 - openresearch-repository.anu.edu.au C Eldershaw RP Brent",
+      "snippet": "… This class includes \\ method\" (ECM) [11] and Pollard's \\rho\" method Lenstra's elliptic curve [13], which are considered in this paper. We have implemented variants of ECM and Pollard \\…",
+      "pdf": {
+        "label": "anu.edu.au [PDF]",
+        "url": "https://openresearch-repository.anu.edu.au/bitstreams/d24545be-f897-4446-a1ed-f448b0ce25c7/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PDF]",
+          "url": "https://openresearch-repository.anu.edu.au/bitstreams/d24545be-f897-4446-a1ed-f448b0ce25c7/download"
+        }
+      ]
+    },
+    {
+      "rank": 38,
+      "title": "Primality testing and integer factorisation",
+      "url": "https://openresearch-repository.anu.edu.au/items/2b23b573-dfa6-42f7-87a8-701153705806",
+      "publication_info": "- 1990 - openresearch-repository.anu.edu.au RP Brent",
+      "snippet": "… examples below: Pollard's p ,1 algorithm and method. … 4.5 Lenstra's elliptic curve Lenstra's algorithm … This is the motivation for HW algorithm (usually … elliptic curve Lenstra's elliptic curve",
+      "pdf": {
+        "label": "anu.edu.au [PDF]",
+        "url": "https://openresearch-repository.anu.edu.au/bitstreams/81bed94a-1930-4cfd-b46f-8a06ddb131f4/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PDF]",
+          "url": "https://openresearch-repository.anu.edu.au/bitstreams/81bed94a-1930-4cfd-b46f-8a06ddb131f4/download"
+        }
+      ]
+    },
+    {
+      "rank": 39,
+      "title": "with the quadratic sieve on large vector computers Factoring",
+      "url": "https://www.sciencedirect.com/science/article/pii/B9780444886217500189",
+      "publication_info": "H Te Riele, , D Winter - Advances in Parallel Computing, 1990 - Elsevier W Lioen",
+      "snippet": "… method (ECM), described in [13]. Improvements were proposed by Lenstra's elliptic curve Montgomery [15] and Brent [2], and impressive … ., of 77, and 92 decimal digits. … factorizations 87",
+      "pdf": {
+        "label": "sciencedirect.com [PDF]",
+        "url": "https://www.sciencedirect.com/science/article/pii/0377042789903701/pdf?md5=07f2cb12a66f9ba69bfb02b9cc48e5a7&pid=1-s2.0-0377042789903701-main.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "sciencedirect.com [PDF]",
+          "url": "https://www.sciencedirect.com/science/article/pii/0377042789903701/pdf?md5=07f2cb12a66f9ba69bfb02b9cc48e5a7&pid=1-s2.0-0377042789903701-main.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 40,
+      "title": "FFT extension for algebraic-group algorithms factorization",
+      "url": "https://www.academia.edu/download/116079100/document.pdf",
+      "publication_info": "- Cambridge University Press eBooks, 2017 - academia.edu R Brent",
+      "snippet": "This paper describes three contributions for efficient implementation of elliptic curve cryptosystems in GF (2 n). The first is a new method for doubling an elliptic curve point, which is …",
+      "pdf": {
+        "label": "academia.edu [HTML]",
+        "url": "https://www.academia.edu/download/116079100/document.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [HTML]",
+          "url": "https://www.academia.edu/download/116079100/document.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 41,
+      "title": "Vector and parallel algorithms for integer factorisation",
+      "url": "https://openresearch-repository.anu.edu.au/items/c2fb441f-486e-47bd-8f67-d2cbfbee60a4",
+      "publication_info": "- 1990 - openresearch-repository.anu.edu.au RP Brent",
+      "snippet": "… algorithm If we can choose a \\random\" group G with order g close to Lenstra's elliptic curve p, … This is the motivation for HW algorithm (usually denoted \\ECM\"). A … Lenstra's elliptic curve",
+      "pdf": {
+        "label": "anu.edu.au [PDF]",
+        "url": "https://openresearch-repository.anu.edu.au/bitstreams/a426b3ee-be8f-44a0-98d5-791fbe652930/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "anu.edu.au [PDF]",
+          "url": "https://openresearch-repository.anu.edu.au/bitstreams/a426b3ee-be8f-44a0-98d5-791fbe652930/download"
+        }
+      ]
+    },
+    {
+      "rank": 42,
+      "title": "Application of elliptic curve method in cryptography: a literature review",
+      "url": "https://www.academia.edu/download/64091123/Application%20of%20EC.pdf",
+      "publication_info": ", S Karmakar, … - International Journal of …, 2012 - academia.edu S Gajbhiye M Sharma",
+      "snippet": "… , Pollard's rho algorithm, Algebraic-group algorithms(among which are … , and factorisation ) , Fermat's method, Euler's method, … Lenstra elliptic curve factorization factorization factorization",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/64091123/Application%20of%20EC.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/64091123/Application%20of%20EC.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 43,
+      "title": "Using Lucas sequences to factor large integers near group orders",
+      "url": "https://www.tandfonline.com/doi/pdf/10.1080/00150517.2001.12428726",
+      "publication_info": "Z Zhang - The Fibonacci Quarterly, 2001 - Taylor & Francis",
+      "snippet": "… Moreover, it is easy to see that the \"factoring large integers near group orders\" idea can be used to Method [5] to enhance the ability of ECM for more … Lenstra's Elliptic Curve factoring",
+      "pdf": {
+        "label": "dal.ca [PDF]",
+        "url": "https://www.mathstat.dal.ca/FQ/Scanned/39-3/zhang.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "dal.ca [PDF]",
+          "url": "https://www.mathstat.dal.ca/FQ/Scanned/39-3/zhang.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 44,
+      "title": "Integer and RSA Factorization",
+      "url": "https://hadipourh.github.io/course-cryptanalysis/Slides/Main/RSA.pdf",
+      "publication_info": "M Eichlseder - hadipourh.github.io",
+      "snippet": "… polynomial quadratic sieve 3 … And what the heck does Lenstra elliptic curve factorization this have to do with ? … How are the relations combined to get a of N? … factorization factorization",
+      "pdf": {
+        "label": "github.io [PDF]",
+        "url": "https://hadipourh.github.io/course-cryptanalysis/Slides/Main/RSA.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "github.io [PDF]",
+          "url": "https://hadipourh.github.io/course-cryptanalysis/Slides/Main/RSA.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 45,
+      "title": "Open problems in number theoretic complexity",
+      "url": "https://www.sciencedirect.com/science/article/pii/B9780123868701500204",
+      "publication_info": "LM Adleman, KS McCurley - Discrete Algorithms and Complexity, - Elsevier 1987",
+      "snippet": "… 0 Rem6 Assuming the necessary hypotheses for the running time analysis for Lenstra's method (see [Len2]), it is probably possible to prove that a set S satisfying … elliptic curve factoring",
+      "pdf": null,
+      "cited_by_count": 27,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=8487454706205032943&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:74GROhZ_yXUJ:scholar.google.com/&scioq=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&as_sdt=0,5",
+      "versions_count": 5,
+      "versions_url": "https://scholar.google.com/scholar?cluster=8487454706205032943&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 46,
+      "title": "with the quadratic sieve on large Factoring",
+      "url": "https://books.google.com/books?hl=en&lr=&id=W7KjBQAAQBAJ&oi=fnd&pg=PA267&dq=%22Lenstra+elliptic+curve%22+factorization+1987&ots=gvQvbI4t0O&sig=lz05h5TJ5583iJKg6xMvfBQCNw4",
+      "publication_info": "H TE, - Parallel Algorithms for Numerical Linear …, 2014 - books.google.com W LIOEN",
+      "snippet": "… method (ECM), described in [13]. Improvements were proposed by Lenstra's elliptic curve Montgomery [15] and Brent [2], and impressive … ., of 77, and 92 decimal digits. … factorizations 87",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:8Jzp9_1RoZAJ:scholar.google.com/&scioq=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&as_sdt=0,5",
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 47,
+      "title": "Comparison between the RSA cryptosystem and elliptic curve cryptography",
+      "url": "https://researchcommons.waikato.ac.nz/items/9a3f5383-4f87-41c5-9297-ffab8f3d9266",
+      "publication_info": "- 2010 - researchcommons.waikato.ac.nz K Abdullah",
+      "snippet": "… This section describes four methods for . If N is very large, this problem is difficult… factorization of two squares , the trial division method, the Pollard’sp − 1 method … factorization factorization",
+      "pdf": {
+        "label": "waikato.ac.nz [PDF]",
+        "url": "https://researchcommons.waikato.ac.nz/bitstreams/978a6196-1068-4763-8e23-432bfcb0fc5b/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "waikato.ac.nz [PDF]",
+          "url": "https://researchcommons.waikato.ac.nz/bitstreams/978a6196-1068-4763-8e23-432bfcb0fc5b/download"
+        }
+      ]
+    },
+    {
+      "rank": 48,
+      "title": "Aplikasi Elliptic Curve Cryptography (ECC) untuk Smart Card",
+      "url": "https://informatika.stei.itb.ac.id/~rinaldi.munir/Kriptografi/2006-2007/Makalah2/Makalah-039.pdf",
+      "publication_info": "DI Savitri - informatika.stei.itb.ac.id",
+      "snippet": "… Kurva ellips juga digunakan dalam beberapa algoritma pemfaktoran integer yang memiliki aplikasinya dalam kriptografi, seperti , dan lain-lain. … Lenstra elliptic curve factorization",
+      "pdf": {
+        "label": "itb.ac.id [PDF]",
+        "url": "https://informatika.stei.itb.ac.id/~rinaldi.munir/Kriptografi/2006-2007/Makalah2/Makalah-039.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "itb.ac.id [PDF]",
+          "url": "https://informatika.stei.itb.ac.id/~rinaldi.munir/Kriptografi/2006-2007/Makalah2/Makalah-039.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 49,
+      "title": "Notice of violation of IEEE publication principles: Modified integer algorithm using V-Factor method factorization",
+      "url": "https://ieeexplore.ieee.org/abstract/document/6168405/",
+      "publication_info": "P Sharma, , A Vijay - 2012 Second international …, 2012 - ieeexplore.ieee.org AK Gupta",
+      "snippet": "… group algorithms (Pollard's p í 1algorithm, Williams' p+1 algorithm and factorization Lenstra ), Fermat's method, Special number field sieve, etc. … elliptic curve factorization factorization",
+      "pdf": null,
+      "cited_by_count": 42,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=644069585976866085&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:JbXIQuAx8AgJ:scholar.google.com/&scioq=%22Lenstra+elliptic+curve%22+factorization+1987&hl=en&as_sdt=0,5",
+      "versions_count": 5,
+      "versions_url": "https://scholar.google.com/scholar?cluster=644069585976866085&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 50,
+      "title": "AreStrong'Primes Needed for RSA?",
+      "url": "https://people.csail.mit.edu/rivest/pubs/RS01.version-1999-11-22.pdf",
+      "publication_info": ", RD Silverman - In the 1997 RSA laboratories …, 1999 - people.csail.mit.edu RL Rivest",
+      "snippet": "… The development of \\ method\" 29] of in 1985 is seen, however, Lenstra's elliptic curve factoring to remove the motivation for using strong primes as a protection against the p 1 … factoring",
+      "pdf": {
+        "label": "mit.edu [PDF]",
+        "url": "https://people.csail.mit.edu/rivest/pubs/RS01.version-1999-11-22.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "mit.edu [PDF]",
+          "url": "https://people.csail.mit.edu/rivest/pubs/RS01.version-1999-11-22.pdf"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

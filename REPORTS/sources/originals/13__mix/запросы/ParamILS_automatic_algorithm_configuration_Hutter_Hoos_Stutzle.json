@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"ParamILS\" \"automatic algorithm configuration\" \"Hutter\" \"Hoos\" \"Stutzle\"",
+    "requested_limit": 30,
+    "saved_records": 2,
+    "hl": "en",
+    "created_at_utc": "2026-05-17T14:29:38.688500+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22ParamILS%22+%22automatic+algorithm+configuration%22+%22Hutter%22+%22Hoos%22+%22Stutzle%22&hl=en&start=0",
+      "records_found": 2,
+      "diagnostics": {
+        "result_nodes_found": 2,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22ParamILS%22+%22automatic+algorithm+configuration%22+%22Hutter%22+%22Hoos%22+%22Stutzle%22&hl=en&start=10",
+      "records_found": 0,
+      "diagnostics": {
+        "result_nodes_found": 0,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": ": an framework ParamILS automatic algorithm configuration",
+      "url": "https://www.jair.org/index.php/jair/article/view/10628",
+      "publication_info": ", , , - Journal of artificial …, 2009 - jair.org F Hutter HH Hoos K Leyton-Brown T Stützle",
+      "snippet": "The identification of performance-optimizing parameter settings is an important part of the development and application of algorithms. We describe an automatic framework for this algorithm configuration problem. More formally, we provide methods for optimizing a target algorithms performance on a given class of problem instances by varying a set of ordinal and/or categorical parameters. We review a family of local-search-based algorithm configuration procedures and present novel techniques for accelerating them by adaptively …",
+      "pdf": {
+        "label": "jair.org [PDF]",
+        "url": "https://www.jair.org/index.php/jair/article/download/10628/25415/"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "jair.org [PDF]",
+          "url": "https://www.jair.org/index.php/jair/article/download/10628/25415/"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "based on local search Automatic algorithm configuration",
+      "url": "https://cdn.aaai.org/AAAI/2007/AAAI07-183.pdf",
+      "publication_info": ", , - Aaai, 2007 - cdn.aaai.org F Hutter HH Hoos T Stützle",
+      "snippet": "The determination of appropriate values for free algorithm parameters is a challenging and tedious task in the design of effective algorithms for hard problems. Such parameters include categorical choices (eg, neighborhood structure in local search or variable/value ordering heuristics in tree search), as well as numerical parameters (eg, noise or restart timing). In practice, tuning of these parameters is largely carried out manually by applying rules of thumb and crude heuristics, while more principled approaches are only rarely used. In this …",
+      "pdf": {
+        "label": "aaai.org [PDF]",
+        "url": "https://cdn.aaai.org/AAAI/2007/AAAI07-183.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "aaai.org [PDF]",
+          "url": "https://cdn.aaai.org/AAAI/2007/AAAI07-183.pdf"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

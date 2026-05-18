@@ -1,0 +1,768 @@
+{
+  "metadata": {
+    "source": "https://scholar.google.com/scholar",
+    "query": "\"ECM\" \"B1\" \"B2\" \"factorization\" \"GMP\"",
+    "requested_limit": 30,
+    "saved_records": 30,
+    "hl": "en",
+    "created_at_utc": "2026-05-16T13:37:19.427153+00:00"
+  },
+  "pages": [
+    {
+      "start": 0,
+      "url": "https://scholar.google.com/scholar?q=%22ECM%22+%22B1%22+%22B2%22+%22factorization%22+%22GMP%22&hl=en&start=0",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 10,
+      "url": "https://scholar.google.com/scholar?q=%22ECM%22+%22B1%22+%22B2%22+%22factorization%22+%22GMP%22&hl=en&start=10",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    },
+    {
+      "start": 20,
+      "url": "https://scholar.google.com/scholar?q=%22ECM%22+%22B1%22+%22B2%22+%22factorization%22+%22GMP%22&hl=en&start=20",
+      "records_found": 10,
+      "diagnostics": {
+        "result_nodes_found": 10,
+        "captcha_or_block_detected": false
+      }
+    }
+  ],
+  "records": [
+    {
+      "rank": 1,
+      "title": "Revisiting on GPUs ECM",
+      "url": "https://link.springer.com/content/pdf/10.1007/978-3-030-65411-5.pdf#page=306",
+      "publication_info": "T Kleinjung, C Priplata, - Cryptology and Network Security …, 2020 - Springer T Güneysu",
+      "snippet": "… A general overview of methods, and the use of on GPUs within the GNFS factorization ECM … implementing on GPUs, only a few implementations are openly available. - 1, … ECM GMP ECM",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:NeSBMg7lWu8J:scholar.google.com/&scioq=%22ECM%22+%22B1%22+%22B2%22+%22factorization%22+%22GMP%22&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=17247349572108411957&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 2,
+      "title": "A new implementation of the elliptic curve method of integer using Edwards and Hessian curves factorization",
+      "url": "https://search.proquest.com/openview/6603b544401e9b27379c1ffb63a59347/1?pq-origsite=gscholar&cbl=2026366",
+      "publication_info": "- 2015 - search.proquest.com O Robinson",
+      "snippet": "… We can see that the complexity of … of using Edwards/Hessian curves using ECM ECM Montgomery multiplication would be too similar to an implementation that already exists ( - … GMP ECM",
+      "pdf": {
+        "label": "ucd.ie [PDF]",
+        "url": "https://researchrepository.ucd.ie/bitstreams/6387bd84-848c-4d11-82a1-0a9c62ca0dc7/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "ucd.ie [PDF]",
+          "url": "https://researchrepository.ucd.ie/bitstreams/6387bd84-848c-4d11-82a1-0a9c62ca0dc7/download"
+        }
+      ]
+    },
+    {
+      "rank": 3,
+      "title": "using Edwards curves ECM",
+      "url": "https://www.ams.org/mcom/2013-82-282/S0025-5718-2012-02633-0/",
+      "publication_info": ", P Birkner, , - Mathematics of Computation, 2013 - ams.org D Bernstein T Lange C Peters",
+      "snippet": "… of integers is one of the most studied problems in … One of the best general Factorization methods available is … of - we observed that - ’s stage 1, with = … factorization GMP ECM GMP ECM B1",
+      "pdf": {
+        "label": "iacr.org [PDF]",
+        "url": "https://eprint.iacr.org/2008/016.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iacr.org [PDF]",
+          "url": "https://eprint.iacr.org/2008/016.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 4,
+      "title": "- : yet another implementation of the Elliptic Curve Method (or how to find a 40-digit prime factor within 2· 1011 modular multiplications) GMP ECM",
+      "url": "https://members.loria.fr/PZimmermann/talks/gmpecm.pdf",
+      "publication_info": "P Zimmermann, I Lorraine - Workshop Computational Number …, 1999 - members.loria.fr",
+      "snippet": "… implemented in - , which is freely available at http://www.loria.fr/ zimmerma/records/ecmnet.html. gmp ecm Some nice factors found by - , as … Details of - implementation … gmp ecm gmp ecm",
+      "pdf": {
+        "label": "loria.fr [PDF]",
+        "url": "https://members.loria.fr/PZimmermann/talks/gmpecm.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "loria.fr [PDF]",
+          "url": "https://members.loria.fr/PZimmermann/talks/gmpecm.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 5,
+      "title": "at work ECM",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-34961-4_29",
+      "publication_info": ", T Kleinjung - International Conference on the Theory and …, 2012 - Springer JW Bos",
+      "snippet": "… The performance of the elliptic curve method ( ) for integer plays an … ECM factorization required in - and EECM-MPFQ for different typical values used in when used as … GMP ECM B1 ECM",
+      "pdf": {
+        "label": "iacr.org [PDF]",
+        "url": "https://eprint.iacr.org/2012/089.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iacr.org [PDF]",
+          "url": "https://eprint.iacr.org/2012/089.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 6,
+      "title": "JKL- : an implementation of using Hessian curves ECM ECM",
+      "url": "https://www.cambridge.org/core/journals/lms-journal-of-computation-and-mathematics/article/jklecm-an-implementation-of-ecm-using-hessian-curves/30EE6BE8CCF8A6F0592B3B536B08326E",
+      "publication_info": "H Heer, , - LMS Journal of Computation and …, 2016 - cambridge.org G McGuire O Robinson",
+      "snippet": "… We present JKL- , an implementation of the elliptic curve method of integer ECM factorization … Effectiveness is where our implementation already has an edge over - . Although a … GMP ECM",
+      "pdf": {
+        "label": "cambridge.org [PDF]",
+        "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/30EE6BE8CCF8A6F0592B3B536B08326E/S1461157016000231a.pdf/jklecm_an_implementation_of_ecm_using_hessian_curves.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "cambridge.org [PDF]",
+          "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/30EE6BE8CCF8A6F0592B3B536B08326E/S1461157016000231a.pdf/jklecm_an_implementation_of_ecm_using_hessian_curves.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 7,
+      "title": "20 years of ECM",
+      "url": "https://link.springer.com/chapter/10.1007/11792086_37",
+      "publication_info": "P Zimmermann, - International Algorithmic Number Theory …, 2006 - Springer B Dodson",
+      "snippet": "… Among others we can cite the 40-digit prime in the of the tenth Fermat number factorization [… = 729484405666 (see above table). We can reproduce this lucky curve with - … B2 GMP ECM",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/inria-00070192/file/RR-5834.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/inria-00070192/file/RR-5834.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 8,
+      "title": "integer on GPU cluster ECM factorization",
+      "url": "https://ieeexplore.ieee.org/abstract/document/6240665/",
+      "publication_info": ", D Georgiev… - 2012 Proceedings of the …, 2012 - ieeexplore.ieee.org E Atanassov",
+      "snippet": "… The parallel implementation of the - using our GPU cluster demonstrated GMP ECM excellent parallel efficiency using the master-slave paradigm, which is not limited to homogeneous …",
+      "pdf": {
+        "label": "mipro-proceedings.com [PDF]",
+        "url": "https://mipro-proceedings.com/sites/mipro-proceedings.com/files/upload/dc-vis/dc-vis_016.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "mipro-proceedings.com [PDF]",
+          "url": "https://mipro-proceedings.com/sites/mipro-proceedings.com/files/upload/dc-vis/dc-vis_016.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 9,
+      "title": "with genus 2 curves Factorization",
+      "url": "https://www.ams.org/mcom/2010-79-270/S0025-5718-09-02295-9/",
+      "publication_info": "R Cosset - Mathematics of Computation, 2010 - ams.org",
+      "snippet": "… - , we have built a new program called -HECM which uses hyperelliptic curves. GMP ECM GMP -HECM will be distributed with - … .inria.fr/projects/ /). Our software does … GMP GMP ECM ecm",
+      "pdf": {
+        "label": "arxiv.org [PDF]",
+        "url": "https://arxiv.org/pdf/0905.2325"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "arxiv.org [PDF]",
+          "url": "https://arxiv.org/pdf/0905.2325"
+        }
+      ]
+    },
+    {
+      "rank": 10,
+      "title": "Factoring integers with elliptic curves (“not more of the same”) DJ Bernstein University of Illinois at Chicago",
+      "url": "http://cr.yp.to/talks/2010.05.17/slides.pdf",
+      "publication_info": "A Geometry - cr.yp.to",
+      "snippet": "… Plausible conjecture: completely factors every b-bit … For optimized NFS for big n, ECM is the most important step in … - : ad-hoc, relying on arithmetic progression of j. … ECM GMP ECM",
+      "pdf": {
+        "label": "yp.to [PDF]",
+        "url": "http://cr.yp.to/talks/2010.05.17/slides.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "yp.to [PDF]",
+          "url": "http://cr.yp.to/talks/2010.05.17/slides.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 11,
+      "title": "20 Years of ECM",
+      "url": "https://www.academia.edu/download/48201297/years_of_ECM20160820-27933-rv9rca.pdf",
+      "publication_info": "- Lecture Notes in Computer Science, 2006 - academia.edu B Dodson",
+      "snippet": "… 40-digit prime in the of the tenth Fermat … , and much smaller than the factorization B1 default = 729484405666 (see above table). We can reproduce this lucky curve with - … B2 GMP ECM",
+      "pdf": {
+        "label": "academia.edu [HTML]",
+        "url": "https://www.academia.edu/download/48201297/years_of_ECM20160820-27933-rv9rca.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [HTML]",
+          "url": "https://www.academia.edu/download/48201297/years_of_ECM20160820-27933-rv9rca.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 12,
+      "title": "Implementing the elliptic curve method of factoring in reconfigurable hardware",
+      "url": "https://link.springer.com/chapter/10.1007/11894063_10",
+      "publication_info": ", , P Baier, P Kohlbrenner, H Le… - … and Embedded Systems, 2006 - Springer K Gaj S Kwon",
+      "snippet": "… software implementation, - , has been performed. Our … modulus, NFS requires the GMP ECM of a large number of … Our system consists of multiple units working … factorization ECM ECM",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Mohammed-Khaleeluddin-2/publication/221291916_Implementing_the_Elliptic_Curve_Method_of_Factoring_in_Reconfigurable_Hardware/links/0deec53631696ca01b000000/Implementing-the-Elliptic-Curve-Method-of-Factoring-in-Reconfigurable-Hardware.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Mohammed-Khaleeluddin-2/publication/221291916_Implementing_the_Elliptic_Curve_Method_of_Factoring_in_Reconfigurable_Hardware/links/0deec53631696ca01b000000/Implementing-the-Elliptic-Curve-Method-of-Factoring-in-Reconfigurable-Hardware.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 13,
+      "title": "Integer based on elliptic curve method: Towards better exploitation of reconfigurable hardware factorization",
+      "url": "https://ieeexplore.ieee.org/abstract/document/4297256/",
+      "publication_info": "G De Meulenaer, F Gosset… - 15th Annual IEEE …, 2007 - ieeexplore.ieee.org",
+      "snippet": "… The motivation of this work is to assess the cost of an … based implementation. ECM ECM The aim is to show that embedded multipliers of modern FPGAs are a key advantage for … ECM",
+      "pdf": null,
+      "cited_by_count": 37,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=16029939943686971327&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:v59O0nLJdd4J:scholar.google.com/&scioq=%22ECM%22+%22B1%22+%22B2%22+%22factorization%22+%22GMP%22&hl=en&as_sdt=0,5",
+      "versions_count": 6,
+      "versions_url": "https://scholar.google.com/scholar?cluster=16029939943686971327&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 14,
+      "title": "Fast modular arithmetic on the Kalray MPPA-256 processor for an energy-efficient implementation of ECM",
+      "url": "https://ieeexplore.ieee.org/abstract/document/7927487/",
+      "publication_info": ", J Detrey, , A Inomata… - IEEE Transactions on …, 2017 - ieeexplore.ieee.org M Ishii P Gaudry",
+      "snippet": "… on parameters that are relevant in the context of the number field sieve (NFS) for integer ECM … software which is an adaptation of - targetting specially the sizes con… factorization GMP ECM",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/hal-01299697/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/hal-01299697/document"
+        }
+      ]
+    },
+    {
+      "rank": 15,
+      "title": "Elliptic curve method: Towards better exploitation of reconfigurable hardware factorization",
+      "url": "https://www.researchgate.net/profile/Jean-Jacques-Quisquater/publication/4272853_Integer_Factorization_Based_on_Elliptic_Curve_Method_Towards_Better_Exploitation_of_Reconfigurable_Hardware/links/0fcfd50c5ccf0c9f49000000/Integer-Factorization-Based-on-Elliptic-Curve-Method-Towards-Better-Exploitation-of-Reconfigurable-Hardware.pdf",
+      "publication_info": "G de Meulenaer, F Gosset… - SHARCS Workshop …, 2007 - researchgate.net",
+      "snippet": "… The motivation of this work is to assess the cost of an … based implementation. ECM ECM The aim is to show that embedded multipliers of modern FPGAs are a key advantage for … ECM",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Jean-Jacques-Quisquater/publication/4272853_Integer_Factorization_Based_on_Elliptic_Curve_Method_Towards_Better_Exploitation_of_Reconfigurable_Hardware/links/0fcfd50c5ccf0c9f49000000/Integer-Factorization-Based-on-Elliptic-Curve-Method-Towards-Better-Exploitation-of-Reconfigurable-Hardware.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Jean-Jacques-Quisquater/publication/4272853_Integer_Factorization_Based_on_Elliptic_Curve_Method_Towards_Better_Exploitation_of_Reconfigurable_Hardware/links/0fcfd50c5ccf0c9f49000000/Integer-Factorization-Based-on-Elliptic-Curve-Method-Towards-Better-Exploitation-of-Reconfigurable-Hardware.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 16,
+      "title": "High-performance integer factoring with reconfigurable devices",
+      "url": "https://ieeexplore.ieee.org/abstract/document/5694225/",
+      "publication_info": "R Zimmermann, … - … Conference on Field …, 2010 - ieeexplore.ieee.org T Güneysu",
+      "snippet": "… implementations for retrieving factors of composite integers are software-based; a ECM state-of-the-art system is the - … for to motivate the concept of the . Let k … GMP ECM factorization ECM",
+      "pdf": {
+        "label": "academia.edu [PDF]",
+        "url": "https://www.academia.edu/download/37194187/factoringfpga.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [PDF]",
+          "url": "https://www.academia.edu/download/37194187/factoringfpga.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 17,
+      "title": "Efficient SIMD arithmetic modulo a Mersenne number",
+      "url": "https://ieeexplore.ieee.org/abstract/document/5992129/",
+      "publication_info": ", T Kleinjung, … - 2011 IEEE 20th …, 2011 - ieeexplore.ieee.org JW Bos AK Lenstra",
+      "snippet": "… ) for integer [29] than by means of special NFS (SNFS). The only way to find ECM factorization out whether … To test this we ported stage one of - to the SPE, trying a variety … ECM GMP ECM",
+      "pdf": {
+        "label": "epfl.ch [PDF]",
+        "url": "https://infoscience.epfl.ch/bitstreams/3e37f4c7-cac0-43be-be3f-fd9fe81e94c4/download"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "epfl.ch [PDF]",
+          "url": "https://infoscience.epfl.ch/bitstreams/3e37f4c7-cac0-43be-be3f-fd9fe81e94c4/download"
+        }
+      ]
+    },
+    {
+      "rank": 18,
+      "title": "Flexible Hardware Design for Elliptic Curve Method of Integer Factorization",
+      "url": "https://search.proquest.com/openview/a76b39176163fdb34cf9c366feb8b007/1?pq-origsite=gscholar&cbl=2026366&diss=y",
+      "publication_info": "- 2023 - search.proquest.com MH Solmaz",
+      "snippet": "… elliptic curve method ( ) for integer in FPGA platform. … is a ECM factorization ECM factorization method that can be implemented in … By this way the cores were easily accessible by an … ECM",
+      "pdf": {
+        "label": "metu.edu.tr [PDF]",
+        "url": "https://open.metu.edu.tr/bitstream/handle/11511/105410/phd_thesis_hsolmaz_openmetu.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "metu.edu.tr [PDF]",
+          "url": "https://open.metu.edu.tr/bitstream/handle/11511/105410/phd_thesis_hsolmaz_openmetu.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 19,
+      "title": "Area-time efficient implementation of the elliptic curve method of factoring in reconfigurable hardware for application in the number field sieve",
+      "url": "https://ieeexplore.ieee.org/abstract/document/5374380/",
+      "publication_info": ", , P Baier, P Kohlbrenner… - IEEE Transactions …, 2010 - ieeexplore.ieee.org K Gaj S Kwon",
+      "snippet": "… highly optimized software implementation, - , has been … modulus, NFS requires the GMP ECM of a large number … : Units Our system consists of multiple units … factorization ECM ECM ECM",
+      "pdf": {
+        "label": "gmu.edu [PDF]",
+        "url": "https://mason.gmu.edu/~mrogawsk/arch/ieee_tc2009.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "gmu.edu [PDF]",
+          "url": "https://mason.gmu.edu/~mrogawsk/arch/ieee_tc2009.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 20,
+      "title": "Area–time efficient hardware architecture for factoring integers with the elliptic curve method",
+      "url": "https://digital-library.theiet.org/doi/abs/10.1049/ip-ifs%3A20055018",
+      "publication_info": ", M Šimka, T Kleinjung, J Franke, C Priplata… - IEE Proceedings …, 2005 - IET J Pelzl",
+      "snippet": "… Multiple Precision Arithmetic Library ( ). The original purpose of … . Through the GMP ECM participation of several developers, - is an excellent resource for a state-of-the-art … GMP ECM ECM",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://ujm.hal.science/ujm-00289036/document"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://ujm.hal.science/ujm-00289036/document"
+        }
+      ]
+    },
+    {
+      "rank": 21,
+      "title": "Number theory algorithms on GPU clusters",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-319-01520-0_16",
+      "publication_info": ", D Georgiev, N Manev - … Communities: Results of the HP-SEE …, 2014 - Springer E Atanassov",
+      "snippet": "… and in partial our implementations of integer using NVIDIA CUDA on clusters factorization … Our parallel implementation of - demonstrated excellent parallel efficiency on both … GMP ECM",
+      "pdf": null,
+      "cited_by_count": 3,
+      "cited_by_url": "https://scholar.google.com/scholar?cites=11672137661778439390&as_sdt=2005&sciodt=0,5&hl=en",
+      "related_url": "https://scholar.google.com/scholar?q=related:3izDm1zD-6EJ:scholar.google.com/&scioq=%22ECM%22+%22B1%22+%22B2%22+%22factorization%22+%22GMP%22&hl=en&as_sdt=0,5",
+      "versions_count": 3,
+      "versions_url": "https://scholar.google.com/scholar?cluster=11672137661778439390&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 22,
+      "title": "Prime pairing in algorithms searching for smooth group order",
+      "url": "https://eprint.iacr.org/2021/1462",
+      "publication_info": "P Atnashev, G Woltman - Cryptology ePrint Archive, 2021 - eprint.iacr.org",
+      "snippet": "… Abstract methods like P−1, P+1, have a stage which deals with primes … Factorization ECM , ) interval (not only primes), but does it very efficiently. It was implemented in - … B1 B2 GMP ECM",
+      "pdf": {
+        "label": "iacr.org [PDF]",
+        "url": "https://eprint.iacr.org/2021/1462.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "iacr.org [PDF]",
+          "url": "https://eprint.iacr.org/2021/1462.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 23,
+      "title": "FFT extension for algebraic-group algorithms factorization",
+      "url": "https://www.academia.edu/download/116079100/document.pdf",
+      "publication_info": "- Cambridge University Press eBooks, 2017 - academia.edu R Brent",
+      "snippet": "… -level description of . Suppose that the stage one and stage two limits are and , ECM B1 B2 … be kept on external storage; the - implementation offers this option, reducing main … GMP ECM",
+      "pdf": {
+        "label": "academia.edu [HTML]",
+        "url": "https://www.academia.edu/download/116079100/document.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "academia.edu [HTML]",
+          "url": "https://www.academia.edu/download/116079100/document.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 24,
+      "title": "Efficient SIMD arithmetic modulo a Mersenne number",
+      "url": "https://www.researchgate.net/profile/Joppe-Bos/publication/220334474_Efficient_SIMD_Arithmetic_Modulo_a_Mersenne_Number/links/5524ef9c0cf2b123c5175ec7/Efficient-SIMD-Arithmetic-Modulo-a-Mersenne-Number.pdf",
+      "publication_info": "EIC LACAL - researchgate.net",
+      "snippet": "… curve method ( ) for integer [38] than by means of special NFS (SNFS). The ECM factorization only way to find out if is indeed … To test this we ported phase one of - to the … ECM GMP ECM",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Joppe-Bos/publication/220334474_Efficient_SIMD_Arithmetic_Modulo_a_Mersenne_Number/links/5524ef9c0cf2b123c5175ec7/Efficient-SIMD-Arithmetic-Modulo-a-Mersenne-Number.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Joppe-Bos/publication/220334474_Efficient_SIMD_Arithmetic_Modulo_a_Mersenne_Number/links/5524ef9c0cf2b123c5175ec7/Efficient-SIMD-Arithmetic-Modulo-a-Mersenne-Number.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 25,
+      "title": "Hardware implementation of the elliptic curve method of factoring",
+      "url": "https://www.researchgate.net/profile/Mohammed-Khaleeluddin-2/publication/237634881_HARDWARE_IMPLEMENTATION_OF_THE_ELLIPTIC_CURVE_METHOD_OF_FACTORING/links/0deec53631696a8e07000000/HARDWARE-IMPLEMENTATION-OF-THE-ELLIPTIC-CURVE-METHOD-OF-FACTORING.pdf",
+      "publication_info": "M Khaleeluddin - 2006 - researchgate.net",
+      "snippet": "… of large integers is challenging both in terms of … This thesis presents hardware Factorization architecture of , designed … , - , has shown that the hardware implementation of … ECM GMP ECM",
+      "pdf": {
+        "label": "researchgate.net [PDF]",
+        "url": "https://www.researchgate.net/profile/Mohammed-Khaleeluddin-2/publication/237634881_HARDWARE_IMPLEMENTATION_OF_THE_ELLIPTIC_CURVE_METHOD_OF_FACTORING/links/0deec53631696a8e07000000/HARDWARE-IMPLEMENTATION-OF-THE-ELLIPTIC-CURVE-METHOD-OF-FACTORING.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "researchgate.net [PDF]",
+          "url": "https://www.researchgate.net/profile/Mohammed-Khaleeluddin-2/publication/237634881_HARDWARE_IMPLEMENTATION_OF_THE_ELLIPTIC_CURVE_METHOD_OF_FACTORING/links/0deec53631696a8e07000000/HARDWARE-IMPLEMENTATION-OF-THE-ELLIPTIC-CURVE-METHOD-OF-FACTORING.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 26,
+      "title": "Factoring Small to Medium Size Integers: An Experimental Comparison",
+      "url": "https://inria.hal.science/inria-00188645/",
+      "publication_info": "J Milan - 2010 - inria.hal.science",
+      "snippet": "… It is almost cliché to recall that integer is a … Multi-precision computations were factorization performed using the library … It should be mentioned that our implementation is … GMP ECM",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/inria-00188645/file/smallint_expcomp_draft_02_1.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/inria-00188645/file/smallint_expcomp_draft_02_1.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 27,
+      "title": "Improved stage 2 to p±1 factoring algorithms",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-540-79456-1_12",
+      "publication_info": "PL Montgomery, A Kruppa - International Algorithmic Number Theory …, 2008 - Springer",
+      "snippet": "… - , an implementation of P–1, P+1, and the Elliptic Curve Method for integer GMP ECM … For comparison, the previous implementation of P–1 stage 2 in - [13] needs … factorization GMP ECM",
+      "pdf": {
+        "label": "hal.science [PDF]",
+        "url": "https://inria.hal.science/inria-00188192/file/pm1fft-final.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "hal.science [PDF]",
+          "url": "https://inria.hal.science/inria-00188192/file/pm1fft-final.pdf"
+        }
+      ]
+    },
+    {
+      "rank": 28,
+      "title": "[CITATION] [C] Curves, Algebra, Computer Arithmetic, and so On",
+      "url": null,
+      "publication_info": "NG Est - Citeseer",
+      "snippet": "",
+      "pdf": null,
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": "https://scholar.google.com/scholar?q=related:fUJu-yhf7LAJ:scholar.google.com/&scioq=%22ECM%22+%22B1%22+%22B2%22+%22factorization%22+%22GMP%22&hl=en&as_sdt=0,5",
+      "versions_count": 2,
+      "versions_url": "https://scholar.google.com/scholar?cluster=12748669274800669309&hl=en&as_sdt=0,5",
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "Save",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "Cite",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        },
+        {
+          "label": "",
+          "url": "javascript:void(0)"
+        }
+      ]
+    },
+    {
+      "rank": 29,
+      "title": "Elliptické křivky a testování prvočíselnosti",
+      "url": "https://dspace.cuni.cz/handle/20.500.11956/77677",
+      "publication_info": "A Haníková - 2015 - dspace.cuni.cz",
+      "snippet": "… nez obecne nejpouzıvanejšı implementace . … and implement the elliptic curve GMP ECM method using curves in … The second part deals with the algorithm using … factorization factorization",
+      "pdf": {
+        "label": "cuni.cz [PDF]",
+        "url": "https://dspace.cuni.cz/bitstream/handle/20.500.11956/77677/DPTX_2013_2_11320_0_410545_0_147996.pdf?sequence=1"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "cuni.cz [PDF]",
+          "url": "https://dspace.cuni.cz/bitstream/handle/20.500.11956/77677/DPTX_2013_2_11320_0_410545_0_147996.pdf?sequence=1"
+        }
+      ]
+    },
+    {
+      "rank": 30,
+      "title": "Integer and discrete logarithm problems factorization",
+      "url": "https://www.numdam.org/item/CCIRM_2014__4_1_A2_0/",
+      "publication_info": "- Les cours du CIRM, 2014 - numdam.org P Gaudry",
+      "snippet": "… In the following, we will take the algorithm as a black-box, and will always … ECM ECM is a very practical algorithm, for which efficient implementations exist, most notable - … GMP ECM",
+      "pdf": {
+        "label": "numdam.org [PDF]",
+        "url": "https://www.numdam.org/article/CCIRM_2014__4_1_A2_0.pdf"
+      },
+      "cited_by_count": null,
+      "cited_by_url": null,
+      "related_url": null,
+      "versions_count": null,
+      "versions_url": null,
+      "cached_url": null,
+      "other_links": [
+        {
+          "label": "numdam.org [PDF]",
+          "url": "https://www.numdam.org/article/CCIRM_2014__4_1_A2_0.pdf"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}
