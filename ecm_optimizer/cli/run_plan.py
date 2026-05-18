@@ -7,10 +7,14 @@ from itertools import product
 from pathlib import Path
 import shlex
 import json
-import fcntl
 from typing import Any
 
 import click
+
+try:
+    import fcntl
+except ModuleNotFoundError:  # pragma: no cover - Windows fallback for CLI importability.
+    fcntl = None
 
 from ecm_optimizer.config import DATA_DIR, EXPERIMENTS_DIR
 from ecm_optimizer.utils.io_utils import read_json
@@ -719,11 +723,13 @@ def _merge_state_label(state_file: Path, label: str, payload: dict[str, Any]) ->
     state_file.parent.mkdir(parents=True, exist_ok=True)
     lock_path = state_file.with_suffix(state_file.suffix + ".lock")
     with lock_path.open("w", encoding="utf-8") as lock_fp:
-        fcntl.flock(lock_fp.fileno(), fcntl.LOCK_EX)
+        if fcntl is not None:
+            fcntl.flock(lock_fp.fileno(), fcntl.LOCK_EX)
         latest_context = _load_state_context(state_file)
         latest_context[label] = payload
         _save_state_context(state_file, latest_context)
-        fcntl.flock(lock_fp.fileno(), fcntl.LOCK_UN)
+        if fcntl is not None:
+            fcntl.flock(lock_fp.fileno(), fcntl.LOCK_UN)
 
 
 def _collect_unresolved_labels(value: Any) -> set[str]:
