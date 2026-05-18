@@ -4,10 +4,10 @@
   "params": {
     "seed": 42,
     "search": {
-      "b1-min": 500,
-      "b1-max": 50000,
-      "b2-min": 5000,
-      "b2-max": 3000000,
+      "b1-min": 100,
+      "b1-max": 1000000,
+      "b2-min": 10000,
+      "b2-max": 100000000,
       "ratio-max": 1000
     },
     "method_list": [
