@@ -60,7 +60,7 @@ ecm-optimizer optimize \
 - `b1_b2_trajectory` — динамика `B1/B2` по evaluation;
 - `progress_by_phase` — best-so-far + raw fitness + маркеры `step`-этапов;
 - `time_efficiency` — качество во времени и rolling `eval/sec`;
-- `b1_ratio_heatmap` — `B1 vs B2` (colored by fitness) и heatmap `B1 vs B2/B1`.
+- `b1_ratio_heatmap` — `log10(B1) vs log10(B2)` (colored by fitness) и heatmap `log10(B1) vs log10(B2/B1)`, то есть в том же лог-пространстве, где идет оптимизация.
 
 Ключевые метрики (`time_to_first_improvement_sec`, `time_to_best_sec`, `new_best_count`, `eval_per_sec`, `improvement_percent`, `max_plateau_evals`) сохраняются внутри optimize-JSON в поле `run_stats`.
 

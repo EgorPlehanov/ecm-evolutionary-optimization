@@ -141,6 +141,33 @@ def build_run_statistics(history: list[dict[str, float | int | str]]) -> dict[st
     }
 
 
+def _log10_search_projection(
+    evaluation_events: list[dict[str, float | int | str]],
+) -> tuple[list[float], list[float], list[float], list[float]]:
+    """Return evaluated points projected into the optimizer's log10 search space.
+
+    The optimizers search over ``log10(B1)`` and ``log10(B2)``.  For the
+    ratio heatmap we keep ``log10(B1)`` on the x-axis and use
+    ``log10(B2 / B1)`` on the y-axis, which is equivalent to
+    ``log10(B2) - log10(B1)``.
+    """
+    log_b1_values: list[float] = []
+    log_b2_values: list[float] = []
+    log_ratio_values: list[float] = []
+    fitness_values: list[float] = []
+    for event in evaluation_events:
+        b1 = float(event["b1"])
+        b2 = float(event["b2"])
+        if b1 <= 0.0 or b2 <= 0.0:
+            continue
+        log_b1 = math.log10(b1)
+        log_b2 = math.log10(b2)
+        log_b1_values.append(log_b1)
+        log_b2_values.append(log_b2)
+        log_ratio_values.append(log_b2 - log_b1)
+        fitness_values.append(float(event["fitness"]))
+    return log_b1_values, log_b2_values, log_ratio_values, fitness_values
+
 def _convergence_series(evaluation_events: list[dict[str, float | int | str]]) -> tuple[list[int], list[float]]:
     evals: list[int] = []
     best_so_far: list[float] = []
@@ -316,33 +343,36 @@ def generate_run_artifacts(
     plt.close(fig)
     plots["time_efficiency"] = time_efficiency_path
 
-    ratio_values = [(b2 / b1) if b1 != 0 else 0.0 for b1, b2 in zip(b1_values, b2_values)]
-    fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 5))
-    scatter = axes[0].scatter(b1_values, b2_values, c=fitness_values, cmap="viridis", s=16)
-    axes[0].set_title("B1 vs B2 (colored by fitness)")
-    axes[0].set_xlabel("B1")
-    axes[0].set_ylabel("B2")
-    axes[0].grid(alpha=0.3)
-    fig.colorbar(scatter, ax=axes[0], label="Fitness")
-
-    hb = axes[1].hexbin(
-        b1_values,
-        ratio_values,
-        C=fitness_values,
-        reduce_C_function=min,
-        gridsize=25,
-        cmap="viridis",
+    log_b1_values, log_b2_values, log_ratio_values, log_fitness_values = _log10_search_projection(
+        evaluation_events
     )
-    axes[1].set_title("Heatmap: B1 vs B2/B1 (min fitness in bin)")
-    axes[1].set_xlabel("B1")
-    axes[1].set_ylabel("B2 / B1")
-    axes[1].grid(alpha=0.2)
-    fig.colorbar(hb, ax=axes[1], label="Best fitness in bin")
-    heatmap_path = output_dir / f"{run_stem}_b1_ratio_heatmap.png"
-    fig.tight_layout()
-    fig.savefig(heatmap_path, dpi=150)
-    plt.close(fig)
-    plots["b1_ratio_heatmap"] = heatmap_path
+    if log_b1_values:
+        fig, axes = plt.subplots(nrows=1, ncols=2, figsize=(12, 5))
+        scatter = axes[0].scatter(log_b1_values, log_b2_values, c=log_fitness_values, cmap="viridis", s=16)
+        axes[0].set_title("log10(B1) vs log10(B2) (colored by fitness)")
+        axes[0].set_xlabel("log10(B1)")
+        axes[0].set_ylabel("log10(B2)")
+        axes[0].grid(alpha=0.3)
+        fig.colorbar(scatter, ax=axes[0], label="Fitness")
+
+        hb = axes[1].hexbin(
+            log_b1_values,
+            log_ratio_values,
+            C=log_fitness_values,
+            reduce_C_function=min,
+            gridsize=25,
+            cmap="viridis",
+        )
+        axes[1].set_title("Heatmap: log10(B1) vs log10(B2/B1) (min fitness in bin)")
+        axes[1].set_xlabel("log10(B1)")
+        axes[1].set_ylabel("log10(B2 / B1)")
+        axes[1].grid(alpha=0.2)
+        fig.colorbar(hb, ax=axes[1], label="Best fitness in bin")
+        heatmap_path = output_dir / f"{run_stem}_b1_ratio_heatmap.png"
+        fig.tight_layout()
+        fig.savefig(heatmap_path, dpi=150)
+        plt.close(fig)
+        plots["b1_ratio_heatmap"] = heatmap_path
 
     return RunArtifacts(stats=stats, plots=plots)
 

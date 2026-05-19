@@ -1,0 +1,114 @@
+{
+  "format": "ecm_run_plan_v1",
+  "description": "Полный прогон по всем методам (de/rs/pso/bo/ga) для target-digits=20 под новую composite-логику: generate + repeat(method)->optimize+validate + общий analyze. High-budget версия: увеличены optimize/validate бюджеты, расширен датасет; для B2-max выставлено 3000000 и max-curves-per-n ориентированы на ECM-таблицу для D=20 (N≈74).",
+  "params": {
+    "seed": 42,
+    "search": {
+      "b1-min": 100,
+      "b1-max": 1000000,
+      "b2-min": 10000,
+      "b2-max": 100000000,
+      "ratio-max": 1000
+    },
+    "method_list": [
+      "de",
+      "rs",
+      "pso",
+      "bo",
+      "ga"
+    ],
+    "method_opt": {
+      "de": {
+        "de-popsize": 10,
+        "de-maxiter": 28
+      },
+      "rs": {
+        "rs-budget": 160
+      },
+      "pso": {
+        "pso-swarm-size": 18,
+        "pso-iterations": 32
+      },
+      "bo": {
+        "bo-initial-samples": 16,
+        "bo-iterations": 56,
+        "bo-candidate-pool": 2500
+      },
+      "ga": {
+        "ga-population-size": 22,
+        "ga-generations": 36,
+        "ga-mutation-prob": 0.14
+      }
+    },
+    "shared_opt_args": {
+      "max-curves-per-n": 260,
+      "repeats-per-n": 8
+    },
+    "shared_val_args": {
+      "max-curves-per-n": 600,
+      "repeats-per-n": 80
+    },
+    "generate_args": {
+      "target-digits": 20,
+      "cofactor-digits": 30,
+      "train-count": 80,
+      "control-count": 80
+    },
+    "analyze_group_by": [
+      "divisor_size",
+      "method"
+    ]
+  },
+  "operations": [
+    {
+      "type": "generate",
+      "label": "dataset_20_single",
+      "args": {
+        "$spread_ref": "params.generate_args",
+        "seed": "$ref:params.seed"
+      }
+    },
+    {
+      "repeat": {
+        "as": "method_iter",
+        "values": {
+          "method": "$ref:params.method_list"
+        }
+      },
+      "operations": [
+        {
+          "type": "optimize",
+          "label": "opt_{{method_iter.method}}_single",
+          "args": {
+            "dataset": "$ref:dataset_20_single.dataset_dir",
+            "method": "$ref:method_iter.method",
+            "seed": "$ref:params.seed",
+            "$spread_ref": [
+              "params.shared_opt_args",
+              "params.method_opt.{{method_iter.method}}",
+              "params.search"
+            ]
+          }
+        },
+        {
+          "type": "validate",
+          "label": "val_{{method_iter.method}}_single",
+          "args": {
+            "dataset": "$ref:dataset_20_single.dataset_dir",
+            "opt-result-file": "$ref:opt_{{method_iter.method}}_single.result_file",
+            "seed": "$ref:params.seed",
+            "$spread_ref": "params.shared_val_args"
+          }
+        }
+      ]
+    },
+    {
+      "type": "analyze",
+      "label": "analysis_single_dataset_all_methods",
+      "args": {
+        "dataset": "$ref:dataset_20_single.dataset_dir",
+        "group-by": "$ref:params.analyze_group_by"
+      }
+    }
+  ]
+}
