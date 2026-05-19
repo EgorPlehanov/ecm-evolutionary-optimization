@@ -3,6 +3,7 @@ from __future__ import annotations
 import click
 
 from ecm_optimizer.cli.analyze import analyze_command
+from ecm_optimizer.cli.animate_trace import animate_trace_command
 from ecm_optimizer.cli.generate import generate_command
 from ecm_optimizer.cli.optimize import optimize_command
 from ecm_optimizer.cli.run_plan import run_plan_command, run_plan_slurm_command, run_plan_slurm_step_command
@@ -26,6 +27,7 @@ main.add_command(run_plan_command)
 main.add_command(run_plan_slurm_command)
 main.add_command(run_plan_slurm_step_command)
 main.add_command(analyze_command)
+main.add_command(animate_trace_command)
 
 
 if __name__ == "__main__":

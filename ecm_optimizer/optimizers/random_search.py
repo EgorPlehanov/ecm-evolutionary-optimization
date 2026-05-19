@@ -41,6 +41,7 @@ class RandomSearchOptimizer(Optimizer):
                 repeats_per_n=config.repeats_per_n,
                 curve_timeout_sec=config.curve_timeout_sec,
                 workers=config.workers,
+                record_raw_runs=config.record_raw_runs,
             )
             progress.on_evaluation(
                 config=config,

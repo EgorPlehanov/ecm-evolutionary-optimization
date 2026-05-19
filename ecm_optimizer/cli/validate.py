@@ -367,6 +367,7 @@ def _append_validation_section(
 )
 @click.option("--workers", default=DEFAULT_WORKERS, show_default=True, type=int, help="Number of worker processes; use -1 to use all CPUs.")
 @click.option("--results-dir", default=str(EXPERIMENTS_DIR), show_default=True, type=click.Path(path_type=Path), help="Directory where validation result JSON files will be saved.")
+@click.option("--record-raw-runs/--no-record-raw-runs", default=False, show_default=True, help="Store per-repeat raw runs in validation trace.")
 @click.option("--verbose/--no-verbose", default=True, show_default=True, help="Print validation progress during the run.")
 @click.option("--seed", type=int, help="Seed recorded in validation metadata. Defaults to dataset generation seed.")
 def validate_command(
@@ -384,6 +385,7 @@ def validate_command(
     results_dir: Path,
     seed: int | None,
     verbose: bool,
+    record_raw_runs: bool,
 ) -> None:
     """Сравнить оптимизированные параметры с baseline на control-датасете."""
     dataset_path: Path | None = resolve_dataset_path(dataset, expected_file="control.json") if dataset else None
@@ -498,6 +500,7 @@ def validate_command(
         verbose=verbose,
         method=opt_method if opt_method and opt_method != "unknown" else None,
         progress_callback=on_validation_progress,
+        record_raw_runs=record_raw_runs,
     )
 
     click.echo(f"optimized_mean_score={summary.optimized_mean_score:.6f}")
@@ -526,6 +529,7 @@ def validate_command(
         "curve_timeout_sec": curve_timeout_sec,
         "workers": workers,
         "seed": seed,
+        "record_raw_runs": record_raw_runs,
         "optimized": {
             "method": opt_method,
             "b1": opt_pair[0],
