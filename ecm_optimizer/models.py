@@ -69,6 +69,7 @@ class OptimizationConfig:
     verbose: bool = False
     method: str = "de"
     method_params: dict[str, dict[str, Any]] = field(default_factory=dict)
+    record_raw_runs: bool = False
 
 
 @dataclass(frozen=True)

@@ -27,9 +27,9 @@ class ValidationSummary:
     trace_by_number: tuple[dict[str, float | int], ...]
 
 
-def _evaluate_single_number_task(args: tuple[str, int, int, int, int, int, float | None]) -> dict[str, float | int]:
+def _evaluate_single_number_task(args: tuple[str, int, int, int, int, int, float | None, bool]) -> dict[str, float | int]:
     """Вычислить score+метрики для одного числа `n`."""
-    ecm_bin, n, b1, b2, max_curves_per_n, repeats_per_n, curve_timeout_sec = args
+    ecm_bin, n, b1, b2, max_curves_per_n, repeats_per_n, curve_timeout_sec, record_raw_runs = args
     score, stats = fitness_with_stats(
         ecm_bin=ecm_bin,
         numbers=[n],
@@ -39,6 +39,7 @@ def _evaluate_single_number_task(args: tuple[str, int, int, int, int, int, float
         repeats_per_n=repeats_per_n,
         curve_timeout_sec=curve_timeout_sec,
         workers=1,
+        record_raw_runs=record_raw_runs,
     )
     return {
         "n": n,
@@ -48,18 +49,19 @@ def _evaluate_single_number_task(args: tuple[str, int, int, int, int, int, float
         "mean_success_rate": float(stats["mean_success_rate"]),
         "mean_curves_to_outcome": float(stats["mean_curves_to_outcome"]),
         "mean_time_to_outcome_sec": float(stats["mean_time_to_outcome_sec"]),
-        "raw_runs": stats.get("raw_runs", ()),
+        "raw_runs": stats.get("raw_runs", ()) if record_raw_runs else (),
     }
 
 
 def _evaluate_many(
-    tasks: list[tuple[str, int, int, int, int, int, float | None]],
+    tasks: list[tuple[str, int, int, int, int, int, float | None, bool]],
     workers: int,
     *,
     verbose: bool = False,
     label: str = "",
     log_prefix: str = "[validate]",
     progress_callback: Callable[[str, int, int, dict[str, float | int]], None] | None = None,
+    record_raw_runs: bool = False,
 ) -> list[dict[str, float | int]]:
     """Запустить пакет задач последовательно или параллельно и вернуть score+метрики."""
     if workers == 1:
@@ -96,15 +98,16 @@ def validate_on_control(
     verbose: bool = False,
     method: str | None = None,
     progress_callback: Callable[[str, int, int, dict[str, float | int]], None] | None = None,
+    record_raw_runs: bool = False,
 ) -> ValidationSummary:
     """Сравнить оптимизированные и базовые параметры на контрольной выборке."""
     numbers = list(numbers)
     opt_tasks = [
-        (ecm_bin, n, optimized[0], optimized[1], max_curves_per_n, repeats_per_n, curve_timeout_sec)
+        (ecm_bin, n, optimized[0], optimized[1], max_curves_per_n, repeats_per_n, curve_timeout_sec, record_raw_runs)
         for n in numbers
     ]
     base_tasks = [
-        (ecm_bin, n, baseline[0], baseline[1], max_curves_per_n, repeats_per_n, curve_timeout_sec)
+        (ecm_bin, n, baseline[0], baseline[1], max_curves_per_n, repeats_per_n, curve_timeout_sec, record_raw_runs)
         for n in numbers
     ]
 
@@ -157,8 +160,7 @@ def validate_on_control(
                 "baseline_mean_curves": float(base_point["mean_curves_to_outcome"]),
                 "optimized_mean_time_sec": float(opt_point["mean_time_to_outcome_sec"]),
                 "baseline_mean_time_sec": float(base_point["mean_time_to_outcome_sec"]),
-                "optimized_raw_runs": list(opt_point.get("raw_runs", ())),
-                "baseline_raw_runs": list(base_point.get("raw_runs", ())),
+                **({"optimized_raw_runs": list(opt_point.get("raw_runs", ())), "baseline_raw_runs": list(base_point.get("raw_runs", ()),)} if record_raw_runs else {}),
                 "delta_pct_time": (
                     (
                         (float(base_point["mean_time_to_outcome_sec"]) - float(opt_point["mean_time_to_outcome_sec"]))
