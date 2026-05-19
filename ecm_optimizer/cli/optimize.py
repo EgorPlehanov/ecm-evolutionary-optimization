@@ -115,6 +115,7 @@ def _validate_method_specific_params(
 @click.option("--curve-timeout-sec", default=DEFAULT_CURVE_TIMEOUT_SEC, type=float, help="Optional timeout in seconds for a single ECM curve run.")
 @click.option("--workers", default=DEFAULT_WORKERS, show_default=True, type=int, help="Number of worker processes; use -1 to use all CPUs.")
 @click.option("--results-dir", default=str(EXPERIMENTS_DIR), show_default=True, type=click.Path(path_type=Path), help="Directory where optimization result JSON files will be saved.")
+@click.option("--record-raw-runs/--no-record-raw-runs", default=False, show_default=True, help="Store per-repeat raw runs in output JSON.")
 @click.option("--verbose/--no-verbose", default=True, show_default=True, help="Print optimization progress during the run.")
 def optimize_command(
     dataset: str | None,
@@ -142,6 +143,7 @@ def optimize_command(
     curve_timeout_sec: float | None,
     workers: int,
     results_dir: Path,
+    record_raw_runs: bool,
     verbose: bool,
 ) -> None:
     """Запустить оптимизацию параметров `(B1, B2)` на train-датасете."""
@@ -211,6 +213,7 @@ def optimize_command(
         "verbose": verbose,
         "method": method,
         "method_params": method_params,
+        "record_raw_runs": record_raw_runs,
     }
     config = OptimizationConfig(**config_kwargs)
     try:
@@ -270,6 +273,7 @@ def optimize_command(
             "workers": workers,
             "method": method,
             "method_params": config.method_params.get(method, {}),
+            "record_raw_runs": record_raw_runs,
         },
         "optimized": {"method": method, "b1": result.b1, "b2": result.b2, "objective": result.objective},
         "optimization_trace": result.history,

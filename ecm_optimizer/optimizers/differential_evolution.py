@@ -53,6 +53,7 @@ class DifferentialEvolutionOptimizer(Optimizer):
                 repeats_per_n=config.repeats_per_n,
                 curve_timeout_sec=config.curve_timeout_sec,
                 workers=config.workers,
+                record_raw_runs=config.record_raw_runs,
             )
             progress.eval_count = objective_calls - 1
             progress.on_evaluation(config=config, x_log=(x[0], x[1]), score=value, metrics=metrics)

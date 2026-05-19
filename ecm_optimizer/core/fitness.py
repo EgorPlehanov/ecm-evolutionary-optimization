@@ -13,9 +13,9 @@ from ecm_optimizer.core.ecm_runner import run_single_curve
 from ecm_optimizer.models import EvaluationResult
 
 
-def _evaluate_pair_task(args: tuple[str, int, int, int, int, int, float | None]) -> EvaluationResult:
+def _evaluate_pair_task(args: tuple[str, int, int, int, int, int, float | None, bool]) -> EvaluationResult:
     """Подготовить и выполнить одну задачу оценки для конкретного числа `n`."""
-    ecm_bin, n, b1, b2, max_curves_per_n, repeats_per_n, curve_timeout_sec = args
+    ecm_bin, n, b1, b2, max_curves_per_n, repeats_per_n, curve_timeout_sec, record_raw_runs = args
     return evaluate_pair_for_n(
         ecm_bin=ecm_bin,
         n=n,
@@ -24,6 +24,7 @@ def _evaluate_pair_task(args: tuple[str, int, int, int, int, int, float | None])
         max_curves_per_n=max_curves_per_n,
         repeats_per_n=repeats_per_n,
         curve_timeout_sec=curve_timeout_sec,
+        record_raw_runs=record_raw_runs,
     )
 
 
@@ -35,12 +36,13 @@ def evaluate_pair_for_n(
     max_curves_per_n: int,
     repeats_per_n: int,
     curve_timeout_sec: float | None = None,
+    record_raw_runs: bool = False,
 ) -> EvaluationResult:
     """Оценить пару `(B1, B2)` на одном числе `n` по логике stop-on-success."""
     success_runs = 0
     total_curves = 0
     total_seconds = 0.0
-    raw_runs: list[dict[str, float | int | bool]] = []
+    raw_runs: list[dict[str, float | int | bool]] = [] if record_raw_runs else []
 
     for repeat_idx in range(1, repeats_per_n + 1):
         run_success = False
@@ -57,7 +59,8 @@ def evaluate_pair_for_n(
                 break
         if run_success:
             success_runs += 1
-        raw_runs.append({"repeat": repeat_idx, "success": run_success, "curves": run_curves, "seconds": run_seconds})
+        if record_raw_runs:
+            raw_runs.append({"repeat": repeat_idx, "success": run_success, "curves": run_curves, "seconds": run_seconds})
 
     return EvaluationResult(
         n=n,
@@ -78,6 +81,7 @@ def fitness_with_stats(
     repeats_per_n: int,
     curve_timeout_sec: float | None = None,
     workers: int = 1,
+    record_raw_runs: bool = False,
 ) -> tuple[float, dict[str, Any]]:
     """Вычислить composite fitness по набору чисел.
 
@@ -87,7 +91,7 @@ def fitness_with_stats(
     - дополнительно минимизирует среднее число кривых как вторичный критерий.
     """
     numbers = list(numbers)
-    tasks = [(ecm_bin, n, b1, b2, max_curves_per_n, repeats_per_n, curve_timeout_sec) for n in numbers]
+    tasks = [(ecm_bin, n, b1, b2, max_curves_per_n, repeats_per_n, curve_timeout_sec, record_raw_runs) for n in numbers]
 
     if workers == 1:
         evaluations = [_evaluate_pair_task(task) for task in tasks]
@@ -107,9 +111,10 @@ def fitness_with_stats(
         "mean_curves_to_outcome": mean_curves,
         "mean_time_to_outcome_sec": mean_time,
     }
-    if len(evaluations) == 1:
-        stats["raw_runs"] = evaluations[0].raw_runs
-    stats["raw_runs_by_n"] = {item.n: item.raw_runs for item in evaluations}
+    if record_raw_runs:
+        if len(evaluations) == 1:
+            stats["raw_runs"] = evaluations[0].raw_runs
+        stats["raw_runs_by_n"] = {item.n: item.raw_runs for item in evaluations}
     return score, stats
 
 
@@ -122,6 +127,7 @@ def fitness_composite(
     repeats_per_n: int,
     curve_timeout_sec: float | None = None,
     workers: int = 1,
+    record_raw_runs: bool = False,
 ) -> float:
     """Вычислить целевую composite fitness-метрику."""
     score, _ = fitness_with_stats(
@@ -133,5 +139,6 @@ def fitness_composite(
         repeats_per_n=repeats_per_n,
         curve_timeout_sec=curve_timeout_sec,
         workers=workers,
+        record_raw_runs=record_raw_runs,
     )
     return score
