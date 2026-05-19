@@ -15,6 +15,10 @@
 - **Дата и время анализа (UTC):** `YYYY-MM-DD HH:MM:SS`
 - **Датасет / запуск:** `data/experiments/<dataset_dir>`
 - **Метод / конфигурация:** `<method, budgets, важные ограничения B1/B2>`
+- **Параметры запуска:**
+  - Генерация датасета: ``<--seed ... --target-digits ... ...>``
+  - Оптимизация: ``<--method ... --budget ... --b1-* --b2-* ...>``
+  - Валидация: ``<--validate ... --batch-size ... --timeout ...>``
 - **Источник данных:**
   - optimize json/report: `<ссылка_или_путь>`
   - validate json/report: `<ссылка_или_путь>`
@@ -81,6 +85,10 @@
 ### [RUN-2026-05-05-012126Z] Анализ новых результатов (`20_dset_20260505T012126Z_job7000540`)
 - **Дата и время анализа (UTC):** `2026-05-05 02:45:00`
 - **Датасет / запуск:** `data/experiments/20_dset_20260505T012126Z_job7000540`
+- **Параметры запуска:**
+  - Генерация датасета: `ecm-optimizer generate --seed 42 --target-digits 20 --cofactor-digits 30 --train-count 40 --control-count 40`
+  - Оптимизация: `--seed 42 --max-curves-per-n 130 --repeats-per-n 4 --b1-min 100 --b1-max 30000 --b2-min 100 --b2-max 600000 --ratio-max 100`; метод-специфика: `DE(popsize=10,maxiter=14)`, `RS(budget=80)`, `PSO(swarm=18,iter=16)`, `GA(pop=22,gen=18,mut=0.14)`, `BO(init=16,iter=28,candidates=2500)`
+  - Валидация: `ecm-optimizer validate --seed 42 --max-curves-per-n 300 --repeats-per-n 40`
 - **Источник данных:**
   - BO validate json: `data/experiments/20_dset_20260505T012126Z_job7000540/bo/optimize_20260505T012155Z_job7000547/bo_validate_20260505T013622Z_job7000548.json`
   - DE validate json: `data/experiments/20_dset_20260505T012126Z_job7000540/de/optimize_20260505T012156Z_job7000541/de_validate_20260505T020427Z_job7000542.json`
@@ -113,6 +121,10 @@
 ### [RUN-2026-05-05-214657Z] Анализ новых результатов (`20_dset_20260505T214657Z_job7012254`)
 - **Дата и время анализа (UTC):** `2026-05-06 10:30:00`
 - **Датасет / запуск:** `data/experiments/20_dset_20260505T214657Z_job7012254`
+- **Параметры запуска:**
+  - Генерация датасета: `ecm-optimizer generate --seed 42 --target-digits 20 --cofactor-digits 30 --train-count 80 --control-count 80`
+  - Оптимизация: `--seed 42 --max-curves-per-n 260 --repeats-per-n 8 --b1-min 500 --b1-max 50000 --b2-min 5000 --b2-max 3000000 --ratio-max 1000`; метод-специфика: `DE(popsize=10,maxiter=28)`, `RS(budget=160)`, `PSO(swarm=18,iter=32)`, `GA(pop=22,gen=36,mut=0.14)`, `BO(init=16,iter=56,candidates=2500)`
+  - Валидация: `ecm-optimizer validate --seed 42 --max-curves-per-n 600 --repeats-per-n 80`
 - **Источник данных:**
   - validate/optimize json: `data/experiments/20_dset_20260509T075225Z_job7040939/*/optimize_*/*_validate_*.json`, `data/experiments/20_dset_20260509T075225Z_job7040939/*/optimize_*/*_optimize_*.json`
   - данные выполнения (CPUTime/Elapsed): `sacct_full_history.csv` (по `JobID`)
@@ -138,6 +150,10 @@
 ### [RUN-2026-05-09-075225Z] Анализ новых результатов (`20_dset_20260509T075225Z_job7040939`)
 - **Дата и время анализа (UTC):** `2026-05-10 00:00:00`
 - **Датасет / запуск:** `data/experiments/20_dset_20260509T075225Z_job7040939`
+- **Параметры запуска:**
+  - Генерация датасета: `ecm-optimizer generate --seed 666 --target-digits 20 --cofactor-digits 30 --train-count 80 --control-count 80`
+  - Оптимизация: `--seed 666 --max-curves-per-n 260 --repeats-per-n 8 --b1-min 100 --b1-max 100000 --b2-min 10000 --b2-max 5000000 --ratio-max 5000`; метод-специфика: `DE(popsize=10,maxiter=11)`, `RS(budget=210)`, `PSO(swarm=18,iter=13)`, `GA(pop=22,gen=12,mut=0.14)`, `BO(init=24,iter=198,candidates=2500)`
+  - Валидация: `ecm-optimizer validate --seed 666 --max-curves-per-n 600 --repeats-per-n 80`
 - **Источник данных:**
   - validate/optimize json: `data/experiments/20_dset_20260509T075225Z_job7040939/*/optimize_*/*_validate_*.json`, `data/experiments/20_dset_20260509T075225Z_job7040939/*/optimize_*/*_optimize_*.json`
   - данные выполнения (CPUTime/Elapsed): `sacct_full_history.csv` (по `JobID`)
