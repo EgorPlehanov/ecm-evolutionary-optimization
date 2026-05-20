@@ -1,0 +1,89 @@
+run_step[10]: /home/ikntcit1/plehanoves/ecm-evolutionary-optimization/.venv/bin/python3 -m ecm_optimizer.cli.main optimize --dataset data/numbers/20_dset_20260519T115357Z_job7105998 --method ga --seed 1001 --max-curves-per-n 260 --repeats-per-n 8 --ga-population-size 22 --ga-generations 12 --ga-mutation-prob 0.14 --b1-min 100 --b1-max 1000000 --b2-min 10000 --b2-max 100000000 --ratio-max 100000
+[optimize:ga] numbers=80 max_curves_per_n=260 repeats_per_n=8 population_size=22 generations=12 mutation_prob=0.14 workers=56
+[optimize:ga] eval=5 b1=30526 b2=46020 fitness=86172.84862152519
+[optimize:ga] eval=10 b1=162957 b2=162957 fitness=120642.24368419115
+[optimize:ga] eval=15 b1=560 b2=64663 fitness=233013.83386857374
+[optimize:ga] eval=20 b1=306927 b2=2489337 fitness=78279.40516373172
+[optimize:ga] new_best eval=9 b1=224304 b2=20999588 fitness=38486.034221500035
+[optimize:ga] init_best fitness=38486.034221500035
+[optimize:ga] eval=25 b1=44466 b2=1783438 fitness=32437.378051224932
+[optimize:ga] eval=30 b1=72833 b2=101274 fitness=137598.55671127664
+[optimize:ga] eval=35 b1=72423 b2=1937120 fitness=61252.77579475803
+[optimize:ga] eval=40 b1=231640 b2=231640 fitness=198523.6054127378
+[optimize:ga] new_best eval=25 b1=44466 b2=1783438 fitness=32437.378051224932
+[optimize:ga] generation=1/12 best_fitness=32437.378051224932
+[optimize:ga] eval=45 b1=87779 b2=2808479 fitness=52226.907045276006
+[optimize:ga] eval=50 b1=44030 b2=228392 fitness=71616.6398621552
+[optimize:ga] eval=55 b1=25845 b2=6836540 fitness=44353.71853418295
+[optimize:ga] eval=60 b1=39620 b2=2893676 fitness=45337.50271718389
+[optimize:ga] generation=2/12 best_fitness=32437.378051224932
+[optimize:ga] eval=65 b1=27680 b2=3365996 fitness=49304.01881074813
+[optimize:ga] eval=70 b1=25188 b2=6193854 fitness=74940.20888078875
+[optimize:ga] eval=75 b1=40555 b2=2299919 fitness=68921.76947925477
+[optimize:ga] eval=80 b1=27754 b2=4422708 fitness=52038.32615760035
+[optimize:ga] eval=85 b1=40266 b2=2703982 fitness=50085.46517546845
+[optimize:ga] generation=3/12 best_fitness=32437.378051224932
+[optimize:ga] eval=90 b1=33531 b2=3464122 fitness=51415.703630123826
+[optimize:ga] eval=95 b1=43085 b2=2035745 fitness=71117.74179390732
+[optimize:ga] eval=100 b1=43363 b2=3462059 fitness=38144.580034518
+[optimize:ga] eval=105 b1=29689 b2=3514634 fitness=39435.15730085926
+[optimize:ga] generation=4/12 best_fitness=32437.378051224932
+[optimize:ga] eval=110 b1=37649 b2=2827091 fitness=36767.85106658505
+[optimize:ga] eval=115 b1=25687 b2=2988929 fitness=37511.53992293263
+[optimize:ga] eval=120 b1=43363 b2=3462059 fitness=31075.01021957498
+[optimize:ga] eval=125 b1=36120 b2=2536254 fitness=29023.914622546545
+[optimize:ga] new_best eval=124 b1=32575 b2=2642175 fitness=25095.956925111805
+[optimize:ga] generation=5/12 best_fitness=25095.956925111805
+[optimize:ga] eval=130 b1=34083 b2=4140742 fitness=26994.019298321837
+[optimize:ga] eval=135 b1=30600 b2=3435163 fitness=28829.12476368725
+[optimize:ga] eval=140 b1=44622 b2=1792873 fitness=32570.500050557202
+[optimize:ga] eval=145 b1=27313 b2=3203806 fitness=32146.066740132283
+[optimize:ga] generation=6/12 best_fitness=25095.956925111805
+[optimize:ga] eval=150 b1=31124 b2=2797442 fitness=29885.765803877584
+[optimize:ga] eval=155 b1=31117 b2=3083267 fitness=28698.529974408048
+[optimize:ga] eval=160 b1=31564 b2=3071280 fitness=27686.013678296586
+[optimize:ga] eval=165 b1=32382 b2=2569264 fitness=28544.667034155555
+[optimize:ga] generation=7/12 best_fitness=25095.956925111805
+[optimize:ga] eval=170 b1=33863 b2=2703432 fitness=28570.947573917674
+[optimize:ga] eval=175 b1=36514 b2=2402872 fitness=26311.44990890687
+[optimize:ga] eval=180 b1=32342 b2=3355870 fitness=28205.810529822975
+[optimize:ga] eval=185 b1=32325 b2=2726552 fitness=27340.460446205507
+[optimize:ga] eval=190 b1=33789 b2=2698163 fitness=27618.457375741873
+[optimize:ga] generation=8/12 best_fitness=25095.956925111805
+[optimize:ga] eval=195 b1=33890 b2=2768888 fitness=28981.73792619231
+[optimize:ga] eval=200 b1=31365 b2=2967474 fitness=28024.19336780773
+[optimize:ga] eval=205 b1=32525 b2=2658721 fitness=26811.519119189234
+[optimize:ga] eval=210 b1=32623 b2=2646791 fitness=26699.063671138356
+[optimize:ga] new_best eval=201 b1=32609 b2=2737437 fitness=24246.294845838584
+[optimize:ga] generation=9/12 best_fitness=24246.294845838584
+[optimize:ga] eval=215 b1=32870 b2=2747374 fitness=26517.742712332238
+[optimize:ga] eval=220 b1=34661 b2=2489587 fitness=27476.49823149368
+[optimize:ga] eval=225 b1=32508 b2=2687127 fitness=26269.801400191154
+[optimize:ga] eval=230 b1=31846 b2=2925348 fitness=26358.333080822413
+[optimize:ga] generation=10/12 best_fitness=24246.294845838584
+[optimize:ga] eval=235 b1=30712 b2=1964841 fitness=26077.263337678978
+[optimize:ga] eval=240 b1=31845 b2=2925522 fitness=27813.348795029142
+[optimize:ga] eval=245 b1=35440 b2=3118682 fitness=26793.650902568934
+[optimize:ga] eval=250 b1=27014 b2=3578080 fitness=28364.984660937844
+[optimize:ga] generation=11/12 best_fitness=24246.294845838584
+[optimize:ga] eval=255 b1=39213 b2=4458531 fitness=28692.41340643097
+[optimize:ga] eval=260 b1=35991 b2=2878133 fitness=28179.51260787413
+[optimize:ga] eval=265 b1=31937 b2=4236928 fitness=28755.777641245568
+[optimize:ga] eval=270 b1=33586 b2=2866988 fitness=27318.914018391897
+[optimize:ga] generation=12/12 best_fitness=24246.294845838584
+best_b1=32609
+best_b2=2737437
+objective=24246.294846
+result_file: data/experiments/20_dset_20260519T115357Z_job7105998/ga/optimize_20260519T115430Z_job7106007/ga_optimize_20260519T115430Z_job7106007.json
+plot_files:
+  jump_plot: data/experiments/20_dset_20260519T115357Z_job7105998/ga/optimize_20260519T115430Z_job7106007/plots/ga_optimize_20260519T115430Z_job7106007_jump_plot.png
+  b1_b2_trajectory: data/experiments/20_dset_20260519T115357Z_job7105998/ga/optimize_20260519T115430Z_job7106007/plots/ga_optimize_20260519T115430Z_job7106007_b1_b2_trajectory.png
+  progress_by_phase: data/experiments/20_dset_20260519T115357Z_job7105998/ga/optimize_20260519T115430Z_job7106007/plots/ga_optimize_20260519T115430Z_job7106007_progress_by_phase.png
+  time_efficiency: data/experiments/20_dset_20260519T115357Z_job7105998/ga/optimize_20260519T115430Z_job7106007/plots/ga_optimize_20260519T115430Z_job7106007_time_efficiency.png
+  b1_ratio_heatmap: data/experiments/20_dset_20260519T115357Z_job7105998/ga/optimize_20260519T115430Z_job7106007/plots/ga_optimize_20260519T115430Z_job7106007_b1_ratio_heatmap.png
+analysis_files:
+  events_csv: data/experiments/20_dset_20260519T115357Z_job7105998/ga/optimize_20260519T115430Z_job7106007/tables/ga_optimize_20260519T115430Z_job7106007_events.csv
+  new_best_csv: data/experiments/20_dset_20260519T115357Z_job7105998/ga/optimize_20260519T115430Z_job7106007/tables/ga_optimize_20260519T115430Z_job7106007_new_best.csv
+  phase_summary_csv: data/experiments/20_dset_20260519T115357Z_job7105998/ga/optimize_20260519T115430Z_job7106007/tables/ga_optimize_20260519T115430Z_job7106007_phase_summary.csv
+  run_summary_csv: data/experiments/20_dset_20260519T115357Z_job7105998/ga/optimize_20260519T115430Z_job7106007/tables/ga_optimize_20260519T115430Z_job7106007_run_summary.csv
+  report_md: data/experiments/20_dset_20260519T115357Z_job7105998/ga/optimize_20260519T115430Z_job7106007/ga_optimize_20260519T115430Z_job7106007_report.md

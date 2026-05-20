@@ -1,0 +1,181 @@
+run_step[9]: /home/ikntcit1/plehanoves/ecm-evolutionary-optimization/.venv/bin/python3 -m ecm_optimizer.cli.main validate --dataset data/numbers/20_dset_20260519T115357Z_job7105998 --opt-result-file data/experiments/20_dset_20260519T115357Z_job7105998/bo/optimize_20260519T115430Z_job7106005/bo_optimize_20260519T115430Z_job7106005.json --seed 1001 --max-curves-per-n 600 --repeats-per-n 80
+[validate:bo] numbers=80 max_curves_per_n=600 repeats_per_n=80 workers=56
+[validate:bo] optimized 1/80
+[validate:bo] optimized 2/80
+[validate:bo] optimized 3/80
+[validate:bo] optimized 4/80
+[validate:bo] optimized 5/80
+[validate:bo] optimized 6/80
+[validate:bo] optimized 7/80
+[validate:bo] optimized 8/80
+[validate:bo] optimized 9/80
+[validate:bo] optimized 10/80
+[validate:bo] optimized 11/80
+[validate:bo] optimized 12/80
+[validate:bo] optimized 13/80
+[validate:bo] optimized 14/80
+[validate:bo] optimized 15/80
+[validate:bo] optimized 16/80
+[validate:bo] optimized 17/80
+[validate:bo] optimized 18/80
+[validate:bo] optimized 19/80
+[validate:bo] optimized 20/80
+[validate:bo] optimized 21/80
+[validate:bo] optimized 22/80
+[validate:bo] optimized 23/80
+[validate:bo] optimized 24/80
+[validate:bo] optimized 25/80
+[validate:bo] optimized 26/80
+[validate:bo] optimized 27/80
+[validate:bo] optimized 28/80
+[validate:bo] optimized 29/80
+[validate:bo] optimized 30/80
+[validate:bo] optimized 31/80
+[validate:bo] optimized 32/80
+[validate:bo] optimized 33/80
+[validate:bo] optimized 34/80
+[validate:bo] optimized 35/80
+[validate:bo] optimized 36/80
+[validate:bo] optimized 37/80
+[validate:bo] optimized 38/80
+[validate:bo] optimized 39/80
+[validate:bo] optimized 40/80
+[validate:bo] optimized 41/80
+[validate:bo] optimized 42/80
+[validate:bo] optimized 43/80
+[validate:bo] optimized 44/80
+[validate:bo] optimized 45/80
+[validate:bo] optimized 46/80
+[validate:bo] optimized 47/80
+[validate:bo] optimized 48/80
+[validate:bo] optimized 49/80
+[validate:bo] optimized 50/80
+[validate:bo] optimized 51/80
+[validate:bo] optimized 52/80
+[validate:bo] optimized 53/80
+[validate:bo] optimized 54/80
+[validate:bo] optimized 55/80
+[validate:bo] optimized 56/80
+[validate:bo] optimized 57/80
+[validate:bo] optimized 58/80
+[validate:bo] optimized 59/80
+[validate:bo] optimized 60/80
+[validate:bo] optimized 61/80
+[validate:bo] optimized 62/80
+[validate:bo] optimized 63/80
+[validate:bo] optimized 64/80
+[validate:bo] optimized 65/80
+[validate:bo] optimized 66/80
+[validate:bo] optimized 67/80
+[validate:bo] optimized 68/80
+[validate:bo] optimized 69/80
+[validate:bo] optimized 70/80
+[validate:bo] optimized 71/80
+[validate:bo] optimized 72/80
+[validate:bo] optimized 73/80
+[validate:bo] optimized 74/80
+[validate:bo] optimized 75/80
+[validate:bo] optimized 76/80
+[validate:bo] optimized 77/80
+[validate:bo] optimized 78/80
+[validate:bo] optimized 79/80
+[validate:bo] optimized 80/80
+[validate:bo] baseline 1/80
+[validate:bo] baseline 2/80
+[validate:bo] baseline 3/80
+[validate:bo] baseline 4/80
+[validate:bo] baseline 5/80
+[validate:bo] baseline 6/80
+[validate:bo] baseline 7/80
+[validate:bo] baseline 8/80
+[validate:bo] baseline 9/80
+[validate:bo] baseline 10/80
+[validate:bo] baseline 11/80
+[validate:bo] baseline 12/80
+[validate:bo] baseline 13/80
+[validate:bo] baseline 14/80
+[validate:bo] baseline 15/80
+[validate:bo] baseline 16/80
+[validate:bo] baseline 17/80
+[validate:bo] baseline 18/80
+[validate:bo] baseline 19/80
+[validate:bo] baseline 20/80
+[validate:bo] baseline 21/80
+[validate:bo] baseline 22/80
+[validate:bo] baseline 23/80
+[validate:bo] baseline 24/80
+[validate:bo] baseline 25/80
+[validate:bo] baseline 26/80
+[validate:bo] baseline 27/80
+[validate:bo] baseline 28/80
+[validate:bo] baseline 29/80
+[validate:bo] baseline 30/80
+[validate:bo] baseline 31/80
+[validate:bo] baseline 32/80
+[validate:bo] baseline 33/80
+[validate:bo] baseline 34/80
+[validate:bo] baseline 35/80
+[validate:bo] baseline 36/80
+[validate:bo] baseline 37/80
+[validate:bo] baseline 38/80
+[validate:bo] baseline 39/80
+[validate:bo] baseline 40/80
+[validate:bo] baseline 41/80
+[validate:bo] baseline 42/80
+[validate:bo] baseline 43/80
+[validate:bo] baseline 44/80
+[validate:bo] baseline 45/80
+[validate:bo] baseline 46/80
+[validate:bo] baseline 47/80
+[validate:bo] baseline 48/80
+[validate:bo] baseline 49/80
+[validate:bo] baseline 50/80
+[validate:bo] baseline 51/80
+[validate:bo] baseline 52/80
+[validate:bo] baseline 53/80
+[validate:bo] baseline 54/80
+[validate:bo] baseline 55/80
+[validate:bo] baseline 56/80
+[validate:bo] baseline 57/80
+[validate:bo] baseline 58/80
+[validate:bo] baseline 59/80
+[validate:bo] baseline 60/80
+[validate:bo] baseline 61/80
+[validate:bo] baseline 62/80
+[validate:bo] baseline 63/80
+[validate:bo] baseline 64/80
+[validate:bo] baseline 65/80
+[validate:bo] baseline 66/80
+[validate:bo] baseline 67/80
+[validate:bo] baseline 68/80
+[validate:bo] baseline 69/80
+[validate:bo] baseline 70/80
+[validate:bo] baseline 71/80
+[validate:bo] baseline 72/80
+[validate:bo] baseline 73/80
+[validate:bo] baseline 74/80
+[validate:bo] baseline 75/80
+[validate:bo] baseline 76/80
+[validate:bo] baseline 77/80
+[validate:bo] baseline 78/80
+[validate:bo] baseline 79/80
+[validate:bo] baseline 80/80
+optimized_mean_score=30325.187004
+baseline_mean_score=35138.369866
+relative_improvement_pct=13.70
+optimized_mean_time_sec=2.616305
+baseline_mean_time_sec=3.052885
+time_improvement_pct=14.30
+optimized_mean_curves=83.242656
+baseline_mean_curves=92.190313
+curves_improvement_pct=9.71
+optimized_mean_success_rate=0.998750
+baseline_mean_success_rate=0.997656
+success_rate_delta_pp=0.1094
+used_opt_b1=20510
+used_opt_b2=636495
+used_opt_method=bo
+used_base_b1=11000
+used_base_b2=1900000
+result_file: data/experiments/20_dset_20260519T115357Z_job7105998/bo/optimize_20260519T115430Z_job7106005/bo_validate_20260519T165016Z_job7106006.json
+report_file: data/experiments/20_dset_20260519T115357Z_job7105998/bo/optimize_20260519T115430Z_job7106005/bo_optimize_20260519T115430Z_job7106005_report.md
