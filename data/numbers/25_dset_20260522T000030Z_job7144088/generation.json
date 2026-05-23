@@ -1,0 +1,19 @@
+{
+  "command_line": "ecm-optimizer generate --seed 666 --target-digits 25 --cofactor-digits 30 --train-count 80 --control-count 80",
+  "files": {
+    "control": "data/numbers/25_dset_20260522T000030Z_job7144088/control.json",
+    "manifest": "data/numbers/25_dset_20260522T000030Z_job7144088/manifest.json",
+    "train": "data/numbers/25_dset_20260522T000030Z_job7144088/train.json"
+  },
+  "format": "ecm_generation_v1",
+  "generation": {
+    "cofactor_digits": 30,
+    "control_count": 80,
+    "prefix": "dset",
+    "seed": 666,
+    "target_digits": 25,
+    "timestamp_utc": "20260522T000030Z",
+    "total_count": 160,
+    "train_count": 80
+  }
+}

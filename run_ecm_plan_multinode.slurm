@@ -54,7 +54,7 @@ command -v ecm >/dev/null 2>&1 || { echo "ERROR: бинарник ecm не на�
 PLAN_NAME="${PLAN_NAME:-full_all_methods_single_run_20d}"
 STEP_PARTITION="${STEP_PARTITION:-tornado}"
 STEP_CPUS_PER_TASK="${STEP_CPUS_PER_TASK:-28}"
-STEP_TIME_LIMIT="${STEP_TIME_LIMIT:-12:00:00}"
+STEP_TIME_LIMIT="${STEP_TIME_LIMIT:-24:00:00}"
 STEP_LOG_DIR="${STEP_LOG_DIR:-${RUN_ROOT}/steps}"
 STEP_STATE_FILE="${STEP_STATE_FILE:-${RUN_ROOT}/state/plan_state.json}"
 
