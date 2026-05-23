@@ -1,0 +1,7 @@
+run_step[1]: /home/ikntcit1/plehanoves/ecm-evolutionary-optimization/.venv/bin/python3 -m ecm_optimizer.cli.main generate --seed 1729 --target-digits 25 --cofactor-digits 30 --train-count 40 --control-count 40
+dataset_dir: data/numbers/25_dset_20260523T054447Z_job7162997
+   train_file: data/numbers/25_dset_20260523T054447Z_job7162997/train.json
+   control_file: data/numbers/25_dset_20260523T054447Z_job7162997/control.json
+   manifest_file: data/numbers/25_dset_20260523T054447Z_job7162997/manifest.json
+   generation_file: data/numbers/25_dset_20260523T054447Z_job7162997/generation.json
+generated=80
