@@ -603,26 +603,11 @@ ecm <B1> <B2>
 
 ## 3.6. Автоматизация экспериментов и HPC
 
-Для воспроизводимых многошаговых запусков реализована команда `run-plan`, принимающая JSON-план. План может включать генерацию датасета, последовательные запуски нескольких методов, валидацию найденных параметров и итоговый анализ. Поддерживаются повторения, ссылки между шагами и шаблоны параметров.
+Для воспроизводимых многошаговых запусков реализована команда `run-plan`, принимающая JSON-план. План включает этапы `generate`, `optimize`, `validate` и `analyze`, а также поддерживает шаблоны параметров, повторения по списку методов и передачу артефактов между шагами через ссылки `$ref`.
 
-Поток данных вычислительного эксперимента показан на рисунке 3.3.
+Так как общая архитектура и поток данных уже подробно рассмотрены в п. 3.2, в данном разделе акцент сделан на практической организации расчетов. Все длительные прогоны выполнялись на суперкомпьютере СПбПУ через SLURM в разделе `tornado`, поскольку в работе использовались CPU-вычисления. Типовой сценарий заключался в запуске одного плана на полный цикл эксперимента с последующим сбором артефактов в каталогах `data/experiments` и `data/analysis`.
 
-```mermaid
-flowchart LR
-    A["JSON-план"] --> B["generate"]
-    B --> C["train/control dataset"]
-    C --> D["optimize"]
-    D --> E["optimize JSON"]
-    E --> F["validate"]
-    F --> G["validate JSON"]
-    E --> H["analyze"]
-    G --> H
-    H --> I["overview report"]
-```
-
-Рис. 3.3 Поток данных вычислительного эксперимента
-
-Длительные эксперименты выполнялись на ресурсах суперкомпьютерного центра СПбПУ с использованием SLURM. В вычислительной среде доступны разделы `tornado` и `tornado-k40`. Раздел `tornado` включает узлы с двумя Intel Xeon CPU E5-2697 v3 @ 2,60GHz, 28 ядрами / 56 hardware threads на узел, 64 ГБ RAM и сетью 56Gbps FDR Infiniband. Раздел `tornado-k40` дополнительно содержит по две Nvidia Tesla K40x на узел. Общее хранилище – 1 PB Lustre FS.
+В качестве воспроизводимого примера использовался план `data/plans/time_balanced_3h_all_methods_20d.json`, по которому были получены основные результаты для 20-значных делителей. Полный текст указанного плана приведен в приложении В.
 
 ## 3.7. Система анализа результатов
 
@@ -805,3 +790,125 @@ ecm-optimizer validate \
 - `data/analysis/analyze_20260519T100317Z_job7101779/overview/report.md` – сводный отчет анализа.
 - `data/slurm_runs/sacct_full_history.csv` – сведения о SLURM-запусках.
 - `run_ecm_plan.slurm`, `run_ecm_plan_multinode.slurm` – скрипты запуска на HPC.
+
+
+## Приложение В. Пример JSON-плана `run-plan` для эксперимента на 20-значных делителях
+
+Ниже приведен план `data/plans/time_balanced_3h_all_methods_20d.json`, использованный для получения основных результатов главы 4.
+
+```json
+{
+  "format": "ecm_run_plan_v1",
+  "description": "Time-balanced прогон по всем методам (de/rs/pso/bo/ga) для target-digits=20: бюджеты method_opt выровнены к ~3ч elapsed на основе RUN-2026-05-05-214657Z.",
+  "params": {
+    "seed": 666,
+    "search": {
+      "b1-min": 100,
+      "b1-max": 100000,
+      "b2-min": 10000,
+      "b2-max": 5000000,
+      "ratio-max": 5000
+    },
+    "method_list": [
+      "de",
+      "rs",
+      "pso",
+      "bo",
+      "ga"
+    ],
+    "method_opt": {
+      "de": {
+        "de-popsize": 10,
+        "de-maxiter": 11
+      },
+      "rs": {
+        "rs-budget": 210
+      },
+      "pso": {
+        "pso-swarm-size": 18,
+        "pso-iterations": 13
+      },
+      "bo": {
+        "bo-initial-samples": 24,
+        "bo-iterations": 198,
+        "bo-candidate-pool": 2500
+      },
+      "ga": {
+        "ga-population-size": 22,
+        "ga-generations": 12,
+        "ga-mutation-prob": 0.14
+      }
+    },
+    "shared_opt_args": {
+      "max-curves-per-n": 260,
+      "repeats-per-n": 8
+    },
+    "shared_val_args": {
+      "max-curves-per-n": 600,
+      "repeats-per-n": 80
+    },
+    "generate_args": {
+      "target-digits": 20,
+      "cofactor-digits": 30,
+      "train-count": 80,
+      "control-count": 80
+    },
+    "analyze_group_by": [
+      "divisor_size",
+      "method"
+    ]
+  },
+  "operations": [
+    {
+      "type": "generate",
+      "label": "dataset_20_single",
+      "args": {
+        "$spread_ref": "params.generate_args",
+        "seed": "$ref:params.seed"
+      }
+    },
+    {
+      "repeat": {
+        "as": "method_iter",
+        "values": {
+          "method": "$ref:params.method_list"
+        }
+      },
+      "operations": [
+        {
+          "type": "optimize",
+          "label": "opt_{{method_iter.method}}_single",
+          "args": {
+            "dataset": "$ref:dataset_20_single.dataset_dir",
+            "method": "$ref:method_iter.method",
+            "seed": "$ref:params.seed",
+            "$spread_ref": [
+              "params.shared_opt_args",
+              "params.method_opt.{{method_iter.method}}",
+              "params.search"
+            ]
+          }
+        },
+        {
+          "type": "validate",
+          "label": "val_{{method_iter.method}}_single",
+          "args": {
+            "dataset": "$ref:dataset_20_single.dataset_dir",
+            "opt-result-file": "$ref:opt_{{method_iter.method}}_single.result_file",
+            "seed": "$ref:params.seed",
+            "$spread_ref": "params.shared_val_args"
+          }
+        }
+      ]
+    },
+    {
+      "type": "analyze",
+      "label": "analysis_single_dataset_all_methods",
+      "args": {
+        "dataset": "$ref:dataset_20_single.dataset_dir",
+        "group-by": "$ref:params.analyze_group_by"
+      }
+    }
+  ]
+}
+```
