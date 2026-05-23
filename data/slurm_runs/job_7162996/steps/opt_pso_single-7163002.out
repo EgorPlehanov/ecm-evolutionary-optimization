@@ -1,0 +1,45 @@
+run_step[6]: /home/ikntcit1/plehanoves/ecm-evolutionary-optimization/.venv/bin/python3 -m ecm_optimizer.cli.main optimize --dataset data/numbers/25_dset_20260523T054447Z_job7162997 --method pso --seed 1729 --max-curves-per-n 320 --repeats-per-n 3 --pso-swarm-size 12 --pso-iterations 6 --b1-min 5000 --b1-max 500000 --b2-min 500000 --b2-max 130000000 --ratio-max 1000000000
+[optimize:pso] numbers=40 max_curves_per_n=320 repeats_per_n=3 swarm_size=12 iterations=6 boundary_damping=0.0 workers=56
+[optimize:pso] eval=5 b1=67353 b2=16039458 fitness=145787.19515985576
+[optimize:pso] eval=10 b1=8479 b2=10857003 fitness=334487.6175204871
+[optimize:pso] new_best eval=5 b1=67353 b2=16039458 fitness=145787.19515985576
+[optimize:pso] init_best fitness=145787.19515985576
+[optimize:pso] eval=15 b1=143468 b2=5633724 fitness=156538.66793880519
+[optimize:pso] eval=20 b1=130253 b2=1026378 fitness=285055.86300420074
+[optimize:pso] iteration=1/6 best_fitness=145787.19515985576
+[optimize:pso] eval=25 b1=44829 b2=17308435 fitness=222712.23081389308
+[optimize:pso] eval=30 b1=22595 b2=21581344 fitness=281729.6624221875
+[optimize:pso] eval=35 b1=89533 b2=5881610 fitness=185587.19880379242
+[optimize:pso] iteration=2/6 best_fitness=145787.19515985576
+[optimize:pso] new_best eval=37 b1=98505 b2=17496856 fitness=143850.83357491426
+[optimize:pso] eval=40 b1=102407 b2=12667521 fitness=191298.4913790135
+[optimize:pso] eval=45 b1=27108 b2=11129359 fitness=236760.56777179913
+[optimize:pso] iteration=3/6 best_fitness=143850.83357491426
+[optimize:pso] eval=50 b1=74528 b2=23445620 fitness=183665.5264652572
+[optimize:pso] new_best eval=52 b1=156582 b2=26903858 fitness=141522.99676789096
+[optimize:pso] eval=55 b1=148870 b2=36290964 fitness=123410.28848627987
+[optimize:pso] new_best eval=55 b1=148870 b2=36290964 fitness=123410.28848627987
+[optimize:pso] eval=60 b1=147834 b2=3189695 fitness=228560.78140954117
+[optimize:pso] iteration=4/6 best_fitness=123410.28848627987
+[optimize:pso] eval=65 b1=93868 b2=42431925 fitness=208747.49670101845
+[optimize:pso] eval=70 b1=71939 b2=3613747 fitness=183880.04448553824
+[optimize:pso] iteration=5/6 best_fitness=123410.28848627987
+[optimize:pso] eval=75 b1=164009 b2=37986736 fitness=157397.7542295939
+[optimize:pso] eval=80 b1=330083 b2=30405340 fitness=166844.95667774742
+[optimize:pso] iteration=6/6 best_fitness=123410.28848627987
+best_b1=148870
+best_b2=36290964
+objective=123410.288486
+result_file: data/experiments/25_dset_20260523T054447Z_job7162997/pso/optimize_20260523T054455Z_job7163002/pso_optimize_20260523T054455Z_job7163002.json
+plot_files:
+  jump_plot: data/experiments/25_dset_20260523T054447Z_job7162997/pso/optimize_20260523T054455Z_job7163002/plots/pso_optimize_20260523T054455Z_job7163002_jump_plot.png
+  b1_b2_trajectory: data/experiments/25_dset_20260523T054447Z_job7162997/pso/optimize_20260523T054455Z_job7163002/plots/pso_optimize_20260523T054455Z_job7163002_b1_b2_trajectory.png
+  progress_by_phase: data/experiments/25_dset_20260523T054447Z_job7162997/pso/optimize_20260523T054455Z_job7163002/plots/pso_optimize_20260523T054455Z_job7163002_progress_by_phase.png
+  time_efficiency: data/experiments/25_dset_20260523T054447Z_job7162997/pso/optimize_20260523T054455Z_job7163002/plots/pso_optimize_20260523T054455Z_job7163002_time_efficiency.png
+  b1_ratio_heatmap: data/experiments/25_dset_20260523T054447Z_job7162997/pso/optimize_20260523T054455Z_job7163002/plots/pso_optimize_20260523T054455Z_job7163002_b1_ratio_heatmap.png
+analysis_files:
+  events_csv: data/experiments/25_dset_20260523T054447Z_job7162997/pso/optimize_20260523T054455Z_job7163002/tables/pso_optimize_20260523T054455Z_job7163002_events.csv
+  new_best_csv: data/experiments/25_dset_20260523T054447Z_job7162997/pso/optimize_20260523T054455Z_job7163002/tables/pso_optimize_20260523T054455Z_job7163002_new_best.csv
+  phase_summary_csv: data/experiments/25_dset_20260523T054447Z_job7162997/pso/optimize_20260523T054455Z_job7163002/tables/pso_optimize_20260523T054455Z_job7163002_phase_summary.csv
+  run_summary_csv: data/experiments/25_dset_20260523T054447Z_job7162997/pso/optimize_20260523T054455Z_job7163002/tables/pso_optimize_20260523T054455Z_job7163002_run_summary.csv
+  report_md: data/experiments/25_dset_20260523T054447Z_job7162997/pso/optimize_20260523T054455Z_job7163002/pso_optimize_20260523T054455Z_job7163002_report.md

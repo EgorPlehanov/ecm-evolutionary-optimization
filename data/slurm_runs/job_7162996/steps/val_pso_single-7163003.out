@@ -1,0 +1,101 @@
+run_step[7]: /home/ikntcit1/plehanoves/ecm-evolutionary-optimization/.venv/bin/python3 -m ecm_optimizer.cli.main validate --dataset data/numbers/25_dset_20260523T054447Z_job7162997 --opt-result-file data/experiments/25_dset_20260523T054447Z_job7162997/pso/optimize_20260523T054455Z_job7163002/pso_optimize_20260523T054455Z_job7163002.json --seed 1729 --max-curves-per-n 700 --repeats-per-n 30
+[validate:pso] numbers=40 max_curves_per_n=700 repeats_per_n=30 workers=56
+[validate:pso] optimized 1/40
+[validate:pso] optimized 2/40
+[validate:pso] optimized 3/40
+[validate:pso] optimized 4/40
+[validate:pso] optimized 5/40
+[validate:pso] optimized 6/40
+[validate:pso] optimized 7/40
+[validate:pso] optimized 8/40
+[validate:pso] optimized 9/40
+[validate:pso] optimized 10/40
+[validate:pso] optimized 11/40
+[validate:pso] optimized 12/40
+[validate:pso] optimized 13/40
+[validate:pso] optimized 14/40
+[validate:pso] optimized 15/40
+[validate:pso] optimized 16/40
+[validate:pso] optimized 17/40
+[validate:pso] optimized 18/40
+[validate:pso] optimized 19/40
+[validate:pso] optimized 20/40
+[validate:pso] optimized 21/40
+[validate:pso] optimized 22/40
+[validate:pso] optimized 23/40
+[validate:pso] optimized 24/40
+[validate:pso] optimized 25/40
+[validate:pso] optimized 26/40
+[validate:pso] optimized 27/40
+[validate:pso] optimized 28/40
+[validate:pso] optimized 29/40
+[validate:pso] optimized 30/40
+[validate:pso] optimized 31/40
+[validate:pso] optimized 32/40
+[validate:pso] optimized 33/40
+[validate:pso] optimized 34/40
+[validate:pso] optimized 35/40
+[validate:pso] optimized 36/40
+[validate:pso] optimized 37/40
+[validate:pso] optimized 38/40
+[validate:pso] optimized 39/40
+[validate:pso] optimized 40/40
+[validate:pso] baseline 1/40
+[validate:pso] baseline 2/40
+[validate:pso] baseline 3/40
+[validate:pso] baseline 4/40
+[validate:pso] baseline 5/40
+[validate:pso] baseline 6/40
+[validate:pso] baseline 7/40
+[validate:pso] baseline 8/40
+[validate:pso] baseline 9/40
+[validate:pso] baseline 10/40
+[validate:pso] baseline 11/40
+[validate:pso] baseline 12/40
+[validate:pso] baseline 13/40
+[validate:pso] baseline 14/40
+[validate:pso] baseline 15/40
+[validate:pso] baseline 16/40
+[validate:pso] baseline 17/40
+[validate:pso] baseline 18/40
+[validate:pso] baseline 19/40
+[validate:pso] baseline 20/40
+[validate:pso] baseline 21/40
+[validate:pso] baseline 22/40
+[validate:pso] baseline 23/40
+[validate:pso] baseline 24/40
+[validate:pso] baseline 25/40
+[validate:pso] baseline 26/40
+[validate:pso] baseline 27/40
+[validate:pso] baseline 28/40
+[validate:pso] baseline 29/40
+[validate:pso] baseline 30/40
+[validate:pso] baseline 31/40
+[validate:pso] baseline 32/40
+[validate:pso] baseline 33/40
+[validate:pso] baseline 34/40
+[validate:pso] baseline 35/40
+[validate:pso] baseline 36/40
+[validate:pso] baseline 37/40
+[validate:pso] baseline 38/40
+[validate:pso] baseline 39/40
+[validate:pso] baseline 40/40
+optimized_mean_score=198917.318496
+baseline_mean_score=242850.871496
+relative_improvement_pct=18.09
+optimized_mean_time_sec=19.389428
+baseline_mean_time_sec=22.821825
+time_improvement_pct=15.04
+optimized_mean_curves=100.460833
+baseline_mean_curves=245.985833
+curves_improvement_pct=59.16
+optimized_mean_success_rate=1.000000
+baseline_mean_success_rate=0.925000
+success_rate_delta_pp=7.5000
+used_opt_b1=148870
+used_opt_b2=36290964
+used_opt_method=pso
+used_base_b1=50000
+used_base_b2=13000000
+result_file: data/experiments/25_dset_20260523T054447Z_job7162997/pso/optimize_20260523T054455Z_job7163002/pso_validate_20260523T075401Z_job7163003.json
+report_file: data/experiments/25_dset_20260523T054447Z_job7162997/pso/optimize_20260523T054455Z_job7163002/pso_optimize_20260523T054455Z_job7163002_report.md
