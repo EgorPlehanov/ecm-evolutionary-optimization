@@ -744,54 +744,6 @@ ecm <B1> <B2>
 
 # Приложения
 
-## Приложение А. Команды запуска экспериментов
-
-Пример генерации датасета:
-
-```bash
-ecm-optimizer generate \
-  --seed 42 \
-  --target-digits 20 \
-  --cofactor-digits 30 \
-  --train-count 80 \
-  --control-count 80
-```
-
-Пример запуска оптимизации:
-
-```bash
-ecm-optimizer optimize \
-  --dataset 20_dset_20260518T233806Z_job7101768 \
-  --method de \
-  --seed 42 \
-  --max-curves-per-n 260 \
-  --repeats-per-n 8 \
-  --b1-min 100 \
-  --b1-max 1000000 \
-  --b2-min 10000 \
-  --b2-max 100000000 \
-  --ratio-max 1000
-```
-
-Пример валидации:
-
-```bash
-ecm-optimizer validate \
-  --opt-result-file <optimize_result.json> \
-  --seed 42 \
-  --max-curves-per-n 600 \
-  --repeats-per-n 80
-```
-
-## Приложение Б. Основные артефакты проекта
-
-- `data/numbers/20_dset_20260518T233806Z_job7101768/` – train/control датасет актуального эксперимента.
-- `data/experiments/20_dset_20260518T233806Z_job7101768/` – optimize/validate результаты по методам.
-- `data/analysis/analyze_20260519T100317Z_job7101779/overview/report.md` – сводный отчет анализа.
-- `data/slurm_runs/sacct_full_history.csv` – сведения о SLURM-запусках.
-- `run_ecm_plan.slurm`, `run_ecm_plan_multinode.slurm` – скрипты запуска на HPC.
-
-
 ## Приложение В. Пример JSON-плана `run-plan` для эксперимента на 20-значных делителях
 
 Ниже приведен план `data/plans/time_balanced_3h_all_methods_20d.json`, использованный для получения основных результатов главы 4.
